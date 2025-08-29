@@ -1,24 +1,26 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+`SISTEMAS DE INFORMAÇÃO`
 
-`DISCIPLINA`
+`TRABALHO INTERDISCIPLINAR : APLICAÇÕES PARA PROCESSO DE NEGÓCIOS`
 
-`SEMESTRE`
+`QUARTO SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Nosso projeto tem como objetivo o desenvolvimento de um sistema de controle de despesas voltado para microempreendedores individuais (MEIs) e profissionais autônomos. A proposta busca solucionar uma das maiores dificuldades enfrentadas por esse público: a falta de organização financeira. Muitos pequenos empreendedores ainda recorrem a métodos informais, como anotações em cadernos ou planilhas simples, o que dificulta o acompanhamento do fluxo de caixa e a tomada de decisões estratégicas. Nesse contexto, o sistema pretende oferecer uma ferramenta prática, acessível e intuitiva, capaz de registrar e categorizar transações, gerar relatórios, definir metas e emitir alertas, contribuindo para uma gestão mais clara e eficiente das finanças.
+
+Além de atender a uma necessidade concreta dos pequenos negócios, o projeto também promove a educação financeira ao incentivar o uso contínuo de recursos tecnológicos no dia a dia do empreendedor. A solução proposta se diferencia por priorizar a simplicidade e a usabilidade, sem abrir mão de funcionalidades essenciais, como a segurança das informações e a compatibilidade com múltiplas plataformas. Dessa forma, espera-se que o sistema auxilie os usuários a reduzir gastos desnecessários, melhorar o planejamento estratégico e alcançar maior sustentabilidade em seus empreendimentos.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Hugo Ferreira Silva
+* Izadora Helena Pedrosa Soares Pereira
+* Júlia Fernanda Alves
+* Maria Clara Silva Botelho
 
 ## Orientador
 
-* Nome completo do professor 1
-
+* Cleia Marcia Gomes Amaral
+  
 ## Instruções de utilização
 
 Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
