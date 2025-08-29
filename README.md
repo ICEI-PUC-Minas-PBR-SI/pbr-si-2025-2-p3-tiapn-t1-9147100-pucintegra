@@ -1,12 +1,17 @@
 # Medlar
 
-`CURSO`
+`SISTEMAS DE INFORMAÇÃO`
 
-`DISCIPLINA`
+`T.I.: APLIC. PROC. NEG. - 9147100 - SISTEMAS DE INFORMAÇÃO - NOITE - PBR
 
-`SEMESTRE`
+`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+`3° Periodo`
+
+O desenvolvimento de um aplicativo para centralizar profissionais de 
+saúde no atendimento domiciliar (Home Care) oferece uma solução prática e 
+inovadora para pacientes que necessitam de cuidados contínuos.
+
 
 ## Integrantes
 
