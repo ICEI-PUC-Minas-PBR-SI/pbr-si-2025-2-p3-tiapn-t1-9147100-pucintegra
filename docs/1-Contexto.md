@@ -6,8 +6,6 @@ A administração de finanças coletivas em viagens e eventos em grupo é, muita
 
 Com o crescimento da economia colaborativa e o aumento da conectividade entre pessoas por meio de dispositivos móveis, novas formas de organizar a vida em grupo têm ganhado espaço. Aplicativos como Splitwise e Tricount já se destacam por facilitar a divisão de despesas, mas ainda carecem de abordagens mais contextualizadas para públicos brasileiros ou com recursos mais completos, como a gamificação.
 
-Segundo pesquisa da Opinion Box (2023), 71% dos brasileiros utilizam aplicativos financeiros para controle pessoal, mas apenas 14% confiam totalmente nas ferramentas atuais para a divisão de contas em grupo, indicando uma lacuna de mercado e usabilidade.
-
 Nesse cenário, percebe-se a demanda por soluções que não apenas organizem as finanças, mas que também engajem os usuários com experiências mais lúdicas e acessíveis. A proposta deste trabalho se insere nesse contexto, com foco na construção de uma carteira digital colaborativa e gamificada para grupos de viagem e eventos informais.
 
 ## 1.2 Problema
