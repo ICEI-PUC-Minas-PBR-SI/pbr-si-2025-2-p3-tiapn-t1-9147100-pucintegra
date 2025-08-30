@@ -87,3 +87,44 @@ O público-alvo para o sistema de gerenciamento de despesas em grupo para viagen
 ### 1.5.6 Conclusão
 
 O público-alvo abrange diferentes faixas etárias e perfis, todos com um interesse comum em gerenciar de forma mais eficiente as finanças coletivas em viagens e eventos. A flexibilidade do sistema, com recursos de gamificação, visualização de despesas e divisão justa de valores, garante que o produto atenda às necessidades específicas de cada grupo, tornando a experiência mais fácil, divertida e transparente.
+
+
+## 1.6 Participantes do Processo
+
+### Participantes Gerais do Sistema​:
+
+- **Usuário Comum**: Qualquer membro que participa de grupos e compartilha despesas.
+- **Usuário Administrador (do grupo)**: Responsável por criar o grupo, incluir membros e enviar convites.
+- **Administrador do Sistema**: Responsável pela segurança, manutenção e suporte da aplicação como um todo.
+- **Membros Convidados**: Pessoas que recebem convite para entrar em um grupo e precisam aceitar ou recusar.
+- **Sistema “Passa Régua”**: Ator automático que valida, processa cálculos e atualiza os registros de forma transparente.
+
+---
+
+## 1.7 Listagem dos Processos
+
+#### **Processo 1 – Cadastro de Usuário​**
+- **Usuário (comum)**: Insere seus dados pessoais e cria conta.
+
+#### **Processo 2 – Criação de Grupos​**
+- **Usuário (criador)**: Define nome do grupo e regras de divisão.
+- **Sistema**: Gera identificador do grupo e relaciona com o criador.
+- **Membros convidados**: Futuros participantes que serão incluídos.
+
+#### **Processo 3 – Inclusão de Membros e Convite**
+- **Usuário (criador ou administrador do grupo)**: Adiciona e-mails dos membros.
+- **Membros convidados**: Recebem convite e decidem se aceitam participar.
+- **Sistema**: Envia notificações e controla aceite/recusa.
+
+#### **Processo 4 – Registro de Despesas e Divisão Automática**
+- **Usuário (pagador)**: Cadastra despesa realizada.
+- **Usuário (administrador)**: Aprova/reprova despesas lançadas.
+- **Sistema**: Calcula divisão proporcional ou igualitária.
+- **Todos os membros do grupo**: Visualizam saldo atualizado.
+
+#### **Processo 5 – Registro de Abatimentos de Saldo Devedor**
+- **Usuário (devedor)**: Realiza pagamento parcial ou total.
+- **Usuário (administrador)**: Confirma recebimento (caso necessário).
+- **Sistema**: Atualiza saldo individual e coletivo.
+- **Sistema**: Valida informações, armazena dados no banco.
+- **Administrador do Sistema (opcional)**: Em caso de validação ou suporte.
