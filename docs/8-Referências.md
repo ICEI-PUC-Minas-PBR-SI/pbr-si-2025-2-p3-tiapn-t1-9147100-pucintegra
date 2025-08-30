@@ -21,3 +21,7 @@ http://portal.pucminas.br/imagedb/documento/DOC_DSC_NOME_ARQUI20160217102425.pdf
 
 **[1.7]** - _TRICOUNT. **Aplicativo para organização de despesas de grupo**. Disponível em: https://www.tricount.com/
 . Acesso em: 30 ago. 2025._
+
+**[1.8]** - _GABRIEL MONEY. **Tracking Expenses: Manual Methods vs. Digital Tools**. Publicado em 16 jan. 2025. Disponível em: https://gabriel.money/tracking-expenses-manual-methods-and-digital-tools/. Acesso em: 30 ago. 2025._
+
+**[1.9]** - _SAP CONCUR. **It’s Time to Let Go of Your Expense Tracking Spreadsheets**. Blog SAP Concur, publicado em 16 jan. 2020. Disponível em: https://www.concur.com/blog/article/its-time-let-go-your-expense-tracking-spreadsheets. Acesso em: 30 ago. 2025._
