@@ -15,3 +15,9 @@ http://portal.pucminas.br/imagedb/documento/DOC_DSC_NOME_ARQUI20160217102425.pdf
 **[1.4]** - _SUTHERLAND, Jeffrey Victor. **Scrum: a arte de fazer o dobro do trabalho na metade do tempo**. 2. ed. rev. São Paulo, SP: Leya, 2016. 236, [4] p. ISBN 9788544104514._
 
 **[1.5]** - _RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial**. Rio de Janeiro: Elsevier, c2013. xxi, 988 p. ISBN 9788535237016._
+
+**[1.6]** - _SPLITWISE. **Aplicativo para divisão de despesas**. Disponível em: https://www.splitwise.com/
+. Acesso em: 30 ago. 2025._
+
+**[1.7]** - _TRICOUNT. **Aplicativo para organização de despesas de grupo**. Disponível em: https://www.tricount.com/
+. Acesso em: 30 ago. 2025._
