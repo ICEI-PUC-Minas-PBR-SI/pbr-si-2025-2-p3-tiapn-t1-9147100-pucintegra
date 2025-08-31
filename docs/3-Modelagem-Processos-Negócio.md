@@ -30,87 +30,47 @@ Para o profissional de saúde que deseja oferecer serviços domiciliares, o proc
 5.  *Isolamento Profissional:* A falta de uma plataforma centralizada dificulta o compartilhamento de informações sobre o paciente com outros especialistas e a manutenção de um histórico de atendimentos unificado e de fácil acesso.
 
 
-Modelos de Processos Atuais (AS-IS) em BPMNA seguir, apresentamos os diagramas BPMN que modelam os processos atuais, destacando as ineficiências.Processo 1: Busca e Contratação de Profissional (Visão da Família)Este diagrama ilustra o fluxo de trabalho manual e repetitivo que uma família enfrenta.          +-------------------------+
-(Início)-->| Identificar Necessidade |
-          +-------------------------+
-                  |
-                  v
-          +-------------------------+
-          |   Buscar Indicações     |---+
-          | (Amigos, Grupos, etc.)  |   | (Não)
-          +-------------------------+   |
-                  |                     |
-                  v                     |
-          +-------------------------+   |
-          |   Contatar Profissional |   |
-          +-------------------------+   |
-                  |                     |
-                  v                     |
-          <  Disponível?  >-------------+
-          +---------------+
-                  | (Sim)
-                  v
-          < Qualificado?  >-------------+
-          +---------------+
-                  | (Sim)
-                  v
-          < Valor Aceitável? >----------+
-          +------------------+
-                  | (Sim)
-                  v
-          +-------------------------+
-          |   Agendar Atendimento   |
-          |       (Manual)          |
-          +-------------------------+
-                  |
-                  v
-          +-------------------------+
-          |    Realizar Pagamento   |
-          +-------------------------+
-                  |
-                  v
-               (Fim)Descrição Visual: O diagrama mostra um caminho linear que só é seguido em caso de sucesso. Na prática, as setas de (Não) criam um ciclo de retrabalho frustrante, forçando a família a retornar à etapa de [Buscar Indicações] a cada falha na negociação. Este ciclo representa o principal gargalo do processo.Processo 2: Captação de Pacientes e Gestão de Agenda (Visão do Profissional)Este diagrama mostra a perspectiva do profissional de saúde e sua gestão administrativa manual.          +-------------------------+
-(Início)-->|  Receber Contato de     |
-(Evento)  |    Potencial Paciente   |
-          +-------------------------+
-                  |
-                  v
-          +-------------------------+
-          |     Retornar Contato    |
-          +-------------------------+
-                  |
-                  v
-          +-------------------------+
-          |  Verificar Agenda Manual|
-          +-------------------------+
-                  |
-                  v
-          < Negociação OK? >----------> (Fim - Oportunidade Perdida)
-          | (Horário/Valor)  | (Não)
-          +------------------+
-                  | (Sim)
-                  v
-          +-------------------------+
-          |   Agendar Manualmente   |
-          +-------------------------+
-                  |
-                  v
-          +-------------------------+
-          |      Planejar Rota      |
-          +-------------------------+
-                  |
-                  v
-          +-------------------------+
-          |   Realizar Atendimento  |
-          +-------------------------+
-                  |
-                  v
-          +-------------------------+
-          |  Controlar Recebimento  |
-          +-------------------------+
-                  |
-                  v
-               (Fim)Descrição Visual: O diagrama mostra que o processo depende de eventos externos e comunicação assíncrona ("Retornar Contato"). O ponto crítico é o gateway de negociação: um (Não) encerra o processo abruptamente, significando uma lacuna na agenda e perda de renda para o profissional. As múltiplas tarefas administrativas manuais (verificar agenda, agendar, planejar rota, controlar recebimento) demonstram a alta carga de trabalho não clínico.
+---
+
+### Modelos de Processos Atuais (AS-IS) em BPMN
+
+A seguir, apresentamos os diagramas BPMN que modelam os processos atuais, destacando as ineficiências.
+
+#### Processo 1: Busca e Contratação de Profissional (Visão da Família)
+
+Este diagrama ilustra o fluxo de trabalho manual e repetitivo que uma família enfrenta.
+
+| Etapa | Ação | Decisão | Caminho de Sucesso | Caminho de Falha (Retrabalho) |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | *(Início)* | | -> Identificar Necessidade | |
+| 2 | Buscar Indicações | | -> Contatar Profissional | |
+| 3 | Contatar Profissional | Disponível? | -> (Sim) | -> *Voltar para Etapa 2* |
+| 4 | | Qualificado? | -> (Sim) | -> *Voltar para Etapa 2* |
+| 5 | | Valor Aceitável? | -> (Sim) | -> *Voltar para Etapa 2* |
+| 6 | Agendar Atendimento | | -> Realizar Pagamento | |
+| 7 | Realizar Pagamento | | -> *(Fim)* | |
+
+*Descrição Visual:* A tabela mostra que as etapas 3, 4 e 5 são pontos de decisão críticos. Qualquer resposta "Não" força o processo a retornar à etapa 2 ("Buscar Indicações"), criando um ciclo de retrabalho frustrante que representa o principal gargalo do processo.
+
+---
+
+#### Processo 2: Captação de Pacientes e Gestão de Agenda (Visão do Profissional)
+
+Este diagrama mostra a perspectiva do profissional de saúde e sua gestão administrativa manual.
+
+| Etapa | Ação | Decisão | Caminho de Sucesso | Caminho de Falha |
+| :--- | :--- | :--- | :--- | :--- |
+| 1 | *(Início)* | | -> Receber Contato | |
+| 2 | Retornar Contato | | -> Verificar Agenda | |
+| 3 | Verificar Agenda | Negociação OK? | -> (Sim) | -> *(Fim - Oportunidade Perdida)* |
+| 4 | Agendar Manualmente | | -> Planejar Rota | |
+| 5 | Planejar Rota | | -> Realizar Atendimento | |
+| 6 | Realizar Atendimento | | -> Controlar Recebimento | |
+| 7 | Controlar Recebimento | | -> *(Fim)* | |
+
+*Descrição Visual:* A tabela destaca a etapa 3 como o ponto crítico. Uma falha na negociação leva ao fim imediato do processo, resultando em perda de renda para o profissional. As múltiplas tarefas manuais (Etapas 3, 4, 5, 7) demonstram a alta carga de trabalho administrativo não clínico.
+
+---
 
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
