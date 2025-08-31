@@ -7,7 +7,27 @@
 
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 
-_Apresente uma descrição textual de como os sistemas atuais resolvem o problema que se propõe a resolver.  Caso sua proposta seja inovadora e não existam processos claramente definidos, **apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente**, mesmo que não se utilize tecnologia computacional._
+Atualmente, a conexão entre famílias que necessitam de cuidados de saúde domiciliares e os profissionais autônomos ocorre de maneira descentralizada, ineficiente e, em grande parte, analógica. Os processos são manuais e dependem fortemente de redes de contatos pessoais, indicações e buscas ativas, o que gera incerteza, retrabalho e ansiedade para ambos os lados.
+
+#### Processo 1: Busca e Contratação de Profissional (Perspectiva da Família/Paciente)
+
+O processo para uma família encontrar um profissional de saúde qualificado é fragmentado e consome tempo. As etapas atuais são:
+
+1.  *Busca por Indicações:* A jornada começa com a busca por recomendações em círculos de confiança, como amigos, familiares, outros médicos ou grupos em redes sociais. Não há uma fonte centralizada e confiável.
+2.  *Contato Individual e Verificação:* A família entra em contato com cada profissional indicado, um por um, via telefone ou mensagem. Esta etapa é marcada por longas esperas por resposta, pois os profissionais frequentemente estão em atendimento.
+3.  *Negociação Manual (Idas e Vindas):* Para cada contato, a família precisa verificar as credenciais, a experiência, a disponibilidade de agenda e negociar os valores. Esse ciclo de conversas é repetido com múltiplos profissionais até que se encontre um que seja qualificado, disponível e cujo valor seja compatível, gerando um grande desgaste.
+4.  *Agendamento Informal:* O agendamento é realizado verbalmente ou por texto, anotado em agendas pessoais e sujeito a esquecimentos ou erros, pois não há um sistema de confirmação ou lembretes automáticos.
+5.  *Gestão Descentralizada:* O acompanhamento da evolução do paciente, o controle de pagamentos e o reagendamento de novas sessões são feitos de forma manual, reiniciando o ciclo de comunicação ineficiente a cada novo atendimento.
+
+#### Processo 2: Captação de Pacientes e Gestão de Atendimentos (Perspectiva do Profissional)
+
+Para o profissional de saúde que deseja oferecer serviços domiciliares, o processo para encontrar pacientes e gerenciar sua agenda é igualmente desafiador:
+
+1.  *Divulgação Limitada:* A captação de novos pacientes depende do marketing "boca a boca", da distribuição de cartões de visita e da sua rede de contatos. A visibilidade é restrita e o alcance é limitado.
+2.  *Comunicação Interrompida:* O profissional recebe contatos de potenciais pacientes em horários inoportunos (durante outros atendimentos, por exemplo), o que dificulta a resposta imediata e pode levar à perda da oportunidade.
+3.  *Gestão de Agenda Ineficiente:* A verificação de disponibilidade é feita em uma agenda pessoal (física ou no celular), tornando complexo o encaixe de novos pacientes, o cálculo de rotas de deslocamento e a otimização do tempo. A negociação de horários é um quebra-cabeça manual.
+4.  *Carga Administrativa Elevada:* O profissional gasta um tempo considerável em tarefas administrativas que não são remuneradas, como agendamento, planejamento logístico, controle financeiro (em planilhas ou cadernos) e elaboração de relatórios manuais sobre o paciente.
+5.  *Isolamento Profissional:* A falta de uma plataforma centralizada dificulta o compartilhamento de informações sobre o paciente com outros especialistas e a manutenção de um histórico de atendimentos unificado e de fácil acesso.
 
 Com o tema do projeto definido, escolham alguns processos neste contexto de negócios. Para ilustrar potenciais ganhos com a automatização, imaginem processos manuais, ineficientes e/ou com muitas idas e vindas, gerando, assim, retrabalho.
 Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
