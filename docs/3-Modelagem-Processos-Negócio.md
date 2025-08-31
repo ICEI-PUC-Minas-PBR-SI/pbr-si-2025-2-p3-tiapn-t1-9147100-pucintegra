@@ -29,8 +29,114 @@ Para o profissional de saúde que deseja oferecer serviços domiciliares, o proc
 4.  *Carga Administrativa Elevada:* O profissional gasta um tempo considerável em tarefas administrativas que não são remuneradas, como agendamento, planejamento logístico, controle financeiro (em planilhas ou cadernos) e elaboração de relatórios manuais sobre o paciente.
 5.  *Isolamento Profissional:* A falta de uma plataforma centralizada dificulta o compartilhamento de informações sobre o paciente com outros especialistas e a manutenção de um histórico de atendimentos unificado e de fácil acesso.
 
-Com o tema do projeto definido, escolham alguns processos neste contexto de negócios. Para ilustrar potenciais ganhos com a automatização, imaginem processos manuais, ineficientes e/ou com muitas idas e vindas, gerando, assim, retrabalho.
-Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
+
+### Modelos de Processos Atuais (AS-IS) em BPMN
+
+#### Processo 1: Busca e Contratação de Profissional (Visão da Família)
+
+Este diagrama ilustra o fluxo de trabalho manual e repetitivo que uma família enfrenta.
+
+
+          +-------------------------+
+(Início)-->| Identificar Necessidade |
+          +-------------------------+
+                  |
+                  v
+          +-------------------------+
+          |   Buscar Indicações     |
+          | (Amigos, Grupos, etc.)  |
+          +-------------------------+
+                  |
+                  v
+          +-------------------------+
+          |   Contatar Profissional |
+          +-------------------------+
+                  |
+                  v
+          <  Disponível?  >
+          +---------------+
+                  | (Sim)
+                  v
+          < Qualificado?  >
+          +---------------+
+                  | (Sim)
+                  v
+          < Valor Aceitável? >
+          +------------------+
+                  | (Sim)
+                  v
+          +-------------------------+
+          |   Agendar Atendimento   |
+          |       (Manual)          |
+          +-------------------------+
+                  |
+                  v
+          +-------------------------+
+          |    Realizar Pagamento   |
+          +-------------------------+
+                  |
+                  v
+               (Fim)
+
+
+*Descrição Visual:* O diagrama mostra um caminho linear que só é seguido em caso de sucesso. Na prática, as setas de "Não" criam um ciclo de retrabalho frustrante, forçando a família a reiniciar a busca a cada falha na negociação, o que representa o principal gargalo do processo.
+
+---
+
+#### Processo 2: Captação de Pacientes e Gestão de Agenda (Visão do Profissional)
+
+Este diagrama mostra a perspectiva do profissional de saúde e sua gestão administrativa manual.
+
+
+          +-------------------------+
+(Início)-->|  Receber Contato de     |
+(Evento)  |    Potencial Paciente   |
+          +-------------------------+
+                  |
+                  v
+          +-------------------------+
+          |     Retornar Contato    |
+          +-------------------------+
+                  |
+                  v
+          +-------------------------+
+          |  Verificar Agenda Manual|
+          +-------------------------+
+                  |
+                  v
+          < Negociação OK? >
+          | (Horário/Valor)  |
+          +------------------+
+                  | (Sim)
+                  v
+          +-------------------------+
+          |   Agendar Manualmente   |
+          +-------------------------+
+                  |
+                  v
+          +-------------------------+
+          |      Planejar Rota      |
+          +-------------------------+
+                  |
+                  v
+          +-------------------------+
+          |   Realizar Atendimento  |
+          +-------------------------+
+                  |
+                  v
+          +-------------------------+
+          |  Controlar Recebimento  |
+          +-------------------------+
+                  |
+                  v
+               (Fim)
+
+
+
+*Descrição Visual:* O diagrama mostra que o processo depende de eventos externos e comunicação assíncrona ("Retornar Contato"). O ponto crítico é o gateway de negociação: um "Não" encerra o processo abruptamente, significando uma lacuna na agenda e perda de renda para o profissional. As múltiplas tarefas administrativas manuais (verificar agenda, agendar, planejar rota, controlar recebimento) demonstram a alta carga de trabalho não clínico.
+
+---
+
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
