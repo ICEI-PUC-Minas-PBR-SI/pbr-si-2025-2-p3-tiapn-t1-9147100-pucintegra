@@ -71,7 +71,35 @@ Este diagrama mostra a perspectiva do profissional de saúde e sua gestão admin
 *Descrição Visual:* A tabela destaca a etapa 3 como o ponto crítico. Uma falha na negociação leva ao fim imediato do processo, resultando em perda de renda para o profissional. As múltiplas tarefas manuais (Etapas 3, 4, 5, 7) demonstram a alta carga de trabalho administrativo não clínico.
 
 ---
+graph TD
+    subgraph Família/Paciente
+        A(Início) --> B[Identificar Necessidade];
+        B --> C[Buscar Indicações];
+        C --> D{Profissional Encontrado?};
+        D -- Sim --> E[Contatar Profissional];
+        E --> F{Disponível?};
+        F -- Sim --> G{Qualificado?};
+        G -- Sim --> H{Valor Aceitável?};
+        H -- Sim --> I[Agendar Manualmente];
+        I --> J[Receber Atendimento];
+        J --> K(Fim);
 
+        F -- Não --> C;
+        G -- Não --> C;
+        H -- Não --> C;
+        D -- Não --> L[Buscar em Outras Fontes];
+        L --> C;
+    end
+
+    subgraph Profissional de Saúde
+        P1[Receber Contato] --> P2[Analisar Solicitação];
+        P2 --> P3{Pode Atender?};
+        P3 -- Sim --> P4[Informar Disponibilidade e Valor];
+        P3 -- Não --> P5[Recusar Solicitação];
+    end
+
+    E --> P1;
+    P4 --> F;
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
