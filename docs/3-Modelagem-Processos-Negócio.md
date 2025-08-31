@@ -30,38 +30,31 @@ Para o profissional de saúde que deseja oferecer serviços domiciliares, o proc
 5.  *Isolamento Profissional:* A falta de uma plataforma centralizada dificulta o compartilhamento de informações sobre o paciente com outros especialistas e a manutenção de um histórico de atendimentos unificado e de fácil acesso.
 
 
-### Modelos de Processos Atuais (AS-IS) em BPMN
-
-#### Processo 1: Busca e Contratação de Profissional (Visão da Família)
-
-Este diagrama ilustra o fluxo de trabalho manual e repetitivo que uma família enfrenta.
-
-
-          +-------------------------+
+Modelos de Processos Atuais (AS-IS) em BPMNA seguir, apresentamos os diagramas BPMN que modelam os processos atuais, destacando as ineficiências.Processo 1: Busca e Contratação de Profissional (Visão da Família)Este diagrama ilustra o fluxo de trabalho manual e repetitivo que uma família enfrenta.          +-------------------------+
 (Início)-->| Identificar Necessidade |
           +-------------------------+
                   |
                   v
           +-------------------------+
-          |   Buscar Indicações     |
-          | (Amigos, Grupos, etc.)  |
-          +-------------------------+
-                  |
-                  v
-          +-------------------------+
-          |   Contatar Profissional |
-          +-------------------------+
-                  |
-                  v
-          <  Disponível?  >
+          |   Buscar Indicações     |---+
+          | (Amigos, Grupos, etc.)  |   | (Não)
+          +-------------------------+   |
+                  |                     |
+                  v                     |
+          +-------------------------+   |
+          |   Contatar Profissional |   |
+          +-------------------------+   |
+                  |                     |
+                  v                     |
+          <  Disponível?  >-------------+
           +---------------+
                   | (Sim)
                   v
-          < Qualificado?  >
+          < Qualificado?  >-------------+
           +---------------+
                   | (Sim)
                   v
-          < Valor Aceitável? >
+          < Valor Aceitável? >----------+
           +------------------+
                   | (Sim)
                   v
@@ -76,19 +69,7 @@ Este diagrama ilustra o fluxo de trabalho manual e repetitivo que uma família e
           +-------------------------+
                   |
                   v
-               (Fim)
-
-
-*Descrição Visual:* O diagrama mostra um caminho linear que só é seguido em caso de sucesso. Na prática, as setas de "Não" criam um ciclo de retrabalho frustrante, forçando a família a reiniciar a busca a cada falha na negociação, o que representa o principal gargalo do processo.
-
----
-
-#### Processo 2: Captação de Pacientes e Gestão de Agenda (Visão do Profissional)
-
-Este diagrama mostra a perspectiva do profissional de saúde e sua gestão administrativa manual.
-
-
-          +-------------------------+
+               (Fim)Descrição Visual: O diagrama mostra um caminho linear que só é seguido em caso de sucesso. Na prática, as setas de (Não) criam um ciclo de retrabalho frustrante, forçando a família a retornar à etapa de [Buscar Indicações] a cada falha na negociação. Este ciclo representa o principal gargalo do processo.Processo 2: Captação de Pacientes e Gestão de Agenda (Visão do Profissional)Este diagrama mostra a perspectiva do profissional de saúde e sua gestão administrativa manual.          +-------------------------+
 (Início)-->|  Receber Contato de     |
 (Evento)  |    Potencial Paciente   |
           +-------------------------+
@@ -104,8 +85,8 @@ Este diagrama mostra a perspectiva do profissional de saúde e sua gestão admin
           +-------------------------+
                   |
                   v
-          < Negociação OK? >
-          | (Horário/Valor)  |
+          < Negociação OK? >----------> (Fim - Oportunidade Perdida)
+          | (Horário/Valor)  | (Não)
           +------------------+
                   | (Sim)
                   v
@@ -129,13 +110,7 @@ Este diagrama mostra a perspectiva do profissional de saúde e sua gestão admin
           +-------------------------+
                   |
                   v
-               (Fim)
-
-
-
-*Descrição Visual:* O diagrama mostra que o processo depende de eventos externos e comunicação assíncrona ("Retornar Contato"). O ponto crítico é o gateway de negociação: um "Não" encerra o processo abruptamente, significando uma lacuna na agenda e perda de renda para o profissional. As múltiplas tarefas administrativas manuais (verificar agenda, agendar, planejar rota, controlar recebimento) demonstram a alta carga de trabalho não clínico.
-
----
+               (Fim)Descrição Visual: O diagrama mostra que o processo depende de eventos externos e comunicação assíncrona ("Retornar Contato"). O ponto crítico é o gateway de negociação: um (Não) encerra o processo abruptamente, significando uma lacuna na agenda e perda de renda para o profissional. As múltiplas tarefas administrativas manuais (verificar agenda, agendar, planejar rota, controlar recebimento) demonstram a alta carga de trabalho não clínico.
 
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
