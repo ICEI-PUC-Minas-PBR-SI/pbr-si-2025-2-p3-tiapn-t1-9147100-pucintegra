@@ -74,13 +74,13 @@ Este diagrama mostra a perspectiva do profissional de saúde e sua gestão admin
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
-A proposta consiste na implementação de um aplicativo digital para gestão de atendimentos domiciliares (Home Care) que centraliza e automatiza todo o processo de conexão entre pacientes/familiares e profissionais de saúde. O sistema tem como objetivo eliminar a fragmentação e o retrabalho identificados no modelo atual (AS-IS), promovendo eficiência, segurança e acessibilidade.
+A proposta consiste na implementação de um aplicativo digital para gestão de atendimentos domiciliares (Home Care), que centraliza e automatiza todo o processo de conexão entre pacientes, familiares e profissionais de saúde. O sistema tem como objetivo eliminar a fragmentação e o retrabalho identificados no modelo atual (AS-IS), promovendo eficiência, segurança e acessibilidade.
 
 A solução permitirá que famílias encontrem profissionais de forma simples e confiável, por meio de perfis verificados, avaliações de usuários e filtros inteligentes. O agendamento será realizado diretamente na plataforma, com confirmações automáticas, notificações e lembretes, garantindo organização e evitando falhas de comunicação.
 
 Para os profissionais, o aplicativo oferecerá gestão integrada de agenda, rotas, histórico de pacientes e faturamento, reduzindo a carga administrativa e aumentando a produtividade. Além disso, contará com prontuário digital, relatórios de evolução do paciente, chat seguro e geolocalização em tempo real, proporcionando maior transparência e confiança no serviço.
 
-Com essa proposta, os processos que hoje são manuais, repetitivos e descentralizados passam a ser digitalizados, padronizados e escaláveis, criando um ecossistema de Home Care moderno, seguro e de fácil uso, que beneficia pacientes, familiares e profissionais de saúde.
+Com essa proposta, os processos hoje manuais, repetitivos e descentralizados passam a ser digitalizados, padronizados e escaláveis, criando um ecossistema de Home Care moderno, seguro e de fácil uso, que beneficia pacientes, familiares e profissionais de saúde.
 
 ### 3.3. Modelagem dos processos
 
