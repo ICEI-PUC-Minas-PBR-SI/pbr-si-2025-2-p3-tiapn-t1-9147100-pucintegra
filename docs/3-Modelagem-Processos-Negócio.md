@@ -47,7 +47,7 @@ O processo atual para encontrar e contratar profissionais de saúde para atendim
 
 *   **Dificuldade de Otimização:** Os profissionais têm dificuldade em preencher lacunas em suas agendas e otimizar suas rotas, resultando em perda de tempo e de potencial de faturamento.
 
- ##3.1.4. Conclusão
+ 3.1.4. Conclusão
 
 O modelo atual de conexão para serviços de home care é insustentável e ineficiente para ambas as partes. A falta de uma plataforma digital centralizada gera um ciclo de retrabalho, insegurança e sobrecarga administrativa. Essas limitações demonstram a clara necessidade de uma solução como o Medlar, que automatize a busca, valide as credenciais, centralize a comunicação e simplifique o agendamento e o pagamento, trazendo mais segurança, eficiência e profissionalismo ao mercado de cuidados domiciliares.
 
