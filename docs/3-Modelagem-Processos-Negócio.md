@@ -7,69 +7,49 @@
 
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 
-Atualmente, a conexão entre famílias que necessitam de cuidados de saúde domiciliares e os profissionais autônomos ocorre de maneira descentralizada, ineficiente e, em grande parte, analógica. Os processos são manuais e dependem fortemente de redes de contatos pessoais, indicações e buscas ativas, o que gera incerteza, retrabalho e ansiedade para ambos os lados.
+#### 3.1.1. Descrição Geral
 
-#### Processo 1: Busca e Contratação de Profissional (Perspectiva da Família/Paciente)
+O processo atual para encontrar e contratar profissionais de saúde para atendimento domiciliar (home care) é predominantemente manual, fragmentado e baseado em redes de contatos informais. Famílias que necessitam de cuidados para pacientes em casa e profissionais autônomos que oferecem esses serviços enfrentam um cenário ineficiente, com pouca tecnologia e sem uma plataforma centralizada que facilite a conexão. A busca depende de indicações, a comunicação é assíncrona e a gestão de agendamentos e pagamentos é descentralizada, gerando insegurança e retrabalho para ambas as partes.
 
-O processo para uma família encontrar um profissional de saúde qualificado é fragmentado e consome tempo. As etapas atuais são:
+#### 3.1.2. Etapas do Processo Atual
 
-1.  *Busca por Indicações:* A jornada começa com a busca por recomendações em círculos de confiança, como amigos, familiares, outros médicos ou grupos em redes sociais. Não há uma fonte centralizada e confiável.
-2.  *Contato Individual e Verificação:* A família entra em contato com cada profissional indicado, um por um, via telefone ou mensagem. Esta etapa é marcada por longas esperas por resposta, pois os profissionais frequentemente estão em atendimento.
-3.  *Negociação Manual (Idas e Vindas):* Para cada contato, a família precisa verificar as credenciais, a experiência, a disponibilidade de agenda e negociar os valores. Esse ciclo de conversas é repetido com múltiplos profissionais até que se encontre um que seja qualificado, disponível e cujo valor seja compatível, gerando um grande desgaste.
-4.  *Agendamento Informal:* O agendamento é realizado verbalmente ou por texto, anotado em agendas pessoais e sujeito a esquecimentos ou erros, pois não há um sistema de confirmação ou lembretes automáticos.
-5.  *Gestão Descentralizada:* O acompanhamento da evolução do paciente, o controle de pagamentos e o reagendamento de novas sessões são feitos de forma manual, reiniciando o ciclo de comunicação ineficiente a cada novo atendimento.
+**Perspectiva da Família (Ex: Mariana, mãe de um paciente):**
 
-#### Processo 2: Captação de Pacientes e Gestão de Atendimentos (Perspectiva do Profissional)
+1.  **Identificação da Necessidade:** A família recebe uma recomendação médica ou percebe a necessidade de um profissional de saúde (enfermeiro, fisioterapeuta, etc.) para cuidados contínuos em casa.
 
-Para o profissional de saúde que deseja oferecer serviços domiciliares, o processo para encontrar pacientes e gerenciar sua agenda é igualmente desafiador:
+2.  **Busca por Indicações:** A busca começa de forma informal, pedindo recomendações a amigos, familiares, outros médicos ou em grupos de redes sociais. Não há um local centralizado para encontrar profissionais qualificados e com referências.
 
-1.  *Divulgação Limitada:* A captação de novos pacientes depende do marketing "boca a boca", da distribuição de cartões de visita e da sua rede de contatos. A visibilidade é restrita e o alcance é limitado.
-2.  *Comunicação Interrompida:* O profissional recebe contatos de potenciais pacientes em horários inoportunos (durante outros atendimentos, por exemplo), o que dificulta a resposta imediata e pode levar à perda da oportunidade.
-3.  *Gestão de Agenda Ineficiente:* A verificação de disponibilidade é feita em uma agenda pessoal (física ou no celular), tornando complexo o encaixe de novos pacientes, o cálculo de rotas de deslocamento e a otimização do tempo. A negociação de horários é um quebra-cabeça manual.
-4.  *Carga Administrativa Elevada:* O profissional gasta um tempo considerável em tarefas administrativas que não são remuneradas, como agendamento, planejamento logístico, controle financeiro (em planilhas ou cadernos) e elaboração de relatórios manuais sobre o paciente.
-5.  *Isolamento Profissional:* A falta de uma plataforma centralizada dificulta o compartilhamento de informações sobre o paciente com outros especialistas e a manutenção de um histórico de atendimentos unificado e de fácil acesso.
+3.  **Contato e Verificação Individual:** A família entra em contato, um por um, com os profissionais indicados. Para cada um, é preciso verificar credenciais, experiência, disponibilidade de agenda e negociar valores. Este processo é lento, repetitivo e marcado por longas esperas por resposta.
 
+4.  **Negociação e Agendamento Manual:** Após encontrar um profissional adequado, o agendamento é feito verbalmente ou por mensagem de texto. A família anota em uma agenda pessoal, sem um sistema formal de confirmação ou lembretes.
 
----
+5.  **Acompanhamento e Pagamento:** O acompanhamento da evolução do paciente é feito por anotações informais. O pagamento é realizado diretamente ao profissional (via PIX, dinheiro), e o controle financeiro é manual.
 
-### Modelos de Processos Atuais (AS-IS) em BPMN
+**Perspectiva do Profissional (Ex: Rafael, enfermeiro):**
 
-A seguir, apresentamos os diagramas BPMN que modelam os processos atuais, destacando as ineficiências.
+1.  **Divulgação dos Serviços:** O profissional depende do marketing "boca a boca", distribuindo cartões e informando sua rede de contatos que está disponível para atendimentos domiciliares.
 
-#### Processo 1: Busca e Contratação de Profissional (Visão da Família)
+2.  **Gestão de Contatos:** Recebe ligações e mensagens de potenciais clientes em horários variados, muitas vezes durante outros atendimentos, o que dificulta a resposta imediata.
 
-Este diagrama ilustra o fluxo de trabalho manual e repetitivo que uma família enfrenta.
+3.  **Conciliação de Agenda:** Precisa consultar sua agenda pessoal (caderno, calendário do celular) para verificar horários livres, calcular tempos de deslocamento e encaixar novos pacientes, um verdadeiro quebra-cabeça logístico.
 
-| Etapa | Ação | Decisão | Caminho de Sucesso | Caminho de Falha (Retrabalho) |
-| :--- | :--- | :--- | :--- | :--- |
-| 1 | *(Início)* | | -> Identificar Necessidade | |
-| 2 | Buscar Indicações | | -> Contatar Profissional | |
-| 3 | Contatar Profissional | Disponível? | -> (Sim) | -> *Voltar para Etapa 2* |
-| 4 | | Qualificado? | -> (Sim) | -> *Voltar para Etapa 2* |
-| 5 | | Valor Aceitável? | -> (Sim) | -> *Voltar para Etapa 2* |
-| 6 | Agendar Atendimento | | -> Realizar Pagamento | |
-| 7 | Realizar Pagamento | | -> *(Fim)* | |
+4.  **Carga Administrativa:** Gasta tempo considerável com tarefas não clínicas, como negociação, agendamento, planejamento de rotas e controle financeiro, o que limita seu potencial de renda.
 
-*Descrição Visual:* A tabela mostra que as etapas 3, 4 e 5 são pontos de decisão críticos. Qualquer resposta "Não" força o processo a retornar à etapa 2 ("Buscar Indicações"), criando um ciclo de retrabalho frustrante que representa o principal gargalo do processo.
+#### 3.1.3. Pontos Críticos e Dificuldades
 
----
+*   **Processo Lento e Ineficiente:** A busca manual e a negociação individual consomem muito tempo tanto da família quanto do profissional, atrasando o início de cuidados que podem ser urgentes.
 
-#### Processo 2: Captação de Pacientes e Gestão de Agenda (Visão do Profissional)
+*   **Insegurança e Falta de Transparência:** Não há um método padronizado para verificar as credenciais e o histórico dos profissionais. Da mesma forma, os profissionais não têm garantia sobre as condições de trabalho ou o pagamento.
 
-Este diagrama mostra a perspectiva do profissional de saúde e sua gestão administrativa manual.
+*   **Susceptibilidade a Erros:** O agendamento manual está sujeito a erros, esquecimentos e conflitos de horário. O controle financeiro descentralizado também pode levar a falhas.
 
-| Etapa | Ação | Decisão | Caminho de Sucesso | Caminho de Falha |
-| :--- | :--- | :--- | :--- | :--- |
-| 1 | *(Início)* | | -> Receber Contato | |
-| 2 | Retornar Contato | | -> Verificar Agenda | |
-| 3 | Verificar Agenda | Negociação OK? | -> (Sim) | -> *(Fim - Oportunidade Perdida)* |
-| 4 | Agendar Manualmente | | -> Planejar Rota | |
-| 5 | Planejar Rota | | -> Realizar Atendimento | |
-| 6 | Realizar Atendimento | | -> Controlar Recebimento | |
-| 7 | Controlar Recebimento | | -> *(Fim)* | |
+*   **Comunicação Fragmentada:** A comunicação via telefone e WhatsApp é desorganizada, dificultando o registro de informações importantes sobre o paciente e o compartilhamento de atualizações entre a família e o profissional.
 
-*Descrição Visual:* A tabela destaca a etapa 3 como o ponto crítico. Uma falha na negociação leva ao fim imediato do processo, resultando em perda de renda para o profissional. As múltiplas tarefas manuais (Etapas 3, 4, 5, 7) demonstram a alta carga de trabalho administrativo não clínico.
+*   **Dificuldade de Otimização:** Os profissionais têm dificuldade em preencher lacunas em suas agendas e otimizar suas rotas, resultando em perda de tempo e de potencial de faturamento.
 
+#### 3.1.4. Conclusão
+
+O modelo atual de conexão para serviços de home care é insustentável e ineficiente para ambas as partes. A falta de uma plataforma digital centralizada gera um ciclo de retrabalho, insegurança e sobrecarga administrativa. Essas limitações demonstram a clara necessidade de uma solução como o Medlar, que automatize a busca, valide as credenciais, centralize a comunicação e simplifique o agendamento e o pagamento, trazendo mais segurança, eficiência e profissionalismo ao mercado de cuidados domiciliares.
 ---
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
@@ -81,6 +61,8 @@ A solução permitirá que famílias encontrem profissionais de forma simples e 
 Para os profissionais, o aplicativo oferecerá gestão integrada de agenda, rotas, histórico de pacientes e faturamento, reduzindo a carga administrativa e aumentando a produtividade. Além disso, contará com prontuário digital, relatórios de evolução do paciente, chat seguro e geolocalização em tempo real, proporcionando maior transparência e confiança no serviço.
 
 Com essa proposta, os processos hoje manuais, repetitivos e descentralizados passam a ser digitalizados, padronizados e escaláveis, criando um ecossistema de Home Care moderno, seguro e de fácil uso, que beneficia pacientes, familiares e profissionais de saúde.
+
+---
 
 ### 3.3. Modelagem dos processos
 
