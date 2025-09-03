@@ -1,7 +1,7 @@
 ### 3.3.2 Processo 2 – Captação de Pacientes e Gestão de Atendimentos (Perspectiva do Profissional):
 
 _Apresente aqui o nome e as oportunidades de melhoria para o processo 2. 
-Oportunidades de Melhoria
+_Oportunidades de Melhoria
 
 Centralização da comunicação – criação de uma plataforma digital para reunir contatos de pacientes em um único canal.
 
@@ -20,35 +20,6 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 
 
 #### Detalhamento das atividades
-
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
-
-_Os tipos de dados a serem utilizados são:_
-
-_* **Área de texto** - campo texto de múltiplas linhas_
-
-_* **Caixa de texto** - campo texto de uma linha_
-
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
 
 Detalhamento das Atividades
 
@@ -119,17 +90,6 @@ Data → Fechamento semanal/mensal
 | cadastrar            | Início do proceso de cadastro  |                   |
 
 
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
 
 
 ### Nome da atividade 2: Receber Solicitação de Paciente
