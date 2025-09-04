@@ -3,7 +3,8 @@
 _Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
 Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
 
-![Exemplo de um Modelo BPMN do PROCESSO 1](../images/process.png "Modelo BPMN do Processo 1.")
+<img width="886" height="554" alt="image" src="https://github.com/user-attachments/assets/ddb60af7-8cbb-4996-80c6-54f176750db1" />
+
 
 #### Detalhamento das atividades
 
