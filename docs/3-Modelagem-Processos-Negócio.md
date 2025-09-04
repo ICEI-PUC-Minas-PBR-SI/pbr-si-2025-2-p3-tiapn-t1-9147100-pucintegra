@@ -51,7 +51,10 @@ O processo atual para encontrar e contratar profissionais de saúde para atendim
 
 O modelo atual de conexão para serviços de home care é insustentável e ineficiente para ambas as partes. A falta de uma plataforma digital centralizada gera um ciclo de retrabalho, insegurança e sobrecarga administrativa. Essas limitações demonstram a clara necessidade de uma solução como o Medlar, que automatize a busca, valide as credenciais, centralize a comunicação e simplifique o agendamento e o pagamento, trazendo mais segurança, eficiência e profissionalismo ao mercado de cuidados domiciliares.
 
-![Fluxo BPMN] (Captura de tela 2025-09-03 210220.png)
+
+<img width="760" height="439" alt="Captura de tela 2025-09-03 210220" src="https://github.com/user-attachments/assets/99677aee-66ca-485a-8d69-313dda1ac2b7" />
+
+---
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
