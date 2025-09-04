@@ -1,7 +1,4 @@
-### 3.3.1 Processo 1 – NOME DO PROCESSO
-
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
-Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
+### 3.3.1 Processo 1 – Oportunidades de Melhoria
 
 <img width="886" height="554" alt="image" src="https://github.com/user-attachments/assets/ddb60af7-8cbb-4996-80c6-54f176750db1" />
 
