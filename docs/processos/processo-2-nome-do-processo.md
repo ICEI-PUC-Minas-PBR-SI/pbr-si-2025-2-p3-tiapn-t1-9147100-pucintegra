@@ -16,14 +16,12 @@ Integração multidisciplinar – manter histórico centralizado e compartilháv
 
 Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 
-![Exemplo de um Modelo BPMN do PROCESSO 2](../images/process.png "Modelo BPMN do Processo 2.")
+![Exemplo de um Modelo BPMN do PROCESSO 2](../images/processo2BPMNpng.png "Modelo BPMN do Processo 2.")
 
 
 #### Detalhamento das atividades
 
-Detalhamento das Atividades
-
-1. Receber Solicitação de Paciente
+#### 1. Receber Solicitação de Paciente
 
 Caixa de texto → Nome do paciente
 
@@ -33,7 +31,7 @@ Número → Telefone/contato
 
 Data e Hora → Data/hora do contato
 
-2. Avaliar Disponibilidade
+#### 2. Avaliar Disponibilidade
 
 Data e Hora → Agenda disponível
 
@@ -41,7 +39,7 @@ Número → Distância (km ou tempo de deslocamento)
 
 Caixa de texto → Local do atendimento
 
-3. Confirmar Agendamento
+#### 3. Confirmar Agendamento
 
 Caixa de texto → Nome do paciente
 
@@ -49,7 +47,7 @@ Data e Hora → Data/hora marcada
 
 Número → Valor da consulta
 
-4. Realizar Atendimento
+#### 4. Realizar Atendimento
 
 Área de texto → Observações sobre o paciente
 
@@ -57,7 +55,7 @@ Imagem → Foto ou documento do atendimento (opcional)
 
 Data e Hora → Início e término do atendimento
 
-5. Registrar Atendimento
+#### 5. Registrar Atendimento
 
 Caixa de texto → Código ou ID do paciente
 
@@ -65,7 +63,7 @@ Caixa de texto → Código ou ID do paciente
 
 Número → Valores a receber/pagos
 
-6. Revisar Agenda/Financeiro
+#### 6. Revisar Agenda/Financeiro
 
 Número → Total de consultas no período
 
