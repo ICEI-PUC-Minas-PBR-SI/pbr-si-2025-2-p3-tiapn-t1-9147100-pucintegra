@@ -61,6 +61,7 @@ Para os profissionais, o aplicativo oferecerá gestão integrada de agenda, rota
 
 Com essa proposta, os processos hoje manuais, repetitivos e descentralizados passam a ser digitalizados, padronizados e escaláveis, criando um ecossistema de Home Care moderno, seguro e de fácil uso, que beneficia pacientes, familiares e profissionais de saúde.
 
+![Fluxo BPMN] (Captura de tela 2025-09-03 210220.pgn)
 ---
 
 ### 3.3. Modelagem dos processos
