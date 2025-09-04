@@ -11,6 +11,42 @@
 
 O processo atual para cadastrar profissionais da saúde e pacientes,e encontrar e contratar profissionais de saúde para atendimento domiciliar (home care) é predominantemente manual, fragmentado e baseado em redes de contatos informais. Famílias que necessitam de cuidados para pacientes em casa e profissionais autônomos que oferecem esses serviços enfrentam um cenário ineficiente, com pouca tecnologia e sem uma plataforma centralizada que facilite a conexão. A busca depende de indicações, a comunicação é assíncrona e a gestão de agendamentos e pagamentos é descentralizada, gerando insegurança e retrabalho para ambas as partes.
 
+---
+
+## 3.1.2. Etapas do Processo Atual (Cadastro de Profissionais e Pacientes)
+
+### Perspectiva da Família/Paciente (Ex: Mariana, mãe de um paciente)
+
+*   **Coleta de Informações Básicas:** A família ou paciente precisa reunir dados pessoais (nome, CPF, data de nascimento, endereço, telefone, email).
+*   **Preenchimento Manual:** O cadastro é feito em formulários físicos ou digitais sem padronização, muitas vezes exigindo envio repetitivo dos mesmos documentos em diferentes locais.
+*   **Validação Limitada:** Não há garantia imediata de que os dados foram validados corretamente (ex.: CPF válido, data de nascimento coerente, email no formato certo).
+*   **Confirmação Precária:** A confirmação do cadastro ocorre via e-mail ou mensagem simples, podendo se perder facilmente.
+*   **Atualização de Dados:** Caso precise atualizar telefone, endereço ou informações de saúde, o processo exige contato direto com o suporte ou preenchimento de novos formulários.
+*   **Segurança da Informação:** O armazenamento de dados pessoais e de saúde é descentralizado, muitas vezes sem garantias de privacidade ou integração com outros sistemas de prontuário eletrônico.
+
+### Perspectiva do Profissional de Saúde (Ex: Rafael, enfermeiro)
+
+*   **Reunião de Documentação:** O profissional precisa providenciar informações como nome, CPF, CNPJ (quando aplicável), registro profissional (CRM, COREN, etc.), formação acadêmica, especialidades, endereço, telefone e email.
+*   **Envio Manual:** Os dados são enviados manualmente, anexando cópias digitais ou físicas de documentos para validação.
+*   **Dependência de Conferência Manual:** A validação de registros profissionais muitas vezes depende de análise manual ou consulta individual no conselho de classe.
+*   **Confirmação Irregular:** O retorno sobre aprovação ou recusa do cadastro é demorado e pouco padronizado, o que atrasa o início da atuação na plataforma.
+*   **Gestão de Alterações:** Caso precise atualizar endereço, telefone, experiência ou especialidade, o processo não é ágil e geralmente depende de um novo envio de documentos.
+*   **Integração Restrita:** O cadastro não se conecta automaticamente a sistemas de prontuário eletrônico, agenda digital ou meios de pagamento, obrigando o profissional a manter controles paralelos.
+
+---
+
+### 3.1.3. Pontos Críticos e Dificuldades
+
+*   **Processo Burocrático e Repetitivo:** Tanto pacientes quanto profissionais precisam preencher e enviar as mesmas informações em diferentes cadastros, o que gera retrabalho e demora.
+*   **Validações Incompletas:** Falta verificação automática de CPF/CNPJ, idade mínima, emails e registros profissionais, gerando risco de erros e inconsistências.
+*   **Insegurança de Dados:** Armazenamento descentralizado e ausência de padrões de privacidade aumentam o risco de perda ou uso indevido de informações sensíveis.
+*   **Demora na Aprovação:** A validação manual de credenciais profissionais retarda o processo de disponibilização do serviço.
+*   **Dificuldade de Atualização:** Alterações cadastrais exigem processos manuais, lentos e muitas vezes pouco acessíveis ao usuário.
+*   **Ausência de Integração:** Falta de conexão com sistemas de prontuário eletrônico, plataformas de pagamento ou conselhos profissionais dificulta a centralização e a confiabilidade das informações.
+
+
+---
+
 #### 3.1.2. Etapas do Processo Atual(Busca de profissionais)
 
 **Perspectiva da Família (Ex: Mariana, mãe de um paciente):**
