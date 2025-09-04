@@ -1,8 +1,8 @@
-# Especificações do Projeto - Aplicativo Home Care
+# Especificações do Projeto - Aplicativo   Medlar
 
 Definição do problema e ideia de solução a partir da perspectiva do usuário, incluindo diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais, além das restrições do projeto.
 
-Este documento abordará as seguintes seções, utilizando as informações extraídas do projeto de Home Care:
+Este documento abordará as seguintes seções, utilizando as informações extraídas do projeto Medlar:
 
 * Personas
 * Histórias de Usuários
@@ -12,7 +12,7 @@ Este documento abordará as seguintes seções, utilizando as informações extr
 
 ## Personas
 
-O projeto de Home Care visa atender dois grupos principais de usuários, representados pelas seguintes personas:
+O projeto Medlar visa atender dois grupos principais de usuários, representados pelas seguintes personas:
 
 ### 1. Maria, a Cuidadora Dedicada
 
