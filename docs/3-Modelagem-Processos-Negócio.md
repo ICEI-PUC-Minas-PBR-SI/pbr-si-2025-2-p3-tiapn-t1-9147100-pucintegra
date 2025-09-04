@@ -51,6 +51,8 @@ O processo atual para encontrar e contratar profissionais de saúde para atendim
 
 O modelo atual de conexão para serviços de home care é insustentável e ineficiente para ambas as partes. A falta de uma plataforma digital centralizada gera um ciclo de retrabalho, insegurança e sobrecarga administrativa. Essas limitações demonstram a clara necessidade de uma solução como o Medlar, que automatize a busca, valide as credenciais, centralize a comunicação e simplifique o agendamento e o pagamento, trazendo mais segurança, eficiência e profissionalismo ao mercado de cuidados domiciliares.
 
+![Fluxo BPMN] (Captura de tela 2025-09-03 210220.png)
+
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
 A proposta consiste na implementação de um aplicativo digital para gestão de atendimentos domiciliares (Home Care), que centraliza e automatiza todo o processo de conexão entre pacientes, familiares e profissionais de saúde. O sistema tem como objetivo eliminar a fragmentação e o retrabalho identificados no modelo atual (AS-IS), promovendo eficiência, segurança e acessibilidade.
@@ -61,7 +63,6 @@ Para os profissionais, o aplicativo oferecerá gestão integrada de agenda, rota
 
 Com essa proposta, os processos hoje manuais, repetitivos e descentralizados passam a ser digitalizados, padronizados e escaláveis, criando um ecossistema de Home Care moderno, seguro e de fácil uso, que beneficia pacientes, familiares e profissionais de saúde.
 
-![Fluxo BPMN] (Captura de tela 2025-09-03 210220.pgn)
 ---
 
 ### 3.3. Modelagem dos processos
