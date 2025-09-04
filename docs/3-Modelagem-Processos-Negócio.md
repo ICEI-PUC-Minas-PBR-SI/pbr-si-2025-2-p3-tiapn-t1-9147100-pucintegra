@@ -1,70 +1,3 @@
-# Processo de Cadastro no Aplicativo Home Care
-
-Este documento detalha o processo de cadastro de profissionais e usuários no aplicativo Home Care, com base nas informações fornecidas sobre os principais processos de negócio e requisitos do sistema.
-
-## Participantes do Processo
-
-Os principais participantes envolvidos no processo de cadastro e utilização do aplicativo são:
-
-*   **Pacientes:** Indivíduos que necessitam de cuidados contínuos em domicílio (acamados, idosos, pós-cirúrgicos, etc.).
-*   **Familiares/Cuidadores:** Responsáveis pelo paciente, que gerenciam a contratação e o acompanhamento dos serviços.
-*   **Profissionais da Saúde:** Técnicos de enfermagem, enfermeiros, fisioterapeutas e fonoaudiólogos que prestam os serviços.
-*   **Administradores da Plataforma:** Equipe responsável pela gestão, manutenção e segurança do aplicativo.
-
-## Principais Processos de Negócio - Foco no Cadastro
-
-Com base na análise estratégica e nos objetivos do projeto, o processo de cadastro é um dos processos de negócio essenciais que o aplicativo deverá controlar:
-
-### 1. Cadastro de Profissionais
-
-O sistema deve permitir que profissionais da saúde criem um perfil detalhado, incluindo informações pessoais, formação, especialidades, áreas de atendimento e validação de credenciais. Este processo é crucial para que os profissionais possam ser encontrados por pacientes que necessitam de atendimento domiciliar, otimizando suas agendas e aumentando sua renda.
-
-## Histórias de Usuários Relacionadas ao Cadastro
-
-As seguintes histórias de usuários ilustram a importância do processo de cadastro:
-
-| EU COMO... | QUERO/PRECISO ... | PARA ... |
-|---|---|---|
-| Familiar de paciente acamado | Agendar atendimento domiciliar com profissional de saúde | Garantir o cuidado contínuo e adequado para o paciente |
-| Profissional de saúde (Enfermeiro, Fisioterapeuta, Fonoaudiólogo) | Ser encontrado por pacientes que precisam de atendimento domiciliar | Aumentar minha renda e otimizar meu tempo de trabalho |
-| Administrador do sistema | Gerenciar o cadastro de pacientes e profissionais | Manter a base de dados atualizada e organizada |
-
-## Requisitos Funcionais Relacionados ao Cadastro
-
-Os requisitos funcionais do aplicativo Home Care que se relacionam diretamente com o processo de cadastro são:
-
-| ID | Descrição do Requisito | Prioridade |
-|---|---|---|
-| RF-001 | Permitir o cadastro de pacientes e familiares | ALTA |
-| RF-002 | Permitir o cadastro de profissionais de saúde | ALTA |
-
-## Requisitos Não Funcionais Relacionados ao Cadastro
-
-Os requisitos não funcionais que impactam o processo de cadastro incluem:
-
-| ID | Descrição do Requisito | Prioridade |
-|---|---|---|
-| RNF-001 | O sistema deve ser responsivo e compatível com dispositivos móveis (smartphones e tablets) | ALTA |
-| RNF-002 | O aplicativo deve garantir a segurança e privacidade dos dados sensíveis dos pacientes (senhas criptografadas, controle de acessos, auditoria de log) | ALTA |
-| RNF-004 | A interface do usuário deve ser intuitiva e de fácil usabilidade para pacientes, familiares e profissionais de saúde | ALTA |
-
-## Restrições Relacionadas ao Cadastro
-
-As restrições que podem afetar o processo de cadastro são:
-
-| ID | Restrição |
-|---|---|
-| 01 | O desenvolvimento inicial pode ser limitado por custos e recursos disponíveis. |
-| 02 | A adoção do aplicativo pode enfrentar resistência inicial de usuários e profissionais. |
-| 04 | A segurança e privacidade dos dados do paciente são críticas e exigem atenção contínua. |
-| 05 | A disponibilidade de profissionais qualificados na plataforma pode variar por região. |
-
-## Conclusão
-
-O processo de cadastro é a porta de entrada para o aplicativo Home Care, sendo crucial para o sucesso da plataforma. A implementação de um sistema de cadastro eficiente, seguro e intuitivo é fundamental para atrair e reter tanto profissionais de saúde quanto pacientes e seus familiares. Ao garantir a validação de credenciais, a facilidade de uso e a proteção dos dados, o aplicativo poderá construir uma base sólida de usuários, otimizando a conexão entre oferta e demanda por serviços de saúde domiciliar e contribuindo para a melhoria da qualidade de vida dos pacientes.
-
----
-
 ## 3. Modelagem dos Processos de Negócio
 
 
@@ -78,7 +11,7 @@ O processo de cadastro é a porta de entrada para o aplicativo Home Care, sendo 
 
 O processo atual para encontrar e contratar profissionais de saúde para atendimento domiciliar (home care) é predominantemente manual, fragmentado e baseado em redes de contatos informais. Famílias que necessitam de cuidados para pacientes em casa e profissionais autônomos que oferecem esses serviços enfrentam um cenário ineficiente, com pouca tecnologia e sem uma plataforma centralizada que facilite a conexão. A busca depende de indicações, a comunicação é assíncrona e a gestão de agendamentos e pagamentos é descentralizada, gerando insegurança e retrabalho para ambas as partes.
 
-#### 3.1.2. Etapas do Processo Atual
+#### 3.1.2. Etapas do Processo Atual(Busca de profissionais)
 
 **Perspectiva da Família (Ex: Mariana, mãe de um paciente):**
 
