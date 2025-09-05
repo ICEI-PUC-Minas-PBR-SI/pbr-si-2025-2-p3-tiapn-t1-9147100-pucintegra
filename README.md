@@ -10,6 +10,7 @@ A administração de finanças coletivas em viagens e eventos em grupo é, muita
 
 ## Integrantes
 
+* Caio Maciel Magalhães
 * Nayara Ferreira de Jesus Rodrigues
 * Paulo Arthur Araújo de Andrade
 * Rafael Nicolas Araújo Custodio
