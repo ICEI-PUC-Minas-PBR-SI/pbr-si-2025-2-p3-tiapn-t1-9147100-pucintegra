@@ -8,19 +8,16 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+### João Almeida
+Homem de 57 anos, classe média, mora em Belo Horizonte, na região do Centro. É formado em Administração e trabalha como auxiliar administrativo. Gosta de passar tempo com sua família e de viajar sempre que possível. Portanto, João prefere comprar produtos mais baratos, a fim de juntar seu dinheiro para realizar tais viagens com os filhos e a esposa. Ele é um homem de poucas palavras, mas que está sempre disposto a ajudar quem precisa. Está a procura de um salão de festas simples, mas aconchegante e de boa localização, para realizar o aniversário de seu filho Lucas, de 8 anos.
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+### Ana Carolina
+Mulher de 24 anos, classe média-baixa, mora em Belo Horizonte, na região de Venda Nova. É estudante de direito e faz estágio em um cartório. Gosta de visitar museus, ir a parques, sair para festas com as amigas e visitar seus parentes toda semana. Sempre que possível, ela gosta de comprar produtos caros, de alta qualidade, pois acredita que “o barato sai caro”. Ela é uma pessoa animada, que aprecia as artes e gosta de passar tempo com seus conhecidos. Junto de suas outras amigas, ela está em busca de um salão de festas para realizar uma festa surpresa para sua amiga, Letícia, de 26 anos, que irá mudar de país em breve.
+
+### Paulo Martins
+Homem de 38 anos, classe média-alta, mora em Nova Lima, mas visita Belo Horizonte com frequência. Ele é formado em Propaganda e Marketing, e é dono de um salão de festas no hipercentro de Belo Horizonte. Gosta de viajar com a esposa, ir a restaurantes chiques e de treinar em academias. Ele busca contratar sempre os melhores serviços para seu negócio, pois é graças a ele que Paulo consegue manter seu estilo de vida. Paulo é um homem reservado, que prefere ter poucos amigos. Está buscando um modo de divulgar seu salão online, a fim de conseguir agendar o maior número de clientes possível nele, e então poder pensar em expandir seu negócio
+
 
 ## Histórias de Usuários
 
