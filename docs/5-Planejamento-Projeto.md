@@ -4,19 +4,19 @@
 
 ## 5.1. Divisão de Papéis
 
-> Apresente a divisão de papéis entre os membros do grupo em cada sprint. O desejável é que, em cada sprint, o aluno assuma papéis diferentes na disciplina. Siga o modelo do exemplo abaixo:
-
 ### Sprint 1
-- _Scrum master_: AlunaX
-- Protótipos: AlunoY
-- Testes: AlunoK
-- Documentação: AlunaZ
+* Scrum Master: Hugo Ferrira
+* Protótipos: Izadora Helena
+* Testes: Maria Clara
+* Documentação: Júlia Fernanda
 
 ### Sprint 2
-- _Scrum master_: AlunaY
-- Desenvolvedor _front-end_: AlunoX
-- Desenvolvedor _back-end_: AlunoK
-- Testes: AlunaZ
+
+Scrum Master: Izadora Helena
+* Desenvolvedor Front-end: Hugo Ferreira (responsável pela estrutura do site em HTML e CSS)
+* Desenvolvedor Back-end: Heron Silva (responsável pela futura implementação das funcionalidades)
+* Testes: Maria Clara (responsável por validar a interface e simulações de uso)
+* Documentação: Júlia Fernanda (responsável por relatar avanços e análises no relatório da sprint)
 
 ## 5.1. Quadro de tarefas
 
@@ -28,10 +28,10 @@ Atualizado em: 21/04/2024
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Introdução | 01/02/2024     | 07/02/2024 | ✔️    | 05/01/2005      |
-| AlunaZ        | Objetivos    | 03/02/2024     | 10/02/2024 | 📝    |                 |
-| AlunoY        | Histórias de usuário  | 01/01/2024     | 07/01/2005 | ⌛     |                 |
-| AlunoK        | Personas 1  |    01/01/2024        | 12/02/2005 | ❌    |       |
+| Júlia Fernanda        | Documentação | 01/08/2025     | 01/09/2025 | ⌛    |      |
+| Izadora Helena        | Documentação    | 01/08/2025     | 01/09/2025 | ⌛    |                 |
+| Maria Clara        | Estrutura inicial de testes  | 01/08/2025     | 01/09/2025 | ⌛     |                 |
+| Hugo Ferreira       | Scrum Master e organização  |    01/08/2025        | 01/09/2025 | ⌛    |       |
 
 ## Sprint 2
 
@@ -39,10 +39,10 @@ Atualizado em: 21/04/2024
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| AlunaX        | Home-Page        | 01/02/2024     | 07/03/2024 | ✔️    | 05/01/2005      |
-| AlunaZ        | CSS Unificado    | 03/02/2024     | 10/03/2024 | 📝    |                 |
-| AlunoY        | Página de login  | 01/02/2024     | 07/03/2024 | ⌛     |                 |
-| AlunoK        | Script de login  |  01/01/2024    | 12/03/2024 | ❌    |       |
+| Hugo Ferreira        | Desenvolvimento do front-end (HTML/CSS)        | 20/08/2025     | 20/08/2025  | ✔️    | 05/01/2005      |
+| Maria Clara        | Documentação (Relatório Sprint 2)    | 20/08/2025      | 20/09/2025 | 📝    |                 |
+| Júlia Fernanda        | Testes iniciais de interface  | 20/08/2025      | 20/09/2025 | ⌛     |                 |
+| Izadora Helena        | Documentação (Relatório Sprint 2)  |  20/08/2025     | 20/09/2025 | ⌛    |       |
 
 
 Legenda:
