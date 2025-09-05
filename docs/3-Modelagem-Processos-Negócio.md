@@ -53,13 +53,11 @@ O processo atual para cadastrar profissionais da saúde e pacientes,e encontrar 
 
 1.  **Identificação da Necessidade:** A família recebe uma recomendação médica ou percebe a necessidade de um profissional de saúde (enfermeiro, fisioterapeuta, etc.) para cuidados contínuos em casa.
 
-2.  **Busca por Indicações:** A busca começa de forma informal, pedindo recomendações a amigos, familiares, outros médicos ou em grupos de redes sociais. Não há um local centralizado para encontrar profissionais qualificados e com referências.
+2.  **Contato e Verificação Individual:** A família entra em contato, um por um, com os profissionais indicados. Para cada um, é preciso verificar credenciais, experiência, disponibilidade de agenda e negociar valores. Este processo é lento, repetitivo e marcado por longas esperas por resposta.
 
-3.  **Contato e Verificação Individual:** A família entra em contato, um por um, com os profissionais indicados. Para cada um, é preciso verificar credenciais, experiência, disponibilidade de agenda e negociar valores. Este processo é lento, repetitivo e marcado por longas esperas por resposta.
+3.  **Negociação e Agendamento Manual:** Após encontrar um profissional adequado, o agendamento é feito verbalmente ou por mensagem de texto. A família anota em uma agenda pessoal, sem um sistema formal de confirmação ou lembretes.
 
-4.  **Negociação e Agendamento Manual:** Após encontrar um profissional adequado, o agendamento é feito verbalmente ou por mensagem de texto. A família anota em uma agenda pessoal, sem um sistema formal de confirmação ou lembretes.
-
-5.  **Acompanhamento e Pagamento:** O acompanhamento da evolução do paciente é feito por anotações informais. O pagamento é realizado diretamente ao profissional (via PIX, dinheiro), e o controle financeiro é manual.
+4.  **Acompanhamento e Pagamento:** O acompanhamento da evolução do paciente é feito por anotações informais. O pagamento é realizado diretamente ao profissional (via PIX, dinheiro), e o controle financeiro é manual.
 
 **Perspectiva do Profissional (Ex: Rafael, enfermeiro):**
 
@@ -88,7 +86,8 @@ O processo atual para cadastrar profissionais da saúde e pacientes,e encontrar 
 O modelo atual de conexão para serviços de home care é insustentável e ineficiente para ambas as partes. A falta de uma plataforma digital centralizada gera um ciclo de retrabalho, insegurança e sobrecarga administrativa. Essas limitações demonstram a clara necessidade de uma solução como o Medlar, que automatize a busca, valide as credenciais, centralize a comunicação e simplifique o agendamento e o pagamento, trazendo mais segurança, eficiência e profissionalismo ao mercado de cuidados domiciliares.
 
 
-<img width="760" height="439" alt="Captura de tela 2025-09-03 210220" src="https://github.com/user-attachments/assets/99677aee-66ca-485a-8d69-313dda1ac2b7" />
+<img width="777" height="457" alt="Captura de tela 2025-09-05 125919" src="https://github.com/user-attachments/assets/43acf234-b28c-4800-9acd-2b739adf1800" />
+
 
 ---
 
