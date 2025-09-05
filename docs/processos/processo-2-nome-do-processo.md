@@ -1,4 +1,4 @@
-### 3.3.1 Processo 1 – Oportunidades de Melhoria
+### 3.3.1 Processo 2 – Oportunidades de Melhoria
 
 <img width="886" height="554" alt="image" src="https://github.com/user-attachments/assets/ddb60af7-8cbb-4996-80c6-54f176750db1" />
 
