@@ -47,7 +47,7 @@ O processo atual para cadastrar profissionais da saúde e pacientes,e encontrar 
 
 ---
 
-#### 3.1.2. Etapas do Processo Atual(Busca de profissionais)
+## 3.1.2. Etapas do Processo Atual(Busca de profissionais)
 
 **Perspectiva da Família (Ex: Mariana, mãe de um paciente):**
 
