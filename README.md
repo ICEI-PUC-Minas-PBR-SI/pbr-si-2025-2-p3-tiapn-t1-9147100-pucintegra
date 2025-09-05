@@ -22,10 +22,6 @@ Este trabalho apresenta o desenvolvimento de um sistema para facilitar a conexã
 * Cleia Marcia Gomes Amaral
 
 
-## Orientador
-
-* Nome completo do professor 1
-
 ## Instruções de utilização
 
 Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
