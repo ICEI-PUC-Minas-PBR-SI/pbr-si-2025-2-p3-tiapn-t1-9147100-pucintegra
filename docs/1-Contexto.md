@@ -1,46 +1,63 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+De acordo com a Associação Brasileira dos Promotores de Eventos – ABRAPE (2025), o setor de eventos brasileiro movimentou um consumo recorde de R$ 131,8 bilhões em 2024, registrando um nível de emprego 60,8% superior ao período pré-pandemia. Esses números demonstram a relevância do segmento para a economia nacional e indicam perspectivas otimistas para 2025.
+Apesar dessa demanda, muitas pessoas encontram dificuldades para localizar um espaço adequado, comparar preços e verificar disponibilidade. Atualmente, a busca por locais costuma ser feita por meio de indicações, redes sociais ou visitas presenciais, o que pode ser demorado e ineficiente.
+Além disso, há um potencial pouco explorado: a abertura de oportunidades para que proprietários de terrenos, chácaras ou áreas livres possam disponibilizar seus espaços para a realização de pequenos eventos, como aniversários, confraternizações, feiras e encontros culturais. Essa possibilidade não apenas amplia a oferta de locais, mas também gera renda extra para os proprietários e estimula a economia local.
+Uma plataforma digital que concentre informações, facilite a comparação de preços, verifique a disponibilidade e permita a reserva de forma ágil trará benefícios tanto para quem busca um local quanto para quem deseja rentabilizar seu espaço.
+
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+A ausência de uma plataforma centralizada para divulgação e reserva de espaços para eventos dificulta o processo de busca, aumenta o tempo gasto na negociação e, muitas vezes, resulta na perda de oportunidades para locadores e clientes. Proprietários de salões têm dificuldade em divulgar seus espaços para um público mais amplo, enquanto clientes gastam muito tempo para encontrar um local adequado às suas necessidades.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Desenvolver um sistema que conecta pessoas que buscam espaços para eventos com proprietários que oferecem esses locais, permitindo busca, comparação, reserva e gestão de locações.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+### Objetivos específicos
+- Criar um catálogo digital com informações detalhadas de cada espaço, incluindo fotos, descrição, preço e capacidade.
+- Implementar um sistema de busca e filtros para facilitar a escolha do espaço ideal.
+- Desenvolver um módulo de reservas online com confirmação e acompanhamento em tempo real.
+- Criar funcionalidades para que proprietários gerenciem suas ofertas e atualizem disponibilidade.
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+O projeto busca facilitar a interação entre locadores e clientes, economizando tempo e oferecendo mais segurança nas negociações. A plataforma contribui para aumentar a visibilidade dos espaços disponíveis, melhorar a taxa de ocupação e proporcionar uma experiência mais prática para quem organiza eventos.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+### Quem são:
+  Indivíduos e famílias, normalmente entre 18 e 70 anos, de ambos os gêneros, planejando eventos pessoais ou públicos. Negócios, grandes e pequenos, de proprietários que alugam espaços para eventos.
+  
+### O que buscam:
+  Bom custo-benefício, estética local, avaliação de usuários, fornecedores confiáveis, buscam desde salões de festas e áreas com churrasqueiras em locais privados até sítios, casas de campo e salões luxuosos.
+  
+### Quais os problemas o usuário tem? 
+- Insegurança em não saber se o imovel condiz com o que está sendo anunciado.
+- Dificuldade em identificar disponibilidade imediata do local 
+- Dificuldade em encontrar opções que se adequem ao orçamento
+- Falta de garantia em acordos verbais, onde o locatário pode mudar de decisão durante a negociação
+- Comunicação lenta com o locatário devido a desordem dos alugueis do local.
+- Dificuldade do locatário em controlar seu calendário e suas disponibilidades.
+- Perda de oportunidades por falhas de comunicação
+- Dificuldade em gerar visibilidade do local
+- Ausência de avaliações confiáveis do local por parte do usuário
+- Falta de segurança ao alugar o local para desconhecidos sem nenhuma reputação
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+## Processos
+### Quais os processos que a ferramenta pode controlar ?
+- Cadastro do local
+- Cadastro  usuário( Locador, Locatário)
+- Busca de local
+- Reserva de local (Em negociação, Concluída/Reservada)
+- Avaliação do Local
+- Avaliação do Cliente
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+### Como os processos são feitos hoje (as is)?
+Esses processos são feitos de maneira em que uma plataforma online intermedia a conexão e negociação entre locadores que desejam alugar um local para realizar um evento e locatários que possuem um local para aluguel e realizar a divulgação do mesmo para alugar. Temos alguns exemplos de processos similares a esse tais como Hoteis.com, Airbnb, Trivago e Quinto andar.
+
+### Como a ferramenta vai gerenciar esse processo (To be) ?
+- Cadastro do local (endereço, valor, disponibilidade, restrições, meio de comunicação, fotos)
+- Cadastro  usuário (Locador, Locatário)
+- Reserva de Local (Calendário, Pedido de reserva ...)
+- Avaliação do Local (avaliação tipo estrela, nota 1 a 5)
+- Avaliação do Cliente (avaliação tipo estrela, nota 1 a 5)
