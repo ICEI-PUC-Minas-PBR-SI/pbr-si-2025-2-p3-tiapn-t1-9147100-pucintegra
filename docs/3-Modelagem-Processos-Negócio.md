@@ -101,81 +101,90 @@ Para os profissionais, o aplicativo oferecerá gestão integrada de agenda, rota
 
 Com essa proposta, os processos hoje manuais, repetitivos e descentralizados passam a ser digitalizados, padronizados e escaláveis, criando um ecossistema de Home Care moderno, seguro e de fácil uso, que beneficia pacientes, familiares e profissionais de saúde.
 
-Etapas do Processo (Cadastro):
+### PROCESSO DE CADASTRO DE USUÁRIOS E PROFISSIONAIS:
+Objetivo:
+Permitir que usuários (pacientes) e profissionais de saúde (prestadores de serviço) se cadastrem de forma rápida, segura e intuitiva na plataforma, com validação adequada e segmentação clara de perfis.
 
-1 Tela Inicial de Cadastro
-
+### Tela Inicial de Cadastro
 * Opção para selecionar o tipo de conta: Usuário (Paciente) ou Profissional da Saúde
-
 * Redirecionamento para o fluxo de cadastro correspondente.
 
- 2 Cadastro de Usuário (Paciente)
+### Cadastro de Usuário (Paciente)
+Informações básicas:
+ * Nome completo
+ * CPF
+ * Data de nascimento
+ * Gênero
+ * Endereço completo (com geolocalização opcional)
+ * Telefone
+ * E-mail
+ * Senha
+ * Validação de e-mail e telefone (código via SMS/e-mail)
+ * Aceite dos termos de uso e política de privacidade
+ * Cadastro concluído → Direciona para a tela inicial do app com opção de buscar profissionais.
 
- Informações básicas:
-
-* Nome completo
-
-* CPF
-
-* Data de nascimento
-
-* Gênero
-
-* Endereço completo (com geolocalização opcional)
-
-* Telefone
-
-* E-mail
-
-* Senha
-
-*Validação de e-mail e telefone (código via SMS/e-mail)
-
-*Aceite dos termos de uso e política de privacidade
-
-*Cadastro concluído → Direciona para a tela inicial do app com opção de buscar profissionais.
-
-3 Cadastro de Profissional de Saúde
-
+### Cadastro de Profissional de Saúde
 Informações pessoais:
-
-* Nome completo
-
-* CPF
-
-* Data de nascimento
-
-* Gênero
-
-* Endereço profissional (com raio de atendimento)
-
-* Telefone
-
-* E-mail
-
-* Senha
-
+ * Nome completo
+ * CPF
+ * Data de nascimento
+ * Gênero
+ * Endereço profissional (com raio de atendimento)
+ * Telefone
+ * E-mail
+ * Senha
+   
 Informações profissionais:
+ * Área de atuação (enfermagem, fisioterapia, fonoaudiologia, etc.)
+ * Número de registro profissional (CRM, COREN, CREFITO etc.)
+ * Upload de documentos comprobatórios (diploma, registro, identidade)
+ * Experiência e especializações
+ * Foto de perfil profissional
+ * Validação de e-mail e telefone
+ * Revisão e aceite dos termos de uso e política de privacidade
+ * Envio para análise e validação da equipe administrativa
+ * Status: Em análise → Aprovado → Rejeitado (com justificativa)
+ * Após aprovação, profissional é ativado e pode começar a receber solicitações.
 
-* Área de atuação (enfermagem, fisioterapia, fonoaudiologia, etc.)
 
-* Número de registro profissional (CRM, COREN, CREFITO etc.)
+### PROCESSO DE BUSCA DE PROFISSIONAIS
+Objetivo:
+Permitir que usuários encontrem rapidamente profissionais disponíveis para atendimento domiciliar com base em localização, especialidade e disponibilidade.
 
-* Upload de documentos comprobatórios (diploma, registro, identidade)
+### Tela de Busca (Home do Usuário)
+* Campo de busca por especialidade ou nome do profissional
+Filtros:
+ * Localização (por CEP ou geolocalização)
+ * Especialidade
+ * Disponibilidade (data e horário)
+ * Faixa de preço
+ * Avaliação mínima
+Resultados exibidos com:
+ * Nome, foto e especialidade do profissional
+ * Preço base do atendimento
+ * Avaliação média
+ * Distância aproximada
 
-* Experiência e especializações
+### Visualização de Perfil do Profissional
+Informações detalhadas:
+ * Biografia/resumo profissional
+ * Especializações e experiências
+ * Registro profissional
+ * Avaliações e comentários de outros usuários
+ * Agenda disponível
+ * Botão para solicitar atendimento
 
-* Foto de perfil profissional
-
-* Validação de e-mail e telefone
-
-* Revisão e aceite dos termos de uso e política de privacidade
-
-* Envio para análise e validação da equipe administrativa
-
-* Status: Em análise → Aprovado → Rejeitado (com justificativa)
-
-* Após aprovação, profissional é ativado e pode começar a receber solicitações.
+### Solicitação de Atendimento
+Usuário seleciona:
+ * Data e horário
+ * Endereço de atendimento (padrão ou novo)
+ * Confirmação da solicitação
+ * Envio de notificação para o profissional
+Profissional pode:
+ * Aceitar
+ * Recusar
+ * Sugerir novo horário
+ * Confirmação final e início do agendamento
 
 ---
 
