@@ -186,6 +186,8 @@ Profissional pode:
  * Sugerir novo horário
  * Confirmação final e início do agendamento
 
+<img width="2098" height="1490" alt="Novo modelo" src="https://github.com/user-attachments/assets/9fdce1a7-e8ee-4e2c-9fd3-50f94db4ba3b" />
+
 ---
 
 ### 3.3. Modelagem dos processos
