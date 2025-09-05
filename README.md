@@ -14,8 +14,7 @@ A administração de finanças coletivas em viagens e eventos em grupo é, muita
 * Paulo Arthur Araújo de Andrade
 * Rafael Nicolas Araújo Custodio
 * Rodolfo Eliezer Soares Rezende
-* Luiz Ribeiro de Oliveira
-
+* Victor Luiz Ribeiro de Oliveira
 
 ## Orientador
 
