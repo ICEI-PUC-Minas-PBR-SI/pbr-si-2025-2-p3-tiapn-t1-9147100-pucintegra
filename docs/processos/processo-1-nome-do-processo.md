@@ -17,7 +17,7 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais e pa
 ![Imagem do WhatsApp de 2025-09-05 à(s) 17 31 22_b4efe62b](https://github.com/user-attachments/assets/98d3f1ee-450c-489c-90cd-6096d121d3e2)
 
 
-[**** Este modelo representaria o fluxo otimizado do processo de cadastro, incorporando as melhorias propostas. Ele pode incluir etapas como: Início do Cadastro, Preenchimento de Dados, Validação Automática, Análise de Credenciais (para profissionais), Aprovação/Rejeição, Notificação ao Usuário, e Fim do Cadastro.]
+[Este modelo representaria o fluxo otimizado do processo de cadastro, incorporando as melhorias propostas. Ele pode incluir etapas como: Início do Cadastro, Preenchimento de Dados, Validação Automática, Análise de Credenciais (para profissionais), Aprovação/Rejeição, Notificação ao Usuário, e Fim do Cadastro.]
 
 ### Detalhamento das Atividades
 
