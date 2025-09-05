@@ -44,6 +44,8 @@ O processo atual para cadastrar profissionais da saúde e pacientes,e encontrar 
 *   **Dificuldade de Atualização:** Alterações cadastrais exigem processos manuais, lentos e muitas vezes pouco acessíveis ao usuário.
 *   **Ausência de Integração:** Falta de conexão com sistemas de prontuário eletrônico, plataformas de pagamento ou conselhos profissionais dificulta a centralização e a confiabilidade das informações.
 
+![Imagem do WhatsApp de 2025-09-05 à(s) 17 31 22_b4efe62b](https://github.com/user-attachments/assets/98d3f1ee-450c-489c-90cd-6096d121d3e2)
+
 
 ---
 
