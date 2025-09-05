@@ -186,6 +186,10 @@ Profissional pode:
  * Sugerir novo horário
  * Confirmação final e início do agendamento
 
+
+![Imagem do WhatsApp de 2025-09-05 à(s) 17 31 22_b4efe62b](https://github.com/user-attachments/assets/98d3f1ee-450c-489c-90cd-6096d121d3e2)
+
+---
 <img width="2098" height="1490" alt="Novo modelo" src="https://github.com/user-attachments/assets/9fdce1a7-e8ee-4e2c-9fd3-50f94db4ba3b" />
 
 ---
