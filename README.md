@@ -1,4 +1,4 @@
-# TÍTULO DO PROJETO
+# Smart Gestão
 
 `SISTEMAS DE INFORMAÇÃO`
 
@@ -16,6 +16,7 @@ Além de atender a uma necessidade concreta dos pequenos negócios, o projeto ta
 * Izadora Helena Pedrosa Soares Pereira
 * Júlia Fernanda Alves
 * Maria Clara Silva Botelho
+* Heron Victor Vieira da Silva
 
 ## Orientador
 
