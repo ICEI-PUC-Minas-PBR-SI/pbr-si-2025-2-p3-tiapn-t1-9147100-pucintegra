@@ -15,7 +15,7 @@ O processo atual para cadastrar profissionais da saúde e pacientes,e encontrar 
 
 ## 3.1.2. Etapas do Processo Atual (Cadastro de Profissionais e Pacientes)
 
-### Perspectiva da Família/Paciente (Ex: Mariana, mãe de um paciente)
+#### Perspectiva da Família/Paciente (Ex: Mariana, mãe de um paciente)
 
 *   **Coleta de Informações Básicas:** A família ou paciente precisa reunir dados pessoais (nome, CPF, data de nascimento, endereço, telefone, email).
 *   **Preenchimento Manual:** O cadastro é feito em formulários físicos ou digitais sem padronização, muitas vezes exigindo envio repetitivo dos mesmos documentos em diferentes locais.
