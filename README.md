@@ -12,11 +12,12 @@ Além de atender a uma necessidade concreta dos pequenos negócios, o projeto ta
 
 ## Integrantes
 
+* Heron Victor Vieira da Silva
 * Hugo Ferreira Silva
 * Izadora Helena Pedrosa Soares Pereira
 * Júlia Fernanda Alves
 * Maria Clara Silva Botelho
-* Heron Victor Vieira da Silva
+
 
 ## Orientador
 
