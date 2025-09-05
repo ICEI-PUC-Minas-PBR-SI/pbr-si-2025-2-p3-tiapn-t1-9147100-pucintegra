@@ -41,7 +41,7 @@ Atualizado em: 21/04/2024
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
 | Hugo Ferreira        | Desenvolvimento do front-end (HTML/CSS)        | 20/08/2025     | 20/08/2025  | ✔️    | 05/01/2005      |
 | Maria Clara        | Documentação (Relatório Sprint 2)    | 20/08/2025      | 20/09/2025 | 📝    |                 |
-| Júlia Fernanda        | Testes iniciais de interface  | 20/08/2025      | 20/09/2025 | ⌛     |                 |
+| Júlia Fernanda        | documentação (Relatório Sprint 2) | 20/08/2025      | 20/09/2025 | ⌛     |                 |
 | Izadora Helena        | Documentação (Relatório Sprint 2)  |  20/08/2025     | 20/09/2025 | ⌛    |       |
 
 
