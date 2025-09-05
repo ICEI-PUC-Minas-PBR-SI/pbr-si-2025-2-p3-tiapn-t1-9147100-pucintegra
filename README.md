@@ -1,19 +1,26 @@
-# TÍTULO DO PROJETO
+# COLMEIA
 
-`CURSO`
+`Sistemas de Informação`
 
-`DISCIPLINA`
+`Trabalho Interdisciplinar: Aplicações para Processos de Negócios`
 
 `SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Este trabalho apresenta o desenvolvimento de um sistema para facilitar a conexão entre pessoas que desejam realizar festas e os proprietários de espaços disponíveis para locação, como salões de festas. O objetivo é oferecer uma plataforma prática para busca, reserva e gestão das locações.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Carlos Eduardo Soares de Faria
+* Daniel Moreno Costa Santos
+* Gabriel Rocha de Oliveira
+* Poliana Bruna Ferreira
+* Rafael Franklin Coelho Barbosa
+* Yanne Assis Alves
+
+## Orientador
+
+* Cleia Marcia Gomes Amaral
+
 
 ## Orientador
 
