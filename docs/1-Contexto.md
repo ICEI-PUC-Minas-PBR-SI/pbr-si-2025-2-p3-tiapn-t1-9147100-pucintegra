@@ -1,46 +1,51 @@
-# Introdução
+Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Atualmente, muitos microempreendedores individuais (MEIs) e profissionais autônomos enfrentam dificuldades para organizar suas finanças de forma prática e eficiente. Em grande parte dos casos, o controle financeiro ainda é feito de maneira manual, seja por meio de anotações em cadernos, planilhas básicas ou até mesmo de memória. Essa falta de padronização e centralização das informações acaba gerando diversos problemas, como a perda de dados importantes, erros nos registros, dificuldade para analisar despesas e receitas e falta de clareza sobre a real situação financeira do negócio.
 
-## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
+Diante desse cenário, nosso grupo propôs o desenvolvimento de um sistema de gestão financeira voltado para MEIs e profissionais autônomos, com o objetivo de facilitar o controle do fluxo de caixa, categorizar receitas e despesas e fornecer relatórios claros e detalhados. Essa solução busca oferecer uma ferramenta intuitiva e acessível, que centralize as informações financeiras e auxilie o usuário na tomada de decisões mais estratégicas e assertivas sobre o seu negócio.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
+O desenvolvimento do sistema também representa uma oportunidade de aplicar, na prática, os conceitos estudados no curso de Sistemas de Informação, unindo áreas como análise e modelagem de processos, desenvolvimento full stack, banco de dados, experiência do usuário e segurança da informação. Dessa forma, além de atender a uma necessidade real do mercado, o projeto contribui para a nossa formação acadêmica e profissional.
 
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+⸻
 
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Problema
 
-## Objetivos
+A gestão financeira é um dos maiores desafios enfrentados pelos microempreendedores e profissionais autônomos. Muitos não utilizam ferramentas adequadas para acompanhar suas receitas e despesas, o que dificulta o planejamento e a tomada de decisões. A ausência de um sistema eficiente leva a problemas como:
+	•	Registros financeiros dispersos e sem padronização;
+	•	Risco elevado de perda de informações importantes;
+	•	Dificuldade para analisar o fluxo de caixa de forma clara;
+	•	Falta de relatórios detalhados para auxiliar na gestão do negócio;
+	•	Tomada de decisões baseada em dados incompletos ou desatualizados.
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+Esse cenário evidencia a necessidade de uma solução tecnológica que simplifique a gestão financeira e ofereça ao usuário maior controle e segurança sobre suas informações.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+⸻
 
-## Justificativa
+Objetivos
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
+Objetivo Geral
 
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Desenvolver um sistema de gestão financeira voltado para microempreendedores individuais (MEIs) e profissionais autônomos, visando facilitar o registro e a organização de receitas e despesas, além de gerar relatórios claros para auxiliar na tomada de decisões.
 
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Objetivos Específicos
+	•	Criar uma interface intuitiva para o cadastro e categorização de receitas e despesas;
+	•	Implementar um sistema de geração de relatórios personalizados, com filtros por períodos e categorias;
+	•	Permitir o upload e armazenamento digital de comprovantes para facilitar a organização fiscal;
+	•	Desenvolver dashboards interativos que apresentem informações consolidadas sobre o fluxo de caixa;
+	•	Garantir a segurança e a privacidade dos dados dos usuários.
 
-## Público-Alvo
+⸻
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+Justificativa
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+A escolha desse projeto foi motivada pela necessidade crescente de automatizar e simplificar a gestão financeira de microempreendedores e profissionais autônomos. Muitos desses trabalhadores dependem diretamente da saúde financeira do negócio para manter sua renda, mas acabam enfrentando dificuldades por falta de ferramentas adequadas.
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Com a nossa solução, buscamos oferecer um sistema acessível, simples de usar e que forneça recursos essenciais para manter as finanças organizadas. Além disso, o projeto permite que o grupo aplique conhecimentos aprendidos no curso e desenvolva habilidades práticas importantes para o mercado, como desenvolvimento de software, integração de sistemas, modelagem de processos e usabilidade.
+
+⸻
+
+Público-Alvo
+
+O público-alvo do sistema são microempreendedores individuais (MEIs) e profissionais autônomos que buscam organizar suas finanças de forma mais eficiente. Geralmente, esse grupo possui conhecimentos básicos de tecnologia e utiliza planilhas ou métodos manuais para controlar receitas e despesas.
+
+O sistema será desenvolvido pensando em acessibilidade e usabilidade, para atender usuários com diferentes níveis de familiaridade com ferramentas digitais. Além disso, o público-alvo precisa de uma solução prática, clara e segura, que permita visualizar informações consolidadas, gerar relatórios e facilitar a tomada de decisões relacionadas ao negócio.
