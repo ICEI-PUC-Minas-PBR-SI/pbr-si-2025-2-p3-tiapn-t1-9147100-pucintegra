@@ -101,6 +101,82 @@ Para os profissionais, o aplicativo oferecerá gestão integrada de agenda, rota
 
 Com essa proposta, os processos hoje manuais, repetitivos e descentralizados passam a ser digitalizados, padronizados e escaláveis, criando um ecossistema de Home Care moderno, seguro e de fácil uso, que beneficia pacientes, familiares e profissionais de saúde.
 
+Etapas do Processo (Cadastro):
+
+1 Tela Inicial de Cadastro
+
+* Opção para selecionar o tipo de conta: Usuário (Paciente) ou Profissional da Saúde
+
+* Redirecionamento para o fluxo de cadastro correspondente.
+
+ 2 Cadastro de Usuário (Paciente)
+
+ Informações básicas:
+
+* Nome completo
+
+* CPF
+
+* Data de nascimento
+
+* Gênero
+
+* Endereço completo (com geolocalização opcional)
+
+* Telefone
+
+* E-mail
+
+* Senha
+
+*Validação de e-mail e telefone (código via SMS/e-mail)
+
+*Aceite dos termos de uso e política de privacidade
+
+*Cadastro concluído → Direciona para a tela inicial do app com opção de buscar profissionais.
+
+3 Cadastro de Profissional de Saúde
+
+Informações pessoais:
+
+* Nome completo
+
+* CPF
+
+* Data de nascimento
+
+* Gênero
+
+* Endereço profissional (com raio de atendimento)
+
+* Telefone
+
+* E-mail
+
+* Senha
+
+Informações profissionais:
+
+* Área de atuação (enfermagem, fisioterapia, fonoaudiologia, etc.)
+
+* Número de registro profissional (CRM, COREN, CREFITO etc.)
+
+* Upload de documentos comprobatórios (diploma, registro, identidade)
+
+* Experiência e especializações
+
+* Foto de perfil profissional
+
+* Validação de e-mail e telefone
+
+* Revisão e aceite dos termos de uso e política de privacidade
+
+* Envio para análise e validação da equipe administrativa
+
+* Status: Em análise → Aprovado → Rejeitado (com justificativa)
+
+* Após aprovação, profissional é ativado e pode começar a receber solicitações.
+
 ---
 
 ### 3.3. Modelagem dos processos
