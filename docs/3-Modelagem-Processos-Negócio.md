@@ -1,10 +1,5 @@
 ## 3. Modelagem dos Processos de Negócio
 
-
-> **Links Úteis**:
-> - [Modelagem de Processos AS-IS x TO-BE](https://dheka.com.br/modelagem-as-is-to-be/)
-> - [20 Dicas Práticas de Modelagem de Processos](https://dheka.com.br/20-dicas-praticas-de-modelagem-de-processos/)
-
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 Esses processos são feitos de maneira em que uma plataforma online intermedia a conexão e negociação entre locadores que desejam alugar um local para realizar um evento e locatários que possuem um local para aluguel e realizar a divulgação do mesmo para alugar. Temos alguns exemplos de processos similares a esse tais como Hoteis.com, Airbnb, Trivago e Quinto andar.
 
