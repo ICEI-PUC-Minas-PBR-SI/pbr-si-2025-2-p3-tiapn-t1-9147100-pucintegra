@@ -1,9 +1,9 @@
-### 3.3.1 Processo 1 – NOME DO PROCESSO
+### 3.3.1 Processo 1 – Cadastro de Usuário
 
 _Apresente aqui o nome e as oportunidades de melhoria para o processo 1. 
 Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
 
-![Exemplo de um Modelo BPMN do PROCESSO 1](../images/process.png "Modelo BPMN do Processo 1.")
+![Modelo BPMN do PROCESSO 1 - Cadastro de Usuário](../images/processo_1_cadastro_usuario.jpg "Cadastro de Usuário")
 
 #### Detalhamento das atividades
 
