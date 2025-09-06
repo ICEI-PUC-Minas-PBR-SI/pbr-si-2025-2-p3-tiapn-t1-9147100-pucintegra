@@ -6,22 +6,18 @@
 > - [20 Dicas Práticas de Modelagem de Processos](https://dheka.com.br/20-dicas-praticas-de-modelagem-de-processos/)
 
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
-
-_Apresente uma descrição textual de como os sistemas atuais resolvem o problema que se propõe a resolver.  Caso sua proposta seja inovadora e não existam processos claramente definidos, **apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente**, mesmo que não se utilize tecnologia computacional._
-
-Com o tema do projeto definido, escolham alguns processos neste contexto de negócios. Para ilustrar potenciais ganhos com a automatização, imaginem processos manuais, ineficientes e/ou com muitas idas e vindas, gerando, assim, retrabalho.
-Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
+Esses processos são feitos de maneira em que uma plataforma online intermedia a conexão e negociação entre locadores que desejam alugar um local para realizar um evento e locatários que possuem um local para aluguel e realizar a divulgação do mesmo para alugar. Temos alguns exemplos de processos similares a esse tais como Hoteis.com, Airbnb, Trivago e Quinto andar.
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
-Tendo identificado os gargalos dos modelos AS IS, apresentem uma descrição da proposta de solução, buscando maior eficiência com a introdução da tecnologia. Abordem também os limites dessa solução e o seu alinhamento com as estratégias e objetivos do contexto de negócio escolhido. 
-Colem aqui os modelos da solução proposta (modelo TO BE) elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
-Cada processo identificado deve ter seu modelo TO-BE específico. Descrevam as oportunidades de melhoria de cada processo da solução proposta.
-
-_Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias._
+- Cadastro do local (endereço, valor, disponibilidade, restrições, meio de comunicação, fotos)
+- Cadastro de Usuário (Locador, Locatário)
+- Reserva de Local (Calendário, Pedido de reserva ...)
+- Avaliação do Local (avaliação tipo estrela, nota 1 a 5)
+- Avaliação do Cliente (avaliação tipo estrela, nota 1 a 5)
 
 ### 3.3. Modelagem dos processos
 
-[PROCESSO 1 - Nome do Processo](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
+[PROCESSO 1 - Cadastro do local]()
 
 [PROCESSO 2 - Nome do Processo](./processos/processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
