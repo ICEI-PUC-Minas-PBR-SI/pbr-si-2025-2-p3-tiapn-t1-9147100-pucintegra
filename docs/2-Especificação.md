@@ -2,9 +2,21 @@
 
 <span style="color:red">Pré-requisitos: <a href="01-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
+Definição do problema e ideia de solução a partir da perspectiva do usuário. Esta seção apresenta uma visão geral da especificação do sistema Passa Régua, que será detalhada a seguir por meio de personas, histórias de usuários, requisitos funcionais e não funcionais e restrições do projeto.
 
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+Técnicas e Ferramentas Utilizadas
+
+Para realizar a especificação do projeto, serão empregadas as seguintes abordagens e recursos:
+
+- Modelagem de Personas para identificar perfis e necessidades dos usuários.
+
+- Histórias de Usuário (User Stories) no formato ágil (“Como [ator], quero [ação] para [benefício]”), auxiliando na elicitação dos requisitos.
+
+- Levantamento de Requisitos por meio da análise do contexto e das discussões do time.
+
+- Documentação em Markdown (.md) no repositório GitHub, facilitando versionamento e colaboração.
+
+- Tecnologias alvo do projeto: banco de dados MySQL já provisionado e implementação em arquitetura de microserviços, com uso de Java e .NET para os módulos conforme definido pela equipe.
 
 ## Personas
 
