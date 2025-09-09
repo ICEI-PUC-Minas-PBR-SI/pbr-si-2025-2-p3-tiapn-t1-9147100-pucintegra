@@ -1,6 +1,6 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="01-Documentação de Contexto.md"> Documentação de Contexto</a></span>
+<span style="color:red">Pré-requisitos: <a href="1-Contexto.md">Documentação de Contexto</a></span>
 
 Definição do problema e ideia de solução a partir da perspectiva do usuário. Esta seção apresenta uma visão geral da especificação do sistema Passa Régua, que será detalhada a seguir por meio de personas, histórias de usuários, requisitos funcionais e não funcionais e restrições do projeto.
 
