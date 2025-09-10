@@ -14,7 +14,7 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais e pa
 
 ### Exemplo de um Modelo BPMN do PROCESSO 1 - Cadastro
 
-![Imagem do WhatsApp de 2025-09-05 à(s) 17 31 22_b4efe62b](https://github.com/user-attachments/assets/98d3f1ee-450c-489c-90cd-6096d121d3e2)
+<img width="1860" height="1666" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/03dd6df7-0830-4394-87c4-b5e60f20990c" />
 
 
 [Este modelo representaria o fluxo otimizado do processo de cadastro, incorporando as melhorias propostas. Ele pode incluir etapas como: Início do Cadastro, Preenchimento de Dados, Validação Automática, Análise de Credenciais (para profissionais), Aprovação/Rejeição, Notificação ao Usuário, e Fim do Cadastro.]
