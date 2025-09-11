@@ -148,7 +148,9 @@ Informações profissionais:
  * Status: Em análise → Aprovado → Rejeitado (com justificativa)
  * Após aprovação, profissional é ativado e pode começar a receber solicitações.
 
+<img width="1860" height="1666" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/93fc937c-9548-4a76-bf94-488b8d87b114" />
 
+---
 ### PROCESSO DE BUSCA DE PROFISSIONAIS
 Objetivo:
 Permitir que usuários encontrem rapidamente profissionais disponíveis para atendimento domiciliar com base em localização, especialidade e disponibilidade.
@@ -188,10 +190,6 @@ Profissional pode:
  * Sugerir novo horário
  * Confirmação final e início do agendamento
 
-
-<img width="1860" height="1666" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/93fc937c-9548-4a76-bf94-488b8d87b114" />
-
----
 <img width="2098" height="1490" alt="Novo modelo" src="https://github.com/user-attachments/assets/9fdce1a7-e8ee-4e2c-9fd3-50f94db4ba3b" />
 
 ---
