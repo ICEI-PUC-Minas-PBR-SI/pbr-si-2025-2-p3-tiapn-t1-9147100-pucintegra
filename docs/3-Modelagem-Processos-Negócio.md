@@ -44,7 +44,7 @@ O processo atual para cadastrar profissionais da saúde e pacientes,e encontrar 
 *   **Dificuldade de Atualização:** Alterações cadastrais exigem processos manuais, lentos e muitas vezes pouco acessíveis ao usuário.
 *   **Ausência de Integração:** Falta de conexão com sistemas de prontuário eletrônico, plataformas de pagamento ou conselhos profissionais dificulta a centralização e a confiabilidade das informações.
 
-<img width="1860" height="1666" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/03dd6df7-0830-4394-87c4-b5e60f20990c" />
+<img width="1860" height="1666" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/89204d8d-989a-4017-9bfa-7d7c24d1590b" />
 
 
 
@@ -191,7 +191,7 @@ Profissional pode:
  * Confirmação final e início do agendamento
 
 
-<img width="1860" height="1666" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/03dd6df7-0830-4394-87c4-b5e60f20990c" />
+<img width="1860" height="1666" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/89204d8d-989a-4017-9bfa-7d7c24d1590b" />
 
 ---
 <img width="2098" height="1490" alt="Novo modelo" src="https://github.com/user-attachments/assets/9fdce1a7-e8ee-4e2c-9fd3-50f94db4ba3b" />
