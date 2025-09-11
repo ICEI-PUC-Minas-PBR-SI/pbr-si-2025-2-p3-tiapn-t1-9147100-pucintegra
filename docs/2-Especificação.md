@@ -20,19 +20,16 @@ Para realizar a especificação do projeto, serão empregadas as seguintes abord
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+1- Júlia, 28 anos, estudante de mestrado e a amiga que sempre organiza os rolês. Ela é metódica e adora planejar tudo com antecedência, mas se sente sobrecarregada na hora de dividir as contas. Ela é quem geralmente paga tudo primeiro e depois tem que ficar cobrando a galera. Quer que todos se divirtam e se sintam confortáveis, sem que o dinheiro seja um problema. Acha estressante ter que controlar todas as despesas em planilhas e ter a "cobrança" como uma responsabilidade adicional. Sente que o peso da organização financeira recai sobre ela.
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+2- Pedro, 25 anos, designer gráfico e o cara mais relax do grupo. Ele tem a melhor das intenções, mas é bem esquecido quando o assunto é dinheiro. Muitas vezes ele nem se lembra que pagou ou que precisa pagar alguém. Quer participar de tudo e curtir sem se preocupar com os detalhes financeiros. Fica com vergonha de não se lembrar de pagar ou de ter que perguntar para os outros quanto ele deve. Tem medo de parecer irresponsável e de prejudicar a organização do grupo.
 
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+3-  André, 32 anos, engenheiro de software, é o mais cético e analítico do grupo. Ele valoriza a justiça e a transparência em tudo, inclusive nas finanças. Ele tem uma planilha pessoal para tudo e quer ter certeza de que as contas estão perfeitamente equilibradas. Quer garantir que as contas sejam divididas de forma exata e justa, sem que ninguém saia no prejuízo. Não confia em "acertos de cabeça" e se sente desconfortável quando as contas não fecham no final do encontro. Fica inseguro sobre o uso de planilhas manuais que podem ter erros.
+
+4- Ana, 40 anos, mãe de duas crianças (8 e 12 anos). Ela adora viajar com a família, mas a divisão de contas com outros casais é sempre um desafio. Suas filhas nem sempre consomem a mesma coisa ou participam de todas as atividades, o que torna a divisão mais complexa. Quer aproveitar o tempo com a família e amigos, sem se preocupar com a logística de quem pagou o quê, especialmente em despesas que não são iguais para todos. Sente dificuldade em calcular a divisão de gastos quando o consumo é desigual. Sente-se pressionada para que a divisão seja feita de forma justa, sem que as crianças sejam "cobradas" por despesas de adultos.
+
+5- Lucas, 23 anos, estudante universitário, vive com o orçamento apertado. Ele sempre participa de viagens e eventos, mas está sempre de olho nos gastos. Ele não gosta de ter que pagar algo que não consumiu. Quer participar das atividades do grupo, mas precisa controlar seu dinheiro para não estourar o orçamento. Se sente desconfortável quando a divisão é por igual, especialmente quando consome menos que os outros. Tem dificuldade em pedir para que as contas sejam divididas de forma diferente.
+
 
 ## Histórias de Usuários
 
