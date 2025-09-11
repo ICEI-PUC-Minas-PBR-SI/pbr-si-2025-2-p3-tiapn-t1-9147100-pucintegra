@@ -44,7 +44,8 @@ O processo atual para cadastrar profissionais da saúde e pacientes,e encontrar 
 *   **Dificuldade de Atualização:** Alterações cadastrais exigem processos manuais, lentos e muitas vezes pouco acessíveis ao usuário.
 *   **Ausência de Integração:** Falta de conexão com sistemas de prontuário eletrônico, plataformas de pagamento ou conselhos profissionais dificulta a centralização e a confiabilidade das informações.
 
-<img width="1860" height="1666" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/93fc937c-9548-4a76-bf94-488b8d87b114" />
+<img width="1860" height="1776" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/20c674b8-3a7a-44f0-81d7-4f05e8b65699" />
+
 
 ---
 
@@ -148,7 +149,7 @@ Informações profissionais:
  * Status: Em análise → Aprovado → Rejeitado (com justificativa)
  * Após aprovação, profissional é ativado e pode começar a receber solicitações.
 
-<img width="1860" height="1666" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/93fc937c-9548-4a76-bf94-488b8d87b114" />
+<img width="1860" height="1776" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/20c674b8-3a7a-44f0-81d7-4f05e8b65699" />
 
 ---
 ### PROCESSO DE BUSCA DE PROFISSIONAIS
