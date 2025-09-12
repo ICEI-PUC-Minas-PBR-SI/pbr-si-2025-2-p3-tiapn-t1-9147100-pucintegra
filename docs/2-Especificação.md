@@ -10,6 +10,25 @@ Nesta seção, serão apresentadas as **personas**, as **histórias de usuários
 
 ---
 
+## Requisitos Mínimos do Sistema  
+
+O sistema **Smart Gestão** foi projetado para ser executado em equipamentos com configuração acessível, de forma a atender a realidade de microempreendedores individuais e profissionais autônomos. Para isso, foram definidos requisitos mínimos de hardware e software compatíveis com a execução em computadores pessoais e dispositivos móveis atuais.  
+
+### Hardware mínimo recomendado  
+- **Processador:** Intel Core i3 (8ª geração ou superior) / AMD Ryzen 3 (3200U ou superior)  
+- **Memória RAM:** 8 GB  
+- **Armazenamento:** 2 GB livre em disco  
+- **Tela:** Resolução mínima de 1024x768 pixels  
+- **Rede:** Conexão com a internet  
+
+### Softwares recomendados 
+- **Sistema Operacional:** Windows 10 ou superior, Linux Ubuntu 20+, Android 11+ ou iOS 14+  
+- **Navegadores compatíveis:** Chrome, Edge, Firefox ou Safari (versões recentes)  
+- **Banco de Dados:** PostgreSQL 13+ ou MySQL 8+  
+- **Servidor de Aplicação:** Node.js 18+ ou equivalente open-source  
+
+---
+
 ## Personas  
  
 - **João, 32 anos – Microempreendedor de serviços locais**  
