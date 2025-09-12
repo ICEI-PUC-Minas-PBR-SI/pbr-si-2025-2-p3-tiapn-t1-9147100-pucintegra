@@ -29,7 +29,7 @@ O processo modelado chama-se **"Cadastro e Login com Validação de E-mail ou Ce
 | login           | Caixa de Texto   | formato de e-mail |                |
 | senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
 | Nome            | Caixa de Texto   | mínimo de 5 caracteres |           |
-| Idade           | Número           | mínimo de 5 caracteres |           |
+| Idade           | Número           |                |           |
 | Genero          | Seleção múltipla |                |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
