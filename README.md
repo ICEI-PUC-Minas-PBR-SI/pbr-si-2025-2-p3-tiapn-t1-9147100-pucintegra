@@ -4,7 +4,7 @@
 
 `TRABALHO INTERDISCIPLINAR : APLICAÇÕES PARA PROCESSO DE NEGÓCIOS`
 
-`QUARTO SEMESTRE`
+`02.2025`
 
 Nosso projeto tem como objetivo o desenvolvimento de um sistema de controle de despesas voltado para microempreendedores individuais (MEIs) e profissionais autônomos. A proposta busca solucionar uma das maiores dificuldades enfrentadas por esse público: a falta de organização financeira. Muitos pequenos empreendedores ainda recorrem a métodos informais, como anotações em cadernos ou planilhas simples, o que dificulta o acompanhamento do fluxo de caixa e a tomada de decisões estratégicas. Nesse contexto, o sistema pretende oferecer uma ferramenta prática, acessível e intuitiva, capaz de registrar e categorizar transações, gerar relatórios, definir metas e emitir alertas, contribuindo para uma gestão mais clara e eficiente das finanças.
 
