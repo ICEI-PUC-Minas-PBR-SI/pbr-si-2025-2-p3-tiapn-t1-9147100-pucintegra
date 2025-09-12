@@ -10,58 +10,76 @@ Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
 _Descreva aqui cada uma das propriedades das atividades do processo 1. 
 Devem estar relacionadas com o modelo de processo apresentado anteriormente._
 
-_Os tipos de dados a serem utilizados são:_
+### **Preenchimento dos dados do Locador**
 
-_* **Área de texto** - campo texto de múltiplas linhas_
+| Campo            | Tipo         | Restrições                                                | Valor default   |
+|------------------|-------------|-----------------------------------------------------------|-----------------|
+| Nome completo    | Caixa de texto | obrigatório, mínimo 3 caracteres                          | -               |
+| E-mail           | Caixa de texto | formato de e-mail válido, obrigatório                     | -               |
+| Telefone         | Caixa de texto | formato (xx) xxxxx-xxxx, obrigatório                      | -               |
+| CPF/CNPJ         | Caixa de texto | obrigatório, verificação de duplicidade                   | -               |
+| Endereço         | Área de texto  | obrigatório                                               | -               |
+| Senha            | Caixa de texto | mínimo 8 caracteres, incluir letra maiúscula, número e símbolo | -         |
+| Confirmar senha  | Caixa de texto | deve coincidir com senha                                  | -               |
+| Foto de perfil   | Imagem         | opcional, até 2MB                                         | imagem padrão   |
 
-_* **Caixa de texto** - campo texto de uma linha_
-
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
+**Comandos**  
+| Nome do botão/link | Destino                    | Tipo    |
+|---------------------|----------------------------|---------|
+| Cancelar           | Fim do processo            | cancel  |
+| Confirmar cadastro | Confirmação de cadastro    | default |
 
 
-**Nome da atividade 1**
+### **Preenchimento dos dados do Locatário**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| Campo            | Tipo         | Restrições                                                | Valor default   |
+|------------------|-------------|-----------------------------------------------------------|-----------------|
+| Nome completo    | Caixa de texto | obrigatório, mínimo 3 caracteres                          | -               |
+| E-mail           | Caixa de texto | formato de e-mail válido, obrigatório                     | -               |
+| Telefone         | Caixa de texto | formato (xx) xxxxx-xxxx, obrigatório                      | -               |
+| CPF              | Caixa de texto | obrigatório, verificação de duplicidade                   | -               |
+| Endereço         | Área de texto  | obrigatório                                               | -               |
+| Senha            | Caixa de texto | mínimo 8 caracteres, incluir letra maiúscula, número e símbolo | -         |
+| Confirmar senha  | Caixa de texto | deve coincidir com senha                                  | -               |
+| Foto de perfil   | Imagem         | opcional, até 2MB                                         | imagem padrão   |
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+**Comandos**  
+| Nome do botão/link | Destino                    | Tipo    |
+|---------------------|----------------------------|---------|
+| Cancelar           | Fim do processo            | cancel  |
+| Confirmar cadastro | Confirmação de cadastro    | default |
 
 
-**Nome da atividade 2**
+### **Confirmação de Cadastro**
+| Campo              | Tipo        | Restrições                                      | Valor default |
+|--------------------|-------------|-------------------------------------------------|---------------|
+| Código de verificação | Número    | enviado por e-mail ou SMS, obrigatório          | -             |
+| Aceite dos termos de uso | Seleção única (checkbox) | obrigatório                       | desmarcado    |
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+**Comandos**  
+| Nome do botão/link | Destino                         | Tipo    |
+|---------------------|---------------------------------|---------|
+| Voltar             | Preenchimento dos dados         | cancel  |
+| Confirmar          | Validação do usuário Locador/Locatário | default |
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+### **Validação do Usuário (Locador / Locatário)**
+| Campo              | Tipo             | Restrições                                    | Valor default |
+|--------------------|------------------|-----------------------------------------------|---------------|
+| Status da validação | Seleção única   | valores possíveis: aprovado / pendente / rejeitado | pendente   |
+| Documentos enviados | Arquivo         | formatos aceitos: PDF, JPG, PNG               | -             |
+
+**Comandos**  
+| Nome do botão/link | Destino                    | Tipo    |
+|---------------------|----------------------------|---------|
+| Reenviar dados     | Preenchimento dos dados    | cancel  |
+| Aprovar cadastro   | Cadastro concluído         | default |
+
+### **Cadastro Concluído**
+| Campo                 | Tipo        | Restrições            | Valor default       |
+|-----------------------|-------------|-----------------------|---------------------|
+| Mensagem de boas-vindas | Área de texto | apenas leitura       | -                   |
+
+**Comandos**  
+| Nome do botão/link | Destino              | Tipo    |
+|---------------------|----------------------|---------|
+| Acessar painel     | Início do sistema    | default |
