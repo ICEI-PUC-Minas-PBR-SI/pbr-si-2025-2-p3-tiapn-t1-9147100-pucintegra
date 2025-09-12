@@ -2,45 +2,46 @@
 
 <span style="color:red">Pré-requisitos: <a href="01-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
+A definição do problema parte da dificuldade enfrentada por microempreendedores individuais (MEIs) e profissionais autônomos em manter um controle financeiro eficiente. Muitos ainda utilizam métodos manuais ou informais (planilhas, cadernos, anotações soltas), o ocasiona a perda de dados, erros e falta de clareza sobre a real situação financeira do negócio.  
+ 
+A solução proposta é o **Smart Gestão**, um sistema de controle financeiro que permite registrar e categorizar receitas e despesas, emitir relatórios, gerar alertas e apoiar o planejamento estratégico do usuário.  
+ 
+Nesta seção, serão apresentadas as **personas**, as **histórias de usuários**, os **requisitos funcionais e não funcionais** e as **restrições do projeto**, elaborados a partir de técnicas de modelagem de software e práticas de análise de requisitos.
 
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+---
 
-## Personas
+## Personas  
+ 
+- **João, 32 anos – Microempreendedor de serviços locais**  
+João é dono de uma barbearia em seu bairro. Trabalha sozinho e atende em média 15 clientes por dia. Apesar do bom movimento, enfrenta dificuldades para organizar suas finanças, já que ainda faz os registros em um caderno antigo. Casado e pai de um filho pequeno, ele tem pouco tempo para lidar com planilhas complexas e teme perder o controle do fluxo de caixa. Sonha em expandir seu negócio, mas sabe que precisa de mais clareza sobre lucros e despesas para tomar decisões estratégicas.  
+ 
+- **Ana, 28 anos – Vendedora autônoma online**  
+Ana vende cosméticos e acessórios em redes sociais e marketplaces. Solteira e bastante conectada ao mundo digital, ela lida diariamente com dezenas de transações pequenas, o que torna difícil visualizar seus lucros reais. Apesar de usar planilhas esporadicamente, acaba se perdendo com a alta demanda. Ana gostaria de uma solução simples no celular para acompanhar receitas, despesas e resultados em tempo real, ajudando-a a investir melhor em marketing e estoque.  
+ 
+- **Carlos, 41 anos – Prestador de serviços de manutenção**  
+Carlos é casado e tem dois filhos adolescentes. Trabalha com pequenos reparos em domicílios, como eletricidade e encanamento. Costuma anotar seus ganhos e gastos em papéis soltos e frequentemente mistura finanças pessoais com profissionais. Isso gera dificuldades na hora de calcular margens de lucro e planejar investimentos. Carlos deseja separar melhor suas contas e ter um sistema que o ajude a entender se realmente está lucrando no fim do mês.  
+ 
+- **Marina, 36 anos – Dona de restaurante local**  
+Marina administra um pequeno delivery de refeições caseiras. Casada e apaixonada por gastronomia, investe muito tempo na cozinha e pouco no gerenciamento do negócio. Utiliza anotações manuais para organizar custos e pagamentos, mas sofre com atrasos em contas e falta de controle sobre tributos. Ela precisa de relatórios claros sobre faturamento e custos, além de alertas que a ajudem a não perder prazos. Seu objetivo é organizar as finanças para manter o restaurante sustentável e, no futuro, abrir uma segunda unidade.
+ 
+---
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+## Histórias de Usuários  
+ 
+| EU COMO… (Persona) | QUERO/PRECISO… (Funcionalidade) | PARA… (Motivo/Valor) |
+|---------------------|---------------------------------|-----------------------|
+| Ana | Classificar transações por categoria | Identificar padrões de gastos |
+| Ana | Registrar transações pelo celular | Não perder registros quando estiver em trânsito |
+| Ana | Ter garantia de segurança nos dados | Confiar que informações não serão vazadas |
+| Carlos | Visualizar relatórios gráficos mensais | Facilitar análise financeira |
+| Carlos | Exportar relatórios em PDF/Excel | Compartilhar com contador |
+| João | Cadastrar receitas e despesas rapidamente | Ter controle diário do caixa |
+| João | Receber alertas de vencimento de tributos | Evitar multas e atrasos |
+| João | Cadastrar fornecedores | Organizar despesas recorrentes |
+| Marina | Definir metas de gastos | Controlar orçamento e evitar excessos |
+| Marina | Ter um dashboard inicial com visão geral | Tomar decisões rápidas |
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
-
-## Histórias de Usuários
-
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
-
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
-
-
+---
 
 ## Requisitos
 
@@ -48,44 +49,51 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+| ID | Descrição | Prioridade |
+|----|------------|------------|
+| RF-001 | Permitir o cadastro de receitas e despesas | ALTA |
+| RF-002 | Classificar transações em categorias predefinidas (ex.: alimentação, transporte, contas fixas) | ALTA |
+| RF-003 | Emitir relatórios financeiros simples (mensais e anuais) em formato de tabela | ALTA |
+| RF-004 | Exibir gráficos básicos (pizza e barra) para análise de despesas e receitas | MÉDIA |
+| RF-005 | Permitir que o usuário defina metas de gastos mensais por categoria | MÉDIA |
+| RF-006 | Emitir lembretes automáticos de pagamentos (ex.: tributos e contas recorrentes) | MÉDIA |
+| RF-007 | Exibir um painel inicial (dashboard) com resumo das principais informações financeiras | ALTA |
+| RF-008 | Permitir exportação de relatórios em PDF | MÉDIA |
+| RF-009 | Possibilitar cadastro básico de fornecedores e clientes | MÉDIA |
+| RF-010 | Disponibilizar acesso ao sistema via navegador (desktop) e versão simplificada mobile | ALTA |
+
+---
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+| ID | Descrição | Prioridade |
+|----|------------|------------|
+| RNF-001 | O sistema deve ser responsivo, permitindo uso em diferentes dispositivos (PCs e celulares) | ALTA |
+| RNF-002 | O tempo médio de resposta das operações deve ser de até **5 segundos** | MÉDIA |
+| RNF-003 | O sistema deve ser compatível com navegadores modernos (Chrome, Firefox, Edge) | ALTA |
+| RNF-004 | Os dados do usuário devem ser armazenados de forma segura em banco de dados | ALTA |
+| RNF-005 | O sistema deve funcionar em regime de disponibilidade **durante o horário de apresentação/testes acadêmicos** | ALTA |
+| RNF-006 | O banco de dados deve suportar ao menos **1.000 registros de transações** sem perda de desempenho | MÉDIA |
+| RNF-007 | O sistema deve ser implementado de forma modular, facilitando futuras expansões | MÉDIA |
+| RNF-008 | A interface deve ser simples, intuitiva e de fácil navegação para usuários não técnicos | ALTA |
+| RNF-009 | O login deve exigir usuário e senha, com recuperação básica de senha por e-mail | MÉDIA |
+| RNF-010 | A arquitetura deve possibilitar futura integração com APIs externas (ex.: serviços contábeis) | BAIXA |
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+---
 
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+| ID | Descrição | Prioridade |
+|----|------------|------------|
+| RNF-001 | O sistema deve ser responsivo, permitindo uso em diferentes dispositivos (PCs e celulares) | ALTA |
+| RNF-002 | O tempo médio de resposta das operações deve ser de até **5 segundos** | MÉDIA |
+| RNF-003 | O sistema deve ser compatível com navegadores modernos (Chrome, Firefox, Edge) | ALTA |
+| RNF-004 | Os dados do usuário devem ser armazenados de forma segura em banco de dados | ALTA |
+| RNF-005 | O sistema deve funcionar em regime de disponibilidade **durante o horário de apresentação/testes acadêmicos** | ALTA |
+| RNF-006 | O banco de dados deve suportar ao menos **1.000 registros de transações** sem perda de desempenho | MÉDIA |
+| RNF-007 | O sistema deve ser implementado de forma modular, facilitando futuras expansões | MÉDIA |
+| RNF-008 | A interface deve ser simples, intuitiva e de fácil navegação para usuários não técnicos | ALTA |
+| RNF-009 | O login deve exigir usuário e senha, com recuperação básica de senha por e-mail | MÉDIA |
+| RNF-010 | A arquitetura deve possibilitar futura integração com APIs externas (ex.: serviços contábeis) | BAIXA |
