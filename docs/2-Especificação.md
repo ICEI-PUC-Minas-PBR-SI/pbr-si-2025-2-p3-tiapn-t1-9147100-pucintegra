@@ -87,7 +87,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |01| O projeto deverá ser entregue até o final do semestre |
 |02| O sistema deve ser responsivo, permitindo uso em diferentes dispositivos (Web e mobile) |
 |03| O sistema deve ser compatível com a ultima versão dos navegadores mais utilzados (Chrome, Edge e Safari) |
-|04| O desenvolvimento do backend deve ser feito em Java Spring Boot |
+|04| O desenvolvimento do backend deve ser feito em C# |
 |05| O desenvolvimento do front deve ser feito em HTML/CSS/JS |
 |06| O banco de dados utilizado deve ser o Firebase |
 |07| O sistema não terá integração com meios de pagamento online |
