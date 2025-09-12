@@ -50,11 +50,11 @@ Como o Poupador, eu quero poder visualizar meu saldo individual em tempo real e 
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-| Júlia, como Organizadora | Registrar as despesas do grupo em tempo real. | Não precise mais usar planilhas e me sinta segura de que todas as contas estão sendo registradas, aliviando o estresse da cobrança.|
-| Pedro, como Esquecido | Receber notificações sobre quem eu preciso pagar e quem me deve | Não me esqueço de acertas as contas e não crie atrito com meus amigos por causa de dívidas pendentes. |
+| Júlia, como Organizadora | Registrar as despesas do grupo em tempo real. | Não precise mais usar planilhas e se sinta segura de que todas as contas estão sendo registradas, aliviando o estresse da cobrança.|
+| Pedro, como Esquecido | Receber notificações sobre quem eu preciso pagar e quem me deve | Não se esqueça de acertas as contas e não crie atrito com seus amigos por causa de dívidas pendentes. |
 | André, como controlado | Acesso a um painel com um resumo financeiro claro e transparente para todos os membros | Verificar se as despesas foram registradas corretamente e ter certeza de que o acerto final é justo e preciso para todos. |
-| Ana, como mãe de família | Quer a capacidade de marcar despesas como "não participativas" para determinados membros do grupo | A divisão de contas considere o consumo das minhas filhas, garantindo que eu pague apenas pelo que consumimos e a divisão seja equitativa. |
-| Lucas, como poupador | Visualizar o saldo individual em tempo real e ver exatamente quanto devo e quanto irei receber | Possa planejar seus gastos e se sentir mais à vomtade sabendo que não terei que pagar algo que não consumi. |
+| Ana, como mãe de família | Quer a capacidade de marcar despesas como "não participativas" para determinados membros do grupo | A divisão de contas considere o consumo das filhas, garantindo que seja pague apenas pelo que foi consumido e a divisão seja equitativa. |
+| Lucas, como poupador | Visualizar o saldo individual em tempo real e ver exatamente quanto deve e quanto irá receber | Possa planejar seus gastos e se sentir mais à vomtade sabendo que não terá que pagar algo que não consumiu. |
 
 
 > **Links Úteis**:
