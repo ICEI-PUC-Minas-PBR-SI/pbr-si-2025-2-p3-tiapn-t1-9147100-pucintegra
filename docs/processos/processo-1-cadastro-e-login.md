@@ -1,13 +1,13 @@
 ### 3.3.1 Processo 1 – Cadastro e Login
 
-O processo modelado chama-se **"Cadastro e Login com Validação de E-mail ou Celular"**, e sua principal função é permitir que novos usuários criem uma conta de forma segura e acessem o sistema após uma verificação de identidade. Entre as **oportunidades de melhoria**, destacam-se: a possibilidade de integrar um sistema de **autenticação multifator (MFA)** para reforçar a segurança; **automatizar o envio e validação do código** para reduzir falhas manuais; e **otimizar o tempo de resposta do serviço de envio (e-mail/SMS)** para melhorar a experiência do usuário. O modelo do processo 1 foi descrito segundo o **padrão BPMN**, utilizando **pools e swimlanes** para representar os participantes (Usuário, Sistema de Autenticação e Serviço de E-mail/SMS) e detalhar o fluxo de atividades com **tarefas, eventos e fluxos de sequência**.
+O processo de **Entrada no Sistema** começa quando o usuário vai até o browser de sua preferência e insere a url da aplicação. O browser então exibe a tela onde é possível inserir e-mail e senha;  Já para **Preencher formulário de cadastrar** a tela de preenchimento de um formulário é apresentada onde o usuário adiciona seus dados como login, senha, nome, idade e genero; o sistema, então, envia um link de verificação para o e-mail ou sms, e, após a sua confirmação,  finaliza o registro ao ter o código validado.
 
 
 ![Exemplo de um Modelo BPMN do PROCESSO 1](../images/processo-1-cadastro-login.png "Modelo BPMN do Processo 1.")
 
 #### Detalhamento das atividades
 
-**Nome da atividade 1** Login
+**Nome da atividade 1** Entrar no Sistema
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -22,7 +22,7 @@ O processo modelado chama-se **"Cadastro e Login com Validação de E-mail ou Ce
 | Entrar               | Fim do Processo 1              | default           |
 
 
-**Nome da atividade 2** Cadastro
+**Nome da atividade 2** Preencher formulário de cadastrar
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -35,3 +35,26 @@ O processo modelado chama-se **"Cadastro e Login com Validação de E-mail ou Ce
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | Cadastrar            | Início do proceso de cadastro  |                   |
+
+
+**Nome da atividade 3** Escolher validação
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Método           | Seleção múltipla   |  | Email               |
+
+
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| Enviar            | Início do proceso de validação  |                   |
+
+**Nome da atividade 4** Inserir código de validação
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| codigo           | Caixa de Texto   | mínimo de 8 caracteres |                |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| Validar código       | Tela de entrada do sistema  |                   |
