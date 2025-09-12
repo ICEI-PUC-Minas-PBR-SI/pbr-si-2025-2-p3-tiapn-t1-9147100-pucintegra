@@ -49,13 +49,23 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |------|-----------------------------------------|----|
 |RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
 |RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-003|  |   |
+|RF-004|  |   |
+|RF-005|  |   |
+|RF-006|  |   |
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
+|ID     | Descrição do Requisito  | Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-001| O sistema deve permitir o cadastro de locador e de locatários e seus espaços                | ALTA  |
+|RNF-002| O sistema deve ser intuitivo para o público-alvo                                            | ALTA  |
+|RNF-003| A interface deve apresentar informações claras e objetivas das reservas de local            | MÉDIA  |
+|RNF-004| O processo de busca e reserva deve ser ágil                                                 | MÉDIA  |
+|RNF-005| O sistema de busca e filtros deve retornar resultados rapidamente                           | BAIXA  |
+|RNF-006| O módulo de reservas e o calendário de disponibilidade devem ser atualizados em tempo real  | ALTA  |
+|RNF-007| O sistema deve incorporar mecanismos para fortalecer a segurança e a confiança              | ALTA  |
+
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
