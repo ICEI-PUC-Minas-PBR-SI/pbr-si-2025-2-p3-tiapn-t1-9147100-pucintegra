@@ -36,16 +36,19 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
 
-### Requisitos Funcionais
+|ID     | Descrição do Requisito  | Prioridade |
+|-------|-------------------------|----|
+|RF-001| Permitir a criação e exibição de posts em formato de catálogo digital.                                    | ALTA  |
+|RF-002| Possibilitar a inserção ou atualização de dados cadastrais a qualquer momento.                            | ALTA  |
+|RF-003| Exibir datas e horários locados ou disponíveis                                                            | MÉDIA |
+|RF-004| Gerar um formulário de cadastro para novos usuários.                                                      | ALTA  |
+|RF-005| Solicitar documentação de comprovação de proprietário do espaço a ser locado (Apenas para locador).       | MÉDIA |
+|RF-006| Inserção obrigatória de fotos do local, min. 3 (Apenas para locador).                                     | BAIXA |
+|RF-007| Formulário para login.                                                                                    | ALTA  |
+|RF-008| Fornecer ferramenta de busca dentro da plataforma.                                                        | MÉDIA |
+|RF-009| Apresentar tela de avaliação de cliente/locatário e espaço.                                               | BAIXA |
+|RF-010| Receber atualização nas postagens sempre que solicitado.                                                  | MÉDIA |
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| O sistema deve permitir o cadastro de locador, locatários e seus espaços | ALTA  |
-|RF-002| O sistema deve permitir avaliar locadores e locatários                   | MÉDIA  |
-|RF-003|  |   |
-|RF-004|  |   |
-|RF-005|  |   |
-|RF-006|  |   |
 
 ### Requisitos não Funcionais
 
