@@ -206,3 +206,30 @@ CREATE TABLE Alerta (
     Data DATE,
     FOREIGN KEY (UsuarioID) REFERENCES Usuario(UsuarioID)
 );
+
+```
+### 4.4. Tecnologias
+
+As tecnologias selecionadas para o desenvolvimento do sistema foram escolhidas com base na sua **robustez, popularidade, suporte da comunidade** e **adequação aos requisitos do projeto**, conforme a tabela a seguir:
+
+| **Dimensão**   | **Tecnologia**  |
+| -------------- | --------------- |
+| SGBD           | MySQL           |
+| Frontend       | HTML + CSS + JS |
+| Backend        | Java SpringBoot |
+| Deploy         | GitHub Pages    |
+
+#### Como as Tecnologias se Relacionam (Fluxo de Interação)
+
+1. O usuário acessa o sistema através de um **navegador web**, que carrega as páginas web (HTML, CSS, JS) hospedadas no **GitHub Pages**.  
+2. A interface do usuário envia **requisições** (ex: registrar despesa, consultar extrato) para o **backend**, implementado em **Java SpringBoot**.  
+3. O backend processa a requisição, aplica a **lógica de negócio** e interage com o **MySQL (SGBD)** para armazenar ou recuperar os dados financeiros.  
+4. O **MySQL retorna** os dados ao backend.  
+5. O backend envia a **resposta** (ex: confirmação de registro, lista de transações) de volta para o frontend.  
+6. O frontend atualiza a **interface do usuário**, exibindo as informações solicitadas ou confirmando a operação.  
+
+> Esta combinação de tecnologias oferece uma **solução completa e escalável**, desde a interface do usuário até a persistência dos dados, garantindo um **desenvolvimento eficiente** e um produto final de alta qualidade para MEIs e profissionais autônomos.
+
+#### Diagrama de Tecnologias
+
+![Diagrama de Tecnologias](./images/tecnologias-diagrama.png)
