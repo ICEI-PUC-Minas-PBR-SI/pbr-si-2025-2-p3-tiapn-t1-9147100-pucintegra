@@ -193,7 +193,7 @@ Profissional pode:
  * Sugerir novo horário
  * Confirmação final e início do agendamento
 
-<img width="2098" height="1490" alt="Novo modelo" src="https://github.com/user-attachments/assets/9fdce1a7-e8ee-4e2c-9fd3-50f94db4ba3b" />
+<img width="2056" height="1680" alt="Novo modelo banco de dados cleia" src="https://github.com/user-attachments/assets/fe5615fc-1a33-49ba-bf1a-cb13632814b3" />
 
 ---
 
