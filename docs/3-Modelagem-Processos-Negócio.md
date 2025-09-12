@@ -5,7 +5,7 @@ No contexto do mercado de locação de espaços para eventos, o panorama atual a
 
 - Canais mistos de descoberta: muitos usuários encontram locais por indicações, redes sociais, grupos de mensagens e alguns marketplaces generalistas; há, portanto, uma combinação de meios digitais e offline.
 - Variedade de nível de formalização: enquanto alguns locadores já usam plataformas digitais ou sistemas de gestão, outros mantêm rotinas mais informais (contato direto, visitas presenciais, planilhas).
-- Principais dificuldades levantadas pelos usuários: comparar preços e comodidades de forma ágil; confirmar disponibilidade imediata; verificar a fidelidade/adequação do anúncio ao imóvel real; estabelecer garantias contratuais claras.
+- Principais dificuldades levantadas pelos usuários: comparar preços e comodidades de forma ágil; confirmar disponibilidade imediata; verificar a fidelidade/adequação do anúncio ao imóvel real.
 - Gestão de disponibilidade: nem sempre existe controle centralizado do calendário do espaço, o que pode gerar sobreposição de reservas ou perda de oportunidades.
 - Comunicação e confiança: a comunicação costuma ocorrer fora de um fluxo estruturado (telefone/WhatsApp), tornando essencial mecanismos que aumentem a confiança entre as partes (identidade, avaliações, contratos).
 
@@ -13,13 +13,13 @@ Esses pontos mostram oportunidades de melhoria e pontos de atenção sem afirmar
 Há iniciativas locais e digitais em operação, mas existe espaço para uma solução que integre e padronize as principais funcionalidades exigidas pelo mercado.
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
-- Cadastro de Usuário e Verificação: perfis distintos (locador / locatário), cadastro com verificação mínima (e-mail/telefone) e opções adicionais de verificação/identidade para aumentar confiança.
+- Cadastro de Usuário e Verificação: perfis distintos (locador / locatário), cadastro com verificação mínima (e-mail) e opções adicionais de verificação/identidade para aumentar confiança.
 - Cadastro do Local: formulário estruturado com endereço, capacidade, comodidades, restrições, políticas (horários, limpeza), galeria de fotos e etiquetas (ex.: área externa, churrasqueira, sem hospedagem).
 - Busca e Filtros Avançados: pesquisa por localização, capacidade, faixa de preço, tipo de evento, comodidades, classificação por avaliações, disponibilidade em calendário.
 - Reserva e Fluxo de Confirmação: integração de calendário (bloqueio automático), fluxo de pré-reserva → pagamento/garantia → confirmação; notificações.
 - Gestão para Locadores: dashboard para controlar disponibilidade, preços (tarifação básica e promoções), aceitar/recusar pedidos, relatórios de ocupação e faturamento.
 - Avaliação e Reputação: sistema de avaliações bidirecionais (nota 1–5 e comentário), com regras para evitar abusos e permitir a construção gradual de reputação.
-- Integrações úteis: mapas/geo-localização, exportação/importação de calendário (Google/Outlook) e suporte.
+- Integrações úteis: mapas/geo-localização, exportação/importação de calendário (Google/Outlook).
 
 Como isso atende aos objetivos do projeto
 - Concentra informações e facilita comparação (catálogo + filtros).
