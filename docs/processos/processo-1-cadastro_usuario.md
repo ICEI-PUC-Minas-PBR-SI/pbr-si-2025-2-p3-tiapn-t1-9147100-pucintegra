@@ -7,10 +7,13 @@ Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 1. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+1. [Preenchimento dos dados do Locador](#preenchimento-dos-dados-do-locador)  
+2. [Preenchimento dos dados do Locatário](#preenchimento-dos-dados-do-locatário)  
+3. [Confirmação de Cadastro](#confirmação-de-cadastro)  
+4. [Validação do Usuário (Locador / Locatário)](#validação-do-usuário-locador--locatário)  
+5. [Cadastro Concluído](#cadastro-concluído)   
 
-### **Preenchimento dos dados do Locador**
+### Preenchimento dos dados do Locador
 
 | Campo            | Tipo         | Restrições                                                | Valor default   |
 |------------------|-------------|-----------------------------------------------------------|-----------------|
