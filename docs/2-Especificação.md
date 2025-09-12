@@ -57,6 +57,7 @@ Como o Poupador, eu quero poder visualizar meu saldo individual em tempo real e 
 | Lucas, como poupador | Visualizar o saldo individual em tempo real e ver exatamente quanto deve e quanto irá receber | Possa planejar seus gastos e se sentir mais à vomtade sabendo que não terá que pagar algo que não consumiu. |
 
 
+
 > **Links Úteis**:
 > - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
 > - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
@@ -87,39 +88,32 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-012| o sistema deve dispor de elementos de gamificação (medalhas) para incentivar o engajamento.     | BAIXA      |
 |RF-013| O sistema deve gerar estatísticas de uso e comportamento dos usuários, disponibilizando relatórios para a administração do sistema. | MÉDIA |
 
-### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| O sistema deve ser responsivo para rodar em um dispositivos móvel | MÉDIA | 
-|RNF-002| Deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+## Requisitos Não Funcionais (RNF)
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
+| **ID**    | **Descrição do Requisito**                                                                 | **Prioridade** |
+|-----------|---------------------------------------------------------------------------------------------|----------------|
+| RNF-001   | O sistema deve ser responsivo, adaptando-se a diferentes tamanhos de tela (desktop, tablet e dispositivos móveis). | ALTA |
+| RNF-002   | O sistema deve suportar acesso multiplataforma, rodando em navegadores modernos (Chrome, Firefox, Edge, Safari). | ALTA |
+| RNF-003   | As requisições do usuário devem ser processadas em no máximo **3 segundos**, em condições normais de uso. | MÉDIA |
+| RNF-004   | O sistema deve garantir a segurança dos dados, com armazenamento criptografado de credenciais (hash + salt). | ALTA |
+| RNF-005   | O sistema deve suportar autenticação via e-mail ou celular, com recuperação segura de senha. | ALTA |
+| RNF-006   | O sistema deve ser tolerante a falhas, exibindo mensagens de erro claras e sem perda de dados já inseridos. | MÉDIA |
+| RNF-007   | O sistema deve manter logs de atividade de usuários e operações de grupo para rastreabilidade. | MÉDIA |
+| RNF-008   | A interface deve ser intuitiva e de fácil navegação, com usabilidade adequada a usuários não técnicos. | ALTA |
+| RNF-009   | O sistema deve estar disponível **24/7**, com uptime mínimo de 99% (considerando ambiente de produção). | BAIXA |
+| RNF-010   | O sistema deve estar documentado em Markdown e versionado no GitHub para garantir rastreabilidade e colaboração. | ALTA |
 
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
+---
 
-## Restrições
+## Restrições do Projeto
 
-O projeto está restrito pelos itens apresentados na tabela a seguir.
-
-|ID| Restrição                                             |
-|--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
+| **ID** | **Restrição** |
+|--------|----------------|
+| R-01   | O projeto deverá ser entregue até o final do semestre, sem possibilidade de prorrogação. |
+| R-02   | Não pode ser desenvolvido um módulo de backend — apenas a especificação e simulação do funcionamento. |
+| R-03   | O desenvolvimento deve utilizar **Java** e **.NET** nos módulos definidos pela equipe, respeitando a arquitetura de microserviços. |
+| R-04   | O banco de dados deve ser **MySQL**, já provisionado previamente, não podendo ser substituído por outro SGBD. |
+| R-05   | A documentação oficial deve ser realizada em **Markdown** e publicada no repositório GitHub. |
+| R-06   | As funcionalidades devem estar alinhadas às histórias de usuário definidas (não serão aceitas funções que não atendam a essas demandas). |
+| R-07   | O sistema não deve depender de serviços pagos ou proprietários (restrição orçamentária). |
