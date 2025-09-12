@@ -6,13 +6,17 @@
 #### Detalhamento das atividades
 
 | Atividade | Tipo | Dados Utilizados | Observações |
-| :--------------------------------- | :----------------- | :---------------------------------- | :-------------------------------------------- |
-| Buscar indicações | Manual | Nome, contato, especialidade | Feita em redes sociais, amigos, médicos. |
-| Entrar em contato | Usuário | Telefone, WhatsApp, e-mail | Comunicação descentralizada. |
-| Aguardar retorno | Evento de mensagem | Disponibilidade, valor, credenciais | Possíveis atrasos ou ausência de resposta. |
-| Negociar valores e disponibilidade | Manual/Usuário | Agenda, preço, experiência | Requer múltiplas trocas, gera desgaste. |
-| Agendamento informal | Manual | Data, hora, endereço | Sem confirmação automática; sujeito a falhas. |
-| Acompanhar atendimento e pagamento | Manual | Histórico do paciente, comprovantes | Gestão descentralizada e repetitiva. |
+| :--- | :--- | :--- | :--- |
+| **Identificar necessidades** | Manual (Paciente) | Requisitos de saúde, tipo de profissional | O paciente inicia o processo definindo o que precisa. |
+| **Analisar solicitação** | Manual (Profissional) | Detalhes da necessidade do paciente | O profissional de saúde avalia o pedido recebido. |
+| **Verificar disponibilidade** | Manual (Profissional) | Agenda do profissional | O profissional verifica se pode atender na data/hora desejada. |
+| **Informar localização** | Usuário (Paciente) | Endereço do paciente | O paciente envia sua localização para a negociação de valores. |
+| **Negociar valor** | Manual/Usuário | Preço, localização, necessidades | Etapa de negociação entre o paciente e o profissional. |
+| **Realizar Pagamento** | Usuário (Paciente) | Dados de pagamento (cartão, Pix, etc.) | O pagamento é efetuado antes da definição da consulta. |
+| **Agendar consulta** | Manual/Usuário | Data, hora, tipo de consulta (online/presencial) | O agendamento pode ser manual ou automático após o pagamento. |
+| **Realizar Consulta** | Manual | Consulta (Presencial ou Online) | O profissional realiza o atendimento conforme agendado. |
+| **Contratar profissional** | Manual (Paciente) | Contrato, acordo de serviço | Formalização do serviço após a consulta inicial. |
+
 
 ---
 
