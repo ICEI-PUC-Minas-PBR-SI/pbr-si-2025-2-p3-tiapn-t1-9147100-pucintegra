@@ -92,10 +92,10 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|02| O sistema deve ser responsivo, permitindo uso em diferentes dispositivos (Web e mobile) |
+|03| O sistema deve ser compatível com a ultima versão dos navegadores mais utilzados (Chrome, Edge e Safari) |
+|04| O desenvolvimento do backend deve ser feito em Java Spring Boot |
+|05| O desenvolvimento do front deve ser feito em HTML/CSS/JS |
+|06| O banco de dados utilizado deve ser o Firebase |
+|07| O sistema não terá integração com meios de pagamento online |
 
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
