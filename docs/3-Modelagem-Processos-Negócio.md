@@ -8,49 +8,7 @@
 
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 
-Atualmente, a maioria dos microempreendedores individuais (MEIs) e profissionais autônomos gerencia suas despesas de forma informal, utilizando métodos manuais ou ferramentas básicas que não foram projetadas especificamente para essa finalidade.  
-
-Este processo, denominado **AS IS** (como é hoje), é caracterizado por uma série de etapas que, embora funcionais, apresentam ineficiências e riscos significativos.  
-
-#### 3.1.1. Etapas do Processo AS IS
-
-1. **Registro da Despesa**  
-   - **Ação:** O MEI/autônomo realiza uma compra ou contrata um serviço, gerando uma despesa.  
-   - **Ferramenta:** Geralmente, a despesa é registrada em um caderno físico, em uma planilha eletrônica simples (Excel ou Google Sheets) ou, em alguns casos, apenas memorizada.  
-   - **Problemas:** Falta de padronização no registro, risco de perda de informações, erros manuais, dificuldade de rastreamento e categorização.  
-
-2. **Coleta de Comprovantes**  
-   - **Ação:** O MEI/autônomo recebe e guarda comprovantes físicos (notas fiscais, recibos) ou digitais (e-mails, PDFs).  
-   - **Ferramenta:** Pastas físicas, caixas ou pastas digitais no computador/nuvem.  
-   - **Problemas:** Dificuldade em organizar e localizar comprovantes, risco de perda ou extravio, falta de digitalização e indexação.  
-
-3. **Categorização (Informal)**  
-   - **Ação:** O MEI/autônomo tenta classificar a despesa em categorias gerais (ex: transporte, alimentação, material de escritório).  
-   - **Ferramenta:** Anotação manual ao lado do registro ou coluna em planilha.  
-   - **Problemas:** Categorização inconsistente, falta de granularidade, dificuldade em analisar gastos por tipo.  
-
-4. **Acompanhamento de Saldo (Ocasional)**  
-   - **Ação:** Periodicamente, o MEI/autônomo soma despesas e subtrai das receitas para estimar o saldo.  
-   - **Ferramenta:** Calculadora ou planilha.  
-   - **Problemas:** Visão fragmentada e desatualizada do fluxo de caixa, dificuldade em identificar tendências financeiras, ausência de projeções futuras.  
-
-5. **Análise e Tomada de Decisão (Limitada)**  
-   - **Ação:** Com base nos dados informais, o MEI/autônomo decide sobre gastos futuros ou investimentos.  
-   - **Ferramenta:** Intuição e experiência pessoal.  
-   - **Problemas:** Decisões baseadas em dados incompletos ou imprecisos, dificuldade em identificar gastos desnecessários, falta de base para planejamento estratégico.  
-
-#### 3.1.2. Pontos Críticos do Processo AS IS
-
-- **Falta de Centralização:** Informações dispersas em múltiplos locais e formatos.  
-- **Propenso a Erros:** Dependência de registros manuais e cálculos suscetíveis a falhas.  
-- **Baixa Visibilidade:** Dificuldade em obter visão clara e consolidada em tempo real.  
-- **Consumo de Tempo:** Processo manual, demorado e repetitivo, desviando o foco do negócio.  
-- **Dificuldade de Análise:** Ausência de categorização padronizada e relatórios estruturados.  
-- **Risco de Conformidade:** Dificuldade em manter registros organizados para fins fiscais.  
-
-➡️ Este cenário reforça a necessidade de uma solução tecnológica que automatize e organize o controle de despesas, transformando o processo **AS IS** em um modelo mais eficiente e estratégico.  
-
----
+Atualmente, a maioria dos microempreendedores individuais (MEIs) e profissionais autônomos gerencia suas despesas de forma informal, utilizando métodos manuais ou ferramentas básicas que não foram projetadas para esse fim, como cadernos, planilhas simples ou anotações memorizadas. Esse processo apresenta diversas ineficiências, incluindo dificuldade em organizar e rastrear gastos, categorização inconsistente, acompanhamento fragmentado do fluxo de caixa e limitações na tomada de decisões financeiras. Como resultado, os microempreendedores enfrentam desafios para manter controle efetivo sobre suas finanças e realizar um planejamento estratégico adequado.
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
