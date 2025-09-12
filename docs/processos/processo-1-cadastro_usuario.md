@@ -7,12 +7,26 @@ Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
 
 #### Detalhamento das atividades
 
-1. [Preenchimento dos dados do Locador](#atividade-1---preenchimento-dos-dados-do-locador)  
-2. [Preenchimento dos dados do Locatário](#atividade-2---preenchimento-dos-dados-do-locatário)  
-3. [Confirmação de Cadastro](#atividade-3---confirmação-de-cadastro)  
-4. [Validação do Usuário (Locador / Locatário)](#atividade-4---validação-do-usuário-locador--locatário)  
-5. [Cadastro Concluído](#atividade-5---cadastro-concluído)   
+1. [Preenchimento dos dados do Locador](#atividade-1---preenchimento-dos-dados-do-locador)
+   - Captura informações do cadastro do proprietário do espaço. (nome, e-mail, CPF/CNPJ, endereço, etc.)  
+   - Inclui criação e confirmação de senha e opção de foto de perfil.
+     
+3. [Preenchimento dos dados do Locatário](#atividade-2---preenchimento-dos-dados-do-locatário)
+   - Coleta dados pessoais do cliente interessado em alugar um espaço. (nome, e-mail, CPF/CNPJ, endereço, etc.)   
+   - Estrutura semelhante à do locador, mas focada em pessoa física.
+     
+4. [Confirmação de Cadastro](#atividade-3---confirmação-de-cadastro)
+   - Envio de código de verificação por e-mail.  
+   - Exige aceite dos termos de uso antes da validação.
+     
+6. [Validação do Usuário (Locador / Locatário)](#atividade-4---validação-do-usuário-locador--locatário)
+   - Verificação das informações preenchidas.  
+     
+8. [Cadastro Concluído](#atividade-5---cadastro-concluído)   
+   - Exibe mensagem de boas-vindas ao usuário.  
+   - Encaminha o usuário ao painel principal do sistema.
 
+  
 ### Atividade 1 - Preenchimento dos dados do Locador
 
 | Campo            | Tipo         | Restrições                                                | Valor default   |
