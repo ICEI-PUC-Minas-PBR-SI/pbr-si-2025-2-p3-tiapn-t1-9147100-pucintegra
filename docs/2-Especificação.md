@@ -64,7 +64,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-004| O processo de busca e reserva deve ser ágil                                                 | MÉDIA  |
 |RNF-005| O sistema de busca e filtros deve retornar resultados rapidamente                           | BAIXA  |
 |RNF-006| O módulo de reservas e o calendário de disponibilidade devem ser atualizados em tempo real  | ALTA  |
-|RNF-007| O sistema deve incorporar mecanismos para fortalecer a segurança e a confiança              | ALTA  |
+|RNF-007| O sistema deve incorporar mecanismos para fortalecer a segurança                            | ALTA  |
 |RNF-008| O sistema deve permitir avaliar locadores e locatários                                      | MÉDIA  |
 
 
