@@ -50,8 +50,10 @@ Como o Poupador, eu quero poder visualizar meu saldo individual em tempo real e 
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Júlia, como Organizadora | Registrar as despesas do grupo em tempo real. | Não precise mais usar planilhas e me sinta segura de que todas as contas estão sendo registradas, aliviando o estresse da cobrança.|
+|André, como controlado | Acesso a um painel com um resumo financeiro claro e transparente para todos os membros | Verificar se as despesas foram registradas corretamente e ter certeza de que o acerto final é justo e preciso para todos. |
+| Ana, como mãe de família | Quer a capacidade de marcar despesas como "não participativas" para determinados membros do grupo | A divisão de contas considere o consumo das minhas filhas, garantindo que eu pague apenas pelo que consumimos e a divisão seja equitativa. |
+| Lucas, como poupador | Visualizar o saldo individual em tempo real e ver exatamente quanto devo e quanto irei receber | Possa planejar seus gastos e se sentir mais à vomtade sabendo que não terei que pagar algo que não consumi. |
 
 
 > **Links Úteis**:
