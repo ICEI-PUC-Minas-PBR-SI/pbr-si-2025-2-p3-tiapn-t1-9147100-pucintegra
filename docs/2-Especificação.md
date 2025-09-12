@@ -102,9 +102,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | **ID** | **Restrição** |
 |--------|----------------|
 | R-01   | O projeto deverá ser entregue até o final do semestre, sem possibilidade de prorrogação. |
-| R-02   | Não pode ser desenvolvido um módulo de backend — apenas a especificação e simulação do funcionamento. |
-| R-03   | O desenvolvimento deve utilizar **Java** e **.NET** nos módulos definidos pela equipe, respeitando a arquitetura de microserviços. |
-| R-04   | O banco de dados deve ser **MySQL**, já provisionado previamente, não podendo ser substituído por outro SGBD. |
-| R-05   | A documentação oficial deve ser realizada em **Markdown** e publicada no repositório GitHub. |
-| R-06   | As funcionalidades devem estar alinhadas às histórias de usuário definidas (não serão aceitas funções que não atendam a essas demandas). |
-| R-07   | O sistema não deve depender de serviços pagos ou proprietários (restrição orçamentária). |
+| R-02   | O desenvolvimento deve utilizar **Java** e **.NET** nos módulos definidos pela equipe, respeitando a arquitetura de microserviços. |
+| R-03   | O banco de dados deve ser **MySQL**, já provisionado previamente, não podendo ser substituído por outro SGBD. |
+| R-04   | A documentação oficial deve ser realizada em **Markdown** e publicada no repositório GitHub. |
+| R-05   | As funcionalidades devem estar alinhadas às histórias de usuário definidas (não serão aceitas funções que não atendam a essas demandas). |
+| R-06   | O sistema não deve depender de serviços pagos ou proprietários (restrição orçamentária). |
