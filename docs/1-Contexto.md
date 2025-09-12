@@ -1,10 +1,8 @@
 ## 1. Introdução
 
-Atualmente, muitos microempreendedores individuais (MEIs) e profissionais autônomos enfrentam dificuldades para organizar suas finanças de forma prática e eficiente. Em grande parte dos casos, o controle financeiro ainda é feito de maneira manual, seja por meio de anotações em cadernos, planilhas básicas ou até mesmo de memória. Essa falta de padronização e centralização das informações acaba gerando diversos problemas, como a perda de dados importantes, erros nos registros, dificuldade para analisar despesas e receitas e falta de clareza sobre a real situação financeira do negócio.
+O sistema *Smart Gestão* tem como proposta oferecer uma solução tecnológica moderna para o gerenciamento financeiro de Microempreendedores Individuais (MEIs) e profissionais autônomos. A ferramenta permitirá o registro centralizado de receitas e despesas, categorização de transações, emissão de relatórios interativos e acompanhamento em tempo real do fluxo de caixa. O objetivo é substituir os métodos manuais e pouco eficazes, proporcionando maior clareza e precisão na gestão financeira.
 
-Diante desse cenário, nosso grupo propôs o desenvolvimento de um sistema de gestão financeira voltado para MEIs e profissionais autônomos, com o objetivo de facilitar o controle do fluxo de caixa, categorizar receitas e despesas e fornecer relatórios claros e detalhados. Essa solução busca oferecer uma ferramenta intuitiva e acessível, que centralize as informações financeiras e auxilie o usuário na tomada de decisões mais estratégicas e assertivas sobre o seu negócio.
-
-O desenvolvimento do sistema também representa uma oportunidade de aplicar, na prática, os conceitos estudados no curso de Sistemas de Informação, unindo áreas como análise e modelagem de processos, desenvolvimento full stack, banco de dados, experiência do usuário e segurança da informação. Dessa forma, além de atender a uma necessidade real do mercado, o projeto contribui para a nossa formação acadêmica e profissional.
+Além disso, o sistema será acessível em múltiplas plataformas (desktop e mobile), terá interface intuitiva e oferecerá recursos avançados como definição de metas de gastos, alertas automáticos e dashboards personalizados. Dessa forma, o *Smart Gestão* busca não apenas resolver problemas cotidianos de controle financeiro, mas também atuar como uma ferramenta estratégica para apoiar decisões e garantir a sustentabilidade de pequenos negócios.
 
 ### 1.1. Problema
 
