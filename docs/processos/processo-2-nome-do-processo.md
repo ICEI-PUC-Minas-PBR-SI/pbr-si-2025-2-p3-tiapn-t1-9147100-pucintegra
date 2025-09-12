@@ -1,6 +1,6 @@
 ### 3.3.1 Processo 2 – Oportunidades de Melhoria
 
-<img width="886" height="554" alt="image" src="https://github.com/user-attachments/assets/ddb60af7-8cbb-4996-80c6-54f176750db1" />
+<img width="2056" height="1680" alt="Novo modelo banco de dados cleia" src="https://github.com/user-attachments/assets/80fd2348-3e0f-4604-8cf7-23b3531f4169" />
 
 
 #### Detalhamento das atividades
