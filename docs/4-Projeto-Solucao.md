@@ -4,26 +4,40 @@
 
 ## 4.1. Arquitetura da solução
 
+# Arquitetura da Solução
 
-4. Projeto da Solução 
+A arquitetura proposta para o sistema de controle de despesas para MEIs e profissionais autônomos é baseada em um modelo cliente-servidor, com uma abordagem moderna que visa escalabilidade, desempenho e facilidade de manutenção. Conforme o diagrama abaixo, a solução será dividida em três camadas principais: **Frontend**, **Backend** e **Banco de Dados**, com o deploy do Frontend sendo realizado via **GitHub Pages** e o Backend em uma plataforma de hospedagem, interagindo com um serviço de **API**.  
 
-4.1. Arquitetura da Solução 
+## Diagrama de Arquitetura
 
-A arquitetura proposta para o sistema de controle de despesas para MEIs e profissionais autônomos é baseada em um modelo cliente-servidor, com uma abordagem moderna que visa escalabilidade, desempenho e facilidade de manutenção. Conforme o diagrama abaixo, a solução será dividida em três camadas principais: Frontend, Backend e Banco de Dados, com o deploy do Frontend sendo realizado via GitHub Pages e o Backend em uma plataforma de hospedagem, interagindo com um serviço de API. 
+![Arquitetura do Sistema](./images/arquitetura-exemplo.png)  
 
+## Descrição dos Módulos e Tecnologias
 
+### Frontend (Navegador)
+- Construído com **HTML, CSS e JavaScript**.  
+- Responsável pela interação visual e coleta de dados do usuário.  
+- Utiliza **Local Storage** para armazenar dados temporários ou preferências do usuário, otimizando a experiência e reduzindo requisições desnecessárias ao servidor.  
+- Deploy realizado através do **GitHub Pages**, garantindo acessibilidade e facilidade de atualização.  
 
-Descrição dos Módulos e Tecnologias: 
+### Backend (Hospedagem – Java SpringBoot)
+- Implementa a lógica de negócio principal do sistema.  
+- Hospedado em uma plataforma como **Heroku**.  
+- Desenvolvido com **Java SpringBoot**, framework robusto para criação de aplicações corporativas e APIs RESTful.  
+- Responsável por processar requisições do frontend, gerenciar autenticação e autorização, aplicar regras de negócio para controle de despesas (registro, categorização, cálculo de saldos, etc.) e interagir com o banco de dados.  
 
-•Frontend (Navegador): O sistema será acessado via navegador web, utilizando Páginas Web (HTML, CSS e JavaScript) para a construção da interface do usuário. Esta camada será responsável por toda a interação visual e coleta de dados do usuário. O Local Storage será utilizado para armazenar dados temporários ou preferências do usuário, otimizando a experiência e reduzindo a dependência de requisições constantes ao servidor para informações não críticas. O deploy do frontend será realizado através do GitHub Pages, garantindo acessibilidade e facilidade de atualização. 
+### Banco de Dados (MySQL)
+- Sistema Gerenciador de Banco de Dados utilizado: **MySQL**.  
+- Garantia de segurança, integridade e escalabilidade dos dados financeiros dos usuários.  
+- Compatível com o **SpringBoot**, facilitando integração com o backend.  
 
-•Backend (Hospedagem - Java SpringBoot): A lógica de negócio principal do sistema será implementada no backend, hospedado em uma plataforma como o Heroku. Esta camada será desenvolvida utilizando Java SpringBoot, um framework robusto e amplamente utilizado para a criação de aplicações corporativas e APIs RESTful. O backend será responsável por processar as requisições do frontend, gerenciar a autenticação e autorização dos usuários, aplicar as regras de negócio para o controle de despesas (registro, categorização, cálculo de saldos, etc.) e interagir com o banco de dados. 
+### APIs Externas (Exemplo: NewsAPI)
+- Embora o diagrama de exemplo inclua uma **NewsAPI**, o sistema pode ser integrado futuramente a APIs externas, como APIs de bancos para importação de extratos ou serviços de pagamento para conciliação de transações.  
+- Atualmente, o foco principal é a funcionalidade interna de controle de despesas.  
 
-•Banco de Dados (MySQL): Para a persistência dos dados do sistema, será utilizado o MySQL como Sistema Gerenciador de Banco de Dados (SGBD). O MySQL é uma escolha popular devido à sua robustez, escalabilidade e compatibilidade com o SpringBoot, garantindo a segurança e a integridade das informações financeiras dos usuários. 
+## Considerações Finais
+Esta arquitetura proporciona uma clara separação de responsabilidades, permitindo desenvolvimento paralelo das equipes de frontend e backend, além de garantir flexibilidade para futuras expansões e integrações.
 
-•APIs Externas (Exemplo NewsAPI): Embora o diagrama de exemplo inclua uma NewsAPI, para o nosso sistema de controle de despesas, poderíamos considerar a integração com APIs externas para funcionalidades futuras, como, por exemplo, APIs de bancos para importação automática de extratos (com consentimento do usuário) ou APIs de serviços de pagamento para conciliação de transações. No momento, o foco principal é a funcionalidade interna de controle de despesas. 
-
-Esta arquitetura permite uma clara separação de responsabilidades, facilitando o desenvolvimento paralelo das equipes de frontend e backend, além de proporcionar flexibilidade para futuras expansões e integrações. 
 
 4.2. Protótipos de Telas (Wireframes) 
 
