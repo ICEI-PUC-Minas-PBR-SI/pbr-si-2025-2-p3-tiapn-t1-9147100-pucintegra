@@ -7,11 +7,11 @@ Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
 
 #### Detalhamento das atividades
 
-1. [Preenchimento dos dados do Locador](#atividade-1--preenchimento-dos-dados-do-locador)  
-2. [Preenchimento dos dados do Locatário](#atividade-2--preenchimento-dos-dados-do-locatário)  
-3. [Confirmação de Cadastro](#atividade-3--confirmação-de-cadastro)  
-4. [Validação do Usuário (Locador / Locatário)](#atividade-4--validação-do-usuário-locador--locatário)  
-5. [Cadastro Concluído](#atividade-5--cadastro-concluído)   
+1. [Preenchimento dos dados do Locador](#atividade-1---preenchimento-dos-dados-do-locador)  
+2. [Preenchimento dos dados do Locatário](#atividade-2---preenchimento-dos-dados-do-locatário)  
+3. [Confirmação de Cadastro](#atividade-3---confirmação-de-cadastro)  
+4. [Validação do Usuário (Locador / Locatário)](#atividade-4---validação-do-usuário-locador--locatário)  
+5. [Cadastro Concluído](#atividade-5---cadastro-concluído)   
 
 ### Atividade 1 - Preenchimento dos dados do Locador
 
@@ -53,7 +53,7 @@ Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN._
 | Confirmar cadastro | Confirmação de cadastro    | default |
 
 
-### Atividade 3 -Confirmação de Cadastro
+### Atividade 3 - Confirmação de Cadastro
 | Campo              | Tipo        | Restrições                                      | Valor default |
 |--------------------|-------------|-------------------------------------------------|---------------|
 | Código de verificação | Número    | enviado por e-mail ou SMS, obrigatório          | -             |
