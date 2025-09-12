@@ -4,7 +4,7 @@
 
 `Trabalho Interdisciplinar: Aplicações para Processos de Negócios`
 
-`3° Semestre`
+`Semestre 2/2025`
 
 A administração de finanças coletivas em viagens e eventos em grupo é, muitas vezes, um desafio prático e social que gera desconfortos, mal-entendidos e até conflitos. Este trabalho propõe o desenvolvimento de um sistema digital que automatiza o gerenciamento de despesas compartilhadas, oferecendo uma solução moderna e eficiente para promover a transparência e o equilíbrio financeiro entre participantes de grupos sociais, como amigos e familiares em viagens.
 
