@@ -1,6 +1,5 @@
 # 5. Planejamento do Projeto
 
-3. Planejamento do Projeto 
 O planejamento do projeto de desenvolvimento do sistema de controle de despesas para MEIs e profissionais autônomos é crucial para garantir a entrega de uma solução eficaz e alinhada às necessidades do público-alvo. Esta fase inicial estabelece as bases para todas as atividades subsequentes, desde a análise de requisitos até a implementação e testes. 
 3.1. Objetivos do Projeto 
 Principal: Desenvolver uma ferramenta intuitiva e acessível para o controle financeiro de MEIs e autônomos, promovendo a organização do fluxo de caixa e a tomada de decisões estratégicas. 
