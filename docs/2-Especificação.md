@@ -59,13 +59,15 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID     | Descrição do Requisito  | Prioridade |
 |-------|-------------------------|----|
 |RNF-001| O sistema deve ser intuitivo a fim de englobar diferentes perfis de usuario                               | ALTA  |
-|RNF-002| A interface deve apresentar informações claras sobre as funcionalidades do sistema                        | ALTA  |
-|RNF-003| O processo de busca e reserva deve ser ágil                                                               | MÉDIA  |
-|RNF-004| O sistema de busca e filtros deve retornar resultados rapidamente                                         | BAIXA  |
-|RNF-005| O módulo de reservas e o calendário de disponibilidade devem ser atualizados em tempo real                | ALTA  |
-|RNF-006| O sistema deve incorporar mecanismos para fortalecer a segurança                                          | ALTA  |
-|RNF-007| O sistema deve suportar um aumento de 50% no número de usuários simultâneos sem degradação do desempenho  | ALTA  |
-|RNF-008| O sistema deve operar corretamente e sem falhas em 99% do tempo                                           | ALTA  |
+|RNF-002| O sistema deve ser responsivo e ter suporte a multiplas plataformas de navegação                          | ALTA  |
+|RNF-003| A interface deve apresentar informações claras sobre as funcionalidades do sistema                        | ALTA  |
+|RNF-004| O processo de busca e reserva deve ser ágil                                                               | MÉDIA  |
+|RNF-005| O sistema de busca e filtros deve retornar resultados rapidamente                                         | BAIXA  |
+|RNF-006| O módulo de reservas e o calendário de disponibilidade devem ser atualizados em tempo real                | ALTA  |
+|RNF-007| O sistema deve incorporar mecanismos para fortalecer a segurança                                          | ALTA  |
+|RNF-008| O sistema deve suportar um aumento de 50% no número de usuários simultâneos sem degradação do desempenho  | ALTA  |
+|RNF-009| O sistema deve operar corretamente e sem falhas em 99% do tempo                                           | ALTA  |
+|RNF-010| O sistema deve ser tolerante a falhas, de forma transparente e não prejudicial ao usuario                 | ALTA  |
 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
