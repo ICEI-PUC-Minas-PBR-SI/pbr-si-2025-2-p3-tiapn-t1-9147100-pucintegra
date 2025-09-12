@@ -33,14 +33,26 @@ Para realizar a especificação do projeto, serão empregadas as seguintes abord
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+1. História da Júlia
+Como a Organizadora, eu quero um aplicativo onde eu possa registrar as despesas do grupo em tempo real, para que eu não precise mais usar planilhas e me sinta segura de que todas as contas estão sendo registradas, aliviando o estresse da cobrança.
+
+2. História do Pedro
+Como o Esquecido, eu quero receber notificações sobre quem eu preciso pagar e quem me deve, para que eu não me esqueça de acertar as contas e não crie atrito com meus amigos por causa de dívidas pendentes.
+
+3. História do André
+Como o Controlado, eu quero ter acesso a um painel com um resumo financeiro claro e transparente para todos os membros, para que eu possa verificar se as despesas foram registradas corretamente e ter certeza de que o acerto final é justo e preciso para todos.
+
+4. História da Ana
+Como mãe de família, eu quero a capacidade de marcar despesas como "não participativas" para determinados membros do grupo, para que a divisão de contas considere o consumo das minhas filhas, garantindo que eu pague apenas pelo que consumimos e a divisão seja equitativa.
+
+5. História do Lucas
+Como o Poupador, eu quero poder visualizar meu saldo individual em tempo real e ver exatamente quanto eu devo ou quanto me devem, para que eu possa planejar meus gastos e me sentir mais à vontade sabendo que não terei que pagar por algo que não consumi, mantendo meu orçamento sob controle.
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
 |Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
 |Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
 > **Links Úteis**:
 > - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
@@ -48,7 +60,6 @@ Apresente aqui as histórias de usuário que são relevantes para o projeto de s
 > - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
 > - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
 > - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
-
 
 
 ## Requisitos
