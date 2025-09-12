@@ -47,8 +47,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| O sistema deve permitir o cadastro de locador, locatários e seus espaços | ALTA | 
-|RF-002|  |   |
+|RF-001| O sistema deve permitir o cadastro de locador, locatários e seus espaços | ALTA  |
+|RF-002| O sistema deve permitir avaliar locadores e locatários                   | MÉDIA  |
 |RF-003|  |   |
 |RF-004|  |   |
 |RF-005|  |   |
@@ -64,8 +64,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-004| O sistema de busca e filtros deve retornar resultados rapidamente                                         | BAIXA  |
 |RNF-005| O módulo de reservas e o calendário de disponibilidade devem ser atualizados em tempo real                | ALTA  |
 |RNF-006| O sistema deve incorporar mecanismos para fortalecer a segurança                                          | ALTA  |
-|RNF-007| O sistema deve permitir avaliar locadores e locatários                                                    | MÉDIA  |
-|RNF-008| O sistema deve suportar um aumento de 50% no número de usuários simultâneos sem degradação do desempenho  | ALTA  |
+|RNF-007| O sistema deve suportar um aumento de 50% no número de usuários simultâneos sem degradação do desempenho  | ALTA  |
 |RNF-008| O sistema deve operar corretamente e sem falhas em 99% do tempo                                           | ALTA  |
 
 
