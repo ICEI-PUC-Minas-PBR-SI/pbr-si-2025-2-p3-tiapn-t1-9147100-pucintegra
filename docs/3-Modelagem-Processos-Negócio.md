@@ -1,10 +1,6 @@
 ## 3. Modelagem dos Processos de Negócio
 
 
-> **Links Úteis**:
-> - [Modelagem de Processos AS-IS x TO-BE](https://dheka.com.br/modelagem-as-is-to-be/)
-> - [20 Dicas Práticas de Modelagem de Processos](https://dheka.com.br/20-dicas-praticas-de-modelagem-de-processos/)
-
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 
 #### 3.1.1. Descrição Geral
@@ -108,17 +104,17 @@ Com essa proposta, os processos hoje manuais, repetitivos e descentralizados pas
 
 **Resumo dos Processos Controlados pela Ferramenta**
 
-1. **A ferramenta será responsável por centralizar e controlar os seguintes processos, que serão detalhados na modelagem:
+1. **A ferramenta será responsável por centralizar e controlar os seguintes processos, que serão detalhados na modelagem:**
 
-2. **Cadastro de Paciente: Registro seguro e simplificado das informações pessoais, contatos e histórico básico do paciente.
+2. **Cadastro de Paciente: Registro seguro e simplificado das informações pessoais, contatos e histórico básico do paciente.**
 
-3. **Cadastro de Profissional: Registro validado de dados pessoais, documentos, registros profissionais e área de atuação.
+3. **Cadastro de Profissional: Registro validado de dados pessoais, documentos, registros profissionais e área de atuação.**
 
-4. **Busca por Profissional: Consulta rápida com filtros por especialidade, localização, agenda, avaliações e preço.
+4. **Busca por Profissional: Consulta rápida com filtros por especialidade, localização, agenda, avaliações e preço.**
 
-5. **Solicitação de Atendimento: Fluxo de agendamento com confirmação, notificações e opção de ajustes pelo profissional.
+5. **Solicitação de Atendimento: Fluxo de agendamento com confirmação, notificações e opção de ajustes pelo profissional.**
 
-6. **Criação da Agenda do Paciente: Organização automática dos atendimentos agendados, com histórico e lembretes integrados.
+6. **Criação da Agenda do Paciente: Organização automática dos atendimentos agendados, com histórico e lembretes integrados.**
 
 ### PROCESSO DE CADASTRO DE USUÁRIOS E PROFISSIONAIS:
 Objetivo:
