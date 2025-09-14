@@ -23,10 +23,6 @@ acompanhamento e risco de internações hospitalares desnecessárias.
 •Para profissionais: Baixo aproveitamento da mão de obra, sobrecarga administrativa 
 com agendamentos e dificuldade em encontrar pacientes.
 
-**Impactos principais**
-- **Para pacientes:** dificuldade de acesso, pouca transparência no acompanhamento e risco de internações desnecessárias.
-- **Para profissionais:** baixo aproveitamento da mão de obra, sobrecarga administrativa com agendamentos e dificuldade de encontrar pacientes.
-
   
 ## Objetivos
 
