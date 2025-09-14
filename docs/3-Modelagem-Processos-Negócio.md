@@ -106,6 +106,20 @@ Para os profissionais, o aplicativo oferecerá gestão integrada de agenda, rota
 
 Com essa proposta, os processos hoje manuais, repetitivos e descentralizados passam a ser digitalizados, padronizados e escaláveis, criando um ecossistema de Home Care moderno, seguro e de fácil uso, que beneficia pacientes, familiares e profissionais de saúde.
 
+### Resumo dos Processos Controlados pela Ferramenta
+
+A ferramenta será responsável por centralizar e controlar os seguintes processos, que serão detalhados na modelagem:
+
+Cadastro de Paciente: Registro seguro e simplificado das informações pessoais, contatos e histórico básico do paciente.
+
+Cadastro de Profissional: Registro validado de dados pessoais, documentos, registros profissionais e área de atuação.
+
+Busca por Profissional: Consulta rápida com filtros por especialidade, localização, agenda, avaliações e preço.
+
+Solicitação de Atendimento: Fluxo de agendamento com confirmação, notificações e opção de ajustes pelo profissional.
+
+Criação da Agenda do Paciente: Organização automática dos atendimentos agendados, com histórico e lembretes integrados.
+
 ### PROCESSO DE CADASTRO DE USUÁRIOS E PROFISSIONAIS:
 Objetivo:
 Permitir que usuários (pacientes) e profissionais de saúde (prestadores de serviço) se cadastrem de forma rápida, segura e intuitiva na plataforma, com validação adequada e segmentação clara de perfis.
