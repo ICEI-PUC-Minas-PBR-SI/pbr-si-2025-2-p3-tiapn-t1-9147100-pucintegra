@@ -35,7 +35,7 @@ O projeto Medlar visa atender dois grupos principais de usuários, representados
 * *Idade:* 27 anos
 * *Ocupação:* Analista de sistemas, trabalha em home office.
 * *Necessidades:* Cuida do pai de 78 anos, que tem hipertensão e mobilidade reduzida. Com a rotina corrida e reuniões diárias, precisa de praticidade para contratar e acompanhar serviços de saúde domiciliar.
-* *Frustrações:* Dificuldade em conciliar agenda de trabalho com atendimento médico e Necessidade de deslocamentos constantes para levar a mãe a consultas, o que atrapalha a rotina de trabalho.
+* *Frustrações:* Dificuldade em conciliar agenda de trabalho com atendimento médico e Necessidade de deslocamentos constantes para levar o pai a consultas, o que atrapalha a rotina de trabalho.
 * *Objetivos:* Reduzir saídas desnecessárias, mantendo os cuidados no conforto de casa.
 
 O aplicativo busca conectar esses dois grupos, facilitando o acesso a serviços de saúde domiciliar e otimizando o trabalho dos profissionais.
