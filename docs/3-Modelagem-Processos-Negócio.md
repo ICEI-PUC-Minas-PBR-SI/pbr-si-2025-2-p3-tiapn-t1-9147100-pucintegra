@@ -161,8 +161,6 @@ Informações profissionais:
  * Status: Em análise → Aprovado → Rejeitado (com justificativa)
  * Após aprovação, profissional é ativado e pode começar a receber solicitações.
 
-<img width="1860" height="1776" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/5886d6ca-1110-42f6-bc3c-97b8fe23ff08" />
-
 ---
 ### PROCESSO DE BUSCA DE PROFISSIONAIS
 Objetivo:
@@ -202,8 +200,6 @@ Profissional pode:
  * Recusar
  * Sugerir novo horário
  * Confirmação final e início do agendamento
-
-<img width="2056" height="1680" alt="Novo modelo banco de dados cleia" src="https://github.com/user-attachments/assets/fe5615fc-1a33-49ba-bf1a-cb13632814b3" />
 
 ---
 
