@@ -188,8 +188,9 @@ Informações detalhadas:
  * Avaliações e comentários de outros usuários
  * Agenda disponível
  * Botão para solicitar atendimento
+---
 
-### Solicitação de Atendimento
+### Processo de Solicitação de Atendimento
 Usuário seleciona:
  * Data e horário
  * Endereço de atendimento (padrão ou novo)
@@ -200,6 +201,26 @@ Profissional pode:
  * Recusar
  * Sugerir novo horário
  * Confirmação final e início do agendamento
+
+---
+### Processo Criar Agenda do Paciente
+
+1. Sistema verifica solicitações de atendimento aprovadas.
+
+
+2. Usuário acessa a opção “Minha Agenda”.
+
+
+3. Sistema organiza automaticamente os atendimentos confirmados.
+
+
+4. Usuário visualiza os compromissos futuros (data, hora, profissional, local).
+
+
+5. Sistema permite editar ou cancelar agendamentos (caso necessário).
+
+
+6. Sistema salva alterações e atualiza agenda do paciente.
 
 ---
 
