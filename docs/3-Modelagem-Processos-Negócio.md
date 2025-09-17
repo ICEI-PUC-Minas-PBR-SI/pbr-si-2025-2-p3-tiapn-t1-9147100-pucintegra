@@ -229,3 +229,7 @@ Profissional pode:
 [PROCESSO 1 - Cadastro de Profissionais e Pacientes](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
 
 [PROCESSO 2 - Gerenciamento de Busca e Contratação de Profissional de Saúde Domiciliar](./processos/processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
+
+[PROCESSO 3 - Solicitação de Atendimento](./processos/processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
+
+[PROCESSO 4 - Criar Agenda do Paciente](./processos/processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
