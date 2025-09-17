@@ -7,54 +7,52 @@ O processo de **Entrada no Sistema** começa quando o usuário vai até o browse
 
 #### Detalhamento das atividades
 
-**Nome da atividade 1** Entrar no Sistema
+**Fazer Login** 
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| **Campo**       | **Tipo**         | **Restrições**         | **Valor default** |
+| ---             | ---              | ---                    | ---               |
+| [Nome do campo] | [tipo de dados]  |                        |                   |
+| login           | Caixa de Texto   | formato de e-mail      |                   |
+| senha           | Caixa de Texto   | mínimo de 8 caracteres |                   |
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
+| **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| ***Exemplo:***       |                                |                   |
 | Entrar               | Fim do Processo 1              | default           |
 
 
-**Nome da atividade 2** Preencher formulário de cadastrar
+**Preencher formulário de cadastro** 
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
-| Nome            | Caixa de Texto   | mínimo de 5 caracteres |           |
-| Idade           | Número           |                |           |
-| Genero          | Seleção múltipla |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Cadastrar            | Início do proceso de cadastro  |                   |
-
-
-**Nome da atividade 3** Escolher validação
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Método           | Seleção múltipla   |  | Email               |
-
-
+| **Campo**       | **Tipo**         | **Restrições**         | **Valor default** |
+| ---             | ---              | ---                    | ---               |
+| login           | Caixa de Texto   | formato de e-mail      |                   |
+| senha           | Caixa de Texto   | mínimo de 8 caracteres |                   |
+| Nome            | Caixa de Texto   | mínimo de 5 caracteres |                   |
+| Idade           | Número           |                        |                   |
+| Genero          | Seleção múltipla |                        |                   |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| Enviar            | Início do proceso de validação  |                   |
+| Cadastrar            | Enviar código de validação     |                   |
 
-**Nome da atividade 4** Inserir código de validação
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| codigo           | Caixa de Texto   | mínimo de 8 caracteres |                |
+**Enviar código de validação** 
+ 
+| **Campo**       | **Tipo**           | **Restrições** | **Valor default** |
+| ---             | ---                | ---            | ---               |
+| Método          | Seleção múltipla   |                | Email             |
+
+
+
+| **Comandos**      |  **Destino**                   | **Tipo**          |
+| ---               | ---                            | ---               |
+| Enviar            | Inserir código de validação    |                   |
+
+**Inserir código de validação** 
+
+| **Campo**       | **Tipo**         | **Restrições**         | **Valor default** |
+| ---             | ---              | ---                    | ---               |
+| codigo          | Caixa de Texto   | mínimo de 8 caracteres |                |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| Validar código       | Tela de entrada do sistema  |                   |
+| Validar código       | Fazer Login                    |                   |

@@ -11,15 +11,12 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 
 **Visualizar grupos**
 
-| **Campo**       | **Tipo**        | **Restrições**                                 | **Valor default** |
-| ---             | ---             | ---                                            | ---               |
-| termo_pesquisa  | Caixa de texto  | até 100 caracteres                              |                   |
-| ordenar_por     | Seleção única   | {“nome”, “criado_em”, “atualizado_em”}         | “atualizado_em”   |
-| grupos  | Tabela  |                          |  grupos do usuário                 |
+| **Campo**         | **Tipo**        | **Restrições**     | **Valor default**  |
+| ---               | ---             | ---                | ---                |
+| grupos            | Tabela          |                    |  grupos do usuário | 
 
 | **Comandos**  | **Destino**        | **Tipo**   |
 | ---           | ---                | ---        |
-| pesquisar     | Visualizar grupos   | default    |
 | abrir_grupo   | Gerenciar grupo    |            |
 | criar_grupo   | Criar grupo        |            |
 
@@ -47,49 +44,36 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 | **Campo**       | **Tipo**        | **Restrições**                            | **Valor default** |
 | ---             | ---             | ---                                       | ---               |
 | nome_grupo      | Caixa de texto  | obrigatório                               |                   |
-| descricao       | Área de texto   | até 500 caracteres                        |                   |
-| admins          | Tabela          | id, nome, e-mail                          |                   |
+| descricao       | Área de texto   | até 500 caracteres                        |                   |                  
+| imagem_capa     | Imagem          | opcional; até 5 MB                        |                   | 
 
-| **Comandos**       | **Destino**                   | **Tipo** |
-| ---                | ---                           | ---      |
-| incluir_despesa    | Incluir despesas (processo 4)             |          |
-| gerenciar_pessoas  | Gerenciar pessoas             |          |
-| gerenciar_despesas | Gerenciar despesas/fechamentos|          |
-| visualizar_fechamento     | Ver Fechamento               |          |
-| salvar             | Gerenciar grupo               | default  |
-| voltar             | Visualizar grupos              | cancel   |
+| **Comandos**          | **Destino**                   | **Tipo** |
+| ---                   | ---                           | ---      |
+| incluir_despesa       | Incluir despesas (processo 4) |          |
+| excluir_despesa       | Excluir despesas (processo 4) |          |
+| aprovar_despesas      | Aprovar despesas              |          |
+| incluir_membro (adm)  | Incluir membros (processo 3)  |          |
+| excluir_membro (adm)  | Excluir membro (processo 3)   |          |
+| definir_adm (adm)     | Nenhum                        |          |
+| visualizar_fechamento | Visualizar fechamento         |          |
+| fazer_fechamento (adm)| Visualizar fechamento         |          |
+| salvar                | Gerenciar grupo               | default  |
+| voltar                | Visualizar grupos             | cancel   |
 
 
 ---
 
 **Visualizar fechamento**
 
-| **Campo**       | **Tipo**        | **Restrições**                                 | **Valor default** |
-| ---             | ---             | ---                                            | ---               |
-| fechamento  | Tabela  |                          |  despesas que o usuário tem a receber ou pagar                |
+| **Campo**       | **Tipo**        | **Restrições**       | **Valor default**                             |
+| ---             | ---             | ---                  | ---                                           |
+| fechamento      | Tabela          |                      |  despesas que o usuário tem a receber ou pagar|
 
-| **Comandos**             | **Destino**        | **Tipo**   |
-| ---                     | ---                | ---        |
-| marcar_como_pago        | Marcar como pago    |            |
-| marcar_como_recebido   | Nenhum        |            |
-| cancelar               | Visualizar grupos  | cancel     |
-
-
----
-
-**Marcar como pago**
-
-| **Campo**       | **Tipo**       | **Restrições**                  | **Valor default** |
-| ---             | ---            | ---                             | ---               |
-| pagamento_id    | Número         | somente leitura                 |                   |
-| confirmar_valor | Seleção única  | {“conferido”, “divergente”}     | “conferido”       |
-| observacao      | Área de texto  | até 300 caracteres              |                   |
-| anexo     | Imagem          | opcional; até 10 MB                              |                   |
-
-| **Comandos**   | **Destino**                | **Tipo** |
-| ---            | ---                        | ---      |
-| Enviar        | Enviar notificação         | default  |    |
-| voltar         | Visualizar fechamento | cancel |
+| **Comandos**             | **Destino**                   | **Tipo**   |
+| ---                      | ---                           | ---        |
+| abater_pagamento         | Abater pagamento (processo 5) |            |
+| marcar_como_recebido     | Nenhum                        |            |
+| cancelar                 | Visualizar grupos             | cancel     |
 
 
 ---
@@ -97,10 +81,9 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 
 **Aprovar despesas**
 
-| **Campo**     | **Tipo**        | **Restrições**                        | **Valor default** |
-| ---           | ---             | ---                                   | ---               |
-| despesa_id    | Número          | somente leitura                       |                   |
-| parecer       | Área de texto   | até 300 caracteres                    |                   |
+| **Campo**           | **Tipo**        | **Restrições**      | **Valor default** |
+| ---                 | ---             | ---                 | ---               |
+| selecionar_despesas | Seleção múltipla|                     |                   |
 
 | **Comandos** | **Destino**                | **Tipo** |
 | ---          | ---                        | ---      |
@@ -112,24 +95,11 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 ---
 
 
-**Gerenciar pessoas**
-
-| **Comandos**       | **Destino**                   | **Tipo** |
-| ---                | ---                           | ---      |
-| incluir_membros    | Incluir membros               |          |
-| definir_admins     | Definir outros administradores|          |
-| tentar_excluir     | Excluir membro         |          |
-| voltar             | Gerenciar grupo               | cancel   |
-
-
----
-
-
 **Definir outros administradores**
 
-| **Campo**        | **Tipo**        | **Restrições**              | **Valor default** |
-| ---              | ---             | ---                         | ---               |
-| selecionar_membros | Seleção múltipla | somente membros ativos     |                   |
+| **Campo**          | **Tipo**         | **Restrições**          | **Valor default** |
+| ---                | ---              | ---                     | ---               |
+| selecionar_membros | Seleção múltipla | somente membros ativos  |                   |
 
 | **Comandos** | **Destino**       | **Tipo** |
 | ---          | ---               | ---      |
@@ -141,37 +111,26 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 
 **Excluir membro**
 
+| **Campo**          | **Tipo**         | **Restrições**    | **Valor default** |
+| ---                | ---              | ---               | ---               |
+| selecionar_membros | Seleção múltipla |                   |                   |
+
 | **Comandos** | **Destino**             | **Tipo** |
 | ---          | ---                     | ---      |
 | validar      | Gateway de verificação  | default  |
 | cancelar     | Gerenciar pessoas       | cancel   |
 
 
----
-
-
-**Gerenciar despesas/fechamentos**
-
-| **Campo**      | **Tipo**        | **Restrições**                  | **Valor default** |
-| ---            | ---             | ---                             | ---               |
-| filtro_status  | Seleção única   | {“pendente”, “aprovada”, “paga”}| “pendente”        |
-| periodo        | Data e Hora     | intervalo                       | mês atual         |
-| lista_itens    | Tabela          | despesas e pagamentos           |                   |
-
-| **Comandos**      | **Destino**             | **Tipo** |
-| ---               | ---                     | ---      |
-| aprovar_despesa   | Aprovar despesas        |          |
-| aprovar_pagamento | Aprovar pagamento       |          |
-| fazer_fechamento  | Fazer fechamento        |          |
-| voltar            | Gerenciar grupo         | cancel   |
-
 
 ---
 
 **Fazer fechamento**
 
+| **Campo**          | **Tipo**         | **Restrições**    | **Valor default** |
+| ---                | ---              | ---               | ---               |
+|                    |                  |                   |                   |
 
-| **Comandos**     | **Destino**       | **Tipo** |
-| ---              | ---               | ---      |
-| calcular_fechamentos   | Enviar notificação| default  |
-| cancelar         | Gerenciar despesas/fechamentos | cancel |
+| **Comandos**           | **Destino**                    | **Tipo** |
+| ---                    | ---                            | ---      |
+| calcular_fechamentos   | Enviar notificação             | default  |
+| cancelar               | Gerenciar despesas/fechamentos | cancel   |
