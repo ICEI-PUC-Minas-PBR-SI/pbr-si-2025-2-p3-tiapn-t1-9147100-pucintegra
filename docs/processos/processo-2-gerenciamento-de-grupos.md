@@ -22,7 +22,6 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 | pesquisar     | Visualizar grupos   | default    |
 | abrir_grupo   | Gerenciar grupo    |            |
 | criar_grupo   | Criar grupo        |            |
-| cancelar      | Fim do processo    | cancel     |
 
 
 ---
