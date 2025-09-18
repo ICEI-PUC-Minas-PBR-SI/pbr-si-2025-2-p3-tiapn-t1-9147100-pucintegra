@@ -1,7 +1,11 @@
 ### 3.3.2 Processo 2 – Gerênciamento de grupos
+O processo de gerenciamento de grupos tem início assim que o usuário faz login ou acessa diretamente a URL no navegador. Em seguida, o sistema exibe a tela de gerenciamento de grupos, onde é possível visualizar todos os grupos associados ao usuário logado. Caso não haja nenhum grupo ou o usuário deseje criar um novo, essa opção também estará disponível.
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 2. 
-Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
+Após visualizar os grupos, o usuário pode abrir um deles para acessar informações detalhadas. Dentro do grupo, é possível consultar o fechamento das contas — que representa o saldo resultante da diferença entre o valor pago pelo usuário e o valor pago pelos demais membros do grupo. O usuário pode realizar abatimentos em pagamentos e marcar saldos positivos como quitados, ação que gera o envio automático de um e-mail ao recebedor, informando sobre o abatimento.
+
+Além disso, o usuário pode visualizar todas as despesas do grupo e registrar novas despesas, se desejar.
+
+Caso o usuário seja administrador do grupo, ele terá acesso a funcionalidades adicionais, como: aprovar despesas, realizar o fechamento de contas, adicionar ou remover integrantes, e atribuir permissões de administrador a outros membros. Todas essas ações também geram notificações por e-mail para os demais participantes do grupo.
 
 ![PROCESSO 2](../images/modelagem-2-gerenciamento-de-grupo.png "Modelo BPMN do Processo 2.")
 
