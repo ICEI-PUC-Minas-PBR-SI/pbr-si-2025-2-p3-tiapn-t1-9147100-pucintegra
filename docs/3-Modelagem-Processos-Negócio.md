@@ -143,7 +143,7 @@ Informações básicas:
  * Cadastro concluído → Direciona para a tela inicial do app com opção de buscar profissionais.
 ---
 
-## PROCESSO 1 :CADASTRO DE PROFISSIONAIS:
+## PROCESSO 2 :CADASTRO DE PROFISSIONAIS:
 
 ### Cadastro de Profissional de Saúde
 Informações pessoais:
@@ -169,7 +169,7 @@ Informações profissionais:
  * Após aprovação, profissional é ativado e pode começar a receber solicitações.
 
 ---
-### PROCESSO 2: BUSCA DE PROFISSIONAIS
+### PROCESSO 3: BUSCA DE PROFISSIONAIS
 Objetivo:
 Permitir que usuários encontrem rapidamente profissionais disponíveis para atendimento domiciliar com base em localização, especialidade e disponibilidade.
 
@@ -197,7 +197,7 @@ Informações detalhadas:
  * Botão para solicitar atendimento
 ---
 
-## Processo 3:Solicitação de Atendimento
+## Processo 4:Solicitação de Atendimento
 Usuário seleciona:
  * Data e horário
  * Endereço de atendimento (padrão ou novo)
@@ -210,7 +210,7 @@ Profissional pode:
  * Confirmação final e início do agendamento
 
 ---
-## Processo 4 : Criar Agenda do Paciente
+## Processo 5 : Criar Agenda do Paciente
 
 1. Sistema verifica solicitações de atendimento aprovadas.
 
