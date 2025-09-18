@@ -12,7 +12,7 @@ Com base no fluxo de visualização e gestão de agendamentos pelo paciente, as 
   - Reduz a chance de esquecimentos ou confusão sobre os agendamentos.
   - Centraliza todas as informações relevantes em um único lugar.
 
-### 3. Flexibilidade para Edição e Cancelamento
+### 2. Flexibilidade para Edição e Cancelamento
 - **Problema Atual:** Cancelar ou alterar um agendamento pode ser um processo manual e burocrático (ex: ligar para uma central).
 - **Melhoria Proposta:** Implementar **funcionalidades de autogestão** que permitam ao usuário **editar ou cancelar** um agendamento diretamente pela agenda, sujeito a regras de negócio (ex: antecedência mínima para cancelamento).
 - **Benefícios:**
@@ -20,14 +20,14 @@ Com base no fluxo de visualização e gestão de agendamentos pelo paciente, as 
   - Automatiza o processo de cancelamento, liberando o horário para outros pacientes.
   - Reduz a carga de trabalho administrativo.
 
-### 5. Notificações e Lembretes Inteligentes
+### 3. Notificações e Lembretes Inteligentes
 - **Problema Atual:** O paciente pode se esquecer do atendimento agendado.
 - **Melhoria Proposta:** Configurar um sistema de **lembretes automáticos** enviados em momentos estratégicos (ex: 24 horas antes e 2 horas antes do atendimento) via push, SMS ou e-mail.
 - **Benefícios:**
   - Reduz a taxa de não comparecimento (*no-show*).
   - Melhora a experiência e o cuidado com o paciente.
 
-### 2. Histórico de Atendimentos
+### 4. Histórico de Atendimentos
 - **Melhoria Proposta:** Criar uma aba ou seção dedicada ao **"Histórico"**, separada dos compromissos futuros.
 - **Funcionalidades:**
   - Listar todos os atendimentos que já foram concluídos.
