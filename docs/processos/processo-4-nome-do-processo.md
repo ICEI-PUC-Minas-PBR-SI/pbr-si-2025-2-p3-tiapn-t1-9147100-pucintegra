@@ -48,3 +48,85 @@ A análise do fluxo de solicitação de atendimento revelou diversas oportunidad
   - Simplifica a gestão de solicitações para o profissional.
   - Mantém o usuário engajado no fluxo, mesmo em caso de recusa.
   - Automatiza a renegociação de horários.
+
+## Detalhamento das Atividades
+
+### Nome da atividade: Selecionar Data e Horário
+*Esta é a primeira etapa para o usuário, onde ele escolhe quando deseja o atendimento.*
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| `data_desejada` | Calendário | Obrigatório, data futura | Data atual |
+| `horarios_sugeridos` | Seleção única | Obrigatório | Lista de horários disponíveis |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Próximo` | Selecionar Endereço | `default` |
+| `Cancelar` | Início do Processo | `cancel` |
+
+### Nome da atividade: Selecionar Endereço
+*O usuário define o local onde o atendimento será realizado.*
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| `tipo_endereco` | Seleção única | Obrigatório | `Endereço Padrão` |
+| `endereco_selecionado` | Caixa de texto | Autocomplete, validação de CEP | Endereço do cadastro |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Próximo` | Confirmar Solicitação | `default` |
+| `Voltar` | Selecionar Data e Horário | `back` |
+
+### Nome da atividade: Confirmar Solicitação (Resumo)
+*Uma tela de resumo é exibida para o usuário revisar todas as informações antes de enviar.*
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| `resumo_servico` | Área de texto | Somente leitura | "Atendimento de [Especialidade] com [Profissional]" |
+| `resumo_data_hora` | Caixa de texto | Somente leitura | Data e hora selecionadas |
+| `resumo_local` | Caixa de texto | Somente leitura | Endereço selecionado |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Enviar Solicitação` | Notificar Profissional | `default` |
+| `Editar` | Selecionar Data e Horário | `back` |
+
+### Nome da atividade: Notificar Profissional (Sistema)
+*O sistema envia a solicitação ao profissional e bloqueia o horário na agenda.*
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| `status_notificacao` | Caixa de texto | Somente leitura | "Enviando notificação..." |
+| `status_agenda` | Caixa de texto | Somente leitura | "Horário bloqueado temporariamente." |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Notificação Enviada` | Aguardar Resposta | `default` |
+| `Falha no Envio` | Erro no Processo | `error` |
+
+### Nome da atividade: Analisar Solicitação (Profissional)
+*O profissional recebe a notificação e toma uma decisão.*
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| `detalhes_solicitacao` | Área de texto | Somente leitura | Exibe todos os dados da solicitação |
+| `novo_horario_sugerido` | Seletor de data/hora | Opcional | |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Aceitar` | Confirmar Agendamento | `default` |
+| `Recusar` | Notificar Recusa ao Usuário | `default` |
+| `Sugerir Novo Horário` | Notificar Sugestão ao Usuário | `default` |
+
+### Nome da atividade: Confirmar Agendamento (Sistema)
+*Após o aceite do profissional, o sistema finaliza o agendamento.*
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| `status_agendamento` | Caixa de texto | Somente leitura | "Agendamento confirmado!" |
+| `status_sincronizacao` | Caixa de texto | Somente leitura | "Sincronizando com agendas externas..." |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Finalizar` | Fim do Processo | `default` |
+
