@@ -106,4 +106,3 @@ A análise do fluxo de solicitação de atendimento revelou diversas oportunidad
 | Comandos | Destino | Tipo |
 | :--- | :--- | :--- |
 | `Finalizar` | Fim do Processo | `default` |
- | Somente leitura | "Sincronizando com agendas externas..." |
