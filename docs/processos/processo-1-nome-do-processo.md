@@ -1,8 +1,8 @@
-## 3.3.1 Processo 1 – Cadastro de Profissionais e Pacientes
+## 3.3.1 Processo 1 – Cadastro de Pacientes
 
 ### Oportunidades de Melhoria para o Processo de Cadastro
 
-Com base na análise do processo atual (AS-IS) de cadastro de profissionais e pacientes, as seguintes oportunidades de melhoria foram identificadas:
+Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as seguintes oportunidades de melhoria foram identificadas:
 
 *   **Automação e Padronização:** Eliminar o preenchimento manual e repetitivo de formulários, implementando um sistema padronizado e automatizado para coleta de informações.
 *   **Validação Abrangente e Automática:** Implementar validações automáticas para dados como CPF/CNPJ, idade mínima, formato de e-mail e registros profissionais, reduzindo erros e inconsistências.
@@ -46,22 +46,6 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais e pa
 |---|---|---|
 | Próximo | Validação de Dados | default |
 | Cancelar | Início do Cadastro | cancel |
-
-#### Nome da atividade: Preenchimento de Dados (Profissional)
-
-| Campo | Tipo | Restrições | Valor default |
-|---|---|---|---|
-| nome_completo | Caixa de texto | Obrigatório, mínimo 3 caracteres | |
-| cpf | Número | Obrigatório, 11 dígitos, formato XXX.XXX.XXX-XX | |
-| cnpj | Número | Opcional, 14 dígitos, formato XX.XXX.XXX/XXXX-XX | |
-| registro_profissional | Caixa de texto | Obrigatório, formato específico do conselho (ex: COREN-SP-123456) | |
-| formacao_academica | Área de texto | Obrigatório | |
-| especialidades | Seleção múltipla | Obrigatório, mínimo 1 seleção | Enfermagem, Fisioterapia, Fonoaudiologia, etc. |
-| areas_atendimento | Área de texto | Opcional | |
-| endereco | Área de texto | Obrigatório | |
-| telefone | Caixa de texto | Obrigatório, formato (XX) XXXXX-XXXX | |
-| email | Caixa de texto | Obrigatório, formato de e-mail | |
-| comprovante_registro | Arquivo | Obrigatório, PDF ou Imagem | |
 
 | Comandos | Destino | Tipo |
 |---|---|---|
