@@ -9,7 +9,7 @@ O processo atual para cadastrar profissionais da saúde e pacientes,e encontrar 
 
 ---
 
-## 3.1.2. Etapas do Processo Atual (Cadastro de Profissionais e Pacientes)
+## 3.1.2. Etapas do Processo Atual (Cadastro de Pacientes)
 
 #### Perspectiva da Família/Paciente (Ex: Mariana, mãe de um paciente)
 
@@ -19,6 +19,10 @@ O processo atual para cadastrar profissionais da saúde e pacientes,e encontrar 
 *   **Confirmação Precária:** A confirmação do cadastro ocorre via e-mail ou mensagem simples, podendo se perder facilmente.
 *   **Atualização de Dados:** Caso precise atualizar telefone, endereço ou informações de saúde, o processo exige contato direto com o suporte ou preenchimento de novos formulários.
 *   **Segurança da Informação:** O armazenamento de dados pessoais e de saúde é descentralizado, muitas vezes sem garantias de privacidade ou integração com outros sistemas de prontuário eletrônico.
+
+---
+
+## Processo Atual (Cadastro de Profissionais)
 
 ### Perspectiva do Profissional de Saúde (Ex: Rafael, enfermeiro)
 
@@ -116,7 +120,7 @@ Com essa proposta, os processos hoje manuais, repetitivos e descentralizados pas
 
 6. **Criação da Agenda do Paciente: Organização automática dos atendimentos agendados, com histórico e lembretes integrados.**
 
-### PROCESSO 1 :CADASTRO DE USUÁRIOS E PROFISSIONAIS:
+### PROCESSO 1 :CADASTRO DE USUÁRIOS (Pacientes):
 Objetivo:
 Permitir que usuários (pacientes) e profissionais de saúde (prestadores de serviço) se cadastrem de forma rápida, segura e intuitiva na plataforma, com validação adequada e segmentação clara de perfis.
 
@@ -137,6 +141,9 @@ Informações básicas:
  * Validação de e-mail e telefone (código via SMS/e-mail)
  * Aceite dos termos de uso e política de privacidade
  * Cadastro concluído → Direciona para a tela inicial do app com opção de buscar profissionais.
+---
+
+## PROCESSO 1 :CADASTRO DE PROFISSIONAIS:
 
 ### Cadastro de Profissional de Saúde
 Informações pessoais:
