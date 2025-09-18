@@ -118,7 +118,6 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 | **Comandos**           | **Destino**                    | **Tipo** |
 | ---                    | ---                            | ---      |
 | calcular_fechamentos   | Enviar notificação             | default  |
-| cancelar               | Gerenciar despesas/fechamentos | cancel   |
 
 ---
 
@@ -130,5 +129,5 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 
 | **Comandos**               | **Destino**                    | **Tipo** |
 | ---                        | ---                            | ---      |
-| marcar como recebido ou não| nenhum                         |          |
+| marcar_como_recebido_ou_nao| nenhum                         |          |
 
