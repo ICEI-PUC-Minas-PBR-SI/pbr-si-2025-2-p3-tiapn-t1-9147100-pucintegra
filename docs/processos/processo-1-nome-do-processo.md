@@ -17,7 +17,7 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 <img width="1860" height="1776" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/5886d6ca-1110-42f6-bc3c-97b8fe23ff08" />
 
 
-[Este modelo representaria o fluxo otimizado do processo de cadastro, incorporando as melhorias propostas. Ele pode incluir etapas como: Início do Cadastro, Preenchimento de Dados, Validação Automática, Análise de Credenciais (para profissionais), Aprovação/Rejeição, Notificação ao Usuário, e Fim do Cadastro.]
+[Este modelo representaria o fluxo otimizado do processo de cadastro, incorporando as melhorias propostas. Ele pode incluir etapas como: Início do Cadastro, Preenchimento de Dados, Validação Automática, Aprovação/Rejeição, Notificação ao Usuário, e Fim do Cadastro.]
 
 ### Detalhamento das Atividades
 
