@@ -1,8 +1,8 @@
-## 3.3.1 Processo 1 – Cadastro de Profissionais e Pacientes
+## 3.3.1 Processo 1 – Cadastro de Profissionais
 
 ### Oportunidades de Melhoria para o Processo de Cadastro
 
-Com base na análise do processo atual (AS-IS) de cadastro de profissionais e pacientes, as seguintes oportunidades de melhoria foram identificadas:
+Com base na análise do processo atual (AS-IS) de cadastro de profissionais, as seguintes oportunidades de melhoria foram identificadas:
 
 *   **Automação e Padronização:** Eliminar o preenchimento manual e repetitivo de formulários, implementando um sistema padronizado e automatizado para coleta de informações.
 *   **Validação Abrangente e Automática:** Implementar validações automáticas para dados como CPF/CNPJ, idade mínima, formato de e-mail e registros profissionais, reduzindo erros e inconsistências.
@@ -30,17 +30,6 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais e pa
 | Comandos | Destino | Tipo |
 |---|---|---|
 | Iniciar Cadastro | Preenchimento de Dados | default |
-
-#### Nome da atividade: Preenchimento de Dados (Paciente)
-
-| Campo | Tipo | Restrições | Valor default |
-|---|---|---|---|
-| nome_completo | Caixa de texto | Obrigatório, mínimo 3 caracteres | |
-| cpf | Número | Obrigatório, 11 dígitos, formato XXX.XXX.XXX-XX | |
-| data_nascimento | Data | Obrigatório, formato DD-MM-AAAA, maior de 18 anos | |
-| endereco | Área de texto | Obrigatório | |
-| telefone | Caixa de texto | Obrigatório, formato (XX) XXXXX-XXXX | |
-| email | Caixa de texto | Obrigatório, formato de e-mail | |
 
 | Comandos | Destino | Tipo |
 |---|---|---|
