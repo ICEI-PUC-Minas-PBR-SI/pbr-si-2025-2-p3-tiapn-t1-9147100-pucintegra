@@ -27,6 +27,13 @@ Com base no fluxo de visualização e gestão de agendamentos pelo paciente, as 
   - Reduz a taxa de não comparecimento (*no-show*).
   - Melhora a experiência e o cuidado com o paciente.
 
+### 2. Histórico de Atendimentos
+- **Melhoria Proposta:** Criar uma aba ou seção dedicada ao **"Histórico"**, separada dos compromissos futuros.
+- **Funcionalidades:**
+  - Listar todos os atendimentos que já foram concluídos.
+  - Permitir acesso a detalhes e anotações de sessões passadas.
+- **Benefícios:** Facilita o acompanhamento da jornada de cuidado e a consulta de informações passadas.
+
 ---
 
 ## Detalhamento das Atividades
