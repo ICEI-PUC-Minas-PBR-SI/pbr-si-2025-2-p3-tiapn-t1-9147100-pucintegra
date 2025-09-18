@@ -12,17 +12,6 @@ Com base no fluxo de visualização e gestão de agendamentos pelo paciente, as 
   - Reduz a chance de esquecimentos ou confusão sobre os agendamentos.
   - Centraliza todas as informações relevantes em um único lugar.
 
-### 2. Visualização Detalhada do Compromisso
-- **Problema Atual:** A visualização do agendamento pode ser básica, omitindo detalhes importantes.
-- **Melhoria Proposta:** Garantir que cada item na agenda exiba de forma clara e completa as **informações essenciais do atendimento**:
-  - Data e hora
-  - Nome e foto do profissional
-  - Especialidade do serviço
-  - Endereço completo do atendimento (com link para mapa)
-- **Benefícios:**
-  - Aumenta a confiança e a preparação do paciente para o atendimento.
-  - Evita a necessidade de o paciente buscar informações em outros locais (como e-mails de confirmação).
-
 ### 3. Flexibilidade para Edição e Cancelamento
 - **Problema Atual:** Cancelar ou alterar um agendamento pode ser um processo manual e burocrático (ex: ligar para uma central).
 - **Melhoria Proposta:** Implementar **funcionalidades de autogestão** que permitam ao usuário **editar ou cancelar** um agendamento diretamente pela agenda, sujeito a regras de negócio (ex: antecedência mínima para cancelamento).
