@@ -140,7 +140,7 @@ Informações básicas:
  * Cadastro concluído → Direciona para a tela inicial do app com opção de buscar profissionais.
 ---
 
-## PROCESSO 2 :CADASTRO DE PROFISSIONAIS:
+# PROCESSO 2 :CADASTRO DE PROFISSIONAIS:
 
 ### Cadastro de Profissional de Saúde
 Informações pessoais:
