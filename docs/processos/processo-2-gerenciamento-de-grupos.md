@@ -109,21 +109,6 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 
 ---
 
-**Excluir membro**
-
-| **Campo**          | **Tipo**         | **Restrições**    | **Valor default** |
-| ---                | ---              | ---               | ---               |
-| selecionar_membros | Seleção múltipla |                   |                   |
-
-| **Comandos** | **Destino**             | **Tipo** |
-| ---          | ---                     | ---      |
-| validar      | Gateway de verificação  | default  |
-| cancelar     | Gerenciar pessoas       | cancel   |
-
-
-
----
-
 **Fazer fechamento**
 
 | **Campo**          | **Tipo**         | **Restrições**    | **Valor default** |
@@ -134,3 +119,16 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 | ---                    | ---                            | ---      |
 | calcular_fechamentos   | Enviar notificação             | default  |
 | cancelar               | Gerenciar despesas/fechamentos | cancel   |
+
+---
+
+**Marcar como recebido ou não recebido**
+
+| **Campo**          | **Tipo**         | **Restrições**    | **Valor default** |
+| ---                | ---              | ---               | ---               |
+|                    |                  |                   |                   |
+
+| **Comandos**               | **Destino**                    | **Tipo** |
+| ---                        | ---                            | ---      |
+| marcar como recebido ou não| nenhum                         |          |
+
