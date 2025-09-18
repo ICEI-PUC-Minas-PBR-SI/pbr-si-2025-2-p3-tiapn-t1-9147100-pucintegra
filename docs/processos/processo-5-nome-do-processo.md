@@ -20,13 +20,6 @@ Com base no fluxo de visualização e gestão de agendamentos pelo paciente, as 
   - Automatiza o processo de cancelamento, liberando o horário para outros pacientes.
   - Reduz a carga de trabalho administrativo.
 
-### 4. Sincronização com Agendas Externas
-- **Problema Atual:** O paciente precisa adicionar manualmente o compromisso em sua agenda pessoal (Google Calendar, Outlook, etc.).
-- **Melhoria Proposta:** Oferecer uma opção de **sincronização automática ou um botão "Adicionar à Agenda"** (.ics) para cada compromisso.
-- **Benefícios:**
-  - Integra o fluxo do aplicativo à rotina diária do paciente.
-  - Diminui drasticamente a chance de esquecimento do compromisso.
-
 ### 5. Notificações e Lembretes Inteligentes
 - **Problema Atual:** O paciente pode se esquecer do atendimento agendado.
 - **Melhoria Proposta:** Configurar um sistema de **lembretes automáticos** enviados em momentos estratégicos (ex: 24 horas antes e 2 horas antes do atendimento) via push, SMS ou e-mail.
