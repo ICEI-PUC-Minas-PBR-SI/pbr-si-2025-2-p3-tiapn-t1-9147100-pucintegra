@@ -84,13 +84,16 @@ A análise do fluxo de solicitação de atendimento revelou diversas oportunidad
 | `status_notificacao` | Caixa de texto | Somente leitura | "Enviando notificação..." |
 | `status_agenda` | Caixa de texto | Somente leitura | "Horário bloqueado temporariamente." |
 
-### Nome da atividade: Analisar Solicitação (Profissional)
-*O profissional recebe a notificação e toma uma decisão.*
-
 | Campo | Tipo | Restrições | Valor default |
 | :--- | :--- | :--- | :--- |
 | `detalhes_solicitacao` | Área de texto | Somente leitura | Exibe todos os dados da solicitação |
 | `novo_horario_sugerido` | Seletor de data/hora | Opcional | |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Aceitar` | Confirmar Agendamento | `default` |
+| `Recusar` | Notificar Recusa ao Usuário | `default` |
+| `Sugerir Novo Horário` | Notificar Sugestão ao Usuário | `default` |
 
 ### Nome da atividade: Confirmar Agendamento (Sistema)
 *Após o aceite do profissional, o sistema finaliza o agendamento.*
@@ -99,3 +102,8 @@ A análise do fluxo de solicitação de atendimento revelou diversas oportunidad
 | :--- | :--- | :--- | :--- |
 | `status_agendamento` | Caixa de texto | Somente leitura | "Agendamento confirmado!" |
 | `status_sincronizacao` | Caixa de texto | Somente leitura | "Sincronizando com agendas externas..." |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Finalizar` | Fim do Processo | `default` |
+ | Somente leitura | "Sincronizando com agendas externas..." |
