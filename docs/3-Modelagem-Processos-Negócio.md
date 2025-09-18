@@ -230,7 +230,10 @@ Profissional pode:
 
 ### 3.3. Modelagem dos processos
 
-[PROCESSO 1 - Cadastro de Profissionais e Pacientes](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
+[PROCESSO 1 - Cadastro de (Usuarios) Pacientes](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
+
+[PROCESSO 1 - Cadastro de Profissionais](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
+
 
 [PROCESSO 2 - Gerenciamento de Busca e Contratação de Profissional de Saúde Domiciliar](./processos/processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
 
