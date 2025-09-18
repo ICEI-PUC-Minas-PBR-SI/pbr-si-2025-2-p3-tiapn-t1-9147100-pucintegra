@@ -120,6 +120,8 @@ Com essa proposta, os processos hoje manuais, repetitivos e descentralizados pas
 
 6. **Criação da Agenda do Paciente: Organização automática dos atendimentos agendados, com histórico e lembretes integrados.**
 
+---
+
 ### PROCESSO 1 :CADASTRO DE USUÁRIOS (Pacientes):
 Objetivo:
 Permitir que usuários (pacientes) e profissionais de saúde (prestadores de serviço) se cadastrem de forma rápida, segura e intuitiva na plataforma, com validação adequada e segmentação clara de perfis.
