@@ -27,7 +27,7 @@
 
    
 
-**Nome da atividade 1**
+### Atividade 1 - Logar com usuário Locador
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
@@ -44,7 +44,32 @@
 | cadastrar            | Início do proceso de cadastro  |                   |
 
 
-**Nome da atividade 2**
+### Atividade 2 - Preenchimento dos dados do Local
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| [Nome do campo] | [tipo de dados]  |                |                   |
+|                 |                  |                |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
+|                      |                                |                   |
+
+
+### Atividade 3 - Confirmação dos dados
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| [Nome do campo] | [tipo de dados]  |                |                   |
+|                 |                  |                |                   |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
+|                      |                                |                   |
+
+### Atividade 4 - Cadastro Concluído
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
