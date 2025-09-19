@@ -190,3 +190,36 @@ A responsividade (RNF-001) e a multiplataforma (RNF-002) são implícitas no des
 | ---                        | ---                            | ---      |
 | marcar_como_recebido_ou_nao| nenhum                         |          |
 
+
+---
+
+
+## 3.3.4.1 Wireframe da Inclusão de Despesas
+
+A seguir é apresentado o wireframe da funcionalidade **Incluir Despesa**, que faz parte do processo de Gerenciamento de Despesas.  
+Esse wireframe ilustra a interface que o usuário utiliza para registrar uma nova despesa dentro de um grupo.
+
+---
+
+### Wireframe
+
+![Wireframe Inclusão de Despesas](../images/wireframe-inclusao-despesa.png)
+
+### Descrição da Interface
+
+- **Campo de Descrição**: Permite que o usuário informe o motivo ou detalhe da despesa (ex.: “Almoço em Itaparica”, “Passeio de Balsa”).  
+- **Campo de Valor**: Entrada numérica para o valor da despesa.  
+- **Botão Anexar**: Possibilita o envio de comprovantes de pagamento (ex.: nota fiscal, recibo).  
+- **Botão Tirar Foto**: Permite capturar comprovante diretamente pela câmera do dispositivo.  
+- **Botão Incluir**: Confirma a inserção da despesa no sistema.
+
+### Relação com Requisitos
+
+| Tipo de Requisito | Código | Descrição | Como o wireframe atende |
+|-------------------|--------|-----------|--------------------------|
+| Funcional | RF-01 | O sistema deve permitir que o usuário registre uma despesa vinculada ao grupo. | Os campos **descrição** e **valor**, junto com a ação **Incluir**, tornam o registro possível. |
+| Funcional | RF-02 | O sistema deve permitir anexar comprovantes de despesas. | Os botões **Anexar** e **Tirar Foto** possibilitam a inclusão de comprovantes. |
+| Não Funcional | RNF-01 | O sistema deve ser de fácil uso e intuitivo. | Layout simples, com poucos campos e botões bem identificados. |
+| Não Funcional | RNF-02 | O sistema deve validar dados obrigatórios. | Os campos **descrição** e **valor** são destacados como obrigatórios no fluxo de negócio. |
+
+---
