@@ -1,4 +1,4 @@
-### 3.3.2 Processo 2 – NOME DO PROCESSO
+### 3.3.2 Processo 2 – Cadastro do Local
 
 ![Modelo BPMN do PROCESSO 2 - Cadastro do Local](../images/processo_2_cadastro_local.png "Cadastro de Local")
 
