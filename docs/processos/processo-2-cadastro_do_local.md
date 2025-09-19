@@ -36,11 +36,19 @@
 
 | **Comandos** | **Destino** | **Tipo** |
 | :--- | :--- | :--- |
-| Entrar | Preenchimento dos dados do Local | default |
+| Entrar | Tela inicial | default |
 | Cancelar | Fim do processo | cancel |
 
 
-### Atividade 2 - Preenchimento dos dados do Local
+### Atividade 2 - Dashboard 
+
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+|  Dashboard |  Listagem de locais | default |
+| Criar local | Preenchimento do dados do local |
+
+
+### Atividade 3 - Preenchimento dos dados do Local
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | :--- | :--- | :--- | :--- |
@@ -57,7 +65,7 @@
 | Confirmar | Confirmação dos dados | default |
 
 
-### Atividade 3 - Confirmação dos dados
+### Atividade 4 - Confirmação dos dados
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | :--- | :--- | :--- | :--- |
@@ -69,7 +77,7 @@
 | Concluir | Cadastro Concluído | default |
 
 
-### Atividade 4 - Cadastro Concluído
+### Atividade 5 - Cadastro Concluído
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | :--- | :--- | :--- | :--- |
