@@ -203,7 +203,7 @@ Esse wireframe ilustra a interface que o usuário utiliza para registrar uma nov
 
 ### Wireframe
 
-![Wireframe Inclusão de Despesas](../images/wireframe-inclusao-despesa.png)
+![Wireframe Inclusão de Despesas](../images/prototipoTelas/Incluir-despesas.png)
 
 ### Descrição da Interface
 
