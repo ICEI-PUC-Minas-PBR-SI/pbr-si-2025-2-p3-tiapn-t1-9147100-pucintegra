@@ -17,6 +17,8 @@ Caso o usuário seja administrador do grupo, ele terá acesso a funcionalidades 
 A seguir, apresentamos a descrição de como os wireframes apresentados atendem aos requisitos funcionais e não funcionais do sistema.
 
 ---
+## 2. Criação de um novo grupo
+<img width="337" height="659" alt="image" src="https://github.com/user-attachments/assets/cd9d55a7-729a-43e5-a005-40c147b06ad3" />
 
 ## 3. Envio de Convites para Participantes
 
