@@ -10,6 +10,61 @@ Caso o usuário seja administrador do grupo, ele terá acesso a funcionalidades 
 ![PROCESSO 2](../images/modelagem-2-gerenciamento-de-grupo.png "Modelo BPMN do Processo 2.")
 
 
+# Mapeamento dos Wireframes com os Requisitos
+
+# Descrição dos Wireframes vs Requisitos Funcionais e Não Funcionais
+
+A seguir, apresentamos a descrição de como os wireframes apresentados atendem aos requisitos funcionais e não funcionais do sistema.
+
+---
+
+## 3. Envio de Convites para Participantes
+
+
+A tela Convidar permite ao usuário adicionar participantes a um grupo por meio de duas opções principais:
+
+- Busca por amigos já cadastrados: utilizando o campo de pesquisa, com suporte à digitação e entrada por voz.
+- Convite por link: opção apresentada como link no final da tela, permitindo convidar usuários ainda não cadastrados.
+
+Cada amigo listado possui um botão com o ícone **"+"**, representando a ação de convidar ou adicionar ao grupo.
+
+![Tela de Convite de Participantes](../images/prototipoTelas/cadastroLogin/Convidar_participante.png)
+
+
+### Requisitos Funcionais Atendidos
+
+| Requisito | Descrição                                                                                         | Prioridade |
+|-----------|---------------------------------------------------------------------------------------------------|------------|
+| RF-003    | Permitir envio de convites para inclusão de membros no grupo, com aceite ou recusa.              | ALTA       |
+| RF-004    | Permitir inclusão de participantes não cadastrados, com opção de substituição futura.            | MÉDIA      |
+
+---
+
+### Requisitos Não Funcionais Atendidos
+
+| Requisito | Descrição                                                                                               | Prioridade |
+|-----------|---------------------------------------------------------------------------------------------------------|------------|
+| RNF-001   | Sistema responsivo, adaptado para diferentes tamanhos de tela (incluindo dispositivos móveis).          | ALTA       |
+| RNF-002   | Suporte multiplataforma (navegadores modernos como Chrome, Firefox, Edge, Safari).                      | ALTA       |
+| RNF-006   | Interface clara, com mensagens e fluxos que evitam perda de dados em caso de erro.                      | MÉDIA      |
+| RNF-008   | Interface intuitiva, de fácil navegação, adequada a usuários não técnicos.                              | ALTA       |
+
+---
+
+
+## 3. Gerenciamento e Visualização do Grupo
+
+A interface principal do grupo atende a múltiplos requisitos. A tela mostra claramente a lista de membros e seus respectivos saldos devedores ou credores, resolvendo a necessidade de cálculo automático (RF-007) e visualização da carteira (RF-010).
+
+A imagem também exemplifica como o gerenciamento de grupo (RF-002) pode ser feito. O menu que aparece ao lado de cada membro, oferece opções como "Excluir (adm)" e "Definir como adm. (adm)", indicando que essas ações são restritas aos administradores do grupo.
+
+A adição de novas despesas é facilitada pelo botão "+" ao lado do título "Despesas", atendendo ao requisito de registro de despesas (RF-005). Além disso, a visualização das despesas já registradas, como "Desp 1" e "Desp 2", junto com os valores e a interação de "like", demonstra como o sistema exibe e gerencia os itens de forma clara.
+
+A responsividade (RNF-001) e a multiplataforma (RNF-002) são implícitas no design, que é visualmente otimizado para uma tela de celular, com botões de fácil acesso e uma disposição vertical que se adaptaria bem a outros formatos de tela, como tablets ou desktops.
+
+![Tela de Convite de Participantes](../images/prototipoTelas/cadastroLogin/Visualização%20Grupo.png)
+
+
 #### Detalhamento das atividades
 
 
