@@ -27,6 +27,25 @@ A tela de criação de um novo grupo possibilita que o administrador do grupo in
   
 <img width="337" height="659" alt="image" src="https://github.com/user-attachments/assets/cd9d55a7-729a-43e5-a005-40c147b06ad3" />
 
+### Requisitos Funcionais Atendidos
+
+| Requisito | Descrição                                                                                         | Prioridade |
+|-----------|---------------------------------------------------------------------------------------------------|------------|
+| RF-002    | O sistema deve permitir a criação de grupos de despesas e o gerenciamento por administradores.    | ALTA       |
+| RF-003    | O sistema deve permitir enviar convites para inclusão de membros no grupo, com aceite ou recusa.  | MÉDIA      |
+| RF-004    | O sistema deve permitir a inclusão de participantes não cadastrados, com opção de substituição futura. | MÉDIA      |
+
+
+### Requisitos Não Funcionais Atendidos
+
+| Requisito | Descrição                                                                                               | Prioridade |
+|-----------|---------------------------------------------------------------------------------------------------------|------------|
+| RNF-001   | Sistema responsivo, adaptado para diferentes tamanhos de tela (incluindo dispositivos móveis).          | ALTA       |
+| RNF-002   | Suporte multiplataforma (navegadores modernos como Chrome, Firefox, Edge, Safari).                      | ALTA       |
+| RNF-003   | As requisições do usuário devem ser processadas em no máximo 3 segundos, em condições normais de uso.   | ALTA       |
+| RNF-006   | Interface clara, com mensagens e fluxos que evitam perda de dados em caso de erro.                      | MÉDIA      |
+| RNF-008   | Interface intuitiva, de fácil navegação, adequada a usuários não técnicos.                              | ALTA       |
+
 
 
 ## 3. Envio de Convites para Participantes
