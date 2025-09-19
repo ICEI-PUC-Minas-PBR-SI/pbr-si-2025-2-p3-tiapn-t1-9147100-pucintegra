@@ -59,24 +59,22 @@
 
 ### Atividade 3 - Confirmação dos dados
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| :--- | :--- | :--- | :--- |
+| **Dados do local** | **Varia de acordo** | **Somente leitura** | **Valores preenchidos na atividade anterior** |
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Voltar | Preenchimento dos dados do Local | cancel |
+| Concluir | Cadastro Concluído | default |
+
 
 ### Atividade 4 - Cadastro Concluído
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| :--- | :--- | :--- | :--- |
+| Mensagem de sucesso | Caixa de texto | Somente leitura | "Cadastro realizado com sucesso!" |
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Ir para o painel principal | Fim do Cadastro | default |
