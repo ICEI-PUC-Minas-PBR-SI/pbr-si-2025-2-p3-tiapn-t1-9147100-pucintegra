@@ -20,6 +20,12 @@ A seguir, apresentamos a descrição de como os wireframes apresentados atendem 
 ## 2. Criação de um novo grupo
 <img width="337" height="659" alt="image" src="https://github.com/user-attachments/assets/cd9d55a7-729a-43e5-a005-40c147b06ad3" />
 
+A tela de criação de um novo grupo possibilita que o administrador do grupo insira os dados de identificação do grupo, como:
+- Nome
+- Descrição
+- Imagem de capa
+- Convidar Participantes
+
 ## 3. Envio de Convites para Participantes
 
 
