@@ -55,31 +55,17 @@ A seguir, descrevemos as propriedades das atividades do processo 5, relacionando
      - *Data e Hora* → registro do envio da notificação.  
 
 
-**Nome da atividade 1**
+**Atividade: Efetuar Abatimento de Despesa**
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| **Campo**        | **Tipo**       | **Restrições**                       | **Valor default** |
+|------------------|----------------|--------------------------------------|-------------------|
+| Despesa          | Caixa de Texto | Obrigatório, mínimo 3 caracteres     | vazio             |
+| Valor pago       | Número         | Decimal (>= 0, com 2 casas)          | 0,00              |
+| Comprovante      | Imagem         | Opcional (anexar ou tirar foto)      | -                 |
+| Data/Hora        | Data e Hora    | Registrado automaticamente pelo app  | Data/Hora atual   |
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
-
-
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| **Comandos**     | **Destino**                       | **Tipo**   |
+|------------------|-----------------------------------|------------|
+| Anexar           | Selecionar arquivo do dispositivo | default    |
+| Tirar foto       | Abrir câmera do dispositivo       | default    |
+| Enviar           | Atualizar saldo do grupo e gerar notificação | default |
