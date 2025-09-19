@@ -194,7 +194,7 @@ A responsividade (RNF-001) e a multiplataforma (RNF-002) são implícitas no des
 ---
 
 
-## 3.3.4.1 Wireframe da Inclusão de Despesas
+## 3.3.2 Wireframe da Inclusão de Despesas
 
 A seguir é apresentado o wireframe da funcionalidade **Incluir Despesa**, que faz parte do processo de Gerenciamento de Despesas.  
 Esse wireframe ilustra a interface que o usuário utiliza para registrar uma nova despesa dentro de um grupo.
