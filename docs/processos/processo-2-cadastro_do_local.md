@@ -5,22 +5,22 @@
 
 #### Detalhamento das atividades
 
-1. Logar com usuário Locador
+1. [Logar com usuário Locador](#atividade-1---logar-com-usuário-locador)
 
    - Permite que o usuário insira suas credenciais (login e senha) para acessar a área de cadastro de local.
    - Verifica a validade das credenciais no sistema.
 
-2. Preenchimento dos dados do Local
+2. [Preenchimento dos dados do Local](#atividade-2---preenchimento-dos-dados-do-local)
 
    - Captura informações detalhadas da propriedade a ser alugada (endereço, características, valor, etc.).
    - Inclui a opção de fazer upload de fotos da propriedade para visualização.
 
-3. Confirmação dos dados
+3. [Confirmação dos dados](#atividade-3---confirmação-dos-dados)
 
    - Exibe um resumo de todas as informações da propriedade preenchidas.
    - Permite ao usuário revisar e validar os dados antes de prosseguir.
     
-4. Cadastro Concluído
+4. [Cadastro Concluído](#atividade-4---cadastro-concluído)
 
    - Exibe uma mensagem de sucesso, confirmando que o local foi cadastrado com êxito.
    - Redireciona o usuário para a página de gerenciamento de propriedades, onde o novo local estará listado.
