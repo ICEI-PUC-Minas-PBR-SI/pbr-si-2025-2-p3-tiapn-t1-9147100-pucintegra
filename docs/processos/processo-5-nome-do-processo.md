@@ -34,6 +34,8 @@ Com base no fluxo de visualização e gestão de agendamentos pelo paciente, as 
   - Permitir acesso a detalhes e anotações de sessões passadas.
 - **Benefícios:** Facilita o acompanhamento da jornada de cuidado e a consulta de informações passadas.
 
+![Imagem do WhatsApp de 2025-09-19 à(s) 16 59 52_050cc7a1](https://github.com/user-attachments/assets/bacfe5aa-4131-4934-bd74-2483180273b9)
+
 ---
 
 ## Detalhamento das Atividades
