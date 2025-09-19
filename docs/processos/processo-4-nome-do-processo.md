@@ -49,6 +49,12 @@ A análise do fluxo de solicitação de atendimento revelou diversas oportunidad
   - Mantém o usuário engajado no fluxo, mesmo em caso de recusa.
   - Automatiza a renegociação de horários.
 
+### Exemplo de um Modelo BPMN do PROCESSO 4 
+
+<img width="1054" height="815" alt="image" src="https://github.com/user-attachments/assets/870cb26c-bf8f-4bb1-a2ee-2ba8c709b749" />
+
+
+
 ## Detalhamento das Atividades
 
 ### Nome da atividade: Selecionar Data e Horário
