@@ -12,6 +12,19 @@ A seguir, apresentamos a descrição de como os wireframes apresentados atendem 
 
 ![Wireframe Processo 5](../images/proc5-wireframe-abater-despesa.jpg "Wireframe do Processo 5 – Abater despesa")
 
+### Requisitos Atendidos – Processo 5 (Abatimento de despesas)
+
+- **RF-005**: Atendido – o wireframe prevê anexar comprovantes de despesa (botões *Anexar* e *Tirar foto*).  
+- **RF-008**: Atendido – o formulário permite registrar abatimentos de pagamento, informando despesa e enviando confirmação.  
+- **RF-009**: Parcialmente atendido – a tela não mostra a notificação, mas o envio da operação permite que o sistema gere a confirmação.  
+- **RF-010**: Indiretamente atendido – ao registrar abatimento, os saldos individuais/coletivos são atualizados no sistema.  
+
+**Requisitos Não Funcionais:**
+- **RNF-001**: Atendido – interface voltada para mobile, assegurando responsividade.  
+- **RNF-006**: Atendido – fluxo simples permite exibição de mensagens de erro em caso de falha.  
+- **RNF-008**: Atendido – design intuitivo com botões claros e diretos.  
+
+
 #### Detalhamento das Atividades
 
 A seguir, descrevemos as propriedades das atividades do processo 5, relacionando-as aos campos de dados do wireframe.
