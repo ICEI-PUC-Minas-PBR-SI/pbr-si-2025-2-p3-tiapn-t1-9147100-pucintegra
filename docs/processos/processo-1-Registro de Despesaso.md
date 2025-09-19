@@ -37,12 +37,15 @@ _* **Tabela** - campo formado por uma matriz de valores_
 
 **1- Detalhamento das Atividades**
 
-| **Campo**            | **Tipo**         | **Restrições**                             | **Valor default** |
-| ---                  | ---              | ---                                        |                   |
-| Descrição da Despesa |Caixa de Texto    | Obrigatório, até 100 caracteres            |                   |
-| ***Exemplo:***       |                  |                                            |                   |
-| Forma de Pagamento   | Seleção única    | Opções: Dinheiro, Cartão, Pix, Boleto      |  Dinheiro         |
-| Comprovante          | Arquivo          | Opcional (upload de nota fiscal ou recibo) |   --              |
+| **Campo**             | **Tipo**         | **Restrições** | **Valor default**             |
+| ---                   | ---              | ---            | ---                           |
+| [Nome do campo]       | [tipo de dados]  |                |                               |
+| ***Exemplo:***        |                  |                |                               | 
+| Descrição da Despesa  |Caixa de Texto    | Obrigatório, até 100 caracteres                |
+|Valor                  |Número            | Obrigatório, maior que 0                       |
+|Data                   |Dados             | Obrigatório|Data atual                         |
+|Forma de Pagamento     |Seleção única     | Opções: Dinheiro, Cartão, Pix, Boleto|Dinheiro |
+|Comprovante            |Arquivo           | Opcional (upload de nota fiscal ou recibo)     |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---                 |
