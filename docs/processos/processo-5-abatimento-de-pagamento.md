@@ -5,7 +5,7 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 
 ![PROCESSO 5](../images/modelagem-5-abatimento-de-pagamentos.png "Modelo BPMN do Processo 5.")
 
-![PROCESSO 5](../images/proc5-wireframe-abater-despesa.jpg")
+![Wireframe Processo 5](../images/proc5-wireframe-abater-despesa.jpg "Wireframe do Processo 5 – Abater despesa")
 #### Detalhamento das atividades
 
 _Descreva aqui cada uma das propriedades das atividades do processo 2. 
