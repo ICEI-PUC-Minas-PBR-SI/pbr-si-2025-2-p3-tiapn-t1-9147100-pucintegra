@@ -29,32 +29,32 @@
 
 ### Atividade 1 - Logar com usuário Locador
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| :--- | :--- | :--- | :--- |
+| login | Caixa de texto | obrigatório, formato de e-mail | - |
+| senha | Caixa de texto | obrigatório, mínimo 8 caracteres | - |
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Entrar | Preenchimento dos dados do Local | default |
+| Cancelar | Fim do processo | cancel |
 
 
 ### Atividade 2 - Preenchimento dos dados do Local
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| :--- | :--- | :--- | :--- |
+| Nome do Local | Caixa de texto | obrigatório, mínimo 3 caracteres | - |
+| Endereço | Área de texto | obrigatório | - |
+| Tipo de propriedade | Seleção única | obrigatório | - |
+| Valor do Aluguel | Número | obrigatório, formato monetário | - |
+| Descrição | Área de texto | opcional, máximo de 500 caracteres | - |
+| Fotos da propriedade | Imagem | opcional, até 5 imagens, máx. 2MB cada | - |
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| **Comandos** | **Destino** | **Tipo** |
+| :--- | :--- | :--- |
+| Cancelar | Fim do processo | cancel |
+| Confirmar | Confirmação dos dados | default |
 
 
 ### Atividade 3 - Confirmação dos dados
