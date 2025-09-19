@@ -31,7 +31,7 @@ Como isso atende aos objetivos do projeto
 
 [PROCESSO 1 - Cadastro do Usuário](./processos/processo-1-cadastro_usuario.md "Detalhamento do Processo 1.")
 
-[PROCESSO 2 - Cadastro do Local](./processos/processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
+[PROCESSO 2 - Cadastro do Local](./processos/processo-2-cadastro_do_local.md "Detalhamento do Processo 2.")
 
 [PROCESSO 3 - Busca e Filtros Avançados](./processos/processo-3-nome-do-processo.md "Detalhamento do Processo 3.")
 
