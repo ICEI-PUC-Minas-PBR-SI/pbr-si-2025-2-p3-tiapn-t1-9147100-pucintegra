@@ -5,37 +5,42 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 
 ![PROCESSO 5](../images/modelagem-5-abatimento-de-pagamentos.png "Modelo BPMN do Processo 5.")
 
+### Mapeamento dos Wireframes com os Requisitos
+A seguir, apresentamos a descrição de como os wireframes apresentados atendem aos requisitos funcionais e não funcionais do sistema.
+
+5. Abatimento de Despesas
+
 ![Wireframe Processo 5](../images/proc5-wireframe-abater-despesa.jpg "Wireframe do Processo 5 – Abater despesa")
-#### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+#### Detalhamento das Atividades
 
-_Os tipos de dados a serem utilizados são:_
+A seguir, descrevemos as propriedades das atividades do processo 5, relacionando-as aos campos de dados do wireframe.
 
-_* **Área de texto** - campo texto de múltiplas linhas_
+1. **Receber fechamento das despesas**  
+   - **Descrição:** O sistema recebe as informações consolidadas de despesas do grupo.  
+   - **Campos utilizados:**  
+     - *Número* → valor total das despesas.  
+     - *Imagem* → comprovante anexado (ex.: nota fiscal).  
 
-_* **Caixa de texto** - campo texto de uma linha_
+2. **Efetuar pagamento**  
+   - **Descrição:** O usuário realiza o registro de um pagamento ou abatimento.  
+   - **Campos utilizados:**  
+     - *Caixa de texto* → identificação da despesa (“Desp 2”).  
+     - *Número* → valor pago.  
+     - *Imagem* → anexar ou tirar foto do comprovante.  
+     - *Data e Hora* → momento em que o pagamento foi efetuado.  
 
-_* **Número** - campo numérico_
+3. **Marcar como pago no aplicativo**  
+   - **Descrição:** O sistema atualiza o status da despesa para “paga” após a confirmação do usuário.  
+   - **Campos utilizados:**  
+     - *Seleção única* → marcar opção “Pago” (radio button ou checkbox).  
 
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
+4. **Enviar notificação de pagamento**  
+   - **Descrição:** O sistema dispara notificação automática aos membros do grupo sobre o pagamento realizado.  
+   - **Campos utilizados:**  
+     - *Caixa de texto* → mensagem de notificação enviada.  
+     - *Data e Hora* → registro do envio da notificação.  
 
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
 
 **Nome da atividade 1**
 
