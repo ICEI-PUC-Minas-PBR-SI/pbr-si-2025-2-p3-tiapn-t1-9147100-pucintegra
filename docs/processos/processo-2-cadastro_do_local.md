@@ -5,34 +5,27 @@
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+1. Logar com usuário Locador
 
-_Os tipos de dados a serem utilizados são:_
+   - Permite que o usuário insira suas credenciais (login e senha) para acessar a área de cadastro de local.
+   - Verifica a validade das credenciais no sistema.
 
-_* **Área de texto** - campo texto de múltiplas linhas_
+2. Preenchimento dos dados do Local
 
-_* **Caixa de texto** - campo texto de uma linha_
+   - Captura informações detalhadas da propriedade a ser alugada (endereço, características, valor, etc.).
+   - Inclui a opção de fazer upload de fotos da propriedade para visualização.
 
-_* **Número** - campo numérico_
+3. Confirmação dos dados
 
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
+   - Exibe um resumo de todas as informações da propriedade preenchidas.
+   - Permite ao usuário revisar e validar os dados antes de prosseguir.
+    
+4. Cadastro Concluído
 
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
+   - Exibe uma mensagem de sucesso, confirmando que o local foi cadastrado com êxito.
+   - Redireciona o usuário para a página de gerenciamento de propriedades, onde o novo local estará listado.
 
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
+   
 
 **Nome da atividade 1**
 
