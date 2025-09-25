@@ -97,3 +97,6 @@
 | Nome do botão/link  | Destino              | Tipo    |
 |---------------------|----------------------|---------|
 | Acessar painel      | Início do sistema    | default |
+
+## Wireframe
+![Wireframe do PROCESSO 1 - Cadastro de Usuário](../images/Wireframe_Cadastro_Colmeia.jpg "Wireframe de baixa fidelidade")
