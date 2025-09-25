@@ -1,6 +1,4 @@
-# Especificações do Projeto
-
-<span style="color:red">Pré-requisitos: <a href="01-Documentação de Contexto.md"> Documentação de Contexto</a></span>
+# 1 - Especificações do Projeto
 
 A definição do problema parte da dificuldade enfrentada por microempreendedores individuais (MEIs) e profissionais autônomos em manter um controle financeiro eficiente. Muitos ainda utilizam métodos manuais ou informais (planilhas, cadernos, anotações soltas), o ocasiona a perda de dados, erros e falta de clareza sobre a real situação financeira do negócio.  
  
@@ -10,18 +8,18 @@ Nesta seção, serão apresentadas as **personas**, as **histórias de usuários
 
 ---
 
-## Requisitos Mínimos do Sistema  
+## 2 - Requisitos Mínimos do Sistema  
 
 O sistema **Smart Gestão** foi projetado para ser executado em equipamentos com configuração acessível, de forma a atender a realidade de microempreendedores individuais e profissionais autônomos. Para isso, foram definidos requisitos mínimos de hardware e software compatíveis com a execução em computadores pessoais e dispositivos móveis atuais.  
 
-### Hardware mínimo recomendado  
+### 2.1 - Hardware mínimo recomendado
 - **Processador:** Intel Core i3 (8ª geração ou superior) / AMD Ryzen 3 (3200U ou superior)  
 - **Memória RAM:** 8 GB  
 - **Armazenamento:** 2 GB livre em disco  
 - **Tela:** Resolução mínima de 1024x768 pixels  
 - **Rede:** Conexão com a internet  
 
-### Softwares recomendados 
+### 2.2 - Softwares recomendados 
 - **Sistema Operacional:** Windows 10 ou superior, Linux Ubuntu 20+, Android 11+ ou iOS 14+  
 - **Navegadores compatíveis:** Chrome, Edge, Firefox ou Safari (versões recentes)  
 - **Banco de Dados:** PostgreSQL 13+ ou MySQL 8+  
@@ -29,23 +27,23 @@ O sistema **Smart Gestão** foi projetado para ser executado em equipamentos com
 
 ---
 
-## Personas  
+## 3 - Personas  
  
-- **João, 32 anos – Microempreendedor de serviços locais**  
+- **3.1 - João, 32 anos – Microempreendedor de serviços locais**  
 João é dono de uma barbearia em seu bairro. Trabalha sozinho e atende em média 15 clientes por dia. Apesar do bom movimento, enfrenta dificuldades para organizar suas finanças, já que ainda faz os registros em um caderno antigo. Casado e pai de um filho pequeno, ele tem pouco tempo para lidar com planilhas complexas e teme perder o controle do fluxo de caixa. Sonha em expandir seu negócio, mas sabe que precisa de mais clareza sobre lucros e despesas para tomar decisões estratégicas.  
  
-- **Ana, 28 anos – Vendedora autônoma online**  
+- **3.2 - Ana, 28 anos – Vendedora autônoma online**  
 Ana vende cosméticos e acessórios em redes sociais e marketplaces. Solteira e bastante conectada ao mundo digital, ela lida diariamente com dezenas de transações pequenas, o que torna difícil visualizar seus lucros reais. Apesar de usar planilhas esporadicamente, acaba se perdendo com a alta demanda. Ana gostaria de uma solução simples no celular para acompanhar receitas, despesas e resultados em tempo real, ajudando-a a investir melhor em marketing e estoque.  
  
-- **Carlos, 41 anos – Prestador de serviços de manutenção**  
+- **3.3 - Carlos, 41 anos – Prestador de serviços de manutenção**  
 Carlos é casado e tem dois filhos adolescentes. Trabalha com pequenos reparos em domicílios, como eletricidade e encanamento. Costuma anotar seus ganhos e gastos em papéis soltos e frequentemente mistura finanças pessoais com profissionais. Isso gera dificuldades na hora de calcular margens de lucro e planejar investimentos. Carlos deseja separar melhor suas contas e ter um sistema que o ajude a entender se realmente está lucrando no fim do mês.  
  
-- **Marina, 36 anos – Dona de restaurante local**  
+- **3.4 - Marina, 36 anos – Dona de restaurante local**  
 Marina administra um pequeno delivery de refeições caseiras. Casada e apaixonada por gastronomia, investe muito tempo na cozinha e pouco no gerenciamento do negócio. Utiliza anotações manuais para organizar custos e pagamentos, mas sofre com atrasos em contas e falta de controle sobre tributos. Ela precisa de relatórios claros sobre faturamento e custos, além de alertas que a ajudem a não perder prazos. Seu objetivo é organizar as finanças para manter o restaurante sustentável e, no futuro, abrir uma segunda unidade.
  
 ---
 
-## Histórias de Usuários  
+## 4 - Histórias de Usuários  
  
 | EU COMO… (Persona) | QUERO/PRECISO… (Funcionalidade) | PARA… (Motivo/Valor) |
 |---------------------|---------------------------------|-----------------------|
@@ -62,11 +60,13 @@ Marina administra um pequeno delivery de refeições caseiras. Casada e apaixona
 
 ---
 
-## Requisitos
+## 5 - Requisitos
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
 
-### Requisitos Funcionais
+---
+
+### 5.1 - Requisitos Funcionais
 
 | ID | Descrição | Prioridade |
 |----|------------|------------|
@@ -83,7 +83,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ---
 
-### Requisitos não Funcionais
+### 5.2 - Requisitos Não Funcionais
 
 | ID | Descrição | Prioridade |
 |----|------------|------------|
@@ -91,28 +91,24 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RNF-002 | O tempo médio de resposta das operações deve ser de até **5 segundos** | MÉDIA |
 | RNF-003 | O sistema deve ser compatível com navegadores modernos (Chrome, Firefox, Edge) | ALTA |
 | RNF-004 | Os dados do usuário devem ser armazenados de forma segura em banco de dados | ALTA |
-| RNF-005 | O sistema deve funcionar em regime de disponibilidade **durante o horário de apresentação/testes acadêmicos** | ALTA |
-| RNF-006 | O banco de dados deve suportar ao menos **1.000 registros de transações** sem perda de desempenho | MÉDIA |
-| RNF-007 | O sistema deve ser implementado de forma modular, facilitando futuras expansões | MÉDIA |
-| RNF-008 | A interface deve ser simples, intuitiva e de fácil navegação para usuários não técnicos | ALTA |
-| RNF-009 | O login deve exigir usuário e senha, com recuperação básica de senha por e-mail | MÉDIA |
-| RNF-010 | A arquitetura deve possibilitar futura integração com APIs externas (ex.: serviços contábeis) | BAIXA |
+| RNF-005 | O banco de dados deve suportar ao menos **1.000 registros de transações** sem perda de desempenho | MÉDIA |
+| RNF-006 | O sistema deve ser implementado de forma modular, facilitando futuras expansões | MÉDIA |
+| RNF-007 | A interface deve ser simples, intuitiva e de fácil navegação para usuários não técnicos | ALTA |
+| RNF-008 | O login deve exigir usuário e senha, com recuperação básica de senha por e-mail | MÉDIA |
+| RNF-009 | A arquitetura deve possibilitar futura integração com APIs externas (ex.: serviços contábeis) | BAIXA |
 
 ---
 
-## Restrições
+### 5.3 - Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
 
-| ID | Descrição | Prioridade |
-|----|------------|------------|
-| RNF-001 | O sistema deve ser responsivo, permitindo uso em diferentes dispositivos (PCs e celulares) | ALTA |
-| RNF-002 | O tempo médio de resposta das operações deve ser de até **5 segundos** | MÉDIA |
-| RNF-003 | O sistema deve ser compatível com navegadores modernos (Chrome, Firefox, Edge) | ALTA |
-| RNF-004 | Os dados do usuário devem ser armazenados de forma segura em banco de dados | ALTA |
-| RNF-005 | O sistema deve funcionar em regime de disponibilidade **durante o horário de apresentação/testes acadêmicos** | ALTA |
-| RNF-006 | O banco de dados deve suportar ao menos **1.000 registros de transações** sem perda de desempenho | MÉDIA |
-| RNF-007 | O sistema deve ser implementado de forma modular, facilitando futuras expansões | MÉDIA |
-| RNF-008 | A interface deve ser simples, intuitiva e de fácil navegação para usuários não técnicos | ALTA |
-| RNF-009 | O login deve exigir usuário e senha, com recuperação básica de senha por e-mail | MÉDIA |
-| RNF-010 | A arquitetura deve possibilitar futura integração com APIs externas (ex.: serviços contábeis) | BAIXA |
+| ID | Descrição |
+|----|------------|
+| R-01 | O projeto deverá ser entregue até a data limite estabelecida pela disciplina |
+| R-02 | O sistema deve ser desenvolvido apenas com tecnologias open-source e gratuitas |
+| R-03 | O sistema não terá integração bancária direta nesta versão inicial |
+| R-04 | O escopo do projeto está limitado ao **controle de receitas e despesas**, não incluindo contabilidade avançada |
+| R-05 | A disponibilidade obrigatória do sistema está restrita ao período de apresentação/testes acadêmicos |
+| R-06 | O desenvolvimento deve seguir o cronograma definido em sprints |
+| R-07 | O sistema não contemplará funcionalidades de análise preditiva ou inteligência artificial nesta versão inicial |
