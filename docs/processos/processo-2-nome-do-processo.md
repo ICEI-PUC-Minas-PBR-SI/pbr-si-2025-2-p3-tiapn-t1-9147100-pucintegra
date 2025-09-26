@@ -12,7 +12,7 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais, as 
 *   **Integração de Sistemas:** Conectar o sistema de cadastro a prontuários eletrônicos, plataformas de pagamento e conselhos profissionais, centralizando e aumentando a confiabilidade das informações.
 *   **Comunicação Eficiente:** Melhorar a comunicação sobre o status do cadastro e outras informações relevantes, evitando perdas de comunicação e atrasos.
 
-### Exemplo de um Modelo BPMN do PROCESSO 1 - Cadastro
+### Exemplo de um Modelo BPMN do PROCESSO 2 - Cadastro
 
 <img width="1860" height="1776" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/5886d6ca-1110-42f6-bc3c-97b8fe23ff08" />
 
