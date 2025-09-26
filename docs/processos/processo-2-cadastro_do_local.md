@@ -86,3 +86,8 @@
 | **Comandos** | **Destino** | **Tipo** |
 | :--- | :--- | :--- |
 | Ir para o painel principal | Fim do Cadastro | default |
+
+## Wireframe
+![Wireframe do PROCESSO 2 - Cadastro do local](../images/Wireframeprocesso2_1.jpg "Wireframe de baixa fidelidade")
+![Wireframe do PROCESSO 2 - Cadastro do local](../images/Wireframeprocesso2_2.jpg "Wireframe de baixa fidelidade")
+![Wireframe do PROCESSO 2 - Cadastro do local](../images/Wireframeprocesso2_3.jpg "Wireframe de baixa fidelidade")
