@@ -1,4 +1,4 @@
-## 3.3.1 Processo 1 – Cadastro de Profissionais
+## 3.3.1 Processo 2 – Cadastro de Profissionais
 
 ### Oportunidades de Melhoria para o Processo de Cadastro
 
