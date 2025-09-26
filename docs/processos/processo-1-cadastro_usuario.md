@@ -77,16 +77,10 @@
 | Confirmar          | Validação do usuário Locador/Locatário | default |
 
 ### Atividade 4 - Validação do Usuário (Locador / Locatário)
-| Campo              | Tipo             | Restrições                                         | Valor default |
-|--------------------|------------------|----------------------------------------------------|---------------|
-| Status da validação | Seleção única   | valores possíveis: aprovado / pendente / rejeitado | pendente      |
-| Documentos enviados | Arquivo         | formatos aceitos: PDF, JPG, PNG                    | -             |
+
 
 **Comandos**  
-| Nome do botão/link  | Destino                   | Tipo    |
-|---------------------|---------------------------|---------|
-| Reenviar dados      | Preenchimento dos dados   | cancel  |
-| Aprovar cadastro    | Cadastro concluído        | default |
+
 
 ### Atividade 5 - Cadastro Concluído
 | Campo                   | Tipo          | Restrições            | Valor default       |
