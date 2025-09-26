@@ -7,62 +7,54 @@ Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
 ![Exemplo de um Modelo BPMN do PROCESSO 3](../images/modelagem-3-gerenciamento-de-membros_2.png "Modelo BPMN do Processo 3.")
 ![Exemplo de um Modelo BPMN do PROCESSO 3](../images/modelagem-3-gerenciamento-de-membros_3.png "Modelo BPMN do Processo 3.")
 
-#### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+O processo de **Gerenciamento de Membros** tem como objetivo permitir que o administrador de um grupo consiga **incluir** ou **excluir participantes** de forma prática e organizada, garantindo que apenas pessoas autorizadas permaneçam no grupo.  
 
-_Os tipos de dados a serem utilizados são:_
+Esse processo envolve três etapas principais:  
+1. **Gerenciar membros**  
+2. **Incluir membros**  
+3. **Excluir membros**
 
-_* **Área de texto** - campo texto de múltiplas linhas_
+---
 
-_* **Caixa de texto** - campo texto de uma linha_
-
-_* **Número** - campo numérico_
-
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
-
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
-
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
-
-_* **Imagem** - campo contendo uma imagem_
-
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
-
-**Nome da atividade 1**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+#### 3.3.3.1 Gerenciar membros
+- O administrador acessa a tela do grupo e visualiza a lista de participantes já cadastrados.  
+- A partir dessa tela, ele pode escolher entre **adicionar novos membros** ou **remover membros existentes**.  
 
 
-**Nome da atividade 2**
+**Wireframe relacionado:**  
+Tela de **Membros do grupo**, onde aparecem os participantes (ex.: Ana, João, Maria) e o menu de ações (`Excluir`, `Definir como admin`).  
+()  
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+---
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+#### 3.3.3.2 Inclusão de membros
+- O administrador pode convidar amigos para o grupo através da tela de convite.  
+- É possível buscar usuários na lista ou enviar convites por link.  
+- Após aceitação, o usuário é adicionado ao grupo automaticamente.  
+
+ **Wireframe relacionado:**  
+Tela de **Convidar** (com campo de busca e lista de amigos para seleção).  
+(Wireframe: tela "Convidar" com nomes Fulan, Ciclano, Beltrano e opção de "Convidar por link") 
+
+---
+
+#### 3.3.3.3 Exclusão de membros
+- O administrador seleciona o participante a ser removido.  
+- O sistema verifica se o usuário possui dívidas ou créditos pendentes.  
+- Caso possua, a exclusão não é permitida.  
+- Caso não possua, o administrador confirma a remoção e o membro é excluído.  
+
+**Wireframe relacionado:**  
+Tela de **Membros** com ação de exclusão.  
+(Wireframe: ação “Excluir usuário Ana Vellor” a partir do menu de opções do membro)  
+
+---
+
+#### Conclusão
+O **Gerenciamento de Membros** garante controle total do administrador sobre quem participa do grupo. Os wireframes apresentados representam de forma clara cada etapa:  
+- **Visualização geral dos membros**  
+- **Inclusão de novos participantes**  
+- **Exclusão de participantes existentes**  
+
+Esse fluxo assegura que o grupo permaneça organizado e que apenas usuários regulares participem das interações financeiras e sociais.  
