@@ -23,6 +23,14 @@
    - Exibe mensagem de boas-vindas ao usuário.  
    - Encaminha o usuário ao painel principal do sistema.
 
+### Atividade 0 - Acessar o Sistema (Início do Fluxo)
+
+| Nome do botão/link | Destino | Tipo |
+| :--- | :--- | :--- |
+| Entrar | Login (não detalhado) | - |
+| **Cadastrar** | Atividade 1 - Escolha do Tipo de Usuário | default |
+
+
   
 ### Atividade 1 - Preenchimento dos dados do Locador
 
@@ -91,6 +99,7 @@
 | Nome do botão/link  | Destino              | Tipo    |
 |---------------------|----------------------|---------|
 | Acessar painel      | Início do sistema    | default |
+| Fechar      | Confirmação de Cadastro    | - |
 
 ## Wireframe
 ![Wireframe do PROCESSO 1 - Cadastro de Usuário](../images/Wireframe_Cadastro_Colmeia.jpg "Wireframe de baixa fidelidade")
