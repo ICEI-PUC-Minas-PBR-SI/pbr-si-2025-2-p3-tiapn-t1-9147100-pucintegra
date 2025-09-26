@@ -4,6 +4,10 @@
 
 #### Detalhamento das atividades
 
+0. [Acessar o sistema]()
+   - Ponto inicial do fluxo. O usuário decide se deseja entrar com uma conta existente ou criar uma nova como Locador ou Locatário.  
+   - Esta etapa substitui a antiga "Escolha do Tipo de Usuário", direcionando o usuário diretamente para o formulário de cadastro específico.
+
 1. [Preenchimento dos dados do Locador](#atividade-1---preenchimento-dos-dados-do-locador)
    - Captura informações do cadastro do proprietário do espaço. (nome, e-mail, CPF/CNPJ, endereço, etc.)  
    - Inclui criação e confirmação de senha e opção de foto de perfil.
@@ -29,8 +33,9 @@
 
 | Nome do botão/link | Destino | Tipo |
 | :--- | :--- | :--- |
-| Entrar como Locador | Atividade 2 - Preenchimento dos dados do Locador | default |
-| Entrar como locatário| Atividade 1 - Escolha do Tipo de Usuário | default |
+| Criar conta como Locador | Atividade 2 - Preenchimento dos dados do Locador | default |
+| Criar conta como Locatário| Atividade 1 - Escolha do Tipo de Usuário | default |
+| Já possuo uma conta| - | default |
 
 
   
