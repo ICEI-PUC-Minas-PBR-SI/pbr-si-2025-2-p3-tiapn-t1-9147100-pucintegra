@@ -18,17 +18,42 @@ Esse processo envolve três etapas principais:
 ---
 
 #### 3.3.3.1 Gerenciar membros
+
+| **Campo**        | **Tipo**        | **Restrições**             | **Valor default** |
+| ---              | ---             | ---                        | ---               |
+| lista de membros | Lista           | ---                        | ---               |
+
+
+| **Comandos**     | **Destino**         | **Tipo**                          |
+| ---              | ---                 | ---                               |
+| excluir          | Exclusão de membros | ---                               |
+| adicionar        | Inclusão de membros | ---                               |
+| cancelar         | Voltar              | cancel     
+
 - O administrador acessa a tela do grupo e visualiza a lista de participantes já cadastrados.  
 - A partir dessa tela, ele pode escolher entre **adicionar novos membros** ou **remover membros existentes**.  
 
 
 **Wireframe relacionado:**  
 Tela de **Membros do grupo**, onde aparecem os participantes (ex.: Ana, João, Maria) e o menu de ações (`Excluir`, `Definir como admin`).  
-()  
 
+![alt text](../images/prototipoTelas/gerenciar-grupo.png)
 ---
 
 #### 3.3.3.2 Inclusão de membros
+
+| **Campo**       | **Tipo**        | **Restrições**              | **Valor default** |
+| ---             | ---             | ---                         | ---               |
+| procurar amigo  | Caixa de Texto  | mínimo 3 caracteres         | ---               |
+| lista de amigos | Lista           | exibe nome e avatar         | ---               |
+
+| **Comandos**      | **Destino**               | **Tipo**   |
+| ---               | ---                       | ---        |
+| + (adicionar)     | Inclusão de membros       | ---        |
+| convidar por link | Gera link de convite      | ---        |
+| voltar            | Tela anterior             | cancel     |
+
+
 - O administrador pode convidar amigos para o grupo através da tela de convite.  
 - É possível buscar usuários na lista ou enviar convites por link.  
 - Após aceitação, o usuário é adicionado ao grupo automaticamente.  
@@ -37,9 +62,21 @@ Tela de **Membros do grupo**, onde aparecem os participantes (ex.: Ana, João, M
 Tela de **Convidar** (com campo de busca e lista de amigos para seleção).  
 (Wireframe: tela "Convidar" com nomes Fulan, Ciclano, Beltrano e opção de "Convidar por link") 
 
+![alt text](../images/prototipoTelas/adicionar-membro.png)
 ---
 
 #### 3.3.3.3 Exclusão de membros
+
+| **Campo**        | **Tipo**        | **Restrições**             | **Valor default** |
+| ---              | ---             | ---                        | ---               |
+| lista de membros | Lista           | nome, avatar, saldo em R$  | —                 |
+| opções do membro | Submenu (⋮)     | visível apenas a admins    | —                 |
+
+| **Comandos**     | **Destino**       | **Tipo**                          |
+| ---              | ---               | ---                               |
+| excluir          | Efetivar exclusão | default (habilitado se sem pendências) |
+
+
 - O administrador seleciona o participante a ser removido.  
 - O sistema verifica se o usuário possui dívidas ou créditos pendentes.  
 - Caso possua, a exclusão não é permitida.  
@@ -49,7 +86,7 @@ Tela de **Convidar** (com campo de busca e lista de amigos para seleção).
 Tela de **Membros** com ação de exclusão.  
 (Wireframe: ação “Excluir usuário Ana Vellor” a partir do menu de opções do membro)  
 
----
+![alt text](../images/prototipoTelas/gerenciar-grupo.png)
 
 #### Conclusão
 O **Gerenciamento de Membros** garante controle total do administrador sobre quem participa do grupo. Os wireframes apresentados representam de forma clara cada etapa:  
