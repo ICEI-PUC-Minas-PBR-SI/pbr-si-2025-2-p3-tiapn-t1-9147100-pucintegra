@@ -4,11 +4,11 @@
 
 #### Detalhamento das atividades
 
-0. [Acessar o sistema]()
+1. [Acessar o sistema]()
    - Ponto inicial do fluxo. O usuário decide se deseja entrar com uma conta existente ou criar uma nova como Locador ou Locatário.  
    - Esta etapa substitui a antiga "Escolha do Tipo de Usuário", direcionando o usuário diretamente para o formulário de cadastro específico.
 
-1. [Preenchimento dos dados do Locador](#atividade-1---preenchimento-dos-dados-do-locador)
+2. [Preenchimento dos dados do Locador](#atividade-1---preenchimento-dos-dados-do-locador)
    - Captura informações do cadastro do proprietário do espaço. (nome, e-mail, CPF/CNPJ, endereço, etc.)  
    - Inclui criação e confirmação de senha e opção de foto de perfil.
      
@@ -20,14 +20,14 @@
    - Envio de código de verificação por e-mail.  
    - Exige aceite dos termos de uso antes da validação.
      
-6. [Validação do Usuário (Locador / Locatário)](#atividade-4---validação-do-usuário-locador--locatário)
+5. [Validação do Usuário (Locador / Locatário)](#atividade-4---validação-do-usuário-locador--locatário)
    - Verificação das informações preenchidas.  
      
-8. [Cadastro Concluído](#atividade-5---cadastro-concluído)   
+6. [Cadastro Concluído](#atividade-5---cadastro-concluído)   
    - Exibe mensagem de boas-vindas ao usuário.  
    - Encaminha o usuário ao painel principal do sistema.
 
-### Atividade 0 - Acessar o Sistema 
+### Atividade 1 - Acessar o Sistema 
 
 **Comandos**
 
@@ -39,7 +39,7 @@
 
 
   
-### Atividade 1 - Preenchimento dos dados do Locador
+### Atividade 2 - Preenchimento dos dados do Locador
 
 | Campo            | Tipo           | Restrições                                                     | Valor default   |
 |------------------|----------------|----------------------------------------------------------------|-----------------|
@@ -59,7 +59,7 @@
 | Confirmar cadastro | Confirmação de cadastro    | default |
 
 
-### Atividade 2 - Preenchimento dos dados do Locatário
+### Atividade 3 - Preenchimento dos dados do Locatário
 
 | Campo            | Tipo           | Restrições                                                     | Valor default   |
 |------------------|----------------|----------------------------------------------------------------|-----------------|
@@ -79,7 +79,7 @@
 | Confirmar cadastro | Confirmação de cadastro    | default |
 
 
-### Atividade 3 - Confirmação de Cadastro
+### Atividade 4 - Confirmação de Cadastro
 | Campo                    | Tipo                     | Restrições                                      | Valor default |
 |--------------------------|--------------------------|-------------------------------------------------|---------------|
 | Código de verificação    | Número                   | enviado por e-mail ou SMS, obrigatório          | -             |
