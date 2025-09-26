@@ -23,12 +23,14 @@
    - Exibe mensagem de boas-vindas ao usuário.  
    - Encaminha o usuário ao painel principal do sistema.
 
-### Atividade 0 - Acessar o Sistema (Início do Fluxo)
+### Atividade 0 - Acessar o Sistema 
+
+**Comandos**
 
 | Nome do botão/link | Destino | Tipo |
 | :--- | :--- | :--- |
-| Entrar | Login (não detalhado) | - |
-| **Cadastrar** | Atividade 1 - Escolha do Tipo de Usuário | default |
+| Entrar como Locador | Atividade 2 - Preenchimento dos dados do Locador | default |
+| Entrar como locatário| Atividade 1 - Escolha do Tipo de Usuário | default |
 
 
   
