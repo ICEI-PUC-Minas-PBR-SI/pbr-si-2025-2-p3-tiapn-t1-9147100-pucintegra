@@ -12,8 +12,7 @@
  
  **Exemplo do diagrama de Arquitetura**:
 
-Armazenamento interno/Android/media/com.whatsapp/WhatsApp/Media/WhatsApp Images/IMG-20250926-WA0032.jpg
- 
+
  ![Exemplo de Arquitetura](./images/arquitetura-exemplo.png)
  
 
