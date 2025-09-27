@@ -36,8 +36,9 @@
 
 | **Comandos** | **Destino** | **Tipo** |
 | :--- | :--- | :--- |
-| Entrar | Tela inicial | default |
 | Cancelar | Fim do processo | cancel |
+| Entrar | Tela inicial | default |
+
 
 
 ### Atividade 2 - Dashboard 
