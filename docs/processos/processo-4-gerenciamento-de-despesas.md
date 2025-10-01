@@ -1,67 +1,135 @@
-### 3.3.4 Processo 4 – Gerênciamento de Despesas
+### 3.3.4 Processo 4 – Gerenciamento de Despesas
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 2. 
-Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
+#### Descrição
+O processo de **Gerenciamento de Despesas** possibilita que os usuários incluam, visualizem, validem e abatam despesas dentro de um grupo.  
+Esse fluxo garante **centralização, transparência e rastreabilidade** das informações financeiras, reduzindo conflitos e simplificando a divisão dos gastos.  
+
+---
+
+#### Modelagem
 
 ![PROCESSO 4](../images/modelagem-4-gerenciamento-de-despesas.png "Modelo BPMN do Processo 4.")
 
+---
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+---
 
-_Os tipos de dados a serem utilizados são:_
+**Atividade 4.1 – Incluir Despesa**
 
-_* **Área de texto** - campo texto de múltiplas linhas_
+| **Campo**        | **Tipo**       | **Restrições**                 | **Valor default** |
+|------------------|----------------|--------------------------------|-------------------|
+| Descrição        | Caixa de Texto | Obrigatório, texto simples      | Exemplo: “Almoço em Itaparica” |
+| Valor            | Número         | Obrigatório, > 0                |                   |
+| Anexar comprovante | Arquivo/Imagem | Opcional                        |                   |
 
-_* **Caixa de texto** - campo texto de uma linha_
+| **Comando**  | **Destino**         | **Tipo**  |
+|--------------|---------------------|-----------|
+| Incluir      | Visualizar Grupo    | default   |
 
-_* **Número** - campo numérico_
+---
 
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
+**Atividade 4.2 – Visualizar Grupo**
 
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
+| **Campo**     | **Tipo**  | **Restrições** | **Valor default** |
+|---------------|-----------|----------------|-------------------|
+| Lista membros | Tabela    | Exibe todos os membros com saldo calculado |   |
+| Lista despesas| Tabela    | Exibe todas as despesas registradas        |   |
 
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
+| **Comando**   | **Destino**               | **Tipo**  |
+|---------------|---------------------------|-----------|
+| + (Adicionar) | Incluir Despesa           | default   |
+| Selecionar membro | Visualizar Fechamento | default   |
 
-_* **Imagem** - campo contendo uma imagem_
+---
 
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
+**Atividade 4.3 – Visualizar Fechamento**
 
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
+| **Campo**          | **Tipo** | **Restrições** | **Valor default** |
+|--------------------|----------|----------------|-------------------|
+| Lista de saldos    | Tabela   | Automático (saldos calculados) | |
+| Histórico despesas | Tabela   | Exibe despesas relacionadas ao membro selecionado | |
 
-_* **Arquivo** - campo de upload de documento_
+| **Comando**   | **Destino**          | **Tipo**  |
+|---------------|----------------------|-----------|
+| Pagar         | Abater Despesa       | default   |
+| Recebido      | Confirma pagamento   | default   |
 
-_* **Link** - campo que armazena uma URL_
+---
 
-_* **Tabela** - campo formado por uma matriz de valores_
+**Atividade 4.4 – Abater Despesa**
 
-**Nome da atividade 1**
+| **Campo**          | **Tipo**       | **Restrições**                 | **Valor default** |
+|--------------------|----------------|--------------------------------|-------------------|
+| Valor a abater     | Número         | Obrigatório, > 0, ≤ saldo devido |                 |
+| Anexar comprovante | Arquivo/Imagem | Opcional                        |                   |
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| **Comando**   | **Destino**         | **Tipo**  |
+|---------------|---------------------|-----------|
+| Abater        | Visualizar Fechamento | default |
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
+---
 
+#### Wireframes
 
-**Nome da atividade 2**
+---
 
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+##### Atividade 4.1 – Incluir Despesa
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+**Descrição:** Tela destinada ao registro de uma nova despesa, permitindo inserir valores, descrição e anexar comprovantes.  
+
+<div style="display: flex; gap: 20px;">
+  <img src="../images/prototipoTelas/processo4/Incluir_Despesa.png" alt="Tela de Inclusão de Despesa" width="45%">
+</div>
+
+**Requisitos Atendidos:**
+- **RF-005**: Permite registrar despesas com anexos e submetê-las à aprovação do administrador.  
+- **RF-007**: A inclusão de despesas alimenta automaticamente o cálculo de rateio.  
+- **RNF-008**: A interface é simples e direta, adequada a usuários não técnicos.  
+
+---
+
+##### Atividade 4.2 – Visualizar Grupo
+
+**Descrição:** Tela que centraliza a visualização do grupo, exibindo membros, despesas lançadas e saldo de cada participante.  
+
+<div style="display: flex; gap: 20px;">
+  <img src="../images/prototipoTelas/processo4/Visualização_Grupo.png" alt="Tela de Visualização do Grupo" width="45%">
+</div>
+
+**Requisitos Atendidos:**
+- **RF-002**: Permite gerenciamento de grupos de despesas.  
+- **RF-007**: Mostra a divisão automática das despesas entre os membros.  
+- **RF-010**: Oferece visualização clara da carteira coletiva e individual.  
+
+---
+
+##### Atividade 4.3 – Visualizar Fechamento
+
+**Descrição:** Tela que mostra o fechamento de contas, incluindo saldos individuais, histórico de despesas e botões de ação para pagamento ou confirmação.  
+
+<div style="display: flex; gap: 20px;">
+  <img src="../images/prototipoTelas/processo4/Visualizar_Fechamento.png" alt="Tela de Fechamento de Despesas" width="45%">
+</div>
+
+**Requisitos Atendidos:**
+- **RF-008**: Registra pagamentos e abatimentos com atualização de saldos.  
+- **RF-009**: Confirmações de pagamento são notificadas aos membros.  
+- **RF-010**: Exibe a carteira individual de cada usuário.  
+- **RNF-007**: Mantém rastreabilidade via logs de transações.  
+
+---
+
+##### Atividade 4.4 – Abater Despesa
+
+**Descrição:** Tela que permite registrar abatimento de valores devidos, com opção de anexar comprovantes.  
+
+<div style="display: flex; gap: 20px;">
+  <img src="../images/prototipoTelas/processo4/Abatimento_de_despesa.png" alt="Tela de Abatimento de Despesa" width="45%">
+</div>
+
+**Requisitos Atendidos:**
+- **RF-008**: Permite o registro de pagamentos e abatimentos.  
+- **RF-009**: Envia notificações de confirmação de pagamento.  
+- **RNF-006**: Sistema tolerante a falhas, com mensagens de erro claras.  
