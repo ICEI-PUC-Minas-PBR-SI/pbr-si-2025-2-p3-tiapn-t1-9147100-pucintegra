@@ -1,23 +1,113 @@
 ### 3.3.1 Processo 1 – Cadastro e Login
 
-O processo de **Entrada no Sistema** começa quando o usuário vai até o browser de sua preferência e insere a url da aplicação. O browser então exibe a tela onde é possível inserir e-mail e senha;  Já para **Preencher formulário de cadastrar** a tela de preenchimento de um formulário é apresentada onde o usuário adiciona seus dados como login, senha, nome, idade e genero; o sistema, então, envia um link de verificação para o e-mail ou sms, e, após a sua confirmação,  finaliza o registro ao ter o código validado.
+#### Descrição
+O processo de **Entrada no Sistema** inicia quando o usuário acessa o browser de sua preferência e insere a URL da aplicação. Em seguida, o sistema apresenta a tela inicial, onde o usuário deve **escolher entre realizar login ou efetuar um novo cadastro**.  
 
-
-![PROCESSO 1](../images/modelagem-1-cadastro-login-r2.png "Modelo BPMN do Processo 1.")
-# Mapeamento dos Wireframes com os Requisitos
-
-A seguir, apresentamos a descrição de como os wireframes apresentados atendem aos requisitos funcionais e não funcionais do sistema.
+- Caso opte por **Login**, o usuário insere suas credenciais (e-mail e senha) e acessa o sistema.  
+- Caso opte por **Cadastro**, o sistema apresenta o formulário de criação de conta. Após preenchimento dos dados, o sistema envia um **código de verificação** (via e-mail ou SMS). Com a validação do código, o cadastro é finalizado, e o usuário é direcionado à tela de login para acessar sua conta.  
 
 ---
 
-## 1. Autenticação e Cadastro
+#### Modelagem
+![PROCESSO 1](../images/modelagem-1-cadastro-login-r2.png "Modelo BPMN do Processo 1.")
+
+---
+
+#### Detalhamento das Atividades
+
+**Atividade 1. Acessar o sistema**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+|-----------|----------|----------------|-------------------|
+| URL       | Texto    | Endereço válido | - |
+
+| **Comando** | **Destino** | **Tipo** |
+|-------------|-------------|----------|
+| Entrar na aplicação | Tela inicial (Escolher Login ou Cadastro) | default |
+
+---
+
+**Atividade 2. Escolher Login ou Cadastro**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+|-----------|----------|----------------|-------------------|
+| Opção     | Seleção  | Login ou Cadastro | - |
+
+| **Comando**   | **Destino**           | **Tipo** |
+|---------------|----------------------|----------|
+| Fazer Login   | Tela de Login        | default  |
+| Criar Conta   | Tela de Cadastro     | default  |
+
+---
+
+**Atividade 3. Fazer Login**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+|-----------|----------|----------------|-------------------|
+| e-mail    | Texto    | Formato válido | - |
+| senha     | Texto    | Mín. 8 caracteres | - |
+
+| **Comando** | **Destino** | **Tipo** |
+|-------------|-------------|----------|
+| Entrar      | Fim do Processo 1 | default |
+| Criar Conta | Tela de Cadastro | default |
+
+---
+
+**Atividade 4. Preencher Formulário de Cadastro**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+|-----------|----------|----------------|-------------------|
+| login     | Texto    | Formato e-mail | - |
+| senha     | Texto    | Mín. 8 caracteres | - |
+| nome      | Texto    | Mín. 5 caracteres | - |
+| idade     | Número   | ≥ 0 | - |
+| gênero    | Seleção  | Masculino/Feminino/Outro | - |
+
+| **Comando**          | **Destino**              | **Tipo** |
+|----------------------|--------------------------|----------|
+| Cadastrar            | Enviar código de validação | default |
+| Já tenho uma conta   | Tela de Login            | default |
+
+---
+
+**Atividade 5. Enviar Código de Validação**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+|-----------|----------|----------------|-------------------|
+| Método    | Seleção  | E-mail ou SMS  | E-mail |
+
+| **Comando** | **Destino** | **Tipo** |
+|-------------|-------------|----------|
+| Enviar      | Inserir Código de Validação | default |
+
+---
+
+**Atividade 6. Inserir Código de Validação**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+|-----------|----------|----------------|-------------------|
+| código    | Texto    | Mín. 6 dígitos | - |
+
+| **Comando**             | **Destino**    | **Tipo** |
+|--------------------------|----------------|----------|
+| Validar código           | Fazer Login    | default |
+| Preencher com código copiado | -          | opcional |
+
+---
+
+#### Wireframes
+
+A seguir, apresentamos a descrição de como os wireframes apresentados atendem aos requisitos funcionais e não funcionais do sistema.
+
+##### 1. Autenticação e Cadastro
 
 <div style="display: flex; gap: 20px;">
   <img src="../images/prototipoTelas/cadastroLogin/Login.png" alt="Tela de Login" width="45%">
   <img src="../images/prototipoTelas/cadastroLogin/Preenchimento-de-Cadastro.png" alt="Tela de Cadastro" width="45%">
 </div>
 
-### Requisitos Atendidos:
+##### Requisitos Atendidos:
 - **RF-001**: As telas de login e cadastro, junto à tela de validação, demonstram o fluxo completo de autenticação, incluindo validação por e-mail ou celular.
 - **RNF-005**: O fluxo de validação confirma que o sistema está preparado para autenticação via e-mail ou celular, atendendo à segurança esperada.
 - **RNF-004**: O processo de login e validação presume boas práticas de segurança, como criptografia e controle de acesso.
@@ -39,67 +129,3 @@ A seguir, apresentamos a descrição de como os wireframes apresentados atendem 
 - **RNF-006**: O design dessas telas favorece uma comunicação clara de mensagens de erro em caso de código inválido.
 
 ---
-
-## 3. Visualização e Gerenciamento de Grupos
-
-<img src="../images/prototipoTelas/cadastroLogin/Visualização-Grupos.png" alt="Tela de Visualização de Grupos" width="60%">
-
-### Requisitos Atendidos:
-- **RF-002**: A tela mostra os grupos existentes e oferece opção de criar novos, sugerindo suporte a múltiplos grupos e ao gerenciamento por administradores.
-- **RF-010**: Exibe claramente os saldos de grupos, atendendo ao requisito de visualização da carteira coletiva e individual.
-- **RNF-001** e **RNF-002**: A interface foi projetada para responsividade e multiplataforma, conforme requisitos de usabilidade e compatibilidade.
-- **RNF-008**: A navegação clara e simples garante usabilidade mesmo para usuários leigos.
-
----
-
-#### Detalhamento das atividades
-
-**Fazer Login** 
-
-| **Campo**       | **Tipo**         | **Restrições**         | **Valor default** |
-| ---             | ---              | ---                    | ---               |
-| [Nome do campo] | [tipo de dados]  |                        |                   |
-| login           | Caixa de Texto   | formato de e-mail      |                   |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Entrar               | Fim do Processo 1              | default           |
-
-
-**Preencher formulário de cadastro** 
-
-| **Campo**       | **Tipo**         | **Restrições**         | **Valor default** |
-| ---             | ---              | ---                    | ---               |
-| login           | Caixa de Texto   | formato de e-mail      |                   |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |                   |
-| Nome            | Caixa de Texto   | mínimo de 5 caracteres |                   |
-| Idade           | Número           |                        |                   |
-| Genero          | Seleção múltipla |                        |                   |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Cadastrar            | Enviar código de validação     |                   |
-
-
-**Enviar código de validação** 
- 
-| **Campo**       | **Tipo**           | **Restrições** | **Valor default** |
-| ---             | ---                | ---            | ---               |
-| Método          | Seleção múltipla   |                | Email             |
-
-
-
-| **Comandos**      |  **Destino**                   | **Tipo**          |
-| ---               | ---                            | ---               |
-| Enviar            | Inserir código de validação    |                   |
-
-**Inserir código de validação** 
-
-| **Campo**       | **Tipo**         | **Restrições**         | **Valor default** |
-| ---             | ---              | ---                    | ---               |
-| codigo          | Caixa de Texto   | mínimo de 8 caracteres |                |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Validar código       | Fazer Login                    |                   |
