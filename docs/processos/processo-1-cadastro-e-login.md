@@ -35,8 +35,8 @@ O processo de **Entrada no Sistema** inicia quando o usuário acessa o browser d
 
 | **Comando**   | **Destino**           | **Tipo** |
 |---------------|----------------------|----------|
-| Fazer Login   | Tela de Login        | default  |
-| Criar Conta   | Tela de Cadastro     | default  |
+| Entrar        | Tela de Login        | default  |
+| Criar una conta   | Tela de Cadastro     | default  |
 
 ---
 
@@ -44,13 +44,13 @@ O processo de **Entrada no Sistema** inicia quando o usuário acessa o browser d
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 |-----------|----------|----------------|-------------------|
-| e-mail    | Texto    | Formato válido | - |
-| senha     | Texto    | Mín. 8 caracteres | - |
+| Email    | Texto    | Formato válido | - |
+| Password     | Texto    | Mín. 8 caracteres | - |
 
 | **Comando** | **Destino** | **Tipo** |
 |-------------|-------------|----------|
 | Entrar      | Fim do Processo 1 | default |
-| Criar Conta | Tela de Cadastro | default |
+| Criar uma conta | Tela de Cadastro | default |
 
 ---
 
@@ -58,11 +58,11 @@ O processo de **Entrada no Sistema** inicia quando o usuário acessa o browser d
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 |-----------|----------|----------------|-------------------|
-| login     | Texto    | Formato e-mail | - |
-| senha     | Texto    | Mín. 8 caracteres | - |
-| nome      | Texto    | Mín. 5 caracteres | - |
-| idade     | Número   | ≥ 0 | - |
-| gênero    | Seleção  | Masculino/Feminino/Outro | - |
+| Primeiro nome | Texto  | Apenas letras, mínimo 2 e máximo 30 caracteres | - |
+| Ultimo nome   | Texto  | Apenas letras, mínimo 2 e máximo 50 caracteres | - |
+| Email/OuCelular| Texto | Formato e-mail - Celular somente números, 11 dígitos (DDD + número) | - |
+| Senha      | Número    | ≥ 0 | - |
+| gênero     | Seleção   | Masculino/Feminino/Outro | - |
 
 | **Comando**          | **Destino**              | **Tipo** |
 |----------------------|--------------------------|----------|
@@ -75,11 +75,11 @@ O processo de **Entrada no Sistema** inicia quando o usuário acessa o browser d
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 |-----------|----------|----------------|-------------------|
-| Método    | Seleção  | E-mail ou SMS  | E-mail |
+| Método    | Seleção  | E-mail ou Celular  | E-mail |
 
-| **Comando** | **Destino** | **Tipo** |
-|-------------|-------------|----------|
-| Enviar      | Inserir Código de Validação | default |
+| **Comando**    | **Destino** | **Tipo** |
+|----------------|-------------|----------|
+| Validar Código | Inserir Código de Validação | default |
 
 ---
 
