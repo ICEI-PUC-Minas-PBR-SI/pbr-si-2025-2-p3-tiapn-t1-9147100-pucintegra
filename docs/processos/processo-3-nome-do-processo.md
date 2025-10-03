@@ -226,4 +226,8 @@ O profissional avalia a família após o atendimento, contribuindo para a reputa
 | Enviar Avaliação  | Registrar Avaliação (Plataforma Medlar)    | default |
 | Pular Avaliação   | Fim do Processo (Profissional)             | default |
 
+## Wireframe
+
+![WhatsApp Image 2025-10-03 at 20 20 29](https://github.com/user-attachments/assets/cb00cfa8-0a74-4f35-9293-dd6c1ef4f2e7)
+
 
