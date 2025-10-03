@@ -1,11 +1,11 @@
 ### 3.3.2 Processo 2 – Gerênciamento de grupos
-O processo de gerenciamento de grupos tem início assim que o usuário faz login ou acessa diretamente a URL no navegador. Em seguida, o sistema exibe a tela de gerenciamento de grupos, onde é possível visualizar todos os grupos associados ao usuário logado. Caso não haja nenhum grupo ou o usuário deseje criar um novo, essa opção também estará disponível.
+O processo de gerenciamento de grupos tem início quando o usuário realiza login no sistema. Após a autenticação, o sistema exibe a tela de visualização de grupos, onde é possível listar todos os grupos associados ao usuário logado. Caso não haja nenhum grupo ou o usuário deseje criar um novo, essa opção também estará disponível.
 
-Após visualizar os grupos, o usuário pode abrir um deles para acessar informações detalhadas. Dentro do grupo, é possível consultar o fechamento das contas — que representa o saldo resultante da diferença entre o valor pago pelo usuário e o valor pago pelos demais membros do grupo. O usuário pode realizar abatimentos em pagamentos e marcar saldos positivos como quitados, ação que gera o envio automático de um e-mail ao recebedor, informando sobre o abatimento.
+Após visualizar os grupos, o usuário pode abrir um deles para acessar informações detalhadas. Dentro do grupo, é possível consultar o fechamento das contas — que representa o saldo resultante da diferença entre o valor pago pelo usuário e o valor pago pelos demais membros. O usuário pode realizar abatimentos em pagamentos e marcar saldos positivos como quitados, ação que gera o envio automático de um e-mail ao recebedor, informando sobre o abatimento.
 
 Além disso, o usuário pode visualizar todas as despesas do grupo e registrar novas despesas, se desejar.
 
-Caso o usuário seja administrador do grupo, ele terá acesso a funcionalidades adicionais, como: aprovar despesas, realizar o fechamento de contas, adicionar ou remover integrantes, e atribuir permissões de administrador a outros membros. Todas essas ações também geram notificações por e-mail para os demais participantes do grupo.
+Caso o usuário seja administrador do grupo, ele terá acesso a funcionalidades adicionais, como: aprovar despesas, realizar o fechamento de contas, convidar pessoas, adicionar ou remover integrantes, e atribuir permissões de administrador a outros membros. Todas essas ações também geram notificações por e-mail para os demais participantes.
 
 ![PROCESSO 2](../images/modelagem-2-gerenciamento-de-grupo_r1.png "Modelo BPMN do Processo 2.")
 
@@ -97,6 +97,20 @@ A responsividade (RNF-001) e a multiplataforma (RNF-002) são implícitas no des
 
 #### Detalhamento das atividades
 
+**Login no sistema**
+
+| **Campo**       | **Tipo**        | **Restrições**           | **Valor default** |
+| ---             | ---             | ---                      | ---               |
+| email           | Caixa de texto  | obrigatório; válido       |                   |
+| senha           | Caixa de senha  | obrigatório; min 6 chars |                   |
+
+| **Comandos** | **Destino**       | **Tipo**   |
+| ---          | ---               | ---        |
+| entrar       | Visualizar grupos | default    |
+| recuperar    | Recuperar senha   | secundário |
+
+
+---
 
 **Visualizar grupos**
 
