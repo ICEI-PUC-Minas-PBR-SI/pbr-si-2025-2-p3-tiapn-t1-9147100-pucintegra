@@ -33,7 +33,7 @@ Como isso atende aos objetivos do projeto
 
 [PROCESSO 2 - Cadastro do Local](./processos/processo-2-cadastro_do_local.md "Detalhamento do Processo 2.")
 
-[PROCESSO 3 - Busca e Filtros Avançados](./processos/processo-3-nome-do-processo.md "Detalhamento do Processo 3.")
+[PROCESSO 3 - Busca e Filtros Avançados](./processos/processo-3-buscas-filtros-avancados "Detalhamento do Processo 3.")
 
 [PROCESSO 4 - Reserva e Fluxo de Confirmação](./processos/processo-4-nome-do-processo.md "Detalhamento do Processo 4.")
 
