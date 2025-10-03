@@ -95,7 +95,7 @@ A seguir, apresentamos a descrição de como os wireframes apresentados atendem 
   <img src="../images/prototipoTelas/cadastroLogin/Preenchimento-de-Cadastro.png" alt="Tela de Cadastro" width="45%">
 </div>
 
-##### Requisitos Atendidos:
+### Requisitos Atendidos:
 - **RF-001**: As telas de login e cadastro, junto à tela de validação, demonstram o fluxo completo de autenticação, incluindo validação por e-mail ou celular.
 - **RNF-005**: O fluxo de validação confirma que o sistema está preparado para autenticação via e-mail ou celular, atendendo à segurança esperada.
 - **RNF-004**: O processo de login e validação presume boas práticas de segurança, como criptografia e controle de acesso.
