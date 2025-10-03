@@ -1,5 +1,7 @@
 ### 3.3.3 Processo 3 – Busca e filtros avançados
 
+O processo ocorre dentro do dashboard de aluguel de locais e tem como participante principal o usuário locatário e se inicia quando ele insere algum campo na barra de pesquisa ou acessa e preenche os campos do filtro para buscas mais refinadas. O processo se encerra quando o sistema retorna os resultados da pesquisa ou do filtro de buscas avançadas.
+
 ![Modelo BPMN do PROCESSO 3 - ](../images/processo_3_bpmn.png "Busca e filtros avançados")
 
 
