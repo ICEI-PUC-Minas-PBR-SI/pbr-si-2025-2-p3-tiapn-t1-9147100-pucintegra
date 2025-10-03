@@ -72,3 +72,8 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 | Comandos | Destino | Tipo |
 |---|---|---|
 | Fechar | Fim do Processo 1 | default |
+
+## Wireframe 
+
+![a4292527-aebe-4cb9-87ec-f0bb1925fe41](https://github.com/user-attachments/assets/64c3d6bd-3521-4409-954d-c716650414a8)
+
