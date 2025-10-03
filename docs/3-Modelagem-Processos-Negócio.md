@@ -35,3 +35,6 @@ a reputação acadêmica.
 [PROCESSO 2 - Login de Usuários](./processos/processo2_login_usuario.md "Detalhamento do Processo 2.")
 
 [PROCESSO 3 - Personalização de Perfil](./processos/processo3_personalizacao_usuario.md "Detalhamento do Processo 3.")
+
+[PROCESSO 4 - Envio de Perguntas e Respostas](./processos/processo4_perguntas_respostas.md "Detalhamento do Processo 4.")
+
