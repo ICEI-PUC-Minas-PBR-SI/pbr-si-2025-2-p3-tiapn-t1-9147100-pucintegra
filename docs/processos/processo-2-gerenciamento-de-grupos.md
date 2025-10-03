@@ -114,14 +114,16 @@ A responsividade (RNF-001) e a multiplataforma (RNF-002) são implícitas no des
 
 **Visualizar grupos**
 
-| **Campo**         | **Tipo**        | **Restrições**     | **Valor default**  |
-| ---               | ---             | ---                | ---                |
-| grupos            | Tabela          |                    |  grupos do usuário | 
+| **Campo**   | **Tipo** | **Restrições** | **Valor default**  |
+| ---         | ---      | ---            | ---                |
+| grupos      | Tabela   |                | grupos do usuário  |
 
-| **Comandos**  | **Destino**        | **Tipo**   |
-| ---           | ---                | ---        |
-| abrir_grupo   | Gerenciar grupo    |            |
-| criar_grupo   | Criar grupo        |            |
+| **Comandos**       | **Destino**        | **Tipo** |
+| ---                | ---                | ---      |
+| visualizar_lista   | Exibe tabela       | default  |
+| abrir_grupo        | Gerenciar grupo    |          |
+| ver_detalhes       | Gerenciar grupo    |          |
+| criar_grupo        | Criar grupo        |          |
 
 
 ---
@@ -138,6 +140,24 @@ A responsividade (RNF-001) e a multiplataforma (RNF-002) são implícitas no des
 | ---           | ---             | ---      |
 | salvar        | Gerenciar grupo | default  |
 | cancelar      | Visualizar grupos| cancel   |
+
+
+---
+
+**Grupo criado**
+
+| **Campo**     | **Tipo**        | **Restrições** | **Valor default** |
+| ---           | ---             | ---            | ---               |
+| nome_grupo    | Texto           | obrigatório    |                   |
+| descricao     | Texto           | até 500 chars  |                   |
+| imagem_capa   | Imagem          | opcional       |                   |
+
+| **Comandos**       | **Destino**                   | **Tipo** |
+| ---                | ---                           | ---      |
+| convidar_membro    | Convidar participantes (proc.3)|          |
+| incluir_despesa    | Incluir despesas (proc.4)     |          |
+| visualizar_fechamento | Visualizar fechamento      |          |
+| voltar             | Visualizar grupos             | cancel   |
 
 
 ---
