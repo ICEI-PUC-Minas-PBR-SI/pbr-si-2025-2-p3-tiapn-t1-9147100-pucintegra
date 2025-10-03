@@ -106,9 +106,9 @@ A seguir, apresentamos a descrição de como os wireframes apresentados atendem 
 ## 2. Validação de Conta
 
 <div style="display: flex; gap: 20px;">
-  <img src="../images/prototipoTelas/cadastroLogin/Escolha-Metodo-Validacao.png" alt="Escolha do Método de Validação"  height="500">
-  <img src="../images/prototipoTelas/cadastroLogin/Validar-codigo.png" alt="Tela de Validação de Código"  height="500">
-  <img src="../images/prototipoTelas/cadastroLogin/codigo_invalido.png" alt="Tela de Validação de Código"  height="500">
+  <img src="../images/prototipoTelas/cadastroLogin/Escolha-Metodo-Validacao.png" alt="Escolha do Método de Validação"  width="33%">
+  <img src="../images/prototipoTelas/cadastroLogin/Validar-codigo.png" alt="Tela de Validação de Código"  width="33%">
+  <img src="../images/prototipoTelas/cadastroLogin/codigo_invalido.png" alt="Tela de Validação de Código"   width="33%">
 </div>
 
 ### Requisitos Atendidos:
