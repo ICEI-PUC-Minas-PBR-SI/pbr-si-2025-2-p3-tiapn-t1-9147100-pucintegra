@@ -78,3 +78,6 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais, as 
 |---|---|---|
 | Fechar | Fim do Processo 1 | default |
 
+## Wireframe 
+
+![WhatsApp Image 2025-10-03 at 20 20 28](https://github.com/user-attachments/assets/c86abb74-5645-473b-a8b0-433a064a9a62)
