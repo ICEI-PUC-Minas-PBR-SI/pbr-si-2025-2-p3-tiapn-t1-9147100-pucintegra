@@ -1,6 +1,6 @@
 ### 3.3.3 Processo 3 – Busca e filtros avançados
 
-![Modelo BPMN do PROCESSO 3 - ](../images/processo_3_busca_e_filtros_avancados.pdf "Busca e filtros avançados")
+![Modelo BPMN do PROCESSO 3 - ](../images/processo_3_bpmn.png "Busca e filtros avançados")
 
 
 #### Detalhamento das atividades
@@ -48,7 +48,7 @@
 | Limpar filtros |  Fim do processo | cancel |
 
 ## Wireframe
-![Wireframe do PROCESSO 3 - Busca e filtros avançados](../images/Wireframeprocesso2_1.jpg "Wireframe de baixa fidelidade")
+![Wireframe do PROCESSO 3 - Busca e filtros avançados](../images/ "Wireframe de baixa fidelidade")
 
 
 
