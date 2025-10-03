@@ -1,6 +1,6 @@
 ### 3.3.1 Processo 1 – Cadastro de Usuário
 
-![Modelo BPMN do PROCESSO 1 - Cadastro de Usuário](../images/processo_1_cadastro_usuario.jpg "Cadastro de Usuário")
+![Modelo BPMN do PROCESSO 1 - Cadastro de Usuário](../images/processo_1_bpmn.png "Cadastro de Usuário")
 
 #### Detalhamento das atividades
 
