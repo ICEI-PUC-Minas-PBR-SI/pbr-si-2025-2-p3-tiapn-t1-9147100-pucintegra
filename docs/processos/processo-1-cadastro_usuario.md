@@ -1,6 +1,7 @@
 ### 3.3.1 Processo 1 – Cadastro de Usuário
+O processo de cadastro de usuário inicia com o acesso a tela de cadastro de usuário, onde o usuário escolhe primeiramente se irá se cadastrar como locador ou locatário. Em seguida, é exibido o formulário correspondente: no caso do Locador, são solicitadas informações como nome, e-mail, CPF/CNPJ, endereço, senha e confirmação de senha, além da possibilidade de inserir uma foto de perfil. Já para o Locatário, os dados coletados seguem estrutura semelhante, porém focada em pessoa física, não sendo possivel cadastrar CNPJ. Após o preenchimento e a confirmação do usuário, o sistema validará os dados preenchidos e se tudo estiver nos conformes enviará um código de verificação para e-mail e exigirá a aceitação dos termos de uso junto do codigo para concluir o cadastro. 
 
-![Modelo BPMN do PROCESSO 1 - Cadastro de Usuário](../images/processo_1_bpmn.png "Cadastro de Usuário")
+![Modelo BPMN do PROCESSO 1 - Cadastro de Usuário](../images/processo1_bpmn.png "Cadastro de Usuário")
 
 #### Detalhamento das atividades
 
