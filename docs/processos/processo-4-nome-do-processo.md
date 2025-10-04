@@ -113,3 +113,8 @@ A análise do fluxo de solicitação de atendimento revelou diversas oportunidad
 | Comandos | Destino | Tipo |
 | :--- | :--- | :--- |
 | `Finalizar` | Fim do Processo | `default` |
+
+## Wireframe
+
+![Solicitar atendimento](https://github.com/user-attachments/assets/512427f6-171d-42b2-ad39-ed0cea67f5c8)
+
