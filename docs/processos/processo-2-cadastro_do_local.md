@@ -5,7 +5,7 @@ o usuário irá preencher o formulario correspondente ao cadastro do local com a
 valor do aluguel, descrição e fotos da propriedade. Após preencher as informações, o usuário irá confirmar a ação e se todos os dados estiverem válidos, o processo será encerrado
 com o cadastro sendo bem sucedido no sistema. 
 
-![Modelo BPMN do PROCESSO 2 - Cadastro do Local](../images/processo_2_bpmn.png "Cadastro de Local")
+![Modelo BPMN do PROCESSO 2 - Cadastro do Local](../images/processo_2_bpmn(1).png "Cadastro de Local")
 
 
 #### Detalhamento das atividades
