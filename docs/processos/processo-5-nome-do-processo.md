@@ -101,3 +101,7 @@ Com base no fluxo de visualização e gestão de agendamentos pelo paciente, as 
 | `Alterações Salvas` | Visualizar Agenda | `default` |
 | `Erro ao Salvar` | Editar Agendamento | `error` |
 
+## Wireframe
+
+![Agenda do paciente](https://github.com/user-attachments/assets/111cf6ab-9a7f-4b0c-a2b7-73da28905987)
+
