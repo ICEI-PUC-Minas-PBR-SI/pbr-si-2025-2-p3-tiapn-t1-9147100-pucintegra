@@ -90,4 +90,4 @@ O processo de cadastro de usuário inicia com o acesso a tela de cadastro de usu
 | Fechar      | Confirmação de Cadastro    | - |
 
 ## Wireframe
-![Wireframe do PROCESSO 1 - Cadastro de Usuário](../images/Wireframe_Cadastro_Colmeia.jpg "Wireframe de baixa fidelidade")
+![Wireframe do PROCESSO 1 - Cadastro de Usuário](../images/Wireframe_Cadastro_Colmeia(1).jpg "Wireframe de baixa fidelidade")
