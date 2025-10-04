@@ -1,5 +1,10 @@
 ### 3.3.2 Processo 2 – Cadastro do Local
 
+O processo de cadastro do local se inicia com a autenticação do usuário locador, onde esse irá acessar a área de cadastro de local através do dashboard. Em seguida,
+o usuário irá preencher o formulario correspondente ao cadastro do local com as informações solicitadas referente ao imovel, tais como nome do local, endereço, tipo de propiedade,
+valor do aluguel, descrição e fotos da propriedade. Após preencher as informações, o usuário irá confirmar a ação e se todos os dados estiverem válidos, o processo será encerrado
+com o cadastro sendo bem sucedido no sistema. 
+
 ![Modelo BPMN do PROCESSO 2 - Cadastro do Local](../images/processo_2_bpmn.png "Cadastro de Local")
 
 
