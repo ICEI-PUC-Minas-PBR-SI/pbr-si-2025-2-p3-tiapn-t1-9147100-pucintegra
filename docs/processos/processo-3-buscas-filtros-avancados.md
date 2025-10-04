@@ -2,7 +2,7 @@
 
 O processo de busca de locais se inicia com a autenticação do usuário do tipo locatário, onde esse irá acessar a área de listagem dos locais. Em seguida, o usuário irá preencher os campos do filtro para buscas, após isso irá clicar no botão de Pesquisar. O processo se encerra quando o sistema retorna os resultados da pesquisa do usuário.
 
-![Modelo BPMN do PROCESSO 3 - ](../images/processo_3_bpmn.png "Busca e filtros avançados")
+![Modelo BPMN do PROCESSO 3 - ](../images/processo_3_bpmn(1).png "Busca e filtros avançados")
 
 
 #### Detalhamento das atividades
