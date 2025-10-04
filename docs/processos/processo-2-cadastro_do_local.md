@@ -1,9 +1,6 @@
 ### 3.3.2 Processo 2 – Cadastro do Local
 
-O processo de cadastro do local se inicia com a autenticação do usuário locador, onde esse irá acessar a área de cadastro de local através do dashboard. Em seguida,
-o usuário irá preencher o formulario correspondente ao cadastro do local com as informações solicitadas referente ao imovel, tais como nome do local, endereço, tipo de propiedade,
-valor do aluguel, descrição e fotos da propriedade. Após preencher as informações, o usuário irá confirmar a ação e se todos os dados estiverem válidos, o processo será encerrado
-com o cadastro sendo bem sucedido no sistema. 
+O processo de cadastro do local se inicia com a autenticação do usuário locador, onde esse irá acessar a área de dashboard do locador. Em seguida, o usuário irá clicar em criar um novo local, o que o levará a tela de cadastro de local onde irá preencher o formulario correspondente ao cadastro do local com as informações solicitadas referente ao imovel, tais como nome do local, endereço, tipo de propiedade, valor do aluguel, descrição e fotos da propriedade. Após preencher as informações, o usuário irá confirmar a ação e se todos os dados estiverem válidos, o processo será encerrado com o cadastro sendo bem sucedido no sistema. 
 
 ![Modelo BPMN do PROCESSO 2 - Cadastro do Local](../images/processo_2_bpmn(1).png "Cadastro de Local")
 
@@ -12,26 +9,21 @@ com o cadastro sendo bem sucedido no sistema.
 
 1. [Logar com usuário Locador](#atividade-1---logar-com-usuário-locador)
 
-   - Permite que o usuário insira suas credenciais (login e senha) para acessar a área de cadastro de local.
-   - Verifica a validade das credenciais no sistema.
+   - O usuário deve logar com um usuario e senha de uma conta tipo locador.
 
-2. [Preenchimento dos dados do Local](#atividade-2---preenchimento-dos-dados-do-local)
+2. [Clicar no botão de Cadastrar novo local](#atividade-2---clicar-no-botão-de-cadastrar-novo-local)
 
-   - Captura informações detalhadas da propriedade a ser alugada (endereço, características, valor, etc.).
-   - Inclui a opção de fazer upload de fotos da propriedade para visualização.
+   - O usuário irá preencher informações detalhadas da propriedade a ser alugada (endereço, características, valor, fotos da propriedade e etc.).
 
-3. [Confirmação dos dados](#atividade-3---confirmação-dos-dados)
-
-   - Exibe um resumo de todas as informações da propriedade preenchidas.
-   - Permite ao usuário revisar e validar os dados antes de prosseguir.
+3. [Preencher dados do local](#atividade-3---preencher-dados-do-local)
+   - O usuário irá preencher informações detalhadas da propriedade a ser alugada (endereço, características, valor, fotos da propriedade e etc.).
     
-4. [Cadastro Concluído](#atividade-4---cadastro-concluído)
+4. [Confirmar cadastro](#atividade-4---confirmar-cadastro)
+   - O usuário deverá clicar em confirmar cadastro.
 
+5. [Confirmar Local cadastrado com sucesso](#atividade-5---confirmar-local-cadastrado-com-sucesso)
    - Exibe uma mensagem de sucesso, confirmando que o local foi cadastrado com êxito.
-   - Redireciona o usuário para a página de gerenciamento de propriedades, onde o novo local estará listado.
-
-   
-
+   - O usuário deverá clicar em Ir para o painel
 ### Atividade 1 - Logar com usuário Locador
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
@@ -43,18 +35,18 @@ com o cadastro sendo bem sucedido no sistema.
 | :--- | :--- | :--- |
 | Cancelar | Fim do processo | cancel |
 | Entrar | Tela inicial | default |
+| Criar novo usuário | Tela de cadastro de usuário | default |
 
 
-
-### Atividade 2 - Dashboard 
+### Atividade 2 - Clicar no botão de Cadastrar novo local
 
 | **Comandos** | **Destino** | **Tipo** |
 | :--- | :--- | :--- |
-|  Dashboard |  Listagem de locais | default |
-| Criar local | Preenchimento do dados do local |
+| Dashboard |  Listagem de locais | default |
+| Criar novo local | Tela de cadastro de local | default |
 
 
-### Atividade 3 - Preenchimento dos dados do Local
+### Atividade 3 - Preencher dados do local
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | :--- | :--- | :--- | :--- |
@@ -71,11 +63,11 @@ com o cadastro sendo bem sucedido no sistema.
 | Confirmar | Confirmação dos dados | default |
 
 
-### Atividade 4 - Confirmação dos dados
+### Atividade 4 - Confirmar cadastro
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | :--- | :--- | :--- | :--- |
-| **Dados do local** | **Varia de acordo** | **Somente leitura** | **Valores preenchidos na atividade anterior** |
+| Dados do local | Varia de acordo | Somente leitura | - |
 
 | **Comandos** | **Destino** | **Tipo** |
 | :--- | :--- | :--- |
@@ -83,7 +75,7 @@ com o cadastro sendo bem sucedido no sistema.
 | Concluir | Cadastro Concluído | default |
 
 
-### Atividade 5 - Cadastro Concluído
+### Atividade 5 - Confirmar Local cadastrado com sucesso
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | :--- | :--- | :--- | :--- |
