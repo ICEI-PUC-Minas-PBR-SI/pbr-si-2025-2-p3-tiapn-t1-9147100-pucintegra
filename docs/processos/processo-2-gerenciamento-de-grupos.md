@@ -85,15 +85,10 @@ Os demais comandos dessa tela estão nos processos (3 - Gerenciar membros) e (4 
 
 #### Wireframes
   
-<div style="display: flex; gap: 20px;">
-  <img src="../images/prototipoTelas/gerenciarGrupos/Atividade-1.png" alt="Visualizar grupos" width="33%">
-  <img src="../images/prototipoTelas/gerenciarGrupos/Atividade-2.png" alt="Criar novo grupo / Editar"  width="33%">
-  <img src="../images/prototipoTelas/gerenciarGrupos/Atividade-3.png" alt="Abrir grupo"  width="33%">
-</div>
+| **Atividade 1**|  **Atividade 2** |  **Atividade 3** |
+| ---            | ---              | ---              |
+|  <img src="../images/prototipoTelas/gerenciarGrupos/Atividade-1.png" alt="Visualizar grupos" >| <img src="../images/prototipoTelas/gerenciarGrupos/Atividade-2.png" alt="Criar novo grupo / Editar"  > |<img src="../images/prototipoTelas/gerenciarGrupos/Atividade-3.png" alt="Abrir grupo" > |
 
----
-
-<div style="display: flex; gap: 20px;">
-  <img src="../images/prototipoTelas/gerenciarGrupos/Atividade-4.png" alt="Visualizar fechamento" width="33%">
-  <img src="../images/prototipoTelas/gerenciarGrupos/Atividade-5.png" alt="Visualizar notificações"  width="33%">
-</div>
+| **Atividade 4**|  **Atividade 5** |  
+| ---            | ---              | 
+|  <img src="../images/prototipoTelas/gerenciarGrupos/Atividade-4.png" alt="Visualizar fechamento" >| <img src="../images/prototipoTelas/gerenciarGrupos/Atividade-5.png" alt="Visualizar notificações" > |                                                           
