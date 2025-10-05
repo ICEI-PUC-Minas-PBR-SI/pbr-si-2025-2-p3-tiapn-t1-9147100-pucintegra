@@ -27,8 +27,6 @@ Essa tela foi planejada para ser **simples, direta e intuitiva**, permitindo que
 
 ### 🖥️ Protótipo de Baixa Fidelidade — Cadastro de Profissional  
 
-![Protótipo de Cadastro de Profissional](Cadastro%20de%20Profissional%20-%20Prot%C3%B3tipo%20Baixa%20de%20Fidelidade.jpg)
-
 ![Cadastro de Profissional - Protótipo Baixa de Fidelidade](https://github.com/user-attachments/assets/6d9e1a0b-9857-4139-a7c5-729a9cfb218d)
 
 
