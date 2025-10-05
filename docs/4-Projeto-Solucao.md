@@ -18,21 +18,34 @@
 
 ### 4.2. Protótipos de telas
 
-Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
-Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="02-Especificação do Projeto.md"> Especificação do Projeto</a>.
-A partir das atividades de usuário identificadas na seção anterior, elabore o protótipo de tela de cada uma delas.
-![Exemplo de Wireframe](images/wireframe-example.png)
+O protótipo abaixo representa a tela de **Cadastro de Profissional** do sistema **Medlar**.  
+Ele faz parte do conjunto de *wireframes* criados para ilustrar a **interação do usuário com a plataforma**, servindo como base para o desenvolvimento da interface final.
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+Essa tela foi planejada para ser **simples, direta e intuitiva**, permitindo que o profissional insira suas informações pessoais e profissionais de forma organizada, atendendo aos **requisitos funcionais** (cadastro de profissional, upload de documentos, validação de dados) e aos **requisitos não funcionais** (usabilidade, responsividade e clareza visual).
+
+---
+
+### 🖥️ Protótipo de Baixa Fidelidade — Cadastro de Profissional  
+
+![Protótipo de Cadastro de Profissional](Cadastro%20de%20Profissional%20-%20Prot%C3%B3tipo%20Baixa%20de%20Fidelidade.jpg)
+
+![Cadastro de Profissional - Protótipo Baixa de Fidelidade](https://github.com/user-attachments/assets/6d9e1a0b-9857-4139-a7c5-729a9cfb218d)
+
+
+### Descrição da Tela  
+
+- **Cabeçalho:** contém o logotipo do sistema, o nome *Medlar* e o menu de navegação (“Início” e “Sobre”), garantindo identidade visual e consistência.  
+- **Título:** “Cadastro de Profissional” indica claramente o propósito da página.  
+- **Campos de entrada:**  
+  - **Nome** e **Sobrenome** — identificação pessoal.  
+  - **CRRM/COREN** — campo para o registro profissional obrigatório.  
+  - **Experiência Profissional** — área de texto para descrição detalhada da formação e experiências.  
+  - **Área de Atendimento** — especialidade ou campo de atuação (ex.: enfermagem, fisioterapia, fonoaudiologia).  
+- **Seção de Documentos:** espaço para upload de arquivos comprobatórios (ex.: diploma, registro profissional, documento de identidade), representados por *cards* de upload.  
+- **Botões de ação:**  
+  - **Voltar** — retorna à tela anterior.  
+  - **Enviar** — envia o cadastro para validação pela equipe administrativa.  
+
 
 
 ## Diagrama de Classes
