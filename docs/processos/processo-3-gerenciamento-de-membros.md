@@ -44,8 +44,10 @@ O processo de **Gerenciamento de Membros** tem como objetivo permitir que o admi
 
 
 #### Wireframes
-  
-<div style="display: flex; gap: 20px;">
-  <img src="../images/prototipoTelas/gerenciarMembros/atividade_1.png" alt="Visualizar tela do grupo" width="45%">
-  <img src="../images/prototipoTelas/gerenciarMembros/atividade_2.png" alt="Incluir membro"  width="45%">
-</div>
+
+| **Atividade 1** |  **Atividade 2** |
+| ---             | ---              |
+|  <img src="../images/prototipoTelas/gerenciarMembros/atividade_1.png" alt="Visualizar tela do grupo">|<img src="../images/prototipoTelas/gerenciarMembros/atividade_2.png" alt="Incluir membro" >| 
+
+
+
