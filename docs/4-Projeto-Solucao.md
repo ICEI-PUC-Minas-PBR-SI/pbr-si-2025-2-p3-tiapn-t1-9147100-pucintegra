@@ -18,10 +18,11 @@
 
 ### 4.2. Protótipos de telas
 
-O protótipo abaixo representa a tela de **Cadastro de Profissional** do sistema **Medlar**.  
-Ele faz parte do conjunto de *wireframes* criados para ilustrar a **interação do usuário com a plataforma**, servindo como base para o desenvolvimento da interface final.
+Os protótipos apresentados a seguir representam as principais interfaces do sistema **Medlar**, desenvolvidas para ilustrar a **interação do usuário com a plataforma** e apoiar o design final do aplicativo.  
 
-Essa tela foi planejada para ser **simples, direta e intuitiva**, permitindo que o profissional insira suas informações pessoais e profissionais de forma organizada, atendendo aos **requisitos funcionais** (cadastro de profissional, upload de documentos, validação de dados) e aos **requisitos não funcionais** (usabilidade, responsividade e clareza visual).
+Esses *wireframes* demonstram como o sistema atende às **histórias de usuário**, **requisitos funcionais** e **não funcionais** descritos na *Especificação do Projeto*, oferecendo uma visão clara de como o usuário navegará entre as telas e executará as principais ações.
+
+As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarquia e posicionamento dos elementos da interface, sem aplicação de cores, estilos visuais ou identidade definitiva.  
 
 ---
 
