@@ -30,6 +30,8 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 ![Cadastro de Profissional - Protótipo Baixa de Fidelidade](https://github.com/user-attachments/assets/6d9e1a0b-9857-4139-a7c5-729a9cfb218d)
 
+<img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
+
 
 ### Descrição da Tela  
 
