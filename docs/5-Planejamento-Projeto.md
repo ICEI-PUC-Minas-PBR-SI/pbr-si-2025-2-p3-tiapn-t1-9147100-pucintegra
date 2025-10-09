@@ -34,7 +34,7 @@ Atualizado em: 09/10/2025
 | :----         |    :----         |      :----:    | :----:     | :----:| :----:           |
 | Carlos        | Problema         |    08/08/2025  | 22/08/2025 | ✔️    | 20/08/2025      |
 | Daniel        | Listagem dos 5 processos de negócio escolhidos | 22/08/2025 | 10/02/2024  | ✔️    |      18/08/2025           |
-| Gabriel       | Contextualização |    08/08/2025  | 22/08/2025 | ✔️    |                 |
+| Gabriel       | Contextualização |    08/08/2025  | 22/08/2025 | ✔️    |  19/08/2025               |
 | Poliana       | Objetivos        |    08/08/2025  | 22/08/2025 | ✔️    |  19/08/2025     |
 | Rafael        | Justificativas   |    08/08/2025  | 22/08/2025 | ✔️    |   21/08/2025    |
 | Yanne         | Personas         |    08/08/2025  | 22/08/2025 | ✔️    |   20/08/2025    |
