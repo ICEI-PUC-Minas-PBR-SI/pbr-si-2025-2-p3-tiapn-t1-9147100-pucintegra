@@ -30,9 +30,6 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 ![Cadastro de Profissional - Protótipo Baixa de Fidelidade](https://github.com/user-attachments/assets/6d9e1a0b-9857-4139-a7c5-729a9cfb218d)
 
-<img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
-
-
 ### Descrição da Tela  
 
 - **Cabeçalho:** contém o logotipo do sistema, o nome *Medlar* e o menu de navegação (“Início” e “Sobre”), garantindo identidade visual e consistência.  
@@ -45,7 +42,9 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 - **Seção de Documentos:** espaço para upload de arquivos comprobatórios (ex.: diploma, registro profissional, documento de identidade), representados por *cards* de upload.  
 - **Botões de ação:**  
   - **Voltar** — retorna à tela anterior.  
-  - **Enviar** — envia o cadastro para validação pela equipe administrativa.  
+  - **Enviar** — envia o cadastro para validação pela equipe administrativa.
+
+ <img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
 
 
 
