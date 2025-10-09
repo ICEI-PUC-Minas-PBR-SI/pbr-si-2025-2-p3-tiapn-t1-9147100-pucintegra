@@ -44,6 +44,8 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
   - **Voltar** — retorna à tela anterior.  
   - **Enviar** — envia o cadastro para validação pela equipe administrativa.
 
+ 
+
  <img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
 
 
