@@ -66,17 +66,32 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 <img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
 
 #### Descrição da Tela  
-- **Objetivo:** Permitir que o usuário busque profissionais de saúde por nome, especialidade, localização e avaliação.  
+- **Objetivo:** Permitir que o usuário (paciente ou familiar) encontre profissionais de saúde disponíveis para atendimento domiciliar, utilizando filtros de busca e informações detalhadas de perfil.  
+
 - **Elementos Principais:**  
-  - Barra de busca e filtros dinâmicos (especialidade, localização, disponibilidade, preço).  
-  - Cards com foto, nome, especialidade e avaliação média.  
+  - **Barra de pesquisa:** Campo central para buscar profissionais por nome ou palavra-chave.  
+  - **Filtros laterais:**  
+    - **Especialidade:** Seleção de área de atuação (ex.: Enfermagem, Fisioterapia, Fonoaudiologia, etc.).  
+    - **Localização:** Campo para inserir CEP ou endereço, com base em geolocalização.  
+    - **Disponibilidade:** Escolha de data ou horário para atendimentos.  
+    - **Preço:** Controle deslizante para definir faixa de preço mínima e máxima.  
+    - **Classificação:** Botão de ação para aplicar filtros.  
+  - **Lista de resultados:**  
+    - Cards de profissionais contendo:  
+      - Foto (avatar genérico ou foto real do profissional).  
+      - Nome e especialidade.  
+      - Avaliação por estrelas e número de atendimentos realizados.  
+      - Botão **“Ver Perfil”** para acessar informações detalhadas.  
+  - **Botão “Favoritos”:** Acesso rápido aos profissionais salvos.  
+
 - **Requisitos atendidos:**  
-  - **RF-003:** Busca de profissionais.  
-  - **RF-004:** Exibir localização e disponibilidade.  
-  - **RNF-004:** Interface simples e responsiva.  
+  - **RF-003:** Permitir a busca de profissionais de saúde por especialidade, localização e disponibilidade.  
+  - **RF-004:** Exibir a localização e deslocamento do profissional (geolocalização).  
+  - **RF-010:** Possibilitar a avaliação dos serviços prestados pelos profissionais.  
+  - **RNF-004:** Interface intuitiva e de fácil usabilidade.  
+  - **RNF-001:** Responsividade e compatibilidade com diferentes dispositivos.  
 
 ---
-
 
 ## Diagrama de Classes
 
