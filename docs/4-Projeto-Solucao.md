@@ -44,9 +44,41 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
   - **Voltar** — retorna à tela anterior.  
   - **Enviar** — envia o cadastro para validação pela equipe administrativa.
 
- 
+ ---
 
- <img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
+### 2️⃣ Tela de Cadastro de Paciente  
+
+![Protótipo de Cadastro de Paciente](Cadastro%20de%20Paciente%20-%20Prot%C3%B3tipo%20Baixa%20de%20Fidelidade.jpg)
+
+#### Descrição da Tela  
+- **Objetivo:** Permitir que pacientes ou familiares realizem o cadastro inicial na plataforma, inserindo dados pessoais, endereço e contatos.  
+- **Elementos Principais:**  
+  - Campos: Nome completo, CPF, data de nascimento, telefone, e-mail e endereço.  
+  - Botões de ação: “Voltar” e “Continuar”.  
+- **Requisitos atendidos:**  
+  - **RF-001:** Cadastro de pacientes e familiares.  
+  - **RNF-001:** Compatibilidade com dispositivos móveis.  
+
+---
+
+### 3️⃣ Tela de Busca de Profissionais  
+
+![Protótipo de Busca de Profissionais] <img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
+
+#### Descrição da Tela  
+- **Objetivo:** Permitir que o usuário busque profissionais de saúde por nome, especialidade, localização e avaliação.  
+- **Elementos Principais:**  
+  - Barra de busca e filtros dinâmicos (especialidade, localização, disponibilidade, preço).  
+  - Cards com foto, nome, especialidade e avaliação média.  
+- **Requisitos atendidos:**  
+  - **RF-003:** Busca de profissionais.  
+  - **RF-004:** Exibir localização e disponibilidade.  
+  - **RNF-004:** Interface simples e responsiva.  
+
+---
+
+
+ 
 
 
 
