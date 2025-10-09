@@ -26,7 +26,7 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 ---
 
-### 🖥️ Protótipo de Baixa Fidelidade — Cadastro de Profissional  
+### 1️⃣ Protótipo de Baixa Fidelidade — Cadastro de Profissional  
 
 ![Cadastro de Profissional - Protótipo Baixa de Fidelidade](https://github.com/user-attachments/assets/6d9e1a0b-9857-4139-a7c5-729a9cfb218d)
 
@@ -63,7 +63,7 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 ### 3️⃣ Tela de Busca de Profissionais  
 
-![Protótipo de Busca de Profissionais] <img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
+<img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
 
 #### Descrição da Tela  
 - **Objetivo:** Permitir que o usuário busque profissionais de saúde por nome, especialidade, localização e avaliação.  
@@ -76,10 +76,6 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
   - **RNF-004:** Interface simples e responsiva.  
 
 ---
-
-
- 
-
 
 
 ## Diagrama de Classes
