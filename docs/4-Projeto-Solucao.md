@@ -63,8 +63,7 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 ### 3️⃣ Tela de Busca de Profissionais  
 
-<img width="777" height="559" alt="Protótipo - Tela de Busca de Profissionais" src="https://github.com/user-attachments/assets/7df461f7-935a-3122-2239-ddc14d.png" />
-
+<img width="777" height="559" alt="Protótipo - Tela de Busca de Profissionais" src="[https://github.com/user-attachments/assets/7df461f7-935a-3122-2239-ddc14d.png](https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91)" />
 #### Descrição da Tela  
 - **Objetivo:** Permitir que o usuário (paciente ou familiar) encontre profissionais de saúde disponíveis para atendimento domiciliar, utilizando filtros de busca e informações detalhadas de perfil.  
 
