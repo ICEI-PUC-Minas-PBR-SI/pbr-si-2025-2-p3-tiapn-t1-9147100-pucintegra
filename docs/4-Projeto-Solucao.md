@@ -32,10 +32,10 @@ A arquitetura do **Medlar** foi desenhada para atender aos requisitos funcionais
 
 ---
  
- **Exemplo do diagrama de Arquitetura**:
+ **Diagrama de Arquitetura**:
 
 
-![Imagem do WhatsApp de 2025-10-09 à(s) 21 35 36_9239dc3b](https://github.com/user-attachments/assets/82cf0d31-058a-4cc3-af8a-7d8c9aaef749)
+![Imagem do WhatsApp de 2025-10-09 à(s) 21 48 06_b4ac3a1e](https://github.com/user-attachments/assets/d33b799a-ce2a-4c4d-85c7-96006cbdded3)
 
  
 
