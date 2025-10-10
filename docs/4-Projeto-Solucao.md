@@ -152,11 +152,8 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 #### 4.3.3 Modelo Físico
 
 O modelo físico do banco de dados **Medlar** representa a estrutura detalhada das tabelas que armazenam e organizam as informações da aplicação.  
-Ele foi desenvolvido com base nas entidades identificadas durante a modelagem conceitual e relacional, garantindo integridade, desempenho e clareza na implementação.  
 
 Esse banco de dados é utilizado para registrar pacientes, profissionais de saúde, serviços, solicitações de atendimento, agendamentos, pagamentos e consultas realizados dentro da plataforma.
-
-Veja um exemplo:
 
 <code>
 
