@@ -57,7 +57,7 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
   - Botões de ação: “Voltar” e “Continuar”.  
 - **Requisitos atendidos:**  
   - **RF-001:** Cadastro de pacientes e familiares.  
-  - **RNF-001:** Compatibilidade com dispositivos móveis.  
+  
 
 ---
 
@@ -88,9 +88,7 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
   - **RF-003:** Permitir a busca de profissionais de saúde por especialidade, localização e disponibilidade.  
   - **RF-004:** Exibir a localização e deslocamento do profissional (geolocalização).  
   - **RF-010:** Possibilitar a avaliação dos serviços prestados pelos profissionais.  
-  - **RNF-004:** Interface intuitiva e de fácil usabilidade.  
-  - **RNF-001:** Responsividade e compatibilidade com diferentes dispositivos.  
-
+  
 ---
 
 ## Diagrama de Classes
