@@ -15,7 +15,7 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais, as 
 ### Exemplo de um Modelo BPMN do PROCESSO 2 - Cadastro
 
 
-<img width="2278" height="1866" alt="Novo modelo 2" src="https://github.com/user-attachments/assets/3e1c99dc-951c-4c10-bc42-317a830ae09b" />
+<img width="2278" height="1866" alt="Novo modelo 2" src="https://github.com/user-attachments/assets/70e50a10-cb11-4662-a952-021bab22f1d4" />
 
 
 
