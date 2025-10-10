@@ -1,14 +1,38 @@
 ## 4. Projeto da Solução
 
-<span style="color:red">Pré-requisitos: <a href="03-Modelagem do Processo de Negocio.md"> Modelagem do Processo de Negocio</a></span>
-
 ## 4.1. Arquitetura da solução
 
+A arquitetura do **Medlar** foi desenhada para atender aos requisitos funcionais (cadastro de pacientes e profissionais, busca, agendamento, notificações, prontuário/arquivos, relatórios) e não funcionais (segurança, disponibilidade, escalabilidade, desempenho e usabilidade).
 
-......  COLOQUE AQUI O SEU TEXTO E O DIAGRAMA DE ARQUITETURA .......
+**Visão em camadas**
 
- Inclua um diagrama da solução e descreva os módulos e as tecnologias
- que fazem parte da solução. Discorra sobre o diagrama.
+- **Cliente (Web/Mobile):**
+  - SPA/PWA (React/Next.js) e/ou app mobile.
+  - Autenticação via JWT/OAuth.
+  - Máscaras/validações de formulário, acessibilidade e cache local (IndexedDB/LocalStorage).
+- **API Backend (REST/GraphQL):**
+  - Orquestra os fluxos de negócio: cadastro, busca, agendamento, avaliações, relatórios.
+  - Serviços internos: Autenticação/Autorização (RBAC), Pacientes, Profissionais, Agenda, Prontuário/Arquivos, Notificações, Relatórios.
+- **Persistência e Arquivos:**
+  - **PostgreSQL** (dados transacionais).
+  - **Object Storage** (S3/GCS/Azure Blob) para documentos e imagens.
+  - **Redis** para cache/sessões/filas leves (opcional).
+- **Mensageria/Jobs:**
+  - Fila de tarefas para e-mails, SMS e push (BullMQ/Sidekiq/Celery).
+- **Integrações externas:**
+  - **Maps/Geocoding** (Google Maps/Mapbox) — geolocalização e distância.
+  - **Push** (Firebase Cloud Messaging).
+  - **E-mail/SMS** (SendGrid/Postmark/Twilio).
+  - **Videochamada** (WebRTC/Daily/Jitsi) – atendimento online.
+  - **Pagamentos (opcional)** — PIX/Stripe/MercadoPago.
+- **Observabilidade & DevOps:**
+  - Logs estruturados, métricas e tracing (ELK/Datadog).
+  - CI/CD (GitHub Actions).
+  - Hospedagem: Front (Vercel/Netlify), API (Render/Heroku/Fly.io), DB gerenciado.
+- **Segurança:**
+  - HTTPS, CORS, criptografia em repouso (KMS), **RBAC**, auditoria de acesso, backups e políticas de retenção.
+
+---
  
  **Exemplo do diagrama de Arquitetura**:
 
