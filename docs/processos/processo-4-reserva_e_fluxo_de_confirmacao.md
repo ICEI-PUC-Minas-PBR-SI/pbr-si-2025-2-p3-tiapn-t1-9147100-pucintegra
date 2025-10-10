@@ -6,11 +6,11 @@ O processo de busca de locais se inicia com a autenticação do usuário do tipo
 
 #### Detalhamento das atividades
 
-1. [Solicitar reserva]
+1. [Solicitar reserva](#atividade-1---solicitar-reserva)
    - O locatário preenche os detalhes da data e hora da locação e o número de convidados para gerar a pré-reserva.
    - O envio da solicitação ao locador muda o status da reserva para "Em negociação".
      
-2. [Responder solicitação (Locador)]
+2. [Responder solicitação (Locador)](#atividade-2---responder-solicitação-locador)
    - O locador acessa o painel de reservas, analisa o pedido e verifica a disponibilidade final.
    - Ele decide se aceita (e segue para pagamento) ou rejeita a reserva.
   
