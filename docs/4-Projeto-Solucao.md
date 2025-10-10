@@ -292,9 +292,6 @@ CREATE TABLE Consulta (
     FOREIGN KEY (id_paciente) REFERENCES Paciente(id_paciente)
 );
 
--- Finalização
-SET FOREIGN_KEY_CHECKS = 1;
-
 </code>
 
 📄 **Observação:**  
