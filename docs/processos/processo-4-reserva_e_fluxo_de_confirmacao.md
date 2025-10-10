@@ -1,6 +1,6 @@
-### 3.3.3 Processo 3 – Busca e filtros avançados
+### 3.3.4 Processo 4 – Reserva e fluxo de confirmação
 
-O processo de busca de locais se inicia com a autenticação do usuário do tipo locatário, onde esse irá acessar a área de listagem dos locais. Em seguida, o usuário irá preencher os campos do filtro para buscas, após isso irá clicar no botão de Pesquisar. O processo se encerra quando o sistema retorna os resultados da pesquisa do usuário.
+O processo de reserva se inicia quando o usuário do tipo locatário seleciona o local desejado e preenche os dados da solicitação, informando data, horário e demais informações. Após o envio, o sistema notifica o locador sobre a nova solicitação, que poderá analisá-la e decidir se aceita ou recusa. Caso o locador aceite, o sistema envia uma mensagem de confirmação ao locatário, e ambos prosseguem com a negociação e o pagamento por meio do WhatsApp. O processo se encerra quando a negociação entre as partes é concluída.
 
 ![Modelo BPMN do PROCESSO 4 - Reserva](../images/Processo_4_Diagrama.png "Reserva e fluxo de confirmação")
 
