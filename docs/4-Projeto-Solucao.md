@@ -340,7 +340,6 @@ A seguir, estão listadas as principais tecnologias adotadas no projeto:
 
 O diagrama abaixo ilustra como as tecnologias se integram e o caminho percorrido por uma requisição do usuário até o retorno da resposta no sistema.
 
-<img width="800" height="520" alt="Arquitetura Medlar" src="https://github.com/user-attachments/assets/90dc8a7a-8d26-4f7a-a9ab-3f4c85a74902" />
 <img width="1200" height="800" alt="Arquitetura_Medlar_Fluxo" src="https://github.com/user-attachments/assets/46f746fc-a34b-442f-afc7-d5709308aeb5" />
 
 **Descrição do Fluxo:**
