@@ -320,31 +320,13 @@ A escolha das ferramentas foi baseada em sua robustez, facilidade de manutençã
 
 ---
 
-A seguir, estão listadas as principais tecnologias adotadas no projeto:
-
-| **Dimensão** | **Tecnologia** |
-|---------------|----------------|
-| **SGBD** | MySQL |
-| **Front-end** | HTML + CSS + JavaScript |
-| **Back-end** | Java (Spring Boot) |
-| **IDE de Desenvolvimento** | Visual Studio Code (VS Code) |
-| **Controle de Versão** | Git e GitHub |
-| **Servidor / Deploy** | GitHub Pages (versão web) e Render (API Back-end) |
-| **Design e Protótipos** | Figma |
-| **Modelagem de Dados e Processos** | Lucidchart / Draw.io |
-
----
-
 #### 💡 Descrição das Tecnologias Utilizadas
 
-- **MySQL:** Banco de dados relacional utilizado para armazenar de forma segura todas as informações do sistema, como cadastros de pacientes, profissionais e agendamentos.  
-- **Spring Boot (Java):** Framework responsável pela camada de back-end, fornecendo APIs REST seguras e integradas ao banco de dados.  
-- **HTML + CSS + JavaScript:** Linguagens utilizadas na construção do front-end, garantindo uma interface simples, responsiva e acessível aos usuários.  
-- **Git / GitHub:** Utilizados para controle de versão e colaboração entre os membros da equipe, facilitando a organização das tarefas e o versionamento do código.  
-- **Figma:** Ferramenta usada para criação dos protótipos de telas e definição da identidade visual da aplicação.  
-- **Maven:** Ferramenta de automação que gerencia dependências e simplifica o processo de compilação do projeto Java.  
-- **Lucidchart / Draw.io:** Utilizadas na modelagem de processos (BPMN) e na criação dos diagramas de banco de dados.  
-- **GitHub Pages / Render:** Plataformas de deploy que permitem hospedar tanto o front-end quanto o back-end, facilitando o acesso remoto ao sistema.
+- **MySQL:** Banco de dados relacional utilizado para armazenar as informações do sistema, como cadastros de pacientes, profissionais e agendamentos.  
+- **Spring Boot (Java):** Framework responsável pela camada de back-end, fornecendo APIs integradas ao banco de dados.  
+- **HTML + CSS + JavaScript:** Linguagens usadas no front-end para criar uma interface acessível e responsiva.  
+- **Git / GitHub:** Ferramentas de controle de versão e colaboração entre os membros do grupo.  
+- **Figma:** Utilizado para prototipar as telas e padronizar o design da aplicação.
 
 ---
 
