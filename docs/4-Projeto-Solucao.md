@@ -304,6 +304,55 @@ Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
 
 ### 4.4. Tecnologias
 
+Para o desenvolvimento da aplicação **Medlar**, foram utilizadas tecnologias que garantem integração eficiente entre o front-end, o back-end e o banco de dados, priorizando desempenho, segurança e escalabilidade.  
+A escolha das ferramentas foi baseada em sua robustez, facilidade de manutenção e compatibilidade com os requisitos do sistema.
+
+A seguir, estão listadas as principais tecnologias adotadas no projeto:
+
+| **Dimensão** | **Tecnologia** |
+|---------------|----------------|
+| **SGBD** | MySQL |
+| **Front-end** | HTML + CSS + JavaScript |
+| **Back-end** | Java (Spring Boot) |
+| **IDE de Desenvolvimento** | IntelliJ IDEA / VS Code |
+| **Controle de Versão** | Git e GitHub |
+| **Gerenciamento de Dependências** | Maven |
+| **Servidor / Deploy** | GitHub Pages (versão web) e Render (API Back-end) |
+| **Design e Protótipos** | Figma |
+| **Modelagem de Dados e Processos** | Lucidchart / Draw.io |
+
+---
+
+#### 💡 Descrição das Tecnologias Utilizadas
+
+- **MySQL:** Banco de dados relacional utilizado para armazenar de forma segura todas as informações do sistema, como cadastros de pacientes, profissionais e agendamentos.  
+- **Spring Boot (Java):** Framework responsável pela camada de back-end, fornecendo APIs REST seguras e integradas ao banco de dados.  
+- **HTML + CSS + JavaScript:** Linguagens utilizadas na construção do front-end, garantindo uma interface simples, responsiva e acessível aos usuários.  
+- **Git / GitHub:** Utilizados para controle de versão e colaboração entre os membros da equipe, facilitando a organização das tarefas e o versionamento do código.  
+- **Figma:** Ferramenta usada para criação dos protótipos de telas e definição da identidade visual da aplicação.  
+- **Maven:** Ferramenta de automação que gerencia dependências e simplifica o processo de compilação do projeto Java.  
+- **Lucidchart / Draw.io:** Utilizadas na modelagem de processos (BPMN) e na criação dos diagramas de banco de dados.  
+- **GitHub Pages / Render:** Plataformas de deploy que permitem hospedar tanto o front-end quanto o back-end, facilitando o acesso remoto ao sistema.
+
+---
+
+#### 🔁 Fluxo de Interação entre Tecnologias
+
+O diagrama abaixo ilustra como as tecnologias se integram e o caminho percorrido por uma requisição do usuário até o retorno da resposta no sistema.
+
+<img width="800" height="520" alt="Arquitetura Medlar" src="https://github.com/user-attachments/assets/90dc8a7a-8d26-4f7a-a9ab-3f4c85a74902" />
+
+**Descrição do Fluxo:**
+1. O **usuário** acessa o aplicativo via navegador (Front-end em HTML, CSS e JS).  
+2. O front-end se comunica com a **API REST** desenvolvida em **Spring Boot**, que processa as solicitações.  
+3. O **back-end** envia e recebe dados do **banco MySQL**, realizando validações e regras de negócio.  
+4. O resultado é retornado ao front-end, exibindo informações em tempo real para o usuário.  
+5. O sistema é hospedado via **GitHub Pages** (interface) e **Render** (API), garantindo disponibilidade e fácil manutenção.
+
+---
+
+📘 *Essa arquitetura garante que o Medlar seja uma aplicação estável, modular e escalável, atendendo às necessidades de pacientes, familiares e profissionais de saúde de forma integrada e segura.*
+
 _Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas._
 
 Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
