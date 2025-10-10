@@ -151,50 +151,152 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 
 #### 4.3.3 Modelo Físico
 
-Insira aqui o script de criação das tabelas do banco de dados.
+O modelo físico do banco de dados **Medlar** representa a estrutura detalhada das tabelas que armazenam e organizam as informações da aplicação.  
+Ele foi desenvolvido com base nas entidades identificadas durante a modelagem conceitual e relacional, garantindo integridade, desempenho e clareza na implementação.  
+
+Esse banco de dados é utilizado para registrar pacientes, profissionais de saúde, serviços, solicitações de atendimento, agendamentos, pagamentos e consultas realizados dentro da plataforma.
 
 Veja um exemplo:
 
 <code>
 
- -- Criação da tabela Médico
-CREATE TABLE Medico (
-    MedCodigo INTEGER PRIMARY KEY,
-    MedNome VARCHAR(100)
-);
-
-
 -- Criação da tabela Paciente
 CREATE TABLE Paciente (
-    PacCodigo INTEGER PRIMARY KEY,
-    PacNome VARCHAR(100)
+    id_paciente INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(120) NOT NULL,
+    cpf CHAR(14) UNIQUE,
+    data_nascimento DATE,
+    telefone VARCHAR(20),
+    email VARCHAR(120) UNIQUE,
+    endereco VARCHAR(180),
+    senha_hash VARCHAR(255),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Criação da tabela Profissional
+CREATE TABLE Profissional (
+    id_profissional INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(120) NOT NULL,
+    cpf CHAR(14) UNIQUE,
+    especialidade VARCHAR(100),
+    telefone VARCHAR(20),
+    email VARCHAR(120) UNIQUE,
+    qualificado BOOLEAN DEFAULT TRUE,
+    disponibilidade VARCHAR(100),
+    avaliacao_do_profissional DECIMAL(2,1) DEFAULT 0.0,
+    contato VARCHAR(120),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Criação da tabela Servico
+CREATE TABLE Servico (
+    id_servico INT PRIMARY KEY AUTO_INCREMENT,
+    nome_servico VARCHAR(120) NOT NULL,
+    descricao TEXT,
+    valor_base DECIMAL(10,2),
+    duracao_padrao INT,
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Criação da tabela Metodo_pagamento
+CREATE TABLE Metodo_pagamento (
+    id_metodo INT PRIMARY KEY AUTO_INCREMENT,
+    tipo ENUM('Pix','Cartão de Crédito','Boleto') NOT NULL,
+    descricao VARCHAR(120)
+);
+
+-- Criação da tabela Cartao_credito
+CREATE TABLE Cartao_credito (
+    id_cartao INT PRIMARY KEY AUTO_INCREMENT,
+    id_paciente INT NOT NULL,
+    numero_mascarado VARCHAR(25),
+    nome_titular VARCHAR(120),
+    validade CHAR(5),
+    bandeira VARCHAR(30),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_paciente) REFERENCES Paciente(id_paciente)
+);
+
+-- Criação da tabela Solicitacao
+CREATE TABLE Solicitacao (
+    id_solicitacao INT PRIMARY KEY AUTO_INCREMENT,
+    id_paciente INT NOT NULL,
+    id_profissional INT NULL,
+    data_solicitacao DATETIME NOT NULL,
+    descricao_necessidade TEXT,
+    localizacao VARCHAR(150),
+    status ENUM('pendente','em análise','aceita','recusada') DEFAULT 'pendente',
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_paciente) REFERENCES Paciente(id_paciente),
+    FOREIGN KEY (id_profissional) REFERENCES Profissional(id_profissional)
+);
+
+-- Criação da tabela Negociacao
+CREATE TABLE Negociacao (
+    id_negociacao INT PRIMARY KEY AUTO_INCREMENT,
+    id_solicitacao INT NOT NULL,
+    valor_proposto DECIMAL(10,2),
+    valor_aceito DECIMAL(10,2),
+    observacoes TEXT,
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_solicitacao) REFERENCES Solicitacao(id_solicitacao)
+);
+
+-- Criação da tabela Agendamento
+CREATE TABLE Agendamento (
+    id_agendamento INT PRIMARY KEY AUTO_INCREMENT,
+    id_solicitacao INT NOT NULL,
+    id_paciente INT NOT NULL,
+    id_profissional INT NOT NULL,
+    id_servico INT NOT NULL,
+    data_hora DATETIME NOT NULL,
+    tipo_consulta VARCHAR(100),
+    status ENUM('Confirmado','Pendente','Cancelado') DEFAULT 'Pendente',
+    preco_final DECIMAL(10,2),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_solicitacao) REFERENCES Solicitacao(id_solicitacao),
+    FOREIGN KEY (id_paciente) REFERENCES Paciente(id_paciente),
+    FOREIGN KEY (id_profissional) REFERENCES Profissional(id_profissional),
+    FOREIGN KEY (id_servico) REFERENCES Servico(id_servico)
+);
+
+-- Índices para agilizar busca
+CREATE INDEX idx_agendamento_prof_data ON Agendamento (id_profissional, data_hora);
+CREATE INDEX idx_agendamento_pac_data ON Agendamento (id_paciente, data_hora);
+
+-- Criação da tabela Pagamento
+CREATE TABLE Pagamento (
+    id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
+    id_agendamento INT NOT NULL,
+    id_metodo INT NOT NULL,
+    data_pagamento DATETIME,
+    valor_pago DECIMAL(10,2) NOT NULL,
+    status_pagamento ENUM('Aprovado','Pendente','Recusado') DEFAULT 'Pendente',
+    codigo_transacao VARCHAR(80),
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_agendamento) REFERENCES Agendamento(id_agendamento),
+    FOREIGN KEY (id_metodo) REFERENCES Metodo_pagamento(id_metodo)
 );
 
 -- Criação da tabela Consulta
 CREATE TABLE Consulta (
-    ConCodigo INTEGER PRIMARY KEY,
-    MedCodigo INTEGER,
-    PacCodigo INTEGER,
-    Data DATE,
-    FOREIGN KEY (MedCodigo) REFERENCES Medico(MedCodigo),
-    FOREIGN KEY (PacCodigo) REFERENCES Paciente(PacCodigo)
+    id_consulta INT PRIMARY KEY AUTO_INCREMENT,
+    id_agendamento INT NOT NULL,
+    id_profissional INT NOT NULL,
+    id_paciente INT NOT NULL,
+    observacoes TEXT,
+    resultado TEXT,
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_agendamento) REFERENCES Agendamento(id_agendamento),
+    FOREIGN KEY (id_profissional) REFERENCES Profissional(id_profissional),
+    FOREIGN KEY (id_paciente) REFERENCES Paciente(id_paciente)
 );
 
--- Criação da tabela Medicamento
-CREATE TABLE Medicamento (
-    MdcCodigo INTEGER PRIMARY KEY,
-    MdcNome VARCHAR(100)
-);
-
--- Criação da tabela Prescricao
-CREATE TABLE Prescricao (
-    ConCodigo INTEGER,
-    MdcCodigo INTEGER,
-    Posologia VARCHAR(200),
-    PRIMARY KEY (ConCodigo, MdcCodigo),
-    FOREIGN KEY (ConCodigo) REFERENCES Consulta(ConCodigo),
-    FOREIGN KEY (MdcCodigo) REFERENCES Medicamento(MdcCodigo)
-);
+-- Finalização
+SET FOREIGN_KEY_CHECKS = 1;
 
 </code>
 
