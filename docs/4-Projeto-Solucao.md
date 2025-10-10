@@ -71,7 +71,8 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 ### 2️⃣ Tela de Cadastro de Paciente  
 
-![Protótipo de Cadastro de Paciente](Cadastro%20de%20Paciente%20-%20Prot%C3%B3tipo%20Baixa%20de%20Fidelidade.jpg)
+![Sem título](https://github.com/user-attachments/assets/a5a557d9-cc23-4b71-907b-2d8b93b2c68a)
+
 
 #### Descrição da Tela  
 - **Objetivo:** Permitir que pacientes ou familiares realizem o cadastro inicial na plataforma, inserindo dados pessoais, endereço e contatos.  
