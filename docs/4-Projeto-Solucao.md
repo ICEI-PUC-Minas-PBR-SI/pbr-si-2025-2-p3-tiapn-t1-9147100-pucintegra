@@ -6,8 +6,8 @@ A arquitetura do **Medlar** foi desenhada para atender aos requisitos funcionais
 
 **Visão em camadas**
 
-- **Cliente (Web/Mobile):**
-  - SPA/PWA (React/Next.js) e/ou app mobile.
+- **Cliente (Web):**
+  - SPA/PWA (React/Next.js).
   - Autenticação via JWT/OAuth.
   - Máscaras/validações de formulário, acessibilidade e cache local (IndexedDB/LocalStorage).
 - **API Backend (REST/GraphQL):**
@@ -23,8 +23,6 @@ A arquitetura do **Medlar** foi desenhada para atender aos requisitos funcionais
   - **Maps/Geocoding** (Google Maps/Mapbox) — geolocalização e distância.
   - **Push** (Firebase Cloud Messaging).
   - **E-mail/SMS** (SendGrid/Postmark/Twilio).
-  - **Videochamada** (WebRTC/Daily/Jitsi) – atendimento online.
-  - **Pagamentos (opcional)** — PIX/Stripe/MercadoPago.
 - **Observabilidade & DevOps:**
   - Logs estruturados, métricas e tracing (ELK/Datadog).
   - CI/CD (GitHub Actions).
