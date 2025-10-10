@@ -48,10 +48,6 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 | Próximo | Validação de Dados | default |
 | Cancelar | Início do Cadastro | cancel |
 
-| Comandos | Destino | Tipo |
-|---|---|---|
-| Próximo | Validação de Dados | default |
-| Cancelar | Início do Cadastro | cancel |
 
 #### Nome da atividade: Validação de Dados
 
