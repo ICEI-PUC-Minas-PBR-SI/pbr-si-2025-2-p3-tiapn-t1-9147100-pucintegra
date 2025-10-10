@@ -305,6 +305,21 @@ O script completo do modelo físico foi **incluído** em um arquivo `.sql` local
 Para o desenvolvimento da aplicação **Medlar**, foram utilizadas tecnologias que garantem integração eficiente entre o front-end, o back-end e o banco de dados, priorizando desempenho, segurança e escalabilidade.  
 A escolha das ferramentas foi baseada em sua robustez, facilidade de manutenção e compatibilidade com os requisitos do sistema.
 
+### 🧠 Tecnologias Utilizadas
+
+| **Dimensão** | **Tecnologia / Ferramenta** |
+|---------------|------------------------------|
+| **SGBD (Banco de Dados)** | 🗄️ **MySQL** — responsável pelo armazenamento e gerenciamento das informações da aplicação. |
+| **Front-end** | 💻 **HTML, CSS e JavaScript** — utilizados na construção das interfaces do usuário e protótipos das telas. |
+| **Back-end** | ☕ **Java (Spring Boot)** — responsável pela lógica de negócio e integração entre o sistema e o banco de dados. |
+| **IDE de Desenvolvimento** | 🧩 **Visual Studio Code** — ambiente utilizado para escrever, editar e integrar o código com o GitHub. |
+| **Controle de Versão** | 🔁 **Git + GitHub** — utilizado para versionamento do código, colaboração e publicação da documentação. |
+| **Servidor / Deploy** | 🌐 **GitHub Pages** — hospedagem das páginas web e documentação do projeto. |
+| **Modelagem e Diagramas** | 🧮 **Lucidchart / Bizagi Modeler** — criação dos diagramas BPMN e modelagem AS-IS e TO-BE. |
+| **Prototipagem de Telas** | 🎨 **Figma / Draw.io** — elaboração dos wireframes e protótipos de baixa fidelidade das telas do aplicativo. |
+
+---
+
 A seguir, estão listadas as principais tecnologias adotadas no projeto:
 
 | **Dimensão** | **Tecnologia** |
@@ -312,9 +327,8 @@ A seguir, estão listadas as principais tecnologias adotadas no projeto:
 | **SGBD** | MySQL |
 | **Front-end** | HTML + CSS + JavaScript |
 | **Back-end** | Java (Spring Boot) |
-| **IDE de Desenvolvimento** | IntelliJ IDEA / VS Code |
+| **IDE de Desenvolvimento** | Visual Studio Code (VS Code) |
 | **Controle de Versão** | Git e GitHub |
-| **Gerenciamento de Dependências** | Maven |
 | **Servidor / Deploy** | GitHub Pages (versão web) e Render (API Back-end) |
 | **Design e Protótipos** | Figma |
 | **Modelagem de Dados e Processos** | Lucidchart / Draw.io |
