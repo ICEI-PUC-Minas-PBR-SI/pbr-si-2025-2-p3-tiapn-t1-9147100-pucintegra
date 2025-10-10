@@ -1,6 +1,6 @@
 ## 4. Projeto da Solução
 
-<span style="color:red">Pré-requisitos: <a href="03-Modelagem do Processo de Negocio.md"> Modelagem do Processo de Negocio</a></span>
+<span style="color:red">Pré-requisitos: <a href="3-Modelagem-Processos-Negócio.md> Modelagem do Processo de Negocio</a></span>
 
 ## 4.1. Arquitetura da solução
 
@@ -17,7 +17,6 @@
 
 ### 4.2. Protótipos de telas
 
-O wireframe apresenta as duas telas principais que compõem o Processo 1 – Login e Cadastro de Usuários, representando a interação entre usuário e sistema.
 **Tela de Cadastro ("Criar Conta:")**
 Na tela de cadastro, o usuário que ainda não possui registro pode criar sua conta na plataforma. Os campos obrigatórios permitem que o sistema colete informações essenciais para a identificação e autenticação futura.
 Campos disponíveis:
@@ -31,7 +30,10 @@ Campos disponíveis:
 * Tipo de Entidade (Seleção única – opções: Aluno ou Professor)
 Ação principal:
 * Botão "Confirmar" → envia os dados para validação e registro no banco de dados, conforme o fluxo do processo BPMN.
+![Protótipo de alta fidelidade - Cadastro](../docs/images/cadastro_screen.png)
+
 ---
+
 **Tela de Login ("Entrar")**
 Na tela de login, o usuário já cadastrado pode acessar a plataforma utilizando suas credenciais.
 Campos disponíveis:
@@ -40,7 +42,7 @@ Campos disponíveis:
 Ações principais:
 * Botão "Confirmar" → valida as credenciais e direciona o usuário para o sistema, caso estejam corretas.
 * Link "Não possui cadastro? Clique aqui" → direciona o usuário para a tela de cadastro, caso ainda não tenha registro.
-![Exemplo de Wireframe](../docs/images/wf_processo1.jpg)
+![Protótipo de alta fidelidade - Login](../docs/images/login_screen.png)
 
 ## Diagrama de Classes
 
@@ -51,14 +53,7 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 > - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
 > - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
 
-## Modelo ER
-
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
-
+---
 
 ### 4.3. Modelo de dados
 
@@ -66,13 +61,56 @@ O desenvolvimento da solução proposta requer a existência de bases de dados q
 Utilizando a notação do DER (Diagrama Entidade e Relacionamento), elaborem um modelo, na ferramenta visual indicada na disciplina, que contemple todas as entidades e atributos associados às atividades dos processos identificados. Deve ser gerado um único DER que suporte todos os processos escolhidos, visando, assim, uma base de dados integrada. O modelo deve contemplar, também, o controle de acesso de usuários (partes interessadas dos processos) de acordo com os papéis definidos nos modelos do processo de negócio.
 _Apresente o modelo de dados por meio de um modelo relacional que contemple todos os conceitos e atributos apresentados na modelagem dos processos._
 
-#### 4.3.1 Modelo ER
+### 4.3.1 Modelo ER
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
+![Modelo Entidade-Relacionamento](../docs/images/modeloER_Image.png)
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
+**Diagrama de Entidade e Relacionamento**
 
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
+| Nº | Relacionamento | Entidades envolvidas | Grau | Cardinalidades | Tipo | Identifying? | Participações | Observações |
+|----|----------------|----------------------|------|----------------|------|---------------|----------------|--------------|
+| 1 | **Faz** | Aluno — Pergunta | Binário | Aluno (0,N) — Pergunta (1,1) | 1:N | Não | Pergunta participa totalmente; Aluno parcialmente | Pergunta contém Id_Aluno (FK) — redundância explícita (atributo + relacionamento) |
+| 2 | **Possui** | Pergunta — Resposta | Binário | Pergunta (0,N) — Resposta (1,1) | 1:N | Não | Resposta participa totalmente | Resposta contém Id_Pergunta (FK) — coerente com o relacionamento |
+| 3 | **Possui** | Curso — Disciplina | Binário | Curso (0,N) — Disciplina (0,N) | N:N | Não | Ambos os lados opcionais | Relação totalmente opcional (many-to-many) |
+| 4 | **Tem relação com** | Pergunta — Disciplina | Binário | Pergunta (1,1) — Disciplina (0,N) | 1:N | Não | — | Cada Pergunta pertence a uma Disciplina; vincula perguntas à disciplina correspondente |
+| 5 | **Responde** | Pessoa — Resposta | Binário | Pessoa (0,N) — Resposta (1,1) | 1:N | Não | Resposta participa totalmente | Resposta possui Id_Pessoa (FK) |
+| 6 | **Avalia** | Resposta — Reação | Binário | Resposta (1,1) — Reação (0,N) | 1:N | Não | — | Reação contém Id_Resposta (FK) |
+| 7 | **Interage** | Pessoa — Reação | Binário | Pessoa (1,1) — Reação (1,1) | 1:1 | Não | — | Ligação obrigatória e um-para-um; diagrama mostra Id_Pessoa, Id_Resposta, Id_Pergunta — possível redundância |
+| 8 | **Monitor** | Aluno — Professor — Disciplina | Ternário | Implícito (dependente dos três) | Entidade fraca | Sim (identificação por chaves compostas) | — | Representa relação entre Aluno, Professor e Disciplina; Aluno contém Eh_Monitor indicando a função |
+
+---
+
+**Relações Implícitas (Atributos-FK)**
+
+| Entidade | Atributo | Associação implícita | Observação |
+|-----------|-----------|----------------------|-------------|
+| Professor | Id_Disciplina | Professor ⇄ Disciplina | Sugere 1:1 (não explicitado no diagrama) |
+| Pergunta | Id_Disciplina, Id_Aluno | Pergunta ⇄ Disciplina e Pergunta ⇄ Aluno | FKs embutidos |
+| Resposta | Id_Pergunta, Id_Pessoa | Resposta ⇄ Pergunta e Resposta ⇄ Pessoa | FKs coerentes com Possui e Responde |
+| Reação | Id_Resposta, Id_Pergunta, Id_Pessoa | Reação ⇄ Resposta, Pergunta e Pessoa | Redundâncias entre atributos e relacionamentos explícitos |
+
+---
+
+**Generalização / Especialização**
+
+| Superentidade | Subentidades | Tipo | Atributo Discriminador | Observações |
+|----------------|---------------|------|------------------------|--------------|
+| Pessoa | Aluno, Professor | Especialização (ISA) | Tipo_pessoa | Pessoa contém atributos comuns (CPF, Nome, Email, Telefone, Matrícula, Tipo_pessoa). CPF é chave. Discriminação representada por símbolo *d*. Pode ser disjunta ou sobreposta. |
+
+---
+
+**Resumo Geral**
+
+| Relacionamento | Entidade A | Cardinalidade A | Entidade B | Cardinalidade B | Tipo |
+|----------------|-------------|-----------------|-------------|-----------------|------|
+| Faz | Aluno | (0,N) | Pergunta | (1,1) | 1:N |
+| Possui | Pergunta | (0,N) | Resposta | (1,1) | 1:N |
+| Possui | Curso | (0,N) | Disciplina | (0,N) | N:N |
+| Tem relação com | Pergunta | (1,1) | Disciplina | (0,N) | 1:N |
+| Responde | Pessoa | (0,N) | Resposta | (1,1) | 1:N |
+| Avalia | Resposta | (1,1) | Reação | (0,N) | 1:N |
+| Interage | Pessoa | (1,1) | Reação | (1,1) | 1:1 |
+| Monitor | Aluno, Professor, Disciplina | — | — | — | Entidade fraca / ternária |
 
 #### 4.3.2 Esquema Relacional
 
@@ -136,8 +174,6 @@ CREATE TABLE Prescricao (
 </code>
 
 Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
-
-
 
 
 ### 4.4. Tecnologias
