@@ -55,10 +55,7 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 - **Elementos Principais:**  
   - Campos: Nome completo, CPF, data de nascimento, telefone, e-mail e endereço.  
   - Botões de ação: “Voltar” e “Continuar”.  
-- **Requisitos atendidos:**  
-  - **RF-001:** Cadastro de pacientes e familiares.  
-  
-
+ 
 ---
 
 ### 3️⃣ Tela de Busca de Profissionais  
@@ -83,11 +80,6 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
       - Avaliação por estrelas e número de atendimentos realizados.  
       - Botão **“Ver Perfil”** para acessar informações detalhadas.  
   - **Botão “Favoritos”:** Acesso rápido aos profissionais salvos.  
-
-- **Requisitos atendidos:**  
-  - **RF-003:** Permitir a busca de profissionais de saúde por especialidade, localização e disponibilidade.  
-  - **RF-004:** Exibir a localização e deslocamento do profissional (geolocalização).  
-  - **RF-010:** Possibilitar a avaliação dos serviços prestados pelos profissionais.  
   
 ---
 
