@@ -146,8 +146,6 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 > - ![Imagem do WhatsApp de 2025-10-09 à(s) 21 35 36_9239dc3b](https://github.com/user-attachments/assets/783388f3-ca4f-4409-ad97-5188093c8df8)
 
 
-
-![Exemplo de um modelo relacional](images/modeloRelacional.png "Exemplo de Modelo Relacional.")
 ---
 
 
