@@ -297,10 +297,8 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 </code>
 
-Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
-
-
-
+📄 **Observação:**  
+O script completo do modelo físico foi **incluído** em um arquivo `.sql` localizado na pasta: `src/bd`.
 
 ### 4.4. Tecnologias
 
