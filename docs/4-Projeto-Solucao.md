@@ -334,7 +334,7 @@ A escolha das ferramentas foi baseada em sua robustez, facilidade de manutençã
 
 O diagrama abaixo ilustra como as tecnologias se integram e o caminho percorrido por uma requisição do usuário até o retorno da resposta no sistema.
 
-<img width="1200" height="800" alt="Arquitetura_Medlar_Fluxo" src="https://github.com/user-attachments/assets/46f746fc-a34b-442f-afc7-d5709308aeb5" />
+<img width="1248" height="832" alt="Arquitetura_Medlar_Fluxo2" src="https://github.com/user-attachments/assets/d92506a9-2ec1-4137-822d-1729d8c6f431" />
 
 **Descrição do Fluxo:**
 1. O **usuário** acessa o aplicativo via navegador (Front-end em HTML, CSS e JS).  
