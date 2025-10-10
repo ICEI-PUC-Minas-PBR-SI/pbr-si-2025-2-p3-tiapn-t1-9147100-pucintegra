@@ -44,5 +44,5 @@ O processo de busca de locais se inicia com a autenticação do usuário do tipo
 | Rejeitar Reserva | Tela de Notificação de Rejeição (Locatário) | default |
 
 ## Wireframe
-![Wireframe do PROCESSO 3 - Busca e filtros avançados](../images/Wireframe_Busca_Colmeia.png "Wireframe de baixa fidelidade").
+![Wireframe do PROCESSO 3 - Busca e filtros avançados](../images/Wireframe_Busca_Colmeia.png "Processo_4_Wireframe").
 
