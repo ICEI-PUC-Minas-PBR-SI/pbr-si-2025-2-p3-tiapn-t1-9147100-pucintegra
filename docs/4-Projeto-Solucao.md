@@ -144,8 +144,7 @@ O Esquema Relacional corresponde à representação dos dados em tabelas juntame
  
 As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
 
-> - ![Imagem do WhatsApp de 2025-10-09 à(s) 21 35 36_9239dc3b](https://github.com/user-attachments/assets/783388f3-ca4f-4409-ad97-5188093c8df8)
-
+![Imagem do WhatsApp de 2025-09-13 à(s) 16 30 43_eae4e805](https://github.com/user-attachments/assets/700c7738-1c35-470c-97c5-cce9dd06f2a8)
 
 ---
 
