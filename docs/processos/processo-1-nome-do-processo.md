@@ -14,7 +14,7 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 
 ### Exemplo de um Modelo BPMN do PROCESSO 1 - Cadastro
 
-<img width="1860" height="1776" alt="Novo modelocleia" src="https://github.com/user-attachments/assets/5886d6ca-1110-42f6-bc3c-97b8fe23ff08" />
+<img width="2278" height="1866" alt="Novo modelo (PROCESSO 2)" src="https://github.com/user-attachments/assets/e0fab948-93cb-405e-bf6d-4c3c2b5246d8" />
 
 
 [Este modelo representaria o fluxo otimizado do processo de cadastro, incorporando as melhorias propostas. Ele pode incluir etapas como: Início do Cadastro, Preenchimento de Dados, Validação Automática, Aprovação/Rejeição, Notificação ao Usuário, e Fim do Cadastro.]
