@@ -345,6 +345,5 @@ O diagrama abaixo ilustra como as tecnologias se integram e o caminho percorrido
 
 ---
 
-📘 *Essa arquitetura garante que o Medlar seja uma aplicação estável, modular e escalável, atendendo às necessidades de pacientes, familiares e profissionais de saúde de forma integrada e segura.*
 
 
