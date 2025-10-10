@@ -75,10 +75,11 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 
 #### Descrição da Tela  
-- **Objetivo:** Permitir que pacientes ou familiares realizem o cadastro inicial na plataforma, inserindo dados pessoais, endereço e contatos.  
-- **Elementos Principais:**  
-  - Campos: Nome completo, CPF, data de nascimento, telefone, e-mail e endereço.  
-  - Botões de ação: “Voltar” e “Continuar”.  
+- **Objetivo:** Permitir que pacientes ou familiares realizem o cadastro inicial na plataforma Medlar, inserindo informações pessoais e de contato de forma simples e organizada.  
+- **Campos de entrada:** Nome completo, CPF, data de nascimento, telefone, e-mail e endereço, garantindo que os dados necessários sejam registrados corretamente.  
+- **Botões de ação:**  
+  - **Voltar** — retorna à tela anterior, permitindo que o usuário revise ou cancele o cadastro.  
+  - **Continuar** — avança para a próxima etapa do cadastro, salvando as informações inseridas.    
  
 ---
 
