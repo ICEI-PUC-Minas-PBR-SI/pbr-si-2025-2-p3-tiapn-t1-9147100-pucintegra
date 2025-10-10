@@ -14,6 +14,7 @@
  
  ![Exemplo de Arquitetura](./images/arquitetura-exemplo.png)
  
+---
 
 ### 4.2. Protótipos de telas
 
@@ -30,6 +31,7 @@ Campos disponíveis:
 * Tipo de Entidade (Seleção única – opções: Aluno ou Professor)
 Ação principal:
 * Botão "Confirmar" → envia os dados para validação e registro no banco de dados, conforme o fluxo do processo BPMN.
+
 ![Protótipo de alta fidelidade - Cadastro](../docs/images/cadastro_screen.png)
 
 ---
@@ -42,7 +44,10 @@ Campos disponíveis:
 Ações principais:
 * Botão "Confirmar" → valida as credenciais e direciona o usuário para o sistema, caso estejam corretas.
 * Link "Não possui cadastro? Clique aqui" → direciona o usuário para a tela de cadastro, caso ainda não tenha registro.
+
 ![Protótipo de alta fidelidade - Login](../docs/images/login_screen.png)
+
+---
 
 ## Diagrama de Classes
 
@@ -61,6 +66,8 @@ O desenvolvimento da solução proposta requer a existência de bases de dados q
 Utilizando a notação do DER (Diagrama Entidade e Relacionamento), elaborem um modelo, na ferramenta visual indicada na disciplina, que contemple todas as entidades e atributos associados às atividades dos processos identificados. Deve ser gerado um único DER que suporte todos os processos escolhidos, visando, assim, uma base de dados integrada. O modelo deve contemplar, também, o controle de acesso de usuários (partes interessadas dos processos) de acordo com os papéis definidos nos modelos do processo de negócio.
 _Apresente o modelo de dados por meio de um modelo relacional que contemple todos os conceitos e atributos apresentados na modelagem dos processos._
 
+---
+
 ### 4.3.1 Modelo ER
 
 ![Modelo Entidade-Relacionamento](../docs/images/modeloER_Image.png)
@@ -78,8 +85,6 @@ _Apresente o modelo de dados por meio de um modelo relacional que contemple todo
 | 7 | **Interage** | Pessoa — Reação | Binário | Pessoa (1,1) — Reação (1,1) | 1:1 | Não | — | Ligação obrigatória e um-para-um; diagrama mostra Id_Pessoa, Id_Resposta, Id_Pergunta — possível redundância |
 | 8 | **Monitor** | Aluno — Professor — Disciplina | Ternário | Implícito (dependente dos três) | Entidade fraca | Sim (identificação por chaves compostas) | — | Representa relação entre Aluno, Professor e Disciplina; Aluno contém Eh_Monitor indicando a função |
 
----
-
 **Relações Implícitas (Atributos-FK)**
 
 | Entidade | Atributo | Associação implícita | Observação |
@@ -89,15 +94,11 @@ _Apresente o modelo de dados por meio de um modelo relacional que contemple todo
 | Resposta | Id_Pergunta, Id_Pessoa | Resposta ⇄ Pergunta e Resposta ⇄ Pessoa | FKs coerentes com Possui e Responde |
 | Reação | Id_Resposta, Id_Pergunta, Id_Pessoa | Reação ⇄ Resposta, Pergunta e Pessoa | Redundâncias entre atributos e relacionamentos explícitos |
 
----
-
 **Generalização / Especialização**
 
 | Superentidade | Subentidades | Tipo | Atributo Discriminador | Observações |
 |----------------|---------------|------|------------------------|--------------|
 | Pessoa | Aluno, Professor | Especialização (ISA) | Tipo_pessoa | Pessoa contém atributos comuns (CPF, Nome, Email, Telefone, Matrícula, Tipo_pessoa). CPF é chave. Discriminação representada por símbolo *d*. Pode ser disjunta ou sobreposta. |
-
----
 
 **Resumo Geral**
 
@@ -112,6 +113,8 @@ _Apresente o modelo de dados por meio de um modelo relacional que contemple todo
 | Interage | Pessoa | (1,1) | Reação | (1,1) | 1:1 |
 | Monitor | Aluno, Professor, Disciplina | — | — | — | Entidade fraca / ternária |
 
+---
+
 #### 4.3.2 Esquema Relacional
 
 O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
@@ -121,8 +124,8 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 > - [Criando um modelo relacional - Documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/10.2.2?topic=designer-creating-relational-model)
 
 ![Exemplo de um modelo relacional](images/modeloRelacional.png "Exemplo de Modelo Relacional.")
----
 
+---
 
 #### 4.3.3 Modelo Físico
 
@@ -175,6 +178,7 @@ CREATE TABLE Prescricao (
 
 Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
 
+---
 
 ### 4.4. Tecnologias
 
