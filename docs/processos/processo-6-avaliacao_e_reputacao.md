@@ -3,7 +3,7 @@
 O processo de avaliação inicia-se ao término da locação do local. O cliente, ao acessar a página de reservas em seu perfil, escolherá qual reserva irá avaliar, assim, será direcionado para uma página específica destinada à avaliação do ambiente. Nessa etapa, o locatário pode descrever detalhadamente sua experiência em uma caixa de texto, relatando aspectos positivos e pontos a melhorar.
 Por outro lado, o proprietário (locador) do espaço, ao acessar o perfil do locatário, tem a possibilidade de registrar uma avaliação sobre o cliente, descrevendo como o local foi entregue após o evento.
 
-![Modelo BPMN do PROCESSO 6 - ](../images/06-diagrama-avaliação-reputação.jpg")
+![Modelo BPMN do PROCESSO 6 - ](../images/../images/06-diagrama-avaliação-reputação.jpg "Avaliação e Reputação")
 
 
 #### Detalhamento das atividades
