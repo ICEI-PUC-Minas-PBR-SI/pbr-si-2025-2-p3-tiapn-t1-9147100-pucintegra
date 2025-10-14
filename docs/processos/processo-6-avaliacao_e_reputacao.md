@@ -15,7 +15,7 @@ Por outro lado, o proprietário (locador) do espaço, ao acessar o perfil do loc
 2. [Selecionar Local](#atividade-2---)
    - Permite que o usuário selecione a reserva que deseja avaliar.
    - *Exibe a opção de avaliação.
-3. [Descrever e avaliar  ](#atividade-1---)
+3. [Descrever e Avaliar  ](#atividade-1---)
    - Usuário clica em uma nota de 0 a 10 para avaliar o local
    - Usuário digita em uma caixa de texto suas opiniões sobre o local
 
@@ -24,7 +24,7 @@ Por outro lado, o proprietário (locador) do espaço, ao acessar o perfil do loc
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | :--- | :--- | :--- | :--- |
-| Botão | Link | acesso via click | - |
+| Botão | Link | acesso via Click | - |
 
 | **Botão/Link** | **Destino** | **Tipo** |
 | :--- | :--- | :--- |
@@ -36,8 +36,8 @@ Por outro lado, o proprietário (locador) do espaço, ao acessar o perfil do loc
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | :--- | :--- | :--- | :--- |
-|Botão | Link | acesso via click | default |
-| Nome da propriedade | Seleção de opções | - | - |
+|Botão | Link | Acesso Via Click | - |
+| Nome da propriedade | Texto | - | - |
 | Nome da propriedade | Texto | - | - |
 | Endereço | Texto | - | - |
 | Locador | Texto | - | - |
@@ -46,17 +46,18 @@ Por outro lado, o proprietário (locador) do espaço, ao acessar o perfil do loc
 
 | **Comandos** | **Destino** | **Tipo** |
 | :--- | :--- | :--- |
-| Card Interativo |  Informações da Reserva | default |
+| Card Interativo |  Tela de Avaliação | default |
 
 
 
-### Atividade 3 - Pesquisar por locais
+### Atividade 3 - Descrever e Avaliar
 
 | **Campo** | **Tipo** | **Restrições** | **Valor default** |
 | :--- | :--- | :--- | :--- |
-| Localização | Caixa de texto | obrigatório, mínimo 3 caracteres | - |
+| Avaliação | Componenten de Avaliação | Nota vai de 1 a 10 | - |
+| Descrição | Caixa de Texto | 5000 caracteres | - |
 
 
 | **Comandos** | **Destino** | **Tipo** |
 | :--- | :--- | :--- |
-| Pesquisar | Listagem de locais | default |
+| Enviar | Fim da Avaliação | default |
