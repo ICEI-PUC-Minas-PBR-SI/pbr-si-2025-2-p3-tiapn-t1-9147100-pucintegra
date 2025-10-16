@@ -19,7 +19,7 @@ O processo de cadastro de usuário inicia com o acesso a tela de cadastro de usu
    - Envio de código de verificação por e-mail.  
    - Exige aceite dos termos de uso antes da validação.
      
-5. [Confirmar cadastro efetuado com sucesso)](#atividade-5---confirmar-cadastro-efetuado-com-sucesso)
+5. [Confirmar cadastro (efetuado com sucesso)](#atividade-5---confirmar-cadastro-efetuado-com-sucesso)
    - O usuário irá confirmar o cadastro caso tenha sido efetuado com sucesso.  
 
 ### Atividade 1 - Acessar a tela de cadastro
