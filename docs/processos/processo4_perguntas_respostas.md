@@ -19,114 +19,164 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 
 ![PROCESSO 4 - Envio de perguntas e respostas](../images/p4_PerguntaResposta.png "Modelo BPMN do Processo 4.")
 
-## Detalhamento das atividades
+---
 
-### Atividade 1 – Acessar feed de interação (Usuário)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Menu: Feed| Botão | Usuário deve estar logado para postar; feed pode ser público para leitura |
+# Detalhamento das atividades  
 
-**Comandos**
-- Clicar em *Feed* → **Tela de feed** é exibida com lista de perguntas e filtros (disciplina, recentes, sem resposta).
+### Atividade 1 – Acessar área de Postagens (Usuário)
+
+| **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
+|-------------------|----------------|-----------------------------|-------------------|
+| Seção "Postagens" | Navegação UI   | Requer login concluído      |  Default          |
+
+| **Comandos**      | **Destino**            | **Tipo**   |
+|-------------------|------------------------|------------|
+| Clicar na seção   | Listagem de postagens e opções (perguntar/responder) | Usuário (navegação) |
 
 ---
 
-### Atividade 2 – Escolher ação: Pergunta ou Resposta? (Usuário)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Decisão | Ação | Expor opções claras: *Fazer uma pergunta* / *Responder pergunta* |
+### Gateway - Pergunta ou Resposta?
+| **Campo**          | **Tipo**    | **Restrições**                                | **Valor** |
+|--------------------|-------------|-----------------------------------------------|-----------|
+| Escolha do usuário | Decisão     | Usuário escolhe fluxo | Pergunta / Resposta               |
 
-**Comandos**
-- Selecionar *Fazer uma pergunta* → abre formulário de pergunta.  
-- Selecionar *Responder* em uma pergunta específica → abre vista da pergunta com campo de resposta.
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Branching          | Pergunta → Fazer pergunta; Resposta → Selecionar pergunta para responder | Usuário (decisão) |
 
----
 
-### Atividade 3A – Fazer uma pergunta (Usuário)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Título | Texto (1 linha) | **Obrigatório**; máximo recomendado 150 caracteres |
-| Conteúdo | Área de texto | **Obrigatório**; mínimo 10 caracteres, máximo ~5000 |
-| Disciplina | Seleção única | **Obrigatório** quando a dúvida é acadêmica; deve mapear para disciplinas cadastradas |
-| Anexo(s) | Arquivo (pdf,png,jpg,docx) | Opcional; tamanho máximo por anexo (ex.: 5MB) |
-| Tags | Seleção múltipla | Opcional; facilita busca |
-| Visibilidade | Dropdown | Público / Só campus (conforme regras institucionais) |
-| Referência bibliográfica | Link | Opcional |
+#### Fluxo Pergunta:
 
-**Comandos**
-- Clicar *Fazer uma pergunta* → preencher campos → clicar *Enviar* → formulário é submetido ao backend.
+Atividade 1: Clicar em "Fazer uma pergunta" (Usuário)
 
----
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Botão "Fazer uma pergunta" | Botão | Único e visível  | Default  |
 
-### Atividade 3B – Responder a pergunta (Usuário)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Pergunta selecionada | Leitura | Exibe título, conteúdo, disciplina e contexto |
-| Resposta | Área de texto | **Obrigatório**; mínimo 5 caracteres, máximo ~5000 |
-| Anexo(s) | Arquivo | Opcional |
-| Citar fonte | Texto/Link | Opcional (recomendar boas práticas de citação) |
-| Marcar como solução | Checkbox | Só disponível para autor da pergunta ou professor/moderador |
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Clicar no botão    | Formulário de dúvida | Usuário (interação)    |
 
-**Comandos**
-- Selecionar pergunta → clicar *Responder* → preencher campo → clicar *Enviar* → submissão ao backend.
+Atividade 2: Preencher formulário de dúvida (Usuário)
 
----
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Campos: Título, Conteúdo, Curso, Disciplina, Palavras-chave | Formulário | Título obrigatório; conteúdo mínimo; curso/disciplina validos | Valores informados  |
 
-### Atividade 4 – Receber dados (Sistema)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Payload da UI | JSON / FormData | Deve conter: user_id, role, título (se pergunta), conteúdo, disciplina_id, anexos, timestamp |
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Preecher e submeter| Cnvergência para confirmar envio | Usuário (entrada) |
 
-**Comandos**
-- Endpoint `/questions` ou `/answers` recebe POST → coloca em processamento síncrono ou fila para validação.
 
----
+#### Fluxo Resposta:
+#####Atividade 1: Selecionar pergunta que deseja responder (Usuário)
 
-### Atividade 5 – Validar dados recebidos (Sistema)
-| Campo | Tipo | Regras |
-|---|---|---|
-| Campos obrigatórios | Validação | Título/conteúdo/disciplina (quando aplicável) não podem estar vazios |
-| Tamanho | Validação | Respeitar limites (máx/min caracteres/size) |
-| Profanity / Spam | Filtro automático | Se detectar, sinalizar para moderação ou bloquear |
-| Disciplina | Consulta | disciplina_id deve existir no catálogo institucional |
+| **Campo**          | **Tipo**        | **Restrições**               | ** Valor **|
+|--------------------|-----------------|------------------------------|------------|
+| Lista de perguntas | Lista interativa| Perguntas visíveis por disciplina/curso; acesso permitido  | Pergunta selecionada |
 
-**Comandos**
-- Se dados corretos → seguir para armazenamento.  
-- Se incorretos → retornar erro com mensagem amigável ao usuário (ex.: "Preencha o campo X").
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Clicar na pergunta | Abrir campo de resposta | Usuário (seleção)   |
 
----
+Atividade 2: Preencher conteúdo da resposta (Usuário)
 
-### Atividade 6 – Armazenar no banco de dados (Sistema)
-| Campo | Tipo | O que é salvo |
-|---|---|---|
-| Perguntas | Tabela `questions` | id, title, content, discipline_id, author_id, created_at, status, visibility |
-| Respostas | Tabela `answers` | id, question_id, content, author_id, created_at, is_accepted |
-| Metadados | Tabelas auxiliares | tags, attachments, score/likes, número de respostas, last_activity |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Conteúdo da resposta: Texto, Links, Imagens | Editor de texto enriquecido | Limites de tamanho; imagens com formatos válidos; links sanitizados | Conteúdo inserido |
 
-**Comandos**
-- Inserir registro → atualizar contadores da pergunta (número de respostas, timestamp).  
-- Se marcado como solução → atualizar `is_accepted` e notificar autor(es).  
-- Se sinalizado pelo filtro → inserir na fila/moderação.
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Preecher e submeter| Convergência para confirmar envio| Usuário (entrada) |
 
----
 
-### Atividade 7 – Confirmação ao usuário & exibição (Sistema)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Feedback | Mensagem / Toast | Informar sucesso ou erro; mostrar link para a pergunta publicada |
-| Notificações | Push / Email / In-app | (Opcional) Notificar autor da pergunta / participantes |
+### Gateway - Tarefas convergem (confirmação)
+| **Campo**          | **Tipo**    | **Restrições**                                | **Valor** |
+|--------------------|-------------|-----------------------------------------------|-----------|
+|Confirmação de envio| Decisão     | Usuário confirma revisar antes de enviar      | Confirmar / Cancelar|
 
-**Comandos**
-- Retornar resposta HTTP com ID do recurso → atualizar UI local com nova pergunta/resposta.
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Branching          | Confirmar → Confirmar envio da postagem       | Usuário (decisão) |
+
+
+
+#### Atividade - Confirmar envio da postagem (Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Botão de envio     | Botão       | Somente após preencher campos obrigatórios | Default  |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+|Clicar para enviar  | Registrar postagem               | Usuário (ação) |
+
+
 
 ---
 
-## Regras de negócio e observações
-- **Autenticação:** apenas usuários logados podem postar. Professores e moderadores têm privilégios extras (validar/remover/aceitar respostas).  
-- **Moderação:** conteúdo com violação (ofensas, plágio, material protegido) deve ser sinalizado e colocado em análise por equipe administrativa.  
-- **Integração institucional:** ao escolher uma disciplina, a pergunta deve ser indexada no repositório ligado ao catálogo de disciplinas da PUC (para relatórios e filtros).  
-- **Privacidade:** oferecer opção de anonimato (dependendo de política institucional) e controles de visibilidade por campus/curso.  
-- **Histórico:** manter histórico de edições (versionamento simples) e logs de ações para auditoria.
+### Atividade 2 – Preencher formulário de cadastro (Sistema)
+
+| **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
+|-----------------------|-----------------|-------------------------------------------------------|-------------------|
+| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional |                   |
+
+| **Comandos**          | **Destino**                    | **Tipo**   |
+|-----------------------|--------------------------------|------------|
+| Preencher formulário e submeter | Validação dos dados | Usuário     |
+
+
+---
+
+### Atividade 3 – Validar matrícula e E-mail (Sistema)
+
+| Campo | Tipo | Restrições |  **Valor** |
+|-------|------|------------|------------|
+| Validação de cadastro | Automático | Consulta à base da universidade; formato de e-mail institucional | True / False |
+
+
+| **Comandos**       | **Destino**                | **Tipo**   |
+|--------------------|----------------------------|------------|
+| Verificar na base de dados| Decisão "Dados válidos?"       | Automático |
+
+---
+
+
+## Atividade 4 – Atribuir Perfil (Sistema)
+
+| **Campo**               | **Tipo**    | **Restrições**                         | **Valor ** |
+|-------------------------|-------------|----------------------------------------|------------|
+| Definifição de perfil   | Automático  | Baseado no campo "Tipo de usuário"     | Perfil     |
+
+| **Comandos**       | **Destino**                                   | **Tipo**  |
+|--------------------|-----------------------------------------------|-----------|
+|Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema   |
+
+
+---
+
+## Atividade 5 – Exibir confirmação de cadastro (Sistema → Usuário)
+ 
+| **Campo**         | **Tipo**        | **Restrições**                              | **Valor default** |
+|-------------------|-----------------|---------------------------------------------|-------------------|
+| Mensagem de sucesso   | Mensagem UI   | Deve conter orientação (ex.: prossiga para login)  |  Texto   |
+
+| **Comandos**       | **Destino**                 | **Tipo**   |
+|--------------------|-----------------------------|------------|
+| Apresentar página de confirmação | Tela de perfil| Sistema    |
+
+
+---
+
+## Atividade 6 – Visualizar tela de perfil (Usuário)
+
+| **Campo**            | **Tipo**    | **Restrições**                       | **Valor ** |
+|----------------------|-------------|--------------------------------------|------------|
+| Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados    |
+
+| **Comandos**       | **Destino**          | **Tipo**   |
+|--------------------|----------------------|------------|
+| Navegar no perfil  | Não se aplica        | Usuário    |
 
 ---
 

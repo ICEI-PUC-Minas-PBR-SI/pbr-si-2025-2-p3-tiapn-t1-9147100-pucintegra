@@ -11,107 +11,123 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 - Implementar mensagens claras de erro para facilitar a experiência do usuário;  
 - Garantir segurança no armazenamento dos dados (criptografia de senha e validação de entrada). 
 
-![PROCESSO 1 - Cadastro de Usuários](../images/p1_CadastroUsuario.png "Modelo BPMN do Processo 1.")
+![PROCESSO 1 - Cadastro de Usuários](../images/p1_CadastroUsuário.png "Modelo BPMN do Processo 1.")
 
 ---
 
-#### Detalhamento das atividades  
+# Detalhamento das atividades  
 
-#### Atividade 1 – Acessar tela de cadastro (Usuário)
+### Atividade 1 – Acessar tela de cadastro (Usuário)
 
-| **Campo**         | **Tipo**       | **Restrições**              | **Valor default** |
-|--------------------|----------------|-----------------------------|-------------------|
-| botão cadastro     | Botão          | único, visível              |                   |
+| **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
+|-------------------|----------------|-----------------------------|-------------------|
+| Botão cadastro    | Botão          | Único, visível              |  Default          |
 
-| **Comandos**       | **Destino**            | **Tipo**   |
-|--------------------|------------------------|------------|
-| clicar             | Exibe formulário       | default    |
+| **Comandos**      | **Destino**            | **Tipo**   |
+|-------------------|------------------------|------------|
+| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Default    |
 
 ---
 
-#### Atividade 2 – Exibir formulário de cadastro (Sistema)
+### Atividade 2 – Preencher formulário de cadastro (Sistema)
 
-| **Campo**            | **Tipo**        | **Restrições**                                        | **Valor default** |
+| **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
-| formulário cadastro   | Caixa de texto  | campos obrigatórios: nome, e-mail, senha, matrícula   |                   |
+| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional |                   |
 
-| **Comandos**          | **Destino**                   | **Tipo**   |
+| **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
-| preencher formulário  | Preencher dados do cadastro    | default    |
-| cancelar              | Fim do processo                | cancel     |
+| Preencher formulário e submeter | Validação dos dados | Usuário     |
+
 
 ---
 
-#### Atividade 3 – Preencher dados de cadastro (Usuário)
+### Atividade 3 – Validar matrícula e E-mail (Sistema)
 
-## Atividade 3 – Exibir formulário de dados (Sistema)
-| Campo | Tipo | Restrições |
-|-------|------|------------|
-| Nome completo | Texto | resposta obrigatória |
-| CPF | Numérico | 11 dígitos, formato XXX.XXX.XXX-XX, obrigatório |
-| E-mail institucional | Texto | formato XXX@sga.pucminas.br, obrigatório |
-| Matrícula | Texto/Numérico | obrigatório |
-| Telefone | Numérico | formato (XX)XXXXX-XXXX, obrigatório |
-| Senha | Texto | 8 caracteres, contendo maiúscula, minúscula, número e caractere especial, obrigatório |
-| Confirmar senha | Texto | 8 caracteres, contendo maiúscula, minúscula, número e caractere especial, obrigatório |
-| Tipo de usuário | Combo box | Aluno, professor ou monitor, obrigatório |
+| Campo | Tipo | Restrições |  **Valor** |
+|-------|------|------------|------------|
+| Validação de cadastro | Automático | Consulta à base da universidade; formato de e-mail institucional | True / False |
 
 
 | **Comandos**       | **Destino**                | **Tipo**   |
-|--------------------|-----------------------------|------------|
-| confirmar dados    | Validar informações         | default    |
-
----
-
-#### Atividade 4 – Validar informações (Sistema)
-
-| **Campo**         | **Tipo**    | **Restrições**                                 | **Valor default** |
-|--------------------|-------------|-----------------------------------------------|-------------------|
-| validação dados    | Booleano    | verificar e-mail, matrícula e força da senha  |                   |
-
-| **Comandos**       | **Destino**                     | **Tipo**   |
-|--------------------|----------------------------------|------------|
-| dados válidos      | Identificar perfil               | default    |
-| dados inválidos    | Exibir mensagem de erro          | cancel     |
-
----
-
-#### Atividade 5 – Identificar perfil (Sistema)
-
-| **Campo**        | **Tipo**        | **Restrições**                             | **Valor default** |
-|-------------------|-----------------|--------------------------------------------|-------------------|
-| perfil usuário    | Seleção única   | aluno (com matrícula em curso) / professor |                   |
-
-| **Comandos**       | **Destino**                | **Tipo**   |
-|--------------------|-----------------------------|------------|
-| aluno              | Armazenar cadastro          | default    |
-| professor          | Armazenar cadastro          | default    |
-
----
-
-#### Atividade 6 – Armazenar cadastro (Banco de Dados)
-
-| **Campo**            | **Tipo**    | **Restrições**                       | **Valor default** |
-|-----------------------|-------------|--------------------------------------|-------------------|
-| cadastro registrado   | Registro    | salvar dados de forma segura         |                   |
-
-| **Comandos**       | **Destino**               | **Tipo**   |
 |--------------------|----------------------------|------------|
-| salvar cadastro    | Confirmar cadastro         | default    |
+| Verificar na base de dados| Decisão "Dados válidos?"       | Automático |
 
 ---
 
-#### Atividade 7 – Confirmar cadastro (Sistema)
 
-| **Campo**        | **Tipo**       | **Restrições**                      | **Valor default** |
-|-------------------|----------------|-------------------------------------|-------------------|
-| mensagem sucesso  | Texto          | exibida apenas quando cadastro ok   |                   |
+### Gateway - Dados válidos?
+| **Campo**         | **Tipo**    | **Restrições**                                 | **Valor** |
+|--------------------|-------------|-----------------------------------------------|-----------|
+| Verificação de dados| Booleano    | Resultado da validação do sistema  | True / False        |
 
-| **Comandos**       | **Destino**         | **Tipo**   |
-|--------------------|---------------------|------------|
-| prosseguir login   | Exibir tela de login | default    |
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Branching          | Decisão "Dados válidos?"         | Sistema    |
+
+
+#### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema   |
+
+
+#### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Persistência dos dados do usuário  | Serviço | Validação prévia obrigatória  | Registro  |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+|Armazenar novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema |
+
 
 ---
+
+## Atividade 4 – Atribuir Perfil (Sistema)
+
+| **Campo**               | **Tipo**    | **Restrições**                         | **Valor ** |
+|-------------------------|-------------|----------------------------------------|------------|
+| Definifição de perfil   | Automático  | Baseado no campo "Tipo de usuário"     | Perfil     |
+
+| **Comandos**       | **Destino**                                   | **Tipo**  |
+|--------------------|-----------------------------------------------|-----------|
+|Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema   |
+
+
+---
+
+## Atividade 5 – Exibir confirmação de cadastro (Sistema → Usuário)
+ 
+| **Campo**         | **Tipo**        | **Restrições**                              | **Valor default** |
+|-------------------|-----------------|---------------------------------------------|-------------------|
+| Mensagem de sucesso   | Mensagem UI   | Deve conter orientação (ex.: prossiga para login)  |  Texto   |
+
+| **Comandos**       | **Destino**                 | **Tipo**   |
+|--------------------|-----------------------------|------------|
+| Apresentar página de confirmação | Tela de perfil| Sistema    |
+
+
+---
+
+## Atividade 6 – Visualizar tela de perfil (Usuário)
+
+| **Campo**            | **Tipo**    | **Restrições**                       | **Valor ** |
+|----------------------|-------------|--------------------------------------|------------|
+| Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados    |
+
+| **Comandos**       | **Destino**          | **Tipo**   |
+|--------------------|----------------------|------------|
+| Navegar no perfil  | Não se aplica        | Usuário    |
+
+---
+
 
 _Tipos de dados utilizados:_  
 
