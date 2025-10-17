@@ -25,7 +25,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
-| Clicar no botão "Realizar cadastro"| Formulário de cadastro| Default    |
+| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Default    |
 
 ---
 
@@ -37,12 +37,12 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
-| Preencher formulário e submeter | Validação dos dados | Usuário    |
+| Preencher formulário e submeter | Validação dos dados | Usuário     |
 
 
 ---
 
-### Atividade 3 – Validar dados de cadastro (Usuário)
+### Atividade 3 – Validar matrícula e E-mail (Usuário)
 
 | Campo | Tipo | Restrições |  **Valor** |
 |-------|------|------------|------------|
@@ -50,7 +50,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 
 | **Comandos**       | **Destino**                | **Tipo**   |
-|--------------------|-----------------------------|------------|
+|--------------------|----------------------------|------------|
 | Verificar na base de dados| Decisão "Dados válidos?"       | Automático |
 
 ---
@@ -58,8 +58,8 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ### Gateway - Dados válidos?
 | **Campo**         | **Tipo**    | **Restrições**                                 | **Valor** |
-|--------------------|-------------|-----------------------------------------------|-------------------|
-| Verificação de dados| Booleano    | Resultado da validação do sistema  | True / False                |
+|--------------------|-------------|-----------------------------------------------|-----------|
+| Verificação de dados| Booleano    | Resultado da validação do sistema  | True / False        |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
@@ -75,27 +75,28 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 |--------------------|----------------------------------|------------|
 | Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema   |
 
+
 #### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
 |--------------------|-------------|-------------------------------|------------|
-| Persistência dos dados do usuário  | Serviço | Validação prévia obrigatória  | Registro      |
+| Persistência dos dados do usuário  | Serviço | Validação prévia obrigatória  | Registro  |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-|Inserir novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema   |
+|Armazenar novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema |
 
 
 
 
 ## Atividade 4 – Atribuir Perfil (Sistema)
 
-| **Campo**         | **Tipo**    | **Restrições**                                 | **Valor ** |
-|--------------------|-------------|-----------------------------------------------|------------|
-| Definifição de perfil   | Automático    | Baseado no campo "Tipo de usuário"     | Perfil     |
+| **Campo**               | **Tipo**    | **Restrições**                         | **Valor ** |
+|-------------------------|-------------|----------------------------------------|------------|
+| Definifição de perfil   | Automático  | Baseado no campo "Tipo de usuário"     | Perfil     |
 
-| **Comandos**       | **Destino**                     | **Tipo**    |
-|--------------------|---------------------------------|---------- --|
+| **Comandos**       | **Destino**                                   | **Tipo**  |
+|--------------------|-----------------------------------------------|-----------|
 |Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema   |
 
 
@@ -109,7 +110,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**       | **Destino**                 | **Tipo**   |
 |--------------------|-----------------------------|------------|
-| Apresentar página de confirmação | Tela de perfil    | Sistema    |
+| Apresentar página de confirmação | Tela de perfil| Sistema    |
 
 
 ---
