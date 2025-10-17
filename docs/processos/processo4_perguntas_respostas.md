@@ -23,7 +23,7 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 
 # Detalhamento das atividades  
 
-## Atividade 1 – Acessar área de Postagens (Usuário)
+### Atividade 1 – Acessar área de Postagens (Usuário)
 
 | **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
 |-------------------|----------------|-----------------------------|-------------------|
@@ -35,7 +35,7 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 
 ---
 
-## Gateway - Pergunta ou Resposta?
+### Gateway - Pergunta ou Resposta?
 | **Campo**          | **Tipo**    | **Restrições**                                | **Valor** |
 |--------------------|-------------|-----------------------------------------------|-----------|
 | Escolha do usuário | Decisão     | Usuário escolhe fluxo | Pergunta / Resposta               |
@@ -45,7 +45,7 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 | Branching          | Pergunta → Fazer pergunta; Resposta → Selecionar pergunta para responder | Usuário (decisão) |
 
 
-## Fluxo Pergunta:
+### Fluxo Pergunta:
 
 Atividade 1: Clicar em "Fazer uma pergunta" (Usuário)
 
@@ -68,7 +68,7 @@ Atividade 2: Preencher formulário de dúvida (Usuário)
 | Preecher e submeter| Cnvergência para confirmar envio | Usuário (entrada) |
 
 
-## Fluxo Resposta:
+### Fluxo Resposta:
 Atividade 1: Selecionar pergunta que deseja responder (Usuário)
 
 | **Campo**          | **Tipo**        | **Restrições**               | ** Valor **|
@@ -90,7 +90,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 | Preecher e submeter| Convergência para confirmar envio| Usuário (entrada) |
 
 
-## Gateway - Tarefas convergem (confirmação)
+### Gateway - Tarefas convergem (confirmação)
 | **Campo**          | **Tipo**    | **Restrições**                                | **Valor** |
 |--------------------|-------------|-----------------------------------------------|-----------|
 |Confirmação de envio| Decisão     | Usuário confirma revisar antes de enviar      | Confirmar / Cancelar|
@@ -101,7 +101,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 
 
-## Atividade 2 - Confirmar envio da postagem (Usuário)
+### Atividade 2 - Confirmar envio da postagem (Usuário)
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
 |--------------------|-------------|-------------------------------|------------|
@@ -114,7 +114,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 ---
 
-## Atividade 3 – Registrar postagem (Sistema)
+### Atividade 3 – Registrar postagem (Sistema)
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
@@ -127,7 +127,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 ---
 
-## Atividade 4 – Organizar por Disciplina/Curso (Sistema)
+### Atividade 4 – Organizar por Disciplina/Curso (Sistema)
 
 | Campo | Tipo | Restrições |  **Valor** |
 |-------|------|------------|------------|
@@ -140,7 +140,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 ---
 
-## Atividade 5 – Exibe mensagem de sucesso (Sistema → Usuário)
+### Atividade 5 – Exibe mensagem de sucesso (Sistema → Usuário)
 
 | **Campo**               | **Tipo**    | **Restrições**                         | **Valor ** |
 |-------------------------|-------------|----------------------------------------|------------|
@@ -153,7 +153,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 ---
 
-## Atividade 6 – Visualizar postagem feita (Usuário)
+### Atividade 6 – Visualizar postagem feita (Usuário)
  
 | **Campo**         | **Tipo**        | **Restrições**                              | **Valor default** |
 |-------------------|-----------------|---------------------------------------------|-------------------|
