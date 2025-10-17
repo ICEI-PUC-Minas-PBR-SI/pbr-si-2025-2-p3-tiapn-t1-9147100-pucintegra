@@ -13,80 +13,105 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ---
 
-#### Detalhamento das atividades  
+# Detalhamento das atividades  
 
-#### Atividade 1 – Acessar tela de login (Usuário)
+## Atividade 1 – Selecionar campo "Fazer Login" (Usuário)
 
-| **Campo**        | **Tipo**        | **Restrições**            | **Valor default** |
-|-------------------|-----------------|---------------------------|-------------------|
-| botão login       | Botão           | único, visível            |                   |
+| **Campo**           | **Tipo**      | **Restrições**          | **Valor** |
+|-------------------- |---------------|-------------------------|-----------|
+| Botão "Fazer Login" | Botão         | Único, visível          | Default   |
 
 | **Comandos**       | **Destino**            | **Tipo**   |
-|--------------------|-------------------------|------------|
-| clicar             | Exibe formulário login | default    |
+|--------------------|------------------------|------------|
+| Clicar             | Exibe formulário login | Usuário    |
 
 ---
 
-#### Atividade 2 – Exibir formulário de login (Sistema)
+## Atividade 2 – Inserir Credenciais de acesso (Usuário)
 
-| **Campo**          | **Tipo**        | **Restrições**                               | **Valor default** |
+| **Campo**           | **Tipo**        | **Restrições**                               | **Valor ** |
 |---------------------|-----------------|----------------------------------------------|-------------------|
-| formulário login    | Caixa de texto  | campos obrigatórios: e-mail e senha          |                   |
+|Campos: E-mail institucional, Senha    | Formulário  | campos obrigatórios: e-mail com domínio institucional; e senha |  Default    |
 
-| **Comandos**       | **Destino**             | **Tipo**   |
-|--------------------|--------------------------|------------|
-| preencher login    | Inserir credenciais      | default    |
-
----
-
-#### Atividade 3 – Inserir credenciais (Usuário)
-
-| **Campo**     | **Tipo**        | **Restrições**                                                | **Valor default** |
-|---------------|-----------------|---------------------------------------------------------------|-------------------|
-| e-mail        | Caixa de texto  | deve existir no cadastro, formato institucional obrigatório   |                   |
-| senha         | Caixa de texto  | deve coincidir com senha cadastrada                           |                   |
-
-| **Comandos**       | **Destino**                  | **Tipo**   |
-|--------------------|-------------------------------|------------|
-| confirmar login    | Validar credenciais           | default    |
+| **Comandos**       | **Destino**                 | **Tipo**   |
+|--------------------|-----------------------------|------------|
+| Preencher login e submeter | Validar credenciais | Usuário    |
 
 ---
 
-#### Atividade 4 – Validar credenciais (Sistema)
+## Atividade 3 – Validar credenciais (Sistema)
 
-| **Campo**            | **Tipo**     | **Restrições**                        | **Valor default** |
+| **Campo**     | **Tipo**        | **Restrições**                          | **Valor ** |
+|---------------|-----------------|-----------------------------------------|-------------------|
+| Autenticação  | Serviço de autenticação  | Consulta à base de usuários;   | Válido / Inválido |
+
+
+| **Comandos**       | **Destino**                   | **Tipo**  |
+|--------------------|-------------------------------|-----------|
+| Verificar credenciais e políticas | Decisão "Credenciais válidas?" | Sistema (autenticação) |
+
+
+---
+
+### Gateway - Credenciais válidas?
+| **Campo**           | **Tipo**    | **Restrições**                                | **Valor** |
+|-------------------- |-------------|-----------------------------------------------|-----------|
+| Resultado da autenticação| Booleano   | Resultado da validação do sistema  | True / False     |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Branching          | SIM → Gerar token; NÃO → Exibir mensagem de erro | Sistema (decisão)   |
+
+
+#### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Apresentar o erro ao usuário e permitir correção| Formulário de Login | Sistema (feedback)  |
+
+
+#### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Emissão de token   | Serviço     | Validação prévia obrigatória  | Token de sessão válido |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+|Criar token e armazenar sessão| Redirecionar para Tela Principal  | Sistema (autenticação) |
+
+---
+
+
+#### Atividade 4 – Redirecionar para Tela Principal (Sistema → Usuário)
+
+| **Campo**             | **Tipo**     | **Restrições**                        | **Valor ** |
 |-----------------------|--------------|---------------------------------------|-------------------|
-| validação login       | Booleano     | autenticação obrigatória              |                   |
+| Navegação pós-login   | Navegação    | Necessita token válido                | Tela Principal com dados do usuário |
 
 | **Comandos**         | **Destino**                   | **Tipo**   |
 |----------------------|--------------------------------|------------|
-| credenciais válidas  | Liberar acesso                 | default    |
-| credenciais inválidas| Exibir mensagem de erro        | cancel     |
+| Redirecionar automaticamente | Visualizar tela de Perfil | Sistema (navegação)|
+
 
 ---
 
-#### Atividade 5 – Exibir mensagem de erro (Sistema)
+#### Atividade 5 – Visualizar tela de Perfil (Usuário)
 
-| **Campo**        | **Tipo**      | **Restrições**                       | **Valor default** |
-|-------------------|---------------|--------------------------------------|-------------------|
-| mensagem erro     | Texto         | exibida sempre que login falhar      |                   |
+| **Campo**        | **Tipo**      | **Restrições**                       | **Valor ** |
+|------------------|---------------|--------------------------------------|------------|
+| Perfil do usuário autenticado    | Página UI         | Exibe informações pessoais e opções  | Dados |
 
 | **Comandos**       | **Destino**            | **Tipo**   |
-|--------------------|-------------------------|------------|
-| tentar novamente   | Exibir tela de login    | default    |
+|--------------------|------------------------|------------|
+| Visualizar / Editar| Não se aplica          | Usuário (visualização) |
 
 ---
 
-#### Atividade 6 – Liberar acesso (Sistema)
-
-| **Campo**        | **Tipo**       | **Restrições**                          | **Valor default** |
-|-------------------|----------------|-----------------------------------------|-------------------|
-| acesso autorizado | Booleano       | válido somente para usuários cadastrados|                   |
-
-| **Comandos**       | **Destino**             | **Tipo**   |
-|--------------------|--------------------------|------------|
-| prosseguir sistema | Área principal da plataforma | default |
----
 
 _Tipos de dados utilizados:_  
 
