@@ -20,55 +20,76 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 
 [Este modelo representaria o fluxo otimizado do processo de cadastro, incorporando as melhorias propostas. Ele pode incluir etapas como: Início do Cadastro, Preenchimento de Dados, Validação Automática, Aprovação/Rejeição, Notificação ao Usuário, e Fim do Cadastro.]
 
-### Detalhamento das Atividades
+# Processo 1: Cadastro de Paciente
 
-#### Nome da atividade: Início do Cadastro
+## Nome da atividade: Início do Cadastro
 
-| Campo | Tipo | Restrições | Valor default |
-|---|---|---|---|
-| tipo_cadastro | Seleção única | Obrigatório | Paciente |
+| Campo         | Tipo          | Restrições | Valor default |
+|---------------|---------------|------------|---------------|
+| tipo_cadastro | Seleção única | Obrigatório | Paciente      |
 
-| Comandos | Destino | Tipo |
-|---|---|---|
+### Comandos
+
+| Comandos        | Destino                 | Tipo    |
+|-----------------|-------------------------|---------|
 | Iniciar Cadastro | Preenchimento de Dados | default |
 
-#### Nome da atividade: Preenchimento de Dados (Paciente)
+## Nome da atividade: Preenchimento de Dados (Paciente)
 
-| Campo | Tipo | Restrições | Valor default |
-|---|---|---|---|
-| nome_completo | Caixa de texto | Obrigatório, mínimo 3 caracteres | |
-| cpf | Número | Obrigatório, 11 dígitos, formato XXX.XXX.XXX-XX | |
-| data_nascimento | Data | Obrigatório, formato DD-MM-AAAA, maior de 18 anos | |
-| endereco | Área de texto | Obrigatório | |
-| telefone | Caixa de texto | Obrigatório, formato (XX) XXXXX-XXXX | |
-| email | Caixa de texto | Obrigatório, formato de e-mail | |
+| Campo             | Tipo          | Restrições                                  | Valor default |
+|-------------------|---------------|---------------------------------------------|---------------|
+| nome_completo     | Caixa de texto | Obrigatório, mínimo 3 caracteres            |               |
+| cpf               | Número        | Obrigatório, 11 dígitos, formato XXX.XXX.XXX-XX |               |
+| data_nascimento   | Data          | Obrigatório, formato DD-MM-AAAA, maior de 18 anos |               |
+| endereco          | Área de texto | Obrigatório                                 |               |
+| telefone          | Caixa de texto | Obrigatório, formato (XX) XXXXX-XXXX        |               |
+| email             | Caixa de texto | Obrigatório, formato de e-mail              |               |
 
-| Comandos | Destino | Tipo |
-|---|---|---|
-| Próximo | Validação de Dados | default |
-| Cancelar | Início do Cadastro | cancel |
+### Comandos
 
+| Comandos | Destino            | Tipo    |
+|----------|--------------------|---------|
+| Próximo  | Validação de Dados | default |
+| Cancelar | Início do Cadastro | cancel  |
 
-#### Nome da atividade: Validação de Dados
+## Nome da atividade: Informações Médicas
 
-| Campo | Tipo | Restrições | Valor default |
-|---|---|---|---|
-| status_validacao | Caixa de texto | Somente leitura | Em validação |
+| Campo             | Tipo          | Restrições      | Valor default |
+|-------------------|---------------|-----------------|---------------|
+| condicoes_medicas | Caixa de seleção | Múltipla seleção | Nenhum        |
 
-| Comandos | Destino | Tipo |
-|---|---|---|
-| Concluído | Notificação de Cadastro | default |
-| Erro na Validação | Preenchimento de Dados | erro |
+### Comandos
 
-#### Nome da atividade: Notificação de Cadastro
+| Comandos | Destino            | Tipo    |
+|----------|--------------------|---------|
+| Próximo  | Validação de Dados | default |
+| Voltar   | Preenchimento de Dados | back    |
 
-| Campo | Tipo | Restrições | Valor default |
-|---|---|---|---|
+## Nome da atividade: Validação de Dados
+
+| Campo            | Tipo          | Restrições      | Valor default |
+|------------------|---------------|-----------------|---------------|
+| status_validacao | Caixa de texto | Somente leitura | Em validação  |
+
+### Comandos
+
+| Comandos         | Destino                 | Tipo    |
+|------------------|-------------------------|---------|
+| Concluído        | Notificação de Cadastro | default |
+| Erro na Validação | Preenchimento de Dados  | erro    |
+
+## Nome da atividade: Notificação de Cadastro
+
+| Campo                | Tipo         | Restrições      | Valor default                      |
+|----------------------|--------------|-----------------|------------------------------------|
 | mensagem_notificacao | Área de texto | Somente leitura | Seu cadastro foi concluído com sucesso! |
 
-| Comandos | Destino | Tipo |
-|---|---|---|
-| Fechar | Fim do Processo 1 | default |
+### Comandos
+
+| Comandos | Destino         | Tipo    |
+|----------|-----------------|---------|
+| Fechar   | Fim do Processo 1 | default |
+
 
 ## Wireframe 
 
