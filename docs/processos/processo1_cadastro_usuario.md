@@ -25,7 +25,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
-| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Default    |
+| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Usuário (interação)   |
 
 ---
 
@@ -37,7 +37,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
-| Preencher formulário e submeter | Validação dos dados | Usuário     |
+| Preencher formulário e submeter | Validação dos dados | Usuário (entrada de dados) |
 
 
 ---
@@ -51,7 +51,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**       | **Destino**                | **Tipo**   |
 |--------------------|----------------------------|------------|
-| Verificar na base de dados| Decisão "Dados válidos?"       | Automático |
+| Verificar na base de dados| Decisão "Dados válidos?"       | Sistema (automático)|
 
 ---
 
@@ -63,7 +63,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Branching          | Decisão "Dados válidos?"         | Sistema    |
+| Branching          | Decisão "Dados válidos?"         | Sistema (decisão)|
 
 
 #### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
@@ -74,7 +74,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema   |
+| Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema (feedback) |
 
 
 #### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
@@ -85,7 +85,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-|Armazenar novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema |
+|Armazenar novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema (persistência) |
 
 
 ---
@@ -98,7 +98,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**       | **Destino**                                   | **Tipo**  |
 |--------------------|-----------------------------------------------|-----------|
-|Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema   |
+|Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema (automático) |
 
 
 ---
@@ -111,7 +111,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**       | **Destino**                 | **Tipo**   |
 |--------------------|-----------------------------|------------|
-| Apresentar página de confirmação | Tela de perfil| Sistema    |
+| Apresentar página de confirmação | Tela de perfil| Sistema (feedback)|
 
 
 ---
@@ -124,7 +124,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**       | **Destino**          | **Tipo**   |
 |--------------------|----------------------|------------|
-| Navegar no perfil  | Não se aplica        | Usuário    |
+| Navegar no perfil  | Não se aplica        | Usuário (visualização)|
 
 ---
 
