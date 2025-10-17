@@ -55,6 +55,39 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
+
+#### Gateway - Dados válidos?
+| **Campo**         | **Tipo**    | **Restrições**                                 | **Valor** |
+|--------------------|-------------|-----------------------------------------------|-------------------|
+| Verificação de dados| Booleano    | Resultado da validação do sistema  | True / False                |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Branching          | Decisão "Dados válidos?"         | Sistema    |
+
+## Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema   |
+
+## Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Persistência dos dados do usuário  | Serviço | Validação prévia obrigatória  | Registro      |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+|Inserir novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema   |
+
+
+
+
 #### Atividade 4 – Validar informações (Sistema)
 
 | **Campo**         | **Tipo**    | **Restrições**                                 | **Valor default** |
