@@ -175,13 +175,16 @@ Esse banco de dados é utilizado para registrar pacientes, profissionais de saú
 -- Criação da tabela Paciente
 CREATE TABLE Paciente (
     id_paciente INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(120) NOT NULL,
-    cpf CHAR(14) UNIQUE,
-    data_nascimento DATE,
-    telefone VARCHAR(20),
-    email VARCHAR(120) UNIQUE,
-    endereco VARCHAR(180),
-    senha_hash VARCHAR(255),
+    nome_completo VARCHAR(255) NOT NULL,
+    cpf VARCHAR(14) UNIQUE NOT NULL,
+    data_nascimento DATE NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    telefone VARCHAR(20) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    hipertensao BOOLEAN DEFAULT FALSE,
+    diabetes BOOLEAN DEFAULT FALSE,
+    mobilidade_reduzida BOOLEAN DEFAULT FALSE,
+    outros_condicoes TEXT,
     criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
     atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
