@@ -31,35 +31,27 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 #### Atividade 2 – Preencher formulário de cadastro (Sistema)
 
-| **Campo**             | **Tipo**        | **Restrições**                                        | **Valor default** |
+| **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
-| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | cTodos obrigatórios; e-mail com domínio institucional |                   |
+| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional |                   |
 
-| **Comandos**          | **Destino**                   | **Tipo**    |
+| **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
-| preencher formulário  | Preencher dados do cadastro    | default    |
-| cancelar              | Fim do processo                | cancel     |
+| Preencher formulário e submeter | Validação dos dados | Usuário    |
+
 
 ---
 
-#### Atividade 3 – Preencher dados de cadastro (Usuário)
+#### Atividade 3 – Validar dados de cadastro (Usuário)
 
-## Atividade 3 – Exibir formulário de dados (Sistema)
-| Campo | Tipo | Restrições |
-|-------|------|------------|
-| Nome completo | Texto | resposta obrigatória |
-| CPF | Numérico | 11 dígitos, formato XXX.XXX.XXX-XX, obrigatório |
-| E-mail institucional | Texto | formato XXX@sga.pucminas.br, obrigatório |
-| Matrícula | Texto/Numérico | obrigatório |
-| Telefone | Numérico | formato (XX)XXXXX-XXXX, obrigatório |
-| Senha | Texto | 8 caracteres, contendo maiúscula, minúscula, número e caractere especial, obrigatório |
-| Confirmar senha | Texto | 8 caracteres, contendo maiúscula, minúscula, número e caractere especial, obrigatório |
-| Tipo de usuário | Combo box | Aluno, professor ou monitor, obrigatório |
+| Campo | Tipo | Restrições |  **Valor** |
+|-------|------|------------|------------|
+| Validação de cadastro | Automático | Consulta à base da universidade; formato de e-mail institucional | True / False |
 
 
 | **Comandos**       | **Destino**                | **Tipo**   |
 |--------------------|-----------------------------|------------|
-| confirmar dados    | Validar informações         | default    |
+| Verificar na base de dados| Decisão "Dados válidos?"       | Automático |
 
 ---
 
