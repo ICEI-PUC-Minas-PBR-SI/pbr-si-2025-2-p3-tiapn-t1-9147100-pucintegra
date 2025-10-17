@@ -25,7 +25,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
-| Clicar para abrir perfil| Opções de personalização| Usuário |
+| Clicar para abrir perfil| Opções de personalização| Usuário (interação) |
 
 ---
 
@@ -92,7 +92,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 #### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Feedback de erro   | Mensagem UI | Mensagem apresentando o que deve ser corrigido | Texto |
 
@@ -103,7 +103,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 #### Atividade (SIM): Salvar alterações no Banco de Dados (Sistema)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Persistência das mudanças | Serviço | Validação prévia obrigatória   | Registro atualizado |
 
@@ -116,7 +116,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ## Atividade 6 – Exibir alterações no Perfil (Sistema → Usuário)
 
-| **Campo**               | **Tipo**    | **Restrições**                         | **Valor ** |
+| **Campo**               | **Tipo**    | **Restrições**                         | **Valor** |
 |-------------------------|-------------|----------------------------------------|------------|
 | Atualização visual do perfil  | UI refresh  | Cache invalidation se necessário    | Novos dados exibidos |
 
@@ -129,7 +129,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ## Atividade 7 – Exibir mensagem de Sucesso (Sistema → Usuário)
  
-| **Campo**         | **Tipo**        | **Restrições**          | **Valor default** |
+| **Campo**         | **Tipo**        | **Restrições**          | **Valor** |
 |-------------------|-----------------|-------------------------|-------------------|
 | Mensagem de sucesso | Mensagem UI   | Mensagem curta e clara  |  Texto            |
 
@@ -140,7 +140,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ---
 
-## Atividade 6 – Visualizar alterações no perfil (Usuário)
+## Atividade 8 – Visualizar alterações no perfil (Usuário)
 
 | **Campo**            | **Tipo**    | **Restrições**                         | **Valor ** |
 |----------------------|-------------|----------------------------------------|------------|
