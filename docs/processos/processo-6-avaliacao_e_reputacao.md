@@ -61,3 +61,6 @@ Por outro lado, o proprietário (locador) do espaço, ao acessar o perfil do loc
 | **Comandos** | **Destino** | **Tipo** |
 | :--- | :--- | :--- |
 | Enviar | Fim da Avaliação | default |
+
+## Wireframe
+![Wireframe do PROCESSO 6](../images/Wireframe-Processo6.jpg "Avaliação e Reputação").
