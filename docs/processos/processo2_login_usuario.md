@@ -41,7 +41,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ## Atividade 3 – Validar credenciais (Sistema)
 
-| **Campo**     | **Tipo**        | **Restrições**                          | **Valor ** |
+| **Campo**     | **Tipo**        | **Restrições**                          | **Valor** |
 |---------------|-----------------|-----------------------------------------|-------------------|
 | Autenticação  | Serviço de autenticação  | Consulta à base de usuários;   | Válido / Inválido |
 
