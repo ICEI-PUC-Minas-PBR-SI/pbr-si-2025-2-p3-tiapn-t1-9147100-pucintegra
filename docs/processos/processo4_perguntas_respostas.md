@@ -61,7 +61,7 @@ Atividade 2: Preencher formulário de dúvida (Usuário)
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
 |--------------------|-------------|-------------------------------|------------|
-| Campos: Título, Conteúdo, Curso, Disciplina, Palavras-chave | Formulário | Título obrigatório; conteúdo mínimo; curso/disciplina validos | Valores informados  |
+| Campos: Título, Conteúdo, Curso, Disciplina, Palavras-chave | Formulário | Título obrigatório; conteúdo mínimo; curso/disciplina validos |Valores informados|
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
@@ -69,7 +69,7 @@ Atividade 2: Preencher formulário de dúvida (Usuário)
 
 
 #### Fluxo Resposta:
-#####Atividade 1: Selecionar pergunta que deseja responder (Usuário)
+Atividade 1: Selecionar pergunta que deseja responder (Usuário)
 
 | **Campo**          | **Tipo**        | **Restrições**               | ** Valor **|
 |--------------------|-----------------|------------------------------|------------|
@@ -97,11 +97,11 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Branching          | Confirmar → Confirmar envio da postagem       | Usuário (decisão) |
+| Branching          | Confirmar envio da postagem      | Usuário (decisão) |
 
 
 
-#### Atividade - Confirmar envio da postagem (Usuário)
+#### Atividade 2 - Confirmar envio da postagem (Usuário)
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
 |--------------------|-------------|-------------------------------|------------|
@@ -112,71 +112,57 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 |Clicar para enviar  | Registrar postagem               | Usuário (ação) |
 
 
-
 ---
 
-### Atividade 2 – Preencher formulário de cadastro (Sistema)
+### Atividade 3 – Registrar postagem (Sistema)
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
-| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional |                   |
+| Persistência da postagem | Serviço      | Inserir metadados (autor, disciplina, timestamp); validação de conteúdo   | Postagem criada |
 
 | **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
-| Preencher formulário e submeter | Validação dos dados | Usuário     |
+| Salvar no BD          | Organizar por Disciplina/Curso | Sistema (persistência)|
 
 
 ---
 
-### Atividade 3 – Validar matrícula e E-mail (Sistema)
+### Atividade 4 – Organizar por Disciplina/Curso (Sistema)
 
 | Campo | Tipo | Restrições |  **Valor** |
 |-------|------|------------|------------|
-| Validação de cadastro | Automático | Consulta à base da universidade; formato de e-mail institucional | True / False |
+| Indexação / categorização | Automático | Baseado nos campos do formulário | Postagem indexada |
 
 
 | **Comandos**       | **Destino**                | **Tipo**   |
 |--------------------|----------------------------|------------|
-| Verificar na base de dados| Decisão "Dados válidos?"       | Automático |
+| Atualizar índices / categorias| Mensagem de sucesso | Sistema (indexação)|
 
 ---
 
-
-## Atividade 4 – Atribuir Perfil (Sistema)
+## Atividade 5 – Exibe mensagem de sucesso (Sistema → Usuário)
 
 | **Campo**               | **Tipo**    | **Restrições**                         | **Valor ** |
 |-------------------------|-------------|----------------------------------------|------------|
-| Definifição de perfil   | Automático  | Baseado no campo "Tipo de usuário"     | Perfil     |
+| Mensagem de sucesso     | Mensagem UI | Mensagem com link para visualizar postagem | Texto  |
 
 | **Comandos**       | **Destino**                                   | **Tipo**  |
 |--------------------|-----------------------------------------------|-----------|
-|Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema   |
+|Mostrar notificação | Postagem feita                     | Sistema (feedback)|
 
 
 ---
 
-## Atividade 5 – Exibir confirmação de cadastro (Sistema → Usuário)
+## Atividade 6 – Visualizar postagem feita (Usuário)
  
 | **Campo**         | **Tipo**        | **Restrições**                              | **Valor default** |
 |-------------------|-----------------|---------------------------------------------|-------------------|
-| Mensagem de sucesso   | Mensagem UI   | Deve conter orientação (ex.: prossiga para login)  |  Texto   |
+| Página da postagem| Página UI       | Exibe título, conteúdo, autor, data, feedbacks |Conteúdo publicado |
 
 | **Comandos**       | **Destino**                 | **Tipo**   |
 |--------------------|-----------------------------|------------|
-| Apresentar página de confirmação | Tela de perfil| Sistema    |
+| Visualizar postagem| Não se aplica               | Usuário (visualização)|
 
-
----
-
-## Atividade 6 – Visualizar tela de perfil (Usuário)
-
-| **Campo**            | **Tipo**    | **Restrições**                       | **Valor ** |
-|----------------------|-------------|--------------------------------------|------------|
-| Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados    |
-
-| **Comandos**       | **Destino**          | **Tipo**   |
-|--------------------|----------------------|------------|
-| Navegar no perfil  | Não se aplica        | Usuário    |
 
 ---
 
