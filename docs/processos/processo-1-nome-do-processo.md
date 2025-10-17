@@ -73,6 +73,5 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 ## Wireframe 
 
 <img width="1364" height="693" alt="Captura de tela 2025-10-17 184714" src="https://github.com/user-attachments/assets/896e4e53-eae8-422d-a8b5-7d60a209dc78" />
-
 <img width="1347" height="692" alt="Captura de tela 2025-10-17 184731" src="https://github.com/user-attachments/assets/4a2f8aea-0567-43f3-b782-be95cd5d68fb" />
 
