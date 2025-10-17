@@ -17,9 +17,9 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 #### Atividade 1 – Acessar tela de login (Usuário)
 
-| **Campo**        | **Tipo**        | **Restrições**            | **Valor default** |
+| **Campo**        | **Tipo**        | **Restrições**            | **Valor** |
 |-------------------|-----------------|---------------------------|-------------------|
-| botão login       | Botão           | único, visível            |                   |
+| botão login       | Botão           | único, visível            |       Default            |
 
 | **Comandos**       | **Destino**            | **Tipo**   |
 |--------------------|-------------------------|------------|
@@ -29,9 +29,9 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 #### Atividade 2 – Exibir formulário de login (Sistema)
 
-| **Campo**          | **Tipo**        | **Restrições**                               | **Valor default** |
+| **Campo**          | **Tipo**        | **Restrições**                               | **Valor** |
 |---------------------|-----------------|----------------------------------------------|-------------------|
-| formulário login    | Caixa de texto  | campos obrigatórios: e-mail e senha          |                   |
+| formulário login    | Caixa de texto  | campos obrigatórios: e-mail e senha          |       Default            |
 
 | **Comandos**       | **Destino**             | **Tipo**   |
 |--------------------|--------------------------|------------|
@@ -43,8 +43,8 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 | **Campo**     | **Tipo**        | **Restrições**                                                | **Valor default** |
 |---------------|-----------------|---------------------------------------------------------------|-------------------|
-| e-mail        | Caixa de texto  | deve existir no cadastro, formato institucional obrigatório   |                   |
-| senha         | Caixa de texto  | deve coincidir com senha cadastrada                           |                   |
+| e-mail        | Caixa de texto  | deve existir no cadastro, formato institucional obrigatório   | @sga.pucminas.br  |
+| senha         | Caixa de texto  | deve coincidir com senha cadastrada                           | Não se Aplica     |
 
 | **Comandos**       | **Destino**                  | **Tipo**   |
 |--------------------|-------------------------------|------------|
