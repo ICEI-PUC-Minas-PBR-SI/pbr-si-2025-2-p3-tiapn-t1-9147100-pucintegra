@@ -83,7 +83,21 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
  
 ---
 
-### 3️⃣ Tela de Busca de Profissionais  
+### 3️⃣ Tela de Login
+
+![Cadastro de Login - Protótipo Baixa de Fidelidade](https://github.com/user-attachments/assets/64bc7d37-1d34-4ce1-9c43-9b5c2726ab41)
+
+#### Descrição da Tela  
+- **Objetivo:** Permitir que o usuário acesse sua conta na plataforma **Medlar**, inserindo suas credenciais de forma simples e segura.  
+- **Campos de entrada:** E-mail e Senha, garantindo a autenticação correta do usuário cadastrado.  
+- **Botões de ação:**  
+  - **Entrar** — realiza o login no sistema, validando as credenciais informadas.  
+- **Link complementar:**  
+  - **Registrar-se** — direciona o usuário para a tela de criação de nova conta, caso ainda não possua cadastro.  
+
+---
+
+### 4️⃣ Tela de Busca de Profissionais  
 
 <img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
 
