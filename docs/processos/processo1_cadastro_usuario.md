@@ -17,7 +17,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 # Detalhamento das atividades  
 
-#### Atividade 1 – Acessar tela de cadastro (Usuário)
+### Atividade 1 – Acessar tela de cadastro (Usuário)
 
 | **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
 |-------------------|----------------|-----------------------------|-------------------|
@@ -29,7 +29,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-#### Atividade 2 – Preencher formulário de cadastro (Sistema)
+### Atividade 2 – Preencher formulário de cadastro (Sistema)
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
@@ -42,7 +42,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-#### Atividade 3 – Validar dados de cadastro (Usuário)
+### Atividade 3 – Validar dados de cadastro (Usuário)
 
 | Campo | Tipo | Restrições |  **Valor** |
 |-------|------|------------|------------|
