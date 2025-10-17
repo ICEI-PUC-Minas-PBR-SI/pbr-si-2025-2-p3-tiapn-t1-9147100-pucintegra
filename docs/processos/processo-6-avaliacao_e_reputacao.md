@@ -63,4 +63,4 @@ Por outro lado, o proprietário (locador) do espaço, ao acessar o perfil do loc
 | Enviar | Fim da Avaliação | default |
 
 ## Wireframe
-![Wireframe do PROCESSO 6](../images/Wireframe-Processo6.jpg "Avaliação e Reputação").
+![Wireframe do PROCESSO 6](../images/Wireframe-Processo-6.jpg "Avaliação e Reputação").
