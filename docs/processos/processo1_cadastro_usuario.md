@@ -15,7 +15,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-#### Detalhamento das atividades  
+# Detalhamento das atividades  
 
 #### Atividade 1 – Acessar tela de cadastro (Usuário)
 
