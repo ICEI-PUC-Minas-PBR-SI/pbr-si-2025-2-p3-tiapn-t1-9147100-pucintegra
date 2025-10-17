@@ -71,7 +71,6 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 ### 2️⃣ Tela de Cadastro de Paciente  
 
-![Sem título](https://github.com/user-attachments/assets/a5a557d9-cc23-4b71-907b-2d8b93b2c68a)
 <img src="https://github.com/user-attachments/assets/a5a557d9-cc23-4b71-907b-2d8b93b2c68a" alt="Protótipo de Baixa Fidelidade - Login" width="80%">
 
 #### Descrição da Tela  
