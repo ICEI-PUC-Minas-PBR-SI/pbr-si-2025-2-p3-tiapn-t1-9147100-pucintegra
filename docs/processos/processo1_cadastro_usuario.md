@@ -29,11 +29,11 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-#### Atividade 2 – Exibir formulário de cadastro (Sistema)
+#### Atividade 2 – Preencher formulário de cadastro (Sistema)
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor default** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
-| formulário cadastro   | Caixa de texto  | campos obrigatórios: nome, e-mail, senha, matrícula   |                   |
+| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | cTodos obrigatórios; e-mail com domínio institucional |                   |
 
 | **Comandos**          | **Destino**                   | **Tipo**    |
 |-----------------------|--------------------------------|------------|
