@@ -25,7 +25,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
-| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Default    |
+| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Usuário (interação)   |
 
 ---
 
@@ -33,11 +33,11 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
-| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional |                   |
+| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional | Valores informados pelo usuário  |
 
 | **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
-| Preencher formulário e submeter | Validação dos dados | Usuário     |
+| Preencher formulário e submeter | Validação dos dados | Usuário (entrada de dados) |
 
 
 ---
@@ -51,7 +51,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**       | **Destino**                | **Tipo**   |
 |--------------------|----------------------------|------------|
-| Verificar na base de dados| Decisão "Dados válidos?"       | Automático |
+| Verificar na base de dados| Decisão "Dados válidos?"       | Sistema (automático)|
 
 ---
 
@@ -63,68 +63,68 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Branching          | Decisão "Dados válidos?"         | Sistema    |
+| Branching          | Decisão "Dados válidos?"         | Sistema (decisão)|
 
 
 #### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor**  |
 |--------------------|-------------|-------------------------------|------------|
 | Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema   |
+| Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema (feedback) |
 
 
 #### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Persistência dos dados do usuário  | Serviço | Validação prévia obrigatória  | Registro  |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-|Armazenar novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema |
+|Armazenar novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema (persistência) |
 
 
 ---
 
 ## Atividade 4 – Atribuir Perfil (Sistema)
 
-| **Campo**               | **Tipo**    | **Restrições**                         | **Valor ** |
+| **Campo**               | **Tipo**    | **Restrições**                         | **Valor** |
 |-------------------------|-------------|----------------------------------------|------------|
 | Definifição de perfil   | Automático  | Baseado no campo "Tipo de usuário"     | Perfil     |
 
 | **Comandos**       | **Destino**                                   | **Tipo**  |
 |--------------------|-----------------------------------------------|-----------|
-|Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema   |
+|Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema (automático) |
 
 
 ---
 
 ## Atividade 5 – Exibir confirmação de cadastro (Sistema → Usuário)
  
-| **Campo**         | **Tipo**        | **Restrições**                              | **Valor default** |
+| **Campo**         | **Tipo**        | **Restrições**                              | **Valor** |
 |-------------------|-----------------|---------------------------------------------|-------------------|
 | Mensagem de sucesso   | Mensagem UI   | Deve conter orientação (ex.: prossiga para login)  |  Texto   |
 
 | **Comandos**       | **Destino**                 | **Tipo**   |
 |--------------------|-----------------------------|------------|
-| Apresentar página de confirmação | Tela de perfil| Sistema    |
+| Apresentar página de confirmação | Tela de perfil| Sistema (feedback)|
 
 
 ---
 
 ## Atividade 6 – Visualizar tela de perfil (Usuário)
 
-| **Campo**            | **Tipo**    | **Restrições**                       | **Valor ** |
+| **Campo**            | **Tipo**    | **Restrições**                       | **Valor** |
 |----------------------|-------------|--------------------------------------|------------|
 | Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados    |
 
 | **Comandos**       | **Destino**          | **Tipo**   |
 |--------------------|----------------------|------------|
-| Navegar no perfil  | Não se aplica        | Usuário    |
+| Navegar no perfil  | Não se aplica        | Usuário (visualização)|
 
 ---
 

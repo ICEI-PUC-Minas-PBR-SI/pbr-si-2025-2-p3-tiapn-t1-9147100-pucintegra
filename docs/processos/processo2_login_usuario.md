@@ -23,25 +23,25 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 | **Comandos**       | **Destino**            | **Tipo**   |
 |--------------------|------------------------|------------|
-| Clicar             | Exibe formulário login | Usuário    |
+| Clicar             | Exibe formulário login | Usuário (interação)  |
 
 ---
 
 ## Atividade 2 – Inserir Credenciais de acesso (Usuário)
 
-| **Campo**           | **Tipo**        | **Restrições**                               | **Valor ** |
+| **Campo**           | **Tipo**        | **Restrições**                               | **Valor** |
 |---------------------|-----------------|----------------------------------------------|-------------------|
 |Campos: E-mail institucional, Senha    | Formulário  | campos obrigatórios: e-mail com domínio institucional; e senha |  Default    |
 
 | **Comandos**       | **Destino**                 | **Tipo**   |
 |--------------------|-----------------------------|------------|
-| Preencher login e submeter | Validar credenciais | Usuário    |
+| Preencher login e submeter | Validar credenciais | Usuário (entrada de dados)    |
 
 ---
 
 ## Atividade 3 – Validar credenciais (Sistema)
 
-| **Campo**     | **Tipo**        | **Restrições**                          | **Valor ** |
+| **Campo**     | **Tipo**        | **Restrições**                          | **Valor** |
 |---------------|-----------------|-----------------------------------------|-------------------|
 | Autenticação  | Serviço de autenticação  | Consulta à base de usuários;   | Válido / Inválido |
 
@@ -65,7 +65,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 #### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
 
@@ -76,7 +76,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 #### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Emissão de token   | Serviço     | Validação prévia obrigatória  | Token de sessão válido |
 
@@ -89,7 +89,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 #### Atividade 4 – Redirecionar para Tela Principal (Sistema → Usuário)
 
-| **Campo**             | **Tipo**     | **Restrições**                        | **Valor ** |
+| **Campo**             | **Tipo**     | **Restrições**                        | **Valor** |
 |-----------------------|--------------|---------------------------------------|------------|
 | Navegação pós-login   | Navegação    | Necessita token válido                | Tela Principal com dados do usuário |
 
@@ -102,7 +102,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 #### Atividade 5 – Visualizar tela de Perfil (Usuário)
 
-| **Campo**        | **Tipo**      | **Restrições**                       | **Valor ** |
+| **Campo**        | **Tipo**      | **Restrições**                       | **Valor** |
 |------------------|---------------|--------------------------------------|------------|
 | Perfil do usuário autenticado    | Página UI         | Exibe informações pessoais e opções  | Dados |
 
