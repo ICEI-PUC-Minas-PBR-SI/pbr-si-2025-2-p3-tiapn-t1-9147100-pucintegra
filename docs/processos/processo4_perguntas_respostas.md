@@ -71,7 +71,7 @@ Atividade 2: Preencher formulário de dúvida (Usuário)
 ### Fluxo Resposta:
 Atividade 1: Selecionar pergunta que deseja responder (Usuário)
 
-| **Campo**          | **Tipo**        | **Restrições**               |** Valor **|
+| **Campo**          | **Tipo**        | **Restrições**               |**Valor**|
 |--------------------|-----------------|------------------------------|------------|
 | Lista de perguntas | Lista interativa| Perguntas visíveis por disciplina/curso; acesso permitido  | Pergunta selecionada |
 
@@ -81,7 +81,7 @@ Atividade 1: Selecionar pergunta que deseja responder (Usuário)
 
 Atividade 2: Preencher conteúdo da resposta (Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                |**Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                |**Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Conteúdo da resposta: Texto, Links, Imagens | Editor de texto enriquecido | Limites de tamanho; imagens com formatos válidos; links sanitizados | Conteúdo inserido |
 
@@ -103,7 +103,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 ### Atividade 2 - Confirmar envio da postagem (Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                |**Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                |**Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Botão de envio     | Botão       | Somente após preencher campos obrigatórios | Default  |
 
@@ -142,7 +142,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 ### Atividade 5 – Exibe mensagem de sucesso (Sistema → Usuário)
 
-| **Campo**               | **Tipo**    | **Restrições**                         |**Valor ** |
+| **Campo**               | **Tipo**    | **Restrições**                         |**Valor** |
 |-------------------------|-------------|----------------------------------------|------------|
 | Mensagem de sucesso     | Mensagem UI | Mensagem com link para visualizar postagem | Texto  |
 
@@ -155,7 +155,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 ### Atividade 6 – Visualizar postagem feita (Usuário)
  
-| **Campo**         | **Tipo**        | **Restrições**                              |**Valor ** |
+| **Campo**         | **Tipo**        | **Restrições**                              |**Valor** |
 |-------------------|-----------------|---------------------------------------------|-------------------|
 | Página da postagem| Página UI       | Exibe título, conteúdo, autor, data, feedbacks |Conteúdo publicado |
 
