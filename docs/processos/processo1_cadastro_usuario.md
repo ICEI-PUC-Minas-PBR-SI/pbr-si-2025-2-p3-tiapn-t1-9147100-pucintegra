@@ -42,7 +42,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-### Atividade 3 – Validar matrícula e E-mail (Usuário)
+### Atividade 3 – Validar matrícula e E-mail (Sistema)
 
 | Campo | Tipo | Restrições |  **Valor** |
 |-------|------|------------|------------|
