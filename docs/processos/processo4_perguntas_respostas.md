@@ -49,7 +49,7 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 
 Atividade 1: Clicar em "Fazer uma pergunta" (Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Botão "Fazer uma pergunta" | Botão | Único e visível  | Default  |
 
@@ -59,7 +59,7 @@ Atividade 1: Clicar em "Fazer uma pergunta" (Usuário)
 
 Atividade 2: Preencher formulário de dúvida (Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Campos: Título, Conteúdo, Curso, Disciplina, Palavras-chave | Formulário | Título obrigatório; conteúdo mínimo; curso/disciplina validos |Valores informados|
 
