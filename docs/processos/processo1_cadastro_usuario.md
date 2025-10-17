@@ -126,17 +126,6 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-#### Atividade 7 – Confirmar cadastro (Sistema)
-
-| **Campo**        | **Tipo**       | **Restrições**                      | **Valor default** |
-|-------------------|----------------|-------------------------------------|-------------------|
-| mensagem sucesso  | Texto          | exibida apenas quando cadastro ok   |                   |
-
-| **Comandos**       | **Destino**         | **Tipo**   |
-|--------------------|---------------------|------------|
-| prosseguir login   | Exibir tela de login | default    |
-
----
 
 _Tipos de dados utilizados:_  
 
