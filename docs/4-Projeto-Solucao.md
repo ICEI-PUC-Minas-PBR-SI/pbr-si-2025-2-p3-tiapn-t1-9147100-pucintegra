@@ -51,6 +51,7 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 ### 1️⃣ Protótipo de Baixa Fidelidade — Cadastro de Profissional  
 
+<img src="https://github.com/user-attachments/assets/6d9e1a0b-9857-4139-a7c5-729a9cfb218d" alt="Cadastro de Profissional - Protótipo Baixa de Fidelidade" width="40%">
 <img width="900" height="720" alt="Cadastro de Profissional - Protótipo Baixa de Fidelidade" src="https://github.com/user-attachments/assets/6d9e1a0b-9857-4139-a7c5-729a9cfb218d" />
 
 ### Descrição da Tela  
