@@ -72,7 +72,7 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 ### 2️⃣ Tela de Cadastro de Paciente  
 
 ![Sem título](https://github.com/user-attachments/assets/a5a557d9-cc23-4b71-907b-2d8b93b2c68a)
-
+<img src="https://github.com/user-attachments/assets/a5a557d9-cc23-4b71-907b-2d8b93b2c68a" alt="Protótipo de Baixa Fidelidade - Login" width="80%">
 
 #### Descrição da Tela  
 - **Objetivo:** Permitir que pacientes ou familiares realizem o cadastro inicial na plataforma Medlar, inserindo informações pessoais e de contato de forma simples e organizada.  
@@ -100,7 +100,6 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 ### 4️⃣ Tela de Busca de Profissionais  
 
 <img src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" alt="Protótipo de Baixa Fidelidade - Agenda" width="80%">
-<img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
 
 #### Descrição da Tela  
 - **Objetivo:** Permitir que o usuário (paciente ou familiar) encontre profissionais de saúde disponíveis para atendimento domiciliar, utilizando filtros de busca e informações detalhadas de perfil.  
