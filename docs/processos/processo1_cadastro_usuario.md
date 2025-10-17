@@ -19,23 +19,23 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 #### Atividade 1 – Acessar tela de cadastro (Usuário)
 
-| **Campo**         | **Tipo**       | **Restrições**              | **Valor default** |
-|--------------------|----------------|-----------------------------|-------------------|
-| botão cadastro     | Botão          | único, visível              |  Não se aplica    |
+| **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
+|-------------------|----------------|-----------------------------|-------------------|
+| Botão cadastro    | Botão          | Único, visível              |  Default          |
 
-| **Comandos**       | **Destino**            | **Tipo**   |
-|--------------------|------------------------|------------|
-| clicar             | Exibe formulário       | default    |
+| **Comandos**      | **Destino**            | **Tipo**   |
+|-------------------|------------------------|------------|
+| Clicar            | Exibe formulário       | Default    |
 
 ---
 
 #### Atividade 2 – Exibir formulário de cadastro (Sistema)
 
-| **Campo**            | **Tipo**        | **Restrições**                                        | **Valor default** |
+| **Campo**             | **Tipo**        | **Restrições**                                        | **Valor default** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
 | formulário cadastro   | Caixa de texto  | campos obrigatórios: nome, e-mail, senha, matrícula   |                   |
 
-| **Comandos**          | **Destino**                   | **Tipo**   |
+| **Comandos**          | **Destino**                   | **Tipo**    |
 |-----------------------|--------------------------------|------------|
 | preencher formulário  | Preencher dados do cadastro    | default    |
 | cancelar              | Fim do processo                | cancel     |
