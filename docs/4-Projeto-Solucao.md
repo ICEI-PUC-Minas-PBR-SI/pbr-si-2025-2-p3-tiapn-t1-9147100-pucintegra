@@ -72,7 +72,7 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 ### 2️⃣ Tela de Cadastro de Paciente  
 
 <img src="https://github.com/user-attachments/assets/a5a557d9-cc23-4b71-907b-2d8b93b2c68a" alt="Protótipo de Baixa Fidelidade - Login" width="80%">
-
+<img src="https://github.com/user-attachments/assets/a5a557d9-cc23-4b71-907b-2d8b93b2c68a" alt="Protótipo de Baixa Fidelidade - Login" width="80%" height="80%">
 #### Descrição da Tela  
 - **Objetivo:** Permitir que pacientes ou familiares realizem o cadastro inicial na plataforma Medlar, inserindo informações pessoais e de contato de forma simples e organizada.  
 - **Campos de entrada:** Nome completo, CPF, data de nascimento, telefone, e-mail e endereço, garantindo que os dados necessários sejam registrados corretamente.  
