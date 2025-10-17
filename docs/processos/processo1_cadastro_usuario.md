@@ -88,7 +88,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 |Armazenar novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema |
 
 
-
+---
 
 ## Atividade 4 – Atribuir Perfil (Sistema)
 
