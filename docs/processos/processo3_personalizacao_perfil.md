@@ -142,13 +142,13 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ## Atividade 8 – Visualizar alterações no perfil (Usuário)
 
-| **Campo**            | **Tipo**    | **Restrições**                         | **Valor ** |
+| **Campo**            | **Tipo**    | **Restrições**                         | **Valor** |
 |----------------------|-------------|----------------------------------------|------------|
 | Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados      |
 
 | **Comandos**       | **Destino**          | **Tipo**   |
 |--------------------|----------------------|------------|
-| Navegar no perfil  | Não se aplica        | Usuário    |
+| Navegar no perfil  | Não se aplica        | Usuário (visualização)    |
 
 ---
 
