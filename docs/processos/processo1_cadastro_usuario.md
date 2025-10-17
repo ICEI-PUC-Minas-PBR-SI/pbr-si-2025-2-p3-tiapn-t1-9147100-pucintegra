@@ -33,7 +33,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
-| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional |                   |
+| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional | Valores informados pelo usuário  |
 
 | **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
@@ -68,7 +68,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 #### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor**  |
 |--------------------|-------------|-------------------------------|------------|
 | Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
 
