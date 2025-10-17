@@ -85,8 +85,8 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 ### 3️⃣ Tela de Login
 
-![Cadastro de Login - Protótipo Baixa de Fidelidade](https://github.com/user-attachments/assets/64bc7d37-1d34-4ce1-9c43-9b5c2726ab41)
-<img src="https://github.com/user-attachments/assets/64bc7d37-1d34-4ce1-9c43-9b5c2726ab41" alt="Cadastro de Login - Protótipo Baixa de Fidelidade" width="40%">
+<img src="https://github.com/user-attachments/assets/64bc7d37-1d34-4ce1-9c43-9b5c2726ab41" alt="Cadastro de Login - Protótipo Baixa de Fidelidade" width="80%">
+
 #### Descrição da Tela  
 - **Objetivo:** Permitir que o usuário acesse sua conta na plataforma **Medlar**, inserindo suas credenciais de forma simples e segura.  
 - **Campos de entrada:** E-mail e Senha, garantindo a autenticação correta do usuário cadastrado.  
