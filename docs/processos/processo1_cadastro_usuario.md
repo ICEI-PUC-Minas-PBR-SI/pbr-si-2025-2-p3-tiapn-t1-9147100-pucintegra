@@ -56,7 +56,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 ---
 
 
-#### Gateway - Dados válidos?
+### Gateway - Dados válidos?
 | **Campo**         | **Tipo**    | **Restrições**                                 | **Valor** |
 |--------------------|-------------|-----------------------------------------------|-------------------|
 | Verificação de dados| Booleano    | Resultado da validação do sistema  | True / False                |
@@ -65,7 +65,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 |--------------------|----------------------------------|------------|
 | Branching          | Decisão "Dados válidos?"         | Sistema    |
 
-## Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
+#### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
 |--------------------|-------------|-------------------------------|------------|
@@ -75,7 +75,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 |--------------------|----------------------------------|------------|
 | Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema   |
 
-## Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
+#### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
 |--------------------|-------------|-------------------------------|------------|
@@ -88,41 +88,41 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 
 
-#### Atividade 4 – Validar informações (Sistema)
+## Atividade 4 – Atribuir Perfil (Sistema)
 
-| **Campo**         | **Tipo**    | **Restrições**                                 | **Valor default** |
-|--------------------|-------------|-----------------------------------------------|-------------------|
-| validação dados    | Booleano    | verificar e-mail, matrícula e força da senha  |                   |
+| **Campo**         | **Tipo**    | **Restrições**                                 | **Valor ** |
+|--------------------|-------------|-----------------------------------------------|------------|
+| Definifição de perfil   | Automático    | Baseado no campo "Tipo de usuário"     | Perfil     |
 
-| **Comandos**       | **Destino**                     | **Tipo**   |
-|--------------------|----------------------------------|------------|
-| dados válidos      | Identificar perfil               | default    |
-| dados inválidos    | Exibir mensagem de erro          | cancel     |
+| **Comandos**       | **Destino**                     | **Tipo**    |
+|--------------------|---------------------------------|---------- --|
+|Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema   |
+
 
 ---
 
-#### Atividade 5 – Identificar perfil (Sistema)
+## Atividade 5 – Exibir confirmação de cadastro (Sistema → Usuário)
+ 
+| **Campo**         | **Tipo**        | **Restrições**                              | **Valor default** |
+|-------------------|-----------------|---------------------------------------------|-------------------|
+| Mensagem de sucesso   | Mensagem UI   | Deve conter orientação (ex.: prossiga para login)  |  Texto   |
 
-| **Campo**        | **Tipo**        | **Restrições**                             | **Valor default** |
-|-------------------|-----------------|--------------------------------------------|-------------------|
-| perfil usuário    | Seleção única   | aluno (com matrícula em curso) / professor |                   |
-
-| **Comandos**       | **Destino**                | **Tipo**   |
+| **Comandos**       | **Destino**                 | **Tipo**   |
 |--------------------|-----------------------------|------------|
-| aluno              | Armazenar cadastro          | default    |
-| professor          | Armazenar cadastro          | default    |
+| Apresentar página de confirmação | Tela de perfil    | Sistema    |
+
 
 ---
 
-#### Atividade 6 – Armazenar cadastro (Banco de Dados)
+## Atividade 6 – Visualizar tela de perfil (Usuário)
 
-| **Campo**            | **Tipo**    | **Restrições**                       | **Valor default** |
-|-----------------------|-------------|--------------------------------------|-------------------|
-| cadastro registrado   | Registro    | salvar dados de forma segura         |                   |
+| **Campo**            | **Tipo**    | **Restrições**                       | **Valor ** |
+|----------------------|-------------|--------------------------------------|------------|
+| Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados    |
 
-| **Comandos**       | **Destino**               | **Tipo**   |
-|--------------------|----------------------------|------------|
-| salvar cadastro    | Confirmar cadastro         | default    |
+| **Comandos**       | **Destino**          | **Tipo**   |
+|--------------------|----------------------|------------|
+| Navegar no perfil  | Não se aplica        | Usuário    |
 
 ---
 
