@@ -170,7 +170,7 @@ O modelo físico do banco de dados **Medlar** representa a estrutura detalhada d
 
 Esse banco de dados é utilizado para registrar pacientes, profissionais de saúde, serviços, solicitações de atendimento, agendamentos, pagamentos e consultas realizados dentro da plataforma.
 
-
+<code>
 
 -- Criação da tabela Paciente
 CREATE TABLE Paciente (
@@ -306,6 +306,8 @@ CREATE TABLE Consulta (
     FOREIGN KEY (id_profissional) REFERENCES Profissional(id_profissional),
     FOREIGN KEY (id_paciente) REFERENCES Paciente(id_paciente)
 );
+
+</code>
 
 
 ### 4.4. Tecnologias
