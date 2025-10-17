@@ -68,7 +68,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 #### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
 
@@ -79,7 +79,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 #### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
 | Persistência dos dados do usuário  | Serviço | Validação prévia obrigatória  | Registro  |
 
@@ -92,7 +92,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ## Atividade 4 – Atribuir Perfil (Sistema)
 
-| **Campo**               | **Tipo**    | **Restrições**                         | **Valor ** |
+| **Campo**               | **Tipo**    | **Restrições**                         | **Valor** |
 |-------------------------|-------------|----------------------------------------|------------|
 | Definifição de perfil   | Automático  | Baseado no campo "Tipo de usuário"     | Perfil     |
 
@@ -105,7 +105,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ## Atividade 5 – Exibir confirmação de cadastro (Sistema → Usuário)
  
-| **Campo**         | **Tipo**        | **Restrições**                              | **Valor default** |
+| **Campo**         | **Tipo**        | **Restrições**                              | **Valor** |
 |-------------------|-----------------|---------------------------------------------|-------------------|
 | Mensagem de sucesso   | Mensagem UI   | Deve conter orientação (ex.: prossiga para login)  |  Texto   |
 
@@ -118,7 +118,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ## Atividade 6 – Visualizar tela de perfil (Usuário)
 
-| **Campo**            | **Tipo**    | **Restrições**                       | **Valor ** |
+| **Campo**            | **Tipo**    | **Restrições**                       | **Valor** |
 |----------------------|-------------|--------------------------------------|------------|
 | Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados    |
 
