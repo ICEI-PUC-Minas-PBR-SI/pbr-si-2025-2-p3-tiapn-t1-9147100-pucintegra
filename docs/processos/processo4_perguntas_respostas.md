@@ -65,7 +65,7 @@ Atividade 2: Preencher formulário de dúvida (Usuário)
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Preecher e submeter| Cnvergência para confirmar envio | Usuário (entrada) |
+| Preecher e submeter| Convergência para confirmar envio | Usuário (entrada) |
 
 
 ### Fluxo Resposta:
