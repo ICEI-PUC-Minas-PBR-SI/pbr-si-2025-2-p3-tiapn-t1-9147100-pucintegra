@@ -99,6 +99,7 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 ### 4️⃣ Tela de Busca de Profissionais  
 
+<img src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" alt="Protótipo de Baixa Fidelidade - Agenda" width="80%">
 <img width="777" height="559" alt="aprototipo" src="https://github.com/user-attachments/assets/bc745274-c9d5-4b9f-8fa3-abf6281e7c91" />
 
 #### Descrição da Tela  
