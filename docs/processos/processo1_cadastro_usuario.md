@@ -65,6 +65,8 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 |--------------------|----------------------------------|------------|
 | Branching          | Decisão "Dados válidos?"         | Sistema    |
 
+
+
 #### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
