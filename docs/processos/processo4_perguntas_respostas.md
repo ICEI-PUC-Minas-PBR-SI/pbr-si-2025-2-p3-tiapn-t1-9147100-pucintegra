@@ -23,15 +23,95 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 
 # Detalhamento das atividades  
 
-### Atividade 1 –Acessar área de Postagens (Usuário)
+### Atividade 1 – Acessar área de Postagens (Usuário)
 
 | **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
 |-------------------|----------------|-----------------------------|-------------------|
-| Seção "Postagens" | Botão          | Único, visível              |  Default          |
+| Seção "Postagens" | Navegação UI   | Requer login concluído      |  Default          |
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
-| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Default    |
+| Clicar na seção   | Listagem de postagens e opções (perguntar/responder) | Usuário (navegação) |
+
+---
+
+### Gateway - Pergunta ou Resposta?
+| **Campo**          | **Tipo**    | **Restrições**                                | **Valor** |
+|--------------------|-------------|-----------------------------------------------|-----------|
+| Escolha do usuário | Decisão     | Usuário escolhe fluxo | Pergunta / Resposta               |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Branching          | Pergunta → Fazer pergunta; Resposta → Selecionar pergunta para responder | Usuário (decisão) |
+
+
+#### Fluxo Pergunta:
+
+Atividade 1: Clicar em "Fazer uma pergunta" (Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Botão "Fazer uma pergunta" | Botão | Único e visível  | Default  |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Clicar no botão    | Formulário de dúvida | Usuário (interação)    |
+
+Atividade 2: Preencher formulário de dúvida (Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Campos: Título, Conteúdo, Curso, Disciplina, Palavras-chave | Formulário | Título obrigatório; conteúdo mínimo; curso/disciplina validos | Valores informados  |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Preecher e submeter| Cnvergência para confirmar envio | Usuário (entrada) |
+
+
+#### Fluxo Resposta:
+#####Atividade 1: Selecionar pergunta que deseja responder (Usuário)
+
+| **Campo**          | **Tipo**        | **Restrições**               | ** Valor **|
+|--------------------|-----------------|------------------------------|------------|
+| Lista de perguntas | Lista interativa| Perguntas visíveis por disciplina/curso; acesso permitido  | Pergunta selecionada |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Clicar na pergunta | Abrir campo de resposta | Usuário (seleção)   |
+
+Atividade 2: Preencher conteúdo da resposta (Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Conteúdo da resposta: Texto, Links, Imagens | Editor de texto enriquecido | Limites de tamanho; imagens com formatos válidos; links sanitizados | Conteúdo inserido |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Preecher e submeter| Convergência para confirmar envio| Usuário (entrada) |
+
+
+### Gateway - Tarefas convergem (confirmação)
+| **Campo**          | **Tipo**    | **Restrições**                                | **Valor** |
+|--------------------|-------------|-----------------------------------------------|-----------|
+|Confirmação de envio| Decisão     | Usuário confirma revisar antes de enviar      | Confirmar / Cancelar|
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Branching          | Confirmar → Confirmar envio da postagem       | Usuário (decisão) |
+
+
+
+#### Atividade - Confirmar envio da postagem (Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Botão de envio     | Botão       | Somente após preencher campos obrigatórios | Default  |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+|Clicar para enviar  | Registrar postagem               | Usuário (ação) |
+
+
 
 ---
 
@@ -61,40 +141,6 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 
 ---
 
-
-### Gateway - Dados válidos?
-| **Campo**         | **Tipo**    | **Restrições**                                 | **Valor** |
-|--------------------|-------------|-----------------------------------------------|-----------|
-| Verificação de dados| Booleano    | Resultado da validação do sistema  | True / False        |
-
-| **Comandos**       | **Destino**                      | **Tipo**   |
-|--------------------|----------------------------------|------------|
-| Branching          | Decisão "Dados válidos?"         | Sistema    |
-
-
-#### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
-
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
-|--------------------|-------------|-------------------------------|------------|
-| Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
-
-| **Comandos**       | **Destino**                      | **Tipo**   |
-|--------------------|----------------------------------|------------|
-| Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema   |
-
-
-#### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
-
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
-|--------------------|-------------|-------------------------------|------------|
-| Persistência dos dados do usuário  | Serviço | Validação prévia obrigatória  | Registro  |
-
-| **Comandos**       | **Destino**                      | **Tipo**   |
-|--------------------|----------------------------------|------------|
-|Armazenar novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema |
-
-
----
 
 ## Atividade 4 – Atribuir Perfil (Sistema)
 
