@@ -19,114 +19,118 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 
 ![PROCESSO 4 - Envio de perguntas e respostas](../images/p4_PerguntaResposta.png "Modelo BPMN do Processo 4.")
 
-## Detalhamento das atividades
+---
 
-### Atividade 1 – Acessar feed de interação (Usuário)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Menu: Feed| Botão | Usuário deve estar logado para postar; feed pode ser público para leitura |
+# Detalhamento das atividades  
 
-**Comandos**
-- Clicar em *Feed* → **Tela de feed** é exibida com lista de perguntas e filtros (disciplina, recentes, sem resposta).
+### Atividade 1 –Acessar área de Postagens (Usuário)
+
+| **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
+|-------------------|----------------|-----------------------------|-------------------|
+| Seção "Postagens" | Botão          | Único, visível              |  Default          |
+
+| **Comandos**      | **Destino**            | **Tipo**   |
+|-------------------|------------------------|------------|
+| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Default    |
 
 ---
 
-### Atividade 2 – Escolher ação: Pergunta ou Resposta? (Usuário)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Decisão | Ação | Expor opções claras: *Fazer uma pergunta* / *Responder pergunta* |
+### Atividade 2 – Preencher formulário de cadastro (Sistema)
 
-**Comandos**
-- Selecionar *Fazer uma pergunta* → abre formulário de pergunta.  
-- Selecionar *Responder* em uma pergunta específica → abre vista da pergunta com campo de resposta.
+| **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
+|-----------------------|-----------------|-------------------------------------------------------|-------------------|
+| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional |                   |
 
----
+| **Comandos**          | **Destino**                    | **Tipo**   |
+|-----------------------|--------------------------------|------------|
+| Preencher formulário e submeter | Validação dos dados | Usuário     |
 
-### Atividade 3A – Fazer uma pergunta (Usuário)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Título | Texto (1 linha) | **Obrigatório**; máximo recomendado 150 caracteres |
-| Conteúdo | Área de texto | **Obrigatório**; mínimo 10 caracteres, máximo ~5000 |
-| Disciplina | Seleção única | **Obrigatório** quando a dúvida é acadêmica; deve mapear para disciplinas cadastradas |
-| Anexo(s) | Arquivo (pdf,png,jpg,docx) | Opcional; tamanho máximo por anexo (ex.: 5MB) |
-| Tags | Seleção múltipla | Opcional; facilita busca |
-| Visibilidade | Dropdown | Público / Só campus (conforme regras institucionais) |
-| Referência bibliográfica | Link | Opcional |
-
-**Comandos**
-- Clicar *Fazer uma pergunta* → preencher campos → clicar *Enviar* → formulário é submetido ao backend.
 
 ---
 
-### Atividade 3B – Responder a pergunta (Usuário)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Pergunta selecionada | Leitura | Exibe título, conteúdo, disciplina e contexto |
-| Resposta | Área de texto | **Obrigatório**; mínimo 5 caracteres, máximo ~5000 |
-| Anexo(s) | Arquivo | Opcional |
-| Citar fonte | Texto/Link | Opcional (recomendar boas práticas de citação) |
-| Marcar como solução | Checkbox | Só disponível para autor da pergunta ou professor/moderador |
+### Atividade 3 – Validar matrícula e E-mail (Sistema)
 
-**Comandos**
-- Selecionar pergunta → clicar *Responder* → preencher campo → clicar *Enviar* → submissão ao backend.
+| Campo | Tipo | Restrições |  **Valor** |
+|-------|------|------------|------------|
+| Validação de cadastro | Automático | Consulta à base da universidade; formato de e-mail institucional | True / False |
 
----
 
-### Atividade 4 – Receber dados (Sistema)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Payload da UI | JSON / FormData | Deve conter: user_id, role, título (se pergunta), conteúdo, disciplina_id, anexos, timestamp |
-
-**Comandos**
-- Endpoint `/questions` ou `/answers` recebe POST → coloca em processamento síncrono ou fila para validação.
+| **Comandos**       | **Destino**                | **Tipo**   |
+|--------------------|----------------------------|------------|
+| Verificar na base de dados| Decisão "Dados válidos?"       | Automático |
 
 ---
 
-### Atividade 5 – Validar dados recebidos (Sistema)
-| Campo | Tipo | Regras |
-|---|---|---|
-| Campos obrigatórios | Validação | Título/conteúdo/disciplina (quando aplicável) não podem estar vazios |
-| Tamanho | Validação | Respeitar limites (máx/min caracteres/size) |
-| Profanity / Spam | Filtro automático | Se detectar, sinalizar para moderação ou bloquear |
-| Disciplina | Consulta | disciplina_id deve existir no catálogo institucional |
 
-**Comandos**
-- Se dados corretos → seguir para armazenamento.  
-- Se incorretos → retornar erro com mensagem amigável ao usuário (ex.: "Preencha o campo X").
+### Gateway - Dados válidos?
+| **Campo**         | **Tipo**    | **Restrições**                                 | **Valor** |
+|--------------------|-------------|-----------------------------------------------|-----------|
+| Verificação de dados| Booleano    | Resultado da validação do sistema  | True / False        |
 
----
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Branching          | Decisão "Dados válidos?"         | Sistema    |
 
-### Atividade 6 – Armazenar no banco de dados (Sistema)
-| Campo | Tipo | O que é salvo |
-|---|---|---|
-| Perguntas | Tabela `questions` | id, title, content, discipline_id, author_id, created_at, status, visibility |
-| Respostas | Tabela `answers` | id, question_id, content, author_id, created_at, is_accepted |
-| Metadados | Tabelas auxiliares | tags, attachments, score/likes, número de respostas, last_activity |
 
-**Comandos**
-- Inserir registro → atualizar contadores da pergunta (número de respostas, timestamp).  
-- Se marcado como solução → atualizar `is_accepted` e notificar autor(es).  
-- Se sinalizado pelo filtro → inserir na fila/moderação.
+#### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
 
----
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
 
-### Atividade 7 – Confirmação ao usuário & exibição (Sistema)
-| Campo | Tipo | Restrições |
-|---|---|---|
-| Feedback | Mensagem / Toast | Informar sucesso ou erro; mostrar link para a pergunta publicada |
-| Notificações | Push / Email / In-app | (Opcional) Notificar autor da pergunta / participantes |
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+| Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema   |
 
-**Comandos**
-- Retornar resposta HTTP com ID do recurso → atualizar UI local com nova pergunta/resposta.
+
+#### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
+
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor ** |
+|--------------------|-------------|-------------------------------|------------|
+| Persistência dos dados do usuário  | Serviço | Validação prévia obrigatória  | Registro  |
+
+| **Comandos**       | **Destino**                      | **Tipo**   |
+|--------------------|----------------------------------|------------|
+|Armazenar novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema |
+
 
 ---
 
-## Regras de negócio e observações
-- **Autenticação:** apenas usuários logados podem postar. Professores e moderadores têm privilégios extras (validar/remover/aceitar respostas).  
-- **Moderação:** conteúdo com violação (ofensas, plágio, material protegido) deve ser sinalizado e colocado em análise por equipe administrativa.  
-- **Integração institucional:** ao escolher uma disciplina, a pergunta deve ser indexada no repositório ligado ao catálogo de disciplinas da PUC (para relatórios e filtros).  
-- **Privacidade:** oferecer opção de anonimato (dependendo de política institucional) e controles de visibilidade por campus/curso.  
-- **Histórico:** manter histórico de edições (versionamento simples) e logs de ações para auditoria.
+## Atividade 4 – Atribuir Perfil (Sistema)
+
+| **Campo**               | **Tipo**    | **Restrições**                         | **Valor ** |
+|-------------------------|-------------|----------------------------------------|------------|
+| Definifição de perfil   | Automático  | Baseado no campo "Tipo de usuário"     | Perfil     |
+
+| **Comandos**       | **Destino**                                   | **Tipo**  |
+|--------------------|-----------------------------------------------|-----------|
+|Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema   |
+
+
+---
+
+## Atividade 5 – Exibir confirmação de cadastro (Sistema → Usuário)
+ 
+| **Campo**         | **Tipo**        | **Restrições**                              | **Valor default** |
+|-------------------|-----------------|---------------------------------------------|-------------------|
+| Mensagem de sucesso   | Mensagem UI   | Deve conter orientação (ex.: prossiga para login)  |  Texto   |
+
+| **Comandos**       | **Destino**                 | **Tipo**   |
+|--------------------|-----------------------------|------------|
+| Apresentar página de confirmação | Tela de perfil| Sistema    |
+
+
+---
+
+## Atividade 6 – Visualizar tela de perfil (Usuário)
+
+| **Campo**            | **Tipo**    | **Restrições**                       | **Valor ** |
+|----------------------|-------------|--------------------------------------|------------|
+| Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados    |
+
+| **Comandos**       | **Destino**          | **Tipo**   |
+|--------------------|----------------------|------------|
+| Navegar no perfil  | Não se aplica        | Usuário    |
 
 ---
 
