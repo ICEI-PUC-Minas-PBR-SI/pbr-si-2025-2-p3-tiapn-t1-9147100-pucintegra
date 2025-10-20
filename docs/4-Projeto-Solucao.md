@@ -114,7 +114,7 @@ _Apresente o modelo de dados por meio de um modelo relacional que contemple todo
 
 ---
 
-#### 4.3.2 Esquema Relacional
+### 4.3.2 Esquema Relacional
 
 O modelo de dados é a espinha dorsal da solução "PUC Integra", projetado para armazenar, organizar e relacionar todas as informações necessárias para suportar os processos de negócio definidos: **Cadastro de Usuários**, **Login**, **Personalização de Perfil** e o sistema de **Perguntas e Respostas**. A estrutura foi concebida utilizando o modelo relacional, que garante consistência, integridade e escalabilidade dos dados.
 
@@ -155,7 +155,7 @@ Essa abordagem de generalização/especialização é altamente eficiente, pois 
 
 ---
 
-#### 4.3.3 Modelo Físico
+### 4.3.3 Modelo Físico
 
 Insira aqui o script de criação das tabelas do banco de dados.
 
