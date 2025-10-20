@@ -23,7 +23,6 @@ Na tela de cadastro, o usuário que ainda não possui registro pode criar sua co
 Campos disponíveis:
 * Nome Completo (Caixa de texto – obrigatório)
 * CPF (Caixa de texto – numérico, obrigatório)
-* Telefone (Caixa de texto – numérico, opcional)
 * Matrícula (Caixa de texto – obrigatório)
 * E-mail Institucional (Caixa de texto – obrigatório, formato válido)
 * Senha (Caixa de texto – obrigatório, mínimo 8 caracteres)
