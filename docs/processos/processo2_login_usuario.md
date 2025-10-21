@@ -13,7 +13,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ---
 
-# Detalhamento das atividades  
+## Detalhamento das atividades  
 
 ## Atividade 1 – Selecionar campo "Fazer Login" (Usuário)
 
