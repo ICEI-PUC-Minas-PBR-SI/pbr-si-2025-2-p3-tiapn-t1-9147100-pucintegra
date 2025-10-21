@@ -29,7 +29,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-### Atividade 2 – Preencher formulário de cadastro (Sistema)
+### Atividade 2 – Preencher formulário de cadastro (Usuário)
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
