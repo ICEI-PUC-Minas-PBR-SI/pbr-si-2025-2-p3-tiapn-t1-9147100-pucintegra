@@ -113,7 +113,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 ---
 ## Wireframe - Login
 
-![WIREFRAME - PROCESSO 1 - Cadastro de Usuários](../images/wireframe_login.png)
+![WIREFRAME - PROCESSO 2 - Login](../images/wireframe_login.png)
 
 ---
 
