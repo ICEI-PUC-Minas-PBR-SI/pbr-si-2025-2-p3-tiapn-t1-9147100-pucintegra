@@ -127,6 +127,9 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 | Navegar no perfil  | Não se aplica        | Usuário (visualização)|
 
 ---
+
+# Wireframe - Cadastro de Usuários
+
 ![WIREFRAME - PROCESSO 1 - Cadastro de Usuários](../images/wireframe_cadastro.png)
 
 _Tipos de dados utilizados:_  
