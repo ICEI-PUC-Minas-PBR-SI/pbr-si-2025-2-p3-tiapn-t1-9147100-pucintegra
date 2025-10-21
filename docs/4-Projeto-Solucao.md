@@ -38,8 +38,9 @@ Ação principal:
 **Tela de Login ("Entrar")**
 Na tela de login, o usuário já cadastrado pode acessar a plataforma utilizando suas credenciais.
 Campos disponíveis:
-* E-mail Institucional / Matrícula (Caixa de texto – obrigatório)
+* E-mail Institucional (Caixa de texto – obrigatório)
 * Senha (Caixa de texto – obrigatório)
+  
 Ações principais:
 * Botão "Login" → valida as credenciais e direciona o usuário para o sistema, caso estejam corretas.
 * Link "Não possui cadastro? Clique aqui!" → direciona o usuário para a tela de cadastro, caso ainda não tenha registro.
