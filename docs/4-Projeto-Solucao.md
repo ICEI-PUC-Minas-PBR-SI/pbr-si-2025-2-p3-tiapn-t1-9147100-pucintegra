@@ -29,7 +29,7 @@ Campos disponíveis:
 * Confirmar Senha (Caixa de texto – deve coincidir com a senha)
 * Tipo de Entidade (Seleção única – opções: Aluno ou Professor)
 Ação principal:
-* Botão "Confirmar" → envia os dados para validação e registro no banco de dados, conforme o fluxo do processo BPMN.
+* Botão "Cadastrar" → envia os dados para validação e registro no banco de dados, conforme o fluxo do processo BPMN.
 
 ![Protótipo de alta fidelidade - Cadastro](../docs/images/cadastro_screen.png)
 
