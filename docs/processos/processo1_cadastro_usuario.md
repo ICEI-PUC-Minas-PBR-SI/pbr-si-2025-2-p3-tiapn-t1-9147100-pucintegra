@@ -132,6 +132,8 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ![WIREFRAME - PROCESSO 1 - Cadastro de Usuários](../images/wireframe_cadastro.png)
 
+---
+
 _Tipos de dados utilizados:_  
 
 * **Área de texto** - campo texto de múltiplas linhas  
