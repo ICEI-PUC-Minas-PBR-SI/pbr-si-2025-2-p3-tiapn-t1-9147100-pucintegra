@@ -43,7 +43,8 @@ Campos disponíveis:
   
 Ações principais:
 * Botão "Login" → valida as credenciais e direciona o usuário para o sistema, caso estejam corretas.
-* Link "Não possui cadastro? Clique aqui!" → direciona o usuário para a tela de cadastro, caso ainda não tenha registro.
+*  Link "Esqueceu a senha? Clique Aqui!" → direciona o usuário para uma tela de recuperação da senha.
+* Link "Não possui uma conta? Registrar" → direciona o usuário para a tela de cadastro, caso ainda não tenha registro.
 
 ![Protótipo de alta fidelidade - Login](../docs/images/login_screen.png)
 
