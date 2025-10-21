@@ -41,8 +41,8 @@ Campos disponíveis:
 * E-mail Institucional / Matrícula (Caixa de texto – obrigatório)
 * Senha (Caixa de texto – obrigatório)
 Ações principais:
-* Botão "Confirmar" → valida as credenciais e direciona o usuário para o sistema, caso estejam corretas.
-* Link "Não possui cadastro? Clique aqui" → direciona o usuário para a tela de cadastro, caso ainda não tenha registro.
+* Botão "Login" → valida as credenciais e direciona o usuário para o sistema, caso estejam corretas.
+* Link "Não possui cadastro? Clique aqui!" → direciona o usuário para a tela de cadastro, caso ainda não tenha registro.
 
 ![Protótipo de alta fidelidade - Login](../docs/images/login_screen.png)
 
