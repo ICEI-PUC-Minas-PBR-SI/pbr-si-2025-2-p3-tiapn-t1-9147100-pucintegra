@@ -163,6 +163,11 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 |--------------------|-----------------------------|------------|
 | Visualizar postagem| Não se aplica               | Usuário (visualização)|
 
+---
+
+# Wireframe - Cadastro de Usuários
+
+![WIREFRAME - PROCESSO 4 - Perguntas e Respostas](../images/wireframe_[].png)
 
 ---
 
