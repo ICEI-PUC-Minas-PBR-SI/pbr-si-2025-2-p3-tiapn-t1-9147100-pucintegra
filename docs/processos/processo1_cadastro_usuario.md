@@ -15,7 +15,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-# Detalhamento das atividades  
+## Detalhamento das atividades  
 
 ### Atividade 1 – Acessar tela de cadastro (Usuário)
 
@@ -90,7 +90,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-## Atividade 4 – Atribuir Perfil (Sistema)
+### Atividade 4 – Atribuir Perfil (Sistema)
 
 | **Campo**               | **Tipo**    | **Restrições**                         | **Valor** |
 |-------------------------|-------------|----------------------------------------|------------|
@@ -103,7 +103,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-## Atividade 5 – Exibir confirmação de cadastro (Sistema → Usuário)
+### Atividade 5 – Exibir confirmação de cadastro (Sistema → Usuário)
  
 | **Campo**         | **Tipo**        | **Restrições**                              | **Valor** |
 |-------------------|-----------------|---------------------------------------------|-------------------|
@@ -116,7 +116,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-## Atividade 6 – Visualizar tela de perfil (Usuário)
+### Atividade 6 – Visualizar tela de perfil (Usuário)
 
 | **Campo**            | **Tipo**    | **Restrições**                       | **Valor** |
 |----------------------|-------------|--------------------------------------|------------|
@@ -128,7 +128,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-# Wireframe - Cadastro de Usuários
+## Wireframe - Cadastro de Usuários
 
 ![WIREFRAME - PROCESSO 1 - Cadastro de Usuários](../images/wireframe_cadastro.png)
 
