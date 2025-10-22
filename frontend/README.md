@@ -21,6 +21,7 @@ cd frontend
 npm install
 ```
 
+
 ##  Execução
 
 ```bash
@@ -48,4 +49,9 @@ npm run build
 → pré-visualiza localmente o build
 ```bash
 npm run preview
+``` 
+
+→ corrige a instalação do npm
+```bash
+npm install -g npm@latest
 ``` 
