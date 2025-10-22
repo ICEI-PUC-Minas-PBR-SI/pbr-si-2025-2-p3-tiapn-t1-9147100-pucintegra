@@ -153,7 +153,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 ---
 ## Wireframe - Personalização
 
-![WIREFRAME - PROCESSO 3 - Personalização](../images/wireframe_personalicao.png)
+![WIREFRAME - PROCESSO 3 - Personalização](../images/wireframe_personalizacao.png)
 
 ---
 
