@@ -101,7 +101,7 @@ export default function RegisterPage() {
             type="text"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
-            placeholder="Digite seu sobrenome"
+            placeholder="Digite seu último nome"
           />
         </div>
         <div className="input-field">
