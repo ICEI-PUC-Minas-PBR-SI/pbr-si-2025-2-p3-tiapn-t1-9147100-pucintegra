@@ -13,6 +13,31 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const handleSubmit2 = async (e) => {
+    e.preventDefault();
+    setError('');
+    if (!email || !password) {
+      setError('Preencha todos os campos.');
+      return;
+    }
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, senha: password }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        const msg = data.message || (res.status === 403 ? '2FA pendente. Conclua a verificação.' : 'Credenciais inválidas.');
+        throw new Error(msg);
+      }
+      const data = await res.json();
+      alert(`Você entrou como ${email}. ${data.message}`);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
@@ -36,7 +61,7 @@ export default function LoginPage() {
       <CloseButton onClick={() => navigate('/')} />
       <h1>Entrar com email</h1>
       {error && <div className="error-message">{error}</div>}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit2}>
         <div className="input-field">
           <label htmlFor="email">Email</label>
           <input

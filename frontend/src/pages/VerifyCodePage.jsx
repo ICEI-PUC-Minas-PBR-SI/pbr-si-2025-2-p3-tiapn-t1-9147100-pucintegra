@@ -17,6 +17,36 @@ export default function VerifyCodePage() {
   const [error, setError] = useState('');
   const inputsRef = [useRef(null), useRef(null), useRef(null), useRef(null)];
 
+  const handleSubmit2 = async (e) => {
+    e.preventDefault();
+    setError('');
+    const finalCode = code.join('');
+    if (finalCode.length < 4) {
+      setError('Digite o código completo.');
+      return;
+    }
+    const usuarioId = localStorage.getItem('auth_usuario_id');
+    if (!usuarioId) {
+      setError('Registro não encontrado. Faça o cadastro novamente.');
+      return;
+    }
+    try {
+      const res = await fetch('/api/auth/2fa/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuarioId: Number(usuarioId), code: finalCode }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.message || 'Código inválido.');
+      }
+      alert(`Código verificado com sucesso via ${method}!`);
+      navigate('/login');
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   const handleChange = (index, value) => {
     if (!/^[0-9]?$/i.test(value)) return;
     const newCode = [...code];
@@ -73,7 +103,7 @@ export default function VerifyCodePage() {
       <CloseButton onClick={() => navigate('/two-factor')} />
       <h1>Digite aqui o código enviado</h1>
       {error && <div className="error-message">{error}</div>}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit2}>
         <div className="code-inputs">
           {code.map((value, index) => (
             <input

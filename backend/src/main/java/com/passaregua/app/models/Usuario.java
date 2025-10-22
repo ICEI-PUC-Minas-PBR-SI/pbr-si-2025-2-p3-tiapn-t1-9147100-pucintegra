@@ -3,6 +3,7 @@ package com.passaregua.app.models;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "usuarios", uniqueConstraints = {
@@ -25,8 +26,7 @@ public class Usuario {
     private String ultimoNome;
 
     @Email
-    @NotBlank
-    @Column(name = "email", nullable = false, length = 150)
+    @Column(name = "email", length = 150)
     private String email;
 
     @Column(name = "celular", length = 30)
@@ -44,5 +44,17 @@ public class Usuario {
 
     @Column(name = "idade")
     private Integer idade;
-}
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "two_factor_method", length = 20)
+    private TwoFactorMethod twoFactorMethod;
+
+    @Column(name = "two_factor_code", length = 10)
+    private String twoFactorCode;
+
+    @Column(name = "two_factor_expires_at")
+    private LocalDateTime twoFactorExpiresAt;
+
+    @Column(name = "two_factor_verified")
+    private Boolean twoFactorVerified;
+}
