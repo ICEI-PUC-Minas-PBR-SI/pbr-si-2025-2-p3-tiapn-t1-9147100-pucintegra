@@ -74,7 +74,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 | Apresentar o erro ao usuário e permitir correção| Formulário de Login | Sistema (feedback)  |
 
 
-#### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
+#### Atividade (SIM): Gerar Token de Sessão (Sistema → Usuário)
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
