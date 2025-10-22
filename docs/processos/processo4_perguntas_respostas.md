@@ -165,7 +165,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 ---
 
-# Wireframe - Cadastro de Usuários
+# Wireframe - Perguntas e Respostas
 
 ![WIREFRAME - PROCESSO 4 - Perguntas e Respostas](../images/wireframe_[].png)
 
