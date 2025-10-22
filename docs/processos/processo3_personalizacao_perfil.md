@@ -80,7 +80,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ---
 
-### Gateway - Dados válidos?
+### Gateway - Alterações aprovadas?
 | **Campo**          | **Tipo**    | **Restrições**                                | **Valor** |
 |--------------------|-------------|-----------------------------------------------|-----------|
 | Resultado da validação | Decisão | Se NÃO → informar erros; se SIM → salvar alterações  | SIM / NÃO |
