@@ -151,7 +151,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 | Navegar no perfil  | Não se aplica        | Usuário (visualização)    |
 
 ---
-## Wireframe - Personalização
+## Wireframe - Personalização do perfil
 
 ![WIREFRAME - PROCESSO 3 - Personalização](../images/wireframe_personalizacao.png)
 
