@@ -25,6 +25,7 @@ npm install
 ##  Execução
 
 ```bash
+cd frontend
 npm run dev
 ```
 
