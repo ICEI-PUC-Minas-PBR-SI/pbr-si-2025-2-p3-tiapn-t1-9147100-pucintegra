@@ -16,11 +16,26 @@ export default function TwoFactorMethodPage() {
     setMethod(value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit2 = async (e) => {
     e.preventDefault();
-    // TODO: send verification code via selected method.
-    console.log('Sending verification via', method);
-    navigate('/verify-code', { state: { method } });
+    const usuarioId = localStorage.getItem('auth_usuario_id');
+    if (!usuarioId) {
+      alert('Registro não encontrado. Faça o cadastro novamente.');
+      navigate('/register');
+      return;
+    }
+    const m = method === 'celular' ? 'CELULAR' : 'EMAIL';
+    try {
+      const res = await fetch('/api/auth/2fa/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuarioId: Number(usuarioId), method: m }),
+      });
+      if (!res.ok) throw new Error('Falha ao enviar código');
+      navigate('/verify-code', { state: { method } });
+    } catch (err) {
+      alert(err.message);
+    }
   };
 
   return (
@@ -30,7 +45,7 @@ export default function TwoFactorMethodPage() {
         Método de verificação
         <br />2 fatores
       </h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit2}>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}>
           <button
             type="button"

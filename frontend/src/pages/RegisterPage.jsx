@@ -18,6 +18,38 @@ export default function RegisterPage() {
   const [age, setAge] = useState('');
   const [error, setError] = useState('');
 
+  const handleSubmit2 = async (e) => {
+    e.preventDefault();
+    setError('');
+    if (!firstName || !lastName || !contact || !password || !gender || !age) {
+      setError('Preencha todos os campos obrigatórios.');
+      return;
+    }
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          primeiroNome: firstName,
+          ultimoNome: lastName,
+          contato: contact,
+          senha: password,
+          genero: gender,
+          idade: Number(age),
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.message || 'Falha ao registrar.');
+      }
+      const data = await res.json();
+      localStorage.setItem('auth_usuario_id', String(data.usuarioId));
+      navigate('/two-factor');
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setError('');
@@ -45,7 +77,7 @@ export default function RegisterPage() {
       <CloseButton onClick={() => navigate('/login')} />
       <h1>Criar uma conta</h1>
       {error && <div className="error-message">{error}</div>}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit2}>
         <div className="input-field">
           <label htmlFor="firstName">Primeiro nome</label>
           <input
