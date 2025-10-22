@@ -4,6 +4,11 @@ import com.passaregua.app.dtos.auth.*;
 import com.passaregua.app.models.*;
 import com.passaregua.app.repositories.UsuarioRepository;
 import org.springframework.http.HttpStatus;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
@@ -21,9 +26,15 @@ import java.util.Random;
 public class AuthService {
 
     private final UsuarioRepository repository;
+    private final JavaMailSender mailSender;
+    private static final Logger log = LoggerFactory.getLogger(AuthService.class);
 
-    public AuthService(UsuarioRepository repository) {
+    @Value("${spring.mail.username:}")
+    private String mailFrom;
+
+    public AuthService(UsuarioRepository repository, JavaMailSender mailSender) {
         this.repository = repository;
+        this.mailSender = mailSender;
     }
 
     public RegisterResponse register(RegisterRequest req) {
@@ -75,7 +86,16 @@ public class AuthService {
         u.setTwoFactorVerified(false);
 
         repository.save(u);
-        // Em ambiente real, enviar via email/sms; aqui deixamos salvo para verificacao
+
+        // Enviar o código por email quando o método for EMAIL
+        if (req.getMethod() == TwoFactorMethod.EMAIL) {
+            try {
+                sendVerificationEmail(u.getEmail(), code);
+            } catch (Exception ex) {
+                log.error("Falha ao enviar email de verificacao: {}", ex.getMessage(), ex);
+                throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Falha ao enviar email");
+            }
+        }
     }
 
     public void verifyCode(VerifyCodeRequest req) {
@@ -142,5 +162,25 @@ public class AuthService {
         int num = r.nextInt(max + 1);
         return String.format("%0" + digits + "d", num);
     }
-}
 
+    private void sendVerificationEmail(String to, String code) {
+        if (to == null || to.isBlank()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email do usuario nao informado");
+        }
+        String from = (mailFrom == null || mailFrom.isBlank()) ? "no-reply@localhost" : mailFrom;
+        String subject = "Seu código de verificação";
+        String body = "Olá,\n\n" +
+                "Use o código abaixo para verificar seu email no Passa Régua:\n\n" +
+                code + "\n\n" +
+                "O código expira em 10 minutos.\n\n" +
+                "Se você não solicitou este código, ignore esta mensagem.";
+
+        SimpleMailMessage msg = new SimpleMailMessage();
+        msg.setFrom(from);
+        msg.setTo(to);
+        msg.setSubject(subject);
+        msg.setText(body);
+        mailSender.send(msg);
+  
+    }
+}
