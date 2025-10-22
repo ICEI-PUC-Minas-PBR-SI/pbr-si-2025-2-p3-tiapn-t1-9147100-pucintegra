@@ -44,7 +44,13 @@ export default function RegisterPage() {
       }
       const data = await res.json();
       localStorage.setItem('auth_usuario_id', String(data.usuarioId));
-      navigate('/two-factor');
+      // Envia código de 2FA apenas por EMAIL e segue para verificação
+      await fetch('/api/auth/2fa/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuarioId: Number(data.usuarioId), method: 'EMAIL' }),
+      });
+      navigate('/verify-code', { state: { method: 'email' } });
     } catch (err) {
       setError(err.message);
     }
@@ -60,8 +66,8 @@ export default function RegisterPage() {
     }
     // TODO: call API to register the user here.
     console.log('Registering', { firstName, lastName, contact, password, gender, age });
-    // Proceed to 2FA selection page
-    navigate('/two-factor');
+    // Envia código por EMAIL e segue para verificação
+    navigate('/verify-code', { state: { method: 'email' } });
   };
 
   const handleGenderChange = (e) => {
@@ -99,13 +105,13 @@ export default function RegisterPage() {
           />
         </div>
         <div className="input-field">
-          <label htmlFor="contact">Email ou celular</label>
+          <label htmlFor="contact">Email</label>
           <input
             id="contact"
-            type="text"
+            type="email"
             value={contact}
             onChange={(e) => setContact(e.target.value)}
-            placeholder="Digite seu email ou celular"
+            placeholder="Digite seu email"
           />
         </div>
         <div className="input-field">
