@@ -11,7 +11,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 5. Sistema salva as alterações no banco de dados.  
 6. Perfil atualizado é exibido ao usuário.  
 
-![PROCESSO 3 - Personalização do perfil](../images/p3_PersonalizacaoPerfil.png "Modelo BPMN do Processo 3.")
+![PROCESSO 3 - Personalização de Perfil](../images/p3_PersonalizacaoPerfil.png "Modelo BPMN do Processo 3.")
 
 ---
 
