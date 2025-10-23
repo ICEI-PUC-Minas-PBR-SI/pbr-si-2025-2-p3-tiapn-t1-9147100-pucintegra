@@ -164,12 +164,6 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 ---
 
-# Wireframe - Perguntas e Respostas
-
-![WIREFRAME - PROCESSO 4 - Perguntas e Respostas](../images/wireframe_[].png)
-
----
-
 ## Tipos de dados utilizados
 - **Área de texto** – conteúdo da pergunta/resposta;  
 - **Caixa de texto** – título, referência;  
@@ -179,3 +173,8 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 - **Booleano** – marcar como solução, anonimato;  
 - **Data/Hora** – created_at, updated_at.
 
+---
+
+# Wireframe - Perguntas e Respostas
+
+![WIREFRAME - PROCESSO 4 - Perguntas e Respostas](../images/wireframe_[].png)

@@ -128,12 +128,6 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-## Wireframe - Cadastro de Usuários
-
-![WIREFRAME - PROCESSO 1 - Cadastro de Usuários](../images/wireframe_cadastro.png)
-
----
-
 _Tipos de dados utilizados:_  
 
 * **Área de texto** - campo texto de múltiplas linhas  
@@ -147,4 +141,10 @@ _Tipos de dados utilizados:_
 * **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (checkbox ou listbox)  
 * **Arquivo** - campo de upload de documento  
 * **Link** - campo que armazena uma URL  
-* **Tabela** - campo formado por uma matriz de valores  
+* **Tabela** - campo formado por uma matriz de valores 
+
+---
+
+## Wireframe - Cadastro de Usuários
+
+![WIREFRAME - PROCESSO 1 - Cadastro de Usuários](../images/wireframe_cadastro.png)

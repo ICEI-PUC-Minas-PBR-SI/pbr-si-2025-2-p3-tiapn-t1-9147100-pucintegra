@@ -151,11 +151,6 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 | Navegar no perfil  | Não se aplica        | Usuário (visualização)    |
 
 ---
-## Wireframe - Personalização do perfil
-
-![WIREFRAME - PROCESSO 3 - Personalização](../images/wireframe_personalizacao.png)
-
----
 
 _Tipos de dados utilizados:_  
 
@@ -171,3 +166,9 @@ _Tipos de dados utilizados:_
 * **Arquivo** - campo de upload de documento  
 * **Link** - campo que armazena uma URL  
 * **Tabela** - campo formado por uma matriz de valores  
+
+---
+
+## Wireframe - Personalização do perfil
+
+![WIREFRAME - PROCESSO 3 - Personalização](../images/wireframe_personalizacao.png)

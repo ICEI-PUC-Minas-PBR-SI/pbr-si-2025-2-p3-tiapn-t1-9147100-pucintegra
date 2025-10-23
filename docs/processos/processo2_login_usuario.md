@@ -111,11 +111,6 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 | Visualizar / Editar| Não se aplica          | Usuário (visualização) |
 
 ---
-## Wireframe - Login de usuários
-
-![WIREFRAME - PROCESSO 2 - Login](../images/wireframe_login.png)
-
----
 
 _Tipos de dados utilizados:_  
 
@@ -131,3 +126,10 @@ _Tipos de dados utilizados:_
 * **Arquivo** - campo de upload de documento  
 * **Link** - campo que armazena uma URL  
 * **Tabela** - campo formado por uma matriz de valores  
+
+---
+
+## Wireframe - Login de usuários
+
+![WIREFRAME - PROCESSO 2 - Login](../images/wireframe_login.png)
+
