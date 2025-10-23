@@ -15,7 +15,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ---
 
-# Detalhamento das atividades  
+## Detalhamento das atividades  
 
 ### Atividade 1 – Acessar tela de Perfil (Usuário)
 
@@ -80,7 +80,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ---
 
-### Gateway - Dados válidos?
+### Gateway - Alterações aprovadas?
 | **Campo**          | **Tipo**    | **Restrições**                                | **Valor** |
 |--------------------|-------------|-----------------------------------------------|-----------|
 | Resultado da validação | Decisão | Se NÃO → informar erros; se SIM → salvar alterações  | SIM / NÃO |
@@ -114,7 +114,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ---
 
-## Atividade 6 – Exibir alterações no Perfil (Sistema → Usuário)
+### Atividade 6 – Exibir alterações no Perfil (Sistema → Usuário)
 
 | **Campo**               | **Tipo**    | **Restrições**                         | **Valor** |
 |-------------------------|-------------|----------------------------------------|------------|
@@ -127,7 +127,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ---
 
-## Atividade 7 – Exibir mensagem de Sucesso (Sistema → Usuário)
+### Atividade 7 – Exibir mensagem de Sucesso (Sistema → Usuário)
  
 | **Campo**         | **Tipo**        | **Restrições**          | **Valor** |
 |-------------------|-----------------|-------------------------|-------------------|
@@ -140,7 +140,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ---
 
-## Atividade 8 – Visualizar alterações no perfil (Usuário)
+### Atividade 8 – Visualizar alterações no perfil (Usuário)
 
 | **Campo**            | **Tipo**    | **Restrições**                         | **Valor** |
 |----------------------|-------------|----------------------------------------|------------|
@@ -151,7 +151,11 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 | Navegar no perfil  | Não se aplica        | Usuário (visualização)    |
 
 ---
+## Wireframe - Personalização do perfil
 
+![WIREFRAME - PROCESSO 3 - Personalização](../images/wireframe_personalizacao.png)
+
+---
 
 _Tipos de dados utilizados:_  
 

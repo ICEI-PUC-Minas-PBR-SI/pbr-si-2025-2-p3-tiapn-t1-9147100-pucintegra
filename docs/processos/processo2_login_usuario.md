@@ -13,9 +13,9 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ---
 
-# Detalhamento das atividades  
+## Detalhamento das atividades  
 
-## Atividade 1 – Selecionar campo "Fazer Login" (Usuário)
+### Atividade 1 – Selecionar campo "Fazer Login" (Usuário)
 
 | **Campo**           | **Tipo**      | **Restrições**          | **Valor** |
 |-------------------- |---------------|-------------------------|-----------|
@@ -27,7 +27,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ---
 
-## Atividade 2 – Inserir Credenciais de acesso (Usuário)
+### Atividade 2 – Inserir Credenciais de acesso (Usuário)
 
 | **Campo**           | **Tipo**        | **Restrições**                               | **Valor** |
 |---------------------|-----------------|----------------------------------------------|-------------------|
@@ -39,7 +39,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ---
 
-## Atividade 3 – Validar credenciais (Sistema)
+### Atividade 3 – Validar credenciais (Sistema)
 
 | **Campo**     | **Tipo**        | **Restrições**                          | **Valor** |
 |---------------|-----------------|-----------------------------------------|-------------------|
@@ -74,7 +74,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 | Apresentar o erro ao usuário e permitir correção| Formulário de Login | Sistema (feedback)  |
 
 
-#### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
+#### Atividade (SIM): Gerar Token de Sessão (Sistema → Usuário)
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
@@ -87,7 +87,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 ---
 
 
-#### Atividade 4 – Redirecionar para Tela Principal (Sistema → Usuário)
+### Atividade 4 – Redirecionar para Tela Principal (Sistema → Usuário)
 
 | **Campo**             | **Tipo**     | **Restrições**                        | **Valor** |
 |-----------------------|--------------|---------------------------------------|------------|
@@ -100,7 +100,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ---
 
-#### Atividade 5 – Visualizar tela de Perfil (Usuário)
+### Atividade 5 – Visualizar tela de Perfil (Usuário)
 
 | **Campo**        | **Tipo**      | **Restrições**                       | **Valor** |
 |------------------|---------------|--------------------------------------|------------|
@@ -111,7 +111,11 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 | Visualizar / Editar| Não se aplica          | Usuário (visualização) |
 
 ---
+## Wireframe - Login de usuários
 
+![WIREFRAME - PROCESSO 2 - Login](../images/wireframe_login.png)
+
+---
 
 _Tipos de dados utilizados:_  
 

@@ -1,6 +1,6 @@
 ## 4. Projeto da Solução
 
-<span style="color:red">Pré-requisitos: <a href="3-Modelagem-Processos-Negócio.md> Modelagem do Processo de Negocio</a></span>
+<span style="color:red">Pré-requisitos: <a href="3-Modelagem-Processos-Negócio.md"> Modelagem do Processo de Negocio</a></span>
 
 ## 4.1. Arquitetura da solução
 
@@ -23,14 +23,13 @@ Na tela de cadastro, o usuário que ainda não possui registro pode criar sua co
 Campos disponíveis:
 * Nome Completo (Caixa de texto – obrigatório)
 * CPF (Caixa de texto – numérico, obrigatório)
-* Telefone (Caixa de texto – numérico, opcional)
 * Matrícula (Caixa de texto – obrigatório)
 * E-mail Institucional (Caixa de texto – obrigatório, formato válido)
 * Senha (Caixa de texto – obrigatório, mínimo 8 caracteres)
 * Confirmar Senha (Caixa de texto – deve coincidir com a senha)
 * Tipo de Entidade (Seleção única – opções: Aluno ou Professor)
 Ação principal:
-* Botão "Confirmar" → envia os dados para validação e registro no banco de dados, conforme o fluxo do processo BPMN.
+* Botão "Cadastrar" → envia os dados para validação e registro no banco de dados, conforme o fluxo do processo BPMN.
 
 ![Protótipo de alta fidelidade - Cadastro](../docs/images/cadastro_screen.png)
 
@@ -39,11 +38,13 @@ Ação principal:
 **Tela de Login ("Entrar")**
 Na tela de login, o usuário já cadastrado pode acessar a plataforma utilizando suas credenciais.
 Campos disponíveis:
-* E-mail Institucional / Matrícula (Caixa de texto – obrigatório)
+* E-mail Institucional (Caixa de texto – obrigatório)
 * Senha (Caixa de texto – obrigatório)
+  
 Ações principais:
-* Botão "Confirmar" → valida as credenciais e direciona o usuário para o sistema, caso estejam corretas.
-* Link "Não possui cadastro? Clique aqui" → direciona o usuário para a tela de cadastro, caso ainda não tenha registro.
+* Botão "Login" → valida as credenciais e direciona o usuário para o sistema, caso estejam corretas.
+*  Link "Esqueceu a senha? Clique Aqui!" → direciona o usuário para uma tela de recuperação da senha.
+* Link "Não possui uma conta? Registrar" → direciona o usuário para a tela de cadastro, caso ainda não tenha registro.
 
 ![Protótipo de alta fidelidade - Login](../docs/images/login_screen.png)
 
@@ -115,7 +116,7 @@ _Apresente o modelo de dados por meio de um modelo relacional que contemple todo
 
 ---
 
-#### 4.3.2 Esquema Relacional
+### 4.3.2 Esquema Relacional
 
 O modelo de dados é a espinha dorsal da solução "PUC Integra", projetado para armazenar, organizar e relacionar todas as informações necessárias para suportar os processos de negócio definidos: **Cadastro de Usuários**, **Login**, **Personalização de Perfil** e o sistema de **Perguntas e Respostas**. A estrutura foi concebida utilizando o modelo relacional, que garante consistência, integridade e escalabilidade dos dados.
 
@@ -156,7 +157,7 @@ Essa abordagem de generalização/especialização é altamente eficiente, pois 
 
 ---
 
-#### 4.3.3 Modelo Físico
+### 4.3.3 Modelo Físico
 
 Insira aqui o script de criação das tabelas do banco de dados.
 
