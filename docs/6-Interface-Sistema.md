@@ -29,13 +29,13 @@ _Descrição da tela relativa à atividade 2._
 
 _Descrição da tela relativa à atividade 2._
 
-![Tela de Login](../docs/images/login_screen.png)
+![Tela de Login](../docs/images/_screen.png)
 
 ## 6.5. Processo 5 - Tela de perguntas e respostas
 
 _Descrição da tela relativa à atividade 2._
 
-![Tela de Login](../docs/images/login_screen.png)
+![Tela de Login](../docs/images/_screen.png)
 
 
 
