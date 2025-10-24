@@ -41,7 +41,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
-| Preencher formulário e submeter | Validação dos dados | Usuário (entrada de dados) |
+| Submeter | Validação dos dados | Usuário (entrada de dados) |
 
 
 ---
