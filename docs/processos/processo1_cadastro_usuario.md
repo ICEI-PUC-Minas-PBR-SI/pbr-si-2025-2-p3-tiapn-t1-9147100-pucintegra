@@ -21,7 +21,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
 |-------------------|----------------|-----------------------------|-------------------|
-|     |        |            |          |
+|                   |                |                             |                   |
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
@@ -46,91 +46,6 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ---
 
-### Atividade 3 – Validar matrícula e E-mail (Sistema)
-
-| Campo | Tipo | Restrições |  **Valor** |
-|-------|------|------------|------------|
-| Validação de cadastro | Automático | Consulta à base da universidade; formato de e-mail institucional | True / False |
-
-
-| **Comandos**       | **Destino**                | **Tipo**   |
-|--------------------|----------------------------|------------|
-| Verificar na base de dados| Decisão "Dados válidos?"       | Sistema (automático)|
-
----
-
-
-### Gateway - Dados válidos?
-| **Campo**         | **Tipo**    | **Restrições**                                 | **Valor** |
-|--------------------|-------------|-----------------------------------------------|-----------|
-| Verificação de dados| Booleano    | Resultado da validação do sistema  | True / False        |
-
-| **Comandos**       | **Destino**                      | **Tipo**   |
-|--------------------|----------------------------------|------------|
-| Branching          | Decisão "Dados válidos?"         | Sistema (decisão)|
-
-
-#### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
-
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor**  |
-|--------------------|-------------|-------------------------------|------------|
-| Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
-
-| **Comandos**       | **Destino**                      | **Tipo**   |
-|--------------------|----------------------------------|------------|
-| Apresentar o erro ao usuário e permitir correção| Formulário de dados  | Sistema (feedback) |
-
-
-#### Atividade (SIM): Armazenar dados cadastrados (Sistema → Usuário)
-
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
-|--------------------|-------------|-------------------------------|------------|
-| Persistência dos dados do usuário  | Serviço | Validação prévia obrigatória  | Registro  |
-
-| **Comandos**       | **Destino**                      | **Tipo**   |
-|--------------------|----------------------------------|------------|
-|Armazenar novo cadastro em tabela de usuários| Atribuir Perfil (Aluno/Professor)  | Sistema (persistência) |
-
-
----
-
-### Atividade 4 – Atribuir Perfil (Sistema)
-
-| **Campo**               | **Tipo**    | **Restrições**                         | **Valor** |
-|-------------------------|-------------|----------------------------------------|------------|
-| Definifição de perfil   | Automático  | Baseado no campo "Tipo de usuário"     | Perfil     |
-
-| **Comandos**       | **Destino**                                   | **Tipo**  |
-|--------------------|-----------------------------------------------|-----------|
-|Atualizar atributo de usuário    | Exibir confirmação de cadastro   | Sistema (automático) |
-
-
----
-
-### Atividade 5 – Exibir confirmação de cadastro (Sistema → Usuário)
- 
-| **Campo**         | **Tipo**        | **Restrições**                              | **Valor** |
-|-------------------|-----------------|---------------------------------------------|-------------------|
-| Mensagem de sucesso   | Mensagem UI   | Deve conter orientação (ex.: prossiga para login)  |  Texto   |
-
-| **Comandos**       | **Destino**                 | **Tipo**   |
-|--------------------|-----------------------------|------------|
-| Apresentar página de confirmação | Tela de perfil| Sistema (feedback)|
-
-
----
-
-### Atividade 6 – Visualizar tela de perfil (Usuário)
-
-| **Campo**            | **Tipo**    | **Restrições**                       | **Valor** |
-|----------------------|-------------|--------------------------------------|------------|
-| Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados    |
-
-| **Comandos**       | **Destino**          | **Tipo**   |
-|--------------------|----------------------|------------|
-| Navegar no perfil  | Não se aplica        | Usuário (visualização)|
-
----
 
 _Tipos de dados utilizados:_  
 
