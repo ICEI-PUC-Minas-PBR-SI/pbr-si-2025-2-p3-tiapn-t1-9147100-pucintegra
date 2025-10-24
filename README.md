@@ -1,3 +1,22 @@
+# Smart Gestão
+
+`SISTEMAS DE INFORMAÇÃO`
+
+`TRABALHO INTERDISCIPLINAR : APLICAÇÕES PARA PROCESSO DE NEGÓCIOS`
+
+`02.2025`
+
+Nosso projeto tem como objetivo desenvolver um sistema de controle de despesas para microempreendedores individuais (MEIs) e profissionais autônomos, visando solucionar a falta de organização financeira, uma dificuldade comum desse público. Muitos ainda utilizam métodos informais, como cadernos ou planilhas simples, dificultando o acompanhamento do fluxo de caixa e a tomada de decisões estratégicas. O sistema propõe oferecer uma ferramenta prática, acessível e intuitiva, capaz de registrar e categorizar transações, gerar relatórios, definir metas e emitir alertas, contribuindo para uma gestão financeira mais eficiente.
+
+Além de atender a uma necessidade concreta dos pequenos negócios, o projeto promove a educação financeira ao incentivar o uso contínuo de recursos tecnológicos. A solução prioriza simplicidade e usabilidade, sem abrir mão de funcionalidades essenciais como segurança das informações e compatibilidade com múltiplas plataformas, ajudando os usuários a reduzir gastos desnecessários, melhorar o planejamento estratégico e alcançar maior sustentabilidade em seus empreendimentos.
+
+## Integrantes
+
+* Heron Victor Vieira da Silva
+* Hugo Ferreira Silva
+* Izadora Helena Pedrosa Soares Pereira
+* Júlia Fernanda Alves
+* Maria Clara Silva Botelho
 # PUC Integra
 
 `Sistemas de Informação`
@@ -16,10 +35,12 @@ Inspirado no aplicativo Web e Mobile “Brainly”, uma comunidade de compartilh
 * Mateus de Carvalho Freitas
 * Ronaldo Pereira de Camargos Júnior
 
-## Orientador
 
+## Orientador
 * Cleia Marcia Gomes Amaral
 
+* Cleia Marcia Gomes Amaral
+  
 ## Instruções de utilização
 
 Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.

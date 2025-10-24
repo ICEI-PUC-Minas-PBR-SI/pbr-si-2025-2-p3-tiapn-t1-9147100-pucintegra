@@ -1,5 +1,14 @@
 ## 3. Modelagem dos Processos de Negócio
 
+> **Links Úteis**:
+> - [Modelagem de Processos AS-IS x TO-BE](https://dheka.com.br/modelagem-as-is-to-be/)
+> - [20 Dicas Práticas de Modelagem de Processos](https://dheka.com.br/20-dicas-praticas-de-modelagem-de-processos/)
+
+---
+
+### 3.1. Modelagem da situação atual (Modelagem AS IS)
+
+Atualmente, a maioria dos microempreendedores individuais (MEIs) e profissionais autônomos gerencia suas despesas de forma informal, utilizando métodos manuais ou ferramentas básicas que não foram projetadas para esse fim, como cadernos, planilhas simples ou anotações memorizadas. Esse processo apresenta diversas ineficiências, incluindo dificuldade em organizar e rastrear gastos, categorização inconsistente, acompanhamento fragmentado do fluxo de caixa e limitações na tomada de decisões financeiras. Como resultado, os microempreendedores enfrentam desafios para manter controle efetivo sobre suas finanças e realizar um planejamento estratégico adequado.
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 No contexto atual, o processo de compartilhamento e validação de conhecimento entre a comunidade acadêmica da PUC Minas acontece de forma fragmentada, e desorganizada, exigindo a necessidade de recorrer a fontes externas, como inteligências artificiais, redes sociais e plataformas online. Embora esses recursos ofereçam respostas imediatas, não garantem aos usuários a veracidade das informações, o alinhamento acadêmico ou integração as diretrizes institucionais. Ademais, a interação entre professores, monitores e estudantes acontece, principalmente, em sala de aula, por e-mail ou através sistemas administrativos da universidade que não são focados no suporte ao aprendizado. 
 Portanto, os cenários observados caracterizam um fluxo de troca de informações descentralizado e sem padrões, em que a confiabilidade é baixa e a comunicação entre os alunos, professores e colaboradores da universidade não é totalmente aproveitada.
@@ -20,6 +29,17 @@ O fluxo inicia quando o usuário acessa a tela de cadastro e insere seus dados p
 
 **Processo 4 – Envio de Dúvidas/Respostas**: Esse processo é o núcleo da plataforma, pois viabiliza a troca de conhecimentos entre os usuários. Ele se inicia quando o aluno ou professor acessa a área de postagens e opta por enviar uma nova dúvida ou responder a uma já existente. O sistema disponibiliza um formulário onde é possível descrever o conteúdo em texto, além de anexar links, imagens ou outros materiais de apoio. As publicações são organizadas por disciplina, curso e palavras-chave, facilitando sua localização. Ao confirmar o envio, o sistema valida a estrutura mínima da postagem e registra os dados de forma segura. Esse processo fortalece o aprendizado colaborativo, permitindo que dúvidas se transformem em discussões construtivas e soluções coletivas.
 
+Tendo identificado os gargalos do modelo AS IS, propõe-se a implementação de um sistema de controle de despesas para MEIs e profissionais autônomos, com o objetivo de substituir práticas informais e suscetíveis a erros por um processo digital, automatizado e estratégico. A solução abrange o registro padronizado de receitas e despesas, o anexo digital de comprovantes, a atualização automática do fluxo de caixa em dashboards interativos, a geração de relatórios personalizados, o acompanhamento de metas financeiras e o envio de alertas e notificações sobre prazos e gastos.
+
+Essa proposta está diretamente alinhada às estratégias de organização, eficiência e sustentabilidade financeira do negócio, pois centraliza informações em um único ambiente seguro, oferece visibilidade em tempo real e reduz falhas manuais. Como limites, destacam-se a necessidade de acesso à internet, a curva de aprendizado inicial do usuário e possíveis resistências na migração de processos informais para digitais.
+
+As oportunidades de melhoria são diversas: aumento do controle e clareza sobre as finanças, redução de erros por meio da automação, otimização do tempo com a eliminação de tarefas repetitivas, análises mais aprofundadas a partir de relatórios e categorização de dados, incentivo à disciplina financeira e maior confiabilidade por meio de armazenamento seguro. Dessa forma, o processo TO BE contribui não apenas para a eficiência operacional, mas também para o fortalecimento estratégico da gestão financeira no contexto de MEIs e profissionais autônomos.
+
+### 3.3. Modelagem dos processos
+
+[PROCESSO 1 - Controle de Despesas de MEIs](./processos/processo-1-controle-despesas.md "Detalhamento do Processo 1.")
+
+[PROCESSO 2 - Planejamento Financeiro com Metas](./processos/processo-2-planejamento-financeiro.md "Detalhamento do Processo 2.")
 **Processo 5 – Avaliação das Respostas**: Após a publicação de uma resposta, o processo de avaliação assegura a qualidade e a confiabilidade das informações compartilhadas. Os usuários podem atribuir feedback positivo ou negativo às contribuições, destacando aquelas que agregam mais valor. Além disso, professores e monitores possuem a função de validar respostas, atribuindo um selo de confiabilidade institucional que garante maior credibilidade ao conteúdo. O sistema organiza as respostas com base nas melhores avaliações, exibindo-as em destaque para otimizar a experiência de consulta. Esse processo não apenas orienta outros usuários na busca pela melhor solução, como também estimula a participação qualificada, criando um ambiente de aprendizado confiável e transparente.
 
 **Processo 6 – Armazenamento dos Dados**: Esse processo é responsável por garantir que todas as informações inseridas e geradas na plataforma sejam armazenadas de forma segura e íntegra. Ele contempla tanto os dados pessoais dos usuários (cadastro, perfil, credenciais) quanto os dados acadêmicos (dúvidas, respostas, avaliações e interações). O sistema aplica técnicas de criptografia para senhas e informações sensíveis, além de adotar políticas de backup e recuperação de dados. Os acessos são regulados de acordo com os perfis de usuário, respeitando os princípios da confidencialidade e integridade definidos pela LGPD. Esse processo é essencial para sustentar a confiança dos usuários e a continuidade do ambiente, garantindo que a plataforma seja escalável, segura e aderente às normas institucionais.
