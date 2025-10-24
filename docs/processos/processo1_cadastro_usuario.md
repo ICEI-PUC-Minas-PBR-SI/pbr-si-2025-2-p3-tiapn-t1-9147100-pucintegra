@@ -33,7 +33,8 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
-| Nome | E-mail institucional | Matrícula| Senha | Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional | Valores informados pelo usuário  |
+| Nome |
+| E-mail institucional | Matrícula| Senha | Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional | Valores informados pelo usuário  |
 
 | **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
