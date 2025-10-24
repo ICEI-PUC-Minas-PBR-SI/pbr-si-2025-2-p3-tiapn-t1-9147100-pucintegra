@@ -17,11 +17,11 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ## Detalhamento das atividades  
 
-### Atividade 1 – Acessar tela de cadastro (Usuário)
+### Atividade 1 – Acessar tela principal
 
 | **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
 |-------------------|----------------|-----------------------------|-------------------|
-| Botão cadastro    | Botão          | Único, visível              |  Default          |
+|     |        |            |          |
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
@@ -33,7 +33,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
 |-----------------------|-----------------|-------------------------------------------------------|-------------------|
-| Campos do formulário: Nome, E-mail institucional, Matrícula, Senha, Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional | Valores informados pelo usuário  |
+| Nome | E-mail institucional | Matrícula| Senha | Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  | Todos obrigatórios; e-mail com domínio institucional | Valores informados pelo usuário  |
 
 | **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
