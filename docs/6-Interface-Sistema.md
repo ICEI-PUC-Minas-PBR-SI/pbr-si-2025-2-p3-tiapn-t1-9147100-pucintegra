@@ -14,7 +14,9 @@ _Descrição da tela principal do sistema._
 
 ## 6.2. Processo 1 - Tela de Cadastro
 
-_Descrição da tela relativa à atividade 1._
+O processo de cadastro tem como objetivo permitir que novos usuários sejam registrados na plataforma PUC Integra.
+Durante o cadastro, o usuário informa seus dados pessoais (nome, e-mail institucional, senha, matrícula e curso).
+Após o preenchimento, o sistema valida as informações e identifica automaticamente o tipo de usuário: aluno ou professor.
 
 ![Tela de Cadastro](../docs/images/prototipo_cadastro.png)
 
