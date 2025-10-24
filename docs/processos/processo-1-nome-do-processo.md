@@ -52,12 +52,6 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 | Próximo  | Validação de Dados | default |
 | Cancelar | Início do Cadastro | cancel  |
 
-## Nome da atividade: Informações Médicas
-
-| Campo             | Tipo          | Restrições      | Valor default |
-|-------------------|---------------|-----------------|---------------|
-| condicoes_medicas | Caixa de seleção | Múltipla seleção | Nenhum        |
-
 ### Comandos
 
 | Comandos | Destino            | Tipo    |
