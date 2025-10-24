@@ -32,16 +32,16 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 ### Atividade 2 – Preencher formulário de cadastro (Usuário)
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
-|-----------------------|-----------------|-------------------------------------------------------|-------------------|
-| Nome | Formulário (Caixa de texto) |
-| E-mail institucional | Formulário (Caixa de texto) | E-mail com domínio institucional |
+|-----------------------|-----------------|-------------------------------------------------------|-----------|
+| Nome | Formulário (Caixa de texto) | |
+| E-mail institucional | Formulário (Caixa de texto) | E-mail com domínio institucional | |
 | Matrícula| Formulário (Caixa de texto) | 
 | Senha | Formulário (Caixa de texto) | Limite de 8 caracteres |
 | Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  |  | Valores informados pelo usuário  |
 
 | **Comandos**          | **Destino**                    | **Tipo**   |
 |-----------------------|--------------------------------|------------|
-| Submeter | Validação dos dados | Usuário (entrada de dados) |
+| Cadastrar | Tela principal | Usuário (entrada de dados) |
 
 
 ---
