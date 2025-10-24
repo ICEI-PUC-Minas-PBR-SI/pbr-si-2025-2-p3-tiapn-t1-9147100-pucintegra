@@ -21,22 +21,26 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais, as 
 
 [Este modelo representaria o fluxo otimizado do processo de cadastro, incorporando as melhorias propostas. Ele pode incluir etapas como: Início do Cadastro, Preenchimento de Dados, Validação Automática, Análise de Credenciais (para profissionais), Aprovação/Rejeição, Notificação ao Usuário, e Fim do Cadastro.]
 
-### Detalhamento das Atividades
+# Detalhamento do Fluxo de Cadastro de Profissional
 
-#### Nome da atividade: Início do Cadastro
+Este documento detalha as atividades, campos, restrições e comandos de navegação do fluxo de cadastro de profissionais, incluindo elementos de controle e auditoria.
+
+## 1. Nome da atividade: Início do Cadastro
 
 | Campo | Tipo | Restrições | Valor default |
-|---|---|---|---|
-| tipo_cadastro | Seleção única | Obrigatório | default |
+| :--- | :--- | :--- | :--- |
+| tipo_cadastro | Seleção única | Obrigatório | Profissional |
 
 | Comandos | Destino | Tipo |
-|---|---|---|
+| :--- | :--- | :--- |
 | Iniciar Cadastro | Preenchimento de Dados | default |
 
-#### Nome da atividade: Preenchimento de Dados (Profissional)
+---
+
+## 2. Nome da atividade: Preenchimento de Dados (Profissional)
 
 | Campo | Tipo | Restrições | Valor default |
-|---|---|---|---|
+| :--- | :--- | :--- | :--- |
 | nome_completo | Caixa de texto | Obrigatório, mínimo 3 caracteres | |
 | cpf | Número | Obrigatório, 11 dígitos, formato XXX.XXX.XXX-XX | |
 | cnpj | Número | Opcional, 14 dígitos, formato XX.XXX.XXX/XXXX-XX | |
@@ -50,30 +54,48 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais, as 
 | comprovante_registro | Arquivo | Obrigatório, PDF ou Imagem | |
 
 | Comandos | Destino | Tipo |
-|---|---|---|
+| :--- | :--- | :--- |
 | Próximo | Validação de Dados | default |
 | Cancelar | Início do Cadastro | cancel |
 
-#### Nome da atividade: Validação de Dados
+---
+
+## 3. Nome da atividade: Validação de Dados
 
 | Campo | Tipo | Restrições | Valor default |
-|---|---|---|---|
+| :--- | :--- | :--- | :--- |
 | status_validacao | Caixa de texto | Somente leitura | Em validação |
 
 | Comandos | Destino | Tipo |
-|---|---|---|
+| :--- | :--- | :--- |
 | Concluído | Notificação de Cadastro | default |
 | Erro na Validação | Preenchimento de Dados | erro |
 
-#### Nome da atividade: Notificação de Cadastro
+---
+
+## 4. Nome da atividade: Notificação de Cadastro
 
 | Campo | Tipo | Restrições | Valor default |
-|---|---|---|---|
+| :--- | :--- | :--- | :--- |
 | mensagem_notificacao | Área de texto | Somente leitura | Seu cadastro foi concluído com sucesso! |
+| data_cadastro | Data/Hora | Somente leitura, Auditoria | [Data e hora atual do sistema] |
 
 | Comandos | Destino | Tipo |
-|---|---|---|
+| :--- | :--- | :--- |
 | Fechar | Fim do Processo 1 | default |
+
+---
+
+## 5. Nome da atividade: Fim do Processo 1
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| status_final | Caixa de texto | Somente leitura | Cadastro Finalizado |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| Nenhum | Nenhum | Fim do Fluxo |
+
 
 ## Wireframe 
 
