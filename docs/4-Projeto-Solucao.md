@@ -12,7 +12,7 @@
  
  **Exemplo do diagrama de Arquitetura**:
  
-![Exemplo de Arquitetura](../images/arquitetura-exemplo.png)
+![Exemplo de Arquitetura](../docs/images/arquitetura_exemplo.png)
  
 ---
 
@@ -137,7 +137,7 @@ O diagrama reflete a organização das informações em entidades (tabelas) inte
 
 Em resumo, este modelo de dados integrado não apenas traduz os requisitos dos processos de negócio em uma estrutura de banco de dados lógica e coesa, mas também estabelece uma fundação robusta para o desenvolvimento e a futura expansão das funcionalidades da plataforma PUC Integra.
 
-![Modelo relacional](images/modelo_entidades.png "Modelo Relacional.")
+![Modelo relacional](images/modelo_relacional.png "Modelo Relacional.")
 
 ---
 
@@ -153,7 +153,7 @@ A estrutura é composta por três tabelas principais:
 
 Essa abordagem de generalização/especialização é altamente eficiente, pois centraliza os dados comuns em uma única tabela (`PESSOA`) e separa as especificidades de cada perfil, criando uma base de dados organizada, sem redundância e pronta para ser expandida com atributos exclusivos para alunos ou professores no futuro.
 
-![Modelo relacional - Processo 1](images/modelo_entidade_p1.png "Modelo Relacional - Processo 1.")
+![Modelo relacional - Processo 1](images/modelo_p1.png "Modelo Relacional - Processo 1.")
 
 ---
 
@@ -162,8 +162,55 @@ Essa abordagem de generalização/especialização é altamente eficiente, pois 
 **Tabela Pessoa:**
 
 <code>
+    CREATE TABLE PESSOA (
+        Nome VARCHAR(100) NOT NULL,
+        CPF VARCHAR(14) NOT NULL UNIQUE,
+        Matricula VARCHAR(15) PRIMARY KEY,
+        Email_Institucional VARCHAR(100) NOT NULL UNIQUE,
+        Senha VARCHAR(255) NOT NULL,
+        Tipo_Pessoa ENUM('Aluno', 'Professor') NOT NULL,
+        Foto_Perfil VARCHAR(255)
+    );
+</code>
 
+**Tabela Curso:**
+<code>
+    CREATE TABLE CURSO (
+        Id_Curso INT PRIMARY KEY AUTO_INCREMENT,
+        Nome VARCHAR(100) NOT NULL,
+        Sigla VARCHAR(10) UNIQUE
+    );
+</code>
 
+**Tabela Disciplina:**
+<code>
+    CREATE TABLE DISCIPLINA (
+        Id_Disciplina INT PRIMARY KEY AUTO_INCREMENT,
+        Nome VARCHAR(100) NOT NULL,
+        Sigla VARCHAR(10) UNIQUE
+    );
+</code>
+
+**Tabela Aluno:**
+
+<code>
+    CREATE TABLE ALUNO (
+        Matricula_Aluno VARCHAR(14) PRIMARY KEY,
+        Eh_Monitor BOOLEAN DEFAULT FALSE,
+        FOREIGN KEY (Matricula_Aluno) REFERENCES PESSOA(Matricula)
+    );
+</code>
+
+**Tabela Professor:**
+
+<code>
+-- Tabela PROFESSOR (Especialização de PESSOA)
+    CREATE TABLE PROFESSOR (
+        Matricula_Professor VARCHAR(14) PRIMARY KEY,
+        Id_Disciplina_Principal INT,
+        FOREIGN KEY (Matricula_Professor) REFERENCES PESSOA(Matricula),
+        FOREIGN KEY (Id_Disciplina_Principal) REFERENCES DISCIPLINA(Id_Disciplina)
+    );
 </code>
 
 Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
