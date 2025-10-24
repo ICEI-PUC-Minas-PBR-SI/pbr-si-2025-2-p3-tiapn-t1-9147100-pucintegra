@@ -26,7 +26,7 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 
 | Campo         | Tipo          | Restrições | Valor default |
 |---------------|---------------|------------|---------------|
-| tipo_cadastro | Seleção única | Obrigatório | Paciente      |
+| tipo_cadastro | Seleção única | Obrigatório | Paciente e Profissional    |
 
 ### Comandos
 
