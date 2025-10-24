@@ -18,26 +18,31 @@ O processo de cadastro tem como objetivo permitir que novos usuários sejam regi
 Durante o cadastro, o usuário informa seus dados pessoais (nome, e-mail institucional, senha, matrícula e curso).
 Após o preenchimento, o sistema valida as informações e identifica automaticamente o tipo de usuário: aluno ou professor.
 
-![Tela de Cadastro](../docs/images/cadastro_screen.png)
+![Tela de Cadastro](../docs/images/prototipo_cadastro.png)
 
 
 ## 6.3. Processo 2 - Tela de Login
 
-_Descrição da tela relativa à atividade 2._
+O processo de login garante que apenas usuários cadastrados possam acessar a plataforma PUC Integra.
+Para isso, o usuário deve inserir seu e-mail institucional e senha previamente cadastrada.
+O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambiente da plataforma.
 
-![Tela de Login](../docs/images/login_screen.png)
+![Tela de Login](../docs/images/prototipo_login.png)
 
 ## 6.4. Processo 3 - Tela de Personalização do perfil
 
-_Descrição da tela relativa à atividade 2._
+O processo de personalização de perfil permite que o usuário configure e edite suas informações pessoais e acadêmicas após o login.
+Essa etapa é importante para adaptar a experiência de uso às necessidades de cada membro da comunidade acadêmica, permitindo atualizações
+de dados, inserção de foto, definição de preferências e atualização de informações institucionais.
 
-![Tela de Login](../docs/images/_screen.png)
+![Tela de Login](../docs/images/.png)
 
-## 6.5. Processo 5 - Tela de perguntas e respostas
+## 6.5. Processo 4 - Tela de Perguntas e respostas
 
-_Descrição da tela relativa à atividade 2._
+O Processo 4 descreve o fluxo pelo qual um usuário publica uma pergunta ou envia uma resposta na plataforma acadêmica (feed de interação). 
+O objetivo é permitir a criação de dúvidas ligadas às disciplinas institucionais e respostas colaborativas
 
-![Tela de Login](../docs/images/_screen.png)
+![Tela de Login](../docs/images/.png)
 
 
 
