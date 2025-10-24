@@ -9,31 +9,15 @@ CREATE TABLE PESSOA (
     Foto_Perfil VARCHAR(255)
 );
 
--- Tabela CURSO
-CREATE TABLE CURSO (
-    Id_Curso INT PRIMARY KEY AUTO_INCREMENT,
-    Nome VARCHAR(100) NOT NULL,
-    Sigla VARCHAR(10) UNIQUE
-);
-
--- Tabela DISCIPLINA
-CREATE TABLE DISCIPLINA (
-    Id_Disciplina INT PRIMARY KEY AUTO_INCREMENT,
-    Nome VARCHAR(100) NOT NULL,
-    Sigla VARCHAR(10) UNIQUE
-);
 
 -- Tabela ALUNO (Especialização de PESSOA)
 CREATE TABLE ALUNO (
     Matricula_Aluno VARCHAR(14) PRIMARY KEY,
-    Eh_Monitor BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (Matricula_Aluno) REFERENCES PESSOA(Matricula)
 );
 
 -- Tabela PROFESSOR (Especialização de PESSOA)
 CREATE TABLE PROFESSOR (
     Matricula_Professor VARCHAR(14) PRIMARY KEY,
-    Id_Disciplina_Principal INT,
-    FOREIGN KEY (Matricula_Professor) REFERENCES PESSOA(Matricula),
-    FOREIGN KEY (Id_Disciplina_Principal) REFERENCES DISCIPLINA(Id_Disciplina)
+    FOREIGN KEY (Matricula_Professor) REFERENCES PESSOA(Matricula)
 );
