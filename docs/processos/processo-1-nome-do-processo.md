@@ -38,13 +38,13 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 
 | Campo             | Tipo          | Restrições                                  | Valor default |
 |-------------------|---------------|---------------------------------------------|---------------|
-| nome_completo     | Caixa de texto | Obrigatório, mínimo 3 caracteres            |               |
-| cpf               | Número        | Obrigatório, 11 dígitos, formato XXX.XXX.XXX-XX |               |
-| data_nascimento   | Data          | Obrigatório, formato DD-MM-AAAA, maior de 18 anos |               |
-| endereco          | Área de texto | Obrigatório                                 |               |
-| telefone          | Caixa de texto | Obrigatório, formato (XX) XXXXX-XXXX        |               |
-| email             | Caixa de texto | Obrigatório, formato de e-mail              |               |
-
+| nome_completo     | Caixa de texto | Obrigatório, mínimo 3 caracteres            |              |
+| cpf               | Número        | Obrigatório, 11 dígitos, formato XXX.XXX.XXX-XX |           |
+| email             | Caixa de texto | Obrigatório, formato de e-mail              |              |     
+| data_nascimento   | Data          | Obrigatório, formato DD-MM-AAAA, maior de 18 anos |         |           
+| endereco          | Área de texto | Obrigatório                                 |               |        
+| telefone          | Caixa de texto | Obrigatório, formato (XX) XXXXX-XXXX        |              |           
+                                                                                                                
 ### Comandos
 
 | Comandos | Destino            | Tipo    |
