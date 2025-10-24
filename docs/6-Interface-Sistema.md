@@ -35,14 +35,14 @@ O processo de personalização de perfil permite que o usuário configure e edit
 Essa etapa é importante para adaptar a experiência de uso às necessidades de cada membro da comunidade acadêmica, permitindo atualizações
 de dados, inserção de foto, definição de preferências e atualização de informações institucionais.
 
-![Tela de Login](../docs/images/.png)
+![Tela de Personalização do perfil](../docs/images/.png)
 
 ## 6.5. Processo 4 - Tela de Perguntas e respostas
 
 O Processo 4 descreve o fluxo pelo qual um usuário publica uma pergunta ou envia uma resposta na plataforma acadêmica (feed de interação). 
 O objetivo é permitir a criação de dúvidas ligadas às disciplinas institucionais e respostas colaborativas
 
-![Tela de Login](../docs/images/.png)
+![Tela de Perguntas e respostas](../docs/images/.png)
 
 
 
