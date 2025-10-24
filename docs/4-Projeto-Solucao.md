@@ -50,6 +50,59 @@ Ações principais:
 
 ---
 
+**Tela de Personalização de Perfil ("Editar Perfil")**
+O protótipo de alta fidelidade "Editar Perfil" (baseado no Processo 3 – Personalização de Perfil) permite ao usuário atualizar suas informações pessoais e credenciais após o login. O fluxo principal envolve acessar a área de perfil, atualizar os dados desejados, e o sistema validar e salvar as alterações no banco de dados.
+
+Campos disponíveis:
+* **Foto de Perfil** (Upload de imagem - permite alteração)
+* **Nome de Usuário** (Caixa de texto - permite atualização)
+* **E-mail** (Caixa de texto - permite atualização)
+* **Número de Telefone** (Caixa de texto - permite atualização)
+* **Curso Matriculado** (Seleção única - permite atualização da afiliação acadêmica)
+* **Biografia** (Área de texto - limite de 250 caracteres)
+* **Link "Deseja Alterar sua senha? Clique Aqui!"** (Link - redireciona para a funcionalidade de alteração de senha)
+
+Ações principais:
+* **Botão "Enviar"** → Submete os dados para validação e persistência no banco de dados.
+* **Botão "Cancelar"** → Descarta as alterações e retorna à visualização anterior.
+
+![Protótipo de alta fidelidade - Editar Perfil](../docs/images/prototipo_personalizacao_perfil.jpg)
+
+---
+
+**Tela de Criação de Pergunta ("Faça uma pergunta")**
+Este protótipo (baseado no Fluxo Pergunta do Processo 4) é a interface para o usuário publicar dúvidas acadêmicas na plataforma. A tela garante que a pergunta seja contextualizada, associando-a a um Curso e Disciplina, e permitindo a inclusão de *Palavras-Chave* e anexos para melhor categorização e busca.
+
+Campos disponíveis:
+* **Título** (Caixa de texto - obrigatório)
+* **Curso** (Seleção única - afiliação acadêmica)
+* **Disciplina** (Seleção única - afiliação acadêmica)
+* **Descrição** (Área de texto/Editor de texto enriquecido - Conteúdo da dúvida)
+* **Inserir um Anexo** (Upload de arquivo - permite a inclusão de até 3 arquivos)
+* **Palavras-Chave** (Seleção múltipla/Caixa de texto com seleção - permite categorização por tags)
+
+Ações principais:
+* **Botão "Publicar Dúvida"** → Confirma o envio da postagem para o sistema, onde será registrada no banco de dados.
+* **Botão "Cancelar"** → Aborta a criação da pergunta.
+
+![Protótipo de alta fidelidade - Fazer uma pergunta](../docs/images/prototipo_pergunta.jpg)
+
+---
+
+**Tela de Envio de Resposta**
+O protótipo de Envio de Resposta (baseado no Fluxo Resposta do Processo 4) é a área de interação onde um usuário pode contribuir com soluções para uma dúvida publicada.
+
+Campos disponíveis:
+* **Pergunta:** (Área de exibição - Exibe o conteúdo da pergunta que está sendo respondida).
+* **Resposta:** (Área de texto/Editor de texto enriquecido - Permite inserção de texto, links, imagens e formatação).
+* **Opções de formatação:** (Ícones de texto enriquecido, como negrito, itálico, listas, equações e anexos).
+
+Ações principais:
+* **Botão "Enviar"** → Submete o conteúdo da resposta ao sistema para registro e vinculação à pergunta.
+* **Botão "Cancelar"** → Aborta o preenchimento da resposta.
+
+![Protótipo de alta fidelidade - Enviar Resposta](../docs/images/prototipo_resposta.jpg)
+
 ## Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
