@@ -98,5 +98,8 @@ Este documento detalha as atividades, campos, restrições e comandos de navega�
 
 
 ## Wireframe 
+<img width="1346" height="683" alt="Captura de tela 2025-10-24 195927" src="https://github.com/user-attachments/assets/1a9162c4-3db1-45c6-b204-712ff54451be" />
 
-![WhatsApp Image 2025-10-03 at 20 20 28](https://github.com/user-attachments/assets/c86abb74-5645-473b-a8b0-433a064a9a62)
+<img width="1339" height="538" alt="Captura de tela 2025-10-24 200041" src="https://github.com/user-attachments/assets/05c06648-fde3-460c-8d40-96d24f77fe31" />
+
+<img width="1319" height="409" alt="Captura de tela 2025-10-24 200058" src="https://github.com/user-attachments/assets/e6e8b100-510d-4520-9af0-9bfeee871a3d" />
