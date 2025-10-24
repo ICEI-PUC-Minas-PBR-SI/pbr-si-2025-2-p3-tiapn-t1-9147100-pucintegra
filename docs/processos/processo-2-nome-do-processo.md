@@ -33,11 +33,6 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais, as 
 |---|---|---|
 | Iniciar Cadastro | Preenchimento de Dados | default |
 
-| Comandos | Destino | Tipo |
-|---|---|---|
-| Próximo | Validação de Dados | default |
-| Cancelar | Início do Cadastro | cancel |
-
 #### Nome da atividade: Preenchimento de Dados (Profissional)
 
 | Campo | Tipo | Restrições | Valor default |
