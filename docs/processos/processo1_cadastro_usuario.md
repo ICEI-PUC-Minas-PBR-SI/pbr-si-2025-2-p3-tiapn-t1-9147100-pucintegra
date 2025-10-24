@@ -35,13 +35,13 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 |-----------------------|-----------------|-------------------------------------------------------|-----------|
 | Nome | Formulário (Caixa de texto) | |
 | E-mail institucional | Formulário (Caixa de texto) | E-mail com domínio institucional | |
-| Matrícula| Formulário (Caixa de texto) | 
+| Matrícula| Formulário (Caixa de texto) |  |
 | Senha | Formulário (Caixa de texto) | Limite de 8 caracteres |
-| Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  |  | Valores informados pelo usuário  |
+| Tipo de usuário (professor/aluno) | Formulário (Caixa de texto)  |   |
 
-| **Comandos**          | **Destino**                    | **Tipo**   |
-|-----------------------|--------------------------------|------------|
-| Cadastrar | Tela principal | Usuário (entrada de dados) |
+| **Comandos** |    **Destino**    |         **Tipo**           |
+|--------------|-------------------|----------------------------|
+| Cadastrar    | Tela principal    | Usuário (entrada de dados) |
 
 
 ---
