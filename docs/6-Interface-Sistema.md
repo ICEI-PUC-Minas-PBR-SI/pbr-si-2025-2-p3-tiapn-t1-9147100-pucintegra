@@ -25,4 +25,17 @@ _Descrição da tela relativa à atividade 2._
 
 ![Tela de Login](../docs/images/login_screen.png)
 
+## 6.4. Processo 3 - Tela de Personalização do perfil
+
+_Descrição da tela relativa à atividade 2._
+
+![Tela de Login](../docs/images/login_screen.png)
+
+## 6.5. Processo 5 - Tela de perguntas e respostas
+
+_Descrição da tela relativa à atividade 2._
+
+![Tela de Login](../docs/images/login_screen.png)
+
+
 
