@@ -11,14 +11,14 @@ A tela principal do sistema corresponde ao dashboard financeiro, que concentra o
 
 Além disso, a tela apresenta um formulário para o cadastro de novas transações, no qual o usuário pode registrar descrição, valor, tipo (receita ou despesa), categoria e data da movimentação. Logo abaixo, encontra-se a área de últimas transações, organizada em formato de tabela, possibilitando a visualização rápida das movimentações recentes. Por fim, a interface também contempla seções destinadas ao acompanhamento de despesas por categoria e ao monitoramento de metas financeiras, que serão aprimoradas nas próximas sprints com a inclusão de funcionalidades dinâmicas.
 
-[`Tela principal do sistema`](images/)
+![`Tela principal do sistema`](../docs/images/)
 
 
-## 6.2. Telas do processo 1
+## 6.2. Processo 1 - Tela de Cadastro
 
 Ainda em desenvolvimento. Esta seção reunirá as telas voltadas para o processo de acompanhamento estratégico, contemplando relatórios visuais, gráficos comparativos e histórico consolidado das finanças.
 
-[`Tela da atividade 1`](images/)
+![Tela de Cadastro](../docs/images/cadastro_screen.png)
 
 _Descrição da tela relativa à atividade 2._
 
@@ -29,10 +29,10 @@ _Descrição da tela relativa à atividade 2._
 
 Ainda em desenvolvimento. Esta seção reunirá as telas voltadas para o processo de acompanhamento estratégico, contemplando relatórios visuais, gráficos comparativos e histórico consolidado das finanças.
 
-[`Tela da atividade 1`](images/)
+## 6.3. Processo 2 - Tela de Login
 
 _Descrição da tela relativa à atividade 2._
 
-[`Tela da atividade 2`](images/)
+![Tela de Login](../docs/images/login_screen.png)
 
 
