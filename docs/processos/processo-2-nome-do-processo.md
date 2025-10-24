@@ -98,6 +98,11 @@ Este documento detalha as atividades, campos, restrições e comandos de navega�
 
 
 ## Wireframe 
+
+<img width="1360" height="692" alt="Captura de tela 2025-10-24 200828" src="https://github.com/user-attachments/assets/a23ec5e4-0e29-4c0d-95ce-fd340e5dac07" />
+
+<img width="1352" height="668" alt="Captura de tela 2025-10-24 200922" src="https://github.com/user-attachments/assets/8dcdd339-2931-4942-9e55-6cc2d7192421" />
+
 <img width="1346" height="683" alt="Captura de tela 2025-10-24 195927" src="https://github.com/user-attachments/assets/1a9162c4-3db1-45c6-b204-712ff54451be" />
 
 <img width="1339" height="538" alt="Captura de tela 2025-10-24 200041" src="https://github.com/user-attachments/assets/05c06648-fde3-460c-8d40-96d24f77fe31" />
