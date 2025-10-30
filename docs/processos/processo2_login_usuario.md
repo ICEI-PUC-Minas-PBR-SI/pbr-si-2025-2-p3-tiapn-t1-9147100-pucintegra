@@ -29,9 +29,10 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ### Atividade 2 – Inserir Credenciais de acesso (Usuário)
 
-| **Campo**           | **Tipo**        | **Restrições**                               | **Valor** |
-|---------------------|-----------------|----------------------------------------------|-------------------|
-|Campos: E-mail institucional, Senha    | Formulário  | campos obrigatórios: e-mail com domínio institucional; e senha |  Default    |
+| **Campo**           | **Tipo**        | **Restrições**                     | **Valor** |
+|---------------------|-----------------|------------------------------------|-----------|
+|E-mail institucional | Caixa de Texto  | E-mail com domínio institucional   |  Default  |
+|Senha                | Caixa de Texto  | Min. 8 caracteres                  |           |
 
 | **Comandos**       | **Destino**                 | **Tipo**   |
 |--------------------|-----------------------------|------------|
