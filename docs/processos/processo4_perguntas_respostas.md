@@ -22,11 +22,11 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 
 # Detalhamento das atividades  
 
-### Atividade 1 – Acessar área de Postagens (Usuário)
+### Atividade 1 – Acessar área de Postagens 
 
 | **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
 |-------------------|----------------|-----------------------------|-------------------|
-| Seção "Postagens" | Navegação UI   | Requer login concluído      |  Default          |
+| "Postagens"       | Navegação UI   | Requer login concluído      |  Default          |
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
@@ -41,26 +41,31 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Branching          | Pergunta → Fazer pergunta; Resposta → Selecionar pergunta para responder | Usuário (decisão) |
+| Branching          | Pergunta → Fazer pergunta        |Usuário (decisão)|
+| Branching          | Resposta → Selecionar pergunta para responder | Usuário (decisão) |
 
 
 ### Fluxo Pergunta:
 
-Atividade 1: Clicar em "Fazer uma pergunta" (Usuário)
+Atividade 1: Clicar em "Fazer uma pergunta" 
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
-|--------------------|-------------|-------------------------------|------------|
+|--------------------|-------------|-------------------------------|-----------|
 | Botão "Fazer uma pergunta" | Botão | Único e visível  | Default  |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
 | Clicar no botão    | Formulário de dúvida | Usuário (interação)    |
 
-Atividade 2: Preencher formulário de dúvida (Usuário)
+Atividade 2: Preencher formulário de dúvida
 
 | **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
 |--------------------|-------------|-------------------------------|------------|
-| Campos: Título, Conteúdo, Curso, Disciplina, Palavras-chave | Formulário | Título obrigatório; conteúdo mínimo; curso/disciplina validos |Valores informados|
+| Título   | Caixa de Texto | Obrigatório | | 
+| Conteúdo | Seleção única | Min. X caracteres | |
+| Curso | Seleção única | Válido| | |
+| Disciplina | Seleção única | Válido| | |
+| Palavras-chave |Caixa de Texto  | Min. 50 caracteres | |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
@@ -68,7 +73,7 @@ Atividade 2: Preencher formulário de dúvida (Usuário)
 
 
 ### Fluxo Resposta:
-Atividade 1: Selecionar pergunta que deseja responder (Usuário)
+Atividade 1: Selecionar pergunta que deseja responder 
 
 | **Campo**          | **Tipo**        | **Restrições**               |**Valor**|
 |--------------------|-----------------|------------------------------|------------|
@@ -78,11 +83,13 @@ Atividade 1: Selecionar pergunta que deseja responder (Usuário)
 |--------------------|----------------------------------|------------|
 | Clicar na pergunta | Abrir campo de resposta | Usuário (seleção)   |
 
-Atividade 2: Preencher conteúdo da resposta (Usuário)
+Atividade 2: Preencher conteúdo da resposta 
 
 | **Campo**          | **Tipo**    | **Restrições**                |**Valor** |
-|--------------------|-------------|-------------------------------|------------|
-| Conteúdo da resposta: Texto, Links, Imagens | Editor de texto enriquecido | Limites de tamanho; imagens com formatos válidos; links sanitizados | Conteúdo inserido |
+|--------------------|-------------|-------------------------------|----------|
+| Texto   | Caixa de Texto | Max. 500 caracteres |
+| Links   | Link | Links sanitizados | |
+| Imagens | Imagem | JPG ou PNG |  |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
@@ -100,7 +107,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 
 
-### Atividade 2 - Confirmar envio da postagem (Usuário)
+### Atividade 2 - Confirmar envio da postagem 
 
 | **Campo**          | **Tipo**    | **Restrições**                |**Valor** |
 |--------------------|-------------|-------------------------------|------------|
@@ -113,46 +120,7 @@ Atividade 2: Preencher conteúdo da resposta (Usuário)
 
 ---
 
-### Atividade 3 – Registrar postagem (Sistema)
-
-| **Campo**             | **Tipo**        | **Restrições**                                        |**Valor** |
-|-----------------------|-----------------|-------------------------------------------------------|-------------------|
-| Persistência da postagem | Serviço      | Inserir metadados (autor, disciplina, timestamp); validação de conteúdo   | Postagem criada |
-
-| **Comandos**          | **Destino**                    | **Tipo**   |
-|-----------------------|--------------------------------|------------|
-| Salvar no BD          | Organizar por Disciplina/Curso | Sistema (persistência)|
-
-
----
-
-### Atividade 4 – Organizar por Disciplina/Curso (Sistema)
-
-| Campo | Tipo | Restrições | **Valor** |
-|-------|------|------------|------------|
-| Indexação / categorização | Automático | Baseado nos campos do formulário | Postagem indexada |
-
-
-| **Comandos**       | **Destino**                | **Tipo**   |
-|--------------------|----------------------------|------------|
-| Atualizar índices / categorias| Mensagem de sucesso | Sistema (indexação)|
-
----
-
-### Atividade 5 – Exibe mensagem de sucesso (Sistema → Usuário)
-
-| **Campo**               | **Tipo**    | **Restrições**                         |**Valor** |
-|-------------------------|-------------|----------------------------------------|------------|
-| Mensagem de sucesso     | Mensagem UI | Mensagem com link para visualizar postagem | Texto  |
-
-| **Comandos**       | **Destino**                                   | **Tipo**  |
-|--------------------|-----------------------------------------------|-----------|
-|Mostrar notificação | Postagem feita                     | Sistema (feedback)|
-
-
----
-
-### Atividade 6 – Visualizar postagem feita (Usuário)
+### Atividade 3 – Visualizar postagem feita 
  
 | **Campo**         | **Tipo**        | **Restrições**                              |**Valor** |
 |-------------------|-----------------|---------------------------------------------|-------------------|
