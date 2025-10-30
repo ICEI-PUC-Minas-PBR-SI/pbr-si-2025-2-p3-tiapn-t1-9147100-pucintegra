@@ -19,7 +19,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ### Atividade 1 – Acessar tela principal
 
-| **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
+| **Campo**         | **Tipo**       | **Restrições**              | **Valor Default** |
 |-------------------|----------------|-----------------------------|-------------------|
 | Botão "Realizar cadastro" |  Botão |                             |                   |
 
@@ -31,17 +31,17 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 ### Atividade 2 – Preencher formulário de cadastro (Usuário)
 
-| **Campo**             | **Tipo**        | **Restrições**                                        | **Valor** |
-|-----------------------|-----------------|-------------------------------------------------------|-----------|
+| **Campo**             | **Tipo**        | **Restrições**                                        | **Valor Default**|
+|-----------------------|-----------------|-------------------------------------------------------|------------------|
 | Nome | Caixa de texto | |
 | E-mail institucional | Caixa de texto | E-mail com domínio institucional | |
 | Matrícula| Caixa de texto |  |
 | Senha | Caixa de texto | Min. 8 caracteres |
 | Tipo de usuário (professor/aluno) | Seleção única  |   |
 
-| **Comandos** |    **Destino**    |         **Tipo**           |
-|--------------|-------------------|----------------------------|
-| Cadastrar    | Tela principal    | Usuário (entrada de dados) |
+| **Comandos** |    **Destino**    |         **Tipo**       |
+|--------------|-------------------|------------------------|
+| Cadastrar    | Tela principal    |  Inserção de usuário   |
 
 
 ---
