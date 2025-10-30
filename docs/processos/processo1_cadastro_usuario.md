@@ -21,7 +21,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
 |-------------------|----------------|-----------------------------|-------------------|
-|                   |                |                             |                   |
+| Botão "Realizar cadastro" |  Botão |                             |                   |
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
