@@ -39,68 +39,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ---
 
-### Atividade 3 – Validar credenciais (Sistema)
-
-| **Campo**     | **Tipo**        | **Restrições**                          | **Valor** |
-|---------------|-----------------|-----------------------------------------|-------------------|
-| Autenticação  | Serviço de autenticação  | Consulta à base de usuários;   | Válido / Inválido |
-
-
-| **Comandos**       | **Destino**                   | **Tipo**  |
-|--------------------|-------------------------------|-----------|
-| Verificar credenciais e políticas | Decisão "Credenciais válidas?" | Sistema (autenticação) |
-
-
----
-
-### Gateway - Credenciais válidas?
-| **Campo**           | **Tipo**    | **Restrições**                                | **Valor** |
-|-------------------- |-------------|-----------------------------------------------|-----------|
-| Resultado da autenticação| Booleano   | Resultado da validação do sistema         | True / False |
-
-| **Comandos**       | **Destino**                      | **Tipo**   |
-|--------------------|----------------------------------|------------|
-| Branching          | SIM → Gerar token; NÃO → Exibir mensagem de erro | Sistema (decisão)   |
-
-
-#### Atividade (NÃO): Exibir mensagem de erro (Sistema → Usuário)
-
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
-|--------------------|-------------|-------------------------------|------------|
-| Feedback de erro   | Mensagem UI | Mensagem apresentando o erro  | Texto      |
-
-| **Comandos**       | **Destino**                      | **Tipo**   |
-|--------------------|----------------------------------|------------|
-| Apresentar o erro ao usuário e permitir correção| Formulário de Login | Sistema (feedback)  |
-
-
-#### Atividade (SIM): Gerar Token de Sessão (Sistema → Usuário)
-
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
-|--------------------|-------------|-------------------------------|------------|
-| Emissão de token   | Serviço     | Validação prévia obrigatória  | Token de sessão válido |
-
-| **Comandos**       | **Destino**                      | **Tipo**   |
-|--------------------|----------------------------------|------------|
-|Criar token e armazenar sessão| Redirecionar para Tela Principal  | Sistema (autenticação) |
-
----
-
-
-### Atividade 4 – Redirecionar para Tela Principal (Sistema → Usuário)
-
-| **Campo**             | **Tipo**     | **Restrições**                        | **Valor** |
-|-----------------------|--------------|---------------------------------------|------------|
-| Navegação pós-login   | Navegação    | Necessita token válido                | Tela Principal com dados do usuário |
-
-| **Comandos**         | **Destino**                   | **Tipo**   |
-|----------------------|-------------------------------|------------|
-| Redirecionar automaticamente | Visualizar tela de Perfil | Sistema (navegação)|
-
-
----
-
-### Atividade 5 – Visualizar tela de Perfil (Usuário)
+### Atividade 3 – Visualizar tela de Perfil (Usuário)
 
 | **Campo**        | **Tipo**      | **Restrições**                       | **Valor** |
 |------------------|---------------|--------------------------------------|------------|
