@@ -1,111 +1,233 @@
-## 3.3.1 Processo 2 – Cadastro de Profissionais
+### 3.3.1 Processo 3 – Oportunidades de Melhoria
 
-### Oportunidades de Melhoria para o Processo de Cadastro
-
-Com base na análise do processo atual (AS-IS) de cadastro de profissionais, as seguintes oportunidades de melhoria foram identificadas:
-
-*   **Automação e Padronização:** Eliminar o preenchimento manual e repetitivo de formulários, implementando um sistema padronizado e automatizado para coleta de informações.
-*   **Validação Abrangente e Automática:** Implementar validações automáticas para dados como CPF/CNPJ, idade mínima, formato de e-mail e registros profissionais, reduzindo erros e inconsistências.
-*   **Segurança e Privacidade dos Dados:** Centralizar o armazenamento de dados pessoais e de saúde em um ambiente seguro, garantindo a privacidade e a conformidade com regulamentações de proteção de dados.
-*   **Agilidade na Aprovação:** Reduzir a dependência de validação manual de credenciais profissionais, agilizando o processo de aprovação e disponibilização do serviço.
-*   **Facilidade de Atualização:** Desenvolver um sistema que permita atualizações cadastrais de forma ágil e acessível aos usuários (pacientes e profissionais), sem a necessidade de processos manuais complexos.
-*   **Integração de Sistemas:** Conectar o sistema de cadastro a prontuários eletrônicos, plataformas de pagamento e conselhos profissionais, centralizando e aumentando a confiabilidade das informações.
-*   **Comunicação Eficiente:** Melhorar a comunicação sobre o status do cadastro e outras informações relevantes, evitando perdas de comunicação e atrasos.
-
-### Exemplo de um Modelo BPMN do PROCESSO 2 - Cadastro
+<img width="2056" height="1680" alt="Novo modelo banco de dados cleia" src="https://github.com/user-attachments/assets/80fd2348-3e0f-4604-8cf7-23b3531f4169" />
 
 
-<img width="2278" height="1866" alt="Novo modelo 2" src="https://github.com/user-attachments/assets/70e50a10-cb11-4662-a952-021bab22f1d4" />
+#### Detalhamento das atividades
 
-
-
-[Este modelo representaria o fluxo otimizado do processo de cadastro, incorporando as melhorias propostas. Ele pode incluir etapas como: Início do Cadastro, Preenchimento de Dados, Validação Automática, Análise de Credenciais (para profissionais), Aprovação/Rejeição, Notificação ao Usuário, e Fim do Cadastro.]
-
-# Detalhamento do Fluxo de Cadastro de Profissional
-
-Este documento detalha as atividades, campos, restrições e comandos de navegação do fluxo de cadastro de profissionais, incluindo elementos de controle e auditoria.
-
-## 1. Nome da atividade: Início do Cadastro
-
-| Campo | Tipo | Restrições | Valor default |
+| Atividade | Tipo | Dados Utilizados | Observações |
 | :--- | :--- | :--- | :--- |
-| tipo_cadastro | Seleção única | Obrigatório | Profissional |
+| **Identificar necessidades** | Manual (Paciente) | Requisitos de saúde, tipo de profissional | O paciente inicia o processo definindo o que precisa. |
+| **Analisar solicitação** | Manual (Profissional) | Detalhes da necessidade do paciente | O profissional de saúde avalia o pedido recebido. |
+| **Verificar disponibilidade** | Manual (Profissional) | Agenda do profissional | O profissional verifica se pode atender na data/hora desejada. |
+| **Informar localização** | Usuário (Paciente) | Endereço do paciente | O paciente envia sua localização para a negociação de valores. |
+| **Negociar valor** | Manual/Usuário | Preço, localização, necessidades | Etapa de negociação entre o paciente e o profissional. |
+| **Realizar Pagamento** | Usuário (Paciente) | Dados de pagamento (cartão, Pix, etc.) | O pagamento é efetuado antes da definição da consulta. |
+| **Agendar consulta** | Manual/Usuário | Data, hora, tipo de consulta (online/presencial) | O agendamento pode ser manual ou automático após o pagamento. |
+| **Realizar Consulta** | Manual | Consulta (Presencial ou Online) | O profissional realiza o atendimento conforme agendado. |
+| **Contratar profissional** | Manual (Paciente) | Contrato, acordo de serviço | Formalização do serviço após a consulta inicial. |
 
-| Comandos | Destino | Tipo |
-| :--- | :--- | :--- |
-| Iniciar Cadastro | Preenchimento de Dados | default |
 
 ---
 
-## 2. Nome da atividade: Preenchimento de Dados (Profissional)
+### Detalhamento das Atividades (Processo 1 – Gerenciamento de Busca e Contratação de Profissional de Saúde Domiciliar - TO-BE)
 
-| Campo | Tipo | Restrições | Valor default |
-| :--- | :--- | :--- | :--- |
-| nome_completo | Caixa de texto | Obrigatório, mínimo 3 caracteres | |
-| cpf | Número | Obrigatório, 11 dígitos, formato XXX.XXX.XXX-XX | |
-| cnpj | Número | Opcional, 14 dígitos, formato XX.XXX.XXX/XXXX-XX | |
-| registro_profissional | Caixa de texto | Obrigatório, formato específico do conselho (ex: COREN-SP-123456) | |
-| formacao_academica | Área de texto | Obrigatório | |
-| especialidades | Seleção múltipla | Obrigatório, mínimo 1 seleção | Enfermagem, Fisioterapia, Fonoaudiologia, etc. |
-| areas_atendimento | Área de texto | Opcional | |
-| endereco | Área de texto | Obrigatório | |
-| telefone | Caixa de texto | Obrigatório, formato (XX) XXXXX-XXXX | |
-| email | Caixa de texto | Obrigatório, formato de e-mail | |
-| comprovante_registro | Arquivo | Obrigatório, PDF ou Imagem | |
-
-| Comandos | Destino | Tipo |
-| :--- | :--- | :--- |
-| Próximo | Validação de Dados | default |
-| Cancelar | Início do Cadastro | cancel |
+Descrevemos aqui cada uma das propriedades das atividades do processo otimizado (TO-BE), conforme o modelo de processo apresentado anteriormente. Este detalhamento visa especificar os campos de entrada/saída e os comandos associados a cada interação na plataforma Medlar.
 
 ---
 
-## 3. Nome da atividade: Validação de Dados
+#### Nome da atividade: Identificar Necessidade
 
-| Campo | Tipo | Restrições | Valor default |
-| :--- | :--- | :--- | :--- |
-| status_validacao | Caixa de texto | Somente leitura | Em validação |
+Esta atividade representa o momento em que a família reconhece a necessidade de um profissional de saúde domiciliar e decide buscar uma solução.
 
-| Comandos | Destino | Tipo |
-| :--- | :--- | :--- |
-| Concluído | Notificação de Cadastro | default |
-| Erro na Validação | Preenchimento de Dados | erro |
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Tipo de Cuidado   | Seleção única  | Obrigatório. Opções: Enfermagem, Fisioterapia, Fonoaudiologia, Cuidador, Outro |               |
+| Localização       | Caixa de Texto | Endereço completo (Rua, Número, Bairro, Cidade, Estado, CEP) |               |
+| Data/Período      | Data e Hora    | Obrigatório. Período desejado para o início do atendimento | Data atual    |
+| Observações       | Área de texto  | Máximo 500 caracteres                        |               |
 
----
-
-## 4. Nome da atividade: Notificação de Cadastro
-
-| Campo | Tipo | Restrições | Valor default |
-| :--- | :--- | :--- | :--- |
-| mensagem_notificacao | Área de texto | Somente leitura | Seu cadastro foi concluído com sucesso! |
-| data_cadastro | Data/Hora | Somente leitura, Auditoria | [Data e hora atual do sistema] |
-
-| Comandos | Destino | Tipo |
-| :--- | :--- | :--- |
-| Fechar | Fim do Processo 1 | default |
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Buscar Profissional | Buscar Profissional na Medlar (Próxima Atividade) | default |
 
 ---
 
-## 5. Nome da atividade: Fim do Processo 1
+#### Nome da atividade: Buscar Profissional na Medlar
 
-| Campo | Tipo | Restrições | Valor default |
-| :--- | :--- | :--- | :--- |
-| status_final | Caixa de texto | Somente leitura | Cadastro Finalizado |
+Nesta atividade, a família utiliza os filtros da plataforma Medlar para encontrar profissionais que atendam aos critérios definidos.
 
-| Comandos | Destino | Tipo |
-| :--- | :--- | :--- |
-| Nenhum | Nenhum | Fim do Fluxo |
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Tipo de Cuidado   | Seleção única  | Preenchido automaticamente pela atividade anterior, mas editável |               |
+| Localização       | Caixa de Texto | Preenchido automaticamente pela atividade anterior, mas editável |               |
+| Especialidade     | Seleção múltipla | Opcional. Ex: Pediátrica, Geriátrica, Ortopédica |               |
+| Gênero Preferencial | Seleção única  | Opcional. Opções: Masculino, Feminino, Indiferente | Indiferente   |
+| Avaliação Mínima  | Número         | Opcional. Escala de 1 a 5 estrelas           | 3             |
 
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Aplicar Filtros   | Visualizar Perfis e Avaliações             | default |
+| Limpar Filtros    | Buscar Profissional na Medlar (Reiniciar)  | cancel  |
 
-## Wireframe 
+---
 
-<img width="1360" height="692" alt="Captura de tela 2025-10-24 200828" src="https://github.com/user-attachments/assets/a23ec5e4-0e29-4c0d-95ce-fd340e5dac07" />
+#### Nome da atividade: Visualizar Perfis e Avaliações
 
-<img width="1352" height="668" alt="Captura de tela 2025-10-24 200922" src="https://github.com/user-attachments/assets/8dcdd339-2931-4942-9e55-6cc2d7192421" />
+A família analisa os perfis dos profissionais retornados pela busca, incluindo suas credenciais, experiência e avaliações de outros usuários.
 
-<img width="1346" height="683" alt="Captura de tela 2025-10-24 195927" src="https://github.com/user-attachments/assets/1a9162c4-3db1-45c6-b204-712ff54451be" />
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Nome Profissional | Caixa de Texto | Somente leitura                              |               |
+| Foto Perfil       | Imagem         | Somente leitura                              |               |
+| Credenciais        | Área de texto  | Somente leitura. Ex: COREN, CREFITO, etc.    |               |
+| Experiência       | Área de texto  | Somente leitura                              |               |
+| Avaliação Média   | Número         | Somente leitura. Escala de 1 a 5 estrelas    |               |
+| Comentários       | Área de texto  | Somente leitura. Lista de avaliações         |               |
+| Disponibilidade   | Tabela         | Somente leitura. Horários disponíveis        |               |
 
-<img width="1339" height="538" alt="Captura de tela 2025-10-24 200041" src="https://github.com/user-attachments/assets/05c06648-fde3-460c-8d40-96d24f77fe31" />
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Solicitar Agendamento | Solicitar Agendamento                    | default |
+| Voltar à Busca    | Buscar Profissional na Medlar              | cancel  |
 
-<img width="1319" height="409" alt="Captura de tela 2025-10-24 200058" src="https://github.com/user-attachments/assets/e6e8b100-510d-4520-9af0-9bfeee871a3d" />
+---
+
+#### Nome da atividade: Solicitar Agendamento
+
+A família seleciona um profissional e propõe um agendamento específico, que será enviado para a plataforma Medlar e, posteriormente, para o profissional.
+
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Profissional Escolhido | Caixa de Texto | Somente leitura. Nome do profissional selecionado |               |
+| Data do Atendimento | Data           | Obrigatório. Deve ser uma data futura        |               |
+| Hora do Atendimento | Hora           | Obrigatório. Deve estar dentro do horário de funcionamento |               |
+| Duração Estimada  | Número         | Opcional. Em horas ou minutos                | 1 hora        |
+| Endereço do Atendimento | Caixa de Texto | Preenchido automaticamente com o endereço da família, mas editável |               |
+
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Enviar Solicitação | Gerenciar Solicitação de Agendamento (Plataforma Medlar) | default |
+| Cancelar          | Visualizar Perfis e Avaliações             | cancel  |
+
+---
+
+#### Nome da atividade: Realizar Pagamento (via Medlar)
+
+Após a confirmação do agendamento, a família efetua o pagamento do serviço diretamente pela plataforma Medlar, garantindo segurança e rastreabilidade.
+
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Valor Total       | Número         | Somente leitura. Valor do serviço            |               |
+| Método de Pagamento | Seleção única  | Obrigatório. Opções: Cartão de Crédito, PIX, Boleto |               |
+| Dados do Cartão   | Caixa de Texto | Se Cartão de Crédito: Número, Validade, CVV  |               |
+| Comprovante       | Arquivo        | Opcional. Upload de comprovante de PIX/Boleto |               |
+
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Confirmar Pagamento | Processar Pagamento (Plataforma Medlar)  | default |
+| Cancelar Pagamento | Notificar Cancelamento de Pedido (Plataforma Medlar) | cancel  |
+
+---
+
+#### Nome da atividade: Avaliar Profissional
+
+Após o atendimento, a família tem a oportunidade de avaliar o profissional, contribuindo para o sistema de reputação da plataforma.
+
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Profissional Avaliado | Caixa de Texto | Somente leitura. Nome do profissional        |               |
+| Nota              | Seleção única  | Obrigatório. Escala de 1 a 5 estrelas        |               |
+| Comentário        | Área de texto  | Opcional. Máximo 500 caracteres              |               |
+
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Enviar Avaliação  | Registrar Avaliação (Plataforma Medlar)    | default |
+| Pular Avaliação   | Fim do Processo (Família/Paciente)         | default |
+
+---
+
+#### Nome da atividade: Cadastrar/Atualizar Perfil (na Medlar)
+
+Esta atividade é realizada pelo profissional de saúde para criar ou manter seu perfil na plataforma, essencial para ser encontrado pelas famílias.
+
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Nome Completo     | Caixa de Texto | Obrigatório                                  |               |
+| CPF               | Número         | Obrigatório. Formato: 000.000.000-00         |               |
+| Registro Profissional | Caixa de Texto | Obrigatório. Ex: COREN, CREFITO, etc.        |               |
+| Especialidades    | Seleção múltipla | Obrigatório. Ex: Pediátrica, Geriátrica      |               |
+| Foto de Perfil    | Imagem         | Opcional. Formatos: JPG, PNG                 |               |
+| Mini-currículo    | Área de texto  | Opcional. Máximo 1000 caracteres             |               |
+| Endereço de Atendimento | Caixa de Texto | Obrigatório. Área de atuação                 |               |
+| Valor da Consulta | Número         | Obrigatório. Em Reais (R$)                   |               |
+| Dados Bancários   | Tabela         | Obrigatório. Banco, Agência, Conta, Tipo, PIX |               |
+
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Salvar Perfil     | Perfil Salvo (Plataforma Medlar)           | default |
+| Cancelar          | Retornar ao Painel (Profissional)          | cancel  |
+
+---
+
+#### Nome da atividade: Definir Disponibilidade (na Medlar)
+
+O profissional gerencia sua agenda na plataforma, indicando os horários em que está disponível para atendimentos domiciliares.
+
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Calendário        | Tabela         | Obrigatório. Visualização de dias e horários |               |
+| Horários Livres   | Seleção múltipla | Obrigatório. Seleção de blocos de horário    |               |
+| Bloquear Horário  | Data e Hora    | Opcional. Para indisponibilidade temporária  |               |
+
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Salvar Agenda     | Agenda Salva (Plataforma Medlar)           | default |
+| Cancelar          | Retornar ao Painel (Profissional)          | cancel  |
+
+---
+
+#### Nome da atividade: Confirmar/Recusar Agendamento
+
+O profissional recebe uma solicitação de agendamento e decide aceitá-la ou recusá-la através da plataforma.
+
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Detalhes do Agendamento | Área de texto  | Somente leitura. Informações da solicitação |               |
+| Opção             | Seleção única  | Obrigatório. Opções: Confirmar, Recusar      |               |
+| Motivo da Recusa  | Área de texto  | Obrigatório se Recusar. Máximo 200 caracteres |               |
+
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Enviar Resposta   | Gerenciar Solicitação de Agendamento (Plataforma Medlar) | default |
+
+---
+
+#### Nome da atividade: Registrar Evolução do Paciente
+
+Após o atendimento, o profissional registra informações relevantes sobre a sessão e a evolução do paciente na plataforma.
+
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Data do Registro  | Data e Hora    | Preenchido automaticamente                   | Data e hora atual |
+| Observações       | Área de texto  | Obrigatório. Máximo 1000 caracteres          |               |
+| Próximos Passos   | Área de texto  | Opcional. Máximo 500 caracteres              |               |
+| Anexos            | Arquivo        | Opcional. Ex: Fotos, exames                  |               |
+
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Salvar Registro   | Registro Salvo (Plataforma Medlar)         | default |
+| Cancelar          | Retornar ao Painel (Profissional)          | cancel  |
+
+---
+
+#### Nome da atividade: Avaliar Família
+
+O profissional avalia a família após o atendimento, contribuindo para a reputação mútua na plataforma.
+
+| Campo             | Tipo           | Restrições                                   | Valor default |
+| :---------------- | :------------- | :------------------------------------------- | :------------ |
+| Família Avaliada  | Caixa de Texto | Somente leitura. Nome da família/paciente   |               |
+| Nota              | Seleção única  | Obrigatório. Escala de 1 a 5 estrelas        |               |
+| Comentário        | Área de texto  | Opcional. Máximo 500 caracteres              |               |
+
+| Comandos          | Destino                                    | Tipo    |
+| :---------------- | :----------------------------------------- | :------ |
+| Enviar Avaliação  | Registrar Avaliação (Plataforma Medlar)    | default |
+| Pular Avaliação   | Fim do Processo (Profissional)             | default |
+
+## Wireframe
+
+![WhatsApp Image 2025-10-03 at 20 20 29](https://github.com/user-attachments/assets/cb00cfa8-0a74-4f35-9293-dd6c1ef4f2e7)
+
 
