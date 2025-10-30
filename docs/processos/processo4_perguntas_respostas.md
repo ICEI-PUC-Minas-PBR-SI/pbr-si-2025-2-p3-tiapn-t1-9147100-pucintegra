@@ -106,6 +106,7 @@ Atividade 2: Preencher conteúdo da resposta
 | Branching          | Confirmar envio da postagem      | Usuário (decisão) |
 
 
+---
 
 ### Atividade 2 - Confirmar envio da postagem 
 
