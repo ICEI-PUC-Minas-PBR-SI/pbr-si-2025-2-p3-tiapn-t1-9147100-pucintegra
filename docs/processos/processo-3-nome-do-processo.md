@@ -17,6 +17,9 @@ Com base na análise do processo de Login (AS-IS) e nas melhores práticas de se
 Ele pode incluir etapas como: Início do Login, Preenchimento de Credenciais, Validação de Credenciais,  
 Autenticação em Dois Fatores (opcional), Redirecionamento para Dashboard e Fim do Login.]
 
+<img width="2894" height="1864" alt="Novo modelo Login" src="https://github.com/user-attachments/assets/5832440e-cad0-4cc0-b2ce-758999a186a0" />
+
+
 ---
 
 # Detalhamento do Fluxo de Login de Usuário
