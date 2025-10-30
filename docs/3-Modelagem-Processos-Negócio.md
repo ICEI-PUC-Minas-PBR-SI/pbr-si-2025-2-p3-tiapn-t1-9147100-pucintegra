@@ -236,6 +236,8 @@ Profissional pode:
 
 [PROCESSO 3 - Gerenciamento de Busca e Contratação de Profissional de Saúde Domiciliar](./processos/processo-3-nome-do-processo.md "Detalhamento do Processo 3.")
 
-[PROCESSO 4 - Solicitação de Atendimento](./processos/processo-4-nome-do-processo.md "Detalhamento do Processo 4.")
+[PROCESSO 4 - Gerenciamento de Busca e Contratação de Profissional de Saúde Domiciliar](./processos/processo-4-nome-do-processo.md "Detalhamento do Processo 3.")
 
-[PROCESSO 5 - Criar Agenda do Paciente](./processos/processo-5-nome-do-processo.md "Detalhamento do Processo 5.")
+[PROCESSO 5 - Solicitação de Atendimento](./processos/processo-4-nome-do-processo.md "Detalhamento do Processo 5.")
+
+[PROCESSO 6 - Criar Agenda do Paciente](./processos/processo-5-nome-do-processo.md "Detalhamento do Processo 6.")
