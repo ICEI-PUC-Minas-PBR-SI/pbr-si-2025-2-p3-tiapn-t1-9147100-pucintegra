@@ -48,7 +48,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 |-------|------|------------|------------|
 | Senha | Caixa de Texto | Min. 8 caracteres| |
 | Nome  | Caixa de Texto | | | |
-| Foto  | Imagem         | JPG ou PNG | ||
+| Foto  | Imagem         | JPG ou PNG | | |
 | Biografia | Caixa de Texto |  Limite de caracteres | |
 
 
@@ -71,11 +71,11 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ---
 
-### Atividade 8 – Visualizar alterações no perfil 
+### Atividade 5 – Visualizar alterações no perfil 
 
 | **Campo**            | **Tipo**    | **Restrições**                         | **Valor** |
-|----------------------|-------------|----------------------------------------|------------|
-| Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados      |
+|----------------------|-------------|----------------------------------------|-----------|
+| Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados     |
 
 | **Comandos**       | **Destino**          | **Tipo**   |
 |--------------------|----------------------|------------|
