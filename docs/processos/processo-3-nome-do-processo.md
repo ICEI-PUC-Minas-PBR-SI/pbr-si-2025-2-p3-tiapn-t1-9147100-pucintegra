@@ -36,6 +36,7 @@ Este documento detalha as atividades, campos, restrições e comandos de navega�
 | :--- | :--- | :--- |
 | Entrar | Validação de Credenciais | default |
 | Registrar-se | Início do Cadastro | navigation |
+| Esqueci minha senha | Recuperação de Senha | navigation |
 
 ---
 
@@ -54,7 +55,51 @@ Este documento detalha as atividades, campos, restrições e comandos de navega�
 
 ---
 
-## 3. Nome da atividade: Redirecionamento para Dashboard
+## 3. Nome da atividade: Recuperação de Senha
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| email_recuperacao | Caixa de texto | Obrigatório, formato de e-mail válido | |
+| codigo_verificacao | Código (OTP) | Obrigatório após envio de e-mail | |
+| nova_senha | Senha | Obrigatório, mínimo 6 caracteres | |
+| confirmar_senha | Senha | Deve ser igual a nova_senha | |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| Enviar e-mail de recuperação | Envio de Código de Redefinição | default |
+| Confirmar nova senha | Validação de Redefinição | default |
+| Cancelar | Tela de Login (Preenchimento de Credenciais) | navigation |
+
+---
+
+## 4. Nome da atividade: Validação de Redefinição
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| status_redefinicao | Caixa de texto | Somente leitura | Validando redefinição |
+| codigo_valido | Booleano | Obrigatório | true/false |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| Sucesso | Confirmação de Senha Redefinida | default |
+| Falha | Recuperação de Senha | error |
+
+---
+
+## 5. Nome da atividade: Confirmação de Senha Redefinida
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| mensagem_confirmacao | Caixa de texto | Somente leitura | Senha alterada com sucesso |
+| redirecionamento | Caixa de texto | Somente leitura | /login |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| Voltar ao Login | Tela de Login (Preenchimento de Credenciais) | navigation |
+
+---
+
+## 6. Nome da atividade: Redirecionamento para Dashboard
 
 | Campo | Tipo | Restrições | Valor default |
 | :--- | :--- | :--- | :--- |
@@ -67,7 +112,7 @@ Este documento detalha as atividades, campos, restrições e comandos de navega�
 
 ---
 
-## 4. Nome da atividade: Fim do Processo
+## 7. Nome da atividade: Fim do Processo
 
 | Campo | Tipo | Restrições | Valor default |
 | :--- | :--- | :--- | :--- |
