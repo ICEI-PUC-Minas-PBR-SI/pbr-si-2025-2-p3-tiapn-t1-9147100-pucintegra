@@ -1,4 +1,4 @@
-# Processo 5: Gestão da Agenda do Paciente
+# Processo 6: Gestão da Agenda do Paciente
 
 ## Oportunidades de Melhoria Identificadas
 
