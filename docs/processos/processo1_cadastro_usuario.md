@@ -36,7 +36,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 | Nome | Caixa de texto | |
 | E-mail institucional | Caixa de texto | E-mail com domínio institucional | |
 | Matrícula| Caixa de texto |  |
-| Senha | Caixa de texto | Limite de 8 caracteres |
+| Senha | Caixa de texto | Min. 8 caracteres |
 | Tipo de usuário (professor/aluno) | Seleção única  |   |
 
 | **Comandos** |    **Destino**    |         **Tipo**           |
