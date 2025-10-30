@@ -15,7 +15,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ## Detalhamento das atividades  
 
-### Atividade 1 – Selecionar campo "Fazer Login" (Usuário)
+### Atividade 1 – Selecionar campo "Fazer Login"
 
 | **Campo**           | **Tipo**      | **Restrições**          | **Valor** |
 |-------------------- |---------------|-------------------------|-----------|
@@ -27,7 +27,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ---
 
-### Atividade 2 – Inserir Credenciais de acesso (Usuário)
+### Atividade 2 – Inserir Credenciais de acesso 
 
 | **Campo**           | **Tipo**        | **Restrições**                     | **Valor** |
 |---------------------|-----------------|------------------------------------|-----------|
@@ -40,7 +40,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ---
 
-### Atividade 3 – Visualizar tela de Perfil (Usuário)
+### Atividade 3 – Visualizar tela de Perfil 
 
 | **Campo**        | **Tipo**      | **Restrições**                       | **Valor** |
 |------------------|---------------|--------------------------------------|------------|
