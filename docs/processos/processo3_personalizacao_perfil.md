@@ -25,7 +25,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
-| Clicar para abrir perfil| Opções de personalização| Usuário (interação) |
+| Clicar para abrir perfil| Opções de personalização | Usuário (interação) |
 
 ---
 
@@ -35,9 +35,9 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 |-----------------------|-----------------|-------------------|-----------|
 | Botão "Personalizar Perfil" | Botão     | Único e visível   |  Default  |
 
-| **Comandos**          | **Destino**                    | **Tipo**         |
-|-----------------------|--------------------------------|------------------|
-| Clicar no botão       | Lista de campos editáveis | Usuário (interação)   |
+| **Comandos**          | **Destino**               | **Tipo**         |
+|-----------------------|---------------------------|------------------|
+| Clicar no botão       | Lista de campos editáveis | Usuário (interação) |
 
 
 ---
@@ -62,12 +62,15 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 | Campo | Tipo | Restrições |  **Valor** |
 |-------|------|------------|------------|
-|Entrada de novos valores   | Form | Validação de formato (imagem), tamanho, políticas de senha | Novos valores |
+| Senha | Caixa de Texto | Min. 8 caracteres| |
+| Nome  | Caixa de Texto | | | |
+| Foto  | Imagem         | JPG ou PNG | | |
+| Biografia | Caixa de Texto |  Limite de caracteres | |
 
 
 | **Comandos**       | **Destino**                | **Tipo**   |
 |--------------------|----------------------------|------------|
-| Submeter alteração | Validação de consistência dos dados (Sistema)  | Usuário (entrada) |
+| Submeter alteração | Visualizar alterações no perfil | Usuário (entrada) |
 
 ---
 
@@ -79,7 +82,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 | **Comandos**       | **Destino**          | **Tipo**   |
 |--------------------|----------------------|------------|
-| Navegar no perfil  | Não se aplica        | Usuário (visualização)    |
+| Navegar no perfil  | Não se aplica        | Usuário (visualização) |
 
 ---
 
