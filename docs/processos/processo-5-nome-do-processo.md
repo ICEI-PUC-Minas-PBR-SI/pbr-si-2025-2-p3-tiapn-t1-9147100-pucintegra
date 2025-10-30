@@ -1,120 +1,107 @@
-# Processo 5: Solicitação de Atendimento
+# Processo 5: Gestão da Agenda do Paciente
 
 ## Oportunidades de Melhoria Identificadas
 
-A análise do fluxo de solicitação de atendimento revelou diversas oportunidades para otimizar a experiência do usuário, aumentar a eficiência operacional e reduzir falhas manuais. As melhorias propostas estão detalhadas abaixo.
+Com base no fluxo de visualização e gestão de agendamentos pelo paciente, as seguintes oportunidades foram identificadas para criar uma experiência mais integrada, informativa e flexível.
 
-### 1. Agendamento Inteligente
-- **Problema Atual:** Seleção manual de data e horário, sujeita a conflitos de agenda e indisponibilidade do profissional.
-- **Melhoria Proposta:** Substituir a seleção manual por um sistema que consulta a agenda do profissional em tempo real e **sugere automaticamente os horários disponíveis**.
+### 1. Centralização e Organização Automática
+- **Problema Atual:** O paciente pode não ter um local único e claro para ver todos os seus compromissos futuros.
+- **Melhoria Proposta:** Criar uma seção dedicada, como **"Minha Agenda"**, que busca e **organiza automaticamente todos os atendimentos confirmados** em uma visualização cronológica (lista ou calendário).
 - **Benefícios:**
-  - Reduz o tempo gasto pelo usuário para encontrar um horário.
-  - Elimina o risco de agendamentos duplicados (*double booking*).
-  - Agiliza o processo de marcação.
+  - Facilita o controle e o planejamento do paciente.
+  - Reduz a chance de esquecimentos ou confusão sobre os agendamentos.
+  - Centraliza todas as informações relevantes em um único lugar.
 
-### 2. Validação de Endereço
-- **Problema Atual:** Erros de digitação no endereço podem levar a atrasos ou impossibilitar o atendimento.
-- **Melhoria Proposta:** Implementar a **validação automática de endereços** (via CEP ou integração com APIs de mapas) com funcionalidade de autocompletar.
+### 2. Flexibilidade para Edição e Cancelamento
+- **Problema Atual:** Cancelar ou alterar um agendamento pode ser um processo manual e burocrático (ex: ligar para uma central).
+- **Melhoria Proposta:** Implementar **funcionalidades de autogestão** que permitam ao usuário **editar ou cancelar** um agendamento diretamente pela agenda, sujeito a regras de negócio (ex: antecedência mínima para cancelamento).
 - **Benefícios:**
-  - Garante a precisão da localização do atendimento.
-  - Melhora a experiência de preenchimento para o usuário.
-  - Facilita o planejamento de rotas para o profissional.
+  - Oferece autonomia e conveniência ao paciente.
+  - Automatiza o processo de cancelamento, liberando o horário para outros pacientes.
+  - Reduz a carga de trabalho administrativo.
 
-### 3. Transparência na Solicitação
-- **Problema Atual:** O usuário pode confirmar a solicitação sem ter uma visão clara de todos os detalhes, gerando cancelamentos por engano.
-- **Melhoria Proposta:** Apresentar uma **tela de resumo clara e completa** antes da confirmação final, contendo:
-  - Serviço solicitado
-  - Profissional
-  - Data e horário
-  - Local do atendimento
-  - Valor (se aplicável)
+### 3. Notificações e Lembretes Inteligentes
+- **Problema Atual:** O paciente pode se esquecer do atendimento agendado.
+- **Melhoria Proposta:** Configurar um sistema de **lembretes automáticos** enviados em momentos estratégicos (ex: 24 horas antes e 2 horas antes do atendimento) via push, SMS ou e-mail.
 - **Benefícios:**
-  - Aumenta a confiança do usuário no processo.
-  - Reduz a taxa de cancelamentos por informações incorretas.
+  - Reduz a taxa de não comparecimento (*no-show*).
+  - Melhora a experiência e o cuidado com o paciente.
 
-### 4. Comunicação Multicanal e Imediata
-- **Problema Atual:** A notificação depende de um único canal, e atrasos na comunicação podem fazer o usuário esperar desnecessariamente.
-- **Melhoria Proposta:** Automatizar o envio de **notificações da solicitação para o profissional em múltiplos canais** (push no aplicativo, e-mail, SMS).
-- **Benefícios:**
-  - Garante que o profissional seja informado o mais rápido possível.
-  - Acelera o tempo de resposta da solicitação.
+### 4. Histórico de Atendimentos
+- **Melhoria Proposta:** Criar uma aba ou seção dedicada ao **"Histórico"**, separada dos compromissos futuros.
+- **Funcionalidades:**
+  - Listar todos os atendimentos que já foram concluídos.
+  - Permitir acesso a detalhes e anotações de sessões passadas.
+- **Benefícios:** Facilita o acompanhamento da jornada de cuidado e a consulta de informações passadas.
 
-### 5. Fluxo de Resposta Otimizado
-- **Problema Atual:** O processo de aceitar, recusar ou negociar um horário é manual e pode ser lento.
-- **Melhoria Proposta:** Criar um sistema onde o profissional pode **aceitar, recusar ou sugerir um novo horário com apenas um clique**.
-  - **Se recusado:** O sistema automaticamente sugere ao usuário outro profissional ou a busca por um novo horário.
-  - **Se um novo horário for sugerido:** O usuário recebe uma notificação para aprovar a alteração.
-- **Benefícios:**
-  - Simplifica a gestão de solicitações para o profissional.
-  - Mantém o usuário engajado no fluxo, mesmo em caso de recusa.
-  - Automatiza a renegociação de horários.
+![Imagem do WhatsApp de 2025-09-19 à(s) 16 59 52_050cc7a1](https://github.com/user-attachments/assets/bacfe5aa-4131-4934-bd74-2483180273b9)
 
-### Exemplo de um Modelo BPMN do PROCESSO 4 
-
-<img width="773" height="754" alt="image" src="https://github.com/user-attachments/assets/fcabb82f-7a28-4d31-a8c6-9214358963ba" />
-
-
-
+---
 
 ## Detalhamento das Atividades
 
-### Nome da atividade: Selecionar Data e Horário
-*Esta é a primeira etapa para o usuário, onde ele escolhe quando deseja o atendimento.*
+### Nome da atividade: Acessar "Minha Agenda"
+*O usuário inicia o processo ao selecionar a opção para visualizar seus compromissos.*
 
 | Campo | Tipo | Restrições | Valor default |
 | :--- | :--- | :--- | :--- |
-| `data_desejada` | Calendário | Obrigatório, data futura | Data atual |
-| `horarios_sugeridos` | Seleção única | Obrigatório | Lista de horários disponíveis |
-
-### Nome da atividade: Selecionar Endereço
-*O usuário define o local onde o atendimento será realizado.*
-
-| Campo | Tipo | Restrições | Valor default |
-| :--- | :--- | :--- | :--- |
-| `tipo_endereco` | Seleção única | Obrigatório | `Endereço Padrão` |
-| `endereco_selecionado` | Caixa de texto | Autocomplete, validação de CEP | Endereço do cadastro |
-
-### Nome da atividade: Confirmar Solicitação (Resumo)
-*Uma tela de resumo é exibida para o usuário revisar todas as informações antes de enviar.*
-
-| Campo | Tipo | Restrições | Valor default |
-| :--- | :--- | :--- | :--- |
-| `resumo_servico` | Área de texto | Somente leitura | "Atendimento de [Especialidade] com [Profissional]" |
-| `resumo_data_hora` | Caixa de texto | Somente leitura | Data e hora selecionadas |
-| `resumo_local` | Caixa de texto | Somente leitura | Endereço selecionado |
-
-### Nome da atividade: Notificar Profissional (Sistema)
-*O sistema envia a solicitação ao profissional e bloqueia o horário na agenda.*
-
-| Campo | Tipo | Restrições | Valor default |
-| :--- | :--- | :--- | :--- |
-| `status_notificacao` | Caixa de texto | Somente leitura | "Enviando notificação..." |
-| `status_agenda` | Caixa de texto | Somente leitura | "Horário bloqueado temporariamente." |
-
-| Campo | Tipo | Restrições | Valor default |
-| :--- | :--- | :--- | :--- |
-| `detalhes_solicitacao` | Área de texto | Somente leitura | Exibe todos os dados da solicitação |
-| `novo_horario_sugerido` | Seletor de data/hora | Opcional | |
+| `eventos_agenda` | Lista | Somente leitura | Carregando... |
 
 | Comandos | Destino | Tipo |
 | :--- | :--- | :--- |
-| `Aceitar` | Confirmar Agendamento | `default` |
-| `Recusar` | Notificar Recusa ao Usuário | `default` |
-| `Sugerir Novo Horário` | Notificar Sugestão ao Usuário | `default` |
+| `Acessar Agenda` | Visualizar Agenda | `default` |
 
-### Nome da atividade: Confirmar Agendamento (Sistema)
-*Após o aceite do profissional, o sistema finaliza o agendamento.*
+### Nome da atividade: Visualizar Agenda
+*O sistema busca e exibe todos os atendimentos confirmados do paciente.*
 
 | Campo | Tipo | Restrições | Valor default |
 | :--- | :--- | :--- | :--- |
-| `status_agendamento` | Caixa de texto | Somente leitura | "Agendamento confirmado!" |
-| `status_sincronizacao` | Caixa de texto | Somente leitura | "Sincronizando com agendas externas..." |
+| `lista_compromissos` | Lista de cards | Somente leitura | Exibe data, hora, profissional e local de cada agendamento |
+| `visualizacao` | Botão de alternância | Opcional | `Lista` / `Calendário` |
 
 | Comandos | Destino | Tipo |
 | :--- | :--- | :--- |
-| `Finalizar` | Fim do Processo | `default` |
+| `Selecionar Compromisso` | Detalhar Agendamento | `default` |
+| `Fechar` | Fim do Processo | `cancel` |
+
+### Nome da atividade: Detalhar Agendamento
+*O usuário seleciona um compromisso específico para ver mais detalhes ou realizar ações.*
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| `detalhes_completos` | Área de texto | Somente leitura | Informações completas do agendamento |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Editar Agendamento` | Editar Agendamento | `default` |
+| `Cancelar Agendamento` | Confirmar Cancelamento | `default` |
+| `Voltar` | Visualizar Agenda | `back` |
+
+### Nome da atividade: Editar Agendamento
+*O sistema permite que o usuário altere informações do agendamento, como o horário (se permitido).*
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| `nova_data_hora` | Seletor de data/hora | Obrigatório | Horários disponíveis do profissional |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Salvar Alterações` | Salvar Alterações (Sistema) | `default` |
+| `Cancelar Edição` | Detalhar Agendamento | `cancel` |
+
+### Nome da atividade: Salvar Alterações (Sistema)
+*O sistema processa as mudanças, atualiza as agendas do paciente e do profissional e envia notificações.*
+
+| Campo | Tipo | Restrições | Valor default |
+| :--- | :--- | :--- | :--- |
+| `status_atualizacao` | Caixa de texto | Somente leitura | "Salvando alterações e notificando o profissional..." |
+
+| Comandos | Destino | Tipo |
+| :--- | :--- | :--- |
+| `Alterações Salvas` | Visualizar Agenda | `default` |
+| `Erro ao Salvar` | Editar Agendamento | `error` |
 
 ## Wireframe
 
-![Solicitar atendimento](https://github.com/user-attachments/assets/512427f6-171d-42b2-ad39-ed0cea67f5c8)
+![Agenda do paciente](https://github.com/user-attachments/assets/111cf6ab-9a7f-4b0c-a2b7-73da28905987)
 
