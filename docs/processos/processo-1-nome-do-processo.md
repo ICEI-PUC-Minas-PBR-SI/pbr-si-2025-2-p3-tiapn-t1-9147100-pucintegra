@@ -24,65 +24,88 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 
 ## Nome da atividade: Início do Cadastro
 
-| Campo         | Tipo          | Restrições | Valor default |
-|---------------|---------------|------------|---------------|
-| tipo_cadastro | Seleção única | Obrigatório | Paciente e Profissional    |
+| Campo | Tipo | Restrições | Valor default |
+|---|---|---|---|
+| *Nenhum campo visível na tela* | | | |
 
 ### Comandos
 
-| Comandos        | Destino                 | Tipo    |
-|-----------------|-------------------------|---------|
-| Iniciar Cadastro | Preenchimento de Dados | default |
+| Comandos | Destino | Tipo |
+|---|---|---|
+| Iniciar Cadastro | Preenchimento de Dados - Dados Pessoais | default |
 
-## Nome da atividade: Preenchimento de Dados (Paciente)
+---
 
-| Campo             | Tipo          | Restrições                                  | Valor default |
-|-------------------|---------------|---------------------------------------------|---------------|
-| nome_completo     | Caixa de texto | Obrigatório, mínimo 3 caracteres            |              |
-| cpf               | Número        | Obrigatório, 11 dígitos, formato XXX.XXX.XXX-XX |           |
-| email             | Caixa de texto | Obrigatório, formato de e-mail              |              |     
-| data_nascimento   | Data          | Obrigatório, formato DD-MM-AAAA, maior de 18 anos |         |           
-| endereco          | Área de texto | Obrigatório                                 |               |        
-| telefone          | Caixa de texto | Obrigatório, formato (XX) XXXXX-XXXX        |              |           
-                                                                                                                
-### Comandos
+## Nome da atividade: Preenchimento de Dados - Dados Pessoais (Etapa 1 de 3)
 
-| Comandos | Destino            | Tipo    |
-|----------|--------------------|---------|
-| Próximo  | Validação de Dados | default |
-| Cancelar | Início do Cadastro | cancel  |
+| Campo | Tipo | Restrições | Valor default |
+|---|---|---|---|
+| nome_completo | Caixa de texto | Obrigatório | |
+| cpf | Número | Obrigatório, formato XXX.XXX.XXX-XX | |
+| data_nascimento | Data | Obrigatório, formato DD/MM/AAAA | |
+| email | Caixa de texto | Obrigatório, formato de e-mail | |
+| telefone | Caixa de texto | Obrigatório, formato (XX) XXXXX-XXXX | |
 
 ### Comandos
 
-| Comandos | Destino            | Tipo    |
-|----------|--------------------|---------|
-| Próximo  | Validação de Dados | default |
-| Voltar   | Preenchimento de Dados | back    |
+| Comandos | Destino | Tipo |
+|---|---|---|
+| Próximo | Preenchimento de Dados - Endereço e Histórico | default |
+| Cancelar | Início do Cadastro | cancel |
 
-## Nome da atividade: Validação de Dados
+---
 
-| Campo            | Tipo          | Restrições      | Valor default |
-|------------------|---------------|-----------------|---------------|
-| status_validacao | Caixa de texto | Somente leitura | Em validação  |
+## Nome da atividade: Preenchimento de Dados - Endereço e Histórico (Etapa 2 de 3)
+
+*Nota: Esta atividade combina as informações de Endereço e Histórico Médico Resumido da segunda tela de preenchimento.*
+
+| Campo | Tipo | Restrições | Valor default |
+|---|---|---|---|
+| cep | Número | Obrigatório, formato XXXXX-XXX | |
+| cidade | Caixa de texto | Obrigatório | |
+| rua_e_numero | Caixa de texto | Obrigatório | |
+| complemento | Caixa de texto | Opcional | |
+| condicoes_alergias | Área de texto | Obrigatório | |
 
 ### Comandos
 
-| Comandos         | Destino                 | Tipo    |
-|------------------|-------------------------|---------|
-| Concluído        | Notificação de Cadastro | default |
-| Erro na Validação | Preenchimento de Dados  | erro    |
+| Comandos | Destino | Tipo |
+|---|---|---|
+| Voltar | Preenchimento de Dados - Dados Pessoais | back |
+| Enviar | Validação de Dados | default |
 
-## Nome da atividade: Notificação de Cadastro
+---
 
-| Campo                | Tipo         | Restrições      | Valor default                      |
-|----------------------|--------------|-----------------|------------------------------------|
+## Nome da atividade: Validação de Dados (Etapa 3 de 3 - Inferida)
+
+*Nota: A tela de "Validação de Dados" não foi fornecida, mas o fluxo sugere que ela existe após o "Enviar". Os campos e comandos são mantidos do fluxo original, pois não há evidência para alterá-los, exceto a numeração da etapa.*
+
+| Campo | Tipo | Restrições | Valor default |
+|---|---|---|---|
+| status_validacao | Caixa de texto | Somente leitura | Em validação |
+
+### Comandos
+
+| Comandos | Destino | Tipo |
+|---|---|---|
+| Concluído | Notificação de Cadastro | default |
+| Erro na Validação | Preenchimento de Dados - Dados Pessoais | erro |
+
+---
+
+## Nome da atividade: Notificação de Cadastro (Fim do Processo)
+
+*Nota: Esta atividade não foi fornecida, mas é o passo lógico final do fluxo original.*
+
+| Campo | Tipo | Restrições | Valor default |
+|---|---|---|---|
 | mensagem_notificacao | Área de texto | Somente leitura | Seu cadastro foi concluído com sucesso! |
 
 ### Comandos
 
-| Comandos | Destino         | Tipo    |
-|----------|-----------------|---------|
-| Fechar   | Fim do Processo 1 | default |
+| Comandos | Destino | Tipo |
+|---|---|---|
+| Fechar | Fim do Processo 1 | default |
 
 
 ## Wireframe 
