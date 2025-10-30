@@ -17,13 +17,13 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ### Atividade 1 – Selecionar campo "Fazer Login"
 
-| **Campo**           | **Tipo**      | **Restrições**          | **Valor** |
-|-------------------- |---------------|-------------------------|-----------|
-| Botão "Fazer Login" | Botão         | Único, visível          | Default   |
+| **Campo**           | **Tipo**      | **Restrições**          | **Valor Default** |
+|-------------------- |---------------|-------------------------|-------------------|
+| Botão "Fazer Login" | Botão         | Único, visível          |                   |
 
-| **Comandos**       | **Destino**            | **Tipo**   |
-|--------------------|------------------------|------------|
-| Clicar             | Exibe formulário login | Usuário (interação)  |
+| **Comandos**       | **Destino**            | **Tipo**             |
+|--------------------|------------------------|----------------------|
+| Clicar             | Exibe formulário login | Entrada no sistem    |
 
 ---
 
@@ -31,12 +31,12 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 | **Campo**           | **Tipo**        | **Restrições**                     | **Valor** |
 |---------------------|-----------------|------------------------------------|-----------|
-|E-mail institucional | Caixa de Texto  | E-mail com domínio institucional   |  Default  |
+|E-mail institucional | Caixa de Texto  | E-mail com domínio institucional   |           |
 |Senha                | Caixa de Texto  | Min. 8 caracteres                  |           |
 
-| **Comandos**       | **Destino**                 | **Tipo**   |
-|--------------------|-----------------------------|------------|
-| Preencher login e submeter | Validar credenciais | Usuário (entrada de dados)    |
+| **Comandos**       | **Destino**                 | **Tipo**            |
+|--------------------|-----------------------------|---------------------|
+| Preencher login e submeter | Validar credenciais | Entrada de dados    |
 
 ---
 
@@ -44,11 +44,11 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 | **Campo**        | **Tipo**      | **Restrições**                       | **Valor** |
 |------------------|---------------|--------------------------------------|------------|
-| Perfil do usuário autenticado    | Página UI         | Exibe informações pessoais e opções  | Dados |
+| Perfil do usuário autenticado    | Página UI         | Exibe informações pessoais e opções  |  |
 
 | **Comandos**       | **Destino**            | **Tipo**   |
 |--------------------|------------------------|------------|
-| Visualizar / Editar| Não se aplica          | Usuário (visualização) |
+| Visualizar / Editar| Não se aplica          | Visualização |
 
 ---
 
