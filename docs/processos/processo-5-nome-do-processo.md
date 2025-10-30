@@ -1,4 +1,4 @@
-# Processo 4: Solicitação de Atendimento
+# Processo 5: Solicitação de Atendimento
 
 ## Oportunidades de Melhoria Identificadas
 
@@ -49,7 +49,7 @@ A análise do fluxo de solicitação de atendimento revelou diversas oportunidad
   - Mantém o usuário engajado no fluxo, mesmo em caso de recusa.
   - Automatiza a renegociação de horários.
 
-### Exemplo de um Modelo BPMN do PROCESSO 4 
+### Exemplo de um Modelo BPMN do PROCESSO 5
 
 <img width="773" height="754" alt="image" src="https://github.com/user-attachments/assets/fcabb82f-7a28-4d31-a8c6-9214358963ba" />
 
