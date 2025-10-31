@@ -68,6 +68,10 @@ _Tipos de dados utilizados:_
 * **Tabela** - campo formado por uma matriz de valores  
 
 ---
+## Wireframe - Tela Inicial
+![WIREFRAME - PROCESSO 1 - Tela Inicial](../images/wireframe_homepage.png)
+
+---
 
 ## Wireframe - Login de usuários
 

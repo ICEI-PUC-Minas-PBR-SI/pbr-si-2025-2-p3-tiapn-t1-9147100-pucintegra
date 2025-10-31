@@ -18,7 +18,46 @@
 
 ### 4.2. Protótipos de telas
 
-**Tela de Cadastro ("Criar Conta:")**
+#### Tela Inicial ("Homepage")
+
+O protótipo de alta fidelidade "Homepage" (baseado no Processo 1 – Visualização e Busca de Conteúdo) serve como a porta de entrada para a plataforma PUC Integra, apresentando uma visão geral do conteúdo disponível e as principais funcionalidades de navegação e interação. O fluxo principal envolve o usuário visualizando o feed de perguntas frequentes e notícias recentes, além de ter acesso rápido à busca de conteúdo e à criação de novas perguntas.
+
+Elementos e Seções principais:**
+
+* **Cabeçalho Fixo:**
+    * **Logo "PUC Integra"** (Identificador da marca).
+    * **Botões de Ação:** "Entrar", "Cadastre-se" (para usuários não logados), e "Faça uma pergunta" (para acesso rápido à criação de conteúdo).
+* **Seção "Hero" (Destaque Principal):**
+    * **Frase de Efeito:** "Transforme perguntas em aprendizado" (Título principal).
+    * **Descrição:** Texto explicativo sobre a proposta de valor da plataforma.
+    * **Campo de Busca:** "Qual a sua dúvida?" (Caixa de texto com ícone de lupa para pesquisa de conteúdo).
+* **Barra de Categorias/Filtros:**
+    * **Navegação Horizontal:** "Todas", "Algoritmos em Grafos", "Redes de Computadores" (Exemplos de categorias/disciplinas para filtrar perguntas).
+    * **Setas de Navegação:** Permitem ao usuário rolar as categorias horizontalmente.
+* **Seção "Perguntas Mais Frequentes":**
+    * **Título:** "PERGUNTAS MAIS FREQUENTES".
+    * **Carrossel de Perguntas:** Exibe cards de perguntas populares com informações como autor, disciplina, título da pergunta e palavras-chave.
+    * **Setas de Navegação:** Permitem ao usuário navegar entre as perguntas.
+* **Seção "Eventos e Notícias Recentes":**
+    * **Título:** "Eventos e notícias recentes".
+    * **Carrossel de Notícias:** Exibe cards com notícias relevantes (ex: "Alunos da PUC Minas Lançam Plataforma Inovadora para Colaboração Acadêmica") e imagens.
+    * **Setas de Navegação e Indicadores de Página:** Permitem ao usuário navegar entre as notícias.
+* **Call-to-Action (Rodapé):**
+    * **Mensagem:** "Está buscando uma resposta?".
+    * **Botão:** "Faça uma pergunta" (Redireciona para a funcionalidade de criação de perguntas).
+
+**Ações principais:**
+
+* **Cliques nos Botões do Cabeçalho:** Navegar para login, cadastro ou criação de perguntas.
+* **Digitar no Campo de Busca:** Iniciar uma pesquisa por conteúdo.
+* **Cliques nas Categorias/Filtros:** Filtrar as perguntas exibidas.
+* **Cliques em Perguntas ou Notícias:** Navegar para a página de detalhes da pergunta/notícia.
+* **Cliques no Botão "Faça uma pergunta" (Rodapé):** Redirecionar para a funcionalidade de criação de perguntas.
+
+
+![Protótipo de alta fidelidade - Homepage](../docs/images/prototipo_homepage.png)
+
+#### Tela de Cadastro ("Criar Conta:")
 Na tela de cadastro, o usuário que ainda não possui registro pode criar sua conta na plataforma. Os campos obrigatórios permitem que o sistema colete informações essenciais para a identificação e autenticação futura.
 Campos disponíveis:
 * Nome Completo (Caixa de texto – obrigatório)
@@ -35,7 +74,7 @@ Ação principal:
 
 ---
 
-**Tela de Login ("Entrar")**
+#### Tela de Login ("Entrar")
 Na tela de login, o usuário já cadastrado pode acessar a plataforma utilizando suas credenciais.
 Campos disponíveis:
 * E-mail Institucional (Caixa de texto – obrigatório)
@@ -50,7 +89,7 @@ Ações principais:
 
 ---
 
-**Tela de Personalização de Perfil ("Editar Perfil")**
+#### Tela de Personalização de Perfil ("Editar Perfil")
 O protótipo de alta fidelidade "Editar Perfil" (baseado no Processo 3 – Personalização de Perfil) permite ao usuário atualizar suas informações pessoais e credenciais após o login. O fluxo principal envolve acessar a área de perfil, atualizar os dados desejados, e o sistema validar e salvar as alterações no banco de dados.
 
 Campos disponíveis:
@@ -70,7 +109,7 @@ Ações principais:
 
 ---
 
-**Tela de Criação de Pergunta ("Faça uma pergunta")**
+#### Tela de Criação de Pergunta ("Faça uma pergunta")
 Este protótipo (baseado no Fluxo Pergunta do Processo 4) é a interface para o usuário publicar dúvidas acadêmicas na plataforma. A tela garante que a pergunta seja contextualizada, associando-a a um Curso e Disciplina, e permitindo a inclusão de *Palavras-Chave* e anexos para melhor categorização e busca.
 
 Campos disponíveis:
@@ -89,7 +128,7 @@ Ações principais:
 
 ---
 
-**Tela de Envio de Resposta**
+#### Tela de Envio de Resposta
 O protótipo de Envio de Resposta (baseado no Fluxo Resposta do Processo 4) é a área de interação onde um usuário pode contribuir com soluções para uma dúvida publicada.
 
 Campos disponíveis:
