@@ -54,7 +54,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 | **Comandos**       | **Destino**                | **Tipo**   |
 |--------------------|----------------------------|------------|
-| Selecionar campo desejado| Inserção dos dados atualizados    | Usuário (seleção) |
+| Selecionar campo desejado| Inserção dos dados atualizados    | Interação do usuário |
 
 ---
 
@@ -82,7 +82,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 | **Comandos**       | **Destino**          | **Tipo**   |
 |--------------------|----------------------|------------|
-| Navegar no perfil  | Não se aplica        | Usuário (visualização) |
+| Navegar no perfil  | Não se aplica        | Visualização do usuário |
 
 ---
 
