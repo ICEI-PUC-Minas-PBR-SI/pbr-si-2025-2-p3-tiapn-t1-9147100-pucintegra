@@ -169,7 +169,47 @@ Informações profissionais:
  * Após aprovação, profissional é ativado e pode começar a receber solicitações.
 
 ---
-### PROCESSO 3: BUSCA DE PROFISSIONAIS
+
+### Processo 3: Acesso ao Sistema (Login)
+
+O usuário inicia o processo de autenticação para acessar as funcionalidades do sistema.
+
+## Tela de Login
+
+O sistema exibe os seguintes campos e opções para o usuário:
+
+*   **Campo de E-mail/Usuário:** Para inserção da credencial principal.
+*   **Campo de Senha:** Para inserção da senha, com opção de visualização (ícone de olho).
+*   **Botão "Entrar":** Para submeter as credenciais e iniciar a autenticação.
+*   **Link "Esqueci minha senha":** Para iniciar o fluxo de recuperação de senha.
+*   **Link "Criar conta":** Para iniciar o fluxo de cadastro de novo usuário.
+
+## Fluxo de Autenticação
+
+Usuário interage com a tela:
+
+1.  Usuário insere **E-mail/Usuário** e **Senha**.
+2.  Usuário clica no **Botão "Entrar"**.
+3.  Sistema verifica as credenciais no banco de dados.
+
+### Respostas do Sistema:
+
+O sistema pode retornar uma das seguintes respostas:
+
+*   **Sucesso:** Credenciais válidas. O sistema redireciona o usuário para a **Tela Inicial/Dashboard**.
+*   **Falha (Credenciais Inválidas):** O sistema exibe a mensagem de erro: "E-mail ou senha incorretos. Tente novamente."
+*   **Falha (Conta Bloqueada):** Após N tentativas falhas, o sistema exibe a mensagem: "Sua conta foi temporariamente bloqueada por segurança. Utilize a opção 'Esqueci minha senha' ou entre em contato com o suporte."
+
+## Recuperação de Senha
+
+1.  Usuário clica no **Link "Esqueci minha senha"**.
+2.  Sistema solicita o **E-mail/Usuário** cadastrado.
+3.  Sistema envia um link de redefinição de senha para o e-mail do usuário.
+4.  Usuário acessa o link e define uma **Nova Senha**.
+5.  Sistema confirma a alteração e redireciona para a **tela de login**.
+
+---
+### PROCESSO 4: BUSCA DE PROFISSIONAIS
 Objetivo:
 Permitir que usuários encontrem rapidamente profissionais disponíveis para atendimento domiciliar com base em localização, especialidade e disponibilidade.
 
