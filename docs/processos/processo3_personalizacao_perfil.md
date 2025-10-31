@@ -77,8 +77,8 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 ### Atividade 5 – Visualizar alterações no perfil 
 
 | **Campo**            | **Tipo**    | **Restrições**                         | **Valor Default** |
-|----------------------|-------------|----------------------------------------|-----------|
-| Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados     |
+|----------------------|-------------|----------------------------------------|-------------------|
+| Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado |                   |
 
 | **Comandos**       | **Destino**          | **Tipo**   |
 |--------------------|----------------------|------------|
