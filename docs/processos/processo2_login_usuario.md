@@ -48,7 +48,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 | **Comandos**       | **Destino**            | **Tipo**     |
 |--------------------|------------------------|--------------|
-| Visualizar / Editar| Não se aplica          | Visualização |
+| Visualizar / Editar| Não se aplica          | Visualização do Perfil|
 
 ---
 
