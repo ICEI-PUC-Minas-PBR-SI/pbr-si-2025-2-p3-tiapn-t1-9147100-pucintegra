@@ -19,20 +19,20 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 | **Campo**           | **Tipo**      | **Restrições**          | **Valor Default** |
 |-------------------- |---------------|-------------------------|-------------------|
-| Botão "Fazer Login" | Botão         | Único, visível          |                   |
+| Botão "Fazer Login" | Botão         | Único, visível          |      Default      |
 
 | **Comandos**       | **Destino**            | **Tipo**             |
 |--------------------|------------------------|----------------------|
-| Clicar             | Exibe formulário login | Entrada no sistem    |
+| Clicar             | Exibe formulário login | Entrada no sistema   |
 
 ---
 
 ### Atividade 2 – Inserir Credenciais de acesso 
 
 | **Campo**           | **Tipo**        | **Restrições**                     | **Valor Default**|
-|---------------------|-----------------|------------------------------------|-----------|
-|E-mail institucional | Caixa de Texto  | E-mail com domínio institucional   |           |
-|Senha                | Caixa de Texto  | Min. 8 caracteres                  |           |
+|---------------------|-----------------|------------------------------------|------------------|
+|E-mail institucional | Caixa de Texto  | E-mail com domínio institucional   |                  |
+|Senha                | Caixa de Texto  | Min. 8 caracteres                  |                  |
 
 | **Comandos**       | **Destino**                 | **Tipo**            |
 |--------------------|-----------------------------|---------------------|
@@ -43,11 +43,11 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 ### Atividade 3 – Visualizar tela de Perfil 
 
 | **Campo**        | **Tipo**      | **Restrições**                       | **Valor Default** |
-|------------------|---------------|--------------------------------------|------------|
+|------------------|---------------|--------------------------------------|-------------------|
 | Perfil do usuário autenticado    | Página UI         | Exibe informações pessoais e opções  |  |
 
-| **Comandos**       | **Destino**            | **Tipo**   |
-|--------------------|------------------------|------------|
+| **Comandos**       | **Destino**            | **Tipo**     |
+|--------------------|------------------------|--------------|
 | Visualizar / Editar| Não se aplica          | Visualização |
 
 ---
