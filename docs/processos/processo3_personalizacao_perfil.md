@@ -63,7 +63,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 | Campo | Tipo | Restrições |  **Valor** |
 |-------|------|------------|------------|
 | Senha | Caixa de Texto | Min. 8 caracteres| |
-| Nome  | Caixa de Texto | Limite de caracteres | | |
+| Nome  | Caixa de Texto | Limite de 100 caracteres | | |
 | Foto  | Imagem         | JPG ou PNG | | |
 | Biografia | Caixa de Texto |  Limite de caracteres | |
 
