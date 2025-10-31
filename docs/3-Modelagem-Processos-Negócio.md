@@ -170,11 +170,11 @@ Informações profissionais:
 
 ---
 
-### Processo 3: Acesso ao Sistema (Login)
+## Processo 3: Acesso ao Sistema (Login)
 
 O usuário inicia o processo de autenticação para acessar as funcionalidades do sistema.
 
-## Tela de Login
+### Tela de Login
 
 O sistema exibe os seguintes campos e opções para o usuário:
 
@@ -184,7 +184,7 @@ O sistema exibe os seguintes campos e opções para o usuário:
 *   **Link "Esqueci minha senha":** Para iniciar o fluxo de recuperação de senha.
 *   **Link "Criar conta":** Para iniciar o fluxo de cadastro de novo usuário.
 
-## Fluxo de Autenticação
+**Fluxo de Autenticação**
 
 Usuário interage com a tela:
 
@@ -192,7 +192,7 @@ Usuário interage com a tela:
 2.  Usuário clica no **Botão "Entrar"**.
 3.  Sistema verifica as credenciais no banco de dados.
 
-### Respostas do Sistema:
+**Respostas do Sistema:**
 
 O sistema pode retornar uma das seguintes respostas:
 
@@ -200,7 +200,7 @@ O sistema pode retornar uma das seguintes respostas:
 *   **Falha (Credenciais Inválidas):** O sistema exibe a mensagem de erro: "E-mail ou senha incorretos. Tente novamente."
 *   **Falha (Conta Bloqueada):** Após N tentativas falhas, o sistema exibe a mensagem: "Sua conta foi temporariamente bloqueada por segurança. Utilize a opção 'Esqueci minha senha' ou entre em contato com o suporte."
 
-## Recuperação de Senha
+**Recuperação de Senha**
 
 1.  Usuário clica no **Link "Esqueci minha senha"**.
 2.  Sistema solicita o **E-mail/Usuário** cadastrado.
@@ -237,7 +237,7 @@ Informações detalhadas:
  * Botão para solicitar atendimento
 ---
 
-## Processo 4:Solicitação de Atendimento
+## Processo 5:Solicitação de Atendimento
 Usuário seleciona:
  * Data e horário
  * Endereço de atendimento (padrão ou novo)
@@ -250,7 +250,7 @@ Profissional pode:
  * Confirmação final e início do agendamento
 
 ---
-## Processo 5 : Criar Agenda do Paciente
+## Processo 6 : Criar Agenda do Paciente
 
 1. Sistema verifica solicitações de atendimento aprovadas.
 
