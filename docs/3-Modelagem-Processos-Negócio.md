@@ -103,11 +103,14 @@ Com essa proposta, os processos hoje manuais, repetitivos e descentralizados pas
 
 **Resumo dos Processos Controlados pela Ferramenta**
 
-1. **A ferramenta será responsável por centralizar e controlar os seguintes processos, que serão detalhados na modelagem:**
+**A ferramenta será responsável por centralizar e controlar os seguintes processos, que serão detalhados na modelagem:**
 
-2. **Cadastro de Paciente: Registro seguro e simplificado das informações pessoais, contatos e histórico básico do paciente.**
+1. **Cadastro de Paciente: Registro seguro e simplificado das informações pessoais, contatos e histórico básico do paciente.**
 
-3. **Cadastro de Profissional: Registro validado de dados pessoais, documentos, registros profissionais e área de atuação.**
+2. **Cadastro de Profissional: Registro validado de dados pessoais, documentos, registros profissionais e área de atuação.**
+
+3. **Login/registro: Registro seguro e simplificado das informações pessoais do usuário .**
+
 
 4. **Busca por Profissional: Consulta rápida com filtros por especialidade, localização, agenda, avaliações e preço.**
 
