@@ -70,7 +70,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 | **Comandos**       | **Destino**                | **Tipo**   |
 |--------------------|----------------------------|------------|
-| Submeter alteração | Visualizar alterações no perfil | Usuário (entrada) |
+| Submeter alteração | Visualizar alterações no perfil | Interação do usuário |
 
 ---
 
