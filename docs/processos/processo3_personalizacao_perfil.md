@@ -25,7 +25,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
-| Clicar para abrir perfil| Opções de personalização | Usuário (interação) |
+| Clicar para abrir perfil| Opções de personalização | Interação do usuário |
 
 ---
 
@@ -35,9 +35,9 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 |-----------------------|-----------------|-------------------|-------------------|
 | Botão "Personalizar Perfil" | Botão     | Único e visível   |    Default        |
 
-| **Comandos**          | **Destino**               | **Tipo**            |
-|-----------------------|---------------------------|---------------------|
-| Clicar no botão       | Lista de campos editáveis | Usuário (interação) |
+| **Comandos**          | **Destino**               | **Tipo**             |
+|-----------------------|---------------------------|----------------------|
+| Clicar no botão       | Lista de campos editáveis | Interação do usuário |
 
 
 ---
