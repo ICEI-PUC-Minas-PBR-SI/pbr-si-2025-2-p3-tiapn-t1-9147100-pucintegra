@@ -37,7 +37,7 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 ### Gateway - Pergunta ou Resposta?
 | **Campo**          | **Tipo**    | **Restrições**                                | **Valor Default** |
 |--------------------|-------------|-----------------------------------------------|-------------------|
-| Escolha do usuário | Decisão     | Usuário escolhe fluxo | Default                                   |
+| Escolha do usuário |             | Usuário escolhe fluxo | Default                                   |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
