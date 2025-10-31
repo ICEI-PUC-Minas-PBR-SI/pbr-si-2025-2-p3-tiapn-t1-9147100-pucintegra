@@ -144,6 +144,10 @@ Atividade 2: Preencher conteúdo da resposta
 
 ---
 
-# Wireframe - Perguntas e Respostas
+# Wireframe - Perguntas 
 
-![WIREFRAME - PROCESSO 4 - Perguntas e Respostas](../images/wireframe_[].png)
+![WIREFRAME - PROCESSO 4 - Perguntas e Respostas](../images/wireframe_pergunta.jpg)
+
+# Wireframe - Perguntas 
+
+![WIREFRAME - PROCESSO 4 - Perguntas e Respostas](../images/wireframe_resposta.jpg)
