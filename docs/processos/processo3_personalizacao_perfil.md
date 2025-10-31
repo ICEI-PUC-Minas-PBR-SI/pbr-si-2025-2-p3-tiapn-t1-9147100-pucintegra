@@ -60,7 +60,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ### Atividade 4 – Inserir dados atualizados
 
-| Campo | Tipo | Restrições |  **Valor** |
+| Campo | Tipo | Restrições |  **Valor Default** |
 |-------|------|------------|------------|
 | Senha | Caixa de Texto | Min. 8 caracteres| |
 | Nome  | Caixa de Texto | Limite de 100 caracteres | | |
@@ -76,7 +76,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ### Atividade 5 – Visualizar alterações no perfil 
 
-| **Campo**            | **Tipo**    | **Restrições**                         | **Valor** |
+| **Campo**            | **Tipo**    | **Restrições**                         | **Valor Default** |
 |----------------------|-------------|----------------------------------------|-----------|
 | Tela de perfil       | Página UI   | Carregar dados do usuário recém-criado | Dados     |
 
