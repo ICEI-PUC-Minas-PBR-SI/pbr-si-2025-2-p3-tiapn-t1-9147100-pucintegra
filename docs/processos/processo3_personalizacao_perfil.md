@@ -19,7 +19,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ### Atividade 1 – Acessar tela de Perfil 
 
-| **Campo**         | **Tipo**       | **Restrições**                 | **Valor**  |
+| **Campo**         | **Tipo**       | **Restrições**                 | **Valor Default**  |
 |-------------------|----------------|--------------------------------|------------|
 | Ícone perfil      | Navegação UI   | Usuário deve estar autenticado |  Default   |
 
@@ -31,12 +31,12 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ### Atividade 2 – Selecionar campo "Personalizar Perfil" 
 
-| **Campo**             | **Tipo**        | **Restrições**    | **Valor** |
-|-----------------------|-----------------|-------------------|-----------|
-| Botão "Personalizar Perfil" | Botão     | Único e visível   |  Default  |
+| **Campo**             | **Tipo**        | **Restrições**    | **Valor Default** |
+|-----------------------|-----------------|-------------------|-------------------|
+| Botão "Personalizar Perfil" | Botão     | Único e visível   |    Default        |
 
-| **Comandos**          | **Destino**               | **Tipo**         |
-|-----------------------|---------------------------|------------------|
+| **Comandos**          | **Destino**               | **Tipo**            |
+|-----------------------|---------------------------|---------------------|
 | Clicar no botão       | Lista de campos editáveis | Usuário (interação) |
 
 
@@ -44,7 +44,7 @@ Essa etapa é importante para adaptar a experiência de uso às necessidades de 
 
 ### Atividade 3 – Selecionar informação para atualizar 
 
-| Campo | Tipo | Restrições |  **Valor** |
+| Campo | Tipo | Restrições |  **Valor Default** |
 |-------|------|------------|------------|
 | Senha | Caixa de Texto | Min. 8 caracteres| |
 | Nome  | Caixa de Texto | | | |
