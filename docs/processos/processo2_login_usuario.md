@@ -75,5 +75,5 @@ _Tipos de dados utilizados:_
 
 ## Wireframe - Login de usuários
 
-![WIREFRAME - PROCESSO 2 - Login](../images/wireframe_login.png)
+![WIREFRAME - PROCESSO 2 - Login](../images/wireframe_login.jpg)
 
