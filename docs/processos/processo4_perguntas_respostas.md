@@ -24,52 +24,52 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 
 ### Atividade 1 – Acessar área de Postagens 
 
-| **Campo**         | **Tipo**       | **Restrições**              | **Valor**         |
+| **Campo**         | **Tipo**       | **Restrições**              | **Valor Default** |
 |-------------------|----------------|-----------------------------|-------------------|
 | "Postagens"       | Navegação UI   | Requer login concluído      |  Default          |
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
-| Clicar na seção   | Listagem de postagens e opções (perguntar/responder) | Usuário (navegação) |
+| Clicar na seção   | Listagem de postagens e opções (perguntar/responder) | Navegação do usuário |
 
 ---
 
 ### Gateway - Pergunta ou Resposta?
-| **Campo**          | **Tipo**    | **Restrições**                                | **Valor** |
-|--------------------|-------------|-----------------------------------------------|-----------|
-| Escolha do usuário | Decisão     | Usuário escolhe fluxo | Pergunta / Resposta               |
+| **Campo**          | **Tipo**    | **Restrições**                                | **Valor Default** |
+|--------------------|-------------|-----------------------------------------------|-------------------|
+| Escolha do usuário | Decisão     | Usuário escolhe fluxo | Pergunta / Resposta                       |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Branching          | Pergunta → Fazer pergunta        |Usuário (decisão)|
-| Branching          | Resposta → Selecionar pergunta para responder | Usuário (decisão) |
+| Branching          | Pergunta → Fazer pergunta        | Decisão do usuário |
+| Branching          | Resposta → Selecionar pergunta para responder | Decisão do usuário |
 
 
 ### Fluxo Pergunta:
 
 Atividade 1: Clicar em "Fazer uma pergunta" 
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
-|--------------------|-------------|-------------------------------|-----------|
-| Botão "Fazer uma pergunta" | Botão | Único e visível  | Default  |
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor Default** |
+|--------------------|-------------|-------------------------------|-------------------|
+| Botão "Fazer uma pergunta" | Botão | Único e visível  | Default  |         
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Clicar no botão    | Formulário de dúvida | Usuário (interação)    |
+| Clicar no botão    | Formulário de dúvida | Interação do usuário   |
 
 Atividade 2: Preencher formulário de dúvida
 
-| **Campo**          | **Tipo**    | **Restrições**                | **Valor** |
-|--------------------|-------------|-------------------------------|------------|
+| **Campo**          | **Tipo**    | **Restrições**                | **Valor Default** |
+|--------------------|-------------|-------------------------------|-------------------|
 | Título   | Caixa de Texto | Obrigatório | | 
 | Conteúdo | Seleção única | Min. X caracteres | |
-| Curso | Seleção única | Válido| | |
-| Disciplina | Seleção única | Válido| | |
+| Curso | Seleção única | Válido| | Default|
+| Disciplina | Seleção única | Válido| Default|
 | Palavras-chave |Caixa de Texto  | Min. 50 caracteres | |
 
-| **Comandos**       | **Destino**                      | **Tipo**   |
-|--------------------|----------------------------------|------------|
-| Preecher e submeter| Convergência para confirmar envio | Usuário (entrada) |
+| **Comandos**       | **Destino**                       | **Tipo**             |
+|--------------------|-----------------------------------|----------------------|
+| Preecher e submeter| Convergência para confirmar envio | Interação do usuário |
 
 
 ### Fluxo Resposta:
@@ -77,7 +77,7 @@ Atividade 1: Selecionar pergunta que deseja responder
 
 | **Campo**          | **Tipo**        | **Restrições**               |**Valor**|
 |--------------------|-----------------|------------------------------|------------|
-| Lista de perguntas | Lista interativa| Perguntas visíveis por disciplina/curso; acesso permitido  | Pergunta selecionada |
+| Lista de perguntas | Área de texto   | Perguntas visíveis por disciplina/curso; acesso permitido  | Pergunta selecionada |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
@@ -98,38 +98,38 @@ Atividade 2: Preencher conteúdo da resposta
 
 ### Gateway - Tarefas convergem (confirmação)
 | **Campo**          | **Tipo**    | **Restrições**                                |**Valor** |
-|--------------------|-------------|-----------------------------------------------|-----------|
-|Confirmação de envio| Decisão     | Usuário confirma revisar antes de enviar      | Confirmar / Cancelar|
+|--------------------|-------------|-----------------------------------------------|----------|
+|Confirmação de envio| Decisão     | Usuário confirma revisar antes de enviar      | Default  |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Branching          | Confirmar envio da postagem      | Usuário (decisão) |
+| Branching          | Confirmar envio da postagem      | Decisão do usuário |
 
 
 ---
 
 ### Atividade 2 - Confirmar envio da postagem 
 
-| **Campo**          | **Tipo**    | **Restrições**                |**Valor** |
+| **Campo**          | **Tipo**    | **Restrições**                |**Valor**   |
 |--------------------|-------------|-------------------------------|------------|
 | Botão de envio     | Botão       | Somente após preencher campos obrigatórios | Default  |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-|Clicar para enviar  | Registrar postagem               | Usuário (ação) |
+|Clicar para enviar  | Registrar postagem               | Interação do usuário |
 
 
 ---
 
 ### Atividade 3 – Visualizar postagem feita 
  
-| **Campo**         | **Tipo**        | **Restrições**                              |**Valor** |
-|-------------------|-----------------|---------------------------------------------|-------------------|
+| **Campo**         | **Tipo**        | **Restrições**                                 |**Valor** |
+|-------------------|-----------------|------------------------------------------------|-------------------|
 | Página da postagem| Página UI       | Exibe título, conteúdo, autor, data, feedbacks |Conteúdo publicado |
 
 | **Comandos**       | **Destino**                 | **Tipo**   |
 |--------------------|-----------------------------|------------|
-| Visualizar postagem| Não se aplica               | Usuário (visualização)|
+| Visualizar postagem| Não se aplica               | Visualização do usuário |
 
 ---
 
