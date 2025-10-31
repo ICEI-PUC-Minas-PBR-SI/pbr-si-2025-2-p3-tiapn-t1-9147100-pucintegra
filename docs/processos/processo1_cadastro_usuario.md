@@ -21,7 +21,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Campo**         | **Tipo**       | **Restrições**              | **Valor Default** |
 |-------------------|----------------|-----------------------------|-------------------|
-| Botão "Realizar cadastro" |  Botão |                             |                   |
+| Botão "Realizar cadastro" |  Botão |         Obrigatório         |                   |
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
@@ -33,11 +33,11 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Campo**             | **Tipo**        | **Restrições**                                        | **Valor Default**|
 |-----------------------|-----------------|-------------------------------------------------------|------------------|
-| Nome | Caixa de texto | |
+| Nome | Caixa de texto | Limite de 100 caracteres | |
 | E-mail institucional | Caixa de texto | E-mail com domínio institucional | |
-| Matrícula| Caixa de texto |  |
-| Senha | Caixa de texto | Min. 8 caracteres |
-| Tipo de usuário (professor/aluno) | Seleção única  |   |
+| Matrícula| Caixa de texto | Limite de 15 caracteres | |
+| Senha | Caixa de texto | Min. 8 caracteres | |
+| Tipo de usuário (professor/aluno) | Seleção única  | Default |
 
 | **Comandos** |    **Destino**    |         **Tipo**       |
 |--------------|-------------------|------------------------|
