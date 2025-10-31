@@ -63,7 +63,7 @@ Atividade 2: Preencher formulário de dúvida
 |--------------------|-------------|-------------------------------|-------------------|
 | Título   | Caixa de Texto | Obrigatório | | 
 | Conteúdo | Seleção única | Min. X caracteres | |
-| Curso | Seleção única | Válido| | Default|
+| Curso | Seleção única | Válido| Default|
 | Disciplina | Seleção única | Válido| Default|
 | Palavras-chave |Caixa de Texto  | Min. 50 caracteres | |
 
