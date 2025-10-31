@@ -29,7 +29,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ### Atividade 2 – Inserir Credenciais de acesso 
 
-| **Campo**           | **Tipo**        | **Restrições**                     | **Valor** |
+| **Campo**           | **Tipo**        | **Restrições**                     | **Valor Default**|
 |---------------------|-----------------|------------------------------------|-----------|
 |E-mail institucional | Caixa de Texto  | E-mail com domínio institucional   |           |
 |Senha                | Caixa de Texto  | Min. 8 caracteres                  |           |
@@ -42,7 +42,7 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ### Atividade 3 – Visualizar tela de Perfil 
 
-| **Campo**        | **Tipo**      | **Restrições**                       | **Valor** |
+| **Campo**        | **Tipo**      | **Restrições**                       | **Valor Default** |
 |------------------|---------------|--------------------------------------|------------|
 | Perfil do usuário autenticado    | Página UI         | Exibe informações pessoais e opções  |  |
 
