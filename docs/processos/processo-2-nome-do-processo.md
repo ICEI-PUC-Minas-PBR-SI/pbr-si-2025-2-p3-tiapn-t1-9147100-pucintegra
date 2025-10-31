@@ -21,11 +21,9 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais, as 
 
 [Este modelo representaria o fluxo otimizado do processo de cadastro, incorporando as melhorias propostas. Ele pode incluir etapas como: Início do Cadastro, Preenchimento de Dados, Validação Automática, Análise de Credenciais (para profissionais), Aprovação/Rejeição, Notificação ao Usuário, e Fim do Cadastro.]
 
-# Detalhamento do Fluxo de Cadastro de Profissional
+## Detalhamento do Fluxo de Cadastro de Profissional
 
-Este documento detalha as atividades, campos, restrições e comandos de navegação do fluxo de cadastro de profissionais, incluindo elementos de controle e auditoria.
-
-## 1. Nome da atividade: Início do Cadastro
+### 1. Nome da atividade: Início do Cadastro
 
 | Campo | Tipo | Restrições | Valor default |
 | :--- | :--- | :--- | :--- |
@@ -37,7 +35,7 @@ Este documento detalha as atividades, campos, restrições e comandos de navega�
 
 ---
 
-## 2. Nome da atividade: Preenchimento de Dados (Profissional)
+### 2. Nome da atividade: Preenchimento de Dados (Profissional)
 
 | Campo | Tipo | Restrições | Valor default |
 | :--- | :--- | :--- | :--- |
@@ -60,7 +58,7 @@ Este documento detalha as atividades, campos, restrições e comandos de navega�
 
 ---
 
-## 3. Nome da atividade: Validação de Dados
+### 3. Nome da atividade: Validação de Dados
 
 | Campo | Tipo | Restrições | Valor default |
 | :--- | :--- | :--- | :--- |
@@ -73,7 +71,7 @@ Este documento detalha as atividades, campos, restrições e comandos de navega�
 
 ---
 
-## 4. Nome da atividade: Notificação de Cadastro
+### 4. Nome da atividade: Notificação de Cadastro
 
 | Campo | Tipo | Restrições | Valor default |
 | :--- | :--- | :--- | :--- |
@@ -86,7 +84,7 @@ Este documento detalha as atividades, campos, restrições e comandos de navega�
 
 ---
 
-## 5. Nome da atividade: Fim do Processo 1
+### 5. Nome da atividade: Fim do Processo 1
 
 | Campo | Tipo | Restrições | Valor default |
 | :--- | :--- | :--- | :--- |
