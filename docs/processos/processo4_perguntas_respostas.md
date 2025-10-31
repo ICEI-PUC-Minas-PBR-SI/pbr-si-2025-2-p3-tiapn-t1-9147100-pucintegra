@@ -37,7 +37,7 @@ O Processo 4 descreve o fluxo pelo qual um usuário publica uma **pergunta** ou 
 ### Gateway - Pergunta ou Resposta?
 | **Campo**          | **Tipo**    | **Restrições**                                | **Valor Default** |
 |--------------------|-------------|-----------------------------------------------|-------------------|
-| Escolha do usuário | Decisão     | Usuário escolhe fluxo | Pergunta / Resposta                       |
+| Escolha do usuário | Decisão     | Usuário escolhe fluxo | Default                                   |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
@@ -75,29 +75,29 @@ Atividade 2: Preencher formulário de dúvida
 ### Fluxo Resposta:
 Atividade 1: Selecionar pergunta que deseja responder 
 
-| **Campo**          | **Tipo**        | **Restrições**               |**Valor**|
+| **Campo**          | **Tipo**        | **Restrições**               |**Valor Default**|
 |--------------------|-----------------|------------------------------|------------|
-| Lista de perguntas | Área de texto   | Perguntas visíveis por disciplina/curso; acesso permitido  | Pergunta selecionada |
+| Lista de perguntas | Área de texto   | Perguntas visíveis por disciplina/curso; acesso permitido  | |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Clicar na pergunta | Abrir campo de resposta | Usuário (seleção)   |
+| Clicar na pergunta | Abrir campo de resposta | Interação do usuário|
 
 Atividade 2: Preencher conteúdo da resposta 
 
-| **Campo**          | **Tipo**    | **Restrições**                |**Valor** |
-|--------------------|-------------|-------------------------------|----------|
+| **Campo**          | **Tipo**    | **Restrições**                |**Valor Default**|
+|--------------------|-------------|-------------------------------|-----------------|
 | Texto   | Caixa de Texto | Max. 500 caracteres |
 | Links   | Link | Links sanitizados | |
 | Imagens | Imagem | JPG ou PNG |  |
 
 | **Comandos**       | **Destino**                      | **Tipo**   |
 |--------------------|----------------------------------|------------|
-| Preecher e submeter| Convergência para confirmar envio| Usuário (entrada) |
+| Preecher e submeter| Convergência para confirmar envio| Inserção do usuário |
 
 
 ### Gateway - Tarefas convergem (confirmação)
-| **Campo**          | **Tipo**    | **Restrições**                                |**Valor** |
+| **Campo**          | **Tipo**    | **Restrições**                                |**Valor Default**|
 |--------------------|-------------|-----------------------------------------------|----------|
 |Confirmação de envio| Decisão     | Usuário confirma revisar antes de enviar      | Default  |
 
@@ -110,7 +110,7 @@ Atividade 2: Preencher conteúdo da resposta
 
 ### Atividade 2 - Confirmar envio da postagem 
 
-| **Campo**          | **Tipo**    | **Restrições**                |**Valor**   |
+| **Campo**          | **Tipo**    | **Restrições**                |**Valor Default**|
 |--------------------|-------------|-------------------------------|------------|
 | Botão de envio     | Botão       | Somente após preencher campos obrigatórios | Default  |
 
@@ -123,9 +123,9 @@ Atividade 2: Preencher conteúdo da resposta
 
 ### Atividade 3 – Visualizar postagem feita 
  
-| **Campo**         | **Tipo**        | **Restrições**                                 |**Valor** |
-|-------------------|-----------------|------------------------------------------------|-------------------|
-| Página da postagem| Página UI       | Exibe título, conteúdo, autor, data, feedbacks |Conteúdo publicado |
+| **Campo**         | **Tipo**        | **Restrições**                                 |**Valor Default** |
+|-------------------|-----------------|------------------------------------------------|------------------|
+| Página da postagem| Página UI       | Exibe título, conteúdo, autor, data, feedbacks | |
 
 | **Comandos**       | **Destino**                 | **Tipo**   |
 |--------------------|-----------------------------|------------|
