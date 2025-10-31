@@ -25,7 +25,7 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
-| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Usuário (interação)   |
+| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Interação do usuário  |
 
 ---
 
