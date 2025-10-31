@@ -97,12 +97,13 @@ Com base na análise do processo atual (AS-IS) de cadastro de profissionais, as 
 
 ## Wireframe 
 
-<img width="1360" height="692" alt="Captura de tela 2025-10-24 200828" src="https://github.com/user-attachments/assets/a23ec5e4-0e29-4c0d-95ce-fd340e5dac07" />
+<img width="1354" height="687" alt="Captura de tela 2025-10-31 113519" src="https://github.com/user-attachments/assets/9106fdbc-4aa9-4f02-8475-a5a94f0c8d5a" />
 
-<img width="1352" height="668" alt="Captura de tela 2025-10-24 200922" src="https://github.com/user-attachments/assets/8dcdd339-2931-4942-9e55-6cc2d7192421" />
+<img width="1341" height="681" alt="Captura de tela 2025-10-31 113549" src="https://github.com/user-attachments/assets/22d98aae-a99b-479a-bf46-45de81b93252" />
 
-<img width="1346" height="683" alt="Captura de tela 2025-10-24 195927" src="https://github.com/user-attachments/assets/1a9162c4-3db1-45c6-b204-712ff54451be" />
+<img width="1332" height="683" alt="Captura de tela 2025-10-31 113603" src="https://github.com/user-attachments/assets/a518e20d-5d6e-45f8-8dac-b423f548672f" />
 
-<img width="1339" height="538" alt="Captura de tela 2025-10-24 200041" src="https://github.com/user-attachments/assets/05c06648-fde3-460c-8d40-96d24f77fe31" />
+<img width="1338" height="691" alt="Captura de tela 2025-10-31 113619" src="https://github.com/user-attachments/assets/25533f1f-8a78-445e-985e-42b232090b0f" />
 
-<img width="1319" height="409" alt="Captura de tela 2025-10-24 200058" src="https://github.com/user-attachments/assets/e6e8b100-510d-4520-9af0-9bfeee871a3d" />
+
+
