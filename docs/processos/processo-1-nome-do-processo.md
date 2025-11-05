@@ -110,9 +110,12 @@ Com base na análise do processo atual (AS-IS) de cadastro de pacientes, as segu
 
 ## Wireframe 
 
-<img width="1360" height="689" alt="Captura de tela 2025-10-29 222324" src="https://github.com/user-attachments/assets/6a1842c7-dec9-4abf-9102-b0744d53e6fe" />
+<img width="1357" height="690" alt="image" src="https://github.com/user-attachments/assets/1b95bf81-9ebf-4449-9ca1-ba1daafb2cf9" />
 
-<img width="1360" height="629" alt="Captura de tela 2025-10-29 222446" src="https://github.com/user-attachments/assets/5a1f4a48-d154-429d-b487-30d20c9e3cab" />
+<img width="1357" height="655" alt="image" src="https://github.com/user-attachments/assets/ab23c987-8e14-42f3-8e7a-b3b9d9c67691" />
 
-<img width="1365" height="649" alt="Captura de tela 2025-10-29 222555" src="https://github.com/user-attachments/assets/7a1eace7-97db-441b-9b67-46095c800e49" />
+<img width="1330" height="414" alt="image" src="https://github.com/user-attachments/assets/d765c4c0-7796-4845-a609-384cf20290ae" />
+
+<img width="1356" height="490" alt="image" src="https://github.com/user-attachments/assets/1a6614df-7347-4691-9026-af6bf859e8ca" />
+
 
