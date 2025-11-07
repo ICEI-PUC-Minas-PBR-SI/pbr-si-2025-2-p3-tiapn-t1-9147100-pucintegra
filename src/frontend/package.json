@@ -1,0 +1,44 @@
+{
+  "name": "colmeia-project",
+  "version": "1.0.0",
+  "description": "Sistema de login e cadastro com tema de colmeia/mel para locadores e locatários",
+  "main": "index.html",
+  "scripts": {
+    "start": "start index.html",
+    "serve": "npx http-server -c-1 -p 8000",
+    "dev": "npx http-server -c-1 -p 3000"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "tailwind",
+    "colmeia",
+    "mel",
+    "login",
+    "cadastro",
+    "locador",
+    "locatario"
+  ],
+  "author": "Desenvolvedor",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/colmeia-project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seu-usuario/colmeia-project/issues"
+  },
+  "homepage": "https://github.com/seu-usuario/colmeia-project#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "dependencies": {
+    "firebase": "^12.5.0"
+  }
+}

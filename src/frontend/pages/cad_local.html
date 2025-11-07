@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Colmeia - Cadastro de Local</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              honey: {
+                50: "#fefbf0",
+                100: "#fef3c7",
+                200: "#fde68a",
+                300: "#fcd34d",
+                400: "#fbbf24",
+                500: "#f59e0b",
+                600: "#d97706",
+                700: "#b45309",
+                800: "#92400e",
+                900: "#78350f",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .honeycomb-bg {
+        background-image: radial-gradient(
+            circle at 25% 25%,
+            rgba(251, 191, 36, 0.06) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 75% 75%,
+            rgba(245, 158, 11, 0.06) 0%,
+            transparent 50%
+          );
+      }
+      .preview-img {
+        width: 96px;
+        height: 64px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-honey-50 to-honey-100 honeycomb-bg"
+  >
+    <div
+      class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"
+    >
+      <div class="max-w-lg w-full space-y-8">
+        <div class="text-center">
+          <div
+            class="mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-honey-400 to-honey-600 flex items-center justify-center"
+          >
+            <svg
+              class="h-10 w-10 text-white"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 2L2 7L12 12L22 7L12 2Z" />
+              <path d="M2 17L12 22L22 17" />
+              <path d="M2 12L12 17L22 12" />
+            </svg>
+          </div>
+          <h2 class="mt-6 text-3xl font-bold text-honey-900">
+            Cadastro de local
+          </h2>
+          <p class="mt-2 text-sm text-honey-700">
+            Preencha os dados do local para criar um anúncio.
+          </p>
+        </div>
+
+        <form
+          id="locationForm"
+          class="space-y-6 bg-white/80 p-8 rounded-xl border border-honey-200 shadow-lg"
+          novalidate
+        >
+          <div>
+            <label
+              for="locationName"
+              class="block text-sm font-medium text-honey-800"
+              >Nome do Local</label
+            >
+            <input
+              id="locationName"
+              name="locationName"
+              type="text"
+              required
+              minlength="3"
+              class="mt-2 w-full px-3 py-3 border border-honey-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-honey-500"
+              placeholder="Ex: Apartamento Jardim das Flores"
+            />
+            <p id="nameError" class="text-xs text-red-600 mt-1 hidden">
+              Nome obrigatório (mínimo 3 caracteres).
+            </p>
+          </div>
+
+          <div>
+            <label
+              for="address"
+              class="block text-sm font-medium text-honey-800"
+              >Endereço</label
+            >
+            <textarea
+              id="address"
+              name="address"
+              rows="3"
+              required
+              class="mt-2 w-full px-3 py-3 border border-honey-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-honey-500"
+              placeholder="Rua, número, bairro, cidade, estado"
+            ></textarea>
+            <p id="addressError" class="text-xs text-red-600 mt-1 hidden">
+              Endereço obrigatório.
+            </p>
+          </div>
+
+          <div>
+            <label
+              for="propertyType"
+              class="block text-sm font-medium text-honey-800"
+              >Tipo de propriedade</label
+            >
+            <select
+              id="propertyType"
+              name="propertyType"
+              required
+              class="mt-2 w-full px-3 py-3 border border-honey-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-honey-500"
+            >
+              <option value="">-- Selecione --</option>
+              <option>Apartamento</option>
+              <option>Casa</option>
+              <option>Kitnet</option>
+              <option>Comercial</option>
+              <option>Terreno</option>
+            </select>
+            <p id="typeError" class="text-xs text-red-600 mt-1 hidden">
+              Selecione o tipo de propriedade.
+            </p>
+          </div>
+
+          <div>
+            <label
+              for="rentValue"
+              class="block text-sm font-medium text-honey-800"
+              >Valor do Aluguel</label
+            >
+            <input
+              id="rentValue"
+              name="rentValue"
+              type="text"
+              inputmode="numeric"
+              required
+              class="mt-2 w-full px-3 py-3 border border-honey-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-honey-500"
+              placeholder="R$ 1.200,00"
+            />
+            <p id="rentError" class="text-xs text-red-600 mt-1 hidden">
+              Informe um valor válido para o aluguel.
+            </p>
+          </div>
+
+          <div>
+            <label
+              for="description"
+              class="block text-sm font-medium text-honey-800"
+              >Descrição
+              <span id="descCount" class="text-xs text-honey-600"
+                >0/500</span
+              ></label
+            >
+            <textarea
+              id="description"
+              name="description"
+              rows="5"
+              maxlength="500"
+              class="mt-2 w-full px-3 py-3 border border-honey-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-honey-500"
+              placeholder="Descrição opcional (máx 500 caracteres)"
+            ></textarea>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-honey-800"
+              >Fotos da propriedade (opcional)</label
+            >
+            <p class="text-xs text-honey-600">
+              Até 5 imagens, máximo 2MB cada. Tipos: jpg, png, webp.
+            </p>
+            <input
+              id="photos"
+              name="photos"
+              type="file"
+              accept="image/*"
+              multiple
+              class="mt-2 block w-full text-sm text-honey-700 file:bg-honey-200 file:border-0 file:py-2 file:px-4 file:rounded-md"
+            />
+            <p id="photosError" class="text-xs text-red-600 mt-1 hidden"></p>
+
+            <div id="previews" class="mt-3 grid grid-cols-3 gap-3"></div>
+          </div>
+          <div class="mt-3 flex gap-4">
+            <button
+              type="button"
+              onclick="goBack()"
+              aria-label="Cancelar"
+              class="flex-1 group relative flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-gray-400 to-gray-500 hover:from-gray-500 hover:to-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-all duration-200 transform hover:scale-[1.02]"
+            >
+              Cancelar
+            </button>
+            <button
+              type="submit"
+              class="flex-1 group relative flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-honey-500 to-honey-600 hover:from-honey-600 hover:to-honey-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-honey-500 transition-all duration-200 transform hover:scale-[1.02]"
+            >
+              Confirmar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="../assets/js/firebase-init.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
