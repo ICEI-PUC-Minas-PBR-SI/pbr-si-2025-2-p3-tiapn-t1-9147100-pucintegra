@@ -9,7 +9,8 @@ _Visão geral da interação do usuário por meio das telas do sistema. Apresent
 
 _Descrição da tela principal do sistema._
 
-![`Tela principal do sistema`](../docs/images/)
+![`Tela principal do sistema`](../docs/images/homepage/interface_homepage.png)
+![`Tela principal do sistema`](../docs/images/homepage/interface_homepage2.png)
 
 
 ## 6.2. Processo 1 - Tela de Cadastro
