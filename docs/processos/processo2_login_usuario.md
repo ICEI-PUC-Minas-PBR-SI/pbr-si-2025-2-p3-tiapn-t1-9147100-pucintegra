@@ -15,11 +15,11 @@ O sistema valida as credenciais e, em caso de sucesso, libera o acesso ao ambien
 
 ## Detalhamento das atividades  
 
-### Atividade 1 – Selecionar campo "Fazer Login"
+### Atividade 1 – Selecionar campo "Entrar"
 
 | **Campo**           | **Tipo**      | **Restrições**          | **Valor Default** |
 |-------------------- |---------------|-------------------------|-------------------|
-| Botão "Fazer Login" | Botão         | Único, visível          |      Default      |
+| Botão "Entrar" | Botão         | Único, visível          |      Default      |
 
 | **Comandos**       | **Destino**            | **Tipo**             |
 |--------------------|------------------------|----------------------|

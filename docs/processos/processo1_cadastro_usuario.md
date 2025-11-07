@@ -21,11 +21,11 @@ Essa identificação é essencial para garantir que o perfil inicial seja atribu
 
 | **Campo**         | **Tipo**       | **Restrições**              | **Valor Default** |
 |-------------------|----------------|-----------------------------|-------------------|
-| Botão "Realizar cadastro" |  Botão |         Obrigatório         |      Default      |
+| Botão "Cadastre-se" |  Botão |         Obrigatório         |      Default      |
 
 | **Comandos**      | **Destino**            | **Tipo**   |
 |-------------------|------------------------|------------|
-| Selecionar botão "Realizar cadastro"| Formulário de cadastro| Interação do usuário  |
+| Selecionar botão "Cadastre-se"| Formulário de cadastro| Interação do usuário  |
 
 ---
 
