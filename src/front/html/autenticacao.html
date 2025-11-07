@@ -6,21 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PUC Integra</title>
     <link rel="stylesheet" href="/src/front/css/autenticacao.css">
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
+
+    <a href="/src/front/html/homepage.html" class="btn-return" title="Voltar à tela principal">
+        <i class='bx bx-arrow-back'></i>
+    </a>
+
     <div class="container">
         <div class="form-box login">
             <form action="">
                 <h1>Login</h1>
                 <div class="input-box">
                     <input type="text" placeholder="Email" required>
-                    <i class='bxr  bx-envelope'></i>
+                    <i class='bx bx-envelope'></i>
                 </div>
                 <div class="input-box">
                     <input type="password" placeholder="Senha" required>
-                    <i class='bxr  bx-lock'></i>
+                    <i class='bx bx-lock-alt'></i>
                 </div>
                 <div class="forgot-link">
                     <p>Esqueceu a senha? <a href="#">Clique Aqui!</a></p>
@@ -34,27 +39,27 @@
                 <h1>Cadastre-se</h1>
                 <div class="input-box">
                     <input type="text" placeholder="Nome Completo" required>
-                    <i class='bxr  bx-user'></i>
+                    <i class='bx bx-user'></i>
                 </div>
                 <div class="input-box">
                     <input type="text" placeholder="CPF" id="cpf" required maxlength="14">
-                    <i class='bxr  bx-key'></i>
+                    <i class='bx bx-id-card'></i>
                 </div>
                 <div class="input-box">
                     <input type="number" placeholder="Matrícula" id="matricula" maxlength="6">
-                    <i class='bxr  bx-key'></i>
+                    <i class='bx bx-key'></i>
                 </div>
                 <div class="input-box">
                     <input type="text" placeholder="Email Institucional" required>
-                    <i class='bxr  bx-envelope'></i>
+                    <i class='bx bx-envelope'></i>
                 </div>
                 <div class="input-box">
                     <input type="password" placeholder="Senha" required>
-                    <i class='bxr  bx-lock'></i>
+                    <i class='bx bx-lock-alt'></i>
                 </div>
                 <div class="input-box">
                     <input type="password" placeholder="Confirmar Senha" required>
-                    <i class='bxr  bx-lock'></i>
+                    <i class='bx bx-lock-alt'></i>
                 </div>
                 <div class="user-type">
                     <h3>Tipo de Usuário</h3>
@@ -90,5 +95,4 @@
     </div>
     <script src="/src/front/js/autenticacao.js"></script>
 </body>
-
 </html>

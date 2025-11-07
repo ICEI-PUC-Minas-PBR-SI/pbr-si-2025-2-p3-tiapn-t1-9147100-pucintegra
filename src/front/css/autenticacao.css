@@ -293,3 +293,26 @@ input::-webkit-inner-spin-button {
 @media screen and (max-width:650px) {
     
 }
+.btn-return {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.btn-return:hover {
+    transform: scale(1.1);
+    color: #005380; /* Tom azul principal do seu design */
+}
