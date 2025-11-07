@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faça uma Pergunta | Fórum</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="/src/front/css/pergunta.css">
+</head>
+
+<body>
+
+    <div class="page-wrapper page-layout-full">
+        <main class="main-box">
+
+            <nav class="top-nav">
+                <div class="nav-brand">
+                    <img src="/docs/images/logo_puc.png" alt="Logo da Empresa" class="header-logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="/src/front/html/homepage.html">Tela Inicial</a></li>
+                    <li class="active"><a href="#">Perguntas</a></li>
+                    <li><a href="#">Disciplinas</a></li>
+                    <li><a href="#">Comunidades</a></li>
+                    <li><a href="#">Tutoria</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <div class="notification">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge"></span>
+                    </div>
+                    <div class="user-profile">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="form-content-area">
+                <h2>Faça uma pergunta</h2>
+
+                <form>
+                    <div class="form-row three-cols">
+                        <div class="form-group">
+                            <label for="titulo">Título</label>
+                            <input type="text" id="titulo" placeholder="Adicione o título da dúvida">
+                        </div>
+                        <div class="form-group">
+                            <label for="curso">Curso</label>
+                            <select id="curso">
+                                <option value="">Selecionar Curso</option>
+                                <option value="ads">Análise e Desenv. de Sistemas</option>
+                                <option value="cc">Ciência da Computação</option>
+                                <option value="cd">Ciência de Dados</option>
+                                <option value="eng_comp">Engenharia de Computação</option>
+                                <option value="si">Sistemas de informação</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="disciplina">Disciplina</label>
+                            <select id="disciplina">
+                                <option value="">Selecionar Disciplina</option>
+                                <option value="aeds">Algoritmos e Estrutura de Dados</option>
+                                <option value="atp">Algoritmos e Tecnicas de Programação</option>
+                                <option value="atp">Algoritmos em Grafos</option>
+                                <option value="bd">Banco de Dados</option>
+                                <option value="calc1">Cálculo I</option>
+                                <option value="diw">Desenvolvimento Web</option>
+                                <option value="es">Engenharia de Software</option>
+                                <option value="ic">Introdução a Computação</option>
+                                <option value="redes">Redes de Computadores</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row description-attachments-row">
+                        <div class="form-group description-group">
+                            <label for="descricao">Descrição</label>
+                            <div class="description-area">
+                                <div class="toolbar">
+                                    <button type="button" onclick="formatText('bold')">B</button>
+                                    <button type="button" onclick="formatText('italic')">I</button>
+                                    <button type="button" onclick="formatText('underline')">U</button>
+                                    <button type="button" onclick="formatText('formatBlock', 'PRE')"><i
+                                            class="fas fa-code"></i></button>
+                                    <button type="button" onclick="alert('Funcionalidade de Imagem')"><i
+                                            class="fas fa-image"></i></button>
+                                </div>
+                                <div id="descricao" class="editor-content-area" contenteditable="true"
+                                    placeholder="Descreva sua dúvida para outros usuários">
+                                </div>
+
+                                <div class="attachments-info">
+                                    <div class="attachment-link-group">
+                                        <a href="#" id="attach-link-text">
+                                             <i class="fas fa-paperclip"></i> 
+                                        </a>
+                                        <span id="attachment-count-display">3/3</span> 
+                                    </div>
+                                    <span class="char-count">0/2500</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="side-box-visual">
+
+                            <div class="form-group attachments-group">
+                                <label>Anexos Inseridos</label>
+                                <div id="attachments-list-container" class="attachments-list">
+                                    <div class="attachment-box">
+                                        <i class="far fa-square"></i>
+                                        <button type="button" class="remove-attachment">&times;</button>
+                                    </div>
+                                    <div class="attachment-box">
+                                        <i class="far fa-square"></i>
+                                        <button type="button" class="remove-attachment">&times;</button>
+                                    </div>
+                                    <div class="attachment-box">
+                                        <i class="far fa-square"></i>
+                                        <button type="button" class="remove-attachment">&times;</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group keywords-display-group">
+                                <label>Palavras-Chave Selecionadas</label>
+                                <div id="selected-tags-container" class="keyword-tags">
+                                    <span class="tag">PC1 <button type="button">&times;</button></span>
+                                    <span class="tag">PC2 <button type="button">&times;</button></span>
+                                    <span class="tag">PC3 <button type="button">&times;</button></span>
+                                    <span class="tag">PC4 <button type="button">&times;</button></span>
+                                    <span class="tag">PC5 <button type="button">&times;</button></span>
+                                    <span class="tag">PC6 <button type="button">&times;</button></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-row keywords-row">
+                        <div class="form-group keywords-select-group">
+                            <label class="PalavraChave">Palavras-Chave</label>
+                            <span id="keyword-count-span" class="keyword-count">6/6</span>
+                            <select id="keyword-select">
+                                <option value="Selecionar Palavras-Chave">Selecionar Palavras-Chave</option>
+                                <option value="Cálculo I">Cálculo I</option>
+                                <option value="Geometria">Geometria</option>
+                                <option value="CSS">CSS</option>
+                                <option value="HTML">HTML</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Algoritmos">Algoritmos</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group keywords-display-placeholder"></div>
+                    </div>
+                    
+                    <div class="faq-title-box-wrapper">
+                        <div class="faq-title-box">
+                            Perguntas Frequentes (FAQ)
+                        </div>
+                    </div>
+                    
+                    <div class="faq-row"> 
+                        <div class="form-group faq-area-group-full">
+
+                            <div id="faq-carousel-container" class="faq-carousel-container">
+
+                                <button type="button" class="carousel-nav prev" onclick="moveCarousel(-1)">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                                
+                                <div id="faq-list-full" class="faq-list-full">
+                                    
+                                    <div class="faq-card">
+                                        <div class="faq-header">
+                                            <i class="fas fa-user-circle faq-avatar"></i>
+                                            <div class="faq-meta">
+                                                <p class="faq-user-name">Ana Paula Matos</p>
+                                                <p class="faq-discipline">Sistemas de Informação / C#</p>
+                                            </div>
+                                        </div>
+                                        <p class="faq-question-title">O que causa o 'System.NullReferenceException' em C#?</p>
+                                        <p class="faq-keywords">Palavras-Chave: .NET, C#, Erro Comum, Nulo, Exceção</p>
+                                        <a href="#" class="faq-link-action">Ver Detalhes</a>
+                                    </div>
+                                    
+                                    <div class="faq-card">
+                                        <div class="faq-header">
+                                            <i class="fas fa-user-circle faq-avatar"></i>
+                                            <div class="faq-meta">
+                                                <p class="faq-user-name">Ricardo Oliveira</p>
+                                                <p class="faq-discipline">Desenvolvimento Web / CSS</p>
+                                            </div>
+                                        </div>
+                                        <p class="faq-question-title">Qual é a melhor forma de centralizar uma DIV no CSS?</p>
+                                        <p class="faq-keywords">Palavras-Chave: CSS, Flexbox, Layout, Div, Centralização</p>
+                                        <a href="#" class="faq-link-action">Ver Detalhes</a>
+                                    </div>
+                                    
+                                    <div class="faq-card">
+                                        <div class="faq-header">
+                                            <i class="fas fa-user-circle faq-avatar"></i>
+                                            <div class="faq-meta">
+                                                <p class="faq-user-name">Mariana Costa</p>
+                                                <p class="faq-discipline">Algoritmos e Estruturas de Dados</p>
+                                            </div>
+                                        </div>
+                                        <p class="faq-question-title">Como calcular a complexidade de tempo do Bubble Sort?</p>
+                                        <p class="faq-keywords">Palavras-Chave: O(n²), Complexidade, Bubble Sort, Análise de Algoritmos</p>
+                                        <a href="#" class="faq-link-action">Ver Detalhes</a>
+                                    </div>
+                                    
+                                    <div class="faq-card">
+                                        <div class="faq-header">
+                                            <i class="fas fa-user-circle faq-avatar"></i>
+                                            <div class="faq-meta">
+                                                <p class="faq-user-name">Lucas Pereira</p>
+                                                <p class="faq-discipline">Desenvolvimento Web / JavaScript</p>
+                                            </div>
+                                        </div>
+                                        <p class="faq-question-title">Qual a diferença entre async/await e .then() em JavaScript?</p>
+                                        <p class="faq-keywords">Palavras-Chave: JavaScript, Assíncrono, Promise, Fetch, ES6</p>
+                                        <a href="#" class="faq-link-action">Ver Detalhes</a>
+                                    </div>
+                                    
+                                    <div class="faq-card">
+                                        <div class="faq-header">
+                                            <i class="fas fa-user-circle faq-avatar"></i>
+                                            <div class="faq-meta">
+                                                <p class="faq-user-name">Beatriz Rodrigues</p>
+                                                <p class="faq-discipline">Banco de Dados</p>
+                                            </div>
+                                        </div>
+                                        <p class="faq-question-title">O que é e quando usar JOINs e Subqueries no SQL?</p>
+                                        <p class="faq-keywords">Palavras-Chave: SQL, Queries, Joins, Subqueries, Normalização</p>
+                                        <a href="#" class="faq-link-action">Ver Detalhes</a>
+                                    </div>
+                                    
+                                    <div class="faq-card">
+                                        <div class="faq-header">
+                                            <i class="fas fa-user-circle faq-avatar"></i>
+                                            <div class="faq-meta">
+                                                <p class="faq-user-name">Rafael Lima</p>
+                                                <p class="faq-discipline">Engenharia de Software / .NET</p>
+                                            </div>
+                                        </div>
+                                        <p class="faq-question-title">Como funciona a injeção de dependência no .NET Core?</p>
+                                        <p class="faq-keywords">Palavras-Chave: .NET, C#, DI, API, Clean Code</p>
+                                        <a href="#" class="faq-link-action">Ver Detalhes</a>
+                                    </div>
+
+                                </div> <button type="button" class="carousel-nav next" onclick="moveCarousel(1)">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div id="carousel-indicators" class="carousel-indicators">
+                                </div>
+
+                        </div>
+                    </div>
+                    </form>
+            </div>
+        </main>
+
+        <div class="action-bar">
+            <div class="form-actions-content">
+                <button type="button" class="btn btn-cancelar">Cancelar</button>
+                <button type="submit" class="btn btn-publicar">Publicar Dúvida</button>
+            </div>
+        </div>
+    </div>
+    <script src="/src/front/js/pergunta.js"></script>
+</body>
+
+</html>
