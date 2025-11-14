@@ -260,6 +260,110 @@ Como o Processo 2 (Login) apenas lê os dados criados pelo Processo 1 (Cadastro)
 
 ![Modelo relacional - Processo 2](images/modelo_p2.png "Modelo Relacional - Processo 2.")
 
+#### Modelo de Dados do Processo 3 – Personalização de Perfil
+
+O Processo 3 (Personalização de Perfil) atualiza os dados básicos do usuário contidos na tabela de generalização **`PESSOA`**, e adiciona campos para personalização da experiência na interface (UX/UI), como foto, biografia, e preferências de tema/idioma.
+**Estruturas Atualizadas para o Processo 3 (ALTER TABLE):**
+
+```sql
+-- TABELA PESSOA (Atualização de atributos de personalização)
+-- Adiciona campos para armazenar foto, biografia e preferências de interface.
+ALTER TABLE PESSOA
+ADD COLUMN Foto_Perfil VARCHAR(255),
+ADD COLUMN Biografia TEXT,
+ADD COLUMN Tema_Preferencial VARCHAR(50) DEFAULT 'Claro',
+ADD COLUMN Idioma_Preferencial VARCHAR(50) DEFAULT 'Português';
+```
+
+#### Modelo de Dados do Processo 4 - Envio de Perguntas e Respostas
+Este processo é o cerne da colaboração e requer a criação de um conjunto de tabelas robustas para gerenciar o conteúdo gerado pelos usuários, suas interações (reações) e o contexto acadêmico (disciplinas e palavras-chave/tags).
+Este processo envolve as seguintes tabelas:
+- Pergunta
+```sql
+CREATE TABLE PERGUNTA (
+    Id_Pergunta INT PRIMARY KEY AUTO_INCREMENT,
+    Matricula_Aluno VARCHAR(15) NOT NULL,
+    Id_Disciplina INT NOT NULL,
+    Titulo VARCHAR(150) NOT NULL,
+    Conteudo TEXT NOT NULL,
+    Data_Criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Status ENUM('Aberta', 'Fechada', 'Moderacao') DEFAULT 'Aberta',
+    Visibilidade VARCHAR(20),
+    FOREIGN KEY (Matricula_Aluno) REFERENCES ALUNO(Matricula_Aluno),
+    FOREIGN KEY (Id_Disciplina) REFERENCES DISCIPLINA(Id_Disciplina)
+);
+```
+- Resposta
+```sql
+CREATE TABLE RESPOSTA (
+    Id_Resposta INT PRIMARY KEY AUTO_INCREMENT,
+    Id_Pergunta INT NOT NULL,
+    Matricula_Pessoa VARCHAR(15) NOT NULL,
+    Conteudo TEXT NOT NULL,
+    Data_Criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Is_Accepted BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (Id_Pergunta) REFERENCES PERGUNTA(Id_Pergunta),
+    FOREIGN KEY (Matricula_Pessoa) REFERENCES PESSOA(Matricula)
+);
+```
+- Reação
+```sql
+CREATE TABLE REACAO (
+    Id_Reacao INT PRIMARY KEY AUTO_INCREMENT,
+    Id_Resposta INT NOT NULL,
+    Matricula_Pessoa VARCHAR(15) NOT NULL,
+    Tipo_Reacao VARCHAR(20) NOT NULL,
+    UNIQUE KEY (Id_Resposta, Matricula_Pessoa),
+    FOREIGN KEY (Id_Resposta) REFERENCES RESPOSTA(Id_Resposta),
+    FOREIGN KEY (Matricula_Pessoa) REFERENCES PESSOA(Matricula)
+);
+```
+- Palavras-Chave
+```sql
+CREATE TABLE PALAVRA_CHAVE (
+    Id_PalavraChave INT PRIMARY KEY AUTO_INCREMENT,
+    Palavra VARCHAR(50) UNIQUE NOT NULL
+);
+
+CREATE TABLE PERGUNTA_PALAVRACHAVE (
+    Id_Pergunta INT NOT NULL,
+    Id_PalavraChave INT NOT NULL,
+    PRIMARY KEY (Id_Pergunta, Id_PalavraChave),
+    FOREIGN KEY (Id_Pergunta) REFERENCES PERGUNTA(Id_Pergunta),
+    FOREIGN KEY (Id_PalavraChave) REFERENCES PALAVRA_CHAVE(Id_PalavraChave)
+);
+
+CREATE TABLE RESPOSTA_PALAVRACHAVE (
+    Id_Resposta INT NOT NULL,
+    Id_PalavraChave INT NOT NULL,
+    PRIMARY KEY (Id_Resposta, Id_PalavraChave),
+    FOREIGN KEY (Id_Resposta) REFERENCES RESPOSTA(Id_Resposta),
+    FOREIGN KEY (Id_PalavraChave) REFERENCES PALAVRA_CHAVE(Id_PalavraChave)
+);
+```
+- Anexos de Pergunta
+```sql
+CREATE TABLE PERGUNTA_ANEXO (
+    Id_Pergunta INT NOT NULL,
+    Nome_Arquivo VARCHAR(255) NOT NULL,
+    Caminho_Arquivo VARCHAR(255) NOT NULL,
+    Tipo_Arquivo VARCHAR(50),
+    PRIMARY KEY (Id_Pergunta, Nome_Arquivo),
+    FOREIGN KEY (Id_Pergunta) REFERENCES PERGUNTA(Id_Pergunta)
+);
+```
+
+- Anexos de Resposta
+```sql
+CREATE TABLE RESPOSTA_ANEXO (
+    Id_Resposta INT NOT NULL,
+    Nome_Arquivo VARCHAR(255) NOT NULL,
+    Caminho_Arquivo VARCHAR(255) NOT NULL,
+    Tipo_Arquivo VARCHAR(50),
+    PRIMARY KEY (Id_Resposta, Nome_Arquivo),
+    FOREIGN KEY (Id_Resposta) REFERENCES RESPOSTA(Id_Resposta)
+);
+```
 ---
 
 ### 4.3.3 Modelo Físico
