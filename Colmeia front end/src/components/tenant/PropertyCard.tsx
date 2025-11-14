@@ -1,8 +1,9 @@
+import React from 'react';
 import { Card } from '../ui/card';
 import { MapPin, Star } from 'lucide-react';
 
 export interface Property {
-  id: number;
+  id: string | number;
   name: string;
   address: string;
   propertyType: string;

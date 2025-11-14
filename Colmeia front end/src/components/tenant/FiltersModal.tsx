@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
@@ -33,11 +33,11 @@ export function FiltersModal({
 
   const propertyTypes = [
     { value: 'all', label: 'Todos' },
-    { value: 'apartamento', label: 'Apartamento' },
-    { value: 'casa', label: 'Casa' },
-    { value: 'kitnet', label: 'Kitnet' },
-    { value: 'studio', label: 'Studio' },
-    { value: 'cobertura', label: 'Cobertura' },
+    { value: 'Apartamento', label: 'Apartamento' },
+    { value: 'Casa', label: 'Casa' },
+    { value: 'Kitnet', label: 'Kitnet' },
+    { value: 'Studio', label: 'Studio' },
+    { value: 'Cobertura', label: 'Cobertura' },
   ];
 
   const handlePriceRangeChange = (values: number[]) => {

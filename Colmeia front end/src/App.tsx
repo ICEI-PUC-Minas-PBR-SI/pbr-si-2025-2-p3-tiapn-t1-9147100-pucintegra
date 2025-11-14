@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StepOne } from './components/StepOne';
 import { StepTwo } from './components/StepTwo';
 import { StepThree } from './components/StepThree';
@@ -15,6 +15,12 @@ import { PropertyListing } from './components/tenant/PropertyListing';
 import { BookingForm, BookingData } from './components/tenant/BookingForm';
 import { BookingSuccess } from './components/tenant/BookingSuccess';
 import { Property } from './components/tenant/PropertyCard';
+import { Toaster } from './components/ui/sonner';
+import { toast } from 'sonner';
+import { login, logout, onAuthStateChangedListener, getCurrentUser, createUser } from './services/firebase-auth';
+import { createLocation, LocationData } from './services/firebase-locals';
+import { getUserProfile, UserProfile, createUserProfile, uploadUserPhoto, base64ToFile } from './services/firebase-users';
+import { User } from 'firebase/auth';
 
 export interface UserData {
   userType: 'locatario' | 'locador';
@@ -31,6 +37,11 @@ export interface UserData {
 }
 
 export default function App() {
+  // Estados de autenticação
+  const [isCheckingAuth, setIsCheckingAuth] = useState(true);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+
   const [currentStep, setCurrentStep] = useState(1);
   const [userData, setUserData] = useState<UserData>({
     userType: 'locatario',
@@ -56,9 +67,95 @@ export default function App() {
     rentPrice: '',
     description: '',
     photos: [],
+    photoFiles: [],
   });
+  const [isSubmittingProperty, setIsSubmittingProperty] = useState(false);
+  const [isSubmittingSignup, setIsSubmittingSignup] = useState(false);
   const [selectedProperty, setSelectedProperty] = useState<Property | null>(null);
   const [bookingData, setBookingData] = useState<BookingData | null>(null);
+
+  // Monitorar mudanças no estado de autenticação
+  useEffect(() => {
+    setIsCheckingAuth(true);
+    
+    const unsubscribe = onAuthStateChangedListener(async (user: User | null) => {
+      if (user) {
+        // Usuário autenticado
+        setCurrentUser(user);
+        
+        try {
+          // Buscar perfil do usuário no Firestore
+          const profile = await getUserProfile(user.uid);
+          if (profile) {
+            setUserProfile(profile);
+            // Atualizar userData com informações do perfil
+            setUserData(prev => ({
+              ...prev,
+              userType: profile.userType,
+              nome: profile.nome,
+              email: profile.email,
+              telefone: profile.telefone,
+              cpfCnpj: profile.cpfCnpj,
+              endereco: profile.endereco,
+              foto: profile.foto,
+            }));
+            
+            // Redirecionar baseado no tipo de usuário
+            if (profile.userType === 'locador') {
+              setCurrentFlow('dashboard');
+            } else {
+              setCurrentFlow('tenant-listing');
+            }
+          } else {
+            // Perfil não encontrado - pode ser um usuário novo
+            console.warn('Perfil do usuário não encontrado no Firestore');
+            setUserProfile(null);
+          }
+        } catch (error) {
+          console.error('Erro ao buscar perfil do usuário:', error);
+          setUserProfile(null);
+        }
+      } else {
+        // Usuário não autenticado
+        setCurrentUser(null);
+        setUserProfile(null);
+        // O segundo useEffect vai lidar com o redirecionamento
+      }
+      
+      setIsCheckingAuth(false);
+    });
+
+    // Cleanup: desinscrever quando o componente for desmontado
+    return () => unsubscribe();
+  }, []); // Executar apenas uma vez na montagem
+
+  // Proteger rotas que requerem autenticação
+  useEffect(() => {
+    if (isCheckingAuth) return; // Aguardar verificação inicial
+
+    const protectedFlows = ['dashboard', 'property', 'bookings', 'tenant-listing', 'tenant-booking', 'tenant-booking-success'];
+    const publicFlows = ['signup', 'login', 'tenant-login'];
+
+    if (!currentUser && protectedFlows.includes(currentFlow)) {
+      // Usuário não autenticado tentando acessar rota protegida
+      // Redirecionar para login apropriado baseado no fluxo
+      if (currentFlow === 'tenant-listing' || currentFlow === 'tenant-booking' || currentFlow === 'tenant-booking-success') {
+        setCurrentFlow('tenant-login');
+      } else {
+        setCurrentFlow('login');
+      }
+    } else if (currentUser && publicFlows.includes(currentFlow)) {
+      // Usuário autenticado tentando acessar página de login/signup
+      // Redirecionar para dashboard apropriado baseado no userType
+      if (userProfile) {
+        if (userProfile.userType === 'locador') {
+          setCurrentFlow('dashboard');
+        } else {
+          setCurrentFlow('tenant-listing');
+        }
+      }
+    }
+  }, [currentUser, currentFlow, isCheckingAuth, userProfile]);
 
   const nextStep = () => setCurrentStep(prev => Math.min(prev + 1, 4));
   const prevStep = () => setCurrentStep(prev => Math.max(prev - 1, 1));
@@ -68,25 +165,55 @@ export default function App() {
   };
 
   // Handlers para o fluxo de login/dashboard (Locador)
-  const handleLogin = (email: string, password: string) => {
-    // Mock login - em produção, validar com backend
-    console.log('Login:', email, password);
-    setCurrentFlow('dashboard');
+  const handleLogin = async (email: string, password: string) => {
+    try {
+      await login(email, password);
+      toast.success('Login realizado com sucesso!');
+      setCurrentFlow('dashboard');
+    } catch (error: any) {
+      toast.error(error.message || 'Erro ao fazer login');
+      console.error('Erro no login:', error);
+    }
   };
 
-  const handleLogout = () => {
-    setCurrentFlow('login');
+  const handleLogout = async () => {
+    try {
+      await logout();
+      toast.success('Logout realizado com sucesso!');
+      // O useEffect vai detectar a mudança de autenticação e redirecionar automaticamente
+      setCurrentUser(null);
+      setUserProfile(null);
+      setCurrentFlow('signup');
+    } catch (error: any) {
+      toast.error(error.message || 'Erro ao fazer logout');
+      console.error('Erro no logout:', error);
+    }
   };
 
   // Handlers para o fluxo de login/busca (Locatário)
-  const handleTenantLogin = (email: string, password: string) => {
-    // Mock login - em produção, validar com backend
-    console.log('Tenant Login:', email, password);
-    setCurrentFlow('tenant-listing');
+  const handleTenantLogin = async (email: string, password: string) => {
+    try {
+      await login(email, password);
+      toast.success('Login realizado com sucesso!');
+      setCurrentFlow('tenant-listing');
+    } catch (error: any) {
+      toast.error(error.message || 'Erro ao fazer login');
+      console.error('Erro no login:', error);
+    }
   };
 
-  const handleTenantLogout = () => {
-    setCurrentFlow('tenant-login');
+  const handleTenantLogout = async () => {
+    try {
+      await logout();
+      toast.success('Logout realizado com sucesso!');
+      // O useEffect vai detectar a mudança de autenticação e redirecionar automaticamente
+      setCurrentUser(null);
+      setUserProfile(null);
+      setCurrentFlow('signup');
+    } catch (error: any) {
+      toast.error(error.message || 'Erro ao fazer logout');
+      console.error('Erro no logout:', error);
+    }
   };
 
   const handleGoToSignup = () => {
@@ -113,6 +240,87 @@ export default function App() {
     }
   };
 
+  const handleSignup = async () => {
+    setIsSubmittingSignup(true);
+    try {
+      // Validar dados obrigatórios
+      if (!userData.email || !userData.senha || !userData.nome) {
+        toast.error('Por favor, preencha todos os campos obrigatórios');
+        setIsSubmittingSignup(false);
+        return;
+      }
+
+      // Criar usuário no Firebase Auth
+      toast.loading('Criando sua conta...', { id: 'signup' });
+      const userCredential = await createUser(userData.email, userData.senha, userData.nome);
+      const uid = userCredential.user.uid;
+
+      // Fazer upload da foto se houver
+      let photoURL: string | undefined = undefined;
+      if (userData.foto) {
+        try {
+          toast.loading('Fazendo upload da foto...', { id: 'signup' });
+          const photoFile = base64ToFile(userData.foto, 'user-photo.jpg');
+          photoURL = await uploadUserPhoto(uid, photoFile);
+        } catch (error: any) {
+          console.warn('Erro ao fazer upload da foto:', error);
+          // Continuar mesmo se o upload da foto falhar
+          toast.warning('Conta criada, mas houve um problema ao fazer upload da foto');
+        }
+      }
+
+      // Criar perfil do usuário no Firestore
+      toast.loading('Finalizando cadastro...', { id: 'signup' });
+      const profileData = {
+        userType: userData.userType,
+        nome: userData.nome,
+        email: userData.email,
+        telefone: userData.telefone,
+        cpfCnpj: userData.cpfCnpj,
+        endereco: userData.endereco,
+        foto: photoURL,
+        aceitoTermos: userData.aceitoTermos,
+      };
+
+      await createUserProfile(uid, profileData);
+
+      toast.success('Cadastro realizado com sucesso!', { id: 'signup' });
+
+      // Após cadastro bem-sucedido, fazer logout e redirecionar para login
+      await logout();
+      setCurrentUser(null);
+      setUserProfile(null);
+      
+      // Redirecionar para tela de login baseado no tipo de usuário
+      if (userData.userType === 'locatario') {
+        setCurrentFlow('tenant-login');
+      } else {
+        setCurrentFlow('login');
+      }
+      
+      // Resetar dados do formulário
+      setCurrentStep(1);
+      setUserData({
+        userType: 'locatario',
+        nome: '',
+        email: '',
+        telefone: '',
+        cpfCnpj: '',
+        endereco: '',
+        senha: '',
+        confirmarSenha: '',
+        foto: undefined,
+        codigoVerificacao: '',
+        aceitoTermos: false,
+      });
+    } catch (error: any) {
+      console.error('Erro no cadastro:', error);
+      toast.error(error.message || 'Erro ao realizar cadastro. Tente novamente.', { id: 'signup' });
+    } finally {
+      setIsSubmittingSignup(false);
+    }
+  };
+
   const handleCreateProperty = () => {
     setCurrentFlow('property');
     setPropertyStep('form');
@@ -121,6 +329,16 @@ export default function App() {
   const handleCancelProperty = () => {
     setCurrentFlow('dashboard');
     setPropertyStep('form');
+    // Reset form data
+    setPropertyData({
+      name: '',
+      address: '',
+      propertyType: '',
+      rentPrice: '',
+      description: '',
+      photos: [],
+      photoFiles: [],
+    });
   };
 
   const handlePropertyFormSubmit = (data: PropertyData) => {
@@ -128,8 +346,29 @@ export default function App() {
     setPropertyStep('confirmation');
   };
 
-  const handlePropertyConfirm = () => {
-    setPropertyStep('success');
+  const handlePropertyConfirm = async () => {
+    setIsSubmittingProperty(true);
+    try {
+      // Prepare location data for Firebase
+      const locationData: LocationData = {
+        name: propertyData.name,
+        address: propertyData.address,
+        type: propertyData.propertyType,
+        rentPrice: propertyData.rentPrice,
+        description: propertyData.description,
+      };
+
+      // Create location in Firebase with photos
+      await createLocation(locationData, propertyData.photoFiles);
+      
+      toast.success('Local cadastrado com sucesso!');
+      setPropertyStep('success');
+    } catch (error: any) {
+      console.error('Erro ao cadastrar local:', error);
+      toast.error(error.message || 'Erro ao cadastrar local. Tente novamente.');
+    } finally {
+      setIsSubmittingProperty(false);
+    }
   };
 
   const handlePropertyBack = () => {
@@ -139,6 +378,16 @@ export default function App() {
   const handlePropertySuccess = () => {
     setCurrentFlow('dashboard');
     setPropertyStep('form');
+    // Reset form data after successful submission
+    setPropertyData({
+      name: '',
+      address: '',
+      propertyType: '',
+      rentPrice: '',
+      description: '',
+      photos: [],
+      photoFiles: [],
+    });
   };
 
   const handleSelectProperty = (property: Property) => {
@@ -168,8 +417,17 @@ export default function App() {
       {/* Conteúdo principal */}
       <div className="relative z-10">
         <Header onLoginClick={handleGoToLogin} />
+        <Toaster />
         
         <main className="container mx-auto px-4 py-8 flex items-center justify-center min-h-[calc(100vh-80px)]">
+          {isCheckingAuth ? (
+            <div className="w-full flex items-center justify-center">
+              <div className="text-center">
+                <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-amber-600 mb-4"></div>
+                <p className="text-amber-800 text-lg">Verificando autenticação...</p>
+              </div>
+            </div>
+          ) : (
           <div className="w-full">
             {currentFlow === 'signup' && (
               <div className="w-full max-w-xl mx-auto">
@@ -199,9 +457,11 @@ export default function App() {
                     codigoVerificacao={userData.codigoVerificacao}
                     aceitoTermos={userData.aceitoTermos}
                     onBack={prevStep}
-                    onConfirm={(data) => {
+                    isSubmitting={isSubmittingSignup}
+                    onConfirm={async (data) => {
                       updateUserData(data);
-                      nextStep();
+                      // Executar cadastro quando confirmar o código
+                      await handleSignup();
                     }}
                   />
                 )}
@@ -209,7 +469,7 @@ export default function App() {
                 {currentStep === 4 && (
                   <StepFour
                     nome={userData.nome}
-                    onDashboard={handleGoToDashboard}
+                    onDashboard={handleGoToLogin}
                     onClose={handleGoToSignup}
                   />
                 )}
@@ -255,6 +515,7 @@ export default function App() {
                     propertyData={propertyData}
                     onConfirm={handlePropertyConfirm}
                     onBack={handlePropertyBack}
+                    isSubmitting={isSubmittingProperty}
                   />
                 )}
                 
@@ -298,6 +559,7 @@ export default function App() {
               />
             )}
           </div>
+          )}
         </main>
       </div>
     </div>

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from '../ui/button';
 import { Card } from '../ui/card';
 import { Home, Plus, User, LogOut, Building2, Calendar } from 'lucide-react';

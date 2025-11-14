@@ -1,9 +1,16 @@
-import { useState } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { PropertyCard, Property } from './PropertyCard';
 import { FiltersModal, FilterValues } from './FiltersModal';
-import { Search, SlidersHorizontal, X, LogOut } from 'lucide-react';
+import { Search, SlidersHorizontal, X, LogOut, AlertCircle, RefreshCw } from 'lucide-react';
+import { Skeleton } from '../ui/skeleton';
+import {
+  getLocationsWithFilters,
+  locationToProperty,
+  LocationFilters,
+  Location,
+} from '../../services/firebase-locals';
 
 interface PropertyListingProps {
   userName: string;
@@ -11,8 +18,26 @@ interface PropertyListingProps {
   onSelectProperty: (property: Property) => void;
 }
 
+// Debounce hook
+function useDebounce<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
 export function PropertyListing({ userName, onLogout, onSelectProperty }: PropertyListingProps) {
   const [searchTerm, setSearchTerm] = useState('');
+  const debouncedSearchTerm = useDebounce(searchTerm, 400);
   const [isFiltersOpen, setIsFiltersOpen] = useState(false);
   const [filters, setFilters] = useState<FilterValues>({
     location: '',
@@ -24,106 +49,86 @@ export function PropertyListing({ userName, onLogout, onSelectProperty }: Proper
     ownerName: '',
   });
 
-  // Mock data de imóveis
-  const allProperties: Property[] = [
-    {
-      id: 1,
-      name: 'Apartamento Moderno Centro',
-      address: 'Rua das Flores, 123 - Centro, São Paulo - SP',
-      propertyType: 'Apartamento',
-      price: 'R$ 2.500,00',
-      rating: 4.5,
-      image: 'https://images.unsplash.com/photo-1594873604892-b599f847e859?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhcGFydG1lbnQlMjBpbnRlcmlvcnxlbnwxfHx8fDE3NjI4MTc3MDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      id: 2,
-      name: 'Casa Luxuosa Jardim Europa',
-      address: 'Av. Europa, 456 - Jardim Europa, São Paulo - SP',
-      propertyType: 'Casa',
-      price: 'R$ 8.500,00',
-      rating: 5.0,
-      image: 'https://images.unsplash.com/photo-1706808849780-7a04fbac83ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3VzZSUyMGV4dGVyaW9yfGVufDF8fHx8MTc2Mjc5MjY4MHww&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      id: 3,
-      name: 'Studio Aconchegante Vila Madalena',
-      address: 'Rua Harmonia, 789 - Vila Madalena, São Paulo - SP',
-      propertyType: 'Studio',
-      price: 'R$ 1.800,00',
-      rating: 4.0,
-      image: 'https://images.unsplash.com/photo-1507138451611-3001135909fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3p5JTIwc3R1ZGlvJTIwYXBhcnRtZW50fGVufDF8fHx8MTc2Mjc3NzIxNnww&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      id: 4,
-      name: 'Apartamento Elegante Pinheiros',
-      address: 'Rua dos Pinheiros, 321 - Pinheiros, São Paulo - SP',
-      propertyType: 'Apartamento',
-      price: 'R$ 3.200,00',
-      rating: 4.8,
-      image: 'https://images.unsplash.com/photo-1698849071904-090feee32e73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwaG9tZSUyMGludGVyaW9yfGVufDF8fHx8MTc2Mjg3NjQ3MHww&ixlib=rb-4.1.0&q=80&w=1080',
-    },
-    {
-      id: 5,
-      name: 'Kitnet Compacta Consolação',
-      address: 'Rua da Consolação, 555 - Consolação, São Paulo - SP',
-      propertyType: 'Kitnet',
-      price: 'R$ 1.200,00',
-      rating: 3.5,
-    },
-    {
-      id: 6,
-      name: 'Cobertura Vista Panorâmica',
-      address: 'Av. Paulista, 1000 - Bela Vista, São Paulo - SP',
-      propertyType: 'Cobertura',
-      price: 'R$ 12.000,00',
-      rating: 5.0,
-    },
-  ];
+  // States for Firestore data
+  const [locations, setLocations] = useState<Location[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // Função de filtragem
-  const getFilteredProperties = () => {
-    return allProperties.filter((property) => {
-      // Filtro de busca por texto
-      const matchesSearch =
-        !searchTerm ||
-        property.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        property.address.toLowerCase().includes(searchTerm.toLowerCase());
-
-      // Filtro de localização
-      const matchesLocation =
-        !filters.location ||
-        property.address.toLowerCase().includes(filters.location.toLowerCase());
-
-      // Filtro de tipo de propriedade
-      const matchesType =
-        filters.propertyType === 'all' ||
-        property.propertyType.toLowerCase() === filters.propertyType.toLowerCase();
-
-      // Filtro de preço
-      const priceValue = parseFloat(property.price.replace(/[^\d,]/g, '').replace(',', '.'));
-      const matchesPrice =
-        priceValue >= filters.minPrice && priceValue <= filters.maxPrice;
-
-      // Filtro de avaliação
-      const matchesRating = property.rating >= filters.rating;
-
-      // Filtro de nome da propriedade
-      const matchesPropertyName =
-        !filters.propertyName ||
-        property.name.toLowerCase().includes(filters.propertyName.toLowerCase());
-
-      return (
-        matchesSearch &&
-        matchesLocation &&
-        matchesType &&
-        matchesPrice &&
-        matchesRating &&
-        matchesPropertyName
-      );
-    });
+  // Convert price from reais to cents
+  const convertPriceToCents = (priceInReais: number): number => {
+    return Math.round(priceInReais * 100);
   };
 
-  const filteredProperties = getFilteredProperties();
+  // Fetch locations from Firestore
+  const fetchLocations = useCallback(async (appliedFilters?: LocationFilters) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      // Use appliedFilters if provided, otherwise use current filters state
+      const currentFilters = appliedFilters || {
+        type: filters.propertyType,
+        minPrice: filters.minPrice > 0 ? convertPriceToCents(filters.minPrice) : undefined,
+        maxPrice:
+          filters.maxPrice > 0 && filters.maxPrice < 10000
+            ? convertPriceToCents(filters.maxPrice)
+            : undefined,
+        location: filters.location || undefined,
+      };
+
+      const fetchedLocations = await getLocationsWithFilters(currentFilters);
+      setLocations(fetchedLocations);
+    } catch (err: any) {
+      console.error('Error fetching locations:', err);
+      setError(err.message || 'Erro ao buscar locais');
+    } finally {
+      setIsLoading(false);
+    }
+  }, [filters]);
+
+  // Fetch locations on mount
+  useEffect(() => {
+    fetchLocations();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Convert locations to properties
+  const allProperties = useMemo(() => {
+    return locations.map(locationToProperty);
+  }, [locations]);
+
+  // Filter properties by search term (client-side)
+  const filteredProperties = useMemo(() => {
+    let filtered = allProperties;
+
+    // Apply text search filter
+    if (debouncedSearchTerm) {
+      const searchLower = debouncedSearchTerm.toLowerCase();
+      filtered = filtered.filter(
+        (property) =>
+          property.name.toLowerCase().includes(searchLower) ||
+          property.address.toLowerCase().includes(searchLower)
+      );
+    }
+
+    // Apply rating filter (client-side, as rating doesn't exist in Firestore yet)
+    if (filters.rating > 0) {
+      filtered = filtered.filter((property) => property.rating >= filters.rating);
+    }
+
+    // Apply property name filter (client-side)
+    if (filters.propertyName) {
+      const nameLower = filters.propertyName.toLowerCase();
+      filtered = filtered.filter((property) =>
+        property.name.toLowerCase().includes(nameLower)
+      );
+    }
+
+    // Note: Type, price, and location filters are already applied in Firestore query
+    // via fetchLocations
+
+    return filtered;
+  }, [allProperties, debouncedSearchTerm, filters.rating, filters.propertyName]);
 
   // Verificar se há filtros ativos
   const hasActiveFilters =
@@ -133,7 +138,8 @@ export function PropertyListing({ userName, onLogout, onSelectProperty }: Proper
     filters.maxPrice < 10000 ||
     filters.rating > 0 ||
     filters.propertyName ||
-    filters.ownerName;
+    filters.ownerName ||
+    searchTerm;
 
   const activeFiltersCount = [
     filters.location,
@@ -143,14 +149,26 @@ export function PropertyListing({ userName, onLogout, onSelectProperty }: Proper
     filters.rating > 0,
     filters.propertyName,
     filters.ownerName,
+    searchTerm,
   ].filter(Boolean).length;
 
   const handleApplyFilters = (newFilters: FilterValues) => {
     setFilters(newFilters);
+    // Convert price filters to cents and fetch from Firestore
+    const firestoreFilters: LocationFilters = {
+      type: newFilters.propertyType,
+      minPrice: newFilters.minPrice > 0 ? convertPriceToCents(newFilters.minPrice) : undefined,
+      maxPrice:
+        newFilters.maxPrice > 0 && newFilters.maxPrice < 10000
+          ? convertPriceToCents(newFilters.maxPrice)
+          : undefined,
+      location: newFilters.location || undefined,
+    };
+    fetchLocations(firestoreFilters);
   };
 
   const handleClearAllFilters = () => {
-    setFilters({
+    const clearedFilters: FilterValues = {
       location: '',
       propertyType: 'all',
       minPrice: 0,
@@ -158,8 +176,20 @@ export function PropertyListing({ userName, onLogout, onSelectProperty }: Proper
       rating: 0,
       propertyName: '',
       ownerName: '',
-    });
+    };
+    setFilters(clearedFilters);
     setSearchTerm('');
+    // Fetch all locations without filters
+    fetchLocations({
+      type: 'all',
+      minPrice: undefined,
+      maxPrice: undefined,
+      location: undefined,
+    });
+  };
+
+  const handleRetry = () => {
+    fetchLocations();
   };
 
   return (
@@ -174,8 +204,14 @@ export function PropertyListing({ userName, onLogout, onSelectProperty }: Proper
                 : 'Encontre seu Lar Ideal'}
             </h1>
             <p className="text-amber-700/70">
-              {filteredProperties.length}{' '}
-              {filteredProperties.length === 1 ? 'imóvel disponível' : 'imóveis disponíveis'}
+              {isLoading ? (
+                'Carregando...'
+              ) : (
+                <>
+                  {filteredProperties.length}{' '}
+                  {filteredProperties.length === 1 ? 'imóvel disponível' : 'imóveis disponíveis'}
+                </>
+              )}
             </p>
           </div>
           <Button
@@ -234,8 +270,49 @@ export function PropertyListing({ userName, onLogout, onSelectProperty }: Proper
         )}
       </div>
 
+      {/* Loading State */}
+      {isLoading && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[...Array(6)].map((_, index) => (
+            <div
+              key={index}
+              className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-100 overflow-hidden"
+            >
+              <Skeleton className="h-48 w-full" />
+              <div className="p-5 space-y-3">
+                <Skeleton className="h-6 w-3/4" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-2/3" />
+                <div className="flex justify-between items-center">
+                  <Skeleton className="h-6 w-24" />
+                  <Skeleton className="h-5 w-16" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Error State */}
+      {error && !isLoading && (
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-red-200 p-12 text-center">
+          <div className="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center mx-auto mb-6">
+            <AlertCircle className="w-10 h-10 text-red-500" />
+          </div>
+          <h2 className="text-red-900 mb-3">Erro ao carregar locais</h2>
+          <p className="text-red-700/70 mb-6">{error}</p>
+          <Button
+            onClick={handleRetry}
+            className="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+          >
+            <RefreshCw className="w-4 h-4 mr-2" />
+            Tentar Novamente
+          </Button>
+        </div>
+      )}
+
       {/* Listagem de Imóveis */}
-      {filteredProperties.length > 0 ? (
+      {!isLoading && !error && filteredProperties.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProperties.map((property) => (
             <PropertyCard
@@ -245,22 +322,29 @@ export function PropertyListing({ userName, onLogout, onSelectProperty }: Proper
             />
           ))}
         </div>
-      ) : (
+      )}
+
+      {/* Empty State */}
+      {!isLoading && !error && filteredProperties.length === 0 && (
         <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-100 p-12 text-center">
           <div className="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-6">
             <Search className="w-10 h-10 text-amber-400" />
           </div>
           <h2 className="text-amber-900 mb-3">Nenhum resultado encontrado</h2>
           <p className="text-amber-700/70 mb-6">
-            Não encontramos imóveis que correspondam aos seus critérios de busca.
+            {hasActiveFilters
+              ? 'Não encontramos imóveis que correspondam aos seus critérios de busca.'
+              : 'Ainda não há locais cadastrados.'}
           </p>
-          <Button
-            onClick={handleClearAllFilters}
-            variant="outline"
-            className="border-amber-300 text-amber-700 hover:bg-amber-50 rounded-xl"
-          >
-            Limpar Filtros
-          </Button>
+          {hasActiveFilters && (
+            <Button
+              onClick={handleClearAllFilters}
+              variant="outline"
+              className="border-amber-300 text-amber-700 hover:bg-amber-50 rounded-xl"
+            >
+              Limpar Filtros
+            </Button>
+          )}
         </div>
       )}
 

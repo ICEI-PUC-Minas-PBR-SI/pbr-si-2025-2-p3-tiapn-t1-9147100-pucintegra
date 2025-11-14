@@ -1,6 +1,7 @@
 import { Button } from './ui/button';
 import { motion } from 'motion/react';
 import { Sparkles } from 'lucide-react';
+import React from 'react';
 
 interface StepFourProps {
   nome: string;

@@ -7,12 +7,14 @@ interface PropertyConfirmationProps {
   propertyData: PropertyData;
   onConfirm: () => void;
   onBack: () => void;
+  isSubmitting?: boolean;
 }
 
 export function PropertyConfirmation({
   propertyData,
   onConfirm,
   onBack,
+  isSubmitting = false,
 }: PropertyConfirmationProps) {
   const propertyTypeLabels: Record<string, string> = {
     apartamento: 'Apartamento',
@@ -156,16 +158,18 @@ export function PropertyConfirmation({
             type="button"
             variant="outline"
             onClick={onBack}
-            className="flex-1 border-amber-300 text-amber-700 hover:bg-amber-50 rounded-xl"
+            disabled={isSubmitting}
+            className="flex-1 border-amber-300 text-amber-700 hover:bg-amber-50 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Voltar
           </Button>
           <Button
             type="button"
             onClick={onConfirm}
-            className="flex-1 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+            disabled={isSubmitting}
+            className="flex-1 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Concluir
+            {isSubmitting ? 'Salvando...' : 'Concluir'}
           </Button>
         </div>
       </div>

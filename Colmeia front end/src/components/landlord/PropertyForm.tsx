@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
@@ -12,7 +12,8 @@ export interface PropertyData {
   propertyType: string;
   rentPrice: string;
   description: string;
-  photos: string[];
+  photos: string[]; // Base64 for preview
+  photoFiles: File[]; // File objects for upload
 }
 
 interface PropertyFormProps {
@@ -28,6 +29,7 @@ export function PropertyForm({ onSubmit, onCancel }: PropertyFormProps) {
     rentPrice: '',
     description: '',
     photos: [],
+    photoFiles: [],
   });
 
   const [errors, setErrors] = useState<Partial<Record<keyof PropertyData, string>>>({});
@@ -97,7 +99,7 @@ export function PropertyForm({ onSubmit, onCancel }: PropertyFormProps) {
 
     const files = Array.from(e.dataTransfer.files);
     handleFiles(files);
-  }, [formData.photos]);
+  }, []);
 
   const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -108,16 +110,42 @@ export function PropertyForm({ onSubmit, onCancel }: PropertyFormProps) {
 
   const handleFiles = (files: File[]) => {
     const imageFiles = files.filter((file) => file.type.startsWith('image/'));
+    
+    // Use functional update to get current state
+    setFormData((prev) => {
+      // Limit to 5 photos
+      const remainingSlots = 5 - prev.photoFiles.length;
+      const filesToAdd = imageFiles.slice(0, remainingSlots);
+      
+      let addedCount = 0;
+      
+      filesToAdd.forEach((file) => {
+        // Validate file size (max 2MB as per requirements)
+        const maxSize = 2 * 1024 * 1024; // 2MB
+        if (file.size > maxSize) {
+          alert(`O arquivo ${file.name} excede o tamanho máximo de 2MB`);
+          return;
+        }
 
-    imageFiles.forEach((file) => {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData((prev) => ({
-          ...prev,
-          photos: [...prev.photos, reader.result as string],
-        }));
-      };
-      reader.readAsDataURL(file);
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          setFormData((current) => ({
+            ...current,
+            photos: [...current.photos, reader.result as string],
+            photoFiles: [...current.photoFiles, file],
+          }));
+        };
+        reader.readAsDataURL(file);
+        addedCount++;
+      });
+      
+      if (imageFiles.length > remainingSlots) {
+        setTimeout(() => {
+          alert(`Você pode adicionar no máximo 5 fotos. ${addedCount} foto(s) adicionada(s).`);
+        }, 0);
+      }
+      
+      return prev; // Return unchanged state, updates happen in FileReader callbacks
     });
   };
 
@@ -125,6 +153,7 @@ export function PropertyForm({ onSubmit, onCancel }: PropertyFormProps) {
     setFormData({
       ...formData,
       photos: formData.photos.filter((_, i) => i !== index),
+      photoFiles: formData.photoFiles.filter((_, i) => i !== index),
     });
   };
 
@@ -289,7 +318,7 @@ export function PropertyForm({ onSubmit, onCancel }: PropertyFormProps) {
                   Arraste fotos ou clique para selecionar
                 </p>
                 <p className="text-amber-700/70 text-sm">
-                  PNG, JPG ou JPEG (max. 5MB cada)
+                  PNG, JPG ou JPEG (max. 2MB cada, até 5 fotos)
                 </p>
               </label>
             </div>

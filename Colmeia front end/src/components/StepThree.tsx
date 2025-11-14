@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -10,7 +10,8 @@ interface StepThreeProps {
   codigoVerificacao: string;
   aceitoTermos: boolean;
   onBack: () => void;
-  onConfirm: (data: { codigoVerificacao: string; aceitoTermos: boolean }) => void;
+  onConfirm: (data: { codigoVerificacao: string; aceitoTermos: boolean }) => Promise<void>;
+  isSubmitting?: boolean;
 }
 
 export function StepThree({
@@ -18,6 +19,7 @@ export function StepThree({
   aceitoTermos: initialAceito,
   onBack,
   onConfirm,
+  isSubmitting = false,
 }: StepThreeProps) {
   const [codigoVerificacao, setCodigoVerificacao] = useState(initialCodigo);
   const [aceitoTermos, setAceitoTermos] = useState(initialAceito);
@@ -49,9 +51,9 @@ export function StepThree({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleConfirm = () => {
+  const handleConfirm = async () => {
     if (validate()) {
-      onConfirm({ codigoVerificacao, aceitoTermos });
+      await onConfirm({ codigoVerificacao, aceitoTermos });
     }
   };
 
@@ -150,9 +152,10 @@ export function StepThree({
         </Button>
         <Button
           onClick={handleConfirm}
-          className="flex-1 bg-amber-500 hover:bg-amber-600 text-white rounded-full h-12 transition-all hover:shadow-lg hover:shadow-amber-500/30"
+          disabled={isSubmitting}
+          className="flex-1 bg-amber-500 hover:bg-amber-600 text-white rounded-full h-12 transition-all hover:shadow-lg hover:shadow-amber-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Confirmar
+          {isSubmitting ? 'Cadastrando...' : 'Confirmar'}
         </Button>
       </div>
     </motion.div>

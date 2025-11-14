@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
-import { Hexagon, Lock, Mail } from 'lucide-react';
+import { Hexagon, Lock, Mail, Loader2 } from 'lucide-react';
 
 interface TenantLoginProps {
-  onLogin: (email: string, password: string) => void;
+  onLogin: (email: string, password: string) => Promise<void>;
   onCreateAccount: () => void;
   onCancel: () => void;
 }
@@ -14,6 +14,7 @@ export function TenantLogin({ onLogin, onCreateAccount, onCancel }: TenantLoginP
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+  const [loading, setLoading] = useState(false);
 
   const validateForm = () => {
     const newErrors: { email?: string; password?: string } = {};
@@ -34,10 +35,17 @@ export function TenantLogin({ onLogin, onCreateAccount, onCancel }: TenantLoginP
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateForm()) {
-      onLogin(email, password);
+      setLoading(true);
+      try {
+        await onLogin(email, password);
+      } catch (error) {
+        // Error is already handled in App.tsx
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
@@ -126,9 +134,17 @@ export function TenantLogin({ onLogin, onCreateAccount, onCancel }: TenantLoginP
           <div className="space-y-3 pt-4">
             <Button
               type="submit"
-              className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+              disabled={loading}
+              className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Entrar
+              {loading ? (
+                <>
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  Entrando...
+                </>
+              ) : (
+                'Entrar'
+              )}
             </Button>
 
             <Button
