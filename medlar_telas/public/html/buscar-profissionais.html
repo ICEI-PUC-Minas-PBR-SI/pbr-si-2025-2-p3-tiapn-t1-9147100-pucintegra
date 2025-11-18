@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Profissionais - Medlar</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/profile-menu.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ===== Cabeçalho ===== -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="/public/img/medlar.jpg" alt="Logo" width="120">
+                </div>
+                <span class="logo-text">Medlar</span>
+            </div>
+
+            <!-- Navegação padrão -->
+            <nav class="nav">
+                <a href="/public/html/buscar-profissionais.html" class="nav-link active">Início</a>
+                <a href="/public/html/agenda-paciente.html" class="nav-link">Agenda</a>
+                <a href="/public/html/login.html" class="nav-link">Login/Registro</a>
+                <!-- Menu de Perfil do Usuário -->
+            <div class="profile-menu-container">
+                <div class="profile-avatar" id="profile-avatar">
+                    P
+                </div>
+                <div class="profile-dropdown" id="profile-dropdown">
+                    <div class="profile-info">
+                        <div class="profile-info-avatar">P</div>
+                        <div class="profile-info-text">
+                            <p class="profile-name">Usuário Logado</p>
+                            <p class="profile-email">usuario@medlar.com</p>
+                        </div>
+                    </div>
+                    <a href="#" class="dropdown-item">
+                        <span class="icon">👤</span> Ver Perfil
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <span class="icon">⚙️</span> Configurações
+                    </a>
+                    <a href="/public/html/login.html" class="dropdown-item logout">
+                        <span class="icon">🚪</span> Sair
+                    </a>
+                </div>
+            </div>
+            <!-- Fim do Menu de Perfil -->
+            </nav>
+        </header>
+
+        <!-- ===== Conteúdo principal ===== -->
+        <main class="main-content">
+            <div class="search-layout">
+                <!-- ===== Filtros laterais ===== -->
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3 class="filter-title">Especialidade</h3>
+                        <select class="filter-select">
+                            <option>Todos</option>
+                            <option>Enfermagem</option>
+                            <option>Medicina</option>
+                            <option>Fisioterapia</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-title">Localização</h3>
+                        <input type="text" placeholder="Inserir localização" class="filter-input">
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-title">Disponibilidade</h3>
+                        <select class="filter-select">
+                            <option>Qualquer</option>
+                            <option>Hoje</option>
+                            <option>Esta semana</option>
+                            <option>Este mês</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-title">Preço</h3>
+                        <div class="price-range">
+                            <input type="range" min="29" max="70" value="50" class="price-slider">
+                            <div class="price-values">
+                                <span>R$29</span>
+                                <span>R$70</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-primary filter-btn">Buscar</button>
+                </aside>
+
+                <!-- ===== Resultados ===== -->
+                <div class="results-section">
+                    <!-- Card 1 -->
+                    <div class="professional-card">
+                        <div class="professional-photo">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sara Fisher">
+                        </div>
+                        <div class="professional-info">
+                            <h3 class="professional-name">Sara Fisher</h3>
+                            <p class="professional-specialty">Enfermeira</p>
+                            <div class="professional-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">43 avaliações</span>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary profile-btn" data-profile='{
+                                    "foto": "https://randomuser.me/api/portraits/women/44.jpg",
+                                    "nome": "Sara",
+                                    "sobrenome": "Fisher",
+                                    "registro": "COREN 15482-SP",
+                                    "email": "sara.fisher@medlar.com",
+                                    "telefone": "(11) 98765-4321",
+                                    "experiencia": "8 anos de experiência em enfermagem hospitalar.",
+                                    "descricao": "Atuação em cuidados intensivos e humanizados, com foco em recuperação de pacientes pós-operatórios."
+                                }'>Ver Perfil</button>
+                                <a href="/public/html/solicitar-atendimento.html" class="btn-secondary schedule-btn">Agendar Consulta</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="professional-card">
+                        <div class="professional-photo">
+                            <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Jonathan Moreno">
+                        </div>
+                        <div class="professional-info">
+                            <h3 class="professional-name">Jonathan Moreno</h3>
+                            <p class="professional-specialty">Médico Clínico Geral</p>
+                            <div class="professional-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">48 avaliações</span>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary profile-btn" data-profile='{
+                                    "foto": "https://randomuser.me/api/portraits/men/52.jpg",
+                                    "nome": "Jonathan",
+                                    "sobrenome": "Moreno",
+                                    "registro": "CRM 78562-SP",
+                                    "email": "jonathan.moreno@medlar.com",
+                                    "telefone": "(11) 91234-5678",
+                                    "experiencia": "10 anos de experiência em clínica geral e emergências.",
+                                    "descricao": "Atendimento clínico preventivo, diagnóstico e acompanhamento de doenças crônicas."
+                                }'>Ver Perfil</button>
+                                <a href="/public/html/solicitar-atendimento.html" class="btn-secondary schedule-btn">Agendar Consulta</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="professional-card">
+                        <div class="professional-photo">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Jeanette Noven">
+                        </div>
+                        <div class="professional-info">
+                            <h3 class="professional-name">Jeanette Noven</h3>
+                            <p class="professional-specialty">Nutricionista</p>
+                            <div class="professional-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-number">39 avaliações</span>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn-primary profile-btn" data-profile='{
+                                    "foto": "https://randomuser.me/api/portraits/women/68.jpg",
+                                    "nome": "Jeanette",
+                                    "sobrenome": "Noven",
+                                    "registro": "CRN 43819-SP",
+                                    "email": "jeanette.noven@medlar.com",
+                                    "telefone": "(11) 99876-5432",
+                                    "experiencia": "7 anos de experiência em nutrição clínica e esportiva.",
+                                    "descricao": "Atendimento nutricional personalizado para adultos e atletas de alta performance."
+                                }'>Ver Perfil</button>
+                                <a href="/public/html/solicitar-atendimento.html" class="btn-secondary schedule-btn">Agendar Consulta</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ===== Modal de Perfil ===== -->
+    <div class="modal-overlay" id="profileModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Perfil do Profissional</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-photo">
+                <img id="modalFoto" src="" alt="Foto do profissional">
+            </div>
+            <div class="modal-info">
+                <p><strong>Primeiro Nome:</strong> <span id="modalNome"></span></p>
+                <p><strong>Sobrenome:</strong> <span id="modalSobrenome"></span></p>
+                <p><strong>CRRM/COREN:</strong> <span id="modalRegistro"></span></p>
+                <p><strong>E-mail:</strong> <span id="modalEmail"></span></p>
+                <p><strong>Telefone:</strong> <span id="modalTelefone"></span></p>
+                <p><strong>Passagens Profissionais:</strong> <span id="modalExperiencia"></span></p>
+                <p><strong>Descreva sua área de atuação:</strong> <span id="modalDescricao"></span></p>
+            </div>
+        </div>
+    </div>
+      <script defer src="/public/js/busca.js"></script>
+      <script defer src="/public/js/profile-menu.js"></script>
+</body>
+</html>

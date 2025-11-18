@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Atendimento - Medlar</title>
+    <link rel="stylesheet" href="/public/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                  <div class="logo-icon">
+  <img src="/public/img/medlar.jpg" alt="Logo" width="120" height="auto">
+</div>
+                <span class="logo-text">Medlar</span>
+            </div>
+            <nav class="nav">
+                <a href="/public/html/home-paciente.html" class="nav-link">Início</a>
+                <a href="#" class="nav-link">Pacientes</a>
+                <a href="/public/html/agenda-paciente.html" class="nav-link">Agenda</a>
+                <a href="/public/html/login.html" class="nav-link">Login/Registro</a>
+            </nav>
+        </header>
+
+        <main class="main-content">
+            <div class="page-container">
+                <div class="content-section">
+                    <h1 class="page-title">Solicitar atendimento</h1>
+                    
+                    <form class="appointment-form">
+                        <div class="form-group">
+                            <label for="profissional" class="form-label">Profissional</label>
+                            <input type="text" id="profissional" name="profissional" class="form-input" value="Sara Fisher" required readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="servico" class="form-label">Serviço</label>
+                            <select id="servico" name="servico" class="form-select" required>
+                                <!-- Opções serão carregadas via JS -->
+                            </select>
+                            <p id="valor-servico" class="form-label" style="margin-top: 5px; font-weight: bold;"></p>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="data" class="form-label">Data</label>
+                                <input type="date" id="data" name="data" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="horario" class="form-label">Horário</label>
+                                <select id="horario" name="horario" class="form-select" required>
+                                    <!-- Horários disponíveis serão carregados via JS -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="metodo_pagamento" class="form-label">Método de Pagamento</label>
+                            <select id="metodo_pagamento" name="metodo_pagamento" class="form-select" required>
+                                <option value="" disabled selected>Selecione o método</option>
+                                <option value="cartao">Cartão de Crédito/Débito (Simulado)</option>
+                                <option value="pix">PIX (Simulado)</option>
+                                <option value="boleto">Boleto (Simulado)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="window.history.back()">Voltar</button>
+                            <button type="submit" class="btn-primary">Pagar e Agendar</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="icon-section">
+                      <div class="logo-icon">
+  <img src="/public/img/medlar.jpg" alt="Logo" width="300" height="auto">
+</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script defer src="/public/js/solicitar-atendimento.js"></script>
+</body>
+</html>
