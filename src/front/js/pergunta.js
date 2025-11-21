@@ -1,289 +1,104 @@
-// VARIÁVEIS GLOBAIS PARA O CARROSSEL
-let currentSlide = 0;
-const carouselListId = 'faq-list-full';
-const indicatorsContainerId = 'carousel-indicators';
-
-// --- FUNÇÕES DE CARROSSEL ---
-
-/**
- * Move o carrossel para o slide anterior ou próximo (Com loop infinito).
- * @param {number} direction - -1 para Anterior, 1 para Próximo.
- */
-function moveCarousel(direction) {
-    const listElement = document.getElementById(carouselListId);
-    if (!listElement) return;
-
-    const totalSlides = listElement.children.length;
-    
-    // Calcula o novo índice
-    let newSlide = currentSlide + direction;
-
-    // Lógica para LOOP INFINITO:
-    
-    // 1. Se avançar além do último slide, volta para o primeiro (índice 0)
-    if (newSlide >= totalSlides) {
-        newSlide = 0;
-    }
-    
-    // 2. Se voltar antes do primeiro slide, vai para o último
-    if (newSlide < 0) {
-        newSlide = totalSlides - 1;
-    }
-
-    currentSlide = newSlide;
-    updateCarousel();
-}
-
-
-/**
- * Atualiza a posição do carrossel e os indicadores.
- */
-function updateCarousel() {
-    const listElement = document.getElementById(carouselListId);
-    const cardElement = listElement.children[0];
-    if (!listElement || !cardElement) return;
-
-    // CORRIGIDO: Calcula a largura da translação dinamicamente: 
-    // Largura do Card (offsetWidth) + 20px (margin-right)
-    const cardOuterWidth = cardElement.offsetWidth + 20; 
-    
-    const transformValue = `translateX(${-currentSlide * cardOuterWidth}px)`;
-    listElement.style.transform = transformValue;
-    
-    updateIndicators(); 
-}
-
-
-// --- FUNÇÕES DE INDICADORES (DOTS) ---
-
-/**
- * Gera os indicadores visuais (bolinhas) com base no número de cards.
- */
-function setupIndicators() {
-    const listElement = document.getElementById(carouselListId);
-    const indicatorsContainer = document.getElementById(indicatorsContainerId);
-    
-    if (!listElement || !indicatorsContainer) return;
-
-    indicatorsContainer.innerHTML = ''; // Limpa indicadores existentes
-
-    const totalSlides = listElement.children.length;
-
-    for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('span');
-        dot.classList.add('indicator-dot');
-        
-        // Adiciona um listener para navegação direta ao clicar na bolinha
-        dot.addEventListener('click', () => {
-            currentSlide = i;
-            updateCarousel();
-        });
-        
-        indicatorsContainer.appendChild(dot);
-    }
-    updateIndicators(); // Define o estado inicial
-}
-
-/**
- * Atualiza a classe 'active' nos indicadores visuais.
- */
-function updateIndicators() {
-    const indicatorsContainer = document.getElementById(indicatorsContainerId);
-    if (!indicatorsContainer) return;
-    
-    const dots = indicatorsContainer.querySelectorAll('.indicator-dot');
-    
-    dots.forEach((dot, index) => {
-        if (index === currentSlide) {
-            dot.classList.add('active');
-        } else {
-            dot.classList.remove('active');
-        }
-    });
-}
-
-
-// --- FUNÇÃO RICH TEXT (MANTIDA) ---
-
-/**
- * Executa o comando de formatação no texto selecionado na área de descrição.
- */
-function formatText(command, value = null) {
-    const editor = document.getElementById('descricao');
-    if (editor) {
-        editor.focus();
-        document.execCommand(command, false, value);
-    }
-}
-
+// pergunta.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // === Seletores e Variáveis ===
-    const keywordsSelect = document.getElementById('keyword-select'); 
-    const keywordTagsContainer = document.getElementById('selected-tags-container'); 
-    const keywordCountSpan = document.getElementById('keyword-count-span');
-    const attachmentsList = document.getElementById('attachments-list-container');
-    
-    // NOVO SELETOR PARA A CONTAGEM DE ANEXOS VISÍVEL
-    const attachmentCountDisplay = document.getElementById('attachment-count-display'); 
-    
-    const descricaoEditor = document.getElementById('descricao'); 
-    const charCountSpan = document.querySelector('.attachments-info .char-count');
-    const attachLink = document.getElementById('attach-link-text'); // Ícone/Link clicável
-    const toolbarButtons = document.querySelectorAll('.toolbar button');
-    
-    
-    const maxChars = 2500;
-    const maxKeywords = 6;
-    let currentKeywordCount = keywordTagsContainer ? keywordTagsContainer.children.length : 0; 
-    
-    // Variável que armazena o limite de anexos (Baseado no número inicial de boxes)
-    const maxAttachments = 3; 
-    let currentAttachmentCount = attachmentsList ? attachmentsList.children.length : 0;
 
+    // ==========================================================
+    // 1. VERIFICAÇÃO DE LOGIN E PROTEÇÃO DE PÁGINA
+    // ==========================================================
+    const matriculaLogada = localStorage.getItem('userMatricula');
 
-    // CORREÇÃO ESSENCIAL: Impede que os botões de formatação tirem o foco da área de edição
-    toolbarButtons.forEach(button => {
-        button.addEventListener('mousedown', (e) => {
-            e.preventDefault(); 
-        });
-    });
-
-
-    // 1. Contador de Caracteres (MANTIDO)
-    if (descricaoEditor && charCountSpan) {
-        
-        descricaoEditor.addEventListener('input', () => { 
-            const currentLength = descricaoEditor.textContent.length; 
-            charCountSpan.textContent = `${currentLength}/${maxChars}`;
-
-            if (currentLength > maxChars) {
-                charCountSpan.style.color = 'red';
-            } else {
-                charCountSpan.style.color = 'initial';
-            }
-        });
-        
-        // CORREÇÃO: Força a limpeza do HTML interno e zera o contador ao sair do campo vazio.
-        descricaoEditor.addEventListener('blur', () => {
-            if (!descricaoEditor.textContent.trim().length) {
-                descricaoEditor.innerHTML = '';
-                charCountSpan.textContent = `0/${maxChars}`;
-            }
-        });
+    if (!matriculaLogada) {
+        alert('Você precisa estar logado para fazer uma pergunta.');
+        // Redireciona para a tela de autenticação, usando o caminho relativo correto.
+        window.location.href = '/html/autenticacao.html#login'; 
+        return; // Interrompe o restante do script
     }
-
-
-    // 2. Adicionar/Remover Palavras-Chave (MANTIDO)
-    function updateKeywordCount() {
-        currentKeywordCount = keywordTagsContainer ? keywordTagsContainer.children.length : 0;
-        
-        if (keywordCountSpan) {
-            keywordCountSpan.textContent = `${currentKeywordCount}/${maxKeywords}`;
-        }
-        
-        if (keywordsSelect) {
-            keywordsSelect.disabled = currentKeywordCount >= maxKeywords;
-            const firstOption = keywordsSelect.querySelector('option:first-child');
-            if (firstOption) {
-                 firstOption.textContent = currentKeywordCount >= maxKeywords 
-                    ? 'Limite Atingido' : 'Selecionar Palavras-Chave';
-            }
-        }
-    }
-
-    function removeTag(button) {
-        const tag = button.closest('.tag');
-        if (tag) {
-            tag.remove();
-            updateKeywordCount();
-        }
-    }
-
-    // Listener para Adicionar e Remover Tags (Simplificado para o bloco)
-    if (keywordsSelect) {
-        keywordsSelect.addEventListener('change', (e) => {
-            const selectedValue = e.target.value;
-            if (selectedValue && selectedValue !== 'Selecionar Palavras-Chave' && currentKeywordCount < maxKeywords) {
-                const existingTags = Array.from(keywordTagsContainer.querySelectorAll('.tag')).map(tag => tag.textContent.trim().replace(/\s*×$/, ''));
-                if (existingTags.includes(selectedValue)) {
-                    alert(`A palavra-chave "${selectedValue}" já foi adicionada.`);
-                    e.target.value = e.target.querySelector('option:first-child').value;
-                    return;
-                }
-                const newTag = document.createElement('span');
-                newTag.className = 'tag';
-                newTag.innerHTML = `${selectedValue} <button type="button">&times;</button>`;
-                keywordTagsContainer.appendChild(newTag);
-                e.target.value = e.target.querySelector('option:first-child').value;
-                updateKeywordCount();
-            }
-        });
-    }
-
-    if (keywordTagsContainer) {
-        keywordTagsContainer.addEventListener('click', (e) => {
-            if (e.target.tagName === 'BUTTON' && e.target.closest('.tag')) {
-                removeTag(e.target);
-            }
-        });
-    }
-
-    // 3. Simulação de Anexos (CORRIGIDO PARA O NOVO SPAN)
     
-    function updateAttachmentCountDisplay() {
-        currentAttachmentCount = attachmentsList ? attachmentsList.children.length : 0;
-        if (attachmentCountDisplay) {
-            // Atualiza apenas o número de anexos / limite
-            attachmentCountDisplay.textContent = `${currentAttachmentCount}/${maxAttachments}`;
-        }
-    }
+    // Matrícula do usuário logado, usada para identificar o autor da pergunta no Back-end
+    const MATRICULA_USUARIO_LOGADO = matriculaLogada; 
+    
+    // ==========================================================
+    // 2. LÓGICA DE PUBLICAÇÃO DA PERGUNTA (Processo 4)
+    // ==========================================================
+    const btnPublicar = document.querySelector('.btn-publicar');
+    const formPrincipal = document.querySelector('.form-content-area form'); 
 
-    // Remove anexo
-    if (attachmentsList) {
-        attachmentsList.addEventListener('click', (e) => {
-            if (e.target.classList.contains('remove-attachment')) {
-                e.target.closest('.attachment-box').remove();
-                updateAttachmentCountDisplay();
-            }
-        });
-    }
-
-    // Adiciona anexo (simulação)
-    if (attachLink && attachmentsList) {
-        attachLink.addEventListener('click', (e) => {
-            e.preventDefault(); 
+    if (btnPublicar) {
+        btnPublicar.addEventListener('click', async (event) => {
             
-            if (currentAttachmentCount < maxAttachments) {
-                const newAttachment = document.createElement('div');
-                newAttachment.className = 'attachment-box';
-                newAttachment.innerHTML = `
-                    <i class="far fa-square"></i>
-                    <button type="button" class="remove-attachment">&times;</button>
-                `;
-                attachmentsList.appendChild(newAttachment);
-                updateAttachmentCountDisplay(); // Atualiza a contagem após adicionar
-            } else {
-                alert(`Você atingiu o limite de ${maxAttachments} anexos.`);
+            event.preventDefault(); 
+
+            // 2.1. Coleta de Dados do Formulário
+            const titulo = document.getElementById('titulo').value.trim();
+            // Pegamos o VALUE do campo (que deve ser o ID da Disciplina - numérico)
+            const disciplina = document.getElementById('disciplina').value; 
+            // Pega o conteúdo da área editável (contenteditable="true")
+            const descricao = document.getElementById('descricao').innerHTML.trim(); 
+            // No seu HTML, o Palavras-Chave é um select; pegamos o valor.
+            const palavraChaveSelect = document.getElementById('keyword-select');
+            const palavras_chave = palavraChaveSelect.value !== 'Selecionar Palavras-Chave' ? palavraChaveSelect.value : '';
+
+
+            // 2.2. Validação Front-end
+            if (!titulo || !disciplina || !descricao || descricao === '<br>') {
+                alert('Preencha Título, Disciplina e Descrição antes de publicar.');
+                return;
+            }
+
+            // O ID do curso não é enviado na tabela PERGUNTA, mas é bom coletá-lo se necessário no futuro
+            // const curso = document.getElementById('curso').value; 
+
+            const dadosPergunta = {
+                // Usa a matrícula garantida pelo check de login
+                matricula_aluno: MATRICULA_USUARIO_LOGADO, 
+                id_disciplina: disciplina, 
+                titulo: titulo,
+                conteudo: descricao,
+                palavras_chave: palavras_chave,
+                visibilidade: 'Aberta' // Padrão
+            };
+
+            // 2.3. Envia a requisição POST para o Back-end
+            try {
+                const response = await fetch('http://localhost:3000/api/questions', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json'
+                        // OPCIONAL: Enviar a matrícula no header (melhor segurança)
+                        // 'X-User-Matricula': MATRICULA_USUARIO_LOGADO 
+                    },
+                    body: JSON.stringify(dadosPergunta)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    alert(`SUCESSO! Pergunta ID: ${data.id} publicada!`);
+                    
+                    // Limpa o formulário após o sucesso
+                    if (formPrincipal) {
+                        formPrincipal.reset();
+                    }
+                    document.getElementById('descricao').innerHTML = ''; // Limpa o editor contenteditable
+                    
+                } else {
+                    // Se o Back-end retornou um erro (status 401, 400, 500)
+                    alert(`ERRO do Servidor: ${data.message || 'Falha ao processar a requisição.'}`);
+                    console.error('Detalhe do Erro:', data);
+                }
+            } catch (error) {
+                console.error('Erro de rede/comunicação:', error);
+                alert('Erro de comunicação com o servidor. Verifique se o Node.js está ativo.');
             }
         });
     }
-    
-    // Bloco de Inicialização
-    updateKeywordCount();
-    updateAttachmentCountDisplay(); // Inicializa a contagem de anexos corretamente
-    
-    // Inicialização do Carrossel e Indicadores
-    setupIndicators(); 
-    updateCarousel(); 
-    
-    // Correção: Garantir que o contador de caracteres comece em 0
-    if (descricaoEditor && charCountSpan) {
-        if (!descricaoEditor.textContent.trim().length) {
-             charCountSpan.textContent = `0/${maxChars}`;
-        } else {
-             charCountSpan.textContent = `${descricaoEditor.textContent.length}/${maxChars}`;
-        }
-    }
+
+    // ==========================================================
+    // 3. FUNÇÕES AUXILIARES DA TOOLBAR (Editor de Texto)
+    // ==========================================================
+    // Estas funções permitem que os botões (B, I, U, etc.) formatem o texto no editor
+    window.formatText = function(command, value) {
+        document.execCommand(command, false, value);
+        document.getElementById('descricao').focus(); // Mantém o foco na área de edição
+    };
 });
