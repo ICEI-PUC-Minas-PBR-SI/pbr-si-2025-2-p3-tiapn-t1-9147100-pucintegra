@@ -1,8 +1,8 @@
-/* Variáveis de Cores (Mantidas as originais, mas se você as ajustou no HTML, elas devem ser as novas: #44a5ff e #007bff) */
+/* Variáveis de Cores (Originais) */
 :root {
     --color-puc-blue: #007bff;
-    --color-gradient-start: #78c0e4; /* Use #44a5ff para o design mais novo */
-    --color-gradient-end: #3b769f;   /* Use #007bff para o design mais novo */
+    --color-gradient-start: #78c0e4;
+    --color-gradient-end: #3b769f;
     --color-text-dark: #333;
     --color-text-light: #fff;
     --color-bg-light: #f7f9fa;
@@ -13,585 +13,151 @@
 }
 
 /* Reset Básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+html, body { height: 100%; }
+body { background-color: var(--color-bg-light); color: var(--color-text-dark); line-height: 1.6; overflow-x: hidden; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
-/* CORREÇÃO CHAVE: Garante que o elemento raiz e o body ocupem 100% da viewport */
-html, body {
-    height: 100%;
-}
-
-body {
-    background-color: var(--color-bg-light);
-    color: var(--color-text-dark);
-    line-height: 1.6;
-    
-    min-height: 100vh;
-    /* Força a remoção de qualquer rolagem horizontal, eliminando barras laterais/topo */
-    overflow-x: hidden; 
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Botões Gerais */
-.btn-main {
-    background-color: var(--color-text-light);
-    color: var(--color-gradient-end);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-    text-decoration: none; 
-    display: inline-block;
-}
-
-.btn-main:hover {
-    background-color: #eee;
-}
-
-/* --- 1. Seção Principal (Hero) --- */
+/* --- HERO SECTION --- */
 .hero-section {
-    /* O gradiente deve ser o primeiro elemento na tela, garantindo que ele não tenha margem superior */
     background: linear-gradient( var(--color-gradient-start), var(--color-gradient-end));
     color: var(--color-text-light);
     padding-bottom: 50px;
 }
 
+/* Adicione isso ao CSS ou dentro de <style> na homepage */
+.feed-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid #eee;
+}
+
+/* --- NAVBAR --- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* O padding aqui garante o espaço interno, mas não a margem externa */
     padding: 20px 0;
 }
 
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.nav-links a {
-    color: var(--color-text-light);
-    text-decoration: none;
-    margin-right: 20px;
-    transition: opacity 0.3s;
-}
-
-.nav-links a:hover {
-    opacity: 0.8;
-}
-
-.hero-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 40px;
-}
-
-.hero-text {
-    flex: 2;
-    max-width: 600px;
-}
-
-.hero-text h2 {
-    font-size: 2.8em;
-    margin-bottom: 15px;
-    font-weight: 900;
-}
-
-.hero-text p {
-    font-size: 1.1em;
-    margin-bottom: 30px;
-    max-width: 80%;
-}
-
-.search-box {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 50px;
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.search-box input {
-    border: none;
-    background: transparent;
-    outline: none;
-    flex-grow: 1;
-    font-size: 1em;
-    color: var(--color-text-dark);
-}
-
-.search-box input::placeholder {
-    color: #888;
-}
-
-.search-box .fas.fa-search {
-    color: var(--color-gradient-end);
-    margin-left: 10px;
-    font-size: 1.2em;
-}
-
-.hero-image {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
-
-.brain-circle {
-    background-color: rgba(255, 255, 255, 0.2);
-    border: 3px solid rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3em;
-    margin-bottom: 10px;
-    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1),
-        0 0 0 20px rgba(255, 255, 255, 0.05);
-}
-
-.brain-circle .fas.fa-brain {
-    color: var(--color-text-light);
-}
-
-.hero-image p {
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-top: -10px;
-}
-
-/* --- 2. Menu de Categorias/Abas --- */
-.categories-section {
-    padding: 20px 0;
-    background-color: var(--color-bg-light);
-    border-bottom: 1px solid #ddd;
-}
-
-.categories-section .container {
-    display: flex;
-    align-items: center;
-    padding: 0;
-}
-
-.categories-carousel {
-    display: flex;
-    align-items: center;
-    overflow-x: scroll;
-    position: relative;
-    flex-grow: 1;
-    padding: 0 10px;
-
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-
-.categories-carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.category-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background-color 0.3s, color 0.3s;
-    min-width: 150px;
-    flex-shrink: 0;
-
-    margin-right: 10px;
-    scroll-snap-align: start;
-}
-
-.category-item i {
-    font-size: 2em;
-    color: var(--color-gradient-end);
-    margin-bottom: 5px;
-}
-
-.category-item p {
-    font-weight: 600;
-    font-size: 0.9em;
-    white-space: nowrap;
-}
-
-.category-item.active {
-    background-color: var(--color-gradient-start);
-    color: var(--color-text-light);
-    border-radius: 50px;
-    padding: 10px 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.category-item.active i {
-    color: var(--color-text-light);
-}
-
-/* Setas do Carrossel (Geral) */
-.carousel-arrow {
-    background: none;
-    border: none;
-    font-size: 1.5em;
-    color: var(--color-gradient-end);
-    cursor: pointer;
-    z-index: 10;
-    padding: 10px;
-    flex-shrink: 0;
-}
-
-
-/* --- 3. Perguntas Mais Frequentes (1 CARD POR VEZ) --- */
-.faq-section {
-    padding: 50px 0;
-}
-
-.faq-section .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0;
-}
-
-.section-title-large {
-    font-size: 3em;
-    font-weight: 900;
-    color: var(--color-text-dark);
-    line-height: 1.1;
-    flex-shrink: 0;
-    margin-right: 80px;
-    max-width: 300px;
-}
-
-.faq-carousel {
-    /* Limita o viewport para caber apenas 1 card (450px card + 20px margin) */
-    max-width: 470px; 
-    
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow-x: scroll;
-    
-    padding: 0 15px;
-
-    scroll-snap-type: x mandatory;
-    scroll-snap-stop: always; 
-    scrollbar-width: none;
-}
-
-.faq-carousel::-webkit-scrollbar {
-    display: none;
-}
-
-
-.faq-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    
-    /* Largura fixa do card */
-    width: 450px;
-    height: 220px;
-    
-    flex-shrink: 0;
-    margin-right: 20px;
-    border-top: 5px solid var(--color-gradient-end);
-    scroll-snap-align: start;
-}
-
-.faq-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.faq-header .fas.fa-user-circle {
-    font-size: 2.5em;
-    color: var(--color-key-tag);
-    margin-right: 10px;
-}
-
-.user-name {
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-.category-tag {
-    font-size: 0.9em;
-    color: var(--color-gradient-end);
-    font-weight: 500;
-}
-
-.faq-question {
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-
-.faq-keywords {
-    font-size: 0.8em;
-    color: var(--color-key-tag);
-}
-
-/* Setas do Carrossel de FAQ */
-.faq-section .carousel-arrow {
-    color: var(--color-key-tag);
-    font-size: 2em;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 5px 10px;
-    position: relative;
-    margin: 0 10px;
-    z-index: 5;
-}
-
-
-/* --- 4. Eventos e Notícias Recentes (2 CARDS POR VEZ) --- */
-.news-section {
-    padding: 50px 0 20px;
-    background-color: var(--color-bg-light);
-}
-
-/* Container principal da seção */
-.news-section .container {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: center;
-    align-items: flex-start; /* Alinhamento superior */
-    padding: 0;
-}
-
-/* Título sempre no topo e centralizado */
-.news-title-box {
-    background-color: var(--color-text-light);
-    text-align: center;
-    padding: 15px 30px;
-    border-radius: 50px;
-    margin: 0 auto 30px;
-    width: fit-content;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%; /* Ocupa a largura para centralizar o conteúdo */
-    order: -1; /* Garante que fique no topo do flex container */
-}
-
-.section-title-small {
-    font-size: 1.5em;
-    font-weight: 600;
-    color: var(--color-text-dark);
+/* Título */
+.navbar-title {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #ffffff !important; /* Força Branco */
     margin: 0;
 }
 
-/* Setas e carrossel em uma linha */
-.news-section .carousel-arrow {
-    color: var(--color-text-dark);
-    font-size: 2em;
-    opacity: 0.7;
-    padding: 5px 10px;
-    margin: 0 10px;
-    z-index: 5;
-    flex-shrink: 0;
-    margin-top: 150px; /* Ajusta a seta para o meio da altura do card (aprox) */
-}
-
-.news-carousel {
-    /* Limita o viewport para caber 2 cards (500px * 2 + 20px margin) */
-    max-width: 1020px; 
-    
+.nav-links {
     display: flex;
-    overflow-x: scroll;
-    flex-grow: 1; /* Permite ocupar o espaço disponível se menor que max-width */
-    padding: 0 10px;
-
-    scroll-snap-type: x mandatory;
-    scroll-snap-stop: always;
-    scrollbar-width: none;
+    align-items: center;
+    gap: 25px;
 }
 
-.news-carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.news-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    
-    /* Largura fixa do card */
-    min-width: 500px;
-    width: 500px;
-    
-    flex-shrink: 0;
-    margin-right: 20px;
-    overflow: hidden;
-    scroll-snap-align: start;
-}
-
-.news-image-box {
-    position: relative;
-    height: 300px;
-}
-
-.news-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-
-
-.news-headline {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    color: var(--color-text-light);
-    z-index: 2;
-    padding: 0;
-    font-size: 1.2em;
+/* GARANTIA DE COR BRANCA PARA TODOS OS LINKS NA NAVBAR */
+.nav-links a, 
+.nav-text-link, 
+.nav-link, 
+.nav-link i, 
+.profile-icon-link i {
+    color: #ffffff !important; /* A Regra de Ouro */
+    text-decoration: none;
     font-weight: 600;
-    max-width: 80%;
+    transition: opacity 0.3s;
 }
 
-.puc-integra-tag {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    color: var(--color-text-light);
-    font-size: 0.9em;
+.nav-links a:hover, .profile-icon-link:hover {
+    opacity: 0.8;
+    color: #ffffff !important;
+}
+
+/* Botão "Faça uma pergunta" (Deslogado) */
+.btn-main {
+    background-color: #ffffff !important;
+    color: var(--color-gradient-end) !important; /* Texto Azul */
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
     font-weight: bold;
-    z-index: 2;
-    padding: 5px 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-}
-
-/* Pontos do Carrossel */
-.carousel-dots {
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-}
-
-.dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
     cursor: pointer;
 }
 
-.dot.active {
-    background-color: var(--color-gradient-end);
+/* --- HERO CONTENT --- */
+.hero-content { display: flex; justify-content: space-between; align-items: center; padding-top: 40px; }
+.hero-text { flex: 2; max-width: 600px; }
+.hero-text h2 { font-size: 2.8em; margin-bottom: 15px; font-weight: 900; line-height: 1.1; }
+.hero-text p { font-size: 1.1em; margin-bottom: 30px; max-width: 80%; }
+
+/* 2. Ajuste Imagem Logo Grande (Menor) */
+.hero-content img {
+    max-height: 250px; /* Reduzido de 300px para 250px */
+    width: auto;
 }
 
-/* --- 5. Rodapé/Call to Action Final --- */
-.footer-cta {
-    background-color: var(--color-cta-footer);
-    color: var(--color-text-light);
-    padding: 20px 0;
-    position: sticky;
-    bottom: 0;
-    z-index: 100;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-}
+.search-box { background-color: rgba(255, 255, 255, 0.9); border-radius: 50px; padding: 10px 20px; display: flex; align-items: center; width: 100%; max-width: 500px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+.search-box input { border: none; background: transparent; outline: none; flex-grow: 1; font-size: 1em; color: var(--color-text-dark); }
+.search-box input::placeholder { color: #888; }
+.search-box .fas.fa-search { color: var(--color-gradient-end); margin-left: 10px; font-size: 1.2em; }
 
-.footer-cta .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* --- SEÇÕES ORIGINAIS (Mantidas) --- */
+.categories-section { padding: 20px 0; background-color: var(--color-bg-light); border-bottom: 1px solid #ddd; }
+.categories-section .container { display: flex; align-items: center; padding: 0; }
+.categories-carousel { display: flex; align-items: center; overflow-x: scroll; flex-grow: 1; padding: 0 10px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.categories-carousel::-webkit-scrollbar { display: none; }
+.category-item { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 10px 20px; cursor: pointer; border-radius: 10px; transition: background-color 0.3s, color 0.3s; min-width: 150px; flex-shrink: 0; margin-right: 10px; scroll-snap-align: start; }
+.category-item i { font-size: 2em; color: var(--color-gradient-end); margin-bottom: 5px; }
+.category-item p { font-weight: 600; font-size: 0.9em; white-space: nowrap; }
+.category-item.active { background-color: var(--color-gradient-start); color: var(--color-text-light); border-radius: 50px; padding: 10px 30px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+.category-item.active i { color: var(--color-text-light); }
+.carousel-arrow { background: none; border: none; font-size: 1.5em; color: var(--color-gradient-end); cursor: pointer; z-index: 10; padding: 10px; flex-shrink: 0; }
 
-.footer-cta p {
-    font-size: 1.2em;
-    font-weight: 500;
-}
+.faq-section { padding: 50px 0; }
+.faq-section .container { display: flex; align-items: center; justify-content: space-between; padding: 0; }
+.section-title-large { font-size: 3em; font-weight: 900; color: var(--color-text-dark); line-height: 1.1; flex-shrink: 0; margin-right: 80px; max-width: 300px; }
+.faq-carousel { max-width: 470px; display: flex; align-items: center; position: relative; overflow-x: scroll; padding: 0 15px; scroll-snap-type: x mandatory; scroll-snap-stop: always; scrollbar-width: none; }
+.faq-carousel::-webkit-scrollbar { display: none; }
+.faq-card { background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width: 450px; height: 220px; flex-shrink: 0; margin-right: 20px; border-top: 5px solid var(--color-gradient-end); scroll-snap-align: start; }
+.faq-header { display: flex; align-items: center; margin-bottom: 15px; }
+.faq-header .fas.fa-user-circle { font-size: 2.5em; color: var(--color-key-tag); margin-right: 10px; }
+.user-name { font-weight: bold; font-size: 1.1em; }
+.category-tag { font-size: 0.9em; color: var(--color-gradient-end); font-weight: 500; }
+.faq-question { font-size: 1.2em; font-weight: 600; margin-bottom: 10px; }
+.faq-keywords { font-size: 0.8em; color: var(--color-key-tag); }
+.faq-section .carousel-arrow { color: var(--color-key-tag); font-size: 2em; background-color: #fff; border-radius: 50%; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); padding: 5px 10px; position: relative; margin: 0 10px; z-index: 5; }
 
-.footer-cta .btn-main {
-    color: var(--color-cta-footer);
-}
+.news-section { padding: 50px 0 20px; background-color: var(--color-bg-light); }
+.news-section .container { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; padding: 0; }
+.news-title-box { background-color: var(--color-text-light); text-align: center; padding: 15px 30px; border-radius: 50px; margin: 0 auto 30px; width: fit-content; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width: 100%; order: -1; }
+.section-title-small { font-size: 1.5em; font-weight: 600; color: var(--color-text-dark); margin: 0; }
+.news-section .carousel-arrow { color: var(--color-text-dark); font-size: 2em; opacity: 0.7; padding: 5px 10px; margin: 0 10px; z-index: 5; flex-shrink: 0; margin-top: 150px; }
+.news-carousel { max-width: 1020px; display: flex; overflow-x: scroll; flex-grow: 1; padding: 0 10px; scroll-snap-type: x mandatory; scroll-snap-stop: always; scrollbar-width: none; }
+.news-carousel::-webkit-scrollbar { display: none; }
+.news-card { background-color: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); min-width: 500px; width: 500px; flex-shrink: 0; margin-right: 20px; overflow: hidden; scroll-snap-align: start; }
+.news-image-box { position: relative; height: 300px; }
+.news-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+.news-headline { position: absolute; top: 20px; left: 20px; color: var(--color-text-light); z-index: 2; padding: 0; font-size: 1.2em; font-weight: 600; max-width: 80%; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+.puc-integra-tag { position: absolute; bottom: 10px; right: 10px; color: var(--color-text-light); font-size: 0.9em; font-weight: bold; z-index: 2; padding: 5px 10px; background-color: rgba(0, 0, 0, 0.5); border-radius: 5px; }
 
-/* Responsividade */
-@media (max-width: 1080px) {
-    .news-carousel {
-        max-width: 90%; 
-    }
-}
+.carousel-dots { text-align: center; padding: 20px 0; width: 100%; }
+.dot { height: 10px; width: 10px; margin: 0 5px; background-color: #bbb; border-radius: 50%; display: inline-block; cursor: pointer; }
+.dot.active { background-color: var(--color-gradient-end); }
 
+.footer-cta { background-color: var(--color-cta-footer); color: var(--color-text-light); padding: 20px 0; position: sticky; bottom: 0; z-index: 100; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); }
+.footer-cta .container { display: flex; justify-content: space-between; align-items: center; }
+.footer-cta p { font-size: 1.2em; font-weight: 500; }
+.btn-main { color: var(--color-cta-footer); } /* Herda as propriedades comuns da classe .btn-main acima */
+
+@media (max-width: 1080px) { .news-carousel { max-width: 90%; } }
 @media (max-width: 768px) {
-    .hero-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-text {
-        max-width: 100%;
-    }
-
-    .hero-image {
-        margin-top: 30px;
-        order: -1;
-    }
-
-    .section-title-large {
-        font-size: 2.5em;
-        margin-right: 0;
-        text-align: center;
-        max-width: 100%;
-    }
-
-    .faq-section .container {
-        flex-direction: column;
-    }
-
-    .faq-carousel,
-    .news-carousel {
-        width: 100%;
-        max-width: 100%; 
-        flex-grow: 1;
-    }
-
-    .faq-card {
-        min-width: 90vw;
-        width: 90vw;
-    }
-
-    .news-card {
-        min-width: 90vw;
-        width: 90vw;
-    }
-
-    .faq-section .carousel-arrow,
-    .news-section .carousel-arrow {
-        display: none;
-    }
-
-    .categories-section .carousel-arrow {
-        display: block;
-    }
+    .hero-content, .faq-section .container { flex-direction: column; text-align: center; }
+    .hero-text, .section-title-large { max-width: 100%; margin-right: 0; }
+    .hero-content img { margin-top: 30px; order: -1; }
+    .faq-carousel, .news-carousel { width: 100%; max-width: 100%; flex-grow: 1; }
+    .faq-card, .news-card { min-width: 90vw; width: 90vw; }
+    .faq-section .carousel-arrow, .news-section .carousel-arrow { display: none; }
+    .categories-section .carousel-arrow { display: block; }
+    .navbar { flex-direction: column; gap: 15px; }
 }

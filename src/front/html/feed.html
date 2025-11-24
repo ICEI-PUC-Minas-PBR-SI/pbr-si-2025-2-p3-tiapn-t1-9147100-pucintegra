@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed de Discussões | PUC Integra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/feed.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <a href="/html/homepage.html" style="text-decoration: none; color: white;">
+                    <span class="navbar-title">PUC INTEGRA</span>
+                </a>
+            </div>
+            <div class="nav-links" id="nav-links-container">
+                </div>
+        </div>
+    </nav>
+
+    <header class="feed-header">
+        <div class="container">
+            <h1>Discussões da Comunidade</h1>
+            <p>Explore dúvidas, compartilhe conhecimento e colabore com seus colegas.</p>
+        </div>
+    </header>
+
+    <main class="feed-main container">
+        
+        <aside class="feed-sidebar">
+            <div class="sidebar-card">
+                <h3>Filtrar por</h3>
+                <ul class="filter-list">
+                    <li><a href="#" class="active"><i class="fas fa-stream"></i> Todas</a></li>
+                    <li><a href="#"><i class="fas fa-code"></i> Programação</a></li>
+                    <li><a href="#"><i class="fas fa-network-wired"></i> Redes</a></li>
+                    <li><a href="#"><i class="fas fa-database"></i> Banco de Dados</a></li>
+                </ul>
+                <a href="/html/pergunta.html" class="btn-new-question-side">Nova Pergunta</a>
+            </div>
+        </aside>
+
+        <section class="feed-content">
+            <div id="full-feed-list"></div>
+
+            <div id="feed-loader" style="text-align: center; padding: 20px; display: none;">
+                <i class="fas fa-spinner fa-spin"></i> Carregando...
+            </div>
+
+            <div id="login-lock-message" class="lock-box" style="display: none;">
+                <i class="fas fa-lock"></i>
+                <h3>Faça login para ver mais discussões</h3>
+                <a href="/html/autenticacao.html#login" class="btn-login-lock">Entrar Agora</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/js/feed.js"></script>
+</body>
+</html>

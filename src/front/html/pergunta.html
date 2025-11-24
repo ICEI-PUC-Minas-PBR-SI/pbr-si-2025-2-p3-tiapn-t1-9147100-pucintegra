@@ -11,19 +11,21 @@
 <body>
 
     <nav class="top-nav">
-        <div class="nav-brand">
-            <img src="/docs/images/logo_com_nome.png" alt="Logo PUC Integra" class="header-logo">
+        
+        <div class="nav-left">
+            <a href="/html/homepage.html" class="brand-link">
+                <span class="brand-text">PUC INTEGRA</span>
+            </a>
         </div>
-        <ul class="nav-links">
-            <li><a href="/html/homepage.html">Tela Inicial</a></li>
-            <li class="active"><a href="#">Perguntas</a></li>
-            <li><a href="#">Disciplinas</a></li>
-        </ul>
-        <div class="nav-actions">
-            <div class="user-profile">
+
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="/html/homepage.html">Home</a></li>
+            </ul>
+            
+            <a href="/html/perfil.html" class="profile-btn" title="Ir para Perfil">
                 <i class="fas fa-user-circle"></i>
-                <a href="#" id="btn-logout" style="margin-left: 10px; color: white; text-decoration: none; font-size: 0.9rem;">Sair</a>
-            </div>
+            </a>
         </div>
     </nav>
 
@@ -31,12 +33,12 @@
         <div class="content-wrapper">
             <h2>Faça uma pergunta</h2>
 
-            <form id="question-form">
+            <form id="question-form" enctype="multipart/form-data">
                 
                 <div class="form-grid-top">
                     <div class="form-group title-group">
                         <label for="titulo">Título da Dúvida <span class="required">*</span></label>
-                        <input type="text" id="titulo" name="titulo" placeholder="Ex: Dúvida sobre ponteiros em C++" required>
+                        <input type="text" id="titulo" name="titulo" placeholder="Ex: Dúvida sobre normalização de dados" required>
                     </div>
 
                     <div class="form-group">
@@ -44,8 +46,7 @@
                         <select id="curso" name="curso">
                             <option value="">Selecione o Curso</option>
                             <option value="1">Sistemas de Informação</option>
-                            <option value="2">Ciência da Computação</option>
-                            <option value="3">Eng. de Software</option>
+                            <option value="2">Análise e Desenvolvimento de Sistemas</option>
                         </select>
                     </div>
 
@@ -53,25 +54,46 @@
                         <label for="disciplina">Disciplina <span class="required">*</span></label>
                         <select id="disciplina" name="disciplina" required>
                             <option value="">Selecione a Disciplina</option>
-                            <optgroup label="Programação">
+                            
+                            <optgroup label="Eixo de Programação e Desenvolvimento">
                                 <option value="110">Algoritmos e Técnicas de Programação</option>
                                 <option value="111">Algoritmos Avançados</option>
+                                <option value="112">Desenvolvimento de Software</option>
                                 <option value="113">Desenvolvimento Web e Mobile</option>
+                                <option value="114">Programação para Ciência de Dados</option>
                             </optgroup>
-                            <optgroup label="Infraestrutura">
+
+                            <optgroup label="Eixo de Infraestrutura e Redes">
+                                <option value="120">Ambientes Computacionais e Conectividade</option>
                                 <option value="121">Arquitetura de Redes</option>
                                 <option value="122">Sistemas Operacionais</option>
+                                <option value="123">Projeto e Gerência de Redes de Computadores</option>
+                                <option value="124">Desenvolvimento Distribuído e em Nuvem</option>
                             </optgroup>
-                            <optgroup label="Dados">
+
+                            <optgroup label="Eixo de Gestão e Organização">
+                                <option value="130">Análise e Projeto de Sistemas</option>
+                                <option value="131">Engenharia de Software</option>
+                                <option value="132">Gerência de Projetos</option>
+                                <option value="133">Governança de Tecnologia</option>
+                                <option value="134">Empreendedorismo e Inovação</option>
                                 <option value="135">Administração de Banco de Dados</option>
-                                <option value="141">Inteligência Artificial</option>
+                                <option value="136">Segurança da Informação</option>
                             </optgroup>
+
+                            <optgroup label="Eixo de Dados e Inteligência">
+                                <option value="140">Análise de Dados e Big Data</option>
+                                <option value="141">Inteligência Artificial</option>
+                                <option value="142">Chatbots</option>
+                                <option value="143">Modelagem e Avaliação de Modelos</option>
+                                <option value="144">Uso de APIs e Frameworks</option>
+                            </optgroup>
+
                         </select>
                     </div>
                 </div>
 
                 <div class="form-grid-main">
-                    
                     <div class="editor-column">
                         <label for="descricao-editor">Descrição Detalhada <span class="required">*</span></label>
                         <div class="rich-text-editor">
@@ -80,33 +102,27 @@
                                 <button type="button" data-cmd="italic" title="Itálico"><i class="fas fa-italic"></i></button>
                                 <button type="button" data-cmd="underline" title="Sublinhado"><i class="fas fa-underline"></i></button>
                                 <span class="divider"></span>
-                                <button type="button" data-cmd="formatBlock" data-val="PRE" title="Bloco de Código"><i class="fas fa-code"></i></button>
-                                <button type="button" id="btnInsertLink" title="Inserir Link"><i class="fas fa-link"></i></button>
+                                <input type="file" id="file-input" multiple style="display: none;" accept="image/*,.pdf">
+                                <button type="button" id="btn-attach-trigger" title="Anexar Arquivo"><i class="fas fa-paperclip"></i></button>
                             </div>
                             <div id="descricao-editor" class="editor-content" contenteditable="true"></div>
                         </div>
-                        <p class="helper-text">Descreva sua dúvida com o máximo de detalhes possível para obter melhores respostas.</p>
+                        <p class="helper-text">Descreva sua dúvida com detalhes.</p>
                     </div>
 
                     <div class="sidebar-column">
+                        <div class="sidebar-box">
+                            <label>Anexos (<span id="file-count">0</span>/3)</label>
+                            <div id="attachments-preview" class="attachments-list"></div>
+                        </div>
+
                         <div class="sidebar-box tags-box">
                             <label for="tag-input">Palavras-Chave <span class="required">*</span></label>
                             <div class="tag-input-container">
-                                <input type="text" id="tag-input" placeholder="Digite e tecle Enter ou vírgula...">
+                                <input type="text" id="tag-input" placeholder="Digite e tecle Enter...">
                             </div>
-                            <div id="tags-list" class="tags-list">
-                                </div>
-                            <p class="helper-text-small">Adicione até 5 tags para ajudar na busca.</p>
+                            <div id="tags-list" class="tags-list"></div>
                             <input type="hidden" name="palavras_chave" id="hidden-tags">
-                        </div>
-
-                        <div class="sidebar-box info-box">
-                            <h4><i class="fas fa-lightbulb"></i> Dicas</h4>
-                            <ul>
-                                <li>Seja específico no título.</li>
-                                <li>Use blocos de código para colar trechos.</li>
-                                <li>Revise antes de publicar.</li>
-                            </ul>
                         </div>
                     </div>
                 </div>
@@ -118,7 +134,8 @@
                     </div>
                 </div>
 
-            </form> </div>
+            </form>
+        </div>
     </main>
 
     <script src="/js/pergunta.js"></script>
