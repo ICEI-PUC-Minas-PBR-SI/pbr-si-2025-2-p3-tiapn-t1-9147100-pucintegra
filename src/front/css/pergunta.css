@@ -1,748 +1,311 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-/* Variáveis de Cores */
+/* Variáveis de Cores (Padrão PUC Integra) */
 :root {
-    --dark-blue-nav: #005380;
-    --color-gradient-end: #007bff;
-    /* Valor para a borda do card */
-    /* Cor do Top Nav e Botões Principais */
-    --text-color: #333;
-    --border-color: #6c757d;
-    --notification-red: #dc3545;
-    --input-bg-color: #f7f7f7;
-    --button-bar-gray: #f7f7f7;
+    --primary-blue: #005380; /* Azul escuro PUC */
+    --secondary-blue: #007bff; /* Azul mais claro para destaques */
+    --bg-light: #f4f7f9; /* Fundo da página */
+    --text-dark: #333;
+    --text-muted: #666;
+    --border-color: #ddd;
+    --danger-color: #dc3545;
+    --success-color: #28a745;
 }
 
-/* Estilos Gerais */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    transition: all 0.2s ease-out;
-    /* Transições para micro-interações */
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    color: var(--text-color);
-    margin: 0;
-    min-height: 100vh;
-    background: white;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
-.page-layout-full {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* 2. CAIXA PRINCIPAL (MAIN-BOX) - Onde o NAV fica integrado */
-.main-box {
-    background-color: white;
-    width: 100%;
-    box-shadow: none;
-    border-radius: 0;
-    overflow: visible;
-}
-
-/* 1. Menu de Navegação Superior (top-nav) */
+/* --- Navbar (Mantida do padrão anterior) --- */
 .top-nav {
-    background-color: var(--dark-blue-nav);
+    background-color: var(--primary-blue);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.nav-brand .header-logo {
-    width: 40px;
+.header-logo {
     height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    border: none;
+    background: white;
+    border-radius: 4px;
+    padding: 2px;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+    gap: 1.5rem;
 }
 
 .nav-links a {
+    color: rgba(255,255,255,0.8);
     text-decoration: none;
-    color: white;
     font-weight: 500;
-    padding: 5px 10px;
-    border-radius: 4px;
+    transition: color 0.3s;
 }
 
-.nav-links .active a {
-    border-bottom: 2px solid white;
-    background-color: var(--dark-blue-nav);
+.nav-links li.active a, .nav-links a:hover {
     color: white;
 }
 
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.notification i,
 .user-profile i {
-    font-size: 1.5em;
     color: white;
-    cursor: pointer;
+    font-size: 1.5rem;
 }
 
-/* CONTEÚDO DO FORMULÁRIO (ÁREA DE TRABALHO) */
-.form-content-area {
-    max-width: 1200px;
+/* --- Layout Principal --- */
+.main-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    padding-bottom: 80px; /* Espaço para a barra inferior */
+}
+
+.content-wrapper {
+    background: white;
     width: 100%;
-    margin: 0 auto;
-    padding: 40px 20px;
+    max-width: 1100px;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
 h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 3em;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
     font-weight: 600;
-    color: #444;
 }
 
-/* Estrutura de Inputs */
-.form-row {
-    display: flex;
-    gap: 20px;
+.required {
+    color: var(--danger-color);
 }
 
-.form-row.three-cols {
-    margin-bottom: 30px;
-    font-size: 20px;
-}
-
-.form-row.three-cols .form-group {
-    flex: 1;
-}
-
+/* --- Formulário e Grids --- */
 .form-group {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
 label {
-    font-weight: 600;
-    margin-bottom: 5px;
-    margin-left: 0;
-    color: #444;
-}
-
-/* Estilos de Inputs e Selects - NOVO ESTILO BOX UNIFICADO */
-input[type="text"],
-select,
-#keyword-select {
-    /* Estilo base da box */
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    padding: 12px;
-    font-size: 0.9em;
-    outline: none;
-    color: var(--text-color);
-    transition: border-color 0.2s, box-shadow 0.2s;
-
-    /* Estilo Top Border */
-    border-top: 4px solid var(--dark-blue-nav);
-    padding-top: 8px;
-}
-
-
-/* ESTADO DE FOCO LUMINOSO */
-input[type="text"]:focus,
-select:focus {
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
-    background-color: white;
-}
-
-/* LINHA PRINCIPAL: DESCRIÇÃO E BOX LATERAL */
-.description-attachments-row {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-}
-
-.description-group {
-    flex: 2;
-    font-size: 20px;
-}
-
-/* BOX VISUAL LATERAL (Tamanho ajustado e NOVO ESTILO BOX) */
-.side-box-visual {
-    flex: 0.88;
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    /* Espaço entre grupos */
-    margin-top: 32px;
-    margin-bottom: 10px;
-    background-color: white;
-    border: 1px solid #ddd;
-    /* Unificado com o estilo de input */
-    border-radius: 8px;
-    padding: 5px 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Sombra mais forte como no FAQ Card */
-    border-top: 3px solid var(--dark-blue-nav);
-}
-
-/* Descrição e Toolbar - NOVO ESTILO BOX */
-.description-area {
-    /* HERDA ESTILOS DE INPUTS, mas ajustamos a borda e padding para o container */
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-
-    /* Borda superior azul e espaçamento */
-    border-top: 4px solid var(--dark-blue-nav);
-}
-
-.toolbar {
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    gap: 5px;
-    justify-content: flex-start;
-    background-color: white;
-    /* Remove borda e sombra redundantes */
-    border-radius: 4px 4px 0 0;
-    /* Arredonda o topo */
-    border-top: none;
-    padding-top: 5px;
-}
-
-/* Estilos da nova DIV ContentEditable (substituta da textarea) */
-.editor-content-area {
-    width: 100%;
-    padding: 10px 12px;
-    border: none;
-    /* Remove bordas internas */
-    border-radius: 0 0 8px 8px;
-    /* Arredonda o rodapé */
-    font-size: 0.9em;
-    outline: none;
-    background-color: var(--input-bg-color);
-    color: #333;
-    resize: vertical;
-    font-family: 'Poppins', sans-serif;
-    min-height: 150px;
-    line-height: 1.6;
-    /* Zera estilos de box que seriam herdados indevidamente */
-    box-shadow: none !important;
-    border-top: none !important;
-}
-
-/* Garante que os botões da toolbar não roubem o foco ao clicar */
-.toolbar button:focus {
-    outline: none;
-}
-
-/* Estilos dos botões da toolbar - MAIS JOVENS E BONITOS */
-.toolbar button {
-    background-color: var(--dark-blue-nav);
-    /* Fundo azul escuro */
-    color: white;
-    /* Texto branco */
-    border: none;
-    /* Sem borda */
-    border-radius: 20px;
-    /* Bordas arredondadas (estilo pílula) */
-    padding: 6px 12px;
-    /* Espaçamento interno */
-    margin: 0 3px;
-    /* Espaço entre os botões */
-    cursor: pointer;
-    font-size: 0.9em;
     font-weight: 500;
-    transition: all 0.2s ease;
-    /* Transição suave para hover */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    /* Sombra sutil */
-    display: inline-flex;
-    /* Para centralizar ícones se houver */
-    align-items: center;
-    justify-content: center;
-    min-width: 38px;
-    /* Largura mínima para botões de ícone */
-    height: 32px;
-    /* Altura para uniformizar */
+    font-size: 0.95rem;
 }
 
-.toolbar button:hover {
-    background-color: var(--dark-blue-nav);
-    /* Azul mais claro no hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Sombra mais intensa no hover */
-    transform: translateY(-1px);
-    /* Pequeno efeito de elevação */
+input[type="text"], select {
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
 }
 
-.toolbar button:active {
-    background-color: #004a70;
-    /* Azul ainda mais escuro no clique */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    transform: translateY(0);
-    /* Volta à posição normal */
+input[type="text"]:focus, select:focus, .editor-content:focus {
+    outline: none;
+    border-color: var(--secondary-blue);
 }
 
-/* Estilo específico para ícones dentro dos botões (como o de código e imagem) */
-.toolbar button i {
-    color: white;
-    /* Garante que o ícone seja branco */
-    font-size: 1em;
-    margin: 0;
-    padding: 0;
+/* Grid Superior (Título, Curso, Disciplina) */
+.form-grid-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
 
+/* Grid Principal (Editor vs Sidebar) */
+.form-grid-main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
 
-/* AREA DE ANEXOS E CONTADOR */
-.attachments-info {
+/* --- Editor de Texto Rico --- */
+.rich-text-editor {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.editor-toolbar {
+    background: #f9f9f9;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 10px;
-    border-top: 1px solid white;
-    background-color: white;
-    font-size: 0.9em;
+    gap: 0.5rem;
 }
 
-/* --- NOVO: Estilos para o Grupo Ícone + Contagem de Anexos --- */
-.attachment-link-group {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    /* Espaço entre o ícone e o número 3/3 */
-    flex-grow: 1;
-}
-
-.attachment-link-group a {
-    text-decoration: none !important;
-    line-height: 1;
-    color: var(--dark-blue-nav);
-    cursor: pointer;
-}
-
-.attachment-link-group i {
-    font-size: 1.1em;
-    color: var(--dark-blue-nav);
-    margin-right: 0 !important;
-}
-
-#attachment-count-display {
-    font-size: 0.9em;
-    font-weight: 500;
-    color: var(--dark-blue-nav);
-}
-
-
-/* Anexos (interno à Box) - CORREÇÕES ESTÉTICAS */
-.attachments-group {
-    margin-top: 5px;
-    width: 100%;
-}
-
-.attachments-group label {
-    text-align: center;
-    font-size: 18px;
-    margin-top: 15px;
-}
-
-.attachments-list {
-    display: flex;
-    gap: 10px;
-    margin-top: 0;
-    justify-content: center;
-    /* Centraliza os 3 itens */
-}
-
-.attachment-box {
-    width: 65px;
-    height: 65px;
-    border: 3px solid var(--dark-blue-nav);
+.editor-toolbar button {
+    background: white;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
-    /* Menos arredondado */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: var(--dark-blue-nav);
-}
-
-.attachment-box i {
-    font-size: 1.5em;
-    color: white;
-}
-
-.remove-attachment {
-    position: absolute;
-    top: -8px;
-    /* Posição na quina */
-    right: -8px;
-    background-color: var(--notification-red);
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    font-size: 0.8em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    border: none;
+    width: 36px;
+    height: 36px;
     cursor: pointer;
+    color: var(--text-dark);
+    transition: all 0.2s;
 }
 
+.editor-toolbar button:hover {
+    background: var(--secondary-blue);
+    color: white;
+    border-color: var(--secondary-blue);
+}
 
-/* Palavras-Chave (abaixo da descrição) */
-.keywords-row {
+.editor-toolbar .divider {
+    width: 1px;
+    background: var(--border-color);
+    margin: 0 0.5rem;
+}
+
+.editor-content {
+    min-height: 250px;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.helper-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+/* --- Sidebar e Tags --- */
+.sidebar-box {
+    background: #f9f9f9;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+
+.info-box h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
     display: flex;
-    gap: 20px;
-    margin-top: 5px;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.keywords-select-group {
-    flex: 2;
+.info-box ul {
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
 }
 
-/* Estilo para diminuir a largura do SELECT de Palavras-Chave */
-#keyword-select {
-    /* HERDA O NOVO ESTILO BOX */
-    max-width: 760px;
+/* Sistema de Tags (Pills) */
+.tag-input-container input {
     width: 100%;
-    /* Mantém o SELECT responsivo até o limite do max-width */
+    padding: 0.8rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
 }
 
-.keyword-count {
-    display: flex;
-    margin-top: -25px;
-    margin-left: 62%;
-}
-
-
-/* Tags (interno à Box Lateral) */
-.keywords-display-group {
-    width: 100%;
-}
-
-.keywords-display-group label {
-    text-align: center;
-
-}
-
-.keyword-tags {
+.tags-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    justify-content: center;
-    /* Centraliza as tags */
+    gap: 0.5rem;
+    margin-top: 1rem;
 }
 
-
-.tag {
-    background-color: white;
-    color: #555;
-    padding: 4px 10px;
-    border-radius: 12px;
-    /* Mais suave */
-    border: 1px solid #ccc;
-    font-size: 0.9em;
+.tag-pill {
+    background: var(--primary-blue);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
-.tag button {
-    background: none;
-    border: none;
-    color: #888;
-    font-size: 1em;
+.tag-pill .close-tag {
     cursor: pointer;
-    margin-left: 5px;
-    padding: 0;
+    font-weight: bold;
+    opacity: 0.7;
+}
+.tag-pill .close-tag:hover { opacity: 1; }
+
+.helper-text-small {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
 }
 
-
-/* 3. BARRA DE AÇÕES DE LARGURA TOTAL */
-.action-bar {
-    width: 100%;
-    background-color: var(--button-bar-gray);
-    border-top: 1px solid #ccc;
-    padding: 15px 0;
+/* --- Barra de Ações Inferior --- */
+.form-actions-bar {
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 10;
+    width: 100%;
+    background: white;
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    z-index: 100;
 }
 
-.form-actions-content {
-    max-width: 1200px;
+.actions-container {
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
 }
 
 .btn {
-    padding: 15px 30px;
-    border-radius: 4px;
-    font-size: 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-cancelar {
-    background-color: white;
-    color: var(--dark-blue-nav);
-    border: 1px solid var(--dark-blue-nav);
-    transition: background-color 0.2s, color 0.2s;
-
-}
-
-.btn-cancelar:hover {
-    background-color: #f0f0f0;
-}
-
-.btn-publicar {
-    background-color: var(--dark-blue-nav);
-    color: white;
-    transition: background-color 0.2s;
-}
-
-.btn-publicar:hover {
-    background-color: #003d59;
-}
-
-/* --- NOVO CSS PARA O PLACEHOLDER --- */
-.editor-content-area[contenteditable=true]:empty::before {
-    /* Pega o texto do atributo 'placeholder' definido no HTML */
-    content: attr(placeholder);
-
-    /* Estiliza como um placeholder */
-    color: #999;
-    font-style: italic;
-
-    /* Impede que o texto do placeholder interfira na digitação */
-    pointer-events: none;
-
-    /* Garante que o placeholder seja exibido corretamente */
-    display: block;
-}
-
-/* --- Estilos para o TÍTULO CENTRALIZADO DO FAQ --- */
-.faq-title-box-wrapper {
-    width: 100%;
-    margin-top: 30px;
-    margin-bottom: -15px;
-}
-
-.faq-title-box {
-    margin-top: 100px;
-    text-align: center;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 25px;
-    padding: 10px 100px;
-
-    font-size: 1.2em;
-    font-weight: 500;
-    color: var(--text-color);
-
-    /* Centraliza a Box na Largura Total */
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.faq-area-group-full label {
-    display: none;
-}
-
-
-/* --- Estilos para a ESTRUTURA E LAYOUT do CARROSSEL FAQ --- */
-
-.faq-row {
-    /* Faz a linha se comportar como bloco, ocupando 100% da largura */
-    margin-top: 30px;
-    margin-bottom: 20px;
-    display: block;
-}
-
-/* 1. Container que define a 'janela' visível do carrossel */
-.faq-carousel-container {
-    position: relative;
-    overflow: hidden;
-    /* ESSENCIAL: Esconde os cards que estão fora da vista */
-    padding: 0 40px;
-    /* Espaço para os botões de navegação */
-}
-
-/* 2. Lista de Cards (Container que será movido pelo JavaScript) */
-.faq-list-full {
-    display: flex;
-    flex-wrap: nowrap;
-    /* ESSENCIAL: Impede que os cards quebrem para a linha de baixo */
-    gap: 0;
-    /* Removido o gap aqui */
-    transition: transform 0.5s ease-in-out;
-    /* Adiciona transição suave no movimento */
-    padding: 0;
-    margin: 0;
-}
-
-/* 3. Estilo de cada Card (Slide) - DIMENSÕES FIXAS */
-.faq-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-    /* Largura e altura fixas */
-    width: 450px;
-    height: 220px;
-
-    flex-shrink: 0;
-    /* Impede que o card encolha */
-    margin-right: 20px;
-    /* Adiciona espaçamento entre os cards no carrossel */
-    border-top: 5px solid var(--dark-blue-nav);
-    /* Borda azul no topo */
-    scroll-snap-align: start;
-    /* Para rolagem suave (opcional, mas bom ter) */
-    margin-bottom: 50px;
-}
-
-/* 4. Botões de Navegação */
-.carousel-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 35px;
-    height: 35px;
-    border: none;
-    background-color: var(--dark-blue-nav);
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    opacity: 0.8;
-    transition: opacity 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-nav:hover {
-    opacity: 1;
-}
-
-.carousel-nav.prev {
-    left: 0;
-}
-
-.carousel-nav.next {
-    right: 0;
-}
-
-/* --- Estilos para as Bolinhas/Indicadores do Carrossel (Dots) --- */
-.carousel-indicators {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0 10px;
-}
-
-.indicator-dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #ccc;
-    /* Cor Inativa (Cinza) */
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.indicator-dot.active {
-    background-color: var(--dark-blue-nav);
-    /* Cor Ativa (Azul) */
-}
-
-
-/* --- ESTILOS INTERNOS DOS CARDS (MANTIDOS) --- */
-.faq-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.faq-avatar {
-    font-size: 2.2em;
-    color: #6c757d;
-    margin-right: 10px;
-}
-
-.faq-meta {
-    line-height: 1.2;
-}
-
-.faq-user-name {
-    margin: 0;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
     font-weight: 600;
-    font-size: 0.95em;
-    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.faq-discipline {
-    margin: 0;
-    font-size: 0.8em;
-    color: #6c757d;
+.btn-primary {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
 }
 
-.faq-question-title {
-    font-size: 1.1em;
-    font-weight: 700;
-    color: #333;
-    margin: 0px 0 10px 0;
+.btn-primary:hover {
+    background: #004063;
+    box-shadow: 0 4px 10px rgba(0,83,128,0.2);
 }
 
-.faq-keywords {
-    font-size: 0.75em;
-    color: #6c757d;
-    margin: 0;
-    line-height: 1.4;
+.btn-secondary {
+    background: white;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
 }
 
-.faq-link-action {
-    display: inline-block;
-    margin-top: 10px;
-    color: var(--dark-blue-nav);
-    text-decoration: none;
-    font-weight: 500;
+.btn-secondary:hover {
+    background: #f9f9f9;
+    color: var(--text-dark);
 }
 
-/* OCULTAR OU REUTILIZAR ELEMENTOS ANTIGOS DO FAQ */
-.faq-area-group {
-    display: none;
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .form-grid-top, .form-grid-main {
+        grid-template-columns: 1fr; /* Vira uma coluna só em telas menores */
+    }
+    .content-wrapper {
+        padding: 1.5rem;
+    }
+    .actions-container {
+        justify-content: space-between;
+    }
+    .btn {
+        flex: 1;
+    }
 }

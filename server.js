@@ -16,22 +16,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/docs/images', express.static(path.join(__dirname, 'docs', 'images')));
 const requireAuth = (req, res, next) => {
     // 1. Tenta obter a matrícula do usuário. 
-    // É recomendado usar um Header HTTP seguro (ex: 'x-user-matricula' ou um token JWT).
-    // Para simplificar, vamos verificar no body (onde a matrícula é enviada para criar a pergunta).
     const matricula = req.body.matricula_aluno || req.headers['x-user-matricula']; 
 
-    if (!matricula) {
-        // Se a matrícula não for encontrada, retorna um erro 401 (Não Autorizado)
-        console.log('Tentativa de acesso não autorizado detectada.');
+    // CRUCIAL: A matrícula deve ser uma string não vazia.
+    if (!matricula || matricula.length < 5) { // Matrícula tem no mínimo 5 caracteres
+        // Se a matrícula não for encontrada ou for vazia/muito curta (inválida)
+        console.log('Tentativa de acesso não autorizado detectada. Matrícula recebida:', matricula);
         return res.status(401).json({ 
-            message: 'Acesso negado. Usuário não autenticado. Por favor, faça login.',
+            message: 'Acesso negado. Matrícula inválida ou ausente.',
             errorCode: 'AUTH_REQUIRED'
         });
     }
-
-    // Opcional, mas altamente recomendado: Aqui você faria uma consulta ao banco
-    // para verificar se a matrícula existe e se está ativa.
-
     // Se o check de matrícula passar, anexa a matrícula ao objeto req para a rota usar
     req.userMatricula = matricula; 
 
