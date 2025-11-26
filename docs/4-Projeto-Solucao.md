@@ -124,6 +124,8 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 ### 6️⃣ Tela Criar Agenda do Paciente 
 <img width="745" height="468" alt="Captura de tela 2025-11-26 200833" src="https://github.com/user-attachments/assets/d59a2319-5a87-4ae4-9f1c-53f858ba48ef" />
 
+---
+
 ## Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
