@@ -86,16 +86,13 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 <img src="https://github.com/user-attachments/assets/64bc7d37-1d34-4ce1-9c43-9b5c2726ab41" alt="Cadastro de Login - Protótipo Baixa de Fidelidade" width="80%">
 
-#### Descrição da Tela: 
-- **Objetivo:** Permitir que o paciente visualize, organize e gerencie seus atendimentos futuros de forma clara e centralizada, garantindo total controle sobre seus compromissos de saúde.
-- **Elementos da Tela:**
-    - **Calendário** — exibe o mês atual, permitindo ao usuário selecionar datas específicas para visualizar os agendamentos.
-    - **Lista de Agenda** — mostra os atendimentos confirmados para a data selecionada, com detalhes como horário e o profissional responsável.
-- **Botões de ação:**
-    - **Novo agendamento** — inicia o fluxo para solicitar um novo atendimento.
-- **Links complementares:**
-    - **Logo** — retorna à página inicial do sistema.
-    - **Perfil** — direciona o usuário para a tela de seu perfil, onde pode visualizar e editar suas informações pessoais.
+#### Descrição da Tela  
+- **Objetivo:** Permitir que o usuário acesse sua conta na plataforma **Medlar**, inserindo suas credenciais de forma simples e segura.  
+- **Campos de entrada:** E-mail e Senha, garantindo a autenticação correta do usuário cadastrado.  
+- **Botões de ação:**  
+  - **Entrar** — realiza o login no sistema, validando as credenciais informadas.  
+- **Link complementar:**  
+  - **Registrar-se** — direciona o usuário para a tela de criação de nova conta, caso ainda não possua cadastro. 
 
 ---
 
