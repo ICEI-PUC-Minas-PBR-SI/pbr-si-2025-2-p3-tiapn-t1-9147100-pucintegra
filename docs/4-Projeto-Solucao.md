@@ -86,13 +86,16 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 <img src="https://github.com/user-attachments/assets/64bc7d37-1d34-4ce1-9c43-9b5c2726ab41" alt="Cadastro de Login - Protótipo Baixa de Fidelidade" width="80%">
 
-#### Descrição da Tela  
-- **Objetivo:** Permitir que o usuário acesse sua conta na plataforma **Medlar**, inserindo suas credenciais de forma simples e segura.  
-- **Campos de entrada:** E-mail e Senha, garantindo a autenticação correta do usuário cadastrado.  
-- **Botões de ação:**  
-  - **Entrar** — realiza o login no sistema, validando as credenciais informadas.  
-- **Link complementar:**  
-  - **Registrar-se** — direciona o usuário para a tela de criação de nova conta, caso ainda não possua cadastro. 
+#### Descrição da Tela: 
+- **Objetivo:** Permitir que o paciente visualize, organize e gerencie seus atendimentos futuros de forma clara e centralizada, garantindo total controle sobre seus compromissos de saúde.
+- **Elementos da Tela:**
+    - **Calendário** — exibe o mês atual, permitindo ao usuário selecionar datas específicas para visualizar os agendamentos.
+    - **Lista de Agenda** — mostra os atendimentos confirmados para a data selecionada, com detalhes como horário e o profissional responsável.
+- **Botões de ação:**
+    - **Novo agendamento** — inicia o fluxo para solicitar um novo atendimento.
+- **Links complementares:**
+    - **Logo** — retorna à página inicial do sistema.
+    - **Perfil** — direciona o usuário para a tela de seu perfil, onde pode visualizar e editar suas informações pessoais.
 
 ---
 
@@ -124,16 +127,15 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 ### 6️⃣ Tela Criar Agenda do Paciente 
 <img width="745" height="468" alt="Captura de tela 2025-11-26 200833" src="https://github.com/user-attachments/assets/d59a2319-5a87-4ae4-9f1c-53f858ba48ef" />
 
-#### Descrição da Tela: Minha Agenda
+#### Descrição da Tela  
 - **Objetivo:** Permitir que o paciente visualize, organize e gerencie seus atendimentos futuros de forma clara e centralizada, garantindo total controle sobre seus compromissos de saúde.
-- **Elementos da Tela:**
-    - **Calendário** — exibe o mês atual, permitindo ao usuário selecionar datas específicas para visualizar os agendamentos.
-    - **Lista de Agenda** — mostra os atendimentos confirmados para a data selecionada, com detalhes como horário e o profissional responsável.
-- **Botões de ação:**
-    - **Novo agendamento** — inicia o fluxo para solicitar um novo atendimento.
-    - **Logo** — retorna à página inicial do sistema.
-    - **Perfil** — direciona o usuário para a tela de seu perfil, onde pode visualizar e editar suas informações pessoais.
-
+Elementos da Tela:
+Calendário: Exibe o mês atual, permitindo ao usuário selecionar datas específicas para visualizar os agendamentos.
+Lista de Agenda: Mostra os atendimentos confirmados para a data selecionada, com detalhes como horário e o profissional responsável.
+Barra de Navegação: Contém links para a "Logo" (provavelmente a página inicial) e "Perfil" do usuário.
+Botões de ação:
+Novo agendamento: Inicia o fluxo para solicitar um novo atendimento.
+Editar/Cancelar (implícito): Permite que o usuário modifique ou cancele um compromisso existente ao interagir com um agendamento na lista.
 
 ---
 
@@ -141,10 +143,9 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
 
-## Modelo ER
+<img width="3120" height="2752" alt="diagrama_classes_servicos" src="https://github.com/user-attachments/assets/c86e1bdc-246d-4d1b-a8b5-e181e391f79d" />
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
-
+---
 ### 4.3. Modelo de dados
 
 O desenvolvimento da solução proposta requer a existência de bases de dados que permitam efetuar os cadastros de dados e controles associados aos processos identificados, assim como recuperações.
@@ -155,7 +156,9 @@ _Apresente o modelo de dados por meio de um modelo relacional que contemple todo
 
 O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
 
+<img width="3120" height="1268" alt="diagrama_er_modificado" src="https://github.com/user-attachments/assets/904aab2d-3f3d-4825-b10d-ffe6246eb7c2" />
 
+---
 
 #### 4.3.2 Esquema Relacional
 
