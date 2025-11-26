@@ -1,29 +1,31 @@
 cff-version: 1.0.1
-message: Please cite this software using these metadata.
-title: 
+message: Por favor, cite este projeto de extensão usando estes metadados.
+title: Medlar
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-
+  - family-names: Nigro
+    given-names: André
+  - family-names: Vieira
+    given-names: Brenda
+  - family-names: Gomes
+    given-names: Gabriel
+  - family-names: Souza
+    given-names: Gustavo
+  - family-names: Vinicius
+    given-names: Pablo
+  - family-names: Lopes
+    given-names: Pedro Henrique
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
-    keywords:
-    - 
+    family-names: Amaral
+    given-names: Cleia Marcia Gomes
+keywords:
+  - Paciente
+  - Atendimento
+  - Saúde
+  - Home Care
+  - Aplicativo
+  - Transformação Digital
 repository-code: 
 license: CC-BY-4.0
 version: 1.0.0
-date-released:
+date-released: 2025-11-26
