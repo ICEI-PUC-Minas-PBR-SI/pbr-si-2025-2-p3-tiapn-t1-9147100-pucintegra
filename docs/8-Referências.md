@@ -32,3 +32,27 @@ https://homedoctor.com.br/?form=MG0AV3. Acesso em: 1 dez. 2024.
 
 **[2.0]** - _SPINCARE. Software de gestão para empresas de Home Care. Disponível em: 
 https://spincare.com.br/?form=MG0AV3. Acesso em: 1 dez. 2024.
+
+**[2.0]** - _BIZAGI MODELADOR. Bizagi Modeler – Business Process Modeling. Bizagi, 2025. Disponível em: https://www.bizagi.com/pt/produtos/bizagi-modeler/. Acesso em: 25 fev. 2025.
+
+**[2.1]** - _BPMN. Business Process Model and Notation. Object Management Group (OMG), versão 2.0.2, 2014. Disponível em: https://www.omg.org/spec/BPMN/. Acesso em: 25 fev. 2025.
+
+**[2.2]** - _CSS3. Cascading Style Sheets. W3C, 2018. Disponível em: https://www.w3.org/Style/CSS/. Acesso em: 25 fev. 2025.
+
+**[2.3]** - _FIGMA. Design de interfaces e prototipagem. Figma Inc., 2025. Disponível em: https://www.figma.com/. Acesso em: 25 fev. 2025.
+
+**[2.4]** - _GITHUB. Repositórios e versionamento. GitHub Inc., 2025. Disponível em: https://github.com/. Acesso em: 25 fev. 2025.
+
+**[2.5]** - _HTML5. HyperText Markup Language. W3C, 2017. Disponível em: https://html.spec.whatwg.org/. Acesso em: 25 fev. 2025.
+
+**[2.6]** - _JAVASCRIPT. ECMAScript Language Specification. ECMA International, 2023. Disponível em: https://262.ecma-international.org/. Acesso em: 25 fev. 2025.
+
+**[2.7]** - _LUCIDE ICONS. Lucide – Beautiful & consistent icon toolkit. Disponível em: https://lucide.dev/. Acesso em: 25 fev. 2025.
+
+**[2.8]** - _MIRO. Miro – Visual collaboration platform for teamwork. Disponível em: https://miro.com/. Acesso em: 25 fev. 2025.
+
+**[2.9]** - _MYSQL. MySQL 8.0 Reference Manual. Oracle Corporation, 2024. Disponível em: https://dev.mysql.com/doc/. Acesso em: 25 fev. 2025.
+
+**[3.0]** - _VISUAL STUDIO CODE. VS Code – Code Editing. Redefined. Microsoft Corporation, 2025. Disponível em: https://code.visualstudio.com/. Acesso em: 25 fev. 2025.
+
+**[3.1]** - _W3SCHOOLS. HTML, CSS e JavaScript Tutorials. W3Schools, 2025. Disponível em: https://www.w3schools.com/. Acesso em: 25 fev. 2025.
