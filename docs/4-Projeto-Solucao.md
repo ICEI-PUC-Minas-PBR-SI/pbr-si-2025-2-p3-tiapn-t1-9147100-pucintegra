@@ -153,8 +153,7 @@ O diagrama de classes reflete a estrutura orientada a objetos que sustenta a apl
 - **Pergunta e Resposta:** Classes associativas que compõem o núcleo da interação, onde Pergunta agrega uma Disciplina e uma lista de Resposta.
 - **Curso e Disciplina:** Representam a estrutura acadêmica, com relacionamento N:N.
 
-![Diagrama de classes](../docs/images/diagrama_de_classes.jpg)
----
+![Diagrama de classes](../docs/images/diagrama_de_clsses.jpg)
 
 ### 4.3. Modelo de dados
 
@@ -260,8 +259,6 @@ O processo de login foca em validar as credenciais (E-mail/Matrícula e Senha) f
 2.  **`ALUNO`** e **`PROFESSOR`**: Após a validação bem-sucedida na tabela `PESSOA`, o sistema consulta estas tabelas de especialização para identificar o `Tipo_Pessoa` e, assim, direcionar o usuário para a interface correta (seja de aluno ou professor), liberando o acesso ao sistema.
 
 Como o Processo 2 (Login) apenas lê os dados criados pelo Processo 1 (Cadastro), o "Modelo Físico" (script de criação das tabelas) é o mesmo, pois as tabelas consultadas são as mesmas que foram criadas no cadastro.
-
-![Modelo relacional - Processo 2](images/modelo_p2.png "Modelo Relacional - Processo 2.")
 
 #### Modelo de Dados do Processo 3 – Personalização de Perfil
 
