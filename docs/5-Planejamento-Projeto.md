@@ -45,6 +45,44 @@ O projeto em desenvolvimento por alunos do 4° período do curso de Sistemas de 
 - **Planejamento da Sprint 5:** Luiza Rodrigues Vertelo  
 - **Revisão e Entrega Final:** Todos  
 
+### Sprint 5
+- **Project Owner:** Giovanna Fabíola Vaz  
+- **_Scrum master_:** Luiza Rodrigues Vertelo  
+- **Implementação de melhorias:** Mateus de Carvalho Freitas, Giovanna Fabíola Vaz  
+- **Modelagem de Dados (atualização):** Ronaldo Pereira de Camargos Júnior  
+- **Desenvolvimento do Back-end (Processo 2):** Gabriel Rodrigo dos Santos Miguel  
+- **Implementação Completa do Processo 2:** Gabriel Rodrigo dos Santos Miguel  
+- **Planejamento da Sprint 6:** Luiza Rodrigues Vertelo  
+- **Revisão e Entrega Final:** Todos  
+
+### Sprint 6
+- **Project Owner:** Giovanna Fabíola Vaz  
+- **_Scrum master_:** Luiza Rodrigues Vertelo  
+- **Implementação de melhorias:** Giovanna Fabíola Vaz  
+- **Modelagem de Dados (atualização):** Ronaldo Pereira de Camargos Júnior  
+- **Desenvolvimento do Back-end (Processo 3):** Gabriel Rodrigo dos Santos Miguel  
+- **Implementação Completa do Processo 3:** Mateus de Carvalho Freitas  
+- **Planejamento da Sprint 7:** Luiza Rodrigues Vertelo  
+- **Revisão e Entrega Final:** Todos  
+
+### Sprint 6
+- **Project Owner:** Giovanna Fabíola Vaz  
+- **_Scrum master_:** Luiza Rodrigues Vertelo  
+- **Implementação de melhorias:** Giovanna Fabíola Vaz  
+- **Modelagem de Dados (atualização):** Ronaldo Pereira de Camargos Júnior  
+- **Desenvolvimento do Back-end (Processo 3):** Mateus de Carvalho Freitas  
+- **Implementação Completa do Processo 3:** Gabriel Rodrigo dos Santos Miguel  
+- **Planejamento da Sprint 7:** Luiza Rodrigues Vertelo  
+- **Revisão e Entrega Final:** Todos 
+
+### Sprint 7
+- **Project Owner:** Giovanna Fabíola Vaz  
+- **_Scrum master_:** Luiza Rodrigues Vertelo  
+- **Relatório final de toda documentação (completo):** Giovanna Fabíola Vaz
+- **Arquivo README.md (completo):** Mateus de Carvalho Freitas
+- **Arquivo CITATION.cff (completo):** Ronaldo Pereira de Camargos Júnior
+- **Aplicação implementada (completa):** Todos
+- **Revisão e Entrega Final:** Todos 
 
 ## 5.2. Quadro de tarefas
 
@@ -103,7 +141,6 @@ Atualizado em: 03/10/2025
 ---
 
 ### Sprint 4
-
 Atualizado em: 10/10/2025
 | Responsável | Tarefa/Requisito | Iniciado em | Prazo | Status | Terminado em |
 | :---- | :---- | :----: | :----: | :----: | :----: |
@@ -114,6 +151,50 @@ Atualizado em: 10/10/2025
 | Ronaldo Pereira de Camargos Júnior | Relatório “Modelagem de dados (versão atualizada)” | 10/10/2025 | 17/10/2025 | ✔️ | 17/10/2025 |
 | Gabriel Rodrigo dos Santos Miguel | Implementação completa do processo 1 | 10/10/2025 | 17/10/2025 | ✔️ | 17/10/2025 |
 | Luiza Rodrigues Vertelo | Planejamento da Sprint 5 | 10/10/2025 | 17/10/2025 | ✔️ | 17/10/2025 |
+
+---
+
+### Sprint 5
+
+Atualizado em: 07/11/2025 
+| Responsável | Tarefa/Requisito | Iniciado em | Prazo | Status | Terminado em |
+| :---- | :---- | :----: | :----: | :----: | :----: |
+| Mateus de Carvalho Freitas | Relatório "Modelagem dos processos – Processo 2 (versão atualizada)" | 20/10/2025 | 31/10/2025 | ✔️ | 31/10/2025 |
+| Ronaldo Pereira de Camargos Júnior | Relatório "Modelo de dados (versão atualizada)" | 20/10/2025 | 31/10/2025 | ✔️ | 31/10/2025 |
+| Gabriel Rodrigo dos Santos Miguel | Implementação do back-end do processo 2 (Banco de Dados) | 20/10/2025 | 31/10/2025 | ✔️ | 31/10/2025 |
+| Giovanna Fabíola Vaz | Relatório “Modelagem dos processos – Processo 2 (versão atualizada)” | 01/11/2025 | 07/11/2025 | ✔️ | 07/11/2025 |
+| Ronaldo Pereira de Camargos Júnior | Relatório “Modelagem de dados (versão atualizada)” | 01/11/2025 | 07/11/2025 | ✔️ | 07/11/2025 |
+| Gabriel Rodrigo dos Santos Miguel | Implementação completa do processo 2 | 01/11/2025 | 07/11/2025 | ✔️ | 07/11/2025 |
+| Luiza Rodrigues Vertelo | Planejamento da Sprint 6 | 01/11/2025 | 07/11/2025 | ✔️ | 07/11/2025 |
+
+---
+
+### Sprint 6
+
+Atualizado em: 21/11/2025 
+| Responsável | Tarefa/Requisito | Iniciado em | Prazo | Status | Terminado em |
+| :---- | :---- | :----: | :----: | :----: | :----: |
+| Mateus de Carvalho Freitas | Relatório "Modelagem dos processos – Processo 3 (versão atualizada)" | 08/11/2025 | 14/11/2025 | ✔️ | 14/11/2025 |
+| Ronaldo Pereira de Camargos Júnior | Relatório "Modelo de dados (versão atualizada)" | 08/11/2025 | 14/11/2025 | ✔️ | 14/11/2025 |
+| Gabriel Rodrigo dos Santos Miguel | Implementação do back-end do processo 3 (Banco de Dados) | 08/11/2025 | 14/11/2025 | ✔️ | 14/11/2025 |
+| Giovanna Fabíola Vaz | Relatório “Modelagem dos processos – Processo 3 (versão atualizada)” | 15/11/2025 | 21/11/2025 | ✔️ | 21/11/2025 |
+| Ronaldo Pereira de Camargos Júnior | Relatório “Modelagem de dados (versão atualizada)” | 15/11/2025 | 21/11/2025 | ✔️ | 21/11/2025 |
+| Gabriel Rodrigo dos Santos Miguel | Implementação completa do processo 3 | 15/11/2025 | 21/11/2025 | ✔️ | 21/11/2025 |
+| Luiza Rodrigues Vertelo | Planejamento da Sprint 7 | 15/11/2025 | 21/11/2025 | ✔️ | 21/11/2025 |
+
+---
+### Sprint 7
+
+Atualizado em: 28/11/2025 
+| Responsável | Tarefa/Requisito | Iniciado em | Prazo | Status | Terminado em |
+| :---- | :---- | :----: | :----: | :----: | :----: |
+| Mateus de Carvalho Freitas | Relatório "Modelagem dos processos – Processo 4 (versão atualizada)" | 22/11/2025 | 28/11/2025 | ✔️ | 28/11/2025 |
+| Ronaldo Pereira de Camargos Júnior | Relatório "Modelo de dados (versão atualizada)" | 22/11/2025 | 28/11/2025 | ✔️ | 28/11/2025 |
+| Gabriel Rodrigo dos Santos Miguel | Implementação do back-end do processo 4 (Banco de Dados) | 22/11/2025 | 28/11/2025 | ✔️ | 28/11/2025 |
+| Giovanna Fabíola Vaz | Relatório “Modelagem dos processos – Processo 4 (versão atualizada)” | 29/11/2025 | 05/12/2025 | ✔️ | 05/12/2025 |
+| Ronaldo Pereira de Camargos Júnior | Relatório “Modelagem de dados (versão atualizada)” | 29/11/2025 | 05/12/2025 | ✔️ | 05/12/2025 |
+| Luiza Rodrigues Vertelo | Implementação completa do processo 4 | 29/11/2025 | 05/12/2025 | ✔️ | 05/12/2025 |
+| Todos | Entrega final | 15/11/2025 | 05/12/2025 | ✔️ | 05/12/2025 |
 
 ---
 

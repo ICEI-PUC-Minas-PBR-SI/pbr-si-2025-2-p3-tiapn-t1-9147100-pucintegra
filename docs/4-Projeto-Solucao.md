@@ -4,13 +4,15 @@
 
 ## 4.1. Arquitetura da solução
 
+A solução PUC Integra foi arquitetada seguindo o modelo de três camadas (Three-Tier Architecture), amplamente utilizado em sistemas web para garantir a separação de responsabilidades, escalabilidade e facilidade de manutenção. A arquitetura é composta por:
 
-......  COLOQUE AQUI O SEU TEXTO E O DIAGRAMA DE ARQUITETURA .......
+Camada de Apresentação (Frontend): Responsável pela interação com o usuário. Foi desenvolvida utilizando tecnologias web padrão (HTML, CSS e JavaScript), garantindo compatibilidade com os principais navegadores e responsividade. Esta camada comunica-se com o servidor através de requisições HTTP.
 
- Inclua um diagrama da solução e descreva os módulos e as tecnologias
- que fazem parte da solução. Discorra sobre o diagrama.
- 
- **Exemplo do diagrama de Arquitetura**:
+Camada de Lógica de Negócio (Backend): É o núcleo do sistema, onde residem as regras de negócio, validações e o controle de fluxo. Implementada em Java com o framework Spring Boot, esta camada expõe endpoints (API REST) que processam as solicitações do frontend (login, postagem de dúvidas, validação de perfil) e gerenciam a segurança e autenticação.
+
+Camada de Dados (Database): Responsável pela persistência das informações. Utiliza-se o SGBD Relacional MySQL, estruturado conforme o Modelo Entidade-Relacionamento (DER) definido, garantindo a integridade dos dados acadêmicos, perfis de usuários e histórico de interações.
+
+A hospedagem do código-fonte e versionamento é realizada via GitHub, e o deploy da interface (em sua versão estática/protótipo) pode ser visualizado via GitHub.
  
 ![Exemplo de Arquitetura](../docs/images/arquitetura_exemplo.png)
  
@@ -144,13 +146,14 @@ Ações principais:
 
 ## Diagrama de Classes
 
-O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
+O diagrama de classes reflete a estrutura orientada a objetos que sustenta a aplicação Spring Boot. As principais classes de domínio mapeiam diretamente as entidades do banco de dados:
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
+- **Pessoa (Classe Abstrata/Superclasse):** Centraliza os atributos comuns (nome, email, senha).
+- **Aluno e Professor (Subclasses):** Herdam de Pessoa e adicionam atributos específicos (monitoria para alunos, disciplina principal para professores).
+- **Pergunta e Resposta:** Classes associativas que compõem o núcleo da interação, onde Pergunta agrega uma Disciplina e uma lista de Resposta.
+- **Curso e Disciplina:** Representam a estrutura acadêmica, com relacionamento N:N.
 
-> - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
-> - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
-
+![Diagrama de classes](../docs/images/diagrama_de_classes.jpg)
 ---
 
 ### 4.3. Modelo de dados

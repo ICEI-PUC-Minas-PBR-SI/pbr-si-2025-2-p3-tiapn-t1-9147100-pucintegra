@@ -1,29 +1,27 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: PUC Integra
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-
+  - family-names: dos Santos Miguel
+    given-names: Gabriel Rodrigo
+  - family-names: Vaz
+    given-names: Giovanna Fabíola
+  - family-names: Vertelo
+    given-names: Luiza Rodrigues
+  - family-names: de Carvalho Freitas
+    given-names: Mateus
+  - family-names: Pereira de Camargos Júnior
+    given-names: Ronaldo
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
-    keywords:
-    - 
-repository-code: 
+    family-names: Gomes Amaral
+    given-names: Cleia Marcia
+keywords:
+  - Educação
+  - Colaboração
+  - Sistemas de Informação
+  - PUC Minas
+repository-code: https://github.com/ICEI-PUC-Minas-PBR-SI/pbr-si-2025-2-p3-tiapn-t1-9147100-pucintegra
 license: CC-BY-4.0
 version: 1.0.0
-date-released:
+date-released: 2025-11-27
