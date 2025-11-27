@@ -86,16 +86,16 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 
 <img src="https://github.com/user-attachments/assets/64bc7d37-1d34-4ce1-9c43-9b5c2726ab41" alt="Cadastro de Login - Protótipo Baixa de Fidelidade" width="80%">
 
-#### Descrição da Tela: 
-- **Objetivo:** Permitir que o paciente visualize, organize e gerencie seus atendimentos futuros de forma clara e centralizada, garantindo total controle sobre seus compromissos de saúde.
-- **Elementos da Tela:**
-    - **Calendário** — exibe o mês atual, permitindo ao usuário selecionar datas específicas para visualizar os agendamentos.
-    - **Lista de Agenda** — mostra os atendimentos confirmados para a data selecionada, com detalhes como horário e o profissional responsável.
+#### Descrição da Tela:
+- **Objetivo:** Permitir que o usuário acesse sua conta na plataforma de forma segura, autenticando-se com suas credenciais.
+- **Campos de entrada:**
+    - **E-mail/Usuário** — campo para inserção da credencial principal de acesso.
+    - **Senha** — campo para inserção da senha, com um ícone que permite visualizar o texto digitado para evitar erros.
 - **Botões de ação:**
-    - **Novo agendamento** — inicia o fluxo para solicitar um novo atendimento.
+    - **Entrar** — submete as credenciais para validação e, em caso de sucesso, redireciona o usuário para a tela inicial do sistema.
 - **Links complementares:**
-    - **Logo** — retorna à página inicial do sistema.
-    - **Perfil** — direciona o usuário para a tela de seu perfil, onde pode visualizar e editar suas informações pessoais.
+    - **Esqueci minha senha** — inicia o fluxo de recuperação de acesso, geralmente solicitando o e-mail para envio de um link de redefinição.
+    - **Criar conta** — direciona o usuário para a tela de cadastro, caso ainda não possua um registro na plataforma.
 
 ---
 
