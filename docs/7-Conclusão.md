@@ -3,7 +3,7 @@
 <span style="color:red">Pré-requisitos: <a href="6-Interface-Sistema.md"> Projeto da Solução</a></span>
 
 Essa proposta de desenvolvimento de um aplicativo para colocar profissionais de 
-saúde no atendimento domiciliar (Melar) apresenta uma solução inovadora 
+saúde no atendimento domiciliar (Meldar) apresenta uma solução inovadora 
 e prática para os desafios enfrentados por pacientes que necessitam de cuidados 
 contínuos, e para o familiar que passa por dificuldades com o cuidado com a 
 pessoa acamada. Ao conectar técnicos de enfermagem, enfermeiros, 
