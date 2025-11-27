@@ -2,12 +2,12 @@ cff-version: 1.0.1
 message: Por favor, cite este projeto de extensão usando estes metadados.
 title: Medlar
 authors:
-  - family-names: Lima
-    given-names: Pedro
+  - family-names: Lima Bomfim
+    given-names: Pedro Henrique
   - family-names: Vieira
     given-names: Brenda
-  - family-names: Gomes
-    given-names: f
+  - family-names: Rafael
+    given-names: Fernando
   - family-names: Souza
     given-names: Gustavo
   - family-names: Vinicius
