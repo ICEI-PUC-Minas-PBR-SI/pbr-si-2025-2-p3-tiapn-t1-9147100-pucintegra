@@ -1,6 +1,6 @@
-# Indicadores de Desempenho - Plataforma Home Care
+# Indicadores de Desempenho - Plataforma - Medlar
 
-**Projeto:** Prática de Extensão - Transformação Digital  
+**Projeto:** Trabalho Interdisciplinar de processo de negócios  
 **Instituição:** Pontifícia Universidade Católica de Minas Gerais (PUC Minas)  
 **Professora:** Cleia Marcia Gomes Amaral  
 **Data:** Novembro de 2025
@@ -9,7 +9,7 @@
 
 ## Sumário Executivo
 
-Este documento apresenta a estruturação completa de **18 indicadores de desempenho (KPIs)** para a plataforma de Home Care, distribuídos entre os **6 processos de negócio** principais. Cada indicador segue a estrutura solicitada pela professora, incluindo **Nome do Indicador**, **Objetivo**, **Descrição**, **Fonte de Dados** e **Memória de Cálculo**, com apresentação em formato de tabelas, gráficos e dashboards.
+Este documento apresenta a estruturação completa de **18 indicadores de desempenho (KPIs)** para a plataforma Medlar, distribuídos entre os **6 processos de negócio** principais. Cada indicador segue a estrutura solicitada pela professora, incluindo **Nome do Indicador**, **Objetivo**, **Descrição**, **Fonte de Dados** e **Memória de Cálculo**, com apresentação em formato de tabelas, gráficos e dashboards.
 
 ---
 
