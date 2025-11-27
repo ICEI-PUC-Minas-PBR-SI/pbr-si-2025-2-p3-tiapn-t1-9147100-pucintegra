@@ -76,7 +76,9 @@ Essa proposta de desenvolvimento de um aplicativo para colocar profissionais de
 saúde no atendimento domiciliar (Meldar) apresenta uma solução inovadora 
 e prática para os desafios enfrentados por pacientes que necessitam de cuidados 
 contínuos, e para o familiar que passa por dificuldades com o cuidado com a 
-pessoa acamada. Ao conectar técnicos de enfermagem, enfermeiros, 
+pessoa acamada. 
+
+Ao conectar técnicos de enfermagem, enfermeiros, 
 fisioterapeutas e fonoaudiólogos com os pacientes e suas famílias, o aplicativo 
 não apenas facilita o acesso a esses serviços essenciais, mas também promove um 
 cuidado mais humanizado e personalizado para o paciente e o ambiente familiar.
