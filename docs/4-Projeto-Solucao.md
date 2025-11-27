@@ -124,6 +124,26 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
   
 ---
 
+### 5️⃣ Solicitação de Atendimento
+<img width="739" height="459" alt="image" src="https://github.com/user-attachments/assets/6159cb0b-84b9-4c87-a6a1-85fb6f9d1a85" />
+
+#### Descrição da Tela:
+- **Objetivo:** Permitir que o usuário solicite um novo atendimento de forma rápida e intuitiva, selecionando a especialidade, o profissional, a data e o horário desejados.
+- **Campos de entrada:**
+    - **Especialidade** — menu de seleção para escolher a área de atendimento (ex: Fisioterapia, Enfermagem).
+    - **Profissional** — menu de seleção para escolher o profissional específico, filtrado pela especialidade.
+    - **Data** — campo para definir o dia do atendimento.
+    - **Horário** — campo para definir a hora do atendimento.
+- **Botões de ação:**
+    - **Voltar** — retorna à tela anterior, cancelando a solicitação atual.
+    - **Agendar** — envia a solicitação de atendimento para a aprovação do profissional.
+- **Links complementares:**
+    - **Início** — retorna para a tela principal do sistema.
+    - **Agendamento** — direciona para a tela "Minha Agenda", onde o usuário pode ver seus compromissos.
+    - **Perfil** — leva o usuário para a sua página de perfil.
+
+---
+
 ### 6️⃣ Tela Criar Agenda do Paciente 
 <img width="745" height="468" alt="Captura de tela 2025-11-26 200833" src="https://github.com/user-attachments/assets/d59a2319-5a87-4ae4-9f1c-53f858ba48ef" />
 
@@ -136,10 +156,6 @@ Barra de Navegação: Contém links para a "Logo" (provavelmente a página inici
 Botões de ação:
 Novo agendamento: Inicia o fluxo para solicitar um novo atendimento.
 Editar/Cancelar (implícito): Permite que o usuário modifique ou cancele um compromisso existente ao interagir com um agendamento na lista.
-
----
-
-### 5️⃣ Tela de Login
 
 ---
 ## Diagrama de Classes
