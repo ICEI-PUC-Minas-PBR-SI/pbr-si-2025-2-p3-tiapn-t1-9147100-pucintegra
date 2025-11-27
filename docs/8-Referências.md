@@ -15,3 +15,20 @@ http://portal.pucminas.br/imagedb/documento/DOC_DSC_NOME_ARQUI20160217102425.pdf
 **[1.4]** - _SUTHERLAND, Jeffrey Victor. **Scrum: a arte de fazer o dobro do trabalho na metade do tempo**. 2. ed. rev. São Paulo, SP: Leya, 2016. 236, [4] p. ISBN 9788544104514._
 
 **[1.5]** - _RUSSELL, Stuart J.; NORVIG, Peter. **Inteligência artificial**. Rio de Janeiro: Elsevier, c2013. xxi, 988 p. ISBN 9788535237016._
+
+**[1.6]** - _SOCIEDADE BRASILEIRA DE COMPUTAÇÃO. Biblioteca Digital da Sociedade 
+Brasileira de Computação. Disponível em: https://sol.sbc.org.br/index.php/indice. 
+Acesso em: 1 dez. 2024.
+
+**[1.6]** - _KDCARE. O app do atendimento em domicílio. Disponível em: 
+https://www.kdcare.com.br/. Acesso em: 1 dez. 2024. 
+
+**[1.7]** - _BRASIL. Ministério da Saúde. Melhor em Casa - Atendimento Domiciliar. Disponível 
+em: https://www.gov.br/saude/pt-br/composicao/saes/melhor-em-casa  Acesso em: 01 
+dez. 2024.
+
+**[1.8]** - _HOME DOCTOR. Especialistas em atenção domiciliar há 28 anos. Disponível em: 
+https://homedoctor.com.br/?form=MG0AV3. Acesso em: 1 dez. 2024.
+
+**[1.9]** - _SPINCARE. Software de gestão para empresas de Home Care. Disponível em: 
+https://spincare.com.br/?form=MG0AV3. Acesso em: 1 dez. 2024.
