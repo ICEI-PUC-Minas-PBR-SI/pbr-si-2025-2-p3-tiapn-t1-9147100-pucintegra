@@ -147,15 +147,16 @@ As telas foram criadas em **baixa fidelidade**, com foco na estrutura, hierarqui
 ### 6️⃣ Tela Criar Agenda do Paciente 
 <img width="745" height="468" alt="Captura de tela 2025-11-26 200833" src="https://github.com/user-attachments/assets/d59a2319-5a87-4ae4-9f1c-53f858ba48ef" />
 
-#### Descrição da Tela  
+#### Descrição da Tela: 
 - **Objetivo:** Permitir que o paciente visualize, organize e gerencie seus atendimentos futuros de forma clara e centralizada, garantindo total controle sobre seus compromissos de saúde.
-Elementos da Tela:
-Calendário: Exibe o mês atual, permitindo ao usuário selecionar datas específicas para visualizar os agendamentos.
-Lista de Agenda: Mostra os atendimentos confirmados para a data selecionada, com detalhes como horário e o profissional responsável.
-Barra de Navegação: Contém links para a "Logo" (provavelmente a página inicial) e "Perfil" do usuário.
-Botões de ação:
-Novo agendamento: Inicia o fluxo para solicitar um novo atendimento.
-Editar/Cancelar (implícito): Permite que o usuário modifique ou cancele um compromisso existente ao interagir com um agendamento na lista.
+- **Elementos da Tela:**
+    - **Calendário** — exibe o mês atual, permitindo ao usuário selecionar datas específicas para visualizar os agendamentos.
+    - **Lista de Agenda** — mostra os atendimentos confirmados para a data selecionada, com detalhes como horário e o profissional responsável.
+- **Botões de ação:**
+    - **Novo agendamento** — inicia o fluxo para solicitar um novo atendimento.
+- **Links complementares:**
+    - **Logo** — retorna à página inicial do sistema.
+    - **Perfil** — direciona o usuário para a tela de seu perfil, onde pode visualizar e editar suas informações pessoais.
 
 ---
 ## Diagrama de Classes
