@@ -1,5 +1,3 @@
-<span style="color:red">Pré-requisitos: <a href="6-Interface-Sistema.md"> Projeto da Solução</a></span>
-
 # Indicadores de Desempenho - Plataforma Home Care
 
 **Projeto:** Prática de Extensão - Transformação Digital  
