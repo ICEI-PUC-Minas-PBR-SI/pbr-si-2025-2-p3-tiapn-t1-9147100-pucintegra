@@ -1,19 +1,19 @@
 cff-version: 1.0.1
-message: Por favor, cite este projeto de extensão usando estes metadados.
+message: Trabalho Interdisciplinar: Aplicação processos de negócios
 title: Medlar
 authors:
   - family-names: Lima Bomfim
     given-names: Pedro Henrique
   - family-names: Vieira Nascimento Santos
     given-names: Brenda
-  - family-names: Rafael
+  - family-names: Rafael da Silva Alves
     given-names: Fernando
-  - family-names: Souza
+  - family-names: Souza Rodrigues
     given-names: Gustavo
-  - family-names: Vinicius
+  - family-names: Vinicius Lazaro da Silva
     given-names: Pablo
-  - family-names: Lopes
-    given-names: Pedro Henrique
+  - family-names: Henrique Lopes Silva
+    given-names: Pedro
   - name-suffix: Professor
     affiliation: PUC Minas
     family-names: Amaral
