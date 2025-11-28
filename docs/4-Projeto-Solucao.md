@@ -197,148 +197,119 @@ O modelo físico do banco de dados **Medlar** representa a estrutura detalhada d
 
 Esse banco de dados é utilizado para registrar pacientes, profissionais de saúde, serviços, solicitações de atendimento, agendamentos, pagamentos e consultas realizados dentro da plataforma.
 
-<code>
+## 2. Descrição Detalhada das Tabelas
 
--- Criação da tabela Paciente
-CREATE TABLE Paciente (
-    id_paciente INT PRIMARY KEY AUTO_INCREMENT,
-    nome_completo VARCHAR(255) NOT NULL,
-    cpf VARCHAR(14) UNIQUE NOT NULL,
-    data_nascimento DATE NOT NULL,
-    endereco VARCHAR(255) NOT NULL,
-    telefone VARCHAR(20) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
-    hipertensao BOOLEAN DEFAULT FALSE,
-    diabetes BOOLEAN DEFAULT FALSE,
-    mobilidade_reduzida BOOLEAN DEFAULT FALSE,
-    outros_condicoes TEXT,
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-    atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+### 2.1. Tabela `agendamento`
 
--- Criação da tabela Profissional
-CREATE TABLE Profissional (
-    id_profissional INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(120) NOT NULL,
-    cpf CHAR(14) UNIQUE,
-    especialidade VARCHAR(100),
-    telefone VARCHAR(20),
-    email VARCHAR(120) UNIQUE,
-    qualificado BOOLEAN DEFAULT TRUE,
-    disponibilidade VARCHAR(100),
-    avaliacao_do_profissional DECIMAL(2,1) DEFAULT 0.0,
-    contato VARCHAR(120),
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-    atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+**Propósito:** Armazena informações sobre os agendamentos de serviços realizados pelos pacientes com os profissionais.
 
--- Criação da tabela Servico
-CREATE TABLE Servico (
-    id_servico INT PRIMARY KEY AUTO_INCREMENT,
-    nome_servico VARCHAR(120) NOT NULL,
-    descricao TEXT,
-    valor_base DECIMAL(10,2),
-    duracao_padrao INT,
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-    atualizado_em DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);
+| Coluna | Tipo de Dado | Restrições | Descrição |
+| --- | --- | --- | --- |
+| `id_agendamento` | `INT` | `PRIMARY KEY`, `NOT NULL`, `AUTO_INCREMENT` | Identificador único do agendamento. |
+| `id_paciente` | `INT` | `NOT NULL`, `FOREIGN KEY` (`paciente.id_paciente`) | Identificador do paciente que realizou o agendamento. |
+| `id_profissional` | `INT` | `NOT NULL`, `FOREIGN KEY` (Parte da chave composta em `profissional_servico`) | Identificador do profissional que prestará o serviço. |
+| `id_servico` | `INT` | `NOT NULL`, `FOREIGN KEY` (Parte da chave composta em `profissional_servico`) | Identificador do serviço agendado. |
+| `data_hora` | `DATETIME` | `NOT NULL` | Data e hora marcadas para o agendamento. |
+| `status` | `ENUM` | `DEFAULT 'pendente'` | Status atual do agendamento (`pendente`, `confirmado`, `cancelado`, `concluido`). |
+| `preco_final` | `DECIMAL(10,2)` | `DEFAULT NULL` | Preço final cobrado pelo serviço no agendamento. |
 
--- Criação da tabela Metodo_pagamento
-CREATE TABLE Metodo_pagamento (
-    id_metodo INT PRIMARY KEY AUTO_INCREMENT,
-    tipo ENUM('Pix','Cartão de Crédito','Boleto') NOT NULL,
-    descricao VARCHAR(120)
-);
+### 2.2. Tabela `cartao_credito`
 
--- Criação da tabela Cartao_credito
-CREATE TABLE Cartao_credito (
-    id_cartao INT PRIMARY KEY AUTO_INCREMENT,
-    id_paciente INT NOT NULL,
-    numero_mascarado VARCHAR(25),
-    nome_titular VARCHAR(120),
-    validade CHAR(5),
-    bandeira VARCHAR(30),
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_paciente) REFERENCES Paciente(id_paciente)
-);
+**Propósito:** Armazena informações de cartões de crédito associados aos pacientes para facilitar pagamentos.
 
--- Criação da tabela Solicitacao
-CREATE TABLE Solicitacao (
-    id_solicitacao INT PRIMARY KEY AUTO_INCREMENT,
-    id_paciente INT NOT NULL,
-    id_profissional INT NULL,
-    data_solicitacao DATETIME NOT NULL,
-    descricao_necessidade TEXT,
-    localizacao VARCHAR(150),
-    status ENUM('pendente','em análise','aceita','recusada') DEFAULT 'pendente',
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_paciente) REFERENCES Paciente(id_paciente),
-    FOREIGN KEY (id_profissional) REFERENCES Profissional(id_profissional)
-);
+| Coluna | Tipo de Dado | Restrições | Descrição |
+| --- | --- | --- | --- |
+| `id_cartao` | `INT` | `PRIMARY KEY`, `NOT NULL`, `AUTO_INCREMENT` | Identificador único do cartão de crédito. |
+| `id_paciente` | `INT` | `NOT NULL`, `FOREIGN KEY` (`paciente.id_paciente`) | Identificador do paciente proprietário do cartão. |
+| `numero_cartao` | `VARCHAR(20)` | `NOT NULL` | Número do cartão de crédito (provavelmente mascarado ou criptografado). |
+| `nome_titular` | `VARCHAR(100)` | `NOT NULL` | Nome completo do titular do cartão. |
+| `validade` | `CHAR(5)` | `NOT NULL` | Data de validade do cartão (MM/AA). |
+| `bandeira` | `VARCHAR(20)` | `DEFAULT NULL` | Bandeira do cartão (ex: Visa, Mastercard). |
 
--- Criação da tabela Negociacao
-CREATE TABLE Negociacao (
-    id_negociacao INT PRIMARY KEY AUTO_INCREMENT,
-    id_solicitacao INT NOT NULL,
-    valor_proposto DECIMAL(10,2),
-    valor_aceito DECIMAL(10,2),
-    observacoes TEXT,
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_solicitacao) REFERENCES Solicitacao(id_solicitacao)
-);
+### 2.3. Tabela `metodo_pagamento`
 
--- Criação da tabela Agendamento
-CREATE TABLE Agendamento (
-    id_agendamento INT PRIMARY KEY AUTO_INCREMENT,
-    id_solicitacao INT NOT NULL,
-    id_paciente INT NOT NULL,
-    id_profissional INT NOT NULL,
-    id_servico INT NOT NULL,
-    data_hora DATETIME NOT NULL,
-    tipo_consulta VARCHAR(100),
-    status ENUM('Confirmado','Pendente','Cancelado') DEFAULT 'Pendente',
-    preco_final DECIMAL(10,2),
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_solicitacao) REFERENCES Solicitacao(id_solicitacao),
-    FOREIGN KEY (id_paciente) REFERENCES Paciente(id_paciente),
-    FOREIGN KEY (id_profissional) REFERENCES Profissional(id_profissional),
-    FOREIGN KEY (id_servico) REFERENCES Servico(id_servico)
-);
+**Propósito:** Lista os métodos de pagamento disponíveis no sistema.
 
--- Índices para agilizar busca
-CREATE INDEX idx_agendamento_prof_data ON Agendamento (id_profissional, data_hora);
-CREATE INDEX idx_agendamento_pac_data ON Agendamento (id_paciente, data_hora);
+| Coluna | Tipo de Dado | Restrições | Descrição |
+| --- | --- | --- | --- |
+| `id_metodo` | `INT` | `PRIMARY KEY`, `NOT NULL`, `AUTO_INCREMENT` | Identificador único do método de pagamento. |
+| `tipo` | `ENUM` | `NOT NULL` | Tipo de método de pagamento (`credito`, `debito`, `pix`, `dinheiro`). |
+| `descricao` | `VARCHAR(100)` | `DEFAULT NULL` | Descrição detalhada do método de pagamento. |
 
--- Criação da tabela Pagamento
-CREATE TABLE Pagamento (
-    id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
-    id_agendamento INT NOT NULL,
-    id_metodo INT NOT NULL,
-    data_pagamento DATETIME,
-    valor_pago DECIMAL(10,2) NOT NULL,
-    status_pagamento ENUM('Aprovado','Pendente','Recusado') DEFAULT 'Pendente',
-    codigo_transacao VARCHAR(80),
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_agendamento) REFERENCES Agendamento(id_agendamento),
-    FOREIGN KEY (id_metodo) REFERENCES Metodo_pagamento(id_metodo)
-);
+### 2.4. Tabela `paciente`
 
--- Criação da tabela Consulta
-CREATE TABLE Consulta (
-    id_consulta INT PRIMARY KEY AUTO_INCREMENT,
-    id_agendamento INT NOT NULL,
-    id_profissional INT NOT NULL,
-    id_paciente INT NOT NULL,
-    observacoes TEXT,
-    resultado TEXT,
-    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_agendamento) REFERENCES Agendamento(id_agendamento),
-    FOREIGN KEY (id_profissional) REFERENCES Profissional(id_profissional),
-    FOREIGN KEY (id_paciente) REFERENCES Paciente(id_paciente)
-);
+**Propósito:** Armazena os dados cadastrais e informações de saúde dos pacientes.
 
-</code>
+| Coluna | Tipo de Dado | Restrições | Descrição |
+| --- | --- | --- | --- |
+| `id_paciente` | `INT` | `PRIMARY KEY`, `NOT NULL`, `AUTO_INCREMENT` | Identificador único do paciente. |
+| `nome` | `VARCHAR(100)` | `NOT NULL` | Nome completo do paciente. |
+| `cpf` | `CHAR(11)` | `NOT NULL`, `UNIQUE` | Cadastro de Pessoa Física (CPF) do paciente. |
+| `data_nascimento` | `DATE` | `NOT NULL` | Data de nascimento do paciente. |
+| `telefone` | `VARCHAR(20)` | `DEFAULT NULL` | Número de telefone para contato. |
+| `email` | `VARCHAR(100)` | `DEFAULT NULL`, `UNIQUE` | Endereço de e-mail do paciente. |
+| `endereco` | `VARCHAR(150)` | `DEFAULT NULL` | Endereço residencial do paciente. |
+| `historico_medico` | `TEXT` | `DEFAULT NULL` | Campo para registro de histórico médico relevante. |
+| `senha` | `VARCHAR(100)` | `NOT NULL` | Senha de acesso do paciente (provavelmente hash). |
 
+### 2.5. Tabela `pagamento`
+
+**Propósito:** Registra os pagamentos realizados para os agendamentos.
+
+| Coluna | Tipo de Dado | Restrições | Descrição |
+| --- | --- | --- | --- |
+| `id_pagamento` | `INT` | `PRIMARY KEY`, `NOT NULL`, `AUTO_INCREMENT` | Identificador único do registro de pagamento. |
+| `id_agendamento` | `INT` | `NOT NULL`, `FOREIGN KEY` (`agendamento.id_agendamento`) | Agendamento ao qual o pagamento se refere. |
+| `id_metodo` | `INT` | `NOT NULL`, `FOREIGN KEY` (`metodo_pagamento.id_metodo`) | Método de pagamento utilizado. |
+| `data_pagamento` | `DATETIME` | `NOT NULL` | Data e hora em que o pagamento foi processado. |
+| `valor_pago` | `DECIMAL(10,2)` | `NOT NULL` | Valor efetivamente pago. |
+| `status_pagamento` | `ENUM` | `DEFAULT 'pendente'` | Status do pagamento (`pendente`, `aprovado`, `cancelado`). |
+| `codigo_transacao` | `VARCHAR(50)` | `DEFAULT NULL` | Código de transação ou referência do pagamento. |
+
+### 2.6. Tabela `profissional`
+
+**Propósito:** Armazena os dados cadastrais e profissionais dos prestadores de serviço (médicos, terapeutas, etc.).
+
+| Coluna | Tipo de Dado | Restrições | Descrição |
+| --- | --- | --- | --- |
+| `id_profissional` | `INT` | `PRIMARY KEY`, `NOT NULL`, `AUTO_INCREMENT` | Identificador único do profissional. |
+| `nome` | `VARCHAR(100)` | `NOT NULL` | Nome completo do profissional. |
+| `cpf` | `CHAR(11)` | `NOT NULL`, `UNIQUE` | Cadastro de Pessoa Física (CPF) do profissional. |
+| `registro_profissional` | `VARCHAR(40)` | `NOT NULL` | Número de registro no conselho profissional (ex: CRM, CRP). |
+| `especialidade` | `VARCHAR(500)` | `DEFAULT NULL` | Especialidade(s) do profissional. |
+| `passagens_profissionais` | `TEXT` | `DEFAULT NULL` | Histórico de passagens e experiências profissionais. |
+| `telefone` | `VARCHAR(20)` | `DEFAULT NULL` | Número de telefone para contato. |
+| `email` | `VARCHAR(100)` | `DEFAULT NULL`, `UNIQUE` | Endereço de e-mail do profissional. |
+| `endereco` | `VARCHAR(150)` | `DEFAULT NULL` | Endereço de atendimento ou residencial. |
+| `avaliacao_media` | `DECIMAL(3,2)` | `DEFAULT NULL` | Média das avaliações recebidas pelo profissional. |
+| `senha` | `VARCHAR(100)` | `DEFAULT NULL` | Senha de acesso do profissional (provavelmente hash). |
+| `status` | `ENUM` | `DEFAULT 'aprovado'` | Status de aprovação do cadastro (`aprovado`, `pendente`, `rejeitado`). |
+| `documento_rg` | `VARCHAR(255)` | `DEFAULT NULL` | Caminho ou referência ao documento de RG. |
+| `documento_cpf` | `VARCHAR(255)` | `DEFAULT NULL` | Caminho ou referência ao documento de CPF. |
+| `foto_perfil` | `VARCHAR(255)` | `DEFAULT NULL` | Caminho ou referência à foto de perfil. |
+
+### 2.7. Tabela `profissional_servico`
+
+**Propósito:** Tabela de relacionamento N:N (muitos para muitos) que associa quais serviços cada profissional oferece, permitindo valores e durações específicas por profissional.
+
+| Coluna | Tipo de Dado | Restrições | Descrição |
+| --- | --- | --- | --- |
+| `id_profissional` | `INT` | `PRIMARY KEY`, `FOREIGN KEY` (`profissional.id_profissional`) | Identificador do profissional. |
+| `id_servico` | `INT` | `PRIMARY KEY`, `FOREIGN KEY` (`servico.id_servico`) | Identificador do serviço. |
+| `valor_profissional` | `DECIMAL(10,2)` | `DEFAULT NULL` | Valor cobrado pelo profissional para este serviço específico. |
+| `duracao_profissional` | `INT` | `DEFAULT NULL` | Duração em minutos do serviço quando prestado por este profissional. |
+
+### 2.8. Tabela `servico`
+
+**Propósito:** Lista todos os serviços que podem ser agendados no sistema.
+
+| Coluna | Tipo de Dado | Restrições | Descrição |
+| --- | --- | --- | --- |
+| `id_servico` | `INT` | `PRIMARY KEY`, `NOT NULL`, `AUTO_INCREMENT` | Identificador único do serviço. |
+| `nome_servico` | `VARCHAR(100)` | `DEFAULT NULL` | Nome do serviço (ex: "Consulta Médica Geral"). |
+| `descricao` | `TEXT` | `DEFAULT NULL` | Descrição detalhada do serviço. |
+| `valor_base` | `DECIMAL(10,0)` | `DEFAULT NULL` | Valor base sugerido para o serviço. |
+| `duracao_padrao` | `INT` | `DEFAULT NULL` | Duração padrão em minutos do serviço. |
 
 ### 4.4. Tecnologias
 
