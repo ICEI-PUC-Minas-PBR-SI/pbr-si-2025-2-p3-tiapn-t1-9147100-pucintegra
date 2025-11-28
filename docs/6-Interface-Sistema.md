@@ -62,6 +62,11 @@ Utilizada para cadastrar profissionais de saúde, incluindo dados pessoais e pro
 
 **Tela de cadastro de profissional:**  
 ![Tela cadastro profissional](docs/img/tela-cadastro-profissional.png)
+<img width="1916" height="901" alt="Tela de Cadastro de Profissional 1" src="https://github.com/user-attachments/assets/2eb8b87d-f4ad-4fdc-a38a-7f40d06831c2" />
+<img width="1916" height="901" alt="Tela de Cadastro de Profissional 2" src="https://github.com/user-attachments/assets/ec5362e5-337c-4f4d-8b8e-0548b7a31802" />
+<img width="1916" height="901" alt="Tela de Cadastro de Profissional 3" src="https://github.com/user-attachments/assets/f015385b-8e3f-4728-bbf3-013ca0b03886" />
+
+
 
 
 #### **6.3.2. Tela de Perfil do Profissional**
