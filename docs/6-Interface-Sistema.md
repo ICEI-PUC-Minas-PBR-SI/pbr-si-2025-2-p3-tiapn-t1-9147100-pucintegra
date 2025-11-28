@@ -48,6 +48,7 @@ Tela utilizada para registrar novos pacientes na plataforma.
 - Histórico médico (opcional)
 
 **Tela de cadastro de paciente:**  
+<img width="1919" height="400" alt="Tela de Cadastro 2" src="https://github.com/user-attachments/assets/ee4d73d0-a95d-45e4-88d2-acdd750f277c" />
 <img width="1916" height="909" alt="Tela de Cadastro de Paciente 1" src="https://github.com/user-attachments/assets/ae7c0576-f79a-42c7-bead-51b2ad376f8b" />
 <img width="1914" height="909" alt="Tela de Cadastro de Paciente 2" src="https://github.com/user-attachments/assets/43ae7c2b-2d0d-48df-b1f0-417721bd0ff1" />
 
@@ -67,6 +68,7 @@ Utilizada para cadastrar profissionais de saúde, incluindo dados pessoais e pro
 - Upload de foto de perfil
 
 **Tela de cadastro de profissional:**  
+<img width="1912" height="380" alt="Tela de Cadastro 1" src="https://github.com/user-attachments/assets/911fcb8e-bade-46b9-aeeb-b056fdf7b914" />
 <img width="1916" height="901" alt="Tela de Cadastro de Profissional 1" src="https://github.com/user-attachments/assets/2eb8b87d-f4ad-4fdc-a38a-7f40d06831c2" />
 <img width="1916" height="901" alt="Tela de Cadastro de Profissional 2" src="https://github.com/user-attachments/assets/ec5362e5-337c-4f4d-8b8e-0548b7a31802" />
 <img width="1916" height="901" alt="Tela de Cadastro de Profissional 3" src="https://github.com/user-attachments/assets/f015385b-8e3f-4728-bbf3-013ca0b03886" />
