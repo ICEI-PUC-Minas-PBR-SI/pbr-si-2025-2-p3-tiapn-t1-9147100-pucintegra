@@ -177,12 +177,4 @@ Lista todos os atendimentos agendados pelos pacientes.
 <img width="1903" height="905" alt="Telas do Processo 6 — Agenda do Profissional" src="https://github.com/user-attachments/assets/be159e6a-9537-44a7-80b5-4adcc9c064bd" />
 
 
-#### **6.7.2. Tela de Detalhes do Atendimento (Profissional)**
-
-**Descrição:**  
-Permite ao profissional visualizar informações completas e atualizar o status da consulta.
-
-**Tela detalhes profissional:**  
-![Tela detalhes profissional](docs/img/tela-detalhes-profissional.png)
-
 ---
