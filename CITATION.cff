@@ -1,26 +1,24 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-title: 
+title: Colmeia
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: Soares de Faria
+    given-names: Carlos Eduardo
+  - family-names: Moreno Costa Santos
+    given-names: Daniel
+  - family-names: Rocha de Oliveira
+    given-names: Gabriel
+  - family-names: Ferreira
+    given-names: Poliana Bruna
+  - family-names: Franklin Coelho Barbosa
+    given-names: Rafael
+  - family-names: Assis Alves
+    given-names: Yanne
 
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Gomes Amaral
+    given-names: Cleia Marcia
     keywords:
     - 
 repository-code: 
