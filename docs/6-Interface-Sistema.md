@@ -29,10 +29,8 @@ Permite que pacientes ou profissionais acessem o sistema utilizando e-mail e sen
 - Ações: Entrar, Criar cadastro
 
 **Tela de login:**  
-![Tela login](docs/img/tela-login.png)
 <img width="1909" height="755" alt="Tela de Login Paciente" src="https://github.com/user-attachments/assets/e349c874-cdfc-4beb-a74b-bdebcd08bfac" />
 <img width="1919" height="765" alt="Tela de Login Profissional" src="https://github.com/user-attachments/assets/90b4bc41-f6ee-4ea4-b6d6-94b3e489b97f" />
-
 
 
 #### **6.2.2. Tela de Cadastro de Paciente**
