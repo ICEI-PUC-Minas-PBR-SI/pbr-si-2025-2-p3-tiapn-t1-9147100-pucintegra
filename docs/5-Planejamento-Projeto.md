@@ -44,10 +44,10 @@ Atualizado em: 09/10/2025
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----:| :----:           |
 | Carlos        | -                |    -  | - | -    | -     | 
-| Daniel        | Processo 1 - Wireframes | 05/089/2025     | 19/10/2025 | ✔️    | 18/10/2025     |
+| Daniel        | Processo 1 - Wireframes | 05/09/2025     | 19/10/2025 | ✔️    | 18/10/2025     |
 | Gabriel       | Processo 1 - BPM; Detalhamento; Quadro de atividades; Modelagem; Correções |    05/09/2025  | 22/08/2025 | ✔️    | 18/10/2025         |
-| Poliana       | Processo 1 - Correções   |    05/089/2025 | 19/10/2025 | ✔️    |  18/10/2025    |
-| Rafael        | Processo 1 - Correções   |    05/089/2025 | 19/10/2025 | ✔️    |  18/10/2025    |
+| Poliana       | Processo 1 - Correções   |    05/09/2025 | 19/10/2025 | ✔️    |  18/10/2025    |
+| Rafael        | Processo 1 - Correções   |    05/09/2025 | 19/10/2025 | ✔️    |  18/10/2025    |
 | Yanne         | -                 |    - | - | -    |  -    |
 
 ## Sprint 3
