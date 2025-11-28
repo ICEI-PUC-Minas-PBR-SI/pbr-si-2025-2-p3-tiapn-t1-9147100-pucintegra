@@ -30,6 +30,9 @@ Permite que pacientes ou profissionais acessem o sistema utilizando e-mail e sen
 
 **Tela de login:**  
 ![Tela login](docs/img/tela-login.png)
+<img width="1909" height="755" alt="Tela de Login Paciente" src="https://github.com/user-attachments/assets/e349c874-cdfc-4beb-a74b-bdebcd08bfac" />
+<img width="1919" height="765" alt="Tela de Login Profissional" src="https://github.com/user-attachments/assets/90b4bc41-f6ee-4ea4-b6d6-94b3e489b97f" />
+
 
 
 #### **6.2.2. Tela de Cadastro de Paciente**
@@ -43,7 +46,8 @@ Tela utilizada para registrar novos pacientes na plataforma.
 
 **Tela de cadastro de paciente:**  
 ![Tela cadastro paciente](docs/img/tela-cadastro-paciente.png)
-
+<img width="1916" height="909" alt="Tela de Cadastro de Paciente 1" src="https://github.com/user-attachments/assets/ae7c0576-f79a-42c7-bead-51b2ad376f8b" />
+<img width="1914" height="909" alt="Tela de Cadastro de Paciente 2" src="https://github.com/user-attachments/assets/43ae7c2b-2d0d-48df-b1f0-417721bd0ff1" />
 
 ---
 
@@ -61,11 +65,9 @@ Utilizada para cadastrar profissionais de saúde, incluindo dados pessoais e pro
 - Upload de foto de perfil
 
 **Tela de cadastro de profissional:**  
-![Tela cadastro profissional](docs/img/tela-cadastro-profissional.png)
 <img width="1916" height="901" alt="Tela de Cadastro de Profissional 1" src="https://github.com/user-attachments/assets/2eb8b87d-f4ad-4fdc-a38a-7f40d06831c2" />
 <img width="1916" height="901" alt="Tela de Cadastro de Profissional 2" src="https://github.com/user-attachments/assets/ec5362e5-337c-4f4d-8b8e-0548b7a31802" />
 <img width="1916" height="901" alt="Tela de Cadastro de Profissional 3" src="https://github.com/user-attachments/assets/f015385b-8e3f-4728-bbf3-013ca0b03886" />
-
 
 
 
