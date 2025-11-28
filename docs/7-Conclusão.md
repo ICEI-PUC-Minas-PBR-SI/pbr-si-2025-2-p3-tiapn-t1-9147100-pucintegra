@@ -1,30 +1,14 @@
 ## 7. Conclusão
 
-Essa proposta de desenvolvimento de um aplicativo para colocar profissionais de 
-saúde no atendimento domiciliar (Meldar) apresenta uma solução inovadora 
-e prática para os desafios enfrentados por pacientes que necessitam de cuidados 
-contínuos, e para o familiar que passa por dificuldades com o cuidado com a 
-pessoa acamada. 
+Essa proposta de desenvolvimento de um site para conectar profissionais de saúde ao atendimento domiciliar (Meldar) traz uma solução inovadora e prática para os desafios enfrentados por pacientes que necessitam de cuidados contínuos e para familiares que enfrentam dificuldades no cuidado com pessoas acamadas ou com mobilidade limitada.
 
-Ao conectar técnicos de enfermagem, enfermeiros, 
-fisioterapeutas e fonoaudiólogos com os pacientes e suas famílias, o aplicativo 
-não apenas facilita o acesso a esses serviços essenciais, mas também promove um 
-cuidado mais humanizado e personalizado para o paciente e o ambiente familiar.
+O site permitirá a conexão entre profissionais capacitados, como técnicos de enfermagem, enfermeiros, fisioterapeutas, fonoaudiólogos e médicos, com pacientes e suas famílias, facilitando o acesso a serviços essenciais e promovendo um cuidado mais humanizado e personalizado, com foco no bem-estar do paciente e no suporte ao familiar cuidador.
 
-Além disso, a funcionalidade de acompanhamento diário da evolução dos 
-pacientes, com relatórios detalhados acessíveis às famílias, fortalece a 
-comunicação entre os profissionais de saúde e os responsáveis, gerando maior 
-confiança e transparência no tratamento. 
+A plataforma está sendo desenvolvida para evoluir constantemente e já prevê futuras funcionalidades modernas e estratégicas. Entre elas, um sistema de pagamento integrado que permitirá ao usuário efetuar pagamentos diretamente pelo site, e, após a transação, o comprovante de pagamento será automaticamente enviado para o e-mail do médico responsável, garantindo que o profissional tenha acesso ao documento de forma rápida e organizada.
 
-Essa abordagem contribui para a 
-eficiência do atendimento, reduzindo a necessidade de internações hospitalares 
-desnecessárias e melhorando a qualidade de vida dos pacientes.
+O projeto também incluirá, no futuro, a funcionalidade de acompanhamento diário da evolução dos pacientes, com relatórios detalhados acessíveis às famílias, além da implementação de autenticação segura via token para cadastro e recuperação de senha, sistema de redefinição de senha e um chatbot com inteligência artificial para auxiliar o usuário com dúvidas, navegação, suporte e orientações iniciais.
 
-Por fim, o projeto alinha-se às tendências crescentes de digitalização na saúde, ao 
-mesmo tempo em que atende às demandas por serviços mais acessíveis e 
-integrados. Com a implementação dessa ferramenta, será possível transformar o 
-cenário do Home Care, tornando-o mais eficiente mais ágil e centrado no bem
-estar dos pacientes e suas famílias.
+Com essas implementações planejadas, o site tem potencial para transformar o Home Care digital no futuro, tornando-o mais acessível, seguro, eficiente e centrado no bem-estar do paciente, de sua família e do profissional de saúde envolvido.
 
 ---
 
