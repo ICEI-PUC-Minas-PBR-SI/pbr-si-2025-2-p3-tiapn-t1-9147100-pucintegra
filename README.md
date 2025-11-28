@@ -29,7 +29,7 @@ inovadora para pacientes que necessitam de cuidados contínuos.
 
 ## Instruções de Utilização do Projeto Medlar
 
-°<li><a href="docs/InstruçõesdeUtilização.md"> Instruções de Utilização</a></li>
+<li><a href="docs/InstruçõesdeUtilização.md"> Instruções de Utilização</a></li>
 
 
 Este documento fornece as instruções resumidas para instalar as dependências e executar a aplicação Medlar.
