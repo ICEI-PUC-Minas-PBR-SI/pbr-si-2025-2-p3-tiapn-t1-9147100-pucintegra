@@ -20,9 +20,49 @@ Inspirado no aplicativo Web e Mobile “Brainly”, uma comunidade de compartilh
 
 * Cleia Marcia Gomes Amaral
 
-## Instruções de utilização
+## Instruções de Utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Para executar o projeto **PUC Integra** em ambiente de desenvolvimento local, siga os passos abaixo.
+
+### Pré-requisitos
+Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+* **Java JDK 17** ou superior.
+* **Maven** (para gerenciamento de dependências e build).
+* **MySQL Server** (8.0 ou superior).
+* **Git** (para clonagem do repositório).
+* Uma IDE de sua preferência (recomendado: IntelliJ IDEA ou Eclipse).
+
+### Configuração do Banco de Dados
+1.  Acesse o seu gerenciador de banco de dados (MySQL Workbench, DBeaver ou terminal).
+2.  Execute o script de criação do banco e das tabelas disponível na documentação do projeto:
+    * O script encontra-se no arquivo: `docs/4-Projeto-Solucao.md` (Seção 4.3.3 - Modelo Físico).
+3.  Verifique se o schema `puc_integra` foi criado corretamente.
+
+### Configuração da Aplicação
+1.  Clone este repositório:
+    ```bash
+    git clone [https://github.com/SEU-USUARIO/puc-integra.git](https://github.com/SEU-USUARIO/puc-integra.git)
+    ```
+2.  Navegue até a pasta do projeto e localize o arquivo `src/main/resources/application.properties`.
+3.  Edite as configurações de acesso ao banco de dados conforme suas credenciais locais:
+    ```properties
+    spring.datasource.url=jdbc:mysql://localhost:3306/puc_integra
+    spring.datasource.username=SEU_USUARIO_MYSQL
+    spring.datasource.password=SUA_SENHA_MYSQL
+    spring.jpa.hibernate.ddl-auto=update
+    ```
+
+### Executando a Aplicação
+1.  Abra o projeto na sua IDE ou terminal.
+2.  Execute o comando Maven para baixar as dependências e rodar o projeto:
+    ```bash
+    mvn spring-boot:run
+    ```
+3.  Após a inicialização (aguarde a mensagem "Started Application..."), abra o navegador e acesse:
+    * `http://localhost:8080`
+
+### Login Inicial
+Caso tenha populado o banco com dados de teste, utilize as credenciais padrão ou cadastre um novo usuário através da tela "Criar Conta".
 
 # Documentação
 

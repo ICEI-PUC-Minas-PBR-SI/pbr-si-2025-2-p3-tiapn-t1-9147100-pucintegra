@@ -4,18 +4,29 @@
 
 ## 4.1. Arquitetura da solução
 
-A solução PUC Integra foi arquitetada seguindo o modelo de três camadas (Three-Tier Architecture), amplamente utilizado em sistemas web para garantir a separação de responsabilidades, escalabilidade e facilidade de manutenção. A arquitetura é composta por:
+A arquitetura da solução **PUC Integra** foi projetada seguindo o padrão arquitetural **MVC (Model-View-Controller)**, amplamente utilizado em aplicações web robustas para garantir a separação de responsabilidades, facilidade de manutenção e escalabilidade.
 
-Camada de Apresentação (Frontend): Responsável pela interação com o usuário. Foi desenvolvida utilizando tecnologias web padrão (HTML, CSS e JavaScript), garantindo compatibilidade com os principais navegadores e responsividade. Esta camada comunica-se com o servidor através de requisições HTTP.
+A solução é composta pelas seguintes camadas:
 
-Camada de Lógica de Negócio (Backend): É o núcleo do sistema, onde residem as regras de negócio, validações e o controle de fluxo. Implementada em Java com o framework Spring Boot, esta camada expõe endpoints (API REST) que processam as solicitações do frontend (login, postagem de dúvidas, validação de perfil) e gerenciam a segurança e autenticação.
+1.  **Camada de Apresentação (View/Frontend):**
+    * Responsável pela interação direta com o usuário.
+    * Desenvolvida utilizando **HTML5, CSS3 e JavaScript**, garantindo uma interface responsiva e acessível.
+    * As páginas são renderizadas pelo servidor ou servidas como conteúdo estático, comunicando-se com o backend para envio e recebimento de dados.
 
-Camada de Dados (Database): Responsável pela persistência das informações. Utiliza-se o SGBD Relacional MySQL, estruturado conforme o Modelo Entidade-Relacionamento (DER) definido, garantindo a integridade dos dados acadêmicos, perfis de usuários e histórico de interações.
+2.  **Camada de Controle e Regra de Negócio (Controller & Service / Backend):**
+    * Implementada em **Java** com o framework **Spring Boot**.
+    * **Controllers:** Recebem as requisições HTTP (GET, POST, PUT, DELETE) vindas do frontend, validam os dados de entrada e direcionam para os serviços adequados.
+    * **Services:** Contêm a lógica de negócio da aplicação (ex: regras de validação de cadastro, cálculo de relevância de respostas, verificação de perfil de monitor). Esta camada isola a regra de negócio da camada de controle e da camada de dados.
 
-A hospedagem do código-fonte e versionamento é realizada via GitHub, e o deploy da interface (em sua versão estática/protótipo) pode ser visualizado via GitHub.
- 
-![Exemplo de Arquitetura](../docs/images/arquitetura_exemplo.png)
- 
+3.  **Camada de Persistência (Model/Repository):**
+    * Utiliza o **Spring Data JPA** e **Hibernate** para o mapeamento objeto-relacional (ORM).
+    * Responsável por traduzir os objetos Java (Entidades) em registros no banco de dados e vice-versa, abstraindo a complexidade do SQL direto para operações padrão.
+
+4.  **Camada de Banco de Dados (Database):**
+    * SGBD **MySQL** armazenando os dados relacionais conforme definido no Modelo ER.
+    * Garante a integridade referencial e a persistência segura das informações de usuários, perguntas, respostas e interações.
+
+Esta arquitetura garante que alterações na interface não impactem as regras de negócio e que a lógica de banco de dados esteja desacoplada do restante da aplicação.
 ---
 
 ### 4.2. Protótipos de telas
@@ -608,9 +619,14 @@ CREATE TABLE RESPOSTA_ANEXO (
 
 ### 4.4. Tecnologias
 
-_Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas._
+**Fluxo de Interação das Tecnologias:**
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+1.  **Interação do Usuário:** O usuário acessa a plataforma através de um navegador web (Chrome, Firefox, Edge), interagindo com as páginas construídas em **HTML, CSS e JavaScript**.
+2.  **Requisição:** Ao realizar uma ação (ex: "Enviar uma Pergunta"), o navegador envia uma requisição HTTP para o servidor.
+3.  **Processamento (Back-end):** O **Spring Boot** (Java) intercepta a requisição. O *Controller* valida os dados recebidos. Se válidos, aciona a camada de *Service* que aplica as regras de negócio (ex: verificar se o usuário está logado e vinculado a uma disciplina).
+4.  **Persistência:** O serviço solicita ao *Repository* (JPA) que salve a nova pergunta. O framework converte o objeto Java em comandos SQL e os executa no banco de dados **MySQL**.
+5.  **Resposta:** O banco de dados confirma a gravação. O Spring Boot processa essa confirmação e retorna uma resposta ao navegador (geralmente redirecionando o usuário para a página da pergunta recém-criada ou exibindo uma mensagem de sucesso via JSON/HTML).
+6.  **Deploy:** O código fonte é versionado no **GitHub**, e a versão de produção/documentação pode ser hospedada utilizando recursos como **GitHub Pages** (para estáticos/docs) ou serviços de nuvem compatíveis com Java.
 
 
 | **Dimensão**   | **Tecnologia**  |

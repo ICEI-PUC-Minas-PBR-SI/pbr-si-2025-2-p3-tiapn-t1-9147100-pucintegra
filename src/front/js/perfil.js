@@ -1,14 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. PROTEÇÃO DE ROTA
-    const userMatricula = sessionStorage.getItem('userMatricula');
+
+    // 1. LÓGICA DE PROTEÇÃO (INTEGRAÇÃO COM O LOGIN)
+
+    
+    // Tenta pegar a matrícula do localStorage (onde o autenticacao.js salvou)
+    // Se não achar, tenta no sessionStorage (caso tenha lógica antiga)
+    const userMatricula = localStorage.getItem('usuarioMatricula') || sessionStorage.getItem('userMatricula');
+
+    // Se não tiver matrícula em lugar nenhum, chuta pro login
     if (!userMatricula) {
-        const currentUrl = encodeURIComponent(window.location.pathname);
-        window.location.href = `/html/autenticacao.html#login?returnUrl=${currentUrl}`;
-        return;
+        alert("Sessão expirada ou não iniciada. Faça login novamente.");
+        window.location.href = "index.html"; // Redireciona para o login
+        return; // Para a execução do script aqui
     }
 
-    // Elementos da DOM
+    console.log("Usuário autenticado:", userMatricula);
+
+
+    // 2. ELEMENTOS DO DOM (MANTIDO DO SEU CÓDIGO)
+
     const dom = {
         name: document.getElementById('user-name-display'),
         handle: document.getElementById('user-matricula-display'),
@@ -22,41 +33,47 @@ document.addEventListener('DOMContentLoaded', () => {
         formEdit: document.getElementById('edit-profile-form')
     };
 
+
     // 2. Carregar Dados do Perfil (GET)
     async function loadProfile() {
         try {
-            // CORREÇÃO: URL aponta para a porta 8080
             const res = await fetch(`http://localhost:8080/api/profile/${userMatricula}`);
             if (!res.ok) throw new Error('Falha na resposta da API');
             
             const data = await res.json();
+            
+            // O Java retorna { "user": {...}, "stats": {...} }
             const user = data.user;
             const stats = data.stats;
 
-            dom.name.innerText = user.Nome || "Nome Indisponível";
+            // CORREÇÃO: Usando nomes exatos do Java (camelCase)
+            dom.name.innerText = user.nome || "Nome Indisponível";
             dom.handle.innerText = `@${userMatricula}`;
-            dom.bio.innerText = user.Biografia || "Sem biografia.";
+            dom.bio.innerText = user.biografia || "Sem biografia.";
             
-            if (user.Foto_Perfil) {
-                dom.img.src = `${user.Foto_Perfil}?t=${new Date().getTime()}`;
+            // CORREÇÃO: Java manda 'fotoPerfil', não 'Foto_Perfil'
+            if (user.fotoPerfil) {
+                // Adiciona timestamp (?t=...) para o navegador não usar a imagem velha do cache
+                dom.img.src = `http://localhost:8080${user.fotoPerfil}?t=${new Date().getTime()}`;
             }
 
             dom.statQ.innerText = stats.questions || 0;
             dom.statA.innerText = stats.answers || 0;
 
-            document.getElementById('edit-name-input').value = user.Nome || "";
-            document.getElementById('edit-bio-input').value = user.Biografia || "";
+            document.getElementById('edit-name-input').value = user.nome || "";
+            document.getElementById('edit-bio-input').value = user.biografia || "";
 
         } catch (err) {
             console.error(err);
         }
     }
 
-    // 3. Carregar Feed (Minhas Perguntas + INTERAÇÕES)
+
+    // 4. CARREGAR FEED (PERGUNTAS + INTERAÇÕES)
+
     async function loadFeed() {
         // --- A. Carregar Perguntas ---
         try {
-            // CORREÇÃO: URL aponta para a porta 8080
             const resQ = await fetch(`http://localhost:8080/api/users/${userMatricula}/questions`);
             if(resQ.ok) {
                 const questions = await resQ.json();
@@ -73,19 +90,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // 1. Busca Respostas
-            // CORREÇÃO: URL aponta para a porta 8080
             const resA = await fetch(`http://localhost:8080/api/users/${userMatricula}/answers`);
             if (resA.ok) answers = await resA.json();
 
             // 2. Busca Reações
-            console.log("Tentando buscar reações para:", userMatricula);
-            // CORREÇÃO: URL aponta para a porta 8080 e usa a rota correta do Controller
             const resR = await fetch(`http://localhost:8080/api/reacoes/usuario/${userMatricula}`);
             
             if (resR.ok) {
                 const dataR = await resR.json();
-                console.log("Reações encontradas no Banco:", dataR);
-
                 reactions = dataR.map(r => ({
                     Id: r.id,
                     Tipo: r.tipo,       
@@ -93,20 +105,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     Data_Criacao: r.data, 
                     type: 'reaction'    
                 }));
-            } else {
-                console.error("Erro no backend ao buscar reações:", resR.status);
             }
 
-            // 3. Unifica as listas
+            // 3. Unifica as listas e ordena
             const allInteractions = [
                 ...answers.map(a => ({...a, type: 'answer', dateObj: new Date(a.Data_Criacao) })),
                 ...reactions.map(r => ({...r, dateObj: new Date(r.Data_Criacao) }))
             ];
 
-            // 4. Ordena por data
             allInteractions.sort((a, b) => b.dateObj - a.dateObj);
 
-            // 5. Renderiza
+            // 4. Renderiza
             if (allInteractions.length === 0) {
                 dom.interactionsList.innerHTML = '<p class="empty-msg">Nenhuma interação recente.</p>';
             } else {
@@ -116,12 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
         } catch (e) { 
-            console.error('Erro CRÍTICO no JS do Perfil:', e); 
+            console.error('Erro ao carregar interações:', e); 
             dom.interactionsList.innerHTML = '<p class="empty-msg">Erro ao carregar dados.</p>';
         }
     }
 
-    // Função auxiliar para gerar o HTML do card
+
+    // 5. FUNÇÃO AUXILIAR DE HTML (MANTIDO DO SEU CÓDIGO)
+
     function createItemCard(item, type) {
         let iconHtml = '';
         let titleHtml = '';
@@ -139,9 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contentHtml = item.Conteudo;
         }
         else if (type === 'reaction') {
-            // Card de Reação (Like/Dislike)
             const isLike = item.Tipo === 'LIKE'; 
-            
             if (isLike) {
                 iconHtml = '<i class="fas fa-thumbs-up" style="color:#28a745"></i>'; 
                 titleHtml = `Curtiu a discussão: <strong>${item.TituloAlvo || 'Item removido'}</strong>`;
@@ -152,8 +161,14 @@ document.addEventListener('DOMContentLoaded', () => {
             contentHtml = '';
         }
 
+        // Adiciona lógica de delete apenas se tiver ID
+        const idToDelete = item.Id || item.Id_Pergunta || item.Id_Resposta;
+        const deleteBtn = (type !== 'reaction' && idToDelete) 
+            ? `<button class="delete-btn" onclick="deleteItem('${type}', ${idToDelete})"><i class="fas fa-trash"></i></button>`
+            : '';
+
         return `
-            <div class="item-card" id="${type}-${item.Id || item.Id_Pergunta || item.Id_Resposta}">
+            <div class="item-card" id="${type}-${idToDelete}">
                 <div class="item-content">
                     <h4 style="display:flex; align-items:center; gap:10px;">
                         ${iconHtml} <span>${titleHtml}</span>
@@ -161,41 +176,54 @@ document.addEventListener('DOMContentLoaded', () => {
                     ${contentHtml ? `<p>${contentHtml}</p>` : ''}
                     <small style="color:#999; font-size:0.8rem;">${dateStr}</small>
                 </div>
-                ${type !== 'reaction' ? `<button class="delete-btn" onclick="deleteItem('${type}', ${item.Id || item.Id_Pergunta || item.Id_Resposta})"><i class="fas fa-trash"></i></button>` : ''}
+                ${deleteBtn}
             </div>
         `;
     }
 
-    // 4. Salvar Edição do Perfil (PUT)
-    dom.formEdit.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const btnSave = dom.formEdit.querySelector('.btn-save');
-        const originalText = btnSave.innerText;
-        btnSave.innerText = "Salvando...";
-        btnSave.disabled = true;
 
-        const formData = new FormData();
-        formData.append('nome', document.getElementById('edit-name-input').value);
-        formData.append('biografia', document.getElementById('edit-bio-input').value);
-        
-        const fileInput = document.getElementById('edit-photo-input');
-        if (fileInput.files[0]) formData.append('foto_perfil', fileInput.files[0]);
+    // 6. SALVAR EDIÇÃO DO PERFIL (PUT)
 
-        try {
-            // CORREÇÃO: URL aponta para a porta 8080
-            const res = await fetch(`http://localhost:8080/api/profile/${userMatricula}`, { method: 'PUT', body: formData });
-            if (res.ok) {
-                alert("Perfil atualizado!");
-                dom.modal.style.display = 'none';
-                loadProfile();
-            } else {
-                alert("Erro ao atualizar.");
+    if (dom.formEdit) {
+        dom.formEdit.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btnSave = dom.formEdit.querySelector('.btn-save');
+            const originalText = btnSave.innerText;
+            btnSave.innerText = "Salvando...";
+            btnSave.disabled = true;
+
+            const formData = new FormData();
+            formData.append('nome', document.getElementById('edit-name-input').value);
+            formData.append('biografia', document.getElementById('edit-bio-input').value);
+            
+            const fileInput = document.getElementById('edit-photo-input');
+            if (fileInput.files[0]) formData.append('foto_perfil', fileInput.files[0]);
+
+            try {
+                const res = await fetch(`http://localhost:8080/api/profile/${userMatricula}`, { 
+                    method: 'PUT', 
+                    body: formData 
+                });
+                
+                if (res.ok) {
+                    alert("Perfil atualizado!");
+                    dom.modal.style.display = 'none';
+                    loadProfile(); // Recarrega os dados na tela
+                } else {
+                    alert("Erro ao atualizar.");
+                }
+            } catch (err) { 
+                alert("Erro de conexão."); 
+            } finally { 
+                btnSave.innerText = originalText; 
+                btnSave.disabled = false; 
             }
-        } catch (err) { alert("Erro de conexão."); } 
-        finally { btnSave.innerText = originalText; btnSave.disabled = false; }
-    });
+        });
+    }
 
-    // 5. Controles de Abas e Modal
+
+    // 7. CONTROLES DE UI (ABAS E MODAL)
+
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -203,31 +231,60 @@ document.addEventListener('DOMContentLoaded', () => {
             
             btn.classList.add('active');
             const targetId = btn.dataset.tab + '-tab'; 
-            document.getElementById(targetId).style.display = 'block';
+            const targetEl = document.getElementById(targetId);
+            if(targetEl) targetEl.style.display = 'block';
         });
     });
 
-    document.getElementById('questions-tab').style.display = 'block';
-    document.getElementById('interactions-tab').style.display = 'none';
+    // Inicia na aba de perguntas
+    const tabQuestions = document.getElementById('questions-tab');
+    if (tabQuestions) tabQuestions.style.display = 'block';
+    
+    const tabInteractions = document.getElementById('interactions-tab');
+    if (tabInteractions) tabInteractions.style.display = 'none';
 
+    // Controles do Modal
     const openModalBtn = document.getElementById('btn-open-edit');
     const closeModalBtn = document.querySelector('.close-modal');
     
     if(openModalBtn) openModalBtn.onclick = () => dom.modal.style.display = 'flex';
     if(closeModalBtn) closeModalBtn.onclick = () => dom.modal.style.display = 'none';
+    
+    // Fecha modal ao clicar fora
+    window.onclick = (event) => {
+        if (event.target == dom.modal) {
+            dom.modal.style.display = "none";
+        }
+    }
 
+    // INICIALIZAÇÃO
     loadProfile();
     loadFeed();
 });
 
+// 8. FUNÇÕES GLOBAIS (LOGOUT E DELETE)
+
 window.logout = function() {
+    // Limpa tanto localStorage (novo) quanto sessionStorage (antigo/fallback)
+    localStorage.clear();
     sessionStorage.clear();
-    window.location.href = '/html/autenticacao.html#login';
+    window.location.href = 'index.html'; // Redireciona para o login
 }
 
 window.deleteItem = async function(type, id) {
-    if(!confirm("Deseja realmente excluir?")) return;
-    alert("Item removido (simulação).");
-    const el = document.getElementById(`${type}-${id}`);
-    if(el) el.remove();
+    if(!confirm("Deseja realmente excluir este item?")) return;
+    
+    // Lógica de simulação (pode ser trocada por fetch DELETE no futuro)
+    try {
+        // Exemplo: await fetch(`http://localhost:8080/api/${type}s/${id}`, { method: 'DELETE' });
+        
+        // Remove visualmente
+        const el = document.getElementById(`${type}-${id}`);
+        if(el) {
+            el.remove();
+            alert("Item removido.");
+        }
+    } catch (error) {
+        alert("Erro ao remover item.");
+    }
 }
