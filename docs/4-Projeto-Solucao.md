@@ -5,43 +5,44 @@
 ## 4.1. Arquitetura da solução
 
 
-......  COLOQUE AQUI O SEU TEXTO E O DIAGRAMA DE ARQUITETURA .......
-
- Inclua um diagrama da solução e descreva os módulos e as tecnologias
- que fazem parte da solução. Discorra sobre o diagrama.
+A solução é composta por três módulos principais: o front-end em React, responsável pela interface do usuário e construído com arquivos TSX, TS e CSS gerados em HTML/JS/CSS no build; a API REST local, que recebe as requisições do front-end; e o banco de dados MySQL, onde todas as informações do sistema são armazenadas. No fluxo geral, o usuário acessa a aplicação no navegador, o React envia requisições para a API conforme as ações realizadas, e a API consulta ou atualiza o MySQL, retornando os resultados para o front-end.
  
- **Exemplo do diagrama de Arquitetura**:
+ **Diagrama de Arquitetura**:
  
- ![Exemplo de Arquitetura](./images/arquitetura-exemplo.png)
+ ![Diagrama de arquitetura](./images/diagrama-arquitetura.png)
  
 
 ### 4.2. Protótipos de telas
 
-Visão geral da interação do usuário pelas telas do sistema e protótipo interativo das telas com as funcionalidades que fazem parte do sistema (wireframes).
-Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="02-Especificação do Projeto.md"> Especificação do Projeto</a>.
-A partir das atividades de usuário identificadas na seção anterior, elabore o protótipo de tela de cada uma delas.
-![Exemplo de Wireframe](images/wireframe-example.png)
+#### Wireframe — Processo 1: Cadastro de Usuário
+![Wireframe do Processo 1](../images/Wireframe_Cadastro_Colmeia(1).jpg "Wireframe de baixa fidelidade")
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+#### Wireframe — Processo 2: Cadastro do Local (1/3)
+![Wireframe do Processo 2 — Parte 1](../images/Wireframeprocesso2_1_1.jpg "Wireframe de baixa fidelidade")
+
+#### Wireframe — Processo 2: Cadastro do Local (2/3)
+![Wireframe do Processo 2 — Parte 2](../images/Wireframeprocesso2_1_2.jpg "Wireframe de baixa fidelidade")
+
+#### Wireframe — Processo 2: Cadastro do Local (3/3)
+![Wireframe do Processo 2 — Parte 3](../images/Wireframeprocesso2_1_3.jpg "Wireframe de baixa fidelidade")
+
+#### Wireframe — Processo 3: Busca e Filtros Avançados
+![Wireframe do Processo 3](../images/Wireframe_Busca_Colmeia.png "Wireframe de baixa fidelidade")
+
+#### Wireframe — Processo 4: Reserva e Confirmação
+![Wireframe do Processo 4](../images/Processo_4_Wireframes.png "Wireframe de baixa fidelidade")
+
+#### Wireframe — Processo 5: Dashboard para Locadores
+![Wireframe do Processo 5](../images/wireframe_dashboard.jpg "Wireframe de baixa fidelidade - Dashboard")
+
+#### Wireframe — Processo 6: Avaliação e Reputação
+![Wireframe do Processo 6](../images/Wireframe-Processo-6.jpg "Avaliação e Reputação")
 
 
 ## Diagrama de Classes
 
-O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
-
-> - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
-> - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
+ **Diagrama de Classes**:
+  ![Diagrama de classes](./images/diagrama-classes.png)
 
 ## Modelo ER
 
