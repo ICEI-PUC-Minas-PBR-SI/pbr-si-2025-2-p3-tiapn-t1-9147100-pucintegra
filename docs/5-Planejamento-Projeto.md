@@ -1,6 +1,16 @@
 # 5. Planejamento do Projeto
 
-O projeto em desenvolvimento por alunos do 4° período do curso de Sistemas de Informação da PUC Minas Barreiro, consiste na elaboração de uma plataforma digital colaborativa, voltada para a comunidade da Pontifícia Universidade Católica de Minas Gerais (PUC Minas), se diferenciando de sites genéricos de pesquisa, como o “Brainly”, visto que utilizará de fontes institucionais, integrando o calendário acadêmico, as disciplinas e a bibliografia oficial da universidade, além de possibilitar a interação entre alunos, professores, monitores e colaboradores, incentivando a troca de conhecimento, sempre respeitando as normas e diretrizes internas, garantindo assim, a segurança e a veracidade das perguntas e respostas.
+### Medlar
+
+`SISTEMAS DE INFORMAÇÃO`
+
+`TRABALHO INTERDICIPLINAR: APLICAÇÃO PROCESSOS DE NEGOCIOS`
+
+`4° Periodo`
+
+O desenvolvimento de um aplicativo para centralizar profissionais de 
+saúde no atendimento domiciliar (Home Care) oferece uma solução prática e 
+inovadora para pacientes que necessitam de cuidados contínuos.
 
 ## 5.1. Divisão de Papéis
 
