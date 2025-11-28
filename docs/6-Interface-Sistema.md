@@ -29,7 +29,12 @@ Permite que pacientes ou profissionais acessem o sistema utilizando e-mail e sen
 - Ações: Entrar, Criar cadastro
 
 **Tela de login:**  
+### Login Concluído – Área do Paciente
+Tela exibida após o paciente realizar login com sucesso, mostrando acesso rápido às funcionalidades principais da plataforma.
 <img width="1909" height="755" alt="Tela de Login Paciente" src="https://github.com/user-attachments/assets/e349c874-cdfc-4beb-a74b-bdebcd08bfac" />
+
+### Login Concluído – Área do Profissional
+Tela exibida após o profissional acessar sua conta, apresentando suas consultas, agenda e opções de gerenciamento.
 <img width="1919" height="765" alt="Tela de Login Profissional" src="https://github.com/user-attachments/assets/90b4bc41-f6ee-4ea4-b6d6-94b3e489b97f" />
 
 
