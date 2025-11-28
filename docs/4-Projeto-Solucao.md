@@ -176,7 +176,7 @@ _Apresente o modelo de dados por meio de um modelo relacional que contemple todo
 
 O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
 
-<img width="3120" height="1268" alt="diagrama_er_modificado" src="https://github.com/user-attachments/assets/904aab2d-3f3d-4825-b10d-ffe6246eb7c2" />
+![ER](https://github.com/user-attachments/assets/31c15e75-3f0d-4fd1-b8ba-3474bf792d74)
 
 ---
 
@@ -186,12 +186,7 @@ O Esquema Relacional corresponde à representação dos dados em tabelas juntame
  
 As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
 
-![ER](https://github.com/user-attachments/assets/31c15e75-3f0d-4fd1-b8ba-3474bf792d74)
-
----
-
 <img width="909" height="746" alt="banco_medlar-img" src="https://github.com/user-attachments/assets/be7a633e-468e-4538-8397-2e3b6b320aa0" />
-
 
 ---
 
