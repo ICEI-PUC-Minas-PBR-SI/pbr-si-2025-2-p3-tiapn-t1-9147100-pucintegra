@@ -188,6 +188,10 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 
 ![ER](https://github.com/user-attachments/assets/31c15e75-3f0d-4fd1-b8ba-3474bf792d74)
 
+---
+
+<img width="909" height="746" alt="banco_medlar-img" src="https://github.com/user-attachments/assets/be7a633e-468e-4538-8397-2e3b6b320aa0" />
+
 
 ---
 
