@@ -4,7 +4,7 @@
 
 `Trabalho Interdisciplinar: Aplicações para Processos de Negócios`
 
-` 2. 2025`
+` Segundo semestre de 2025`
 
 Este trabalho apresenta o desenvolvimento de um sistema para facilitar a conexão entre pessoas que desejam realizar festas e os proprietários de espaços disponíveis para locação, como salões de festas. O objetivo é oferecer uma plataforma prática para busca, reserva e gestão das locações.
 
