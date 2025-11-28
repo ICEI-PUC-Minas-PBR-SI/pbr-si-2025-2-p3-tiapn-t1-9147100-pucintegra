@@ -135,16 +135,6 @@ Utilizada para marcar consultas com profissionais. Nesta tela, o paciente seleci
 **Tela solicitar atendimento:**  
 <img width="1909" height="940" alt="Telas do Processo 4 — Solicitação de Atendimento" src="https://github.com/user-attachments/assets/52d47312-6a38-4115-b495-e87a7aae469f" />
 
-
-#### **6.5.2. Tela de Confirmação / Sucesso**
-
-**Descrição:**  
-Após enviar o agendamento, o sistema confirma e direciona o paciente para sua agenda.
-
-**Tela confirmação:**  
-![Tela confirmação](docs/img/tela-confirmacao.png)
-
-
 ---
 
 ### 6.6. Telas do Processo 5 — Agenda do Paciente
