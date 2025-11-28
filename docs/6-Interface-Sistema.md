@@ -43,7 +43,6 @@ Tela utilizada para registrar novos pacientes na plataforma.
 - Histórico médico (opcional)
 
 **Tela de cadastro de paciente:**  
-![Tela cadastro paciente](docs/img/tela-cadastro-paciente.png)
 <img width="1916" height="909" alt="Tela de Cadastro de Paciente 1" src="https://github.com/user-attachments/assets/ae7c0576-f79a-42c7-bead-51b2ad376f8b" />
 <img width="1914" height="909" alt="Tela de Cadastro de Paciente 2" src="https://github.com/user-attachments/assets/43ae7c2b-2d0d-48df-b1f0-417721bd0ff1" />
 
@@ -72,10 +71,10 @@ Utilizada para cadastrar profissionais de saúde, incluindo dados pessoais e pro
 #### **6.3.2. Tela de Perfil do Profissional**
 
 **Descrição:**  
-Exibe informações detalhadas sobre um profissional, permitindo que o paciente avalie e escolha o especialista desejado.
+Exibe informações detalhadas sobre um profissional, permitindo que o paciente escolha o especialista desejado.
 
 **Tela de perfil do profissional:**  
-![Tela perfil profissional](docs/img/tela-perfil-profissional.png)
+<img width="1907" height="941" alt="Tela de Perfil do Profissional" src="https://github.com/user-attachments/assets/5ddda9b8-7a2b-4f23-b7de-6a76ac12e604" />
 
 
 ---
@@ -91,7 +90,8 @@ Permite que o paciente filtre profissionais por especialidade, localização, di
 - Botões: *Ver Perfil* e *Agendar Consulta*
 
 **Tela de busca:**  
-![Tela busca](docs/img/tela-busca.png)
+<img width="1915" height="945" alt="Telas do Processo 3 — Busca de Profissionais" src="https://github.com/user-attachments/assets/15312509-3735-4149-b2da-96d8665cadd0" />
+
 
 
 #### **6.4.2. Tela de Perfil (aberta pela busca)**
