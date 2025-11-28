@@ -119,7 +119,7 @@ Utilizada para marcar consultas com profissionais. Nesta tela, o paciente seleci
 - Método de pagamento
 
 **Tela solicitar atendimento:**  
-![Tela solicitar atendimento](docs/img/tela-solicitar-atendimento.png)
+<img width="1909" height="940" alt="Telas do Processo 4 — Solicitação de Atendimento" src="https://github.com/user-attachments/assets/52d47312-6a38-4115-b495-e87a7aae469f" />
 
 
 #### **6.5.2. Tela de Confirmação / Sucesso**
@@ -144,18 +144,7 @@ Exibe o calendário mensal e a lista de consultas do dia selecionado.
 - Lista com horário, profissional e status  
 
 **Tela agenda paciente:**  
-![Tela agenda paciente](docs/img/tela-agenda-paciente.png)
-
-
-
-#### **6.6.2. Detalhes da Consulta (Paciente)**
-
-**Descrição:**  
-Mostra informações completas sobre a consulta selecionada.
-
-**Tela detalhes consulta paciente:**  
-![Tela detalhes paciente](docs/img/tela-detalhes-paciente.png)
-
+<img width="1918" height="936" alt="Telas do Processo 5 — Agenda do Paciente" src="https://github.com/user-attachments/assets/28525424-5d80-43f6-b6a5-fb3cd3e2a34e" />
 
 ---
 
