@@ -24,7 +24,34 @@ Este trabalho apresenta o desenvolvimento de um sistema para facilitar a conexã
 
 ## Instruções de utilização
 
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+Para executar o projeto Colmeia em ambiente de desenvolvimento local, siga os passos abaixo.
+
+### Pré-requisitos
+Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
+
+* Node versão 20.10.0 ou superior.
+* SQL Server.
+* Git (para clonagem do repositório).
+* Uma IDE de sua preferência (recomendado: Visual Studio Code).
+
+### Configuração da Aplicação
+
+1. Clone este repositório:
+```
+git clone https://github.com/ICEI-PUC-Minas-PBR-SI/pbr-si-2025-2-p3-tiapn-t1-9147100-colmeia.git
+```
+2. Navegue até a pasta do projeto
+```
+cd "src/Front End"
+```
+3. Abra o terminal e execute:
+```
+npm install
+```
+4. Agora abra a aplicação ao executar:
+```
+npm run dev
+```
 
 # Documentação
 
