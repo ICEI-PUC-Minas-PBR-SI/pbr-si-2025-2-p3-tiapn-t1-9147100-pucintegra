@@ -11,7 +11,6 @@
 <body>
 
     <nav class="top-nav">
-        
         <div class="nav-left">
             <a href="/html/homepage.html" class="brand-link">
                 <span class="brand-text">PUC INTEGRA</span>
@@ -21,6 +20,7 @@
         <div class="nav-right">
             <ul class="nav-links">
                 <li><a href="/html/homepage.html">Home</a></li>
+                <li><a href="/html/feed.html">Feed</a></li>
             </ul>
             
             <a href="/html/perfil.html" class="profile-btn" title="Ir para Perfil">
@@ -60,36 +60,13 @@
                                 <option value="111">Algoritmos Avançados</option>
                                 <option value="112">Desenvolvimento de Software</option>
                                 <option value="113">Desenvolvimento Web e Mobile</option>
-                                <option value="114">Programação para Ciência de Dados</option>
                             </optgroup>
 
                             <optgroup label="Eixo de Infraestrutura e Redes">
                                 <option value="120">Ambientes Computacionais e Conectividade</option>
                                 <option value="121">Arquitetura de Redes</option>
-                                <option value="122">Sistemas Operacionais</option>
-                                <option value="123">Projeto e Gerência de Redes de Computadores</option>
-                                <option value="124">Desenvolvimento Distribuído e em Nuvem</option>
                             </optgroup>
-
-                            <optgroup label="Eixo de Gestão e Organização">
-                                <option value="130">Análise e Projeto de Sistemas</option>
-                                <option value="131">Engenharia de Software</option>
-                                <option value="132">Gerência de Projetos</option>
-                                <option value="133">Governança de Tecnologia</option>
-                                <option value="134">Empreendedorismo e Inovação</option>
-                                <option value="135">Administração de Banco de Dados</option>
-                                <option value="136">Segurança da Informação</option>
-                            </optgroup>
-
-                            <optgroup label="Eixo de Dados e Inteligência">
-                                <option value="140">Análise de Dados e Big Data</option>
-                                <option value="141">Inteligência Artificial</option>
-                                <option value="142">Chatbots</option>
-                                <option value="143">Modelagem e Avaliação de Modelos</option>
-                                <option value="144">Uso de APIs e Frameworks</option>
-                            </optgroup>
-
-                        </select>
+                            </select>
                     </div>
                 </div>
 
@@ -138,6 +115,65 @@
         </div>
     </main>
 
+    <footer class="footer-cta">
+        <div class="container">
+            <p>Está buscando uma resposta?</p>
+            <a href="/html/feed.html"><button class="btn-main">Explorar Feed</button></a>
+        </div>
+    </footer>
+
+    <footer class="puc-integra-footer">
+        <div class="footer-container">
+            
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="/docs/images/logo_puc.png" alt="Logo PUC Integra" class="footer-logo-img">
+                    <span class="footer-brand-text">PUC INTEGRA</span>
+                </div>
+                <p class="footer-desc">
+                    Conectando alunos, transformando dúvidas em conhecimento e fortalecendo a comunidade acadêmica da PUC Minas.
+                </p>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="/html/homepage.html">Tela Inicial</a></li>
+                    <li><a href="/html/pergunta.html">Perguntas</a></li>
+                    <li><a href="#">Disciplinas</a></li>
+                    <li><a href="#">Comunidades</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="#">Central de Ajuda</a></li>
+                    <li><a href="#">Diretrizes da Comunidade</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Fale Conosco</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <p class="contact-email"><i class="far fa-envelope"></i> contato@pucintegra.com.br</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2025</span> PUC Integra. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart"></i> por alunos de Sistemas de Informação.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
     <script src="/js/pergunta.js"></script>
 </body>
 </html>
