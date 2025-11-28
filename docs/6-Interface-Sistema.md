@@ -13,7 +13,7 @@ A tela principal funciona como a porta de entrada do usuário na plataforma, exi
 
 **Tela principal do sistema:**  
 
-<img width="1916" height="906" alt="Tela Inicial Medlar" src="https://github.com/user-attachments/assets/7f5c1225-81b4-42c1-bab5-201c0145b1c5" />
+<img width="1919" height="914" alt="Tela Principal do Sistema Medlar" src="https://github.com/user-attachments/assets/9a198055-6395-4deb-8e9e-50438ab8874f" />
 
 
 ---
