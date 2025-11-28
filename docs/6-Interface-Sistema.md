@@ -94,14 +94,23 @@ Permite que o paciente filtre profissionais por especialidade, localização, di
 
 
 
-#### **6.4.2. Tela de Perfil (aberta pela busca)**
+#### **6.4.2. Tela de Filtros da Busca**
 
 **Descrição:**  
-Exibe detalhes completos do profissional dentro de um modal ou página dedicada.
+Esta tela (ou seção lateral) permite ao usuário aplicar filtros inteligentes para encontrar o profissional ideal.  
+Os filtros incluem:
 
-**Tela de perfil:**  
-![Tela perfil busca](docs/img/tela-perfil-busca.png)
+- **Especialidade**
+- **Localização (cidade/bairro)**
+- **Disponibilidade**
+- **Faixa de preço**
+- **Avaliação**
+- **Forma de atendimento (domiciliar, online, presencial)** — opcional
 
+Os resultados exibidos são atualizados com base nos filtros selecionados, permitindo que o paciente refine sua busca de maneira rápida e eficiente.
+
+**Tela de filtros da busca:**  
+<img width="1914" height="931" alt="Tela de Perfil  filtro" src="https://github.com/user-attachments/assets/d627ab31-8c44-4648-977c-c29d8ec60f4d" />
 
 ---
 
