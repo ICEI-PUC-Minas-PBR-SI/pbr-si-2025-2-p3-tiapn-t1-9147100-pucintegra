@@ -4,7 +4,7 @@
 
 `TRABALHO INTERDICIPLINAR: APLICAÇÃO PROCESSOS DE NEGOCIOS`
 
-`4° Periodo`
+`2° semestre - 2025`
 
 O desenvolvimento de um aplicativo para centralizar profissionais de 
 saúde no atendimento domiciliar (Home Care) oferece uma solução prática e 
