@@ -1,6 +1,6 @@
 ## 7. Conclusão
 
-Essa proposta de desenvolvimento de um site para conectar profissionais de saúde ao atendimento domiciliar (Meldar) traz uma solução inovadora e prática para os desafios enfrentados por pacientes que necessitam de cuidados contínuos e para familiares que enfrentam dificuldades no cuidado com pessoas acamadas ou com mobilidade limitada.
+Essa proposta de desenvolvimento de um site para conectar profissionais de saúde ao atendimento domiciliar (Medlar) traz uma solução inovadora e prática para os desafios enfrentados por pacientes que necessitam de cuidados contínuos e para familiares que enfrentam dificuldades no cuidado com pessoas acamadas ou com mobilidade limitada.
 
 O site permitirá a conexão entre profissionais capacitados, como técnicos de enfermagem, enfermeiros, fisioterapeutas, fonoaudiólogos e médicos, com pacientes e suas famílias, facilitando o acesso a serviços essenciais e promovendo um cuidado mais humanizado e personalizado, com foco no bem-estar do paciente e no suporte ao familiar cuidador.
 
