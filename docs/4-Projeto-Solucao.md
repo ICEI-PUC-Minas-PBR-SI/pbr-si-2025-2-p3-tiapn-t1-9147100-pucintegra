@@ -1,6 +1,6 @@
 ## 4. Projeto da Solução
 
-<span style="color:red">Pré-requisitos: <a href="03-Modelagem do Processo de Negocio.md"> Modelagem do Processo de Negocio</a></span>
+
 
 ## 4.1. Arquitetura da solução
 
@@ -55,9 +55,6 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER�
 
 ### 4.3. Modelo de dados
 
-O desenvolvimento da solução proposta requer a existência de bases de dados que permitam efetuar os cadastros de dados e controles associados aos processos identificados, assim como recuperações.
-Utilizando a notação do DER (Diagrama Entidade e Relacionamento), elaborem um modelo, na ferramenta visual indicada na disciplina, que contemple todas as entidades e atributos associados às atividades dos processos identificados. Deve ser gerado um único DER que suporte todos os processos escolhidos, visando, assim, uma base de dados integrada. O modelo deve contemplar, também, o controle de acesso de usuários (partes interessadas dos processos) de acordo com os papéis definidos nos modelos do processo de negócio.
-_Apresente o modelo de dados por meio de um modelo relacional que contemple todos os conceitos e atributos apresentados na modelagem dos processos._
 
 #### 4.3.1 Modelo ER
 
@@ -69,81 +66,138 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER�
 
 #### 4.3.2 Esquema Relacional
 
-O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
- 
-As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Relacional”.
-
-> - [Criando um modelo relacional - Documentação da IBM](https://www.ibm.com/docs/pt-br/cognos-analytics/10.2.2?topic=designer-creating-relational-model)
-
-![Exemplo de um modelo relacional](images/modeloRelacional.png "Exemplo de Modelo Relacional.")
----
+![Esquema relacional](./images/esquema-relacional.png)
 
 
 #### 4.3.3 Modelo Físico
 
-Insira aqui o script de criação das tabelas do banco de dados.
-
-Veja um exemplo:
-
 <code>
-
- -- Criação da tabela Médico
-CREATE TABLE Medico (
-    MedCodigo INTEGER PRIMARY KEY,
-    MedNome VARCHAR(100)
+CREATE DATABASE colmeia;
+USE colmeia;
+-- Usuario
+CREATE TABLE Usuario (
+ id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+ nome_completo VARCHAR(150) NOT NULL,
+ tipo_usuario ENUM('locatário','locador','administrador') NOT NULL,
+ cpf VARCHAR(14),
+ cnpj VARCHAR(18),
+ endereco VARCHAR(255),
+ email VARCHAR(120) UNIQUE NOT NULL,
+ telefone VARCHAR(20),
+ senha VARCHAR(100) NOT NULL,
+ foto_perfil VARCHAR(200)
 );
-
-
--- Criação da tabela Paciente
-CREATE TABLE Paciente (
-    PacCodigo INTEGER PRIMARY KEY,
-    PacNome VARCHAR(100)
+-- Categoria_Admin
+CREATE TABLE Categoria_Admin (
+   id_categoria_admin INT PRIMARY KEY,
+   nome VARCHAR(50),
+   descricao TEXT,
+   nivel INT
 );
-
--- Criação da tabela Consulta
-CREATE TABLE Consulta (
-    ConCodigo INTEGER PRIMARY KEY,
-    MedCodigo INTEGER,
-    PacCodigo INTEGER,
-    Data DATE,
-    FOREIGN KEY (MedCodigo) REFERENCES Medico(MedCodigo),
-    FOREIGN KEY (PacCodigo) REFERENCES Paciente(PacCodigo)
+-- Categoria_Cliente
+CREATE TABLE Categoria_Cliente (
+   id_categoria_cliente INT PRIMARY KEY,
+   nome VARCHAR(50),
+   descricao TEXT
 );
-
--- Criação da tabela Medicamento
-CREATE TABLE Medicamento (
-    MdcCodigo INTEGER PRIMARY KEY,
-    MdcNome VARCHAR(100)
+-- Administrador
+CREATE TABLE Administrador (
+   id_admin INT PRIMARY KEY,
+   id_usuario INT,
+   id_categoria_admin INT,
+   FOREIGN KEY (id_categoria_admin) REFERENCES Categoria_Admin(id_categoria_admin)
 );
-
--- Criação da tabela Prescricao
-CREATE TABLE Prescricao (
-    ConCodigo INTEGER,
-    MdcCodigo INTEGER,
-    Posologia VARCHAR(200),
-    PRIMARY KEY (ConCodigo, MdcCodigo),
-    FOREIGN KEY (ConCodigo) REFERENCES Consulta(ConCodigo),
-    FOREIGN KEY (MdcCodigo) REFERENCES Medicamento(MdcCodigo)
+-- Cliente
+CREATE TABLE Cliente (
+   id_cliente INT PRIMARY KEY,
+   id_usuario INT,
+   id_categoria_cliente INT,
+   FOREIGN KEY (id_categoria_cliente) REFERENCES Categoria_Cliente(id_categoria_cliente)
+);
+-- Produto
+CREATE TABLE Produto (
+   id_produto INT PRIMARY KEY,
+   tipo VARCHAR(50) NOT NULL,
+   nome VARCHAR(255) NOT NULL,
+   foto_produto VARCHAR(255),
+   descricao TEXT,
+   preco DECIMAL(10,2),
+   tipo_local VARCHAR(100),
+   endereco VARCHAR(255),
+   especificacao TEXT
+);
+-- Anuncio
+CREATE TABLE Anuncio (
+   id_anuncio INT PRIMARY KEY,
+   id_cliente INT NOT NULL,
+   titulo VARCHAR(255) NOT NULL,
+   descricao TEXT,
+   data_publicacao DATE,
+   status VARCHAR(50) DEFAULT 'disponível',
+   FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente)
+);
+-- Item_Anuncio
+CREATE TABLE Item_Anuncio (
+   id_item INT PRIMARY KEY,
+   id_anuncio INT NOT NULL,
+   id_produto INT NOT NULL,
+   quantidade INT NOT NULL,
+   descricao TEXT,
+   FOREIGN KEY (id_anuncio) REFERENCES Anuncio(id_anuncio),
+   FOREIGN KEY (id_produto) REFERENCES Produto(id_produto)
+);
+-- Promocao
+CREATE TABLE Promocao (
+   id_promocao INT PRIMARY KEY,
+   id_anuncio INT NOT NULL,
+   descricao TEXT,
+   prioridade INT,
+   data_inicio DATE,
+   data_fim DATE,
+   FOREIGN KEY (id_anuncio) REFERENCES Anuncio(id_anuncio)
+);
+-- Foto
+CREATE TABLE Foto (
+   id_fotos INT PRIMARY KEY,
+   url VARCHAR(255) NOT NULL,
+   id_produto INT NOT NULL,
+   FOREIGN KEY (id_produto) REFERENCES Anuncio(id_anuncio)
+);
+-- Reserva
+CREATE TABLE Reserva (
+    id_reserva INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT NOT NULL,
+    id_anuncio INT NOT NULL,
+    id_produto INT NOT NULL,
+    nome_produto VARCHAR(255) NOT NULL,
+    data_inicio DATETIME NOT NULL,
+    data_fim DATETIME NOT NULL,
+    hora_inicio TIME NOT NULL,
+    hora_fim TIME NOT NULL,
+    status ENUM('pendente','confirmada','cancelada') NOT NULL DEFAULT 'pendente',
+    preco_total DECIMAL(10,2) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_cliente) REFERENCES Cliente(id_cliente),
+    FOREIGN KEY (id_anuncio) REFERENCES Anuncio(id_anuncio),
+    FOREIGN KEY (id_produto) REFERENCES Produto(id_produto)
 );
 
 </code>
-
-Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
 
 
 
 
 ### 4.4. Tecnologias
 
-_Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas._
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+A solução utiliza React + TypeScript + CSS no front-end. O back-end será feito em Node.js, responsável por toda a lógica da aplicação e comunicação com o banco. A persistência dos dados será feita em um banco MySQL, onde ficam armazenadas as informações de usuários, locais, reservas e outros. O deploy será realizado localmente.
 
 
-| **Dimensão**   | **Tecnologia**  |
-| ---            | ---             |
-| SGBD           | MySQL           |
-| Front end      | HTML+CSS+JS     |
-| Back end       | Java SpringBoot |
-| Deploy         | Github Pages    |
+| **Dimensão** | **Tecnologia**    |
+|--------------|--------------------|
+| SGBD         | MySQL              |
+| Front end    | React + TS + CSS   |
+| Back end     | Node.js            |
+| Deploy       | Local              |
+
 
