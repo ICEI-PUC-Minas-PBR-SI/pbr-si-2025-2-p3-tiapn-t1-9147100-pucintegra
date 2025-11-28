@@ -2,6 +2,7 @@
 
 Esta seção apresenta a visão geral das telas principais da plataforma **Medlar**, demonstrando como o usuário interage com o sistema ao longo dos processos de autenticação, busca, agendamento e gerenciamento de atendimentos.
 
+<img width="1916" height="906" alt="Tela Inicial Medlar" src="https://github.com/user-attachments/assets/1e8a637b-60a4-4b18-87cb-0fe8d040a6ce" />
 
 ---
 
@@ -12,7 +13,7 @@ A tela principal funciona como a porta de entrada do usuário na plataforma, exi
 
 **Tela principal do sistema:**  
 
-<img width="1916" height="906" alt="Tela Inicial Medlar" src="https://github.com/user-attachments/assets/1e8a637b-60a4-4b18-87cb-0fe8d040a6ce" />
+<img width="1916" height="906" alt="Tela Inicial Medlar" src="https://github.com/user-attachments/assets/7f5c1225-81b4-42c1-bab5-201c0145b1c5" />
 
 
 ---
@@ -141,6 +142,7 @@ Exibe o calendário mensal e a lista de consultas do dia selecionado.
 ![Tela agenda paciente](docs/img/tela-agenda-paciente.png)
 
 
+
 #### **6.6.2. Detalhes da Consulta (Paciente)**
 
 **Descrição:**  
@@ -163,7 +165,8 @@ Lista todos os atendimentos agendados pelos pacientes.
 - Ações: Detalhes, Concluir, Cancelar
 
 **Tela agenda profissional:**  
-![Tela agenda profissional](docs/img/tela-agenda-profissional.png)
+
+<img width="1903" height="905" alt="Telas do Processo 6 — Agenda do Profissional" src="https://github.com/user-attachments/assets/be159e6a-9537-44a7-80b5-4adcc9c064bd" />
 
 
 #### **6.7.2. Tela de Detalhes do Atendimento (Profissional)**
