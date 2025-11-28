@@ -11,7 +11,8 @@ Esta seção apresenta a visão geral das telas principais da plataforma **Medla
 A tela principal funciona como a porta de entrada do usuário na plataforma, exibindo um menu simples e o acesso às principais áreas — como busca de profissionais, agenda e perfil.
 
 **Tela principal do sistema:**  
-![Tela principal](docs/img/tela-principal.png)
+
+<img width="1916" height="906" alt="Tela Inicial Medlar" src="https://github.com/user-attachments/assets/1e8a637b-60a4-4b18-87cb-0fe8d040a6ce" />
 
 
 ---
