@@ -44,13 +44,6 @@ A solução é composta por três módulos principais: o front-end em React, res
  **Diagrama de Classes**:
   ![Diagrama de classes](./images/diagrama-classes.png)
 
-## Modelo ER
-
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
 
 
 ### 4.3. Modelo de dados
@@ -58,14 +51,12 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER�
 
 #### 4.3.1 Modelo ER
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
+ **Diagrama de Entidade e Relacionamentos**:
+  ![Diagrama ER](./images/Colmeia.png)
 
 #### 4.3.2 Esquema Relacional
 
+**Esquema Relacional**:
 ![Esquema relacional](./images/esquema-relacional.png)
 
 
