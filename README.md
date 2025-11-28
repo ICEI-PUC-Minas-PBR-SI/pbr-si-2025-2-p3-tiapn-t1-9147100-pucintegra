@@ -24,9 +24,10 @@ inovadora para pacientes que necessitam de cuidados contínuos.
 
 *  Cleia Marcia Gomes Amaral
 
-## Instruções de utilização
+---
 
-# Instruções de Utilização do Projeto Medlar
+
+## Instruções de Utilização do Projeto Medlar
 
 Este documento fornece as instruções resumidas para instalar as dependências e executar a aplicação Medlar.
 
