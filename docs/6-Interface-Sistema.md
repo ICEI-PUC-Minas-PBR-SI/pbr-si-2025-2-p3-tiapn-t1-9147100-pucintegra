@@ -1,82 +1,176 @@
+## 6. Interface do Sistema
 
-# 6. Interface do Sistema
-
-<span style="color:red">Pré-requisitos: <a href="4-Projeto-Solucao.md"> Projeto da Solução</a></span>
-
-_Visão geral da interação do usuário por meio das telas do sistema. Apresente as principais interfaces da plataforma._
-
-## 6.1. Tela principal do sistema
-
-_Descrição da tela principal do sistema._
-
-[`Tela principal do sistema`](images/)
+Esta seção apresenta a visão geral das telas principais da plataforma **Medlar**, demonstrando como o usuário interage com o sistema ao longo dos processos de autenticação, busca, agendamento e gerenciamento de atendimentos.
 
 
-## 6.2. Telas do processo 1
+---
 
-_Descrição da tela relativa à atividade 1._
+### 6.1. Tela Principal do Sistema
 
-[`Tela da atividade 1`](images/)
+**Descrição:**  
+A tela principal funciona como a porta de entrada do usuário na plataforma, exibindo um menu simples e o acesso às principais áreas — como busca de profissionais, agenda e perfil.
 
-_Descrição da tela relativa à atividade 2._
-
-[`Tela da atividade 2`](images/)
-
-
-## 6.3. Telas do processo 2
-
-_Descrição da tela relativa à atividade 1._
-
-[`Tela da atividade 1`](images/)
-
-_Descrição da tela relativa à atividade 2._
-
-[`Tela da atividade 2`](images/)
+**Tela principal do sistema:**  
+![Tela principal](docs/img/tela-principal.png)
 
 
-## 6.4. Telas do processo 3
+---
 
-_Descrição da tela relativa à atividade 1._
+### 6.2. Telas do Processo 1 — Autenticação e Cadastro
 
-[`Tela da atividade 1`](images/)
+#### **6.2.1. Tela de Login**
 
-_Descrição da tela relativa à atividade 2._
+**Descrição:**  
+Permite que pacientes ou profissionais acessem o sistema utilizando e-mail e senha.
 
-[`Tela da atividade 2`](images/)
+- Campos: e-mail e senha  
+- Ações: Entrar, Criar cadastro
 
-
-
-## 6.5. Telas do processo 4
-
-_Descrição da tela relativa à atividade 1._
-
-[`Tela da atividade 1`](images/)
-
-_Descrição da tela relativa à atividade 2._
-
-[`Tela da atividade 2`](images/)
+**Tela de login:**  
+![Tela login](docs/img/tela-login.png)
 
 
+#### **6.2.2. Tela de Cadastro de Paciente**
 
-## 6.6. Telas do processo 5
+**Descrição:**  
+Tela utilizada para registrar novos pacientes na plataforma.
 
-_Descrição da tela relativa à atividade 1._
+- Campos: nome, CPF, data de nascimento, telefone, e-mail  
+- Endereço completo  
+- Histórico médico (opcional)
 
-[`Tela da atividade 1`](images/)
-
-_Descrição da tela relativa à atividade 2._
-
-[`Tela da atividade 2`](images/)
-
+**Tela de cadastro de paciente:**  
+![Tela cadastro paciente](docs/img/tela-cadastro-paciente.png)
 
 
-## 6.7. Telas do processo 6
+---
 
-_Descrição da tela relativa à atividade 1._
+### 6.3. Telas do Processo 2 — Gestão de Profissionais
 
-[`Tela da atividade 1`](images/)
+#### **6.3.1. Tela de Cadastro de Profissional**
 
-_Descrição da tela relativa à atividade 2._
+**Descrição:**  
+Utilizada para cadastrar profissionais de saúde, incluindo dados pessoais e profissionais.
 
-[`Tela da atividade 2`](images/)
+- Registro profissional (CRM/COREN)
+- Especialidade
+- Experiência
+- Telefone / e-mail
+- Upload de foto de perfil
 
+**Tela de cadastro de profissional:**  
+![Tela cadastro profissional](docs/img/tela-cadastro-profissional.png)
+
+
+#### **6.3.2. Tela de Perfil do Profissional**
+
+**Descrição:**  
+Exibe informações detalhadas sobre um profissional, permitindo que o paciente avalie e escolha o especialista desejado.
+
+**Tela de perfil do profissional:**  
+![Tela perfil profissional](docs/img/tela-perfil-profissional.png)
+
+
+---
+
+### 6.4. Telas do Processo 3 — Busca de Profissionais
+
+#### **6.4.1. Tela de Busca**
+
+**Descrição:**  
+Permite que o paciente filtre profissionais por especialidade, localização, disponibilidade e faixa de preço.
+
+- Listagem com foto, nome, especialidade, descrição e avaliação  
+- Botões: *Ver Perfil* e *Agendar Consulta*
+
+**Tela de busca:**  
+![Tela busca](docs/img/tela-busca.png)
+
+
+#### **6.4.2. Tela de Perfil (aberta pela busca)**
+
+**Descrição:**  
+Exibe detalhes completos do profissional dentro de um modal ou página dedicada.
+
+**Tela de perfil:**  
+![Tela perfil busca](docs/img/tela-perfil-busca.png)
+
+
+---
+
+### 6.5. Telas do Processo 4 — Solicitação de Atendimento
+
+#### **6.5.1. Tela de Solicitar Atendimento**
+
+**Descrição:**  
+Utilizada para marcar consultas com profissionais. Nesta tela, o paciente seleciona:
+
+- Profissional (preenchido automaticamente)
+- Serviço desejado
+- Data
+- Horário disponível (com base na disponibilidade real do profissional)
+- Método de pagamento
+
+**Tela solicitar atendimento:**  
+![Tela solicitar atendimento](docs/img/tela-solicitar-atendimento.png)
+
+
+#### **6.5.2. Tela de Confirmação / Sucesso**
+
+**Descrição:**  
+Após enviar o agendamento, o sistema confirma e direciona o paciente para sua agenda.
+
+**Tela confirmação:**  
+![Tela confirmação](docs/img/tela-confirmacao.png)
+
+
+---
+
+### 6.6. Telas do Processo 5 — Agenda do Paciente
+
+#### **6.6.1. Tela de Agenda do Paciente**
+
+**Descrição:**  
+Exibe o calendário mensal e a lista de consultas do dia selecionado.
+
+- Destaque de dias com consultas  
+- Lista com horário, profissional e status  
+
+**Tela agenda paciente:**  
+![Tela agenda paciente](docs/img/tela-agenda-paciente.png)
+
+
+#### **6.6.2. Detalhes da Consulta (Paciente)**
+
+**Descrição:**  
+Mostra informações completas sobre a consulta selecionada.
+
+**Tela detalhes consulta paciente:**  
+![Tela detalhes paciente](docs/img/tela-detalhes-paciente.png)
+
+
+---
+
+### 6.7. Telas do Processo 6 — Agenda do Profissional
+
+#### **6.7.1. Tela de Consultas Pendentes**
+
+**Descrição:**  
+Lista todos os atendimentos agendados pelos pacientes.
+
+- Colunas: data, paciente, serviço, valor, status, pagamento  
+- Ações: Detalhes, Concluir, Cancelar
+
+**Tela agenda profissional:**  
+![Tela agenda profissional](docs/img/tela-agenda-profissional.png)
+
+
+#### **6.7.2. Tela de Detalhes do Atendimento (Profissional)**
+
+**Descrição:**  
+Permite ao profissional visualizar informações completas e atualizar o status da consulta.
+
+**Tela detalhes profissional:**  
+![Tela detalhes profissional](docs/img/tela-detalhes-profissional.png)
+
+---
