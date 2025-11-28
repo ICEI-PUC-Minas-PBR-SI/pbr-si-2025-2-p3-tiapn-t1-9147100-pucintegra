@@ -7,16 +7,16 @@
 > Apresente a divisão de papéis entre os membros do grupo em cada sprint. O desejável é que, em cada sprint, o aluno assuma papéis diferentes na disciplina. Siga o modelo do exemplo abaixo:
 
 ### Sprint 1
-- _Scrum master_: AlunaX
-- Protótipos: AlunoY
-- Testes: AlunoK
-- Documentação: AlunaZ
+- _Scrum master_: Pablo Vinícius Lazaro da Silva
+- Protótipos: Brenda Vieira Nascimento Santos 
+- Testes: Pedro Henrique Lopes Silva
+- Documentação: Pedro Henrique Lima Bonfim
 
 ### Sprint 2
-- _Scrum master_: AlunaY
-- Desenvolvedor _front-end_: AlunoX
-- Desenvolvedor _back-end_: AlunoK
-- Testes: AlunaZ
+- _Scrum master_: Pablo Vinícius Lazaro da Silva
+- Desenvolvedor _front-end_: Brenda Vieira Nascimento Santos
+- Desenvolvedor _back-end_: Pablo Vinícius/Pedro Henrique Lopes Silva
+- Testes: Gustavo Souza Rodrigues/ Fernando Rafael da Silva
 
 ## 5.1. Quadro de tarefas
 
