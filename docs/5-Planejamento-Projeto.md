@@ -31,7 +31,7 @@ Atualizado em: 09/10/2025
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----:| :----:           |
 | Carlos        | Problema         |    08/08/2025  | 22/08/2025 | ✔️    | 20/08/2025      |
-| Daniel        | Listagem dos 5 processos de negócio escolhidos | 22/08/2025 | 10/02/2024  | ✔️    |      18/08/2025           |
+| Daniel        | Listagem dos 5 processos de negócio escolhidos | 22/08/2025 | 22/08/2025  | ✔️    |      18/08/2025           |
 | Gabriel       | Contextualização |    08/08/2025  | 22/08/2025 | ✔️    |  19/08/2025               |
 | Poliana       | Objetivos        |    08/08/2025  | 22/08/2025 | ✔️    |  19/08/2025     |
 | Rafael        | Justificativas   |    08/08/2025  | 22/08/2025 | ✔️    |   21/08/2025    |
@@ -56,11 +56,11 @@ Atualizado em: 09/10/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-| Carlos        | Processo 2 - Quadro de atividades | 26/10/2025     | 03/11/2025 | ✔️    | 05/01/2005      |
-| Daniel        | Processo 2 - Wireframes    | 03/02/2024     | 03/11/2025 | ✔️    |                 |
-| Gabriel       | Processo 2 - BPMN; Correções; Modelagem. Processo 3 - Modelagem  | 26/10/2025     | 03/11/2025 | ✔️     |                 |
-| Poliana       | Processo 2 - Quadro de atividades; Detalhamento de Atividades  |    26/10/2025        | 03/11/2025 | ✔️    |       |
-| Rafael        | Processo 2 - Correções. Processo 3 - Modelagem; BPMN; Wireframes; Quadro de atividades; Detalhamento  |    26/10/2025        | 03/11/2025 | ✔️    |       |
+| Carlos        | Processo 2 - Quadro de atividades | 26/10/2025     | 03/11/2025 | ✔️    | 03/11/2025      |
+| Daniel        | Processo 2 - Wireframes    | 03/02/2024     | 03/11/2025 | ✔️    | 03/11/2025                |
+| Gabriel       | Processo 2 - BPMN; Correções; Modelagem. Processo 3 - Modelagem  | 26/10/2025     | 03/11/2025 | ✔️     |  03/11/2025               |
+| Poliana       | Processo 2 - Quadro de atividades; Detalhamento de Atividades  |    26/10/2025        | 03/11/2025 | ✔️    |  03/11/2025     |
+| Rafael        | Processo 2 - Correções. Processo 3 - Modelagem; BPMN; Wireframes; Quadro de atividades; Detalhamento  |    26/10/2025        | 03/11/2025 | ✔️    |  03/11/2025     |
 | Yanne         | -  |    -       | - | -    |   -    |
 
 ## Sprint 4
