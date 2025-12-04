@@ -1,4 +1,3 @@
-// medlar-login.js
 
 const BASE_URL = "http://localhost:3000"; // API backend
 
@@ -18,28 +17,40 @@ function mostrarTela(idTela) {
  * Faz login real contra o backend /api/login
  */
 async function fazerLogin(email, senha) {
+  let resposta;
+
+  // 1) Erro de rede / servidor fora do ar
   try {
-    const resposta = await fetch(`${BASE_URL}/api/login`, {
+    resposta = await fetch(`${BASE_URL}/api/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, senha }),
     });
-
-    if (!resposta.ok) {
-      let erro = "Falha no login.";
-      try {
-        const data = await resposta.json();
-        erro = data.error || erro;
-      } catch {}
-
-      throw new Error(erro);
-    }
-
-    return await resposta.json(); // {id, nome, email, tipo, status}
   } catch (e) {
     console.error("Erro de rede ou servidor:", e);
-    throw new Error("Erro ao conectar à API.");
+    // aqui é problema de conexão, não de senha/e-mail
+    throw new Error(
+      "Não foi possível conectar ao servidor. Verifique se o sistema está rodando e tente novamente."
+    );
   }
+
+  // 2) Tenta ler o JSON da resposta (mesmo em caso de erro 4xx/5xx)
+  let data = {};
+  try {
+    data = await resposta.json();
+  } catch (e) {
+    // se não vier JSON, mantém data como {}
+  }
+
+  // 3) Se a resposta NÃO for 200..299, usamos a mensagem da API
+  if (!resposta.ok) {
+    const mensagem =
+      data.error || "Falha ao fazer login. Tente novamente em alguns instantes.";
+    throw new Error(mensagem);
+  }
+
+  // 4) Sucesso → retorna os dados do usuário
+  return data; // { id, nome
 }
 
 /**

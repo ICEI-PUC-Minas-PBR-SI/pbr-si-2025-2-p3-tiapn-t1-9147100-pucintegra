@@ -5,7 +5,7 @@ const DB_NAME = "medlar";
 const pool = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "@1997",
+  password: "1604pv",
   database: DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,

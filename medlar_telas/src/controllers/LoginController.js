@@ -8,19 +8,39 @@ module.exports = {
       const { email, senha } = req.body;
 
       if (!email || !senha)
-        return res.status(400).json({ error: "E-mail e senha são obrigatórios." });
+        return res
+          .status(400)
+          .json({ error: "E-mail e senha são obrigatórios." });
 
-      const user = await LoginModel.autenticar(email, senha);
+      const { user, errorType } = await LoginModel.autenticar(email, senha);
 
-      if (!user)
-        return res.status(401).json({ error: "Credenciais inválidas." });
+      if (errorType === "EMAIL_NOT_FOUND") {
+        return res
+          .status(404)
+          .json({ error: "Este e-mail ainda não está cadastrado. Que tal criar sua conta agora? 😊" });
+      }
 
-      // Tratamento de status
+      if (errorType === "WRONG_PASSWORD") {
+        return res
+          .status(401)
+          .json({ error: "Senha incorreta. Tente novamente." });
+      }
+
+      if (!user) {
+        return res
+          .status(401)
+          .json({ error: "Não foi possível autenticar." });
+      }
+
       if (user.status === "pendente")
-        return res.status(403).json({ error: "Cadastro pendente de aprovação." });
+        return res
+          .status(403)
+          .json({ error: "Cadastro pendente de aprovação." });
 
       if (user.status === "rejeitado")
-        return res.status(403).json({ error: "Cadastro rejeitado." });
+        return res
+          .status(403)
+          .json({ error: "Cadastro rejeitado." });
 
       return res.json({
         ok: true,
@@ -33,7 +53,9 @@ module.exports = {
 
     } catch (e) {
       console.error("Erro no login:", e);
-      return res.status(500).json({ error: "Erro interno no login." });
+      return res
+        .status(500)
+        .json({ error: "Erro interno no servidor." });
     }
   }
 };

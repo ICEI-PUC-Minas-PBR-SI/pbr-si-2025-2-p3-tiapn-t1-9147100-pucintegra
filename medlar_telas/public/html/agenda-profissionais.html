@@ -20,31 +20,31 @@
 
             <nav class="nav">
                 <a href="/public/html/home-profissional.html" class="nav-link">Início</a>
-                 <!-- Menu de Perfil do Usuário -->
-            <div class="profile-menu-container">
-                <div class="profile-avatar" id="profile-avatar">
-                    P
-                </div>
-                <div class="profile-dropdown" id="profile-dropdown">
-                    <div class="profile-info">
-                        <div class="profile-info-avatar">P</div>
-                        <div class="profile-info-text">
-                            <p class="profile-name">Profissional Logado</p>
-                            <p class="profile-email">profissional@medlar.com</p>
-                        </div>
+                <!-- Menu de Perfil do Usuário -->
+                <div class="profile-menu-container">
+                    <div class="profile-avatar" id="profile-avatar">
+                        P
                     </div>
-                    <a href="#" class="dropdown-item">
-                        <span class="icon">👤</span> Ver Perfil
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <span class="icon">⚙️</span> Configurações
-                    </a>
-                    <a href="/public/html/login.html" class="dropdown-item logout">
-                        <span class="icon">🚪</span> Sair
-                    </a>
+                    <div class="profile-dropdown" id="profile-dropdown">
+                        <div class="profile-info">
+                            <div class="profile-info-avatar">P</div>
+                            <div class="profile-info-text">
+                                <p class="profile-name">Profissional Logado</p>
+                                <p class="profile-email">profissional@medlar.com</p>
+                            </div>
+                        </div>
+                        <a href="#" class="dropdown-item">
+                            <span class="icon">👤</span> Ver Perfil
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span class="icon">⚙️</span> Configurações
+                        </a>
+                        <a href="/public/html/login.html" class="dropdown-item logout">
+                            <span class="icon">🚪</span> Sair
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <!-- Fim do Menu de Perfil -->
+                <!-- Fim do Menu de Perfil -->
             </nav>
         </header>
 
@@ -56,19 +56,35 @@
                 <div class="appointments-section">
                     <h2 class="appointments-title">Consultas Agendadas pelos Pacientes</h2>
 
-                    <ul class="appointment-list" id="appointments-list">
-                        <!-- Os agendamentos serão injetados aqui pelo JavaScript -->
-                    </ul>
+                    <div class="appointments-table-wrapper">
+                        <table class="appointments-table">
+                            <thead>
+                                <tr>
+                                    <th>Data / Hora</th>
+                                    <th>Paciente</th>
+                                    <th>Serviço</th>
+                                    <th>Valor</th>
+                                    <th>Pagamento</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointments-body">
+                                <!-- Linhas serão injetadas pelo JavaScript -->
+                            </tbody>
+                        </table>
+                        <p id="appointments-message" class="appointments-message"></p>
+                    </div>
                 </div>
 
                 <div class="text-center mt-2">
-                    <button class="btn-secondary">Voltar à Agenda</button>
+                    <button class="btn-secondary" id="btn-voltar">Voltar à Agenda</button>
                 </div>
             </div>
         </main>
     </div>
 
-    <!-- Modal do Paciente -->
+    <!-- Modal do Paciente (mantido) -->
     <div class="modal" id="patient-modal">
         <div class="modal-content">
             <button class="modal-close">&times;</button>
@@ -99,7 +115,13 @@
             </div>
         </div>
     </div>
+
     <script defer src="/public/js/agenda-profissionais.js"></script>
     <script defer src="/public/js/profile-menu.js"></script>
+    <script>
+    document.getElementById("btn-voltar").addEventListener("click", () => {
+        window.location.href = "/public/html/home-profissional.html";
+    });
+    </script>
 </body>
 </html>

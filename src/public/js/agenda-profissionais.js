@@ -69,103 +69,115 @@ document.addEventListener("DOMContentLoaded", () => {
 
     messageEl.textContent = "";
 
-    agendamentos.forEach((agendamento) => {
-        const tr = document.createElement("tr");
-        tr.setAttribute("data-id", agendamento.id_agendamento);
-
-        const dataHora = new Date(agendamento.data_hora);
-        const dataFormatada = dataHora.toLocaleDateString("pt-BR");
-        const horaFormatada = dataHora.toLocaleTimeString("pt-BR", {
-            hour: "2-digit",
-            minute: "2-digit",
-        });
-
-        const valorFormatado = parseFloat(agendamento.valor || 0)
-            .toFixed(2)
-            .replace(".", ",");
-
-        let statusClass = "";
-        let statusText = "";
-        let pagamentoText = "";
-        let actionsHtml = "";
-
-        switch (agendamento.status) {
-            case "pendente":
-                statusClass = "status-badge status-pending";
-                statusText = "Pendente";
-                pagamentoText = agendamento.status_pagamento || "-";
-                actionsHtml = `
-                    <div class="actions-container">
-                        <button class="action-btn btn-details" data-id="${agendamento.id_agendamento}">Detalhes</button>
-                        <button class="action-btn btn-done" data-id="${agendamento.id_agendamento}">Concluir</button>
-                        <button class="action-btn btn-cancel" data-id="${agendamento.id_agendamento}">Cancelar</button>
-                    </div>
-                `;
-                break;
-
-            case "confirmado":
-                statusClass = "status-badge status-accepted";
-                statusText = "Confirmado";
-                pagamentoText = agendamento.status_pagamento === "aprovado" ? "Aprovado" : "Pendente";
-                actionsHtml = `
-                    <div class="actions-container">
-                        <button class="action-btn btn-details" data-id="${agendamento.id_agendamento}">Detalhes</button>
-                        <button class="action-btn btn-done" data-id="${agendamento.id_agendamento}">Concluir</button>
-                        <button class="action-btn btn-cancel" data-id="${agendamento.id_agendamento}">Cancelar</button>
-                    </div>
-                `;
-                break;
-
-            case "concluido":
-                statusClass = "status-badge status-accepted";
-                statusText = "Concluído";
-                pagamentoText = "Pago";
-                actionsHtml = `
-                    <div class="actions-container">
-                        <button class="action-btn btn-details" data-id="${agendamento.id_agendamento}">Detalhes</button>
-                    </div>
-                `;
-                break;
-
-            case "cancelado":
-            case "rejeitado":
-                statusClass = "status-badge status-rejected";
-                statusText = "Cancelado / Rejeitado";
-                pagamentoText = "-";
-                actionsHtml = `
-                    <div class="actions-container">
-                        <button class="action-btn btn-details" data-id="${agendamento.id_agendamento}">Detalhes</button>
-                    </div>
-                `;
-                break;
-
-            default:
-                statusClass = "status-badge status-pending";
-                statusText = agendamento.status || "Status não informado";
-                pagamentoText = agendamento.status_pagamento || "-";
-                actionsHtml = `
-                    <div class="actions-container">
-                        <button class="action-btn btn-details" data-id="${agendamento.id_agendamento}">Detalhes</button>
-                    </div>
-                `;
-                break;
-        }
-
-        tr.innerHTML = `
-            <td>${dataFormatada}<br><small>${horaFormatada}</small></td>
-            <td>
-                <strong>${agendamento.nome_paciente}</strong><br>
-                <small>${agendamento.email_paciente}</small>
-            </td>
-            <td>${agendamento.servico}</td>
-            <td>R$ ${valorFormatado}</td>
-            <td>${pagamentoText}</td>
-            <td><span class="${statusClass}">${statusText}</span></td>
-            <td>${actionsHtml}</td>
-        `;
-
-        tbody.appendChild(tr);
-    });
+	    agendamentos.forEach((agendamento) => {
+	        // Filtra agendamentos que não devem aparecer na agenda principal do profissional
+	        // (ex: cancelado ou rejeitado, que podem ser vistos em um histórico separado)
+	        if (agendamento.status === "cancelado" || agendamento.status === "rejeitado") {
+	            return; // Pula a renderização
+	        }
+	
+	        const tr = document.createElement("tr");
+	        tr.setAttribute("data-id", agendamento.id_agendamento);
+	
+	        const dataHora = new Date(agendamento.data_hora);
+	        const dataFormatada = dataHora.toLocaleDateString("pt-BR");
+	        const horaFormatada = dataHora.toLocaleTimeString("pt-BR", {
+	            hour: "2-digit",
+	            minute: "2-digit",
+	        });
+	
+	        const valorFormatado = parseFloat(agendamento.valor || 0)
+	            .toFixed(2)
+	            .replace(".", ",");
+	
+	        let statusClass = "";
+	        let statusText = "";
+	        let pagamentoText = "";
+	        let actionsHtml = "";
+	
+	        switch (agendamento.status) {
+	            case "pendente":
+	                statusClass = "status-badge status-pending";
+	                statusText = "Pendente";
+	                // Verifica se é um agendamento pendente de pagamento ou de confirmação
+	                if (agendamento.status_pagamento === "pendente") {
+	                    pagamentoText = "Aguardando Pagamento";
+	                    // Se o pagamento está pendente, o profissional não deve confirmar/rejeitar ainda
+	                    actionsHtml = `
+		                    <div class="actions-container">
+		                        <button class="action-btn btn-details" data-id="${agendamento.id_agendamento}">Detalhes</button>
+		                    </div>
+		                `;
+	                } else {
+	                    // Agendamento pendente de confirmação do profissional (se o fluxo fosse esse)
+	                    pagamentoText = agendamento.status_pagamento || "-";
+	                    actionsHtml = `
+		                    <div class="actions-container">
+		                        <button class="action-btn btn-accept" data-id="${agendamento.id_agendamento}">Confirmar</button>
+		                        <button class="action-btn btn-reject" data-id="${agendamento.id_agendamento}">Rejeitar</button>
+		                        <button class="action-btn btn-details" data-id="${agendamento.id_agendamento}">Detalhes</button>
+		                    </div>
+		                `;
+	                }
+	                break;
+	
+	            case "confirmado":
+	                statusClass = "status-badge status-accepted";
+	                statusText = "Confirmado";
+	                // Se não tem status_pagamento, assumimos que foi o fluxo sem pagamento (Dinheiro na visita)
+	                if (!agendamento.status_pagamento) {
+	                    pagamentoText = "A Pagar na Visita";
+	                } else {
+	                    pagamentoText = agendamento.status_pagamento === "aprovado" ? "Aprovado" : "Pendente";
+	                }
+	                
+	                actionsHtml = `
+		                    <div class="actions-container">
+		                        <button class="action-btn btn-details" data-id="${agendamento.id_agendamento}">Detalhes</button>
+		                        <button class="action-btn btn-done" data-id="${agendamento.id_agendamento}">Concluir</button>
+		                        <button class="action-btn btn-cancel" data-id="${agendamento.id_agendamento}">Cancelar</button>
+		                    </div>
+		                `;
+	                break;
+	
+	            case "concluido":
+	                statusClass = "status-badge status-accepted";
+	                statusText = "Concluído";
+	                pagamentoText = "Pago";
+	                actionsHtml = `
+	                    <div class="actions-container">
+	                        <button class="action-btn btn-details" data-id="${agendamento.id_agendamento}">Detalhes</button>
+	                    </div>
+	                `;
+	                break;
+	
+	            default:
+	                statusClass = "status-badge status-pending";
+	                statusText = agendamento.status || "Status não informado";
+	                pagamentoText = agendamento.status_pagamento || "-";
+	                actionsHtml = `
+	                    <div class="actions-container">
+	                        <button class="action-btn btn-details" data-id="${agendamento.id_agendamento}">Detalhes</button>
+	                    </div>
+	                `;
+	                break;
+	        }
+	
+	        tr.innerHTML = `
+	            <td>${dataFormatada}<br><small>${horaFormatada}</small></td>
+	            <td>
+	                <strong>${agendamento.nome_paciente}</strong><br>
+	                <small>${agendamento.email_paciente}</small>
+	            </td>
+	            <td>${agendamento.servico}</td>
+	            <td>R$ ${valorFormatado}</td>
+	            <td>${pagamentoText}</td>
+	            <td><span class="${statusClass}">${statusText}</span></td>
+	            <td>${actionsHtml}</td>
+	        `;
+	
+	        tbody.appendChild(tr);
+	    });
 
     // Detalhes
     document.querySelectorAll(".btn-details").forEach((btn) => {
@@ -186,19 +198,33 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Concluir
-    document.querySelectorAll(".btn-done").forEach((btn) => {
-        btn.addEventListener("click", () =>
-            updateAppointmentStatus(btn.dataset.id, "concluir")
-        );
-    });
-
-    // Cancelar Consulta
-    document.querySelectorAll(".btn-cancel").forEach((btn) => {
-        btn.addEventListener("click", () =>
-            updateAppointmentStatus(btn.dataset.id, "cancelar")
-        );
-    });
+	    // Aceitar (Confirmar)
+	    document.querySelectorAll(".btn-accept").forEach((btn) => {
+	        btn.addEventListener("click", () =>
+	            updateAppointmentStatus(btn.dataset.id, "aceitar")
+	        );
+	    });
+	
+	    // Rejeitar (Cancelar)
+	    document.querySelectorAll(".btn-reject").forEach((btn) => {
+	        btn.addEventListener("click", () =>
+	            updateAppointmentStatus(btn.dataset.id, "rejeitar")
+	        );
+	    });
+	
+	    // Concluir
+	    document.querySelectorAll(".btn-done").forEach((btn) => {
+	        btn.addEventListener("click", () =>
+	            updateAppointmentStatus(btn.dataset.id, "concluir")
+	        );
+	    });
+	
+	    // Cancelar Consulta (pelo profissional, para agendamentos confirmados)
+	    document.querySelectorAll(".btn-cancel").forEach((btn) => {
+	        btn.addEventListener("click", () =>
+	            updateAppointmentStatus(btn.dataset.id, "cancelar")
+	        );
+	    });
 }
 
     // ---------------------------------------------------

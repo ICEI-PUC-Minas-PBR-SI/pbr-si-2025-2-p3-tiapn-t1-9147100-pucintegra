@@ -1,44 +1,60 @@
 // ===========================================================
-// server.js (versão organizada)
+// server.js  (versão organizada e comentada)
 // ===========================================================
 
 const express = require("express");
 const mysql = require("mysql2/promise");
 const cors = require("cors");
 const path = require("path");
-// const routes = require("./routes");
+
+const LoginController = require("./controllers/LoginController");
 
 const app = express();
 
-// -----------------------------------------------------------
-// Middlewares
-// -----------------------------------------------------------
-app.use(cors());
+// ===========================================================
+// MIDDLEWARES BÁSICOS
+// ===========================================================
+
+// Libera requisições de outras origens (ex.: 127.0.0.1, localhost, etc.)
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  })
+);
+
+// Permite JSON no corpo das requisições
 app.use(express.json({ limit: "2mb" }));
 
-// Servir arquivos estáticos
-app.use(express.static(path.join(__dirname, "../public")));
+// Arquivos estáticos da pasta /public acessíveis em /public/...
+// Ex.: /public/html/buscar-profissionais.html
+app.use("/public", express.static(path.join(__dirname, "../public")));
 
-// Util: remove tudo que não for número
+// ===========================================================
+// HELPER
+// ===========================================================
+
 const onlyDigits = (s) => (s || "").toString().replace(/\D/g, "");
 
-// -----------------------------------------------------------
-// Conexão MySQL
-// -----------------------------------------------------------
+// ===========================================================
+// BANCO DE DADOS (MySQL)
+// ===========================================================
+
 const DB_NAME = "medlar";
 
 const pool = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "@1997",
+  password: "1604pv",
   database: DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  dateStrings: true,
+  dateStrings: true
 });
 
-// Flags detectadas dinamicamente
+// Flags só para log informativo
 let HAS_PROF_ENDERECO = false;
 let HAS_PROF_REGISTRO = false;
 
@@ -53,19 +69,24 @@ async function detectColumns() {
       [DB_NAME]
     );
 
-    const names = new Set(rows.map(r => r.COLUMN_NAME));
-
+    const names = new Set(rows.map((r) => r.COLUMN_NAME));
     HAS_PROF_ENDERECO = names.has("endereco");
     HAS_PROF_REGISTRO = names.has("registro_profissional");
 
-    console.log("ℹ️ profissional.endereco:", HAS_PROF_ENDERECO ? "OK" : "NÃO EXISTE");
-    console.log("ℹ️ profissional.registro_profissional:", HAS_PROF_REGISTRO ? "OK" : "NÃO EXISTE");
+    console.log(
+      "ℹ️ profissional.endereco:",
+      HAS_PROF_ENDERECO ? "OK" : "NÃO EXISTE"
+    );
+    console.log(
+      "ℹ️ profissional.registro_profissional:",
+      HAS_PROF_REGISTRO ? "OK" : "NÃO EXISTE"
+    );
   } catch (e) {
     console.warn("⚠️ Falha ao detectar colunas do profissional:", e.message);
   }
 }
 
-// Boot inicial
+// Testa conexão inicial
 (async () => {
   try {
     const conn = await pool.getConnection();
@@ -74,54 +95,36 @@ async function detectColumns() {
 
     console.log(`✅ Conectado ao MySQL (${DB_NAME})`);
     await detectColumns();
-
   } catch (err) {
     console.error("❌ Falha ao conectar no MySQL:", err.message);
   }
 })();
 
-// -----------------------------------------------------------
-// Rotas
-// -----------------------------------------------------------
+// ===========================================================
+// ROTAS DE API
+// ===========================================================
+
+// Busca de profissionais (usada na tela buscar-profissionais)
 app.use("/api/busca", require("./routes/busca.routes"));
+
+// Agendamentos (solicitar / gerenciar atendimentos)
 app.use("/api/agendamentos", require("./routes/agendamento.routes"));
+
+// Serviços (lista de serviços ofertados)
 app.use("/api/servicos", require("./routes/servicos.routes"));
 
-// -----------------------------------------------------------
-// Healthcheck
-// -----------------------------------------------------------
-app.get("/api/ping", (_req, res) => res.json({ ok: true }));
+// LOGIN
+app.post("/api/login", LoginController.login);
 
-// -----------------------------------------------------------
-// Rota raiz → carrega public/html/index.html
-// -----------------------------------------------------------
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/html/index.html"));
+// Healthcheck simples
+app.get("/api/ping", (_req, res) => {
+  res.json({ ok: true });
 });
-
-// -----------------------------------------------------------
-// Util: Montar endereço
-// -----------------------------------------------------------
-function montarEndereco({ rua, numero, bairro, cidadeUf, cep }) {
-  const p1 = [];
-  if (rua) p1.push(String(rua).trim());
-  if (numero) p1.push(String(numero).trim());
-  const linha1 = p1.join(", ");
-
-  const linha2 = [bairro, cidadeUf]
-    .filter(Boolean)
-    .map(s => String(s).trim())
-    .join(", ");
-
-  const base = [linha1, linha2].filter(Boolean).join(" - ");
-
-  const cepFmt = onlyDigits(cep || "");
-  return cepFmt ? `${base} - ${cepFmt}` : base;
-}
 
 // ===========================================================
 // PACIENTES
 // ===========================================================
+
 app.post("/api/pacientes", async (req, res) => {
   try {
     const {
@@ -140,27 +143,28 @@ app.post("/api/pacientes", async (req, res) => {
       senha_pac
     } = req.body || {};
 
-    // Campos obrigatórios
-    if (!nome_completo_pac || !cpf_pac || !data_nascimento_pac || !telefone_pac || !email_pac || !senha_pac) {
+    // Campos mínimos obrigatórios
+    if (
+      !nome_completo_pac ||
+      !cpf_pac ||
+      !data_nascimento_pac ||
+      !telefone_pac ||
+      !email_pac ||
+      !senha_pac
+    ) {
       return res.status(400).json({ error: "Campos obrigatórios faltando." });
     }
 
     const cpf = onlyDigits(cpf_pac).slice(0, 11);
     const telefone = onlyDigits(telefone_pac).slice(0, 20);
-    const numero = numero_pac ? onlyDigits(numero_pac).slice(0, 6) : "";
 
-    const enderecoFull = montarEndereco({
-      rua: endereco_pac,
-      numero,
-      bairro: bairro_pac,
-      cidadeUf: cidade_pac,
-      cep: cep_pac
-    });
+    // Endereço já vem montado do front (rua + número + bairro + complemento)
+    const enderecoFull = endereco_pac;
 
     const sql = `
       INSERT INTO paciente
-        (nome, cpf, data_nascimento, telefone, email, endereco, senha)
-      VALUES (?, ?, ?, ?, ?, ?, ?)
+        (nome, cpf, data_nascimento, telefone, email, endereco, historico_medico, senha)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
     const params = [
@@ -170,12 +174,12 @@ app.post("/api/pacientes", async (req, res) => {
       telefone,
       String(email_pac).trim(),
       enderecoFull,
+      historico_medico_pac || null,
       senha_pac
     ];
 
     const [result] = await pool.execute(sql, params);
     res.status(201).json({ id_paciente: result.insertId });
-
   } catch (err) {
     console.error("❌ Erro ao inserir paciente:", err.message);
     res.status(500).json({ error: "Erro interno ao salvar paciente." });
@@ -183,126 +187,33 @@ app.post("/api/pacientes", async (req, res) => {
 });
 
 // ===========================================================
-// PROFISSIONAIS
+// PROFISSIONAIS (com multer nas rotas específicas)
 // ===========================================================
-app.post("/api/profissionais", async (req, res) => {
-  try {
-    const {
-      nome_completo_prof,
-      sobrenome_prof,
-      registro_profissional,
-      cpf_prof,
-      email_prof,
-      telefone_prof,
-      areas_atendimento,
-      senha_prof,
-      cep_prof,
-      cidade_prof,
-      bairro_prof,
-      endereco_prof,
-      numero_prof
-    } = req.body || {};
 
-    if (!nome_completo_prof || !sobrenome_prof || !cpf_prof || !email_prof || !telefone_prof) {
-      return res.status(400).json({ error: "Campos obrigatórios faltando." });
-    }
+app.use("/api/profissionais", require("./routes/profissional.routes"));
 
-    const nomeFull = `${String(nome_completo_prof).trim()} ${String(sobrenome_prof).trim()}`.trim();
-    const cpf = onlyDigits(cpf_prof).slice(0, 11);
-    const telefone = onlyDigits(telefone_prof).slice(0, 20);
+// ===========================================================
+// ADMIN
+// ===========================================================
 
-    const especialidade = (areas_atendimento || "").toString().slice(0, 50);
+app.use("/api/admin", require("./routes/admin.routes"));
 
-    const numero = numero_prof ? onlyDigits(numero_prof).slice(0, 6) : "";
-    const enderecoFull = montarEndereco({
-      rua: endereco_prof,
-      numero,
-      bairro: bairro_prof,
-      cidadeUf: cidade_prof,
-      cep: cep_prof
-    });
+// ===========================================================
+// PÁGINA INICIAL (INDEX.HTML)
+// ===========================================================
 
-    // Montagem dinâmica de colunas
-    const cols = ["nome", "cpf", "especialidade", "telefone", "email", "senha"];
-    const vals = [nomeFull, cpf, especialidade || null, telefone, String(email_prof).trim(), senha_prof || null];
-
-    if (HAS_PROF_REGISTRO) {
-      cols.push("registro_profissional");
-      vals.push((registro_profissional || "").toString().slice(0, 40) || null);
-    }
-
-    if (HAS_PROF_ENDERECO) {
-      cols.push("endereco");
-      vals.push(enderecoFull || null);
-    }
-
-    const placeholders = cols.map(() => "?").join(", ");
-    const sql = `INSERT INTO profissional (${cols.join(", ")}) VALUES (${placeholders})`;
-
-    const [result] = await pool.execute(sql, vals);
-    res.status(201).json({ id_profissional: result.insertId });
-
-  } catch (err) {
-    console.error("❌ Erro ao inserir profissional:", err.message);
-    res.status(500).json({ error: "Erro interno ao salvar profissional." });
-  }
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/html/index.html"));
 });
 
 // ===========================================================
-// SERVIÇOS
+// SUBIR SERVIDOR
 // ===========================================================
-app.get("/api/servicos", async (_req, res) => {
-  try {
-    const [rows] = await pool.query("SELECT * FROM servico LIMIT 100");
-    res.json(rows);
 
-  } catch (e) {
-    console.error("❌ Erro ao listar serviços:", e.message);
-    res.status(500).json({ error: "Erro ao listar serviços." });
-  }
-});
-
-// ===========================================================
-// LOGIN
-// ===========================================================
-app.post("/api/login", async (req, res) => {
-  try {
-    const { email, senha } = req.body || {};
-
-    if (!email || !senha) {
-      return res.status(400).json({ error: "E-mail e senha são obrigatórios." });
-    }
-
-    const [pac] = await pool.execute(
-      "SELECT id_paciente AS id, nome, email FROM paciente WHERE email = ? AND senha = ? LIMIT 1",
-      [email, senha]
-    );
-
-    if (pac.length > 0) {
-      return res.json({ ok: true, tipo: "paciente", ...pac[0] });
-    }
-
-    const [prof] = await pool.execute(
-      "SELECT id_profissional AS id, nome, email FROM profissional WHERE email = ? AND senha = ? LIMIT 1",
-      [email, senha]
-    );
-
-    if (prof.length > 0) {
-      return res.json({ ok: true, tipo: "profissional", ...prof[0] });
-    }
-
-    return res.status(401).json({ error: "Credenciais inválidas." });
-
-  } catch (err) {
-    console.error("❌ Erro no login:", err.message);
-    res.status(500).json({ error: "Erro interno no login." });
-  }
-});
-
-// -----------------------------------------------------------
-// Start Server
-// -----------------------------------------------------------
 const PORT = 3000;
+
 app.listen(PORT, () => {
   console.log(`🚀 API rodando em http://localhost:${PORT}`);
 });
+
+

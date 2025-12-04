@@ -46,7 +46,7 @@ const DB_NAME = "medlar";
 const pool = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "@1997",
+  password: "1604pv",
   database: DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
@@ -215,3 +215,5 @@ const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`🚀 API rodando em http://localhost:${PORT}`);
 });
+
+

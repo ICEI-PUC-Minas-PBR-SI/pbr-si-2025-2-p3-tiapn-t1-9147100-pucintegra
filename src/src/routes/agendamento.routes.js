@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const { pool } = require("../config/db");
+const AgendamentoController = require("../controllers/AgendamentoController");
 
 /**
  * ==========================================================
@@ -150,72 +151,33 @@ router.get("/paciente/:id_paciente", async (req, res) => {
 /**
  * ==========================================================
  * POST /api/agendamentos
- * body: { id_paciente, id_profissional, id_servico, data_hora, metodo_pagamento }
+ * body: { id_paciente, id_profissional, id_servico, data_hora, requer_pagamento }
+ * Chama o controller que gerencia o fluxo de pagamento ou confirmação direta.
  * ==========================================================
  */
-router.post("/", async (req, res) => {
-  try {
-    const {
-      id_paciente,
-      id_profissional,
-      id_servico,
-      data_hora,
-      metodo_pagamento, // vem do front, mas não existe coluna na tabela agendamento
-    } = req.body || {};
+router.post("/", AgendamentoController.solicitar);
 
-    if (
-      !id_paciente ||
-      !id_profissional ||
-      !id_servico ||
-      !data_hora ||
-      !metodo_pagamento
-    ) {
-      return res.status(400).json({
-        error:
-          "id_paciente, id_profissional, id_servico, data_hora e metodo_pagamento são obrigatórios.",
-      });
-    }
+// Rotas de Ação (PUT)
+router.put("/aceitar/:id_agendamento", AgendamentoController.aceitar);
+router.put("/rejeitar/:id_agendamento", AgendamentoController.rejeitar);
+router.put("/concluir/:id_agendamento", AgendamentoController.concluir);
+router.put("/cancelar/:id_agendamento", AgendamentoController.cancelar);
 
-    const [servRows] = await pool.query(
-      "SELECT valor_base FROM servico WHERE id_servico = ?",
-      [id_servico]
-    );
+/**
+ * ==========================================================
+ * POST /api/agendamentos/avaliar/:id_agendamento
+ * body: { id_paciente, nota, comentario }
+ * Registra a avaliação do paciente para um agendamento concluído.
+ * ==========================================================
+ */
+router.post("/avaliar/:id_agendamento", AgendamentoController.avaliar);
 
-    if (servRows.length === 0) {
-      return res.status(400).json({ error: "Serviço não encontrado." });
-    }
-
-    const valor_base = Number(servRows[0].valor_base || 0);
-
-    const status = "confirmado"; // ou "pendente"
-
-    const [result] = await pool.query(
-      `
-      INSERT INTO agendamento
-        (id_paciente, id_profissional, id_servico, data_hora, status, preco_final)
-      VALUES (?, ?, ?, ?, ?, ?)
-      `,
-      [
-        id_paciente,
-        id_profissional,
-        id_servico,
-        data_hora,
-        status,
-        valor_base,
-      ]
-    );
-
-    const id_agendamento = result.insertId;
-
-    res.status(201).json({
-      id_agendamento,
-      status,
-      valor: valor_base,
-    });
-  } catch (err) {
-    console.error("❌ Erro ao criar agendamento:", err);
-    res.status(500).json({ error: "Erro ao criar agendamento." });
-  }
-});
+/**
+ * ==========================================================
+ * GET /api/agendamentos/verificar-prazo/:id_agendamento
+ * Verifica se o agendamento ainda está dentro do prazo de 12 horas para pagamento
+ * ==========================================================
+ */
+router.get("/verificar-prazo/:id_agendamento", AgendamentoController.verificarPrazoPagamento);
 
 module.exports = router;

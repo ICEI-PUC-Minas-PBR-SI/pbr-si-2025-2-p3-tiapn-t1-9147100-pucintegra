@@ -176,7 +176,33 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchAppointments();
 
 
-    // ================== RENDERIZAR LISTA ==================
+    // ================== CANCELAR AGENDAMENTO ==================
+async function cancelAppointment(id_agendamento) {
+    if (!confirm("Tem certeza que deseja cancelar este agendamento?")) {
+        return;
+    }
+
+    try {
+        const response = await fetch(
+            `${API_BASE}/api/agendamentos/cancelar/${id_agendamento}`,
+            { method: "PUT" }
+        );
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert("Agendamento cancelado com sucesso!");
+            fetchAppointments(); // Recarrega a lista
+        } else {
+            alert(`Erro ao cancelar agendamento: ${result.error || "Erro desconhecido"}`);
+        }
+    } catch (error) {
+        console.error("Erro ao cancelar agendamento:", error);
+        alert("Erro de conexão ao tentar cancelar o agendamento.");
+    }
+}
+
+// ================== RENDERIZAR LISTA ==================
     function renderAppointments(agendamentos) {
         appointmentsList.innerHTML = "";
 
@@ -232,6 +258,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     statusText = "Concluído ✅";
                     pagamentoInfo =
                         "<span class='payment-info'>Atendimento concluído</span>";
+                    
+                    // Adiciona a opção de avaliação
+                    // O botão será adicionado no bloco de ações
                     break;
 
                 case "rejeitado":
@@ -276,15 +305,86 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
 
                 <div class="appointment-actions">
-                    <span class="appointment-status ${statusClass}">
-                        ${statusText}
-                    </span>
-                </div>
+	                    <span class="appointment-status ${statusClass}">
+	                        ${statusText}
+	                    </span>
+	                    ${
+	                        (agendamento.status === "pendente" || agendamento.status === "confirmado")
+	                            ? `<button class="btn-cancel-paciente" data-id="${agendamento.id_agendamento}">Cancelar Consulta</button>`
+	                            : ""
+	                    }
+	                    ${
+	                        agendamento.status === "concluido"
+	                            ? `<button class="btn-avaliar-paciente" data-id="${agendamento.id_agendamento}" data-prof-id="${agendamento.id_profissional}">Avaliar Profissional</button>`
+	                            : ""
+	                    }
+	                </div>
             `;
 
             appointmentsList.appendChild(li);
         });
-    }
+
+	        // Adiciona listeners aos botões de cancelamento
+	        document.querySelectorAll(".btn-cancel-paciente").forEach((btn) => {
+	            btn.addEventListener("click", () => {
+	                cancelAppointment(btn.dataset.id);
+	            });
+	        });
+
+	        // Adiciona listeners aos botões de avaliação
+	        document.querySelectorAll(".btn-avaliar-paciente").forEach((btn) => {
+	            btn.addEventListener("click", () => {
+	                const id_agendamento = btn.dataset.id;
+	                const id_profissional = btn.dataset.profId;
+	                promptForRating(id_agendamento, id_profissional);
+	            });
+	        });
+	    }
+
+	    // ================== FUNÇÃO DE AVALIAÇÃO ==================
+	    async function promptForRating(id_agendamento, id_profissional) {
+	        const nota = prompt("Por favor, avalie o profissional com uma nota de 1 a 5:");
+	
+	        if (nota === null) return; // Cancelou
+	
+	        const notaNumerica = parseInt(nota);
+	
+	        if (isNaN(notaNumerica) || notaNumerica < 1 || notaNumerica > 5) {
+	            alert("Nota inválida. Por favor, insira um número entre 1 e 5.");
+	            return;
+	        }
+	
+	        const comentario = prompt("Opcional: Deixe um comentário sobre o atendimento:");
+	
+	        try {
+	            const payload = {
+	                id_paciente: loggedInUser.id_paciente,
+	                nota: notaNumerica,
+	                comentario: comentario,
+	            };
+	
+	            const response = await fetch(
+	                `${API_BASE}/api/agendamentos/avaliar/${id_agendamento}`,
+	                {
+	                    method: "POST",
+	                    headers: { "Content-Type": "application/json" },
+	                    body: JSON.stringify(payload),
+	                }
+	            );
+	
+	            const result = await response.json();
+	
+	            if (response.ok) {
+	                alert("✅ Avaliação registrada com sucesso! Obrigado por sua opinião.");
+	                fetchAppointments(); // Recarrega a lista para remover o botão
+	            } else {
+	                alert(`Erro ao avaliar: ${result.error || "Erro desconhecido"}`);
+	            }
+	        } catch (error) {
+	            console.error("Erro ao enviar avaliação:", error);
+	            alert("Erro de conexão ao tentar enviar a avaliação.");
+	        }
+	    }
 
     // Carrega ao entrar na tela
     fetchAppointments();

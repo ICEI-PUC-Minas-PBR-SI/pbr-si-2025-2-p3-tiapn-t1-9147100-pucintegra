@@ -450,6 +450,28 @@ body {
     gap: 1rem;
 }
 
+.appointment-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.btn-cancel-paciente {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel-paciente:hover {
+    background-color: #c82333;
+}
+
 .appointment-item {
     display: flex;
     align-items: center;
@@ -1077,3 +1099,169 @@ body {
         }
         .modal p { margin: 0.2rem 0 0 0; padding: 0; }
         .section { margin-top: 1.5rem; border-top: 1px solid #ccc; padding-top: 1rem; }
+
+        .appointments-table-wrapper {
+    margin-top: 1rem;
+    overflow-x: auto;
+}
+
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.appointments-table thead {
+    background: #f3f4f6;
+}
+
+.appointments-table th,
+.appointments-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.appointments-table tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.appointments-table tr:hover {
+    background: #eef2ff;
+}
+
+.appointments-message {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-pending {
+    background: #fff7e6;
+    color: #ad6800;
+}
+
+.status-accepted {
+    background: #e6fffb;
+    color: #006d75;
+}
+
+.status-rejected {
+    background: #fff1f0;
+    color: #a8071a;
+}
+
+.appointments-table button {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    margin-right: 0.25rem;
+}
+.actions-container {
+    display: flex;
+    gap: 10px;
+}
+.action-btn {
+     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px; /* Bootstrap */
+    font-size: 0.82rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Detalhes - Azul */
+.btn-details {
+    background-color: #0dcaf0;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 179, 219, 0.25);
+}
+.btn-details:hover {
+    background-color: #0bb3d4;
+}
+
+/* Concluir - Verde */
+.btn-done {
+    background-color: #198754;
+    color: white;
+    box-shadow: 0 2px 4px rgba(25, 135, 84, 0.3);
+}
+.btn-done:hover {
+    background-color: #157347;
+}
+
+/* Cancelar - Vermelho */
+.btn-cancel {
+    background-color: #ffe6e6;
+    color: #b91c1c;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.35);
+}
+.btn-cancel:hover {
+    background-color: #ffc9c9;
+}
+/* ===== Ajuste do modal de perfil ===== */
+
+/* Overlay: tela escura centralizando o conteúdo */
+#profileModal.modal-overlay {
+  position: fixed;
+  inset: 0; /* top/right/bottom/left: 0 */
+  background: rgba(0, 0, 0, 0.55);
+  display: none;             /* o JS troca para "flex" ao abrir */
+  align-items: center;       /* centraliza vertical */
+  justify-content: center;   /* centraliza horizontal */
+  z-index: 9999;
+}
+
+/* Caixa branca do modal */
+#profileModal .modal {
+  display: block;            /* garante que apareça mesmo se tiver display:none antigo */
+  background: #ffffff;
+  max-width: 680px;
+  width: 95%;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+/* Header do modal */
+#profileModal .modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* Corpo do modal (foto + infos lado a lado, se quiser) */
+#profileModal .modal-photo img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#profileModal .modal-info p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+/* Botão de fechar */
+#profileModal .close-btn {
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}

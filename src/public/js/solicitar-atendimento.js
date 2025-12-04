@@ -223,12 +223,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const dataHora = `${data} ${horario}:00`;
 
+    // Determina se o pagamento é requerido
+    // Se o método for "Dinheiro na visita", assumimos que o pagamento não é requerido de imediato
+    const requer_pagamento = metodo_pagamento !== "Dinheiro na visita";
+
     const payload = {
       id_paciente: loggedInUser.id_paciente,
       id_profissional: Number(id_profissional),
       id_servico: Number(id_servico),
       data_hora: dataHora,
-      metodo_pagamento,
+      // O backend não usa metodo_pagamento, mas o front pode precisar para a lógica
+      // Enviamos o novo parâmetro para o backend
+      requer_pagamento: requer_pagamento,
     };
 
     console.log("Enviando agendamento:", payload);
@@ -255,17 +261,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const status = result.status || "pendente";
 
-        alert(
-          `Agendamento confirmado para ${decodeURIComponent(
-            nome_profissional || ""
-          )} em ${data} às ${horario}.\n` +
-            `Valor: R$ ${Number(valor).toFixed(2).replace(".", ",")}.\n` +
-            `Status: ${status}.`
-        );
-
-        window.location.href = "/public/html/agenda-paciente.html";
+        // --- NOVO TRATAMENTO DE RESPOSTA ---
+        if (status === "confirmado") {
+          alert(
+            `✅ Agendamento CONFIRMADO para ${decodeURIComponent(
+              nome_profissional || ""
+            )} em ${data} às ${horario}.\n` +
+              `Valor: R$ ${Number(valor).toFixed(2).replace(".", ",")}.`
+          );
+          window.location.href = "/public/html/agenda-paciente.html";
+        } else if (status === "pendente_pagamento" && result.payment_link) {
+          alert(
+            `Agendamento criado. Redirecionando para pagamento do valor de R$ ${Number(
+              valor
+            )
+              .toFixed(2)
+              .replace(".", ",")}.`
+          );
+          window.location.href = result.payment_link;
+        } else {
+          // Fallback para status inesperado
+          alert(
+            `Agendamento criado com status: ${status}. Verifique sua agenda.`
+          );
+          window.location.href = "/public/html/agenda-paciente.html";
+        }
+        // --- FIM NOVO TRATAMENTO DE RESPOSTA ---
       } else {
         alert(`Erro ao agendar: ${result.error || "Falha desconhecida."}`);
+        if (result.horas_restantes) {
+          alert(`Horas restantes: ${result.horas_restantes} (Prazo de 12h expirado).`);
+        }
       }
     } catch (error) {
       console.error("Erro de conexão:", error);

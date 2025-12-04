@@ -1,74 +1,69 @@
-const { pool, DB_NAME } = require("../config/db");
-
-let HAS_ENDERECO = false;
-let HAS_REGISTRO = false;
-
-async function detectarColunas() {
-  try {
-    const [rows] = await pool.query(`
-      SELECT COLUMN_NAME
-      FROM information_schema.COLUMNS
-      WHERE TABLE_SCHEMA = ?
-      AND TABLE_NAME = 'profissional'
-      AND COLUMN_NAME IN ('endereco', 'registro_profissional')
-    `, [DB_NAME]);
-
-    const names = new Set(rows.map(r => r.COLUMN_NAME));
-
-    HAS_ENDERECO = names.has("endereco");
-    HAS_REGISTRO = names.has("registro_profissional");
-
-    console.log("Colunas detectadas -> endereco:", HAS_ENDERECO, "| registro:", HAS_REGISTRO);
-  } catch (e) {
-    console.log("Erro ao detectar colunas:", e.message);
-  }
-}
-
-// Detecta no início
-detectarColunas();
+// src/models/ProfissionalModel.js
+const { pool } = require("../config/db");
 
 module.exports = {
-  /**
-   * Busca profissionais por especialidade e/ou nome.
-   * @param {string} termo - Termo de busca (especialidade ou nome).
-   * @returns {Array} Lista de profissionais.
-   */
+  /** ==========================================================
+   * Buscar profissionais aprovados
+   * ========================================================== */
   async buscarProfissionais(termo) {
-    const termoBusca = `%${termo}%`;
+    const termoBusca = `%${termo || ""}%`;
+
     const sql = `
       SELECT
         id_profissional,
         nome,
+        registro_profissional,
         especialidade,
+        passagens_profissionais,
         telefone,
         email,
-        endereco
+        endereco,
+        foto_perfil,
+        status,
+        avaliacao_media,
+        data_nascimento
       FROM profissional
-      WHERE especialidade LIKE ? OR nome LIKE ?
+      WHERE status = 'aprovado'
+        AND (especialidade LIKE ? OR nome LIKE ?)
       LIMIT 50
     `;
+
     const [rows] = await pool.query(sql, [termoBusca, termoBusca]);
     return rows;
   },
-  async criarProfissional(data) {
-    const cols = ["nome", "cpf", "especialidade", "telefone", "email", "senha"];
-    const vals = [data.nome, data.cpf, data.especialidade, data.telefone, data.email, data.senha];
 
-    if (HAS_REGISTRO) {
-      cols.push("registro_profissional");
-      vals.push(data.registro_profissional || null);
-    }
+  /** ==========================================================
+   * Criar profissional
+   * ========================================================== */
+  async criarProfissional(dados) {
+    const sql = `
+      INSERT INTO profissional 
+        (nome, cpf, data_nascimento, registro_profissional, especialidade, passagens_profissionais,
+         telefone, email, endereco, senha,
+         documento_rg, documento_cpf, foto_perfil)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    `;
+    //                 ↑↑↑  13 placeholders (1 pra cada coluna)
 
-    if (HAS_ENDERECO) {
-      cols.push("endereco");
-      vals.push(data.endereco || null);
-    }
+    const valores = [
+      dados.nome,                         // nome
+      dados.cpf,                          // cpf
+      dados.data_nascimento || null,      // data_nascimento
+      dados.registro_profissional || null,
+      dados.especialidade,                // áreas de atendimento
+      dados.passagens_profissionais || null,
 
-    const placeholders = cols.map(() => "?").join(", ");
+      dados.telefone,
+      dados.email,
+      dados.endereco || null,
+      dados.senha,
 
-    const sql = `INSERT INTO profissional (${cols.join(", ")}) VALUES (${placeholders})`;
-    const [result] = await pool.execute(sql, vals);
+      dados.documento_rg || null,
+      dados.documento_cpf || null,
+      dados.foto_perfil || null
+    ];
 
+    const [result] = await pool.query(sql, valores);
     return result.insertId;
   }
 };

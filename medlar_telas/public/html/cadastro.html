@@ -190,24 +190,40 @@
 
                             <fieldset>
                                 <legend>Documentos</legend>
-                                            
+
                                 <div class="form-group">
                                     <label>Envie seus documentos: <span class="obrigatorio">*</span></label>
+
                                     <div class="documentos-upload">
+                                        
+                                        <!-- Documento 1 -->
                                         <div class="documento-item" onclick="document.getElementById('doc1_prof').click()">
                                             <div class="documento-item-icon">📄</div>
+                                            <span id="doc1_nome" class="nome-arquivo"></span>
                                         </div>
+
+                                        <!-- Documento 2 -->
                                         <div class="documento-item" onclick="document.getElementById('doc2_prof').click()">
                                             <div class="documento-item-icon">📄</div>
+                                            <span id="doc2_nome" class="nome-arquivo"></span>
                                         </div>
+
+                                        <!-- Documento 3 (Foto) -->
                                         <div class="documento-item" onclick="document.getElementById('doc3_prof').click()">
                                             <div class="documento-item-icon">👤</div>
+                                            <span id="doc3_nome" class="nome-arquivo"></span>
                                         </div>
                                     </div>
-                                <input type="file" id="doc1_prof" name="documento1_prof" style="display: none;" accept=".pdf,.jpg,.jpeg,.png">
-                                <input type="file" id="doc2_prof" name="documento2_prof" style="display: none;" accept=".pdf,.jpg,.jpeg,.png">
-                                <input type="file" id="doc3_prof" name="documento3_prof" style="display: none;" accept=".pdf,.jpg,.jpeg,.png">
-                            </fieldset>            
+
+                                    <!-- Inputs reais (ocultos) -->
+                                    <input type="file" required id="doc1_prof" name="documento_rg" style="display: none;" accept=".pdf,.jpg,.jpeg,.png" onchange="mostrarNomeArquivo(event, 'doc1_nome')">
+                                    <input type="file" required id="doc2_prof" name="documento_cpf" style="display: none;" accept=".pdf,.jpg,.jpeg,.png" onchange="mostrarNomeArquivo(event, 'doc2_nome')">
+                                    <input type="file" required id="doc3_prof" name="foto_perfil" style="display: none;" accept=".pdf,.jpg,.jpeg,.png" onchange="mostrarNomeArquivo(event, 'doc3_nome')">
+
+                                    <!-- Mensagem de erro específica dos documentos -->
+                                    <span class="erro-msg" id="erro-docs-prof" aria-live="polite"></span>
+                                </div>
+                            </fieldset>    
 
                             <fieldset>
                                 <legend>Dados de Acesso</legend>
