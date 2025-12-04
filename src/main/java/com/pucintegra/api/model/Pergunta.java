@@ -10,7 +10,7 @@ public class Pergunta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pergunta")
-    private Integer idPergunta;
+    private Long idPergunta;
 
     @Column(name = "matricula_aluno", nullable = false)
     private String matriculaAluno;
@@ -32,8 +32,8 @@ public class Pergunta {
     private String status = "Aberta"; 
 
     // Getters e Setters
-    public Integer getIdPergunta() { return idPergunta; }
-    public void setIdPergunta(Integer idPergunta) { this.idPergunta = idPergunta; }
+    public Long getIdPergunta() { return idPergunta; }
+    public void setIdPergunta(Long idPergunta) { this.idPergunta = idPergunta; }
 
     public String getMatriculaAluno() { return matriculaAluno; }
     public void setMatriculaAluno(String matriculaAluno) { this.matriculaAluno = matriculaAluno; }

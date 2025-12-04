@@ -1,7 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Função genérica para Carrosséis de Conteúdo (FAQ e Notícias) ---
-    // Controla a navegação card-por-card (usando currentIndex) e loop, com suporte a dots.
+    // --- 1. LÓGICA DE LOGIN/LOGOUT NA NAVBAR ---
+    const userMatricula = localStorage.getItem('usuarioMatricula');
+    const navLinksContainer = document.querySelector('.nav-links');
+
+    if (navLinksContainer) {
+        if (userMatricula) {
+            // SE ESTIVER LOGADO: Esconde login/cadastro e mostra Logout
+            navLinksContainer.innerHTML = `
+                <a href="/html/feed.html" class="nav-link"><i class="fas fa-stream"></i> Feed</a>
+                <a href="/html/pergunta.html" class="nav-link"><i class="fas fa-plus"></i> Nova Pergunta</a>
+                <a href="/html/perfil.html" class="profile-icon-link" title="Meu Perfil">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+                <a href="#" onclick="logout()" style="color:white; margin-left:10px; font-size:0.9rem;">Sair</a>
+            `;
+        } else {
+            // SE NÃO ESTIVER LOGADO: Mostra padrão
+            navLinksContainer.innerHTML = `
+                <a href="/html/autenticacao.html#login">Entrar</a>
+                <a href="/html/autenticacao.html#register">Cadastre-se</a>
+                <a href="/html/feed.html" class="nav-link"><i class="fas fa-stream"></i> Feed</a>
+                <a href="/html/pergunta.html" class="nav-link"><i class="fas fa-plus"></i> Nova Pergunta</a>
+                <a href="/html/perfil.html" class="profile-icon-link" title="Meu Perfil">
+                    <i class="fas fa-user-circle"></i>
+                </a>
+            `;
+        }
+    }
+
+    // Função de Logout Global para a Home
+    window.logout = function() {
+        localStorage.clear();
+        sessionStorage.clear();
+        window.location.reload(); // Recarrega a página para atualizar o menu
+    }
+
+    // --- 2. CARROSSÉIS (Lógica Mantida) ---
     const setupContentCarousel = (sectionSelector, containerSelector, itemSelector) => {
         const section = document.querySelector(sectionSelector);
         if (!section) return;
@@ -21,34 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (dots.length === 0) return;
             dots.forEach((dot, index) => {
                 dot.classList.remove('active');
-                if (index === currentIndex) {
-                    dot.classList.add('active');
-                }
+                if (index === currentIndex) dot.classList.add('active');
             });
         };
 
         const updateCarousel = () => {
             if (items.length === 0) return;
-            
             const firstItem = items[0];
             const itemStyle = getComputedStyle(firstItem);
-            // Calcula a largura total do item + margens para o passo de rolagem
-            const itemWidth = firstItem.offsetWidth + 
-                              parseFloat(itemStyle.marginRight) + 
-                              parseFloat(itemStyle.marginLeft);
-                              
-            container.scroll({
-                left: currentIndex * itemWidth,
-                behavior: 'smooth'
-            });
-
+            const itemWidth = firstItem.offsetWidth + parseFloat(itemStyle.marginRight) + parseFloat(itemStyle.marginLeft);
+            container.scroll({ left: currentIndex * itemWidth, behavior: 'smooth' });
             updateDots();
         };
         
-        // --- Eventos das Setas (Looping) ---
         if (rightArrow) {
             rightArrow.addEventListener('click', () => {
-                // Loop: Vai para o próximo ou volta para o 0 se estiver no último
                 currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0; 
                 updateCarousel();
             });
@@ -56,13 +78,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (leftArrow) {
             leftArrow.addEventListener('click', () => {
-                // Loop: Vai para o anterior ou para o último se estiver no 0
                 currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1; 
                 updateCarousel();
             });
         }
 
-        // --- Eventos dos Pontos ---
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentIndex = index;
@@ -71,13 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         window.addEventListener('resize', updateCarousel);
-        
-        // Inicializa os dots
         updateDots(); 
     };
 
-    
-    // --- Lógica Corrigida para Carrossel de Categorias (AGORA COM LOOP) ---
     const setupCategoryCarouselLoop = (sectionSelector) => {
         const section = document.querySelector(sectionSelector);
         if (!section) return;
@@ -92,14 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentIndex = 0;
 
         const updateActiveState = () => {
-             // Lógica para manter o estado ativo da categoria (apenas visual, não afeta o loop)
              categoryItems.forEach((item, index) => {
                 item.classList.remove('active');
-                // Nota: Esta parte do design é mais complexa, pois a rolagem é contínua e a ativação
-                // de categorias é geralmente por clique. Aqui, estamos apenas ativando o item no índice atual.
-                if (index === currentIndex) {
-                    item.classList.add('active');
-                }
+                if (index === currentIndex) item.classList.add('active');
              });
         }
 
@@ -107,20 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const firstItem = categoryItems[0];
             const itemStyle = getComputedStyle(firstItem);
             const itemWidth = firstItem.offsetWidth + parseFloat(itemStyle.marginRight); 
-
-            // Rola para a posição do item baseado no índice
-            categoryCarousel.scroll({
-                left: currentIndex * itemWidth,
-                behavior: 'smooth'
-            });
-
+            categoryCarousel.scroll({ left: currentIndex * itemWidth, behavior: 'smooth' });
             updateActiveState();
         };
 
-        // --- Eventos de Setas para Loop Circular ---
         if (categoryRightArrow) {
             categoryRightArrow.addEventListener('click', () => {
-                // Loop: Se não for o último, avança; se for, volta para o 0
                 currentIndex = (currentIndex < categoryItems.length - 1) ? currentIndex + 1 : 0;
                 updateCarousel();
             });
@@ -128,28 +131,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (categoryLeftArrow) {
             categoryLeftArrow.addEventListener('click', () => {
-                // Loop: Se não for o primeiro, retrocede; se for, vai para o último
                 currentIndex = (currentIndex > 0) ? currentIndex - 1 : categoryItems.length - 1;
                 updateCarousel();
             });
         }
 
-        // Garante que o carrossel se ajuste ao redimensionar a tela
         window.addEventListener('resize', updateCarousel);
-        
-        // Inicializa o estado ativo
         updateActiveState();
     };
 
-    // --- Inicialização de Todos os Carrosséis ---
-    
-    // 1. Carrossel de Categorias (agora com loop e controle de índice)
     setupCategoryCarouselLoop('.categories-section'); 
-    
-    // 2. Carrossel de FAQ
     setupContentCarousel('.faq-section', '.faq-carousel', '.faq-card');
-    
-    // 3. Carrossel de Notícias
     setupContentCarousel('.news-section', '.news-carousel', '.news-card');
-
 });

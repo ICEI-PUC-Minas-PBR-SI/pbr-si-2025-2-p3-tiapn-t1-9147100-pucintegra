@@ -31,7 +31,7 @@
             </div>
             <div class="nav-links">
                 <a href="/html/homepage.html">Home</a>
-                <a href="/html/pergunta.html">Nova Pergunta</a>
+                <a href="/html/feed.html">Feed</a> <a href="/html/pergunta.html">Nova Pergunta</a>
                 <a href="#" onclick="logout()" style="color: #dc3545; font-weight: bold;">
                     <i class="fas fa-sign-out-alt"></i> Sair
                 </a>
@@ -44,14 +44,19 @@
         <div class="profile-cover"></div>
 
         <div class="container profile-grid">
-            
             <aside class="user-sidebar">
                 <div class="profile-card">
+                    
                     <div class="avatar-container">
                         <img src="/docs/images/default-avatar.png" id="profile-img-display" alt="Avatar">
-                        <button class="edit-avatar-btn" onclick="document.getElementById('btn-open-edit').click()"><i class="fas fa-camera"></i></button>
+                        <button class="edit-avatar-btn" onclick="document.getElementById('btn-open-edit').click()">
+                            <i class="fas fa-camera"></i>
+                        </button>
                     </div>
+
                     <h1 id="user-name-display">Carregando...</h1>
+                    <span id="user-type-display" style="background:#e9ecef; color:#555; padding:2px 8px; border-radius:10px; font-size:0.8rem; margin-bottom:5px; display:inline-block;">...</span>
+                    
                     <p class="user-handle" id="user-matricula-display">@...</p>
                     <p class="user-bio" id="user-bio-display">...</p>
                     
@@ -89,8 +94,7 @@
 
         </div>
     </main>
-
-    <div id="edit-modal" class="modal-overlay">
+    <div id="edit-modal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Editar Perfil</h3>
@@ -117,7 +121,6 @@
             </form>
         </div>
     </div>
-
     <script src="/js/perfil.js"></script>
 </body>
 </html>

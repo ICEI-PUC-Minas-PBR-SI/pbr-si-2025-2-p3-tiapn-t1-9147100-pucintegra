@@ -1,5 +1,9 @@
 package com.pucintegra.api.controller;
 
+import com.pucintegra.api.dto.MinhasInteracoesDTO;
+import com.pucintegra.api.model.Reacao;
+import com.pucintegra.api.repository.ReacaoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.Map;
@@ -9,17 +13,26 @@ import java.util.List;
 @RequestMapping("/api/reacoes")
 public class ReacaoController {
 
-    // Endpoint Fake para salvar reação (Simulação para não travar o front)
-    // Se quiser implementar real, precisaria da Entity Reacao e ReacaoRepository
+    @Autowired
+    private ReacaoRepository reacaoRepository;
+
+    // Salvar Reação (Real)
     @PostMapping
-    public ResponseEntity<?> salvarReacao(@RequestBody Map<String, Object> dados) {
-        System.out.println("Reação recebida: " + dados);
-        return ResponseEntity.ok(Map.of("message", "Reação registrada!"));
+    public ResponseEntity<?> salvarReacao(@RequestBody Reacao reacao) {
+        try {
+            // Verifica se já existe reação desse usuário para essa resposta (evitar duplicidade)
+            // Lógica simplificada: Apenas salva. O banco barra duplicidade pelo UNIQUE KEY.
+            reacaoRepository.save(reacao);
+            return ResponseEntity.ok(Map.of("message", "Reação registrada!"));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(Map.of("error", "Erro ao reagir."));
+        }
     }
 
-    // Endpoint Fake para buscar reações do usuário (Perfil)
+    // Buscar interações para o Perfil (Real)
     @GetMapping("/usuario/{matricula}")
-    public ResponseEntity<?> getMinhasReacoes(@PathVariable String matricula) {
-        return ResponseEntity.ok(List.of()); // Retorna lista vazia para não quebrar o perfil
+    public ResponseEntity<List<MinhasInteracoesDTO>> getMinhasReacoes(@PathVariable String matricula) {
+        List<MinhasInteracoesDTO> lista = reacaoRepository.findInteracoesPorMatricula(matricula);
+        return ResponseEntity.ok(lista);
     }
 }

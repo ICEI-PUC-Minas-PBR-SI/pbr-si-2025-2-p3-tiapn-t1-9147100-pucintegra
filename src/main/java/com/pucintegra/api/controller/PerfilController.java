@@ -2,6 +2,8 @@ package com.pucintegra.api.controller;
 
 import com.pucintegra.api.model.Pessoa;
 import com.pucintegra.api.repository.PessoaRepository;
+import com.pucintegra.api.repository.PerguntaRepository;
+import com.pucintegra.api.repository.RespostaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,16 +22,28 @@ public class PerfilController {
     @Autowired
     private PessoaRepository pessoaRepository;
 
+    @Autowired
+    private PerguntaRepository perguntaRepository;
+
+    @Autowired
+    private RespostaRepository respostaRepository;
+
     // GET: Carregar dados do perfil
     @GetMapping("/{matricula}")
     public ResponseEntity<?> getProfile(@PathVariable String matricula) {
         Optional<Pessoa> userOpt = pessoaRepository.findById(matricula);
+        
         if (userOpt.isPresent()) {
             Pessoa p = userOpt.get();
-            // Retorna dados do usuário + estatísticas fakes (mock)
+            
+            // --- CONTAGEM REAL NO BANCO DE DADOS ---
+            long qtdPerguntas = perguntaRepository.countByMatriculaAluno(matricula);
+            long qtdRespostas = respostaRepository.countByMatriculaPessoa(matricula);
+
             Map<String, Object> response = new HashMap<>();
             response.put("user", p);
-            response.put("stats", Map.of("questions", 12, "answers", 5)); // Mock
+            response.put("stats", Map.of("questions", qtdPerguntas, "answers", qtdRespostas));
+            
             return ResponseEntity.ok(response);
         }
         return ResponseEntity.notFound().build();
@@ -48,17 +62,14 @@ public class PerfilController {
 
         Pessoa p = userOpt.get();
         if (nome != null && !nome.isEmpty()) p.setNome(nome);
-        if (biografia != null) p.setBiografia(biografia); // Certifique-se que tem setBiografia em Pessoa
+        if (biografia != null) p.setBiografia(biografia);
 
-        // Lógica simples de salvar arquivo (Salva na pasta 'uploads' do projeto)
         if (foto != null && !foto.isEmpty()) {
             try {
                 String fileName = matricula + "_" + foto.getOriginalFilename();
                 Path path = Paths.get("src/main/resources/static/uploads/" + fileName);
                 Files.createDirectories(path.getParent());
                 Files.write(path, foto.getBytes());
-                
-                // Salva o caminho acessível via URL
                 p.setFotoPerfil("/uploads/" + fileName); 
             } catch (IOException e) {
                 return ResponseEntity.internalServerError().body("Erro ao salvar foto");

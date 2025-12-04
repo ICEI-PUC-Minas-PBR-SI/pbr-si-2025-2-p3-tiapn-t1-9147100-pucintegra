@@ -33,13 +33,32 @@
         
         <aside class="feed-sidebar">
             <div class="sidebar-card">
-                <h3>Filtrar por</h3>
-                <ul class="filter-list">
-                    <li><a href="#" class="active"><i class="fas fa-stream"></i> Todas</a></li>
-                    <li><a href="#"><i class="fas fa-code"></i> Programação</a></li>
-                    <li><a href="#"><i class="fas fa-network-wired"></i> Redes</a></li>
-                    <li><a href="#"><i class="fas fa-database"></i> Banco de Dados</a></li>
-                </ul>
+                <h3>Filtrar Feed</h3>
+                
+                <div class="filter-group" style="margin-bottom: 20px;">
+                    <label style="font-size: 0.9rem; color: #666; display:block; margin-bottom:5px;">Por Disciplina:</label>
+                    <select id="feed-filter-disciplina" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+                        <option value="">Todas as Disciplinas</option>
+                        
+                        <optgroup label="Eixo de Programação">
+                            <option value="200">Algoritmos e Téc. Programação</option>
+                            <option value="207">Algoritmos e Estrutura de Dados</option>
+                            <option value="215">Prog. Orientada a Objetos</option>
+                            <option value="201">Desenv. Web Front-End</option>
+                            <option value="209">Desenv. Web Back-End</option>
+                        </optgroup>
+                        <optgroup label="Eixo de Banco de Dados">
+                            <option value="208">Banco de Dados</option>
+                            <option value="212">Banco de Dados NoSQL</option>
+                        </optgroup>
+                        <optgroup label="Eixo de Redes">
+                            <option value="220">Projeto de Redes</option>
+                            <option value="239">Arquitetura de Redes</option>
+                            <option value="240">Cibersegurança</option>
+                        </optgroup>
+                        </select>
+                </div>
+
                 <a href="/html/pergunta.html" class="btn-new-question-side">Nova Pergunta</a>
             </div>
         </aside>

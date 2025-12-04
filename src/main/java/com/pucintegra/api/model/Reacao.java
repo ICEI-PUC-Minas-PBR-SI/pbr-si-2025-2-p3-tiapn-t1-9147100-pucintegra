@@ -9,16 +9,13 @@ import java.time.LocalDateTime;
 @Table(name = "reacao")
 public class Reacao {
 
-   @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id_Reacao")
-    private Long idReacao; // Esse continua Long (PK)
-
-    @Column(name = "Id_Pergunta")
-    private Long idPergunta; // MUDOU PARA INTEGER
-
+    private Long idReacao; 
+    
     @Column(name = "Id_Resposta")
-    private Integer idResposta; // MUDOU PARA INTEGER
+    private Long idResposta; // Link correto com a resposta
 
     @Column(name = "Matricula_Pessoa", nullable = false)
     private String matriculaPessoa;

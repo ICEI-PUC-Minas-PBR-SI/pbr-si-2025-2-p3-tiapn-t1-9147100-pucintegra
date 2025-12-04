@@ -10,10 +10,11 @@ public class Resposta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_resposta")
-    private Integer idResposta;
+    private Long idResposta;
 
+    // --- ALTERAÇÃO AQUI: De Integer para Long ---
     @Column(name = "id_pergunta", nullable = false)
-    private Integer idPergunta;
+    private Long idPergunta; 
 
     @Column(name = "matricula_pessoa", nullable = false)
     private String matriculaPessoa;
@@ -27,16 +28,14 @@ public class Resposta {
     @Column(name = "is_accepted")
     private Boolean isAccepted = false;
 
-    // IMPORTANTE: String para evitar erro de Schema Validation
     @Column(length = 20)
     private String status = "Visivel";
 
-    // Getters e Setters
-    public Integer getIdResposta() { return idResposta; }
-    public void setIdResposta(Integer idResposta) { this.idResposta = idResposta; }
+    public Long getIdResposta() { return idResposta; }
+    public void setIdResposta(Long idResposta) { this.idResposta = idResposta; }
     
-    public Integer getIdPergunta() { return idPergunta; }
-    public void setIdPergunta(Integer idPergunta) { this.idPergunta = idPergunta; }
+    public Long getIdPergunta() { return idPergunta; }
+    public void setIdPergunta(Long idPergunta) { this.idPergunta = idPergunta; }
 
     public String getMatriculaPessoa() { return matriculaPessoa; }
     public void setMatriculaPessoa(String matriculaPessoa) { this.matriculaPessoa = matriculaPessoa; }

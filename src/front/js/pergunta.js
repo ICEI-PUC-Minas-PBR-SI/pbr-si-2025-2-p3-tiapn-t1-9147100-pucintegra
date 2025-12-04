@@ -56,7 +56,57 @@ document.addEventListener('DOMContentLoaded', () => {
         renderAttachments();
     };
 
-    // 3. EDITOR DE TEXTO
+    // 3 LÓGICA DE PALAVRAS-CHAVE (TAGS)
+    const tagInput = document.getElementById('tag-input'); // O campo onde digita
+    const tagsList = document.getElementById('tags-list'); // Onde as tags aparecem
+    const hiddenTagsInput = document.getElementById('hidden-tags'); // O input invisível que vai pro Java
+    let tagsArray = [];
+
+    if (tagInput) {
+        tagInput.addEventListener('keydown', (e) => {
+            // Se apertou ENTER (código 13)
+            if (e.key === 'Enter') {
+                e.preventDefault(); // <--- ISSO IMPEDE O FORMULÁRIO DE SER ENVIADO!
+                
+                const valor = tagInput.value.trim();
+                
+                // Adiciona se não estiver vazio e não for duplicado
+                if (valor && !tagsArray.includes(valor)) {
+                    tagsArray.push(valor);
+                    renderTags();
+                }
+                
+                tagInput.value = ''; // Limpa o campo para a próxima tag
+            }
+        });
+    }
+
+    function renderTags() {
+        tagsList.innerHTML = '';
+        // Atualiza o input escondido separando por vírgulas (ex: "Java,SQL,Web")
+        hiddenTagsInput.value = tagsArray.join(','); 
+
+        tagsArray.forEach((tag, index) => {
+            const tagEl = document.createElement('span');
+            tagEl.className = 'tag-badge';
+            // Estilo inline para garantir visual rápido (pode mover pro CSS depois)
+            tagEl.style.cssText = "background:#e9ecef; padding:5px 10px; border-radius:15px; font-size:0.85rem; display:inline-flex; align-items:center; gap:5px; margin-right:5px; margin-bottom:5px;";
+            
+            tagEl.innerHTML = `
+                ${tag} 
+                <button type="button" onclick="removeTag(${index})" style="border:none; background:transparent; cursor:pointer; color:#666; font-weight:bold;">&times;</button>
+            `;
+            tagsList.appendChild(tagEl);
+        });
+    }
+
+    // Função global para remover tag ao clicar no X
+    window.removeTag = (index) => {
+        tagsArray.splice(index, 1);
+        renderTags();
+    };
+
+    // 4. EDITOR DE TEXTO
     const toolbarBtns = document.querySelectorAll('.editor-toolbar button[data-cmd]');
     toolbarBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -66,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. SUBMISSÃO
+    // 5. SUBMISSÃO
     const form = document.getElementById('question-form');
     const submitBtn = document.getElementById('btn-submit-publish');
 

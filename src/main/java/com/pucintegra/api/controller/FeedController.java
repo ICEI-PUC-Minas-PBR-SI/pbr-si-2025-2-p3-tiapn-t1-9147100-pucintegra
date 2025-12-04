@@ -25,8 +25,22 @@ public class FeedController {
     private PessoaRepository pessoaRepository;
 
     @GetMapping("/questions")
-    public ResponseEntity<List<Map<String, Object>>> getFeed() {
-        List<Pergunta> perguntas = perguntaRepository.findAllByOrderByDataCriacaoDesc();
+    public ResponseEntity<List<Map<String, Object>>> getFeed(
+            @RequestParam(required = false) Integer disciplinaId,
+            @RequestParam(required = false) String tema
+    ) {
+        List<Pergunta> perguntas;
+
+        // Lógica de Filtro
+        if (disciplinaId != null) {
+            perguntas = perguntaRepository.findByIdDisciplinaOrderByDataCriacaoDesc(disciplinaId);
+        } else if (tema != null && !tema.isEmpty()) {
+            perguntas = perguntaRepository.findByTituloContainingOrConteudoContainingOrderByDataCriacaoDesc(tema, tema);
+        } else {
+            perguntas = perguntaRepository.findAllByOrderByDataCriacaoDesc();
+        }
+
+        // Monta a resposta (DTO manual)
         List<Map<String, Object>> feedResponse = new ArrayList<>();
 
         for (Pergunta p : perguntas) {
@@ -38,7 +52,6 @@ public class FeedController {
             item.put("idDisciplina", p.getIdDisciplina());
             item.put("matriculaAluno", p.getMatriculaAluno());
             
-            // Busca o nome e foto do autor
             Optional<Pessoa> autor = pessoaRepository.findById(p.getMatriculaAluno());
             if (autor.isPresent()) {
                 item.put("autorNome", autor.get().getNome());
@@ -46,7 +59,6 @@ public class FeedController {
             } else {
                 item.put("autorNome", "Usuário Desconhecido");
             }
-
             feedResponse.add(item);
         }
 
