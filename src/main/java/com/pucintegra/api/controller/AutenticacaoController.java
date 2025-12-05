@@ -18,13 +18,15 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/auth")
+// CORREÇÃO AQUI: Libera o acesso para o seu Front-end na Vercel
+@CrossOrigin(origins = {"https://puc-integra-39ig2p7gq-gabriel-gr1s-projects.vercel.app", "http://localhost:5500", "http://127.0.0.1:5500"}) 
 public class AutenticacaoController {
 
     @Autowired
     private PessoaRepository pessoaRepository;
 
     @Autowired
-    private TokenService tokenService; // Injeção do serviço de Token
+    private TokenService tokenService;
 
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -40,18 +42,16 @@ public class AutenticacaoController {
             Pessoa p = usuarioOpt.get();
             boolean senhaConfere = passwordEncoder.matches(senhaDigitada, p.getSenha());
             
-            // Fallback para senha antiga não criptografada (se houver)
             if (!senhaConfere && senhaDigitada.equals(p.getSenha())) {
                 senhaConfere = true;
             }
 
             if (senhaConfere) {
-                // GERA O TOKEN REAL
                 String token = tokenService.generateToken(p);
 
                 return ResponseEntity.ok(Map.of(
                     "message", "Login realizado com sucesso",
-                    "token", token, // Envia o token válido
+                    "token", token,
                     "matricula", p.getMatricula(),
                     "nome", p.getNome(),
                     "tipo", p.getTipoPessoa()
@@ -61,7 +61,7 @@ public class AutenticacaoController {
         return ResponseEntity.status(401).body(Map.of("error", "E-mail ou senha inválidos"));
     }
 
-    // 2. CADASTRO (Completo com distinção de Aluno/Professor)
+    // 2. CADASTRO
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterDTO data) {
         if (pessoaRepository.existsById(data.matricula())) {
@@ -75,7 +75,6 @@ public class AutenticacaoController {
             Pessoa novaPessoa; 
             String tipoTexto = data.tipoPessoa();
             
-            // Instancia a classe correta baseada no tipo
             if (tipoTexto != null && tipoTexto.equalsIgnoreCase("Professor")) {
                 novaPessoa = new Professor();
                 novaPessoa.setTipoPessoa(TipoPessoa.Professor);
@@ -102,7 +101,7 @@ public class AutenticacaoController {
         }
     }
 
-    // 3. RECUPERAÇÃO DE SENHA (Mantido)
+    // 3. RECUPERAÇÃO DE SENHA
     @PostMapping("/recover-password")
     public ResponseEntity<?> recoverPassword(@RequestBody Map<String, String> dados) {
         String email = dados.get("email");
