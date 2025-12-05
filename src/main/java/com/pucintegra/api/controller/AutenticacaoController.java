@@ -99,3 +99,5 @@ public class AutenticacaoController {
         }
     }
 }
+
+record ResetSenhaDTO(String email, String cpf, String novaSenha) {}
