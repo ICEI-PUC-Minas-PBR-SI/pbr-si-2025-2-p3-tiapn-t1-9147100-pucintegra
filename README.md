@@ -27,9 +27,9 @@ Para executar o projeto **PUC Integra** em ambiente de desenvolvimento local, si
 ### Pré-requisitos
 Certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 * **Java JDK 17** ou superior.
-* **Maven** (para gerenciamento de dependências e build).
-* **MySQL Server** (8.0 ou superior).
-* **Git** (para clonagem do repositório).
+* **Maven:** para gerenciamento de dependências e build.
+* **MySQL Server:** 8.0 ou superior.
+* **Git:** para clonagem do repositório.
 * Uma IDE de sua preferência (recomendado: IntelliJ IDEA ou Eclipse).
 
 ### Configuração do Banco de Dados
