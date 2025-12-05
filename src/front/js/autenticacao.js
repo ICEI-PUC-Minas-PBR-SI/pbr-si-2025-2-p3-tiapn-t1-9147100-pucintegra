@@ -48,20 +48,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 const data = await response.json();
-
-                if (response.ok) {
-                    localStorage.setItem('usuarioToken', data.token); // Salva o Token JWT
+if (response.ok) {
+                    // Se deu certo, salva os dados
+                    localStorage.setItem('usuarioToken', data.token);
                     localStorage.setItem('usuarioMatricula', data.matricula);
                     localStorage.setItem('usuarioNome', data.nome);
                     localStorage.setItem('usuarioTipo', data.tipo);
 
-                    alert(Bem-vindo(a), ${data.nome}!);
+                    alert('Bem-vindo(a), ' + data.nome + '!');
                     window.location.href = "perfil.html"; 
                 } else {
+                    // Se a senha estiver errada
                     alert(data.error || 'Falha na autenticação.');
                 }
 
             } catch (error) {
+                // Se o servidor cair ou a internet falhar
                 console.error("Erro na requisição:", error);
                 alert('Erro ao conectar com o servidor.');
             }
