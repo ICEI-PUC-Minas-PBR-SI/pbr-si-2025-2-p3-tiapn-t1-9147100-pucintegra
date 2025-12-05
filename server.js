@@ -335,7 +335,7 @@ app.get('/api/feed/questions', async (req, res) => {
 
 // ROTA RAIZ: Redireciona automaticamente para a tela de login
 app.get('/', (req, res) => {
-    res.redirect('/resources/static/index.html');
+    res.redirect('/static/index.html');
 });
 
 app.listen(PORT, () => {
