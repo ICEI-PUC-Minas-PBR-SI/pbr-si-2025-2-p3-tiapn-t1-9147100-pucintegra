@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // CORREÇÃO: Usando API_BASE_URL
-                const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+                const response = await fetch('jdbc:mysql://mysql-puc-integra-puc-integra.g.aivencloud.com:13039/defaultdb?sslMode=REQUIRED', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: email, senha: senha })
