@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navContainer) {
         if (userMatricula) {
             navContainer.innerHTML = `
-                <a href="/html/homepage.html" class="nav-link" style="color:white; margin-right:15px;">Home</a>
+                <a href="/html/index.html" class="nav-link" style="color:white; margin-right:15px;">Home</a>
                 <a href="/html/pergunta.html" class="nav-link" style="color:white; margin-right:15px;">Nova Pergunta</a>
                 <a href="/html/perfil.html" class="profile-icon-link" style="color:white; font-size:1.5rem;"><i class="fas fa-user-circle"></i></a>
             `;

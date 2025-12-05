@@ -5,7 +5,7 @@ Este diretório contém a interface de usuário da aplicação PUC Integra. O pr
 ## 📂 Estrutura de Pastas
 
 * `/html`: Contém as páginas estruturais do sistema.
-    * `homepage.html`: Tela inicial (Landing Page).
+    * `index.html`: Tela inicial (Landing Page).
     * `autenticacao.html`: Tela de Login e Cadastro (com alternância via JS).
     * `feed.html`: Listagem principal de perguntas e discussões.
     * `pergunta.html`: Formulário para criação de novas dúvidas.
@@ -33,5 +33,5 @@ O Front-end comunica-se com o Back-end (Spring Boot) através de requisições H
 Não é necessário instalar dependências via `npm` para rodar este front-end.
 
 1.  Certifique-se de que a API Java (`src/main`) esteja rodando na porta 8080.
-2.  Abra o arquivo `/html/homepage.html` no seu navegador.
+2.  Abra o arquivo `/html/index.html` no seu navegador.
 3.  **Recomendação:** Utilize um servidor local simples (como a extensão **Live Server** do VS Code) para abrir os arquivos HTML. Isso evita bloqueios de segurança do navegador relacionados a módulos ES6 e caminhos de arquivo.
