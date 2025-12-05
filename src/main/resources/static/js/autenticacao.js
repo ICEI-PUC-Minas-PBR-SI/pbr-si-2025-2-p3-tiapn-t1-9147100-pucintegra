@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. CONFIGURAÇÃO IMPORTANTE: O ENDEREÇO DO SEU BACKEND (RENDER) ---
-    // Nunca use jdbc:mysql aqui. O navegador fala HTTP com o Render.
+    // --- 1. CONFIGURAÇÃO OBRIGATÓRIA: DEFINE O ENDEREÇO DO RENDER ---
+    // Esta linha cria a variável que estava faltando
     const API_BASE_URL = 'https://pbr-si-2025-2-p3-tiapn-t1-9147100.onrender.com';
 
-    // --- REFERÊNCIAS AOS ELEMENTOS ---
     const container = document.querySelector('.container');
     const registerBtn = document.querySelector('.register-btn');
     const loginBtn = document.querySelector('.login-btn');
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeForgotBtn = document.getElementById('close-forgot-modal');
     const forgotForm = document.getElementById('forgot-form');
 
-    // --- INTERFACE (Troca de telas) ---
     const updateStateFromHash = () => {
         if (window.location.hash === '#register') {
             container.classList.add('active');
@@ -33,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('hashchange', updateStateFromHash);
     updateStateFromHash();
 
-    // --- LOGIN ---
+    // LOGIN
     if (loginForm) {
         loginForm.addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -42,11 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const senha = inputs[1].value;
 
             try {
-                // CORREÇÃO FEITA: Agora aponta para o Render, não para o banco direto
-                const response = await fetch($`{API_BASE_URL}/api/auth/login`, {
+                // CORREÇÃO: Removemos o jdbc e colocamos a variável correta
+                const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    // Importante: Verifique se no Java o campo se chama "email" ou "emailInstitucional"
                     body: JSON.stringify({ email: email, senha: senha })
                 });
 
@@ -70,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- CADASTRO ---
+    // CADASTRO
     if (registerForm) {
         registerForm.addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -84,7 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const tipoPessoa = tipoInput ? tipoInput.value : 'Aluno'; 
 
             try {
-                const response = await fetch($`{API_BASE_URL}/api/auth/register`, {
+                // Aqui já estava usando a variável, mas agora ela existe!
+                const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ nome, cpf, matricula, emailInstitucional: email, senha, tipoPessoa })
@@ -94,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert("Cadastro realizado com sucesso! Faça login para continuar.");
                     window.location.hash = 'login';
                 } else {
-                    const errorText = await response.text(); 
+                    const errorText = await response.text();
                     try {
                         const errorJson = JSON.parse(errorText);
                         alert("Erro ao cadastrar: " + (errorJson.error || errorText));
@@ -109,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- RECUPERAÇÃO DE SENHA ---
+    // RECUPERAÇÃO DE SENHA
     if (forgotLink && forgotModal) {
         forgotLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -127,7 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const novaSenha = document.getElementById('forgot-new-pass').value;
 
             try {
-                const res = await fetch(`{API_BASE_URL}/api/auth/recover-password`, {
+                // Aqui também precisa da variável
+                const res = await fetch(`${API_BASE_URL}/api/auth/recover-password`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, cpf, novaSenha })
