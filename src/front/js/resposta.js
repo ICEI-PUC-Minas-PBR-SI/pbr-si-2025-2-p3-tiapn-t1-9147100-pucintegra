@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. DADOS INICIAIS
     const params = new URLSearchParams(window.location.search);
     const questionId = params.get('id');
     const userMatricula = localStorage.getItem('usuarioMatricula');
-    const token = localStorage.getItem('usuarioToken'); // Pega Token
+    const token = localStorage.getItem('usuarioToken');
 
     if (!userMatricula || !token) {
         alert("Faça login para participar.");
@@ -17,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // 2. EDITOR
     const editorArea = document.createElement('div');
     editorArea.contentEditable = 'true';
     editorArea.className = 'editor-area';
@@ -36,11 +34,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. CARREGAR DADOS (GET PROTEGIDO)
     async function loadData() {
         try {
-            // Tenta endpoint direto (Protected?)
-            const resDetail = await fetch(`http://localhost:8080/api/questions/${questionId}`, {
+            // CORREÇÃO: API_BASE_URL
+            const resDetail = await fetch(`${API_BASE_URL}/api/questions/${questionId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if(resDetail.ok) {
@@ -50,7 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch(e) { console.error("Erro pergunta", e); }
 
         try {
-            const resA = await fetch(`http://localhost:8080/api/questions/${questionId}/answers`, {
+            // CORREÇÃO: API_BASE_URL
+            const resA = await fetch(`${API_BASE_URL}/api/questions/${questionId}/answers`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if(resA.ok) {
@@ -91,18 +89,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. ENVIAR RESPOSTA (POST PROTEGIDO)
     document.getElementById('btn-submit-answer').addEventListener('click', async (e) => {
         e.preventDefault();
         const texto = editorArea.innerHTML;
         if(texto.trim().length < 5) return alert("Escreva uma resposta mais completa.");
 
         try {
-            const res = await fetch('http://localhost:8080/api/answers', {
+            // CORREÇÃO: API_BASE_URL
+            const res = await fetch(`${API_BASE_URL}/api/answers`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}` // TOKEN
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
                     idPergunta: questionId,
@@ -122,14 +120,14 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch(err) { alert("Erro de conexão."); }
     });
 
-    // 5. REAGIR (POST PROTEGIDO)
     window.reactToAnswer = async (idResp, tipo) => {
         try {
-            const res = await fetch('http://localhost:8080/api/reacoes', {
+            // CORREÇÃO: API_BASE_URL
+            const res = await fetch(`${API_BASE_URL}/api/reacoes`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}` // TOKEN
+                    'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
                     idResposta: idResp,

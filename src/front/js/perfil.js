@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. UI SETUP (Abas e Botões)
     const tabs = document.querySelectorAll('.tab-btn');
     tabs.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnLogoutSidebar = document.getElementById('btn-logout-sidebar');
     if(btnLogoutSidebar) btnLogoutSidebar.addEventListener('click', (e) => { e.preventDefault(); window.logout(); });
 
-    // Modal de Edição
     const modal = document.getElementById('edit-modal');
     const openModalBtn = document.getElementById('btn-open-edit');
     const closeModalBtn = document.querySelector('.close-modal');
@@ -23,8 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if(closeModalBtn) closeModalBtn.onclick = () => modal.style.display = 'none';
     window.onclick = (event) => { if (event.target == modal) modal.style.display = "none"; }
 
-
-    // 2. VERIFICAÇÃO DE LOGIN
     const userMatricula = localStorage.getItem('usuarioMatricula');
     const token = localStorage.getItem('usuarioToken');
 
@@ -48,38 +44,30 @@ document.addEventListener('DOMContentLoaded', () => {
         formEdit: document.getElementById('edit-profile-form')
     };
 
-    // 3. CARREGAR PERFIL
     async function loadProfile() {
         try {
-            const res = await fetch(`http://localhost:8080/api/profile/${userMatricula}`, {
+            // CORREÇÃO: API_BASE_URL
+            const res = await fetch(`${API_BASE_URL}/api/profile/${userMatricula}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             
             if (res.ok) {
                 const data = await res.json();
-                const user = data.user; // Objeto Pessoa (pode ser Aluno ou Professor)
+                const user = data.user;
                 const stats = data.stats;
 
                 dom.name.innerText = user.nome || "Usuário";
                 dom.handle.innerText = `@${userMatricula}`;
                 
-                // Lógica de Exibição de Tipo e Monitoria
                 if (dom.type) {
                     dom.type.innerText = user.tipoPessoa || "Aluno"; 
-                    
                     if (user.tipoPessoa === 'Professor') {
-                        // Estilo Professor
                         dom.type.style.background = '#ffc107';
                         dom.type.style.color = '#000';
-                        // Mostra painel de gestão
                         if(dom.professorPanel) dom.professorPanel.style.display = 'block';
-                        
                     } else {
-                        // Estilo Aluno
                         dom.type.style.background = '#e9ecef';
                         dom.type.style.color = '#555';
-                        
-                        // Verifica se é Monitor (Campo ehMonitor vem do JSON se for Aluno)
                         if (user.ehMonitor === true && dom.monitorBadge) {
                             dom.monitorBadge.style.display = 'inline-block';
                         }
@@ -88,13 +76,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 dom.bio.innerText = user.biografia || "Sem biografia.";
                 if (user.fotoPerfil) {
-                    dom.img.src = `http://localhost:8080${user.fotoPerfil}?t=${new Date().getTime()}`;
+                    // CORREÇÃO: URL da imagem
+                    dom.img.src = `${API_BASE_URL}${user.fotoPerfil}?t=${new Date().getTime()}`;
                 }
 
                 dom.statQ.innerText = stats.questions || 0;
                 dom.statA.innerText = stats.answers || 0;
 
-                // Preenche form de edição
                 if(document.getElementById('edit-name-input')) {
                     document.getElementById('edit-name-input').value = user.nome || "";
                     document.getElementById('edit-bio-input').value = user.biografia || "";
@@ -103,11 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (err) { console.error("Erro perfil:", err); }
     }
 
-    // 4. CARREGAR FEED
     async function loadFeed() {
-        // Minhas Perguntas
         try {
-            const resQ = await fetch(`http://localhost:8080/api/users/${userMatricula}/questions`, {
+            // CORREÇÃO: API_BASE_URL
+            const resQ = await fetch(`${API_BASE_URL}/api/users/${userMatricula}/questions`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (resQ.ok) {
@@ -118,10 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch(e) { console.error(e); }
 
-        // Minhas Interações
         let items = [];
         try {
-            const resA = await fetch(`http://localhost:8080/api/users/${userMatricula}/answers`, {
+            // CORREÇÃO: API_BASE_URL
+            const resA = await fetch(`${API_BASE_URL}/api/users/${userMatricula}/answers`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (resA.ok) {
@@ -129,7 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 answers.forEach(a => items.push({ ...a, type: 'answer', dateObj: new Date(a.dataCriacao) }));
             }
 
-            const resR = await fetch(`http://localhost:8080/api/reacoes/usuario/${userMatricula}`, {
+            // CORREÇÃO: API_BASE_URL
+            const resR = await fetch(`${API_BASE_URL}/api/reacoes/usuario/${userMatricula}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (resR.ok) {
@@ -178,7 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>`;
     }
 
-    // 5. SALVAR PERFIL
     if (dom.formEdit) {
         dom.formEdit.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -193,7 +180,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if(fileInput.files.length > 0) formData.append('foto_perfil', fileInput.files[0]);
 
             try {
-                const res = await fetch(`http://localhost:8080/api/profile/${userMatricula}`, {
+                // CORREÇÃO: API_BASE_URL
+                const res = await fetch(`${API_BASE_URL}/api/profile/${userMatricula}`, {
                     method: 'PUT',
                     headers: { 'Authorization': `Bearer ${token}` },
                     body: formData
@@ -208,7 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. PROMOVER MONITOR (Lógica Nova)
     const btnPromover = document.getElementById('btn-promover-monitor');
     if (btnPromover) {
         btnPromover.addEventListener('click', async () => {
@@ -218,7 +205,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!matriculaAlvo) return alert("Digite a matrícula do aluno.");
 
             try {
-                const res = await fetch('http://localhost:8080/api/monitoria/promover', {
+                // CORREÇÃO: API_BASE_URL
+                const res = await fetch(`${API_BASE_URL}/api/monitoria/promover`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

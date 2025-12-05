@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. VERIFICAÇÃO DE LOGIN E TOKEN
     const userMatricula = localStorage.getItem('usuarioMatricula');
-    const token = localStorage.getItem('usuarioToken'); // Pega o token
+    const token = localStorage.getItem('usuarioToken');
     
     if (!userMatricula || !token) {
         alert("Sessão expirada. Por favor, faça login novamente.");
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return; 
     }
 
-    // 2. ANEXOS (Lógica de UI mantida)
     const fileInput = document.getElementById('file-input');
     const btnAttach = document.getElementById('btn-attach-trigger');
     const attachmentsPreview = document.getElementById('attachments-preview');
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.removeFile = (index) => { selectedFiles.splice(index, 1); renderAttachments(); };
 
-    // 3. TAGS (Lógica de UI mantida)
     const tagInput = document.getElementById('tag-input');
     const tagsList = document.getElementById('tags-list');
     const hiddenTagsInput = document.getElementById('hidden-tags');
@@ -72,12 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     window.removeTag = (index) => { tagsArray.splice(index, 1); renderTags(); };
 
-    // 4. EDITOR
     document.querySelectorAll('.editor-toolbar button[data-cmd]').forEach(btn => {
         btn.addEventListener('click', (e) => { e.preventDefault(); document.execCommand(btn.getAttribute('data-cmd'), false, null); });
     });
 
-    // 5. SUBMISSÃO (COM TOKEN)
     const form = document.getElementById('question-form');
     const submitBtn = document.getElementById('btn-submit-publish');
 
@@ -108,10 +103,11 @@ document.addEventListener('DOMContentLoaded', () => {
             selectedFiles.forEach(file => formData.append('anexos', file));
 
             try {
-                const response = await fetch('http://localhost:8080/api/questions', {
+                // CORREÇÃO: API_BASE_URL
+                const response = await fetch(`${API_BASE_URL}/api/questions`, {
                     method: 'POST',
                     headers: {
-                        'Authorization': `Bearer ${token}` // ADICIONA TOKEN
+                        'Authorization': `Bearer ${token}`
                     },
                     body: formData 
                 });

@@ -20,9 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 2. FILTRO (Mantido)
+    // 2. FILTRO
     window.filterFeed = function(disciplinaId, tema) {
-        let url = 'http://localhost:8080/api/feed/questions';
+        // CORREÇÃO: API_BASE_URL
+        let url = `${API_BASE_URL}/api/feed/questions`;
         const params = new URLSearchParams();
         if (disciplinaId) params.append('disciplinaId', disciplinaId);
         if (tema) params.append('tema', tema);
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectDisciplina = document.getElementById('feed-filter-disciplina');
     if (selectDisciplina) selectDisciplina.addEventListener('change', (e) => filterFeed(e.target.value, null));
 
-    // 3. CARREGAR FEED (PÚBLICO - SEM TOKEN)
+    // 3. CARREGAR FEED
     function loadFeedUrl(url) {
         feedList.innerHTML = '<p style="text-align:center; padding:20px;"><i class="fas fa-spinner fa-spin"></i> Carregando...</p>';
         fetch(url)
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(questions => renderFeed(questions))
             .catch(err => {
                 console.error(err);
-                feedList.innerHTML = '<p style="text-align:center;">Erro ao carregar.</p>';
+                feedList.innerHTML = '<p style="text-align:center;">Erro ao carregar feed (API Offline?).</p>';
             });
     }
 
@@ -55,22 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'feed-card';
             
-            // Tratamento do Avatar
-            const avatarUrl = q.autorFoto ? `http://localhost:8080${q.autorFoto}` : null;
+            // CORREÇÃO: URL da imagem do perfil
+            const avatarUrl = q.autorFoto ? `${API_BASE_URL}${q.autorFoto}` : null;
             const avatarImg = avatarUrl ? `<img src="${avatarUrl}" style="width:30px;height:30px;border-radius:50%;margin-right:10px;object-fit:cover;">` : '<i class="fas fa-user-circle fa-lg" style="margin-right:10px;"></i>';
             const dataFormatada = new Date(q.dataCriacao).toLocaleDateString('pt-BR');
 
-            // --- LÓGICA DE RENDERIZAÇÃO DE IMAGEM ---
+            // CORREÇÃO: URL da imagem do anexo
             let imageHtml = '';
             if (q.anexos && q.anexos.length > 0) {
-                const imgUrl = `http://localhost:8080${q.anexos[0]}`;
+                const imgUrl = `${API_BASE_URL}${q.anexos[0]}`;
                 imageHtml = `
                     <div class="card-image-container">
                         <img src="${imgUrl}" class="feed-img-preview" alt="Anexo da pergunta">
                     </div>`;
             }
 
-            // --- LÓGICA DE RENDERIZAÇÃO DE TAGS ---
             let tagsHtml = '';
             if (q.tags && q.tags.length > 0) {
                 tagsHtml = '<div style="margin-top:10px; display:flex; gap:5px; flex-wrap:wrap;">';
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filterFeed(null, null);
 });
 
-// --- FUNÇÕES GLOBAIS COM TOKEN ---
+// --- FUNÇÕES GLOBAIS ---
 
 window.toggleAnswers = function(questionId) {
     const container = document.getElementById(`answers-container-${questionId}`);
@@ -128,7 +128,6 @@ window.toggleAnswers = function(questionId) {
     }
 }
 
-// BUSCAR RESPOSTAS
 window.loadAnswers = async function(questionId) {
     const listDiv = document.getElementById(`answers-list-${questionId}`);
     const matricula = localStorage.getItem('usuarioMatricula');
@@ -138,7 +137,8 @@ window.loadAnswers = async function(questionId) {
     if (token) headers['Authorization'] = `Bearer ${token}`;
 
     try {
-        const res = await fetch(`http://localhost:8080/api/questions/${questionId}/answers?matriculaUsuario=${matricula || ''}`, {
+        // CORREÇÃO: API_BASE_URL
+        const res = await fetch(`${API_BASE_URL}/api/questions/${questionId}/answers?matriculaUsuario=${matricula || ''}`, {
             headers: headers
         });
         
@@ -181,7 +181,6 @@ window.loadAnswers = async function(questionId) {
     }
 }
 
-// POSTAR RESPOSTA (COM TOKEN)
 window.postAnswer = async function(questionId) {
     const matricula = localStorage.getItem('usuarioMatricula');
     const token = localStorage.getItem('usuarioToken');
@@ -193,11 +192,12 @@ window.postAnswer = async function(questionId) {
     if(!texto) return;
 
     try {
-        const res = await fetch('http://localhost:8080/api/answers', {
+        // CORREÇÃO: API_BASE_URL
+        const res = await fetch(`${API_BASE_URL}/api/answers`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}` // TOKEN AQUI
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({
                 idPergunta: questionId,
@@ -216,7 +216,6 @@ window.postAnswer = async function(questionId) {
     } catch(e) { alert("Erro de conexão."); }
 }
 
-// REAGIR (COM TOKEN)
 window.handleReaction = async function(idResposta, tipo, questionId) {
     const matricula = localStorage.getItem('usuarioMatricula');
     const token = localStorage.getItem('usuarioToken');
@@ -224,11 +223,12 @@ window.handleReaction = async function(idResposta, tipo, questionId) {
     if (!matricula || !token) return alert("Faça login para reagir.");
 
     try {
-        const res = await fetch('http://localhost:8080/api/reacoes', {
+        // CORREÇÃO: API_BASE_URL
+        const res = await fetch(`${API_BASE_URL}/api/reacoes`, {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}` // TOKEN AQUI
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({ matriculaPessoa: matricula, tipoReacao: tipo, idResposta: idResposta })
         });

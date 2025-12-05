@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- REFERÊNCIAS AOS ELEMENTOS VISUAIS ---
     const container = document.querySelector('.container');
     const registerBtn = document.querySelector('.register-btn');
     const loginBtn = document.querySelector('.login-btn');
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeForgotBtn = document.getElementById('close-forgot-modal');
     const forgotForm = document.getElementById('forgot-form');
 
-    // --- ALTERNAR ENTRE LOGIN E CADASTRO (UI) ---
     const updateStateFromHash = () => {
         if (window.location.hash === '#register') {
             container.classList.add('active');
@@ -29,19 +27,17 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('hashchange', updateStateFromHash);
     updateStateFromHash();
 
-
-    // --- LÓGICA DE LOGIN ---
+    // LOGIN
     if (loginForm) {
         loginForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-
             const inputs = loginForm.querySelectorAll('input');
             const email = inputs[0].value;
             const senha = inputs[1].value;
 
             try {
-                // Requisição ao servidor (caminho relativo para funcionar na Vercel)
-                const response = await fetch('/api/auth/login', {
+                // CORREÇÃO: Usando API_BASE_URL
+                const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: email, senha: senha })
@@ -50,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok) {
-                    // Login com sucesso
                     localStorage.setItem('usuarioToken', data.token);
                     localStorage.setItem('usuarioMatricula', data.matricula);
                     localStorage.setItem('usuarioNome', data.nome);
@@ -59,10 +54,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert('Bem-vindo(a), ' + data.nome + '!');
                     window.location.href = "perfil.html"; 
                 } else {
-                    // Erro de senha ou usuário
                     alert(data.error || 'Falha na autenticação.');
                 }
-
             } catch (error) {
                 console.error("Erro na requisição:", error);
                 alert('Erro ao conectar com o servidor.');
@@ -70,14 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-    // --- LÓGICA DE CADASTRO ---
+    // CADASTRO
     if (registerForm) {
         registerForm.addEventListener('submit', async (event) => {
             event.preventDefault();
-
             const inputs = registerForm.querySelectorAll('input');
-            // Atenção à ordem dos inputs no seu HTML
             const nome = inputs[0].value;
             const cpf = inputs[1].value;
             const matricula = inputs[2].value;
@@ -87,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const tipoPessoa = tipoInput ? tipoInput.value : 'Aluno'; 
 
             try {
-                const response = await fetch('/api/auth/register', {
+                // CORREÇÃO: Usando API_BASE_URL
+                const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ nome, cpf, matricula, emailInstitucional: email, senha, tipoPessoa })
@@ -97,8 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert("Cadastro realizado com sucesso! Faça login para continuar.");
                     window.location.hash = 'login';
                 } else {
-                    const errorText = await response.text();
-                    alert("Erro ao cadastrar: " + errorText);
+                    const errorText = await response.text(); // Tenta ler como texto caso não seja JSON válido
+                    try {
+                        const errorJson = JSON.parse(errorText);
+                        alert("Erro ao cadastrar: " + (errorJson.error || errorText));
+                    } catch (e) {
+                        alert("Erro ao cadastrar: " + errorText);
+                    }
                 }
             } catch (error) { 
                 console.error(error);
@@ -107,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LÓGICA DE RECUPERAÇÃO DE SENHA ---
+    // RECUPERAÇÃO DE SENHA
     if (forgotLink && forgotModal) {
         forgotLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -120,13 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         forgotForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
             const email = document.getElementById('forgot-email').value;
             const cpf = document.getElementById('forgot-cpf').value;
             const novaSenha = document.getElementById('forgot-new-pass').value;
 
             try {
-                const res = await fetch('/api/auth/recover-password', {
+                // CORREÇÃO: Usando API_BASE_URL
+                const res = await fetch(`${API_BASE_URL}/api/auth/recover-password`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, cpf, novaSenha })
