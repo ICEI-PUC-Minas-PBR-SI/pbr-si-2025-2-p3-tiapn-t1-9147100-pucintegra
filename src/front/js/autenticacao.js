@@ -15,12 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const updateStateFromHash = () => {
         if (window.location.hash === '#register') {
             container.classList.add('active');
-            document.querySelector('.form-box.register').style.visibility = 'visible';
-            document.querySelector('.form-box.login').style.visibility = 'hidden';
+            if(document.querySelector('.form-box.register')) document.querySelector('.form-box.register').style.visibility = 'visible';
+            if(document.querySelector('.form-box.login')) document.querySelector('.form-box.login').style.visibility = 'hidden';
         } else {
             container.classList.remove('active');
-            document.querySelector('.form-box.register').style.visibility = 'hidden';
-            document.querySelector('.form-box.login').style.visibility = 'visible';
+            if(document.querySelector('.form-box.register')) document.querySelector('.form-box.register').style.visibility = 'hidden';
+            if(document.querySelector('.form-box.login')) document.querySelector('.form-box.login').style.visibility = 'visible';
         }
     };
 
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const senha = inputs[1].value;
 
             try {
-                // CORREÇÃO: Usando caminho relativo (sem localhost)
+                // Requisição ao servidor (caminho relativo para funcionar na Vercel)
                 const response = await fetch('/api/auth/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -48,8 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 const data = await response.json();
-if (response.ok) {
-                    // Se deu certo, salva os dados
+
+                if (response.ok) {
+                    // Login com sucesso
                     localStorage.setItem('usuarioToken', data.token);
                     localStorage.setItem('usuarioMatricula', data.matricula);
                     localStorage.setItem('usuarioNome', data.nome);
@@ -58,12 +59,11 @@ if (response.ok) {
                     alert('Bem-vindo(a), ' + data.nome + '!');
                     window.location.href = "perfil.html"; 
                 } else {
-                    // Se a senha estiver errada
+                    // Erro de senha ou usuário
                     alert(data.error || 'Falha na autenticação.');
                 }
 
             } catch (error) {
-                // Se o servidor cair ou a internet falhar
                 console.error("Erro na requisição:", error);
                 alert('Erro ao conectar com o servidor.');
             }
@@ -77,6 +77,7 @@ if (response.ok) {
             event.preventDefault();
 
             const inputs = registerForm.querySelectorAll('input');
+            // Atenção à ordem dos inputs no seu HTML
             const nome = inputs[0].value;
             const cpf = inputs[1].value;
             const matricula = inputs[2].value;
@@ -86,7 +87,6 @@ if (response.ok) {
             const tipoPessoa = tipoInput ? tipoInput.value : 'Aluno'; 
 
             try {
-                // CORREÇÃO: Usando caminho relativo (sem localhost)
                 const response = await fetch('/api/auth/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -107,7 +107,7 @@ if (response.ok) {
         });
     }
 
-    // LÓGICA DE RECUPERAÇÃO DE SENHA
+    // --- LÓGICA DE RECUPERAÇÃO DE SENHA ---
     if (forgotLink && forgotModal) {
         forgotLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -126,7 +126,6 @@ if (response.ok) {
             const novaSenha = document.getElementById('forgot-new-pass').value;
 
             try {
-                // CORREÇÃO: Usando caminho relativo (sem localhost)
                 const res = await fetch('/api/auth/recover-password', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
