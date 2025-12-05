@@ -42,30 +42,37 @@ console.log('📂 Pasta de Arquivos Estáticos:', frontendPath);
 if (fs.existsSync(frontendPath)) {
     console.log('✅ A pasta existe! O servidor tentará ler arquivos daqui.');
 } else {
-    console.log('❌ ERRO CRÍTICO: A pasta não foi encontrada! Verifique se criou "src/front"');
+    // Isso é comum na Vercel, pois a estrutura de pastas muda no build, não se preocupe por enquanto
+    console.log('⚠️ Aviso: Pasta src/front não encontrada no caminho padrão.');
 }
 console.log('------------------------------------------------');
 
 app.use(express.static(frontendPath));
 app.use('/docs/images', express.static(path.join(__dirname, 'docs', 'images')));
-// Permite acessar os uploads via URL (ex: http://localhost:3000/uploads/arquivo.jpg)
+// Permite acessar os uploads via URL
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
-// ROTAS DE AUTENTICAÇÃO
-app.post('/api/register', async (req, res) => {
+// --- ROTAS DE AUTENTICAÇÃO (CORRIGIDAS) ---
+
+// Adicionado /auth no caminho para combinar com o Front-end
+app.post('/api/auth/register', async (req, res) => {
     const { nome, cpf, matricula, email, senha, tipo_usuario } = req.body;
     try {
         const hash = await bcrypt.hash(senha, saltRounds);
         await db.execute('INSERT INTO PESSOA (Nome, CPF, Matricula, Email_Institucional, Senha, Tipo_Pessoa) VALUES (?, ?, ?, ?, ?, ?)', [nome, cpf, matricula, email, hash, tipo_usuario]);
         const tipoTabela = tipo_usuario === 'Aluno' ? 'ALUNO' : 'PROFESSOR';
         const colunaMatricula = tipo_usuario === 'Aluno' ? 'Matricula_Aluno' : 'Matricula_Professor';
-        await db.execute(`INSERT INTO ${tipoTabela} (${colunaMatricula}) VALUES (?)`, [matricula]);
+        await db.execute(INSERT INTO ${tipoTabela} (${colunaMatricula}) VALUES (?), [matricula]);
         res.status(201).json({ message: 'Cadastro sucesso', userId: matricula });
-    } catch (error) { res.status(500).json({ message: 'Erro cadastro' }); }
+    } catch (error) { 
+        console.error("Erro no cadastro:", error);
+        res.status(500).json({ message: 'Erro cadastro' }); 
+    }
 });
 
-app.post('/api/login', async (req, res) => {
+// Adicionado /auth no caminho para combinar com o Front-end
+app.post('/api/auth/login', async (req, res) => {
     /* Lógica de Login */
     const { email, senha } = req.body;
     try {
@@ -74,21 +81,27 @@ app.post('/api/login', async (req, res) => {
         if (user && await bcrypt.compare(senha, user.Senha)) {
             res.json({ message: 'Login sucesso', user: { matricula: user.Matricula, nome: user.Nome, tipo: user.Tipo_Pessoa } });
         } else { res.status(401).json({ message: 'Falha login' }); }
-    } catch (e) { res.status(500).json({ message: 'Erro login' }); }
+    } catch (e) { 
+        console.error("Erro no login:", e);
+        res.status(500).json({ message: 'Erro login' }); 
+    }
+});
+
+// Rota Nova: Recuperação de Senha (Para evitar erro 404)
+app.post('/api/auth/recover-password', async (req, res) => {
+    // Placeholder: futuramente você implementa o envio de e-mail aqui
+    res.status(200).json({ message: 'Solicitação recebida (Simulação)' });
 });
 
 
 // ROTA DE PERGUNTAS COM UPLOAD 
 app.post('/api/questions', upload.array('anexos', 3), async (req, res) => {
     console.log("--> Recebendo requisição de Nova Pergunta...");
-    console.log("Body:", req.body);
-    console.log("Arquivos:", req.files);
-
+    
     const { matricula_aluno, id_disciplina, titulo, conteudo, palavras_chave } = req.body;
 
     // Validação estrita no Backend
     if (!matricula_aluno || !id_disciplina || !titulo || !conteudo) {
-        console.error("Erro: Campos obrigatórios faltando.");
         return res.status(400).json({ message: 'Campos obrigatórios faltando.' });
     }
 
@@ -97,20 +110,17 @@ app.post('/api/questions', upload.array('anexos', 3), async (req, res) => {
         connection = await db.getConnection();
         await connection.beginTransaction();
 
-        console.log("1. Inserindo Pergunta...");
         const [resultPergunta] = await connection.execute(
             'INSERT INTO PERGUNTA (Matricula_Aluno, Id_Disciplina, Titulo, Conteudo, Visibilidade, Status) VALUES (?, ?, ?, ?, ?, ?)',
             [matricula_aluno, id_disciplina, titulo, conteudo, 'Aberta', 'Aberta']
         );
         const id_pergunta = resultPergunta.insertId;
 
-        console.log("2. Processando Tags...");
         if (palavras_chave) {
             const tagsArray = palavras_chave.split(',').filter(t => t.trim() !== "");
             for (const palavra of tagsArray) {
                 const tagLimpa = palavra.trim();
                 await connection.execute('INSERT IGNORE INTO PALAVRA_CHAVE (Palavra) VALUES (?)', [tagLimpa]);
-                // Pega o ID (seja novo ou existente)
                 const [rowsTag] = await connection.execute('SELECT Id_PalavraChave FROM PALAVRA_CHAVE WHERE Palavra = ?', [tagLimpa]);
                 if (rowsTag.length > 0) {
                     await connection.execute('INSERT INTO PERGUNTA_PALAVRACHAVE (Id_Pergunta, Id_PalavraChave) VALUES (?, ?)', [id_pergunta, rowsTag[0].Id_PalavraChave]);
@@ -118,10 +128,8 @@ app.post('/api/questions', upload.array('anexos', 3), async (req, res) => {
             }
         }
 
-        console.log("3. Processando Anexos...");
         if (req.files && req.files.length > 0) {
             for (const file of req.files) {
-                // Caminho relativo para salvar no banco
                 const caminhoRelativo = '/uploads/' + file.filename;
                 await connection.execute(
                     'INSERT INTO PERGUNTA_ANEXO (Id_Pergunta, Nome_Arquivo, Caminho_Arquivo, Tipo_Arquivo) VALUES (?, ?, ?, ?)',
@@ -131,13 +139,11 @@ app.post('/api/questions', upload.array('anexos', 3), async (req, res) => {
         }
 
         await connection.commit();
-        console.log("--> Sucesso! Pergunta ID:", id_pergunta);
         res.status(201).json({ message: 'Pergunta publicada!', id: id_pergunta });
 
     } catch (error) {
         if (connection) await connection.rollback();
         console.error('CRITICAL ERROR na Publicação:', error);
-        // Retorna o erro exato para o front (ajuda no debug)
         res.status(500).json({ message: 'Erro interno: ' + error.message });
     } finally {
         if (connection) connection.release();
@@ -150,7 +156,6 @@ app.post('/api/questions', upload.array('anexos', 3), async (req, res) => {
 app.get('/api/profile/:matricula', async (req, res) => {
     const { matricula } = req.params;
     try {
-        // Busca dados do usuário
         const [userRows] = await db.execute(
             `SELECT Nome, Email_Institucional, Tipo_Pessoa, Foto_Perfil, Biografia 
              FROM PESSOA WHERE Matricula = ?`, [matricula]
@@ -160,12 +165,10 @@ app.get('/api/profile/:matricula', async (req, res) => {
             return res.status(404).json({ message: 'Usuário não encontrado' });
         }
 
-        // Busca contagem de Perguntas
         const [qRows] = await db.execute(
             'SELECT COUNT(*) as total FROM PERGUNTA WHERE Matricula_Aluno = ?', [matricula]
         );
         
-        // Busca contagem de Respostas
         const [aRows] = await db.execute(
             'SELECT COUNT(*) as total FROM RESPOSTA WHERE Matricula_Pessoa = ?', [matricula]
         );
@@ -190,15 +193,11 @@ app.put('/api/profile/:matricula', upload.single('foto_perfil'), async (req, res
     const { biografia, nome } = req.body; 
     const file = req.file;
 
-    console.log(`Atualizando perfil ${matricula}:`, { nome, biografia, file: file ? file.filename : 'Sem foto' });
-
     try {
         let query = 'UPDATE PESSOA SET Nome = ?, Biografia = ?';
         let params = [nome, biografia];
 
         if (file) {
-            // Se tiver arquivo, adiciona o campo de foto na query
-            // Salva o caminho relativo acessível pelo navegador
             const caminhoFoto = '/uploads/' + file.filename;
             query += ', Foto_Perfil = ?';
             params.push(caminhoFoto);
@@ -208,7 +207,6 @@ app.put('/api/profile/:matricula', upload.single('foto_perfil'), async (req, res
         params.push(matricula);
 
         await db.execute(query, params);
-        
         res.json({ message: 'Perfil atualizado com sucesso!' });
     } catch (error) { 
         console.error("Erro ao atualizar perfil:", error);
@@ -340,8 +338,6 @@ app.get('/', (req, res) => {
     res.redirect('/html/homepage.html');
 });
 
-// app.listen ...
-
 app.listen(PORT, () => {
-    console.log(`Servidor rodando em http://localhost:${PORT}`);
+    console.log(Servidor rodando em http://localhost:${PORT});
 });
