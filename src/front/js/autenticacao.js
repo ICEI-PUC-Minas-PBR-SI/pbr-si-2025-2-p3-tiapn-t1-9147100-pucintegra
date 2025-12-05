@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const senha = inputs[1].value;
 
             try {
-                const response = await fetch('http://localhost:8080/api/auth/login', {
+                // CORREÇÃO: Usando caminho relativo (sem localhost)
+                const response = await fetch('/api/auth/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email: email, senha: senha })
@@ -49,13 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok) {
-                    // --- ALTERAÇÃO PRINCIPAL AQUI ---
                     localStorage.setItem('usuarioToken', data.token); // Salva o Token JWT
                     localStorage.setItem('usuarioMatricula', data.matricula);
                     localStorage.setItem('usuarioNome', data.nome);
                     localStorage.setItem('usuarioTipo', data.tipo);
 
-                    alert(`Bem-vindo(a), ${data.nome}!`);
+                    alert(Bem-vindo(a), ${data.nome}!);
                     window.location.href = "perfil.html"; 
                 } else {
                     alert(data.error || 'Falha na autenticação.');
@@ -84,7 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const tipoPessoa = tipoInput ? tipoInput.value : 'Aluno'; 
 
             try {
-                const response = await fetch('http://localhost:8080/api/auth/register', {
+                // CORREÇÃO: Usando caminho relativo (sem localhost)
+                const response = await fetch('/api/auth/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ nome, cpf, matricula, emailInstitucional: email, senha, tipoPessoa })
@@ -123,7 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const novaSenha = document.getElementById('forgot-new-pass').value;
 
             try {
-                const res = await fetch('http://localhost:8080/api/auth/recover-password', {
+                // CORREÇÃO: Usando caminho relativo (sem localhost)
+                const res = await fetch('/api/auth/recover-password', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, cpf, novaSenha })
