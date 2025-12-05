@@ -1,8 +1,8 @@
 -- 1. CRIAÇÃO DO AMBIENTE
-DROP DATABASE IF EXISTS puc_integra;
-CREATE DATABASE puc_integra CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+DROP DATABASE IF EXISTS defaultdb;
+CREATE DATABASE defaultdb CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
-USE puc_integra;
+USE defaultdb;
 
 -- 2. TABELAS INDEPENDENTES (SEM CHAVES ESTRANGEIRAS)
 
