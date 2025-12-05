@@ -22,6 +22,6 @@
 
 **[2.1]** - ORACLE. **MySQL 8.0 Reference Manual**. Disponível em: <https://dev.mysql.com/doc/refman/8.0/en/>. Acesso em: 28 nov. 2025.
 
-**[2.2]** - VMWARE. **Spring Boot Documentation**. Disponível em: <https://docs.spring.io/spring-boot/docs/current/reference/html/>. Acesso em: 28 nov. 2025.
+**[2.2]** - VMWARE. **Spring Boot Documentation**. Disponível em: <https://docs.spring.io/spring-boot/docs/current/reference/>. Acesso em: 28 nov. 2025.
 
 **[2.3]** - MOZILLA DEVELOPER NETWORK (MDN). **Web technology for developers (HTML, CSS, JavaScript)**. Disponível em: <https://developer.mozilla.org/en-US/>. Acesso em: 28 nov. 2025.

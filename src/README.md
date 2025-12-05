@@ -45,7 +45,7 @@ Antes de iniciar a aplicação Java, é necessário preparar o banco:
 
 ### 3. Executando o Front-end
 Como o front-end é estático e consome a API via `fetch`:
-1.  Navegue até a pasta `src/front/html`.
+1.  Navegue até a pasta `src/front`.
 2.  Você pode abrir o arquivo `index.html` diretamente no navegador ou utilizar uma extensão como **Live Server** (VS Code) para evitar problemas de CORS e caminhos relativos.
 
 ## 🛠 Funcionalidades Implementadas

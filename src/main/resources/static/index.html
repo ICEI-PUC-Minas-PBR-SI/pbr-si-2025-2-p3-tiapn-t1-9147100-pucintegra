@@ -3,99 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PUC INTEGRA - Transforme perguntas em aprendizado</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <title>Feed de Discussões | PUC Integra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/feed.css">
     <link rel="icon" href="/images/homepage/favicon.ico">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="hero-section">
-        <div class="container">
-            <nav class="navbar">
-                <p class="navbar-title">PUC INTEGRA</p>
-                <div class="nav-links">
-                    <a href="/autenticacao.html#login">Entrar</a>
-                    <a href="/autenticacao.html#register">Cadastre-se</a>
-                    <a href="/feed.html" class="nav-link">
-                        <i class="fas fa-stream"></i> Feed
-                    </a>
-                    <a href="/pergunta.html" class="nav-link">
-                        <i class="fas fa-plus"></i> Nova Pergunta
-                    </a>
-                    <a href="/perfil.html" class="profile-icon-link" title="Meu Perfil">
-                        <i class="fas fa-user-circle"></i>
-                    </a>
-                </div>
-            </nav>
 
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h2>Transforme perguntas <br> em aprendizado</h2>
-                    <p>Publique suas dúvidas, responda questões e encontre materiais de estudo validados pela nossa
-                        comunidade, com foco total no contexto e na cultura da PUC Minas.</p>
-                </div>
-               <img src="/images/logo_sem_nome.png" alt="Logo PucIntegra">
+    <nav class="top-nav">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <a href="/index.html" style="text-decoration: none; color: white;">
+                    <span class="navbar-title">PUC INTEGRA</span>
+                </a>
             </div>
+            <div class="nav-links" id="nav-links-container">
+                </div>
+        </div>
+    </nav>
+
+    <header class="feed-header">
+        <div class="container">
+            <h1>Discussões da Comunidade</h1>
+            <p>Explore dúvidas, compartilhe conhecimento e colabore com seus colegas.</p>
         </div>
     </header>
 
-    <section class="categories-section">
-        <div class="container">
-            <button class="carousel-arrow left"><i class="fas fa-chevron-left"></i></button>
-            <div class="categories-carousel">
-                <div class="category-item">
-                    <i class="fas fa-project-diagram"></i>
-                    <p>Algoritmos e Estrutura de Dados</p>
+    <main class="feed-main container">
+        
+        <aside class="feed-sidebar">
+            <div class="sidebar-card">
+                <h3>Filtrar Feed</h3>
+                
+                <div class="filter-group" style="margin-bottom: 20px;">
+                    <label style="font-size: 0.9rem; color: #666; display:block; margin-bottom:5px;">Por Disciplina:</label>
+                    <select id="feed-filter-disciplina" style="width: 100%; padding: 8px; border-radius: 5px; border: 1px solid #ddd;">
+                        <option value="">Todas as Disciplinas</option>
+                        
+                        <optgroup label="Eixo de Programação">
+                            <option value="200">Algoritmos e Téc. Programação</option>
+                            <option value="207">Algoritmos e Estrutura de Dados</option>
+                            <option value="215">Prog. Orientada a Objetos</option>
+                            <option value="201">Desenv. Web Front-End</option>
+                            <option value="209">Desenv. Web Back-End</option>
+                        </optgroup>
+                        <optgroup label="Eixo de Banco de Dados">
+                            <option value="208">Banco de Dados</option>
+                            <option value="212">Banco de Dados NoSQL</option>
+                        </optgroup>
+                        <optgroup label="Eixo de Redes">
+                            <option value="220">Projeto de Redes</option>
+                            <option value="239">Arquitetura de Redes</option>
+                            <option value="240">Cibersegurança</option>
+                        </optgroup>
+                        </select>
                 </div>
-                <div class="category-item">
-                    <i class="fas fa-cube"></i>
-                    <p>Algoritmos e Tecnicas de Programação</p>
-                </div>
-                <div class="category-item">
-                    <i class="fas fa-database"></i>
-                    <p>Banco de Dados</p>
-                </div>
-                 <div class="category-item">
-                    <i class="fas fa-laptop-code"></i>
-                    <p>Desenvolvimento Web</p>
-                </div>
-            </div>
-            <button class="carousel-arrow right"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
 
-    <section class="news-section">
-        <div class="container">
-            <div class="news-title-box">
-                <h3 class="section-title-small">Eventos e notícias recentes</h3>
+                <a href="/pergunta.html" class="btn-new-question-side">Nova Pergunta</a>
             </div>
-            <div class="news-carousel">
-                <div class="news-card">
-                    <div class="news-image-box news-card-1">
-                        <p class="news-headline">Alunos da PUC Minas Lançam Plataforma Inovadora</p>
-                        <img src="/images/homepage/carrousel01.png" alt="Alunos" class="news-image">
-                        <span class="puc-integra-tag">#PUC Integra</span>
-                    </div>
+        </aside>
+
+        <section class="feed-content">
+            <div id="full-feed-list"></div>
+
+            <div id="feed-loader" style="text-align: center; padding: 20px; display: none;">
+                <i class="fas fa-spinner fa-spin"></i> Carregando...
+            </div>
+
+            <div id="login-lock-message" class="lock-box" style="display: none;">
+                <i class="fas fa-lock"></i>
+                <h3>Faça login para ver mais discussões</h3>
+                <a href="/autenticacao.html#login" class="btn-login-lock">Entrar Agora</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="puc-integra-footer">
+        <div class="footer-container">
+            
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="/images/logo_puc.png" alt="Logo" class="footer-logo-img" style="display:none;"> 
+                    <span class="footer-brand-text">PUC INTEGRA</span>
                 </div>
-                <div class="news-card">
-                    <div class="news-image-box news-card-2">
-                        <p class="news-headline">Inscrições Abertas Maratona 2026</p>
-                        <img src="/images/homepage/carrousel02.png" alt="Maratona" class="news-image">
-                        <span class="puc-integra-tag">#Evento PUC</span>
-                    </div>
+                <p class="footer-desc">
+                    Conectando alunos, transformando dúvidas em conhecimento e fortalecendo a comunidade acadêmica da PUC Minas.
+                </p>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="/index.html">Tela Inicial</a></li>
+                    <li><a href="/pergunta.html">Perguntas</a></li>
+                    <li><a href="#">Disciplinas</a></li>
+                    <li><a href="#">Comunidades</a></li>
+                    <li><a href="#">Tutoria</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col links-col">
+                <h4>Suporte</h4>
+                <ul>
+                    <li><a href="#">Central de Ajuda</a></li>
+                    <li><a href="#">Diretrizes da Comunidade</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Termos de Uso</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Fale Conosco</h4>
+                <div class="social-links">
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
+                <p class="contact-email"><i class="far fa-envelope"></i> contato@pucintegra.com.br</p>
             </div>
         </div>
-    </section>
 
-    <footer class="footer-cta">
-        <div class="container">
-            <p>Está buscando uma resposta?</p>
-            <a href="/pergunta.html"><button class="btn-main">Faça uma pergunta</button></a>
+        <div class="footer-bottom">
+            <p>&copy; <span id="current-year">2025</span> PUC Integra. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart"></i> por alunos de Sistemas de Informação.</p>
         </div>
     </footer>
-    
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
     <script src="/js/config.js"></script>
-    <script src="/js/index.js"></script>
+    <script src="/js/feed.js"></script>
 </body>
 </html>

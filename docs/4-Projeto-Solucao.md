@@ -625,7 +625,7 @@ CREATE TABLE RESPOSTA_ANEXO (
 2.  **Requisição:** Ao realizar uma ação (ex: "Enviar uma Pergunta"), o navegador envia uma requisição HTTP para o servidor.
 3.  **Processamento (Back-end):** O **Spring Boot** (Java) intercepta a requisição. O *Controller* valida os dados recebidos. Se válidos, aciona a camada de *Service* que aplica as regras de negócio (ex: verificar se o usuário está logado e vinculado a uma disciplina).
 4.  **Persistência:** O serviço solicita ao *Repository* (JPA) que salve a nova pergunta. O framework converte o objeto Java em comandos SQL e os executa no banco de dados **MySQL**.
-5.  **Resposta:** O banco de dados confirma a gravação. O Spring Boot processa essa confirmação e retorna uma resposta ao navegador (geralmente redirecionando o usuário para a página da pergunta recém-criada ou exibindo uma mensagem de sucesso via JSON/HTML).
+5.  **Resposta:** O banco de dados confirma a gravação. O Spring Boot processa essa confirmação e retorna uma resposta ao navegador (geralmente redirecionando o usuário para a página da pergunta recém-criada ou exibindo uma mensagem de sucesso via JSON).
 6.  **Deploy:** O código fonte é versionado no **GitHub**, e a versão de produção/documentação pode ser hospedada utilizando recursos como **GitHub Pages** (para estáticos/docs) ou serviços de nuvem compatíveis com Java.
 
 

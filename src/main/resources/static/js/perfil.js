@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const token = localStorage.getItem('usuarioToken');
 
     if (!userMatricula || !token) {
-        window.location.href = "/html/autenticacao.html#login";
+        window.location.href = "/autenticacao.html#login";
         return;
     }
 
