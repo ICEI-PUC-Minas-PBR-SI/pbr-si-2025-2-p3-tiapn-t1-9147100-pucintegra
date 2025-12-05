@@ -5,8 +5,9 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 # Etapa 2: Execução
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
+
 # Copia o JAR gerado na etapa anterior
 COPY --from=build /app/target/api-0.0.1-SNAPSHOT.jar app.jar
 
