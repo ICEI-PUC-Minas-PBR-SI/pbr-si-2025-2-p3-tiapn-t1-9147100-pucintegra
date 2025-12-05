@@ -3,34 +3,77 @@
 
 <span style="color:red">Pré-requisitos: <a href="4-Projeto-Solucao.md"> Projeto da Solução</a></span>
 
-_Visão geral da interação do usuário por meio das telas do sistema. Apresente as principais interfaces da plataforma._
-
 ## 6.1. Tela principal do sistema
 
-_Descrição da tela principal do sistema._
+Tela principal do sistema, onde são mostradas as opções de lugares disponíveis.
 
-[`Tela principal do sistema`](images/)
+[`Tela principal do sistema`](images/tela_principal)
 
 
 ## 6.2. Telas do processo 1
 
-_Descrição da tela relativa à atividade 1._
+Tela inicial de cadastro
 
-[`Tela da atividade 1`](images/)
+[`Tela 1`](images/processo1)
 
-_Descrição da tela relativa à atividade 2._
+Tela de cadastro do locatário
 
-[`Tela da atividade 2`](images/)
+[`Tela 2`](images/processo1_2)
+
+Tela de cadastro do locador
+
+[`Tela 3`](images/processo1_3)
 
 
 ## 6.3. Telas do processo 2
 
-_Descrição da tela relativa à atividade 1._
+Tela do locador
 
-[`Tela da atividade 1`](images/)
+[`Tela 1`](images/processo2inicio)
 
-_Descrição da tela relativa à atividade 2._
+Tela de cadastro do local
 
-[`Tela da atividade 2`](images/)
+[`Tela 2`](images/processo2)
+
+## 6.4. Telas do processo 3
+
+Tela do locador
+
+[`Tela 1`](images/processo2inicio)
+
+Tela de cadastro do local
+
+[`Tela 2`](images/processo2)
+
+## 6.5. Telas do processo 4
+
+Tela do locador
+
+[`Tela 1`](images/processo2inicio)
+
+Tela de cadastro do local
+
+[`Tela 2`](images/processo2)
+
+## 6.6. Telas do processo 5
+
+Tela do locador
+
+[`Tela 1`](images/processo2inicio)
+
+Tela de cadastro do local
+
+[`Tela 2`](images/processo2)
+
+## 6.7. Telas do processo 6
+
+Tela do locador
+
+[`Tela 1`](images/processo2inicio)
+
+Tela de cadastro do local
+
+[`Tela 2`](images/processo2)
+
 
 
