@@ -18,15 +18,15 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/auth")
-// CORREÇÃO AQUI: Libera o acesso para o seu Front-end na Vercel
-@CrossOrigin(origins = {"https://puc-integra-39ig2p7gq-gabriel-gr1s-projects.vercel.app", "http://localhost:5500", "http://127.0.0.1:5500"}) 
+// Permite qualquer origem na Vercel ou Localhost
+@CrossOrigin(origins = "*") 
 public class AutenticacaoController {
 
     @Autowired
     private PessoaRepository pessoaRepository;
 
     @Autowired
-    private TokenService tokenService;
+    private TokenService tokenService; 
 
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
@@ -42,6 +42,7 @@ public class AutenticacaoController {
             Pessoa p = usuarioOpt.get();
             boolean senhaConfere = passwordEncoder.matches(senhaDigitada, p.getSenha());
             
+            // Fallback para senhas antigas (se houver)
             if (!senhaConfere && senhaDigitada.equals(p.getSenha())) {
                 senhaConfere = true;
             }
@@ -51,7 +52,7 @@ public class AutenticacaoController {
 
                 return ResponseEntity.ok(Map.of(
                     "message", "Login realizado com sucesso",
-                    "token", token,
+                    "token", token, 
                     "matricula", p.getMatricula(),
                     "nome", p.getNome(),
                     "tipo", p.getTipoPessoa()
