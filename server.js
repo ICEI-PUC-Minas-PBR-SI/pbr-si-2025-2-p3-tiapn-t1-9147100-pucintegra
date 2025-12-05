@@ -63,7 +63,7 @@ app.post('/api/auth/register', async (req, res) => {
         await db.execute('INSERT INTO PESSOA (Nome, CPF, Matricula, Email_Institucional, Senha, Tipo_Pessoa) VALUES (?, ?, ?, ?, ?, ?)', [nome, cpf, matricula, email, hash, tipo_usuario]);
         const tipoTabela = tipo_usuario === 'Aluno' ? 'ALUNO' : 'PROFESSOR';
         const colunaMatricula = tipo_usuario === 'Aluno' ? 'Matricula_Aluno' : 'Matricula_Professor';
-        await db.execute(INSERT INTO ${tipoTabela} (${colunaMatricula}) VALUES (?), [matricula]);
+        await db.execute(`INSERT INTO ${tipoTabela} (${colunaMatricula}) VALUES (?)`, [matricula]);
         res.status(201).json({ message: 'Cadastro sucesso', userId: matricula });
     } catch (error) { 
         console.error("Erro no cadastro:", error);
