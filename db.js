@@ -1,15 +1,30 @@
-// db.js
-const mysql = require('mysql2/promise');
+const mysql = require('mysql2');
 
-// Configuração da conexão com o banco de dados
+// Cria a conexão usando as variáveis de ambiente (seguro)
 const pool = mysql.createPool({
-    host: 'localhost',       // Endereço do servidor MySQL
-    user: 'root',            // SEU USUÁRIO (geralmente é 'root')
-    password: '@sua_senha',   // <--- COLOQUE AQUI SUA SENHA DO MYSQL
-    database: 'puc_integra', // Nome do banco de dados que criamos
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME || 'defaultdb',
+    port: process.env.DB_PORT || 3306,
     waitForConnections: true,
     connectionLimit: 10,
-    queueLimit: 0
+    queueLimit: 0,
+    // Esta opção 'ssl' é obrigatória para bancos na nuvem (como Aiven/Azure)
+    ssl: {
+        rejectUnauthorized: false
+    }
 });
 
-module.exports = pool;
+// Teste rápido de conexão (aparecerá no log da Vercel)
+pool.getConnection((err, connection) => {
+    if (err) {
+        console.error('❌ Erro ao conectar no Banco de Dados:', err.code);
+        console.error('Detalhes:', err.message);
+    } else {
+        console.log('✅ Conectado ao Banco de Dados com sucesso!');
+        connection.release();
+    }
+});
+
+module.exports = pool.promise();
