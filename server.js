@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // CONFIGURAÇÃO DE ARQUIVOS ESTÁTICOS COM DEBUG
 
 // 1. Define o caminho absoluto para a pasta do front-end
-const frontendPath = path.join(__dirname, 'src', 'front');
+const frontendPath = path.join(__dirname, 'src', 'main', 'resources', 'static');
 
 // 2. Imprime no terminal para verificarmos se o caminho está certo
 console.log('------------------------------------------------');
@@ -334,8 +334,8 @@ app.get('/api/feed/questions', async (req, res) => {
 });
 
 // ROTA RAIZ: Redireciona automaticamente para a tela de login
-app.get('/', (req, res) => {
-    res.redirect('/static/index.html');
+app.get('/', (req, res) => {     
+    res.sendFile(path.join(__dirname, 'src', 'main', 'resources', 'static', 'index.html')); 
 });
 
 app.listen(PORT, () => {
