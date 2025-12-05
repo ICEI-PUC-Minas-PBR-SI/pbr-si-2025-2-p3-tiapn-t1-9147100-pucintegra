@@ -12,14 +12,8 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(@NonNull CorsRegistry registry) {
-        // CORREÇÃO: Adicionando explicitamente o domínio da Vercel e Localhost
         registry.addMapping("/**")
-                .allowedOrigins(
-                    "https://puc-integra-39ig2p7gq-gabriel-gr1s-projects.vercel.app", // Seu Front na Vercel
-                    "http://localhost:5500", // Teste local VS Code
-                    "http://localhost:3000", // Teste local React/Node
-                    "http://127.0.0.1:5500"
-                )
+                .allowedOriginPatterns("*") // Libera tudo
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
@@ -27,14 +21,17 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(@NonNull ViewControllerRegistry registry) {
+        // Quando acessar a raiz, redireciona para o index.html
         registry.addViewController("/").setViewName("forward:/index.html");
     }
 
     @Override
     public void addResourceHandlers(@NonNull ResourceHandlerRegistry registry) {
+        // Serve arquivos estáticos (HTML, CSS, JS) de dentro da pasta static
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/static/");
 
+        // Serve uploads
         registry.addResourceHandler("/uploads/**")
                 .addResourceLocations("classpath:/static/uploads/");
     }

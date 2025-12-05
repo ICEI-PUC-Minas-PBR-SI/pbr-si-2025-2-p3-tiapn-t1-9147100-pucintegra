@@ -31,17 +31,18 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-            .cors(cors -> cors.configurationSource(corsConfigurationSource())) // <--- AQUI ESTÁ O SEGREDO
+            .cors(cors -> cors.configurationSource(corsConfigurationSource())) // <--- ATIVANDO O CORS CONFIG
             .csrf(csrf -> csrf.disable())
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(authorize -> authorize
                 // Endpoints Públicos
-                .requestMatchers(HttpMethod.POST, "/api/auth/login").permitAll()
-                .requestMatchers(HttpMethod.POST, "/api/auth/register").permitAll()
-                .requestMatchers(HttpMethod.POST, "/api/auth/recover-password").permitAll()
+                .requestMatchers(HttpMethod.POST, "/api/auth/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/api/feed/**").permitAll()
                 .requestMatchers("/uploads/**").permitAll()
-                // Permitir OPTIONS (Pre-flight do navegador)
+                .requestMatchers("/error").permitAll() // Importante para ver erros
+                .requestMatchers("/").permitAll()      // Importante para a Home
+                .requestMatchers("/index.html").permitAll()
+                // Permitir Pre-flight requests (OPTIONS)
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest().authenticated()
             )
@@ -49,21 +50,14 @@ public class SecurityConfig {
             .build();
     }
 
-    // Configuração Global de CORS para o Spring Security
+    // Configuração Explícita para liberar a Vercel
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        
-        // Use allowedOriginPatterns em vez de allowedOrigins para permitir subdomínios da Vercel
+        // Permite qualquer origem (Vercel, Localhost, IP)
         configuration.setAllowedOriginPatterns(List.of("*")); 
-        
-        // Métodos permitidos
         configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"));
-        
-        // Headers permitidos
-        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "X-Requested-With"));
-        
-        // Permitir credenciais (cookies/tokens) se necessário
+        configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
