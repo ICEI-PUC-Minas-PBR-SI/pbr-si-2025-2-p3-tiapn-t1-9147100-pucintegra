@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!userMatricula || !token) {
         alert("Sessão expirada. Por favor, faça login novamente.");
         const currentUrl = encodeURIComponent(window.location.pathname);
-        window.location.href = `/html/autenticacao.html#login?returnUrl=${currentUrl}`;
+        window.location.href = `autenticacao.html#login?returnUrl=${currentUrl}`;
         return; 
     }
 
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     alert("Pergunta publicada com sucesso!");
-                    window.location.href = '/html/feed.html';
+                    window.location.href = '/feed.html';
                 } else {
                     const result = await response.json();
                     alert(`Erro ao publicar: ${result.message || 'Erro desconhecido'}`);

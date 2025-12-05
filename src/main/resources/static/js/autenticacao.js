@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('usuarioTipo', data.tipo);
 
                     alert('Bem-vindo(a), ' + data.nome + '!');
-                    window.location.href = "perfil.html"; 
+                    window.location.href = "/perfil.html"; 
                 } else {
                     alert(data.error || 'Falha na autenticação.');
                 }

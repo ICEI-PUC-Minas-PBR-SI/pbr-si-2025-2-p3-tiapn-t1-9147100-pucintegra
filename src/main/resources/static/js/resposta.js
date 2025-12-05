@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!userMatricula || !token) {
         alert("Faça login para participar.");
-        window.location.href = "/html/autenticacao.html#login";
+        window.location.href = "/autenticacao.html#login";
         return;
     }
     if (!questionId) {
         alert("Nenhuma pergunta selecionada.");
-        window.location.href = "/html/feed.html";
+        window.location.href = "/feed.html";
         return;
     }
 

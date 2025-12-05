@@ -236,5 +236,5 @@ document.addEventListener('DOMContentLoaded', () => {
 window.logout = function() {
     localStorage.clear();
     sessionStorage.clear();
-    window.location.href = '/html/autenticacao.html#login';
+    window.location.href = '/autenticacao.html#login';
 }

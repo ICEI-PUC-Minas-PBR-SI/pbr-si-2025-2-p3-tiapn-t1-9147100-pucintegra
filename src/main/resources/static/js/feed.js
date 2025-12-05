@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navContainer) {
         if (userMatricula) {
             navContainer.innerHTML = `
-                <a href="/html/index.html" class="nav-link" style="color:white; margin-right:15px;">Home</a>
-                <a href="/html/pergunta.html" class="nav-link" style="color:white; margin-right:15px;">Nova Pergunta</a>
-                <a href="/html/perfil.html" class="profile-icon-link" style="color:white; font-size:1.5rem;"><i class="fas fa-user-circle"></i></a>
+                <a href="/index.html" class="nav-link" style="color:white; margin-right:15px;">Home</a>
+                <a href="/pergunta.html" class="nav-link" style="color:white; margin-right:15px;">Nova Pergunta</a>
+                <a href="/perfil.html" class="profile-icon-link" style="color:white; font-size:1.5rem;"><i class="fas fa-user-circle"></i></a>
             `;
         } else {
             navContainer.innerHTML = `
-                <a href="/html/autenticacao.html#login" class="nav-link" style="color:white; margin-right:15px;">Entrar</a>
-                <a href="/html/autenticacao.html#register" class="btn-nav-login" style="background:white; color:#007bff; padding:5px 15px; border-radius:20px;">Cadastre-se</a>
+                <a href="/autenticacao.html#login" class="nav-link" style="color:white; margin-right:15px;">Entrar</a>
+                <a href="/autenticacao.html#register" class="btn-nav-login" style="background:white; color:#007bff; padding:5px 15px; border-radius:20px;">Cadastre-se</a>
             `;
         }
     }
@@ -244,5 +244,5 @@ window.handleReaction = async function(idResposta, tipo, questionId) {
 window.logout = function() {
     localStorage.clear();
     sessionStorage.clear();
-    window.location.href = '/html/autenticacao.html#login';
+    window.location.href = '/autenticacao.html#login';
 }

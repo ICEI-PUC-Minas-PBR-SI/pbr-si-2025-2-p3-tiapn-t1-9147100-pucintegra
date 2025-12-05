@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (userMatricula) {
             // SE ESTIVER LOGADO: Esconde login/cadastro e mostra Logout
             navLinksContainer.innerHTML = `
-                <a href="/html/feed.html" class="nav-link"><i class="fas fa-stream"></i> Feed</a>
-                <a href="/html/pergunta.html" class="nav-link"><i class="fas fa-plus"></i> Nova Pergunta</a>
-                <a href="/html/perfil.html" class="profile-icon-link" title="Meu Perfil">
+                <a href="/feed.html" class="nav-link"><i class="fas fa-stream"></i> Feed</a>
+                <a href="/pergunta.html" class="nav-link"><i class="fas fa-plus"></i> Nova Pergunta</a>
+                <a href="/perfil.html" class="profile-icon-link" title="Meu Perfil">
                     <i class="fas fa-user-circle"></i>
                 </a>
                 <a href="#" onclick="logout()" style="color:white; margin-left:10px; font-size:0.9rem;">Sair</a>
@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // SE NÃO ESTIVER LOGADO: Mostra padrão
             navLinksContainer.innerHTML = `
-                <a href="/html/autenticacao.html#login">Entrar</a>
-                <a href="/html/autenticacao.html#register">Cadastre-se</a>
-                <a href="/html/feed.html" class="nav-link"><i class="fas fa-stream"></i> Feed</a>
-                <a href="/html/pergunta.html" class="nav-link"><i class="fas fa-plus"></i> Nova Pergunta</a>
-                <a href="/html/perfil.html" class="profile-icon-link" title="Meu Perfil">
+                <a href="/autenticacao.html#login">Entrar</a>
+                <a href="/autenticacao.html#register">Cadastre-se</a>
+                <a href="/feed.html" class="nav-link"><i class="fas fa-stream"></i> Feed</a>
+                <a href="/pergunta.html" class="nav-link"><i class="fas fa-plus"></i> Nova Pergunta</a>
+                <a href="/perfil.html" class="profile-icon-link" title="Meu Perfil">
                     <i class="fas fa-user-circle"></i>
                 </a>
             `;
