@@ -15,8 +15,8 @@ public class Reacao {
     private Long idReacao; 
     
     @Column(name = "Id_Resposta")
-    private Long idResposta; // Link correto com a resposta
-
+    private Long idResposta; 
+    
     @Column(name = "Matricula_Pessoa", nullable = false)
     private String matriculaPessoa;
 

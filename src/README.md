@@ -2,63 +2,58 @@
 
 O **PUC Integra** é um sistema web colaborativo inspirado no modelo de perguntas e respostas (Q&A), desenvolvido especificamente para a comunidade acadêmica da Pontifícia Universidade Católica de Minas Gerais. O objetivo é promover a interação, validação de conhecimento e compartilhamento de materiais entre alunos e professores.
 
+## 📋 Sobre o Projeto
+
+A aplicação visa resolver a fragmentação da comunicação acadêmica, oferecendo um ambiente centralizado onde:
+* **Alunos** podem postar dúvidas, responder colegas e compartilhar materiais.
+* **Professores** podem validar respostas, moderar conteúdo e atribuir status de monitor.
+* **Conteúdo** é organizado por cursos e disciplinas oficiais da instituição.
+
 ## 🚀 Tecnologias Utilizadas
 
-O projeto foi desenvolvido seguindo uma arquitetura MVC, utilizando as seguintes tecnologias:
+O projeto segue uma arquitetura baseada em APIs RESTful:
 
-* **Front-end:** HTML5, CSS3, JavaScript (Vanilla).
-* **Back-end:** Java com Framework Spring Boot.
+* **Back-end:** Java 17 com Framework Spring Boot (Web, JPA, Security).
 * **Banco de Dados:** MySQL 8.0.
-* **Versionamento:** Git & GitHub.
+* **Front-end:** HTML5, CSS3, JavaScript (Vanilla ES6+).
+* **Autenticação:** JWT (JSON Web Token) e BCrypt para criptografia.
 
 ## 📂 Estrutura de Diretórios
 
 A estrutura do código-fonte está organizada da seguinte forma:
 
-* `/src`: Contém o código-fonte da aplicação (Java).
-* `/src/main/resources`: Configurações do Spring e templates.
-* `/front`: Arquivos estáticos do front-end (HTML, CSS, JS, Imagens).
-* `/database`: Scripts SQL para criação do banco de dados (Modelo Físico).
-* `/docs`: Documentação do projeto.
+* `src/main/java`: Código-fonte da API (Controllers, Models, Repositories, Services).
+* `src/main/resources`: Configurações do Spring (`application.properties`) e uploads.
+* `src/front`: Interface do usuário (HTML, CSS, JS) desacoplada.
+* `src/db`: Scripts SQL para modelagem e criação do banco.
+* `docs`: Documentação de engenharia de software e diagramas.
 
-## 🔧 Como executar o projeto
+## 🔧 Guia de Instalação e Execução
 
-### Pré-requisitos
-Certifique-se de ter instalado em sua máquina:
-* Java JDK 17+
-* Maven
-* MySQL Server
+### 1. Configuração do Banco de Dados
+Antes de iniciar a aplicação Java, é necessário preparar o banco:
+1.  Tenha o MySQL instalado e rodando na porta `3306`.
+2.  Acesse a pasta `src/db` e execute o arquivo `scripts.sql` no seu cliente MySQL (Workbench, DBeaver) para criar o schema `puc_integra` e as tabelas.
+3.  Verifique as credenciais no arquivo `src/main/resources/application.properties` e ajuste `username` e `password` conforme sua instalação local.
 
-### Passo 1: Configuração do Banco de Dados
-1.  Acesse a pasta `/database`.
-2.  Execute o script `scripts.sql` no seu gerenciador de banco de dados (MySQL Workbench, DBeaver, etc.) para criar o banco `puc_integra` e as tabelas necessárias.
-3.  Certifique-se de que o serviço do MySQL está rodando na porta `3306`.
-
-### Passo 2: Configuração da Aplicação
-1.  Navegue até o arquivo `application.properties` em `/src/main/resources`.
-2.  Configure as credenciais do seu banco de dados local:
-    ```properties
-    spring.datasource.url=jdbc:mysql://localhost:3306/puc_integra
-    spring.datasource.username=SEU_USUARIO
-    spring.datasource.password=SUA_SENHA
-    ```
-
-### Passo 3: Executando a aplicação
-1.  Abra o terminal na raiz do projeto.
-2.  Execute o comando:
+### 2. Executando o Back-end (API)
+1.  Na raiz do projeto, execute via Maven:
     ```bash
     mvn spring-boot:run
     ```
-3.  Acesse a aplicação no navegador através do endereço: `http://localhost:8080`.
+2.  A API estará disponível em `http://localhost:8080`.
 
-## 👥 Equipe de Desenvolvimento
+### 3. Executando o Front-end
+Como o front-end é estático e consome a API via `fetch`:
+1.  Navegue até a pasta `src/front/html`.
+2.  Você pode abrir o arquivo `homepage.html` diretamente no navegador ou utilizar uma extensão como **Live Server** (VS Code) para evitar problemas de CORS e caminhos relativos.
+
+## 🛠 Funcionalidades Implementadas
+
+* **Autenticação:** Login e Cadastro com distinção automática de Aluno/Professor.
+* **Feed de Perguntas:** Listagem com filtros por disciplina e busca por tema.
+* **Interação:** Criação de perguntas (com editor rico e anexos), respostas e reações (Like/Dislike).
+* **Perfil:** Visualização de estatísticas do usuário, edição de foto/bio e gestão de monitores (perfil Professor).
+
+## 👥 Equipe
 Trabalho Interdisciplinar - Sistemas de Informação (PUC Minas)
-
-* Gabriel Rodrigo dos Santos Miguel
-* Giovanna Fabíola Vaz
-* Luiza Rodrigues Vertelo
-* Mateus de Carvalho Freitas
-* Ronaldo Pereira de Camargos Júnior
-
----
-*Este projeto é de cunho acadêmico e segue as normas da PUC Minas.*

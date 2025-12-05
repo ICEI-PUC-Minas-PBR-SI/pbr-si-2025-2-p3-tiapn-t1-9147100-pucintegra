@@ -3,7 +3,7 @@ import com.pucintegra.api.model.TipoPessoa;
 import jakarta.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED) // Para Aluno e Professor
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "pessoa")
 public class Pessoa {
 
@@ -27,15 +27,11 @@ public class Pessoa {
     @Column(name = "tipo_pessoa", nullable = false)
     private TipoPessoa tipoPessoa;
 
-    // --- NOVOS CAMPOS ADICIONADOS PARA O PERFIL ---
     @Column(name = "biografia", columnDefinition = "TEXT")
     private String biografia;
 
     @Column(name = "foto_perfil")
     private String fotoPerfil;
-    // ----------------------------------------------
-
-    // Construtor Vazio (Obrigatório pro JPA)
     public Pessoa() {}
 
     // Getters e Setters
@@ -57,7 +53,6 @@ public class Pessoa {
     public TipoPessoa getTipoPessoa() { return tipoPessoa; }
     public void setTipoPessoa(TipoPessoa tipoPessoa) { this.tipoPessoa = tipoPessoa; }
 
-    // --- NOVOS GETTERS E SETTERS ---
     public String getBiografia() { return biografia; }
     public void setBiografia(String biografia) { this.biografia = biografia; }
 

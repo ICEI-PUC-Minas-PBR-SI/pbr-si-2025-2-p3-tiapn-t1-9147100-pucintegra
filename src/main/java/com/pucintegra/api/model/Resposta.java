@@ -12,7 +12,6 @@ public class Resposta {
     @Column(name = "id_resposta")
     private Long idResposta;
 
-    // --- ALTERAÇÃO AQUI: De Integer para Long ---
     @Column(name = "id_pergunta", nullable = false)
     private Long idPergunta; 
 

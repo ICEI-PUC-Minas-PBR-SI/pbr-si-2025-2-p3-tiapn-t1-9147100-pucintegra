@@ -96,9 +96,7 @@ body { background-color: var(--bg-light); color: var(--text-dark); }
 .answers-loader { display: none; padding: 15px; text-align: center; color: #666; }
 .answer-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 
-/* =========================================
-   ESTILOS DO FOOTER (PUC INTEGRA)
-   ========================================= */
+/* ESTILOS DO FOOTER (PUC INTEGRA)*/
 
 /* Variáveis locais para garantir consistência sem depender dos outros arquivos */
 .puc-integra-footer {

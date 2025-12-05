@@ -16,12 +16,11 @@ public class ReacaoController {
     @Autowired
     private ReacaoRepository reacaoRepository;
 
-    // Salvar Reação (Real)
+    // Salvar Reação
     @PostMapping
     public ResponseEntity<?> salvarReacao(@RequestBody Reacao reacao) {
         try {
             // Verifica se já existe reação desse usuário para essa resposta (evitar duplicidade)
-            // Lógica simplificada: Apenas salva. O banco barra duplicidade pelo UNIQUE KEY.
             reacaoRepository.save(reacao);
             return ResponseEntity.ok(Map.of("message", "Reação registrada!"));
         } catch (Exception e) {

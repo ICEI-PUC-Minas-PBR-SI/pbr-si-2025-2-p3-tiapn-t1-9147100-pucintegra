@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. LÓGICA DE LOGIN/LOGOUT NA NAVBAR ---
+    // 1. LÓGICA DE LOGIN/LOGOUT NA NAVBAR
     const userMatricula = localStorage.getItem('usuarioMatricula');
     const navLinksContainer = document.querySelector('.nav-links');
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.reload(); // Recarrega a página para atualizar o menu
     }
 
-    // --- 2. CARROSSÉIS (Lógica Mantida) ---
+    // 2. CARROSSÉIS
     const setupContentCarousel = (sectionSelector, containerSelector, itemSelector) => {
         const section = document.querySelector(sectionSelector);
         if (!section) return;

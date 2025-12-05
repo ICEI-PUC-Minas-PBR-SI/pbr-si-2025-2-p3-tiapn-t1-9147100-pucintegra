@@ -7,7 +7,6 @@ USE puc_integra;
 -- 2. TABELAS INDEPENDENTES (SEM CHAVES ESTRANGEIRAS)
 
 -- Tabela PESSOA (Generalização de Usuários)
--- Baseada nos Processos 1 (Cadastro) e 3 (Personalização)
 CREATE TABLE PESSOA (
     Matricula VARCHAR(15) NOT NULL,
     CPF VARCHAR(14) NOT NULL UNIQUE,
@@ -106,7 +105,6 @@ CREATE TABLE PERGUNTA (
 );
 
 -- Tabela RESPOSTA (Processo 4)
--- Nota: A resposta referencia PESSOA, pois tanto Alunos quanto Professores podem responder.
 CREATE TABLE RESPOSTA (
     Id_Resposta INT NOT NULL AUTO_INCREMENT,
     Id_Pergunta INT NOT NULL,

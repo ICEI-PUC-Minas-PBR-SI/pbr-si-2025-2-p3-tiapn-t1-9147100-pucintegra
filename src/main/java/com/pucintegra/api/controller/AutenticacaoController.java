@@ -1,12 +1,13 @@
 package com.pucintegra.api.controller;
 
+import com.pucintegra.api.config.TokenService;
 import com.pucintegra.api.dto.RegisterDTO;
 import com.pucintegra.api.repository.PessoaRepository;
 import com.pucintegra.api.model.Pessoa;
-import com.pucintegra.api.model.Aluno;     
-import com.pucintegra.api.model.Professor; 
-import com.pucintegra.api.repository.AlunoRepository;     
-import com.pucintegra.api.repository.ProfessorRepository;
+import com.pucintegra.api.model.Aluno;
+import com.pucintegra.api.model.Professor;
+import com.pucintegra.api.model.TipoPessoa;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -22,9 +23,12 @@ public class AutenticacaoController {
     @Autowired
     private PessoaRepository pessoaRepository;
 
+    @Autowired
+    private TokenService tokenService; // Injeção do serviço de Token
+
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    // --- SEU MÉTODO DE LOGIN ORIGINAL (MANTIDO) ---
+    // 1. LOGIN
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> dados) {
         String email = dados.get("email");
@@ -36,13 +40,18 @@ public class AutenticacaoController {
             Pessoa p = usuarioOpt.get();
             boolean senhaConfere = passwordEncoder.matches(senhaDigitada, p.getSenha());
             
+            // Fallback para senha antiga não criptografada (se houver)
             if (!senhaConfere && senhaDigitada.equals(p.getSenha())) {
                 senhaConfere = true;
             }
 
             if (senhaConfere) {
+                // GERA O TOKEN REAL
+                String token = tokenService.generateToken(p);
+
                 return ResponseEntity.ok(Map.of(
                     "message", "Login realizado com sucesso",
+                    "token", token, // Envia o token válido
                     "matricula", p.getMatricula(),
                     "nome", p.getNome(),
                     "tipo", p.getTipoPessoa()
@@ -52,6 +61,7 @@ public class AutenticacaoController {
         return ResponseEntity.status(401).body(Map.of("error", "E-mail ou senha inválidos"));
     }
 
+    // 2. CADASTRO (Completo com distinção de Aluno/Professor)
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterDTO data) {
         if (pessoaRepository.existsById(data.matricula())) {
@@ -62,22 +72,18 @@ public class AutenticacaoController {
         }
 
         try {
-            // --- A MÁGICA ACONTECE AQUI ---
             Pessoa novaPessoa; 
-
-            // 1. Verifica o tipo que veio do Front e cria a classe certa
-            // Isso garante que o Hibernate salve na tabela ALUNO ou PROFESSOR
             String tipoTexto = data.tipoPessoa();
+            
+            // Instancia a classe correta baseada no tipo
             if (tipoTexto != null && tipoTexto.equalsIgnoreCase("Professor")) {
-                novaPessoa = new com.pucintegra.api.model.Professor();
-                novaPessoa.setTipoPessoa(com.pucintegra.api.model.TipoPessoa.Professor);
+                novaPessoa = new Professor();
+                novaPessoa.setTipoPessoa(TipoPessoa.Professor);
             } else {
-                // Se for "Aluno", "aluno" ou qualquer outra coisa, cria um Aluno
-                novaPessoa = new com.pucintegra.api.model.Aluno();
-                novaPessoa.setTipoPessoa(com.pucintegra.api.model.TipoPessoa.Aluno);
+                novaPessoa = new Aluno();
+                novaPessoa.setTipoPessoa(TipoPessoa.Aluno);
             }
 
-            // 2. Preenche os dados comuns (Herança)
             novaPessoa.setNome(data.nome());
             novaPessoa.setCpf(data.cpf());
             novaPessoa.setMatricula(data.matricula());
@@ -86,9 +92,6 @@ public class AutenticacaoController {
             String senhaCriptografada = passwordEncoder.encode(data.senha());
             novaPessoa.setSenha(senhaCriptografada);
 
-            // 3. Salva
-            // O repositório é de Pessoa, mas como o objeto é 'Aluno', 
-            // o JPA salva na tabela PESSOA E na tabela ALUNO automaticamente.
             pessoaRepository.save(novaPessoa);
 
             return ResponseEntity.ok(Map.of("message", "Usuário cadastrado com sucesso!"));
@@ -98,6 +101,27 @@ public class AutenticacaoController {
             return ResponseEntity.badRequest().body(Map.of("error", "Erro ao cadastrar: " + e.getMessage()));
         }
     }
-}
 
-record ResetSenhaDTO(String email, String cpf, String novaSenha) {}
+    // 3. RECUPERAÇÃO DE SENHA (Mantido)
+    @PostMapping("/recover-password")
+    public ResponseEntity<?> recoverPassword(@RequestBody Map<String, String> dados) {
+        String email = dados.get("email");
+        String cpf = dados.get("cpf");
+        String novaSenha = dados.get("novaSenha");
+
+        Optional<Pessoa> userOpt = pessoaRepository.findByEmailInstitucional(email);
+
+        if (userOpt.isPresent()) {
+            Pessoa p = userOpt.get();
+            if (p.getCpf().equals(cpf)) {
+                String senhaCriptografada = passwordEncoder.encode(novaSenha);
+                p.setSenha(senhaCriptografada);
+                pessoaRepository.save(p);
+                return ResponseEntity.ok(Map.of("message", "Senha alterada com sucesso!"));
+            } else {
+                return ResponseEntity.badRequest().body(Map.of("error", "CPF não corresponde ao e-mail informado."));
+            }
+        }
+        return ResponseEntity.badRequest().body(Map.of("error", "E-mail não encontrado."));
+    }
+}

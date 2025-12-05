@@ -4,14 +4,11 @@ const bcrypt = require('bcrypt');
 const db = require('./db');
 const path = require('path');
 const fs = require('fs');
-const multer = require('multer'); // Biblioteca de Upload
-
+const multer = require('multer'); 
 const app = express();
 const PORT = 3000;
 const saltRounds = 10;
 
-// Configuração do Multer (Upload de Arquivos)
-// Garante que a pasta 'uploads' exista
 const uploadDir = path.join(__dirname, 'uploads');
 if (!fs.existsSync(uploadDir)) {
     fs.mkdirSync(uploadDir);
@@ -31,11 +28,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Middlewares
-// Middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// --- CONFIGURAÇÃO DE ARQUIVOS ESTÁTICOS COM DEBUG ---
+// CONFIGURAÇÃO DE ARQUIVOS ESTÁTICOS COM DEBUG
 
 // 1. Define o caminho absoluto para a pasta do front-end
 const frontendPath = path.join(__dirname, 'src', 'front');
@@ -56,14 +52,9 @@ app.use('/docs/images', express.static(path.join(__dirname, 'docs', 'images')));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
-// --- ROTAS DE AUTENTICAÇÃO (MANTIDAS) ---
+// ROTAS DE AUTENTICAÇÃO
 app.post('/api/register', async (req, res) => {
-    // ... (Mantenha seu código de registro aqui ou copie do anterior) ...
-    // Para economizar espaço na resposta, assumo que o registro/login não mudou.
-    // Se precisar, me avise que colo novamente.
-    /* ... Lógica de Registro ... */
     const { nome, cpf, matricula, email, senha, tipo_usuario } = req.body;
-    // (Código resumido para focar no problema da pergunta)
     try {
         const hash = await bcrypt.hash(senha, saltRounds);
         await db.execute('INSERT INTO PESSOA (Nome, CPF, Matricula, Email_Institucional, Senha, Tipo_Pessoa) VALUES (?, ?, ?, ?, ?, ?)', [nome, cpf, matricula, email, hash, tipo_usuario]);
@@ -75,7 +66,7 @@ app.post('/api/register', async (req, res) => {
 });
 
 app.post('/api/login', async (req, res) => {
-    /* ... Lógica de Login ... */
+    /* Lógica de Login */
     const { email, senha } = req.body;
     try {
         const [rows] = await db.execute('SELECT Matricula, Senha, Nome, Tipo_Pessoa FROM PESSOA WHERE Email_Institucional = ?', [email]);
@@ -87,8 +78,7 @@ app.post('/api/login', async (req, res) => {
 });
 
 
-// ROTA DE PERGUNTAS COM UPLOAD (CORREÇÃO DO TRAVAMENTO)
-// 'anexos' é o nome do campo no FormData do front-end. Aceita até 3 arquivos.
+// ROTA DE PERGUNTAS COM UPLOAD 
 app.post('/api/questions', upload.array('anexos', 3), async (req, res) => {
     console.log("--> Recebendo requisição de Nova Pergunta...");
     console.log("Body:", req.body);
@@ -154,7 +144,7 @@ app.post('/api/questions', upload.array('anexos', 3), async (req, res) => {
     }
 });
 
-// --- ROTAS DE PERFIL (Adicione/Substitua no server.js) ---
+// ROTAS DE PERFIL
 
 // 1. Obter dados do perfil + Estatísticas
 app.get('/api/profile/:matricula', async (req, res) => {
@@ -195,7 +185,6 @@ app.get('/api/profile/:matricula', async (req, res) => {
 });
 
 // 2. Atualizar Perfil (Bio + Foto + Nome)
-// IMPORTANTE: upload.single('foto_perfil') processa o arquivo se ele vier
 app.put('/api/profile/:matricula', upload.single('foto_perfil'), async (req, res) => {
     const { matricula } = req.params;
     const { biografia, nome } = req.body; 
@@ -260,12 +249,10 @@ app.get('/api/users/:matricula/answers', async (req, res) => {
 // 5. Deletar Pergunta
 app.delete('/api/questions/:id', async (req, res) => {
     const { id } = req.params;
-    // Em um sistema real, verifique se a matrícula logada é a dona da pergunta!
     try {
-        // Apaga dependências primeiro (simplificado)
         await db.execute('DELETE FROM PERGUNTA_PALAVRACHAVE WHERE Id_Pergunta = ?', [id]);
         await db.execute('DELETE FROM PERGUNTA_ANEXO WHERE Id_Pergunta = ?', [id]);
-        await db.execute('DELETE FROM RESPOSTA WHERE Id_Pergunta = ?', [id]); // Cuidado: apaga respostas dos outros
+        await db.execute('DELETE FROM RESPOSTA WHERE Id_Pergunta = ?', [id]);
         await db.execute('DELETE FROM PERGUNTA WHERE Id_Pergunta = ?', [id]);
         res.json({ message: 'Deletado' });
     } catch (error) { res.status(500).json({ error: error.message }); }
@@ -311,13 +298,11 @@ app.post('/api/questions/:id/answers', async (req, res) => {
     }
 });
 
-// ROTA: Feed Geral com Imagem (CORRIGIDA E OTIMIZADA)
+// ROTA: Feed Geral com Imagem
 app.get('/api/feed/questions', async (req, res) => {
     const limit = parseInt(req.query.limit, 10) || 100;
     
     try {
-        // Query otimizada: Busca dados da pergunta, disciplina, autor e a PRIMEIRA imagem anexa
-        // COALESCE garante que se não tiver imagem, retorna NULL
         const query = `
             SELECT 
                 P.Id_Pergunta, 

@@ -40,7 +40,6 @@ public class FeedController {
             perguntas = perguntaRepository.findAllByOrderByDataCriacaoDesc();
         }
 
-        // Monta a resposta (DTO manual)
         List<Map<String, Object>> feedResponse = new ArrayList<>();
 
         for (Pergunta p : perguntas) {
@@ -52,6 +51,14 @@ public class FeedController {
             item.put("idDisciplina", p.getIdDisciplina());
             item.put("matriculaAluno", p.getMatriculaAluno());
             
+            // 1. Busca Anexos
+            List<String> anexos = perguntaRepository.findAnexosUrl(p.getIdPergunta());
+            item.put("anexos", anexos);
+
+            // 2. Busca Tags
+            List<String> tags = perguntaRepository.findTags(p.getIdPergunta());
+            item.put("tags", tags);
+
             Optional<Pessoa> autor = pessoaRepository.findById(p.getMatriculaAluno());
             if (autor.isPresent()) {
                 item.put("autorNome", autor.get().getNome());

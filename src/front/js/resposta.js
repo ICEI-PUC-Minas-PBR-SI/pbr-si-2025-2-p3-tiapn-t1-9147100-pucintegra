@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. OBTER ID DA PERGUNTA DA URL
+    // 1. DADOS INICIAIS
     const params = new URLSearchParams(window.location.search);
     const questionId = params.get('id');
     const userMatricula = localStorage.getItem('usuarioMatricula');
+    const token = localStorage.getItem('usuarioToken'); // Pega Token
 
-    if (!userMatricula) {
+    if (!userMatricula || !token) {
         alert("Faça login para participar.");
         window.location.href = "/html/autenticacao.html#login";
         return;
@@ -16,20 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // 2. CONFIGURAR EDITOR (Simples)
+    // 2. EDITOR
     const editorArea = document.createElement('div');
     editorArea.contentEditable = 'true';
     editorArea.className = 'editor-area';
     editorArea.style.cssText = "background:transparent; min-height:220px; padding:10px; outline:none; border:1px solid #ccc; border-radius:5px;";
-    
     const placeholder = document.getElementById('editor-placeholder');
     if(placeholder) placeholder.replaceWith(editorArea);
 
-    // Toolbar básica
     document.querySelectorAll('.toolbar-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            // Pega o ícone para saber qual comando executar
             const icon = btn.querySelector('i');
             if (icon.classList.contains('fa-bold')) document.execCommand('bold');
             if (icon.classList.contains('fa-italic')) document.execCommand('italic');
@@ -38,25 +36,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. CARREGAR DADOS (Pergunta e Respostas)
+    // 3. CARREGAR DADOS (GET PROTEGIDO)
     async function loadData() {
-        // A. Busca a Pergunta
         try {
-            const resQ = await fetch(`http://localhost:8080/api/feed/questions`); // Usa o feed pra pegar detalhe (ou cria endpoint especifico)
-            // Como não criamos um endpoint de detalhe único, vamos buscar todas e filtrar no JS (Rápido para o prazo)
-            // Se tiver tempo, use o endpoint /api/questions/{id} que sugeri no controller
-            
-            // Tenta endpoint direto (Melhor)
-            const resDetail = await fetch(`http://localhost:8080/api/questions/${questionId}`);
+            // Tenta endpoint direto (Protected?)
+            const resDetail = await fetch(`http://localhost:8080/api/questions/${questionId}`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
             if(resDetail.ok) {
                 const q = await resDetail.json();
                 renderQuestion(q);
             }
         } catch(e) { console.error("Erro pergunta", e); }
 
-        // B. Busca as Respostas
         try {
-            const resA = await fetch(`http://localhost:8080/api/questions/${questionId}/answers`);
+            const resA = await fetch(`http://localhost:8080/api/questions/${questionId}/answers`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
             if(resA.ok) {
                 const answers = await resA.json();
                 renderAnswers(answers);
@@ -85,58 +81,40 @@ document.addEventListener('DOMContentLoaded', () => {
             const div = document.createElement('div');
             div.className = 'answer-card';
             div.innerHTML = `
-                <div class="answer-header">
-                    <strong>${a.matriculaPessoa}</strong>
-                    <span>${new Date(a.dataCriacao).toLocaleDateString('pt-BR')}</span>
-                </div>
+                <div class="answer-header"><strong>${a.matriculaPessoa}</strong><span>${new Date(a.dataCriacao).toLocaleDateString('pt-BR')}</span></div>
                 <div class="answer-body">${a.conteudo}</div>
                 <div class="answer-actions">
-                    <button class="btn-action-sm" onclick="reactToAnswer(${a.idResposta}, 'LIKE')">
-                        <i class="fas fa-thumbs-up"></i> Útil
-                    </button>
-                    <button class="btn-action-sm" onclick="reactToAnswer(${a.idResposta}, 'DISLIKE')">
-                        <i class="fas fa-thumbs-down"></i> Não útil
-                    </button>
-                </div>
-            `;
+                    <button class="btn-action-sm" onclick="reactToAnswer(${a.idResposta}, 'LIKE')"><i class="fas fa-thumbs-up"></i> Útil</button>
+                    <button class="btn-action-sm" onclick="reactToAnswer(${a.idResposta}, 'DISLIKE')"><i class="fas fa-thumbs-down"></i> Não útil</button>
+                </div>`;
             area.appendChild(div);
         });
     }
 
-    // 4. ENVIAR RESPOSTA
+    // 4. ENVIAR RESPOSTA (POST PROTEGIDO)
     document.getElementById('btn-submit-answer').addEventListener('click', async (e) => {
         e.preventDefault();
         const texto = editorArea.innerHTML;
-        if(texto.trim().length < 5) {
-            alert("Escreva uma resposta mais completa.");
-            return;
-        }
-
-        const payload = {
-            idPergunta: questionId, // Campo Long
-            matriculaPessoa: userMatricula,
-            conteudo: texto,
-            status: "Visivel"
-        };
+        if(texto.trim().length < 5) return alert("Escreva uma resposta mais completa.");
 
         try {
-            // OBS: Verifique se você tem o controller de POST /api/answers ou se está no PerguntaController
-            // Se não tiver, crie rapidinho. Vou assumir que você tem ou vai criar um RespostaController simples
-            // OU usar o endpoint que já existe se houver.
-            
-            // Como não vi um endpoint de salvar resposta nos seus arquivos, vou sugerir usar /api/reacoes como base
-            // mas o correto é criar um endpoint. 
-            // VOU ADICIONAR O ENDPOINT NO PASSO SEGUINTE
-            
             const res = await fetch('http://localhost:8080/api/answers', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(payload)
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` // TOKEN
+                },
+                body: JSON.stringify({
+                    idPergunta: questionId,
+                    matriculaPessoa: userMatricula,
+                    conteudo: texto,
+                    status: "Visivel"
+                })
             });
 
             if(res.ok) {
                 alert("Resposta enviada!");
-                loadData(); // Recarrega a lista
+                loadData(); 
                 editorArea.innerHTML = '';
             } else {
                 alert("Erro ao enviar resposta.");
@@ -144,26 +122,25 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch(err) { alert("Erro de conexão."); }
     });
 
-    // 5. REAGIR A RESPOSTA (LIKE REAL)
+    // 5. REAGIR (POST PROTEGIDO)
     window.reactToAnswer = async (idResp, tipo) => {
         try {
             const res = await fetch('http://localhost:8080/api/reacoes', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}` // TOKEN
+                },
                 body: JSON.stringify({
                     idResposta: idResp,
                     matriculaPessoa: userMatricula,
                     tipoReacao: tipo
                 })
             });
-            if(res.ok) {
-                alert("Reação registrada! (Verifique seu perfil)");
-            } else {
-                alert("Você já reagiu ou houve um erro.");
-            }
+            if(res.ok) alert("Reação registrada!");
+            else alert("Você já reagiu ou houve um erro.");
         } catch(e) { alert("Erro de conexão."); }
     }
 
-    // Inicializa
     loadData();
 });

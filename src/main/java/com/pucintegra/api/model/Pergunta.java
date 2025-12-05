@@ -27,7 +27,6 @@ public class Pergunta {
     @Column(name = "data_criacao")
     private LocalDateTime dataCriacao = LocalDateTime.now();
 
-    // IMPORTANTE: Aqui deve ser String para bater com o VARCHAR do banco
     @Column(length = 20)
     private String status = "Aberta"; 
 

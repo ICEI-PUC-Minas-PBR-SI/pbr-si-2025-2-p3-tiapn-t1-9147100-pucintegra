@@ -36,7 +36,7 @@ public class PerfilController {
         if (userOpt.isPresent()) {
             Pessoa p = userOpt.get();
             
-            // --- CONTAGEM REAL NO BANCO DE DADOS ---
+            // CONTAGEM REAL NO BANCO DE DADOS
             long qtdPerguntas = perguntaRepository.countByMatriculaAluno(matricula);
             long qtdRespostas = respostaRepository.countByMatriculaPessoa(matricula);
 

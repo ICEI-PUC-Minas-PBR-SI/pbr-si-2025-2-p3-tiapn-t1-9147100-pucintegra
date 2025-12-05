@@ -1,4 +1,4 @@
-package com.pucintegra.api.dto; // Ou model
+package com.pucintegra.api.dto; 
 
 import java.time.LocalDateTime;
 

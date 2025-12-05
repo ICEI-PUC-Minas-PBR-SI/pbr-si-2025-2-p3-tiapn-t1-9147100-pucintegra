@@ -275,7 +275,6 @@ form{
     cursor: pointer;
 }
 
-/* Nova regra para o estado selecionado */
 .radio-option input[type="radio"]:checked {
     background-color: #005380;
     border-color: #005380; 
@@ -314,5 +313,5 @@ input::-webkit-inner-spin-button {
 
 .btn-return:hover {
     transform: scale(1.1);
-    color: #005380; /* Tom azul principal do seu design */
+    color: #005380; /* Tom azul principal do design */
 }

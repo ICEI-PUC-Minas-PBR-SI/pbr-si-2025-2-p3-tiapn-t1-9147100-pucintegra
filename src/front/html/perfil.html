@@ -56,8 +56,15 @@
                     </div>
 
                     <h1 id="user-name-display">Carregando...</h1>
-                    <span id="user-type-display" style="background:#e9ecef; color:#555; padding:2px 8px; border-radius:10px; font-size:0.8rem; margin-bottom:5px; display:inline-block;">...</span>
                     
+                    <div style="display:flex; justify-content:center; align-items:center; gap:5px; margin-bottom:10px;">
+                        <span id="user-type-display" style="background:#e9ecef; color:#555; padding:2px 8px; border-radius:10px; font-size:0.8rem; display:inline-block;">...</span>
+                        
+                        <span id="monitor-badge" style="display: none; background:#28a745; color:white; padding:2px 8px; border-radius:10px; font-size:0.8rem; font-weight: bold;">
+                            <i class="fas fa-star"></i> MONITOR
+                        </span>
+                    </div>
+
                     <p class="user-handle" id="user-matricula-display">@...</p>
                     <p class="user-bio" id="user-bio-display">...</p>
                     
@@ -73,6 +80,19 @@
                     </div>
 
                     <button class="btn-edit-full" id="btn-open-edit">Editar Perfil</button>
+
+                    <div id="professor-panel" style="display: none; margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px; text-align: left;">
+                        <h4 style="font-size: 0.9rem; color: #005380; margin-bottom: 10px; font-weight: 700;">
+                            <i class="fas fa-chalkboard-teacher"></i> Área do Professor
+                        </h4>
+                        <label style="font-size: 0.8rem; display: block; margin-bottom: 5px;">Promover Aluno a Monitor:</label>
+                        <div style="display: flex; gap: 5px;">
+                            <input type="text" id="input-monitor-matricula" placeholder="Matrícula do Aluno" style="width: 100%; padding: 6px; border: 1px solid #ddd; border-radius: 4px; font-size: 0.85rem;">
+                            <button id="btn-promover-monitor" style="background: #005380; color: white; border: none; border-radius: 4px; cursor: pointer; padding: 0 12px; font-size: 0.85rem;">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </aside>
 

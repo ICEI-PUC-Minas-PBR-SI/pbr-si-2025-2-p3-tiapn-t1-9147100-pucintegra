@@ -6,7 +6,7 @@ public record RespostaFeedDTO(
     Long idResposta,
     String conteudo,
     LocalDateTime dataCriacao,
-    String matriculaAutor, // Ou nome se preferir buscar
+    String matriculaAutor,
     Long likes,
     Long dislikes,
     String minhaReacao // "LIKE", "DISLIKE" ou null
