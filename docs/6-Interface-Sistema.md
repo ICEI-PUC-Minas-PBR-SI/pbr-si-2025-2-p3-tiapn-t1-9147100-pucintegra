@@ -14,66 +14,66 @@ Tela principal do sistema, onde são mostradas as opções de lugares disponíve
 
 Tela inicial de cadastro
 
-[`Tela 1`](images/processo1)
+[`Tela 1`](images/processo1.png)
 
 Tela de cadastro do locatário
 
-[`Tela 2`](images/processo1_2)
+[`Tela 2`](images/processo1_2.png)
 
 Tela de cadastro do locador
 
-[`Tela 3`](images/processo1_3)
+[`Tela 3`](images/processo1_3.png)
 
 
 ## 6.3. Telas do processo 2
 
 Tela do locador
 
-[`Tela 1`](images/processo2inicio)
+[`Tela 1`](images/processo2inicio.png)
 
 Tela de cadastro do local
 
-[`Tela 2`](images/processo2)
+[`Tela 2`](images/processo2.png)
 
 ## 6.4. Telas do processo 3
 
 Tela do locador
 
-[`Tela 1`](images/processo2inicio)
+[`Tela 1`](images/processo2inicio.png)
 
 Tela de cadastro do local
 
-[`Tela 2`](images/processo2)
+[`Tela 2`](images/processo2.png)
 
 ## 6.5. Telas do processo 4
 
 Tela do locador
 
-[`Tela 1`](images/processo2inicio)
+[`Tela 1`](images/processo2inicio.png)
 
 Tela de cadastro do local
 
-[`Tela 2`](images/processo2)
+[`Tela 2`](images/processo2.png)
 
 ## 6.6. Telas do processo 5
 
 Tela do locador
 
-[`Tela 1`](images/processo2inicio)
+[`Tela 1`](images/processo2inicio.png)
 
 Tela de cadastro do local
 
-[`Tela 2`](images/processo2)
+[`Tela 2`](images/processo2.png)
 
 ## 6.7. Telas do processo 6
 
 Tela do locador
 
-[`Tela 1`](images/processo2inicio)
+[`Tela 1`](images/processo2inicio.png)
 
 Tela de cadastro do local
 
-[`Tela 2`](images/processo2)
+[`Tela 2`](images/processo2.png)
 
 
 
