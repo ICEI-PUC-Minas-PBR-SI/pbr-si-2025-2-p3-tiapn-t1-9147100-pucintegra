@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 public interface PerguntaRepository extends JpaRepository<Pergunta, Long> {
-    // ... (Outros métodos de busca mantidos) ...
 
     List<Pergunta> findByMatriculaAluno(String matriculaAluno);
     long countByMatriculaAluno(String matriculaAluno);
@@ -18,6 +17,8 @@ public interface PerguntaRepository extends JpaRepository<Pergunta, Long> {
     List<Pergunta> findByIdDisciplinaOrderByDataCriacaoDesc(Integer idDisciplina);
     List<Pergunta> findByTituloContainingOrConteudoContainingOrderByDataCriacaoDesc(String titulo, String conteudo);
 
+    // Queries Nativas para Tags e Anexos (Precisam de Transactional)
+    
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO PERGUNTA_ANEXO (Id_Pergunta, Nome_Arquivo, Caminho_Arquivo, Tipo_Arquivo) VALUES (:idPergunta, :nome, :caminho, :tipo)", nativeQuery = true)

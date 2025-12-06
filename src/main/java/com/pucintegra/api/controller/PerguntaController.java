@@ -10,12 +10,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.nio.file.Files;    
-import java.nio.file.Path;     
-import java.nio.file.Paths;    
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;         
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api")
@@ -39,37 +39,38 @@ public class PerguntaController {
             @RequestParam("id_disciplina") int idDisciplina,
             @RequestParam(value = "palavras_chave", required = false) String tags,
             @RequestParam(value = "anexos", required = false) List<MultipartFile> anexos) {
-        
+
         try {
-            // 1. Salvar a Pergunta Principal
+            // 1. Criar Objeto Pergunta
             Pergunta p = new Pergunta();
             p.setMatriculaAluno(matricula);
             p.setTitulo(titulo);
             p.setConteudo(conteudo);
             p.setIdDisciplina(idDisciplina);
-            
-            // CORREÇÃO CRÍTICA: saveAndFlush garante que o ID existe ANTES de inserir os filhos
+
+            // CORREÇÃO: Usar saveAndFlush para garantir que o ID exista no banco IMEDIATAMENTE
+            // Isso evita o erro de "Foreign Key Constraint Fails" ao inserir tags/anexos
             Pergunta perguntaSalva = perguntaRepository.saveAndFlush(p);
             Long idPergunta = perguntaSalva.getIdPergunta();
 
             // 2. Processar Tags (Palavras-Chave)
             if (tags != null && !tags.trim().isEmpty()) {
-                String[] listaTags = tags.split(","); 
-                
+                String[] listaTags = tags.split(",");
+
                 for (String tag : listaTags) {
                     String tagLimpa = tag.trim();
                     if(tagLimpa.isEmpty()) continue;
 
-                    // Verifica se a tag já existe no banco
+                    // Verifica se a tag já existe
                     Long idTag = perguntaRepository.findIdPalavraChave(tagLimpa);
-                    
-                    // Se não existe, cria e busca o ID
+
+                    // Se não existe, cria
                     if (idTag == null) {
                         perguntaRepository.savePalavraChave(tagLimpa);
                         idTag = perguntaRepository.findIdPalavraChave(tagLimpa);
                     }
-                    
-                    // Vincula a tag (ID) com a pergunta (ID)
+
+                    // Vincula a tag à pergunta
                     if (idTag != null) {
                         perguntaRepository.linkPalavraChave(idPergunta, idTag);
                     }
@@ -78,35 +79,35 @@ public class PerguntaController {
 
             // 3. Processar Anexos (Arquivos)
             if (anexos != null && !anexos.isEmpty()) {
-                // Caminho Absoluto para funcionar no Windows/Local
+                // Caminho absoluto para evitar problemas no Windows
                 String uploadDir = Paths.get("src/main/resources/static/uploads").toFile().getAbsolutePath() + "/";
                 Files.createDirectories(Paths.get(uploadDir));
 
                 for (MultipartFile file : anexos) {
                     if (file.isEmpty()) continue;
 
-                    // Gera nome único
                     String nomeArquivo = UUID.randomUUID().toString().substring(0,8) + "_" + file.getOriginalFilename();
                     Path path = Paths.get(uploadDir + nomeArquivo);
-                    
+
                     // Salva arquivo físico
                     Files.write(path, file.getBytes());
 
-                    // Salva referência no Banco
+                    // Salva no Banco de Dados
                     String caminhoWeb = "/uploads/" + nomeArquivo;
                     perguntaRepository.saveAnexo(idPergunta, file.getOriginalFilename(), caminhoWeb, file.getContentType());
                 }
             }
 
             return ResponseEntity.ok(perguntaSalva);
-            
+
         } catch (Exception e) {
-            e.printStackTrace(); 
+            e.printStackTrace();
             return ResponseEntity.badRequest().body(Map.of("message", "Erro ao criar pergunta: " + e.getMessage()));
         }
     }
+
+    // ... (Mantenha os outros métodos GET inalterados abaixo)
     
-    // ... (Mantenha os outros métodos GET inalterados) ...
     @GetMapping("/users/{matricula}/questions")
     public ResponseEntity<?> getUserQuestions(@PathVariable String matricula) {
         List<Pergunta> lista = perguntaRepository.findByMatriculaAluno(matricula);
@@ -120,11 +121,9 @@ public class PerguntaController {
     }
 
     @GetMapping("/questions/{id}/answers")
-    public ResponseEntity<?> getAnswersByQuestion(
-            @PathVariable Long id,
-            @RequestParam(required = false) String matriculaUsuario
-    ) {
-        List<Resposta> respostas = respostaRepository.findByIdPergunta(id);
+    public ResponseEntity<?> getAnswersByQuestion(@PathVariable Long id, @RequestParam(required = false) String matriculaUsuario) {
+        // ... (Mesmo código de antes)
+         List<Resposta> respostas = respostaRepository.findByIdPergunta(id);
         List<com.pucintegra.api.dto.RespostaFeedDTO> dtos = new java.util.ArrayList<>();
 
         for (Resposta r : respostas) {
