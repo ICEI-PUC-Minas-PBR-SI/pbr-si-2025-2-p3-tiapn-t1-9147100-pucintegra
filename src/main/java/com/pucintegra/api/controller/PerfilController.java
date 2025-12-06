@@ -68,10 +68,13 @@ public class PerfilController {
         if (foto != null && !foto.isEmpty()) {
             try {
                 String fileName = matricula + "_" + foto.getOriginalFilename();
-                Path path = Paths.get("src/main/resources/static/uploads/" + fileName);
-                Files.createDirectories(path.getParent());
+                Path path = Paths.get("uploads/" + fileName);
+                // Garante que a pasta existe antes de gravar
+                if (!Files.exists(path.getParent())) {
+                    Files.createDirectories(path.getParent());
+                }
                 Files.write(path, foto.getBytes());
-                p.setFotoPerfil("/uploads/" + fileName); 
+                p.setFotoPerfil("/uploads/" + fileName);
             } catch (IOException e) {
                 return ResponseEntity.internalServerError().body("Erro ao salvar foto");
             }
