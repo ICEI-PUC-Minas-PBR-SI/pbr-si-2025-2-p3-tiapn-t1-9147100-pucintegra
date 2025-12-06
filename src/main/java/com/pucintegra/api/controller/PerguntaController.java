@@ -4,6 +4,9 @@ import com.pucintegra.api.model.Pergunta;
 import com.pucintegra.api.model.Resposta;
 import com.pucintegra.api.repository.PerguntaRepository;
 import com.pucintegra.api.repository.RespostaRepository;
+
+import jakarta.transaction.Transactional;
+
 import com.pucintegra.api.repository.ReacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +35,7 @@ public class PerguntaController {
     private ReacaoRepository reacaoRepository;
 
     @PostMapping("/questions")
+    @Transactional
     public ResponseEntity<?> createQuestion(
             @RequestParam("matricula_aluno") String matricula,
             @RequestParam("titulo") String titulo,
