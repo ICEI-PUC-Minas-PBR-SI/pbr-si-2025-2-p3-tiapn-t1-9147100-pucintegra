@@ -3,7 +3,7 @@ package com.pucintegra.api.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "aluno")
+@Table(name = "ALUNO")
 @PrimaryKeyJoinColumn(name = "Matricula_Aluno") // Liga com a PK da Pessoa
 public class Aluno extends Pessoa {
     

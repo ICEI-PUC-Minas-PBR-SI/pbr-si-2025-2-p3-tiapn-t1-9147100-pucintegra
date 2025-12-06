@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const senha = inputs[1].value;
 
             try {
-                // CORREÇÃO: Removemos o jdbc e colocamos a variável correta
                 const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },

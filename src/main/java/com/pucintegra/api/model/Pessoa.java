@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "pessoa")
+@Table(name = "PESSOA")
 public class Pessoa {
 
     @Id
