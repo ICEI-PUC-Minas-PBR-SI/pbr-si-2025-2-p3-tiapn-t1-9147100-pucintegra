@@ -4,7 +4,7 @@ import com.pucintegra.api.model.Pergunta;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param; // <--- IMPORTANTE
+import org.springframework.data.repository.query.Param; // Importante!
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Repository;
 import java.util.List;
@@ -15,9 +15,11 @@ public interface PerguntaRepository extends JpaRepository<Pergunta, Long> {
     List<Pergunta> findByMatriculaAluno(String matriculaAluno);
     long countByMatriculaAluno(String matriculaAluno);
     List<Pergunta> findAllByOrderByDataCriacaoDesc();
-
+    
     List<Pergunta> findByIdDisciplinaOrderByDataCriacaoDesc(Integer idDisciplina);
     List<Pergunta> findByTituloContainingOrConteudoContainingOrderByDataCriacaoDesc(String titulo, String conteudo);
+
+    // --- Queries Nativas (Corrigidas com @Param e nomes explícitos) ---
     
     @Modifying
     @Transactional

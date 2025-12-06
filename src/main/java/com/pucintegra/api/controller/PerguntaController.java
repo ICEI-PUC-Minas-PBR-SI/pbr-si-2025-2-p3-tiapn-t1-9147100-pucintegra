@@ -35,7 +35,7 @@ public class PerguntaController {
     private ReacaoRepository reacaoRepository;
 
     @PostMapping("/questions")
-    @Transactional
+    @Transactional // Garante que tudo rode na mesma transação
     public ResponseEntity<?> createQuestion(
             @RequestParam("matricula_aluno") String matricula,
             @RequestParam("titulo") String titulo,
@@ -45,29 +45,39 @@ public class PerguntaController {
             @RequestParam(value = "anexos", required = false) List<MultipartFile> anexos) {
         
         try {
-            // 1. Cria o objeto
+            // 1. Cria e Salva a Pergunta
             Pergunta p = new Pergunta();
             p.setMatriculaAluno(matricula);
             p.setTitulo(titulo);
             p.setConteudo(conteudo);
             p.setIdDisciplina(idDisciplina);
             
-            // CORREÇÃO ESSENCIAL: saveAndFlush obriga o banco a gerar o ID AGORA.
+            // O saveAndFlush é crucial aqui para gerar o ID imediatamente
             Pergunta perguntaSalva = perguntaRepository.saveAndFlush(p);
             Long idPergunta = perguntaSalva.getIdPergunta();
 
-            // 2. Salva Tags
+            if (idPergunta == null) {
+                throw new RuntimeException("Erro: ID da pergunta não foi gerado.");
+            }
+
+            // 2. Salva Tags (Palavras-Chave)
             if (tags != null && !tags.trim().isEmpty()) {
+                // Remove espaços extras e quebras de linha que possam vir do front
                 String[] listaTags = tags.split(","); 
                 for (String tag : listaTags) {
                     String tagLimpa = tag.trim();
                     if(tagLimpa.isEmpty()) continue;
 
+                    // Verifica se a tag existe
                     Long idTag = perguntaRepository.findIdPalavraChave(tagLimpa);
+                    
+                    // Se não existe, cria
                     if (idTag == null) {
                         perguntaRepository.savePalavraChave(tagLimpa);
                         idTag = perguntaRepository.findIdPalavraChave(tagLimpa);
                     }
+                    
+                    // Vincula (Agora com o ID da pergunta garantido)
                     if (idTag != null) {
                         perguntaRepository.linkPalavraChave(idPergunta, idTag);
                     }
@@ -76,7 +86,6 @@ public class PerguntaController {
 
             // 3. Salva Anexos
             if (anexos != null && !anexos.isEmpty()) {
-                // No Render, usamos uma pasta temporária ou relativa, pois 'src' não é editável no JAR
                 String uploadDir = "uploads/"; 
                 Files.createDirectories(Paths.get(uploadDir));
                 
@@ -84,12 +93,13 @@ public class PerguntaController {
                     if (file.isEmpty()) continue;
 
                     String nomeArquivo = UUID.randomUUID().toString().substring(0,8) + "_" + file.getOriginalFilename();
+                    // Caminho RELATIVO para salvar (igual ao WebConfig)
                     Path path = Paths.get(uploadDir + nomeArquivo);
-                    
                     Files.write(path, file.getBytes());
 
-                    // Salva referência com barra inicial para a URL web
+                    // Caminho para o Banco (URL pública)
                     String caminhoWeb = "/uploads/" + nomeArquivo;
+                    
                     perguntaRepository.saveAnexo(idPergunta, file.getOriginalFilename(), caminhoWeb, file.getContentType());
                 }
             }
@@ -97,7 +107,7 @@ public class PerguntaController {
             return ResponseEntity.ok(perguntaSalva);
             
         } catch (Exception e) {
-            e.printStackTrace(); 
+            e.printStackTrace(); // Loga o erro real no console do Render
             return ResponseEntity.badRequest().body(Map.of("message", "Erro ao criar pergunta: " + e.getMessage()));
         }
     }
