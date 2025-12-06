@@ -63,14 +63,22 @@ public class AutenticacaoController {
     // 2. CADASTRO
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterDTO data) {
-        if (pessoaRepository.existsById(data.matricula())) {
-            return ResponseEntity.badRequest().body(Map.of("error", "Matrícula já cadastrada!"));
-        }
-        if (pessoaRepository.findByEmailInstitucional(data.emailInstitucional()).isPresent()) {
-             return ResponseEntity.badRequest().body(Map.of("error", "E-mail já cadastrado!"));
-        }
-
         try {
+            // 1. Validações Básicas (Evita NullPointerException)
+            if (data.matricula() == null || data.matricula().trim().isEmpty()) {
+                return ResponseEntity.badRequest().body(Map.of("error", "O campo Matrícula é obrigatório."));
+            }
+            
+            // 2. Validações de Banco de Dados (AGORA DENTRO DO TRY)
+            // Se o banco estiver offline, a exceção será capturada abaixo
+            if (pessoaRepository.existsById(data.matricula())) {
+                return ResponseEntity.badRequest().body(Map.of("error", "Esta matrícula já está cadastrada!"));
+            }
+            if (pessoaRepository.findByEmailInstitucional(data.emailInstitucional()).isPresent()) {
+                 return ResponseEntity.badRequest().body(Map.of("error", "Este e-mail já está cadastrado!"));
+            }
+
+            // 3. Criação do Usuário
             Pessoa novaPessoa; 
             String tipoTexto = data.tipoPessoa();
             
@@ -95,11 +103,13 @@ public class AutenticacaoController {
             return ResponseEntity.ok(Map.of("message", "Usuário cadastrado com sucesso!"));
             
         } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.badRequest().body(Map.of("error", "Erro ao cadastrar: " + e.getMessage()));
+            // Isso garante que você veja o erro real nos logs do Render
+            e.printStackTrace(); 
+            // Retorna um erro legível para o Front-end em vez de apenas "500"
+            return ResponseEntity.internalServerError().body(Map.of("error", "Erro interno no servidor: " + e.getMessage()));
         }
     }
-
+    
     // 3. RECUPERAÇÃO DE SENHA
     @PostMapping("/recover-password")
     public ResponseEntity<?> recoverPassword(@RequestBody Map<String, String> dados) {
