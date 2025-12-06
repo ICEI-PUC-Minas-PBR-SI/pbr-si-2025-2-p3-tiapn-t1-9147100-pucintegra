@@ -88,6 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('edit-bio-input').value = user.biografia || "";
                 }
             }
+            else {
+                if (res.status === 403 || res.status === 401) {
+                    alert("Sua sessão expirou. Por favor, faça login novamente.");
+                    window.logout(); // Chama a função de logout existente
+                    return;
+                }
+                console.error("Erro ao carregar perfil");
+            }
         } catch (err) { console.error("Erro perfil:", err); }
     }
 
