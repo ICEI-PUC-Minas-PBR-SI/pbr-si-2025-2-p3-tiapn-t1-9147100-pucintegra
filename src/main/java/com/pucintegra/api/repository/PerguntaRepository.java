@@ -10,6 +10,7 @@ import java.util.List;
 
 @Repository
 public interface PerguntaRepository extends JpaRepository<Pergunta, Long> {
+    // ... (Outros métodos de busca mantidos) ...
 
     List<Pergunta> findByMatriculaAluno(String matriculaAluno);
     long countByMatriculaAluno(String matriculaAluno);

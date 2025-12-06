@@ -48,7 +48,7 @@ public class PerguntaController {
             p.setConteudo(conteudo);
             p.setIdDisciplina(idDisciplina);
             
-            // CORREÇÃO: Usar saveAndFlush para garantir que o ID exista no banco IMEDIATAMENTE
+            // CORREÇÃO CRÍTICA: saveAndFlush garante que o ID existe ANTES de inserir os filhos
             Pergunta perguntaSalva = perguntaRepository.saveAndFlush(p);
             Long idPergunta = perguntaSalva.getIdPergunta();
 
@@ -63,10 +63,9 @@ public class PerguntaController {
                     // Verifica se a tag já existe no banco
                     Long idTag = perguntaRepository.findIdPalavraChave(tagLimpa);
                     
-                    // Se não existe, cria
+                    // Se não existe, cria e busca o ID
                     if (idTag == null) {
                         perguntaRepository.savePalavraChave(tagLimpa);
-                        // Busca o ID recém criado
                         idTag = perguntaRepository.findIdPalavraChave(tagLimpa);
                     }
                     
@@ -79,10 +78,8 @@ public class PerguntaController {
 
             // 3. Processar Anexos (Arquivos)
             if (anexos != null && !anexos.isEmpty()) {
-                // Caminho Absoluto para garantir que funcione localmente
+                // Caminho Absoluto para funcionar no Windows/Local
                 String uploadDir = Paths.get("src/main/resources/static/uploads").toFile().getAbsolutePath() + "/";
-                
-                // Garante que a pasta existe
                 Files.createDirectories(Paths.get(uploadDir));
 
                 for (MultipartFile file : anexos) {
@@ -109,6 +106,7 @@ public class PerguntaController {
         }
     }
     
+    // ... (Mantenha os outros métodos GET inalterados) ...
     @GetMapping("/users/{matricula}/questions")
     public ResponseEntity<?> getUserQuestions(@PathVariable String matricula) {
         List<Pergunta> lista = perguntaRepository.findByMatriculaAluno(matricula);
