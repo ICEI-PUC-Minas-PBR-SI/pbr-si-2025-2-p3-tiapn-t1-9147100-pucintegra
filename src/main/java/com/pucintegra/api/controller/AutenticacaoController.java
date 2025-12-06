@@ -18,8 +18,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/auth")
-// Permite qualquer origem na Vercel ou Localhost
-@CrossOrigin(origins = "*") 
 public class AutenticacaoController {
 
     @Autowired
