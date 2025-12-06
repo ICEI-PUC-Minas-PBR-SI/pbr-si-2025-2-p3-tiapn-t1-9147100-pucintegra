@@ -13,8 +13,8 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(@NonNull CorsRegistry registry) {
         registry.addMapping("/**")
-            // Fix CORS
-                .allowedOriginPatterns("*") 
+                // EM VEZ DE ASTERISCO, COLOCAMOS O LINK DIRETO:
+                .allowedOrigins("https://puc-integra-22codp8d3-gabriel-gr1s-projects.vercel.app", "http://localhost:3000") 
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
