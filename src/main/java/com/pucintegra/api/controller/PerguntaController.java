@@ -48,13 +48,13 @@ public class PerguntaController {
             p.setConteudo(conteudo);
             p.setIdDisciplina(idDisciplina);
             
-            // O .save() atualiza o objeto 'p' com o novo ID gerado pelo banco
-            Pergunta perguntaSalva = perguntaRepository.save(p);
+            // CORREÇÃO: Usar saveAndFlush para garantir que o ID exista no banco IMEDIATAMENTE
+            Pergunta perguntaSalva = perguntaRepository.saveAndFlush(p);
             Long idPergunta = perguntaSalva.getIdPergunta();
 
             // 2. Processar Tags (Palavras-Chave)
             if (tags != null && !tags.trim().isEmpty()) {
-                String[] listaTags = tags.split(","); // O front manda separado por vírgula
+                String[] listaTags = tags.split(","); 
                 
                 for (String tag : listaTags) {
                     String tagLimpa = tag.trim();
@@ -66,6 +66,7 @@ public class PerguntaController {
                     // Se não existe, cria
                     if (idTag == null) {
                         perguntaRepository.savePalavraChave(tagLimpa);
+                        // Busca o ID recém criado
                         idTag = perguntaRepository.findIdPalavraChave(tagLimpa);
                     }
                     
@@ -78,20 +79,23 @@ public class PerguntaController {
 
             // 3. Processar Anexos (Arquivos)
             if (anexos != null && !anexos.isEmpty()) {
-                String uploadDir = "src/main/resources/static/uploads/"; // Mesmo diretório do Perfil
+                // Caminho Absoluto para garantir que funcione localmente
+                String uploadDir = Paths.get("src/main/resources/static/uploads").toFile().getAbsolutePath() + "/";
                 
+                // Garante que a pasta existe
+                Files.createDirectories(Paths.get(uploadDir));
+
                 for (MultipartFile file : anexos) {
                     if (file.isEmpty()) continue;
 
-                    // Gera nome único para não sobrescrever (UUID + nome original)
+                    // Gera nome único
                     String nomeArquivo = UUID.randomUUID().toString().substring(0,8) + "_" + file.getOriginalFilename();
                     Path path = Paths.get(uploadDir + nomeArquivo);
                     
-                    // Salva arquivo físico na pasta
-                    Files.createDirectories(path.getParent());
+                    // Salva arquivo físico
                     Files.write(path, file.getBytes());
 
-                    // Salva referência no Banco de Dados
+                    // Salva referência no Banco
                     String caminhoWeb = "/uploads/" + nomeArquivo;
                     perguntaRepository.saveAnexo(idPergunta, file.getOriginalFilename(), caminhoWeb, file.getContentType());
                 }
@@ -100,7 +104,7 @@ public class PerguntaController {
             return ResponseEntity.ok(perguntaSalva);
             
         } catch (Exception e) {
-            e.printStackTrace(); // Ajuda a ver o erro no console
+            e.printStackTrace(); 
             return ResponseEntity.badRequest().body(Map.of("message", "Erro ao criar pergunta: " + e.getMessage()));
         }
     }

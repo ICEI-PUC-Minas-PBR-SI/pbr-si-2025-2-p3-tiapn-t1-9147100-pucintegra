@@ -35,11 +35,9 @@ public interface PerguntaRepository extends JpaRepository<Pergunta, Long> {
     @Query(value = "INSERT INTO PERGUNTA_PALAVRACHAVE (Id_Pergunta, Id_PalavraChave) VALUES (:idPergunta, :idPalavra)", nativeQuery = true)
     void linkPalavraChave(Long idPergunta, Long idPalavra);
 
-    // 1. Buscar caminhos das imagens/anexos
     @Query(value = "SELECT Caminho_Arquivo FROM PERGUNTA_ANEXO WHERE Id_Pergunta = :idPergunta", nativeQuery = true)
     List<String> findAnexosUrl(Long idPergunta);
 
-    // 2. Buscar nomes das tags
     @Query(value = "SELECT pc.Palavra FROM PALAVRA_CHAVE pc JOIN PERGUNTA_PALAVRACHAVE pp ON pc.Id_PalavraChave = pp.Id_PalavraChave WHERE pp.Id_Pergunta = :idPergunta", nativeQuery = true)
     List<String> findTags(Long idPergunta);
 }
