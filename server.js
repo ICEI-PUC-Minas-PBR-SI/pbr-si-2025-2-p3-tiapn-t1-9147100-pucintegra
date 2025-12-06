@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // CONFIGURAÇÃO DE ARQUIVOS ESTÁTICOS COM DEBUG
 
 // 1. Define o caminho absoluto para a pasta do front-end
-const frontendPath = path.join(__dirname, 'src', 'main', 'resources', 'static');
+const frontendPath = path.join(process.cwd(), 'src', 'main', 'resources', 'static');
 
 // 2. Imprime no terminal para verificarmos se o caminho está certo
 console.log('------------------------------------------------');
