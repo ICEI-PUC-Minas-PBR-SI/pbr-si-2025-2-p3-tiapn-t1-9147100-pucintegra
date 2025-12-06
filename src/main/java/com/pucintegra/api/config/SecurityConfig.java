@@ -42,7 +42,7 @@ public class SecurityConfig {
                 .requestMatchers("/").permitAll()      // Importante para a Home
                 .requestMatchers("/index.html").permitAll()
                 // Permitir Pre-flight requests (OPTIONS)
-                .requestMatchers(HttpMethod.GET, "/api/feed/**").permitAll()
+                .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .anyRequest().authenticated()
             )
             .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
