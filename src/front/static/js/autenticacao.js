@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. CONFIGURAÇÃO OBRIGATÓRIA: DEFINE O ENDEREÇO DO RENDER ---
-    // Esta linha cria a variável que estava faltando
+    // --- 1. CONFIGURAÇÃO DO BACKEND (RENDER) ---
     const API_BASE_URL = 'https://pbr-si-2025-2-p3-tiapn-t1-9147100.onrender.com';
 
+    // --- ELEMENTOS DO DOM ---
     const container = document.querySelector('.container');
     const registerBtn = document.querySelector('.register-btn');
     const loginBtn = document.querySelector('.login-btn');
@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeForgotBtn = document.getElementById('close-forgot-modal');
     const forgotForm = document.getElementById('forgot-form');
 
+    // --- TROCA DE TELAS (LOGIN/CADASTRO) ---
     const updateStateFromHash = () => {
         if (window.location.hash === '#register') {
             container.classList.add('active');
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('hashchange', updateStateFromHash);
     updateStateFromHash();
 
-    // LOGIN
+    // --- LÓGICA DE LOGIN ---
     if (loginForm) {
         loginForm.addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
+                    // OBS: Se o login der erro 400, mude 'email' para 'emailInstitucional' aqui também
                     body: JSON.stringify({ email: email, senha: senha })
                 });
 
@@ -66,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // CADASTRO
+    // --- LÓGICA DE CADASTRO (CORRIGIDA) ---
     if (registerForm) {
         registerForm.addEventListener('submit', async (event) => {
             event.preventDefault();
@@ -74,17 +76,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const nome = inputs[0].value;
             const cpf = inputs[1].value;
             const matricula = inputs[2].value;
-            const email = inputs[3].value;
+            const emailValor = inputs[3].value; // Valor digitado no campo de email
             const senha = inputs[4].value;
             const tipoInput = registerForm.querySelector('input[name="tipo_usuario"]:checked');
             const tipoPessoa = tipoInput ? tipoInput.value : 'Aluno'; 
 
             try {
-                // Aqui já estava usando a variável, mas agora ela existe!
                 const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ nome, cpf, matricula, emailInstitucional: email, senha, tipoPessoa })
+                    // CORREÇÃO FINAL: Usando 'emailInstitucional' conforme o Java DTO
+                    body: JSON.stringify({ 
+                        nome: nome, 
+                        cpf: cpf, 
+                        matricula: matricula, 
+                        emailInstitucional: emailValor, // <--- O NOME CERTO!
+                        senha: senha, 
+                        tipoPessoa: tipoPessoa 
+                    })
                 });
 
                 if (response.ok) {
@@ -106,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // RECUPERAÇÃO DE SENHA
+    // --- RECUPERAÇÃO DE SENHA ---
     if (forgotLink && forgotModal) {
         forgotLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -124,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const novaSenha = document.getElementById('forgot-new-pass').value;
 
             try {
-                // Aqui também precisa da variável
                 const res = await fetch(`${API_BASE_URL}/api/auth/recover-password`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -142,6 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } catch (error) {
                 alert('Erro de conexão.');
             }
-        });
-    }
+        });
+    }
 });
