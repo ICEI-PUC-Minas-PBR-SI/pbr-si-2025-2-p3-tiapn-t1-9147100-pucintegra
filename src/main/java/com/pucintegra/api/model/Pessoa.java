@@ -1,5 +1,4 @@
 package com.pucintegra.api.model;
-import com.pucintegra.api.model.TipoPessoa;
 import jakarta.persistence.*;
 
 @Entity
