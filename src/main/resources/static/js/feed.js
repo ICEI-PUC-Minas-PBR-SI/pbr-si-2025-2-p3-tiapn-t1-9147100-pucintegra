@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    const userMatricula = localStorage.getItem('usuarioMatricula'); 
+    // --- LINHA QUE ESTAVA FALTANDO ---
+    const API_BASE_URL = 'https://pbr-si-2025-2-p3-tiapn-t1-9147100.onrender.com';
+
+    const userMatricula = localStorage.getItem('usuarioMatricula');
     const feedList = document.getElementById('full-feed-list');
     const navContainer = document.getElementById('nav-links-container');
 
