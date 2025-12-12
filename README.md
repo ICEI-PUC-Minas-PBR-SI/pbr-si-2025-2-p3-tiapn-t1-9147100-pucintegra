@@ -86,8 +86,7 @@ Caso tenha populado o banco com dados de teste, utilize as credenciais padrão o
 <li><a href="docs/apresentacao/README.md"> Apresentação da solução</a></li>
 
 # Vídeo: Navegando pela aplicação
-<video controls src="Vídeo Puc Integra.mp4" title="Vídeo PUC Integra"></video>
-
+[Vídeo de Apresentação - Puc Integra](https://youtu.be/Ae8W0vBu92g)
 
 ## Histórico de versões
 
